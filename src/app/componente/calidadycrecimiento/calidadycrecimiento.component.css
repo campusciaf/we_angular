@@ -1,0 +1,60 @@
+
+  .slick-slide {
+    display: block;
+    margin:0px 5px;
+    position:relative;
+
+  }
+
+.nombre-calidad{
+    background-color:rgba(0, 21, 80, 0.5);
+    color: #fff;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0px;
+    float:left;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center!important;
+   
+}
+
+.nombre-calidad span{
+    padding: 0px 90px 50px 90px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "fuente2" !important;
+    line-height: 20px;
+}
+
+.boton-prev {
+    left: 10%;
+    margin-top: 10%;
+    z-index: 2!important;
+    transition: all .5s;
+    position: absolute;
+    background-color: rgba(0, 21, 80, 0.0);
+    border: none;
+}
+.boton-next {
+    right:10%;
+    margin-top: -12%;
+    z-index: 2!important;
+    transition: all .5s;
+    position: absolute;
+    background-color: rgba(0, 21, 80, 0.0);
+    border: none;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+	.boton-prev {
+		left: 10%;
+		margin-top: 320px;
+	}
+	.boton-next {
+		right:10%;
+		margin-top: -60px;
+
+	}
+}

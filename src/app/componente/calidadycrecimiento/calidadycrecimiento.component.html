@@ -1,0 +1,20 @@
+<section class="pt-4 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-xl-12 mb-4 pb-4">
+            <h2 class="titulo-2 text-center">Calidad y Crecimiento </h2>
+        </div>
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                    
+                    <img src="{{ slide.imagen }}" alt="" width="100%">
+                    <div class="nombre-calidad"><span>{{slide.titulo}}</span></div>
+
+
+                </div>
+            </ngx-slick-carousel>
+            <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,61 @@
+<section class="pt-4 mt-4 mostrar">
+    <div class="row justify-content-center">
+
+        <div class="col-xl-12 col-lg-12 col-mb-12 col-12 mb-4 pb-4">
+            <h2 class="titulo-2 text-center">Noticias que inspiran </h2>
+        </div>
+
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                <div ngxSlickItem *ngFor="let noticias of listarNoticias index as i" class="slide">
+                    
+                    <div class="row cards justify-content-center">
+                        <div class="col-xl-12 col-lg-12 col-md-10 col-11">
+                            <div class="column m-4">
+                                <div [className]="'post-module'" (mouseover)="mostrar()">
+                                    <div class="thumbnail">
+                                        <div class="date">
+                                            <div class="day">27</div>
+                                            <div class="month">Mar</div>
+                                        </div>
+                                        <img src="assets/image_noticias/{{noticias.img_noticias}}" alt="">
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="category" [ngStyle]="{'background-color': noticias.color}" >{{noticias.nombre_categoria}}</div>
+                                        <h1 class="title">{{noticias.titulo_noticias}}</h1>
+                                        <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
+                                        <p [className]="'description'" >{{noticias.contenido_noticias}}</p>
+                                        <div class="post-meta">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">
+                                                    <span class="timestamp"><img src="{{calendario}}" alt="Publicado"> Pub. {{noticias.fecha_noticias | date:"d MMM"}}</span>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-md-2 col-4 pt-1 mb-2"> 
+                                                    <span class="comments">39 <img src="{{vistas}}" alt="Publicado"> </span>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center"> 
+                                                    <a href="" class="btn btn-light btn-sm text-black">Leer más</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </ngx-slick-carousel>
+            <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+

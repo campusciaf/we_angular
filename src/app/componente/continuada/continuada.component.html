@@ -1,0 +1,84 @@
+<section>
+    <div class="row banner-interno">
+        <img src="{{educacion_continuada}}" alt="Educación Continuada">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center ">
+
+                <div class="col-xl-10 padding-continuada">
+                    <div class="row">
+                        <div class="col-xl-2 text-left">
+                            <img src="{{logo_continuada}}" alt="Educación Continuada" class="pt-4 mt-4" width="90%">
+                        </div>
+                        <div class="col-xl-10 text-white">
+                            <h1 class=" pt-4 mt-4">Educación <br><span class="bolder-1">Continuada</span></h1>
+                            
+                        </div>
+                        <div class="col-xl-12">
+                            <h2 class="tamano-2 text-6 bolder-1">#vuelveteemprendedor</h2>
+                        </div>
+                        <div class="col-xl-4">
+                            <h3 class="lema text-white"> Los cursos y diplomados producen mayores ingresos </h3>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+         
+    
+    </div>
+</section>
+
+
+<section class="pt-4 mt-4 mostrar">
+    <div class="row justify-content-center">
+
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+
+
+
+            <div class="row">
+
+                <div class="cards col-xl-4" *ngFor="let cursos of listarCursos index as i">
+                    <div class="column m-4">
+                        <div [className]="'post-module'" >
+                            <div class="thumbnail">
+                                <div class="date">
+                                    <div class="day">27</div>
+                                    <div class="month">Mar</div>
+                                </div>
+                                <img src="https://ciaf.digital/public/img_educacion/{{cursos.imagen_curso}}" alt="{{cursos.nombre_curso}}">
+                            </div>
+                            <div class="post-content">
+                                <div class="category" [ngStyle]="{'background-color': cursos.color}" >{{cursos.modalidad_curso}}</div>
+                                <h1 class="title">{{cursos.nombre_curso}}</h1>
+                                <!-- <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
+                                <p [className]="'description'" >{{noticias.contenido_noticias}}</p> -->
+                                <div class="post-meta">
+                                    <div class="row">
+                                        <div class="col-xl-7 pt-1">
+                                            <span class="timestamp"><img src="{{calendario}}" alt="Publicado"> Publicado  {{ cursos.create_dt | date:"d MMM" }}</span>
+                                        </div>
+                                        <div class="col-xl-2 pt-1"> 
+                                            <span class="comments">39 <img src="{{vistas}}" alt="Publicado"> </span>
+                                        </div>
+                                        <div class="col-xl-3"> 
+                                            <a [routerLink]="['/continuadadetalle',cursos.id_curso]" class="btn btn-light btn-sm text-black">Leer más </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+

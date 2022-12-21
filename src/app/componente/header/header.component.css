@@ -1,0 +1,344 @@
+header{
+    background-color: #fff;
+    padding: 0.5% 0% 0.5% 0%;
+}
+
+header .icono img{
+    width: 20px;
+    margin-left: 5px;
+}
+
+
+.logo img{
+    width: 150px;
+    text-align: center;
+}
+/* ****** estilo para que funcione el fixed del nav */
+.fixed{
+    position:fixed; 
+    top:0; 
+    width: 100%;
+    z-index: 2;
+}
+
+/* ******** */
+nav .nav-item{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0px;
+   
+    
+}
+ nav .nav-item li{
+    list-style: none;
+    line-height: 16px;
+    
+ }
+ nav .nav-item a{
+    color: #fff;
+    transition: all;
+    cursor: pointer;
+    text-decoration: none;
+    width: 140px; 
+ }
+
+.border-1{
+    border: 1px solid greenyellow;
+}
+
+.border-left{
+    border-left: 1px solid greenyellow;;
+}
+
+.active-link{
+    color:#79AB3A !important;
+    background-color: #fff;
+    
+}
+
+/* boton drop */
+.dropbtn {
+    background-color: #001550;
+    color: white;
+    padding: 14px 0px;
+    border: none;
+    width: 120px;
+   
+  }
+  .dropdown h3{
+    font-size: 19px !important;
+    padding: 10px 0px 5px 10px;
+    font-weight: bolder;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 375px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-top: 8px solid #001550;
+    padding: 6px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #001550;}
+
+/* estilos del buscador */
+#opbuscar{
+    background-color: #001550 !important;
+    margin-right: 10px;
+}
+.hamburger{
+  cursor:pointer;
+  outline:none;
+  background-color: #001550 !important;
+  border:none;
+}
+.cross{
+    padding-top: 14px;
+    background-color: #001550 !important;
+    color:#fff;
+    border:0;
+    font-size:0px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+}
+.buscador{
+    z-index:2; 
+    width:100%; 
+    background:#fff;  
+    position:absolute; 
+    text-align:center; 
+
+}
+
+
+.glyphicon-home{
+  color:white; 
+  font-size:1.5em; 
+  margin-top:5px; 
+  margin:0 auto;
+}
+#opbuscar{
+    display:inline-block; 
+    font-size:12px;
+}
+
+/* ******************************** */
+
+
+/* redes header */
+
+.redes-header{
+ position: fixed;
+ right: 0px;
+ top:34%;
+ z-index: 1;
+ width: 60px;
+}
+.redes-header li{
+    float: left;
+    list-style: none;
+}
+.redes-header img{
+    width: 40px;
+}
+
+/* ********************** */
+
+/* whatsapp */
+
+.api-whatsapp {
+    color: white;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    right: 40px;
+    background-color: #25d366;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #000;
+    z-index: 100;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.api-whatsapp:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-api-whatsapp {
+    margin-top: 16px;
+}
+
+.api-whatsapp img{
+    width: 40px;
+    padding-top: 6px;
+    filter: brightness(100);
+    transition: all 1s;
+}
+.api-whatsapp img:hover{
+    filter: none;
+    
+}
+
+
+/* **** menu movil *********** */
+
+
+
+.m-menu {
+    background-color: #000;
+    display: none;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 4;
+}
+
+.m-menu a {
+    text-decoration: none !important;
+}
+.m-menu a p{
+    color: #fff;
+    font-size: 12px !important;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none !important;
+}
+
+
+
+@media(max-width:1024px){
+
+    .dropbtn {
+        width: 110px !important;
+        text-align: center !important;
+    }
+    nav .nav-item a{
+        width: 110px;
+    }
+    .logo img{
+        width: 130px;
+        text-align: center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .dropbtn {
+        width: 420px !important;
+        text-align: left !important;
+    }
+    nav .nav-item{
+        text-align: left;
+    }
+    nav .nav-item a{
+        width: 420px;
+    }
+    .logo img{
+        width: 130px;
+        text-align: left;
+    }
+    .m-menu {
+        display: block;
+        display: flex;
+    }
+
+}
+
+/* ******************** */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .dropdown-content {
+        display: none;
+        position: relative;
+
+    }
+
+    .dropbtn {
+        background-color: #001550;
+        color: white;
+        padding: 15px 8px ;
+        border: none;
+        width: 320px;
+        text-align: left;
+    }
+    nav .nav-item{
+        padding: 8px;
+        
+    }
+
+    nav .nav-item a{
+    list-style: none;
+    line-height: 16px;
+    width: 320px;
+    
+    }
+    
+/* redes header */
+
+.redes-header{
+    right: 6px;
+    top:34%;
+    width: 34px;
+   }
+
+   .redes-header img{
+       width: 34px;
+       padding-bottom: 5px;
+   }
+   /* ***************************** */
+
+.api-whatsapp {
+    color: white;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20%;
+    right: 10px;
+    font-size: 30px;
+}
+
+
+
+
+.api-whatsapp img{
+    width: 35px;
+    padding-top: 2px;
+
+}
+
+
+  }
+

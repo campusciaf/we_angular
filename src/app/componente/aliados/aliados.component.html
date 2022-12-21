@@ -1,0 +1,19 @@
+<section class="py-4 my-4">
+    <div class="row justify-content-center">
+        <div class="col-xl-12 mb-4 pb-4">
+            <h2 class="titulo-2 text-center">Aliados Estratégicos </h2>
+        </div>
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
+                <div ngxSlickItem *ngFor="let datosaliados of aliados; index as i" class="slide">
+                    
+                    <img src="{{datosaliados.imagen}}" width="100%" alt="{{datosaliados.titulo}}">
+
+
+                </div>
+            </ngx-slick-carousel>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+footer {
+	padding: 1% 0% 2% 0%;
+	color: white;
+    display: block;
+}
+
+.redes_footer a{
+	margin: 0.5%;
+}
+
+.redes_footer img{
+	width: 60px;
+}
+
+.suscripcion-input{
+	background-color: rgba(0,0,0,0);
+}
+
+footer p{
+	font-family: "fuente2";
+	font-size: 12px;
+}
+
+footer .logo img{
+	width: 80%;
+}
+
+footer .logo-creatividad p{
+	font-size: 14px !important;
+	line-height: 12px;
+	padding-top: 10px;
+}
+
+@media(max-width:1024px){
+	.redes_footer img{
+		width: 50px ;
+	}
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	footer .logo img{
+		width: 150px;
+	}
+
+	
+}

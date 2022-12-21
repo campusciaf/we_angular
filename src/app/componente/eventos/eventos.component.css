@@ -1,0 +1,17 @@
+.evento{
+	text-align: center;
+	background-color: white;
+	margin:2px;
+	padding: 25px 5px 5px 5px;
+	height: 200px;
+}
+.evento img{
+	float: left;
+}
+.evento-titulo{
+	height: 50px;
+}
+.evento-hora{
+	width: 100px;
+	margin: auto;
+}

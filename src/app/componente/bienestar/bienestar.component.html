@@ -1,0 +1,201 @@
+<section>
+    <div class="row banner-interno">
+        <img src="{{bienestar}}" alt="">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+                <div class="col-xl-10 pt-4">
+                    <div class="row">
+                        <div class="col-xl-5 text-white">
+                            <h1 class="text-center">Bienestar</h1>
+                           
+                            <p class="lema text-center"> Un parche lleno<br> de experiencias</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+                </div>
+
+                <div class="col-xl-12 pt-4">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-11 wrap-programas">
+                
+                            <div class="col-xl-12 bg-bienestar superior">
+                                <div class="row text-center small text-white justify-content-center">    
+                                    <div class="col-xl-3 fs-6">Política de Bienestar</div>
+                                    <div class="col-xl-3 fs-6">¡Quédate!</div>
+                                    <div class="col-xl-3 fs-6">Cartilla Estudiantil</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 p-0">
+                                <div class="row tabs" ng-init="inicioAlgo()">
+                                    <a (click)="paginas('1')" class="col-xl-2" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''">
+                                        Salud <br> y vida
+                                    </a>
+                                    <a (click)="paginas('2')" class="col-xl-2" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''">
+                                        Recreación <br> y Deportes
+                                    </a>
+                                    <a (click)="paginas('3')" class="col-xl-2" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''">
+                                        Arte <br> y Cultura
+                                    </a>
+                                    <a (click)="paginas('4')" class="col-xl-2" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                        Desarrollo <br>Humano
+                                    </a>
+                                    <a (click)="paginas('5')" class="col-xl-2" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                        Promoción <br> Socioeconómica
+                                    </a>
+                                    <a (click)="paginas('6')" class="col-xl-2" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                        Éxito estudiantil <br>Meta: graduación
+                                    </a>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+<section class="p-0 m-0">
+    <div id="content-programa">
+
+        <div id="pag-ini" style="display:block">
+
+            <section class="pt-4 mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">Experiencias que transforman </h2>
+                    </div>
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="custom-slider">
+                            <div class="custom-box" *ngFor="let imagenes of imagenesExperiencias; index as i">
+                                <img src="{{imagenes.imagen}}" alt="">
+                                <div class="nombre-calidad"><span>{{imagenes.titulo}}</span></div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </section>
+
+            <section class="pt-4 mt-4">
+                <div class="row d-flex justify-content-center bg-1">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+
+                    <div class="col-xl-4 text-center p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-12">
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/gFLxr7VFB3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-programa"></iframe>
+                    
+                            </div>
+                            <div class="col-xl-10 text-center py-4">
+                                <img src="{{parche}}" alt="Simate al parche" width="80%">
+                            </div>
+                        </div>
+                    </div>
+
+
+                            
+                    <div class="col-xl-3 p-2">
+                        <div class="row parche">
+                            <img src="{{quedate}}" alt="Financiación 0% interes" width="100%">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 parche-contenido ">
+                                <div class="row justify-content-center vertical-align-bottom h-100 text-center">
+                                    <div class="col-xl-8">
+                                        <h2 class="text-white tamano-2 text-3"> ¡Quédate! </h2>
+                                        <p class="text-white">Programa de permanencia y graduación</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12 text-white py-4">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Labore doloremque eveniet at blanditiis. Deleniti harum, 
+                                asperiores quam, maiores... <a href="" class="btn btn-link btn-sm">Ver más </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 p-2">
+                        <div class="row parche">
+                            <img src="{{inspiradores}}" alt="Financiación 0% interes" width="100%">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 parche-contenido ">
+                                <div class="row justify-content-center vertical-align-bottom h-100 text-center">
+                                    <div class="col-xl-8">
+                                        <h2 class="text-white fs-1 text-3"> ¡Inspiradores! </h2>
+                                        <p class="text-white">Programa de integración familiar</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12 text-white py-4">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Labore doloremque eveniet at blanditiis. Deleniti harum, 
+                                asperiores quam, maiores... <a href="" class="btn btn-link btn-sm">Ver más </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
+
+
+                    
+
+                    
+                </div>
+
+            </section>
+
+            <section class="pt-4 mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">¿Qué está pasando en este parche? </h2>
+                    </div>
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="custom-slider">
+                            <div class="custom-box" *ngFor="let imagenes of imagenesExperiencias; index as i">
+                                <img src="{{imagenes.imagen}}" alt="">
+                                <div class="nombre-calidad"><span>{{imagenes.titulo}}</span></div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </section>
+
+            <app-eventos></app-eventos>
+
+
+        </div>
+
+        <div id="pag-one" style="display:block">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-12 mb-4 pb-4">
+                    <h2 class="titulo-2 text-center"> Cultura </h2>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</section>
