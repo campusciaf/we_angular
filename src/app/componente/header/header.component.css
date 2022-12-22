@@ -215,13 +215,14 @@ nav .nav-item{
 
 
 .m-menu {
-    background-color: #000;
+   
     display: none;
     height: 50px;
     position: fixed;
     width: 100%;
     bottom: 0;
     z-index: 4;
+
 }
 
 .m-menu a {
@@ -337,6 +338,13 @@ nav .nav-item{
     width: 35px;
     padding-top: 2px;
 
+}
+
+.m-menu {
+    display: block;
+    display: flex;
+    height: 60px;
+    overflow: hidden;
 }
 
 

@@ -10,8 +10,19 @@
 	font-family: "fuente2";
 	src: url("assets/fonts/montserrat_regular.ttf") format("opentype");
 }
+
+@font-face {
+	font-family: "fuente3";
+	src: url("assets/fonts/sunvalley/812d5f559ddf2a956ba25c5016aec4cc.eot"); /* IE9*/
+	src: url("assets/fonts/sunvalley/812d5f559ddf2a956ba25c5016aec4cc.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("assets/fonts//sunvalley/812d5f559ddf2a956ba25c5016aec4cc.woff2") format("woff2"), /* chrome、firefox */
+	url("assets/fonts/sunvalley/812d5f559ddf2a956ba25c5016aec4cc.woff") format("woff"), /* chrome、firefox */
+	url("assets/fonts/sunvalley/812d5f559ddf2a956ba25c5016aec4cc.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url("assets/fonts/sunvalley/812d5f559ddf2a956ba25c5016aec4cc.svg#Sun Valley") format("svg"); /* iOS 4.1- */
+  }
+
 body{
-    font-family:fuente1;
+    font-family:"fuente1";
     font-size:14px
 }
 figure{
@@ -34,7 +45,7 @@ figure{
     padding:0
 }
 .titulo-logo{
-    font-family:fuente-logo!important
+    font-family:"fuente-logo" !important
 }
 .titulo-1{
     font-style:normal;
@@ -367,7 +378,7 @@ figure{
 .wrap-programas .superior{
     padding:10px 0;
     border-radius:10px 10px 0 0;
-    font-family:fuente2
+    font-family:"fuente2";
 }
 .tabs a{
     position:relative;
@@ -380,7 +391,8 @@ figure{
     background-color:#fff;
     border:1px solid #f4f4f4;
     color:#132252;
-    font-style:italic
+    font-style:italic;
+    cursor: pointer;
 }
 .tabs a:hover{
     border-bottom:4px solid #132252
@@ -537,6 +549,19 @@ figure{
 }
 
 /* ***************************** */
+/* iniciar proceso*/
+.inicia-titulo{
+    height: 120px;
+}
+.inicia-detalle{
+    height: 50px;
+}
+.inicia-nuestro{
+    font-family: "fuente3";
+    font-size: 60px;
+    line-height: 50px;
+}
+/* ***************************** */
 
 @media (max-width:1024px){
     .btn-financiacion{
@@ -592,7 +617,8 @@ figure{
         background-color:#fff;
         border:1px solid #f4f4f4;
         color:#132252;
-        font-style:italic
+        font-style:italic;
+        cursor: pointer;
     }
 
     .financiacion-interno .financiacion-contenido p{
@@ -610,6 +636,15 @@ figure{
 
     .border-right-1{
         border-right: none;
+    }
+
+    .beneficios-interno .beneficios-contenido{
+        position:absolute;
+        width: 100%;
+        height: 40%;
+        bottom:10%;
+        background-color: rgba(121, 171, 58, 0.8);
+        display: block;
     }
  
 
@@ -650,14 +685,15 @@ figure{
     }
     
     .tabs a {
-        height: 42px;
+        height: 66px;
+        font-size: 11px;
     }
 
     .banner-interno{
         position:relative;
         display:inline-block;
         margin:0;
-        height: 490px;
+        height: auto;
     }
 
     .banner-interno .snies{
@@ -693,6 +729,15 @@ figure{
     }
     .tamano-2{
         font-size:30px!important
+    }
+
+    .beneficios-interno .beneficios-contenido{
+        position:relative;
+        width: 100%;
+        height: auto;
+        bottom:none;
+        background-color: rgba(121, 171, 58, 0.8);
+        display: block;
     }
     
 }

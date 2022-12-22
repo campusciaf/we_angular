@@ -190,13 +190,20 @@ isValid4:boolean = false;
 
   }
 
+  listarContacto =[
+    {titulo:'¡Inscríbete en linea!', pic:this.inscribete_en_linea, link:'https://ciaf.digital/inscripciones/', detalle:''},
+    {titulo:'¡Escríbeme y te asesoro!', pic:this.te_asesoro, link:'https://ciaf.digital/inscripciones/', detalle:''},
+    {titulo:'¿Prefieres llamarme?', pic:this.llamame, link:'https://ciaf.digital/inscripciones/', detalle:''},
+    {titulo:'¡Date una pasadita por nuestra sede!', pic:this.visita_sede, link:'https://ciaf.digital/inscripciones/', detalle:'Cra. 6 No. 24-56 • Pereira'},
+
+  ];
 
 
   constructor() { }
 
   ngOnInit(): void {
     this.activo="1";
-    this.pagina="4";
+    this.pagina="3";
     this.paginas(this.pagina);
   }
 
