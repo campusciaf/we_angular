@@ -602,7 +602,25 @@ figure{
         position:relative;
         display:inline-block;
         margin:0;
-        height: 426px;
+        height: 340px;
+    }
+    .banner-interno h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 40px;
+        margin-bottom: 0px;
+    }
+    .banner-interno .snies {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .banner-interno .lema {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 14px;
     }
 
     .tabs a{

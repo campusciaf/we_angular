@@ -203,7 +203,7 @@ isValid4:boolean = false;
 
   ngOnInit(): void {
     this.activo="1";
-    this.pagina="3";
+    this.pagina="1";
     this.paginas(this.pagina);
   }
 
