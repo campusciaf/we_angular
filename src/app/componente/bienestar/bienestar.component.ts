@@ -39,13 +39,42 @@ public next="assets/image/btn-next.webp";
 public prev="assets/image/btn-prev.webp";
 
 public b_salud="assets/image/b_salud.webp";
-
-
+public b_deportes="assets/image/b_deportes.webp";
+public b_cultura="assets/image/b_cultura.webp";
+public b_desarrollo="assets/image/b_desarrollo.webp";
+public b_promocion="assets/image/b_promocion.webp";
+public b_grado="assets/image/b_grado.webp";
 
 listarInstagram:any;
+listarConvenios:any;
 
 slideConfig = {
   "slidesToShow": 4, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+  responsive: [
+    {
+      breakpoint: 1048,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 778,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+
+};
+
+slideConfigConvenios = {
+  "slidesToShow": 3, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
   responsive: [
     {
       breakpoint: 1048,
@@ -87,6 +116,8 @@ activo:any;
   isValid2:boolean = false;
   isValid3:boolean = false;
   isValid4:boolean = false;
+  isValid5:boolean = false;
+  isValid6:boolean = false;
   
     paginas(pagina:string){
       if(pagina == "0"){
@@ -95,6 +126,8 @@ activo:any;
         this.isValid2= false;
         this.isValid3= false;
         this.isValid4= false;
+        this.isValid5= false;
+        this.isValid6= false;
       }
   
       if(pagina == "1"){
@@ -103,6 +136,8 @@ activo:any;
         this.isValid2= false;
         this.isValid3= false;
         this.isValid4= false;
+        this.isValid5= false;
+        this.isValid6= false;
       }
       
       if(pagina == "2"){
@@ -111,6 +146,8 @@ activo:any;
         this.isValid2= true;
         this.isValid3= false;
         this.isValid4= false;
+        this.isValid5= false;
+        this.isValid6= false;
       }
       
       if(pagina == "3"){
@@ -119,6 +156,8 @@ activo:any;
         this.isValid2= false;
         this.isValid3= true;
         this.isValid4= false;
+        this.isValid5= false;
+        this.isValid6= false;
       }
       
       if(pagina == "4"){
@@ -127,6 +166,26 @@ activo:any;
         this.isValid2= false;
         this.isValid3= false;
         this.isValid4= true;
+        this.isValid5= false;
+        this.isValid6= false;
+      }
+      if(pagina == "5"){
+        this.isValid0= false;
+        this.isValid1= false;
+        this.isValid2= false;
+        this.isValid3= false;
+        this.isValid4= false;
+        this.isValid5= true;
+        this.isValid6= false;
+      }
+      if(pagina == "6"){
+        this.isValid0= false;
+        this.isValid1= false;
+        this.isValid2= false;
+        this.isValid3= false;
+        this.isValid4= false;
+        this.isValid5= false;
+        this.isValid6= true;
       }
   
     }
@@ -139,13 +198,20 @@ activo:any;
 
   ngOnInit(): void {
     this.activo="0";
-    this.pagina="1";
+    this.pagina="0";
     this.paginas(this.pagina);
 
     this.conectarApiService.obtenerInstagram().subscribe(respuesta=>{
       this.listarInstagram=respuesta.business_discovery.media.data
       console.log(respuesta.business_discovery.media.data);
     });
+
+    this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2=>{
+      this.listarConvenios=respuesta2
+
+    });
+
+    
 
  
   }

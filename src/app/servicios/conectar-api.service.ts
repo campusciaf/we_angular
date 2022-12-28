@@ -49,5 +49,10 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/instagram.php',{headers});
   }
 
+  obtenerBienestarConvenios(): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/bienestar_convenios.php',{headers});
+  }
+
   
 }

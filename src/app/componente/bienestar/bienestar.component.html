@@ -46,10 +46,10 @@
                                     <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
                                         Desarrollo Humano
                                     </a>
-                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''">
                                         Promoción Socioeconómica
                                     </a>
-                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''">
                                         Meta: graduación
                                     </a>
                                 </div>
@@ -65,9 +65,6 @@
     
     </div>
 </section>
-
-
-
 
 <section class="p-0 m-0">
     <div id="content-programa">
@@ -193,6 +190,131 @@
 
         </div>
 
+        <div id="pag-two" *ngIf="isValid2">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-12 my-4 py-4 text-center">
+                    <h2 class="titulo-2 text-3"> Deportes </h2>
+                    <h3 class="text-1">Para CIAF... Texto pendiente...</h3>
+                </div>
+            </div>
+            
+            <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                <div class="row b-interno">
+                    <img src="{{b_deportes}}" alt="Financiación 0% interes" >
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
+                       <div class="row justify-content-center vertical-align-center h-100 text-center">
+                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
+                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="pag-three" *ngIf="isValid3">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-12 my-4 py-4 text-center">
+                    <h2 class="titulo-2 text-3">Cultura </h2>
+                    <h3 class="text-1">Para CIAF... Texto pendiente...</h3>
+                </div>
+            </div>
+            
+            <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                <div class="row b-interno">
+                    <img src="{{b_cultura}}" alt="Financiación 0% interes" >
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
+                       <div class="row justify-content-center vertical-align-center h-100 text-center">
+                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
+                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="pag-four" *ngIf="isValid4">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-12 my-4 py-4 text-center">
+                    <h2 class="titulo-2 text-3">Desarrollo Humano </h2>
+                    <h3 class="text-1">Para CIAF... Texto pendiente...</h3>
+                </div>
+            </div>
+            
+            <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                <div class="row b-interno">
+                    <img src="{{b_desarrollo}}" alt="Financiación 0% interes" >
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
+                       <div class="row justify-content-center vertical-align-center h-100 text-center">
+                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
+                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="pag-five" *ngIf="isValid5">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-12 my-4 py-4 text-center">
+                    <h2 class="titulo-2 text-3">Promoción Socioeconómica </h2>
+                    <h3 class="text-1">Para CIAF... Texto pendiente...</h3>
+                </div>
+            </div>
+            
+            <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                <div class="row b-interno">
+                    <img src="{{b_promocion}}" alt="Financiación 0% interes" >
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
+                       <div class="row justify-content-center vertical-align-center h-100 text-center">
+                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
+                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="pag-six" *ngIf="isValid6">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-12 my-4 py-4 text-center">
+                    <h2 class="titulo-2 text-3">Éxito Estudiantil Meta: Graduación </h2>
+                    <h3 class="text-1">Para CIAF... Texto pendiente...</h3>
+                </div>
+            </div>
+            
+            <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                <div class="row b-interno">
+                    <img src="{{b_grado}}" alt="Financiación 0% interes" >
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
+                       <div class="row justify-content-center vertical-align-center h-100 text-center">
+                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
+                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
 
 
         <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
@@ -223,6 +345,31 @@
             </div>
         </section>
 
+        <section>
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                    
+                        <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigConvenios" responsive="breakpoints">
+                            <div ngxSlickItem *ngFor="let datos of listarConvenios index as i" class="slide p-4">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <img src="https://ciaf.digital/public/web_convenios/{{datos.imagen_convenio}}" alt="{{datos.nombre_convenio}}" width="90%">
+                                </div>
+                                <div class="col-xl-6">
+                                    <h3 class="bolder-1">{{datos.nombre_convenio}}</h3>
+                                    <p>{{datos.descripcion_convenio}}</p>
+                                </div>
+                            </div>  
+            
+                            </div>
+                        </ngx-slick-carousel>
+                        <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+                  
+                    
+                </div>
+            </div>
+        </section>
 
         <app-eventos></app-eventos>
 
