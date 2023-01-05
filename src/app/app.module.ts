@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import YouTubePlayer from 'youtube-player';
+
 /* Idioma del proyecto */
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -38,6 +40,8 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +71,8 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
+ 
 
   ],
   providers: [

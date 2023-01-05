@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import {CargarjsService} from 'src/app/servicios/cargarjs.service';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { end } from '@popperjs/core';
+
 
 declare var jQuery:any;
 declare var $:any;
+
 
 
 @Component({
@@ -12,15 +16,22 @@ declare var $:any;
   templateUrl: './noticias.component.html',
   styleUrls: ['./noticias.component.css']
 })
+
+
 export class NoticiasComponent implements OnInit {
 
+  safeSrc: SafeResourceUrl | undefined;
+
+  
   public calendario="assets/image/calendario-regular.webp";
   public vistas="assets/image/vistas.webp";
 
   public prev="assets/image/prev.webp";
   public next="assets/image/next.webp";
+  public btn_next="assets/image/btn-next.webp";
 
   listarNoticias:any;
+  listarNoticias2:any;
 
   slideConfig = {
     "dots":"true","slidesToShow": 3, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
@@ -50,6 +61,8 @@ export class NoticiasComponent implements OnInit {
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
   
+
+  
   prevImg(){
     this.slickModal.slickPrev();
   }
@@ -57,38 +70,81 @@ export class NoticiasComponent implements OnInit {
     this.slickModal.slickNext();
   }
 
+
+  titulo:any;
+  total:any;
+  valor:any;
+
+
+  videoYoutube(valor:any,titulo:any){
+
+    this.titulo=titulo;
+    this.total=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + valor); 
+  }
   
+
+
+
+
   constructor(
-    private _CargarJsService:CargarjsService,
+
     private conectarApiService:ConectarApiService,
+    private sanitizer: DomSanitizer,
+    private modalService: NgbModal
     
   ) { 
 
-    this._CargarJsService.Cargarjs(["noticias"]);
-
-
-  }
   
-  mostrar(){
+
+    
+    
+  }
+  closeResult = '';
+
+	open(content:any) {
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+			(result) => {
+				this.closeResult = `Closed with: ${result}`;
+			},
+			(reason) => {
+				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+			},
+		);
+	}
+  private getDismissReason(reason: any): string {
+		if (reason === ModalDismissReasons.ESC) {
+			return 'by pressing ESC';
+		} else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+			return 'by clicking on a backdrop';
+		} else {
+			return `with: ${reason}`;
+		}
+	}
 
 
-      // $('.description').stop().animate({
-      //   height: "toggle",
-      //   opacity: "toggle"
-      // }, 300);
-
+  animarnoticia(id:any){
+    $(".accion"+id).css("height","80px");
+  }
+  noanimarnoticia(id:any){
+    $(".accion"+id).css("height","0px");
   }
  
 
   ngOnInit(): void {
 
     this.conectarApiService.obtenerNoticias().subscribe(respuesta=>{
-      this.listarNoticias=respuesta
+      this.listarNoticias=respuesta;
+
     });
-    this.mostrar();
 
-
+    
+    
+ 
 
   }
 
+ 
+
 }
+
+
