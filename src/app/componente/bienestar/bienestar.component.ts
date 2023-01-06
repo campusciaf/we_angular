@@ -45,11 +45,13 @@ public b_desarrollo="assets/image/b_desarrollo.webp";
 public b_promocion="assets/image/b_promocion.webp";
 public b_grado="assets/image/b_grado.webp";
 
+public banner_prueba="assets/image/prueba_instagram.webp";
+
 listarInstagram:any;
 listarConvenios:any;
 
 slideConfig = {
-  "slidesToShow": 4, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+  "slidesToShow": 4, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
   responsive: [
     {
       breakpoint: 1048,
@@ -74,7 +76,7 @@ slideConfig = {
 };
 
 slideConfigConvenios = {
-  "slidesToShow": 3, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+  "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
   responsive: [
     {
       breakpoint: 1048,
@@ -100,11 +102,34 @@ slideConfigConvenios = {
 
 @ViewChild('slickModal')
 slickModal!: SlickCarouselComponent;
+
+
+
 prevImg(){
   this.slickModal.slickPrev();
 }
 nextImg(){
   this.slickModal.slickNext();
+}
+
+@ViewChild('slickModalInst')
+slickModalInst!: SlickCarouselComponent;
+
+prevImgIns(){
+  this.slickModalInst.slickPrev();
+}
+nextImgIns(){
+  this.slickModalInst.slickNext();
+}
+
+@ViewChild('slickModalConv')
+slickModalConv!: SlickCarouselComponent;
+
+prevImgConv(){
+  this.slickModalConv.slickPrev();
+}
+nextImgConv(){
+  this.slickModalConv.slickNext();
 }
 
 
@@ -191,6 +216,12 @@ activo:any;
     }
   
 
+    animarnoticia(id:any){
+      $(".accion"+id).css("top","-40px");
+    }
+    noanimarnoticia(id:any){
+      $(".accion"+id).css("top","0px");
+    }
 
   constructor(private conectarApiService:ConectarApiService) { 
 

@@ -79,6 +79,7 @@
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10 col-10">
                         <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+                        <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
                         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
                             <div ngxSlickItem *ngFor="let imagenes of imagenesExperiencias" class="slide">
                                 
@@ -88,7 +89,7 @@
             
                             </div>
                         </ngx-slick-carousel>
-                        <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+                        
                     </div>
                 </div>
             </section>
@@ -323,48 +324,66 @@
                     <h2 class="titulo-2 text-center">¿Qué está pasando en este parche? </h2>
                 </div>
                 <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-                    <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                        <div ngxSlickItem *ngFor="let datos of listarInstagram index as i" class="slide p-4">
-                        <p>{{datos.media_type}}</p>  
-                        <video class="pages-media" controls>
-                            <source src="{{datos.media_url}}">
-                        </video>
-                        <p><img src="{{datos.thumbnail_url}}" width="100%"></p>
-                        <p>{{datos.like_count}} likes</p>
-                        <p>{{datos.comments_count}}</p>
-                        <p>{{datos.timestamp| date:"d MMM"}}</p>
-                        <p>{{datos.username}} {{datos.caption}}</p>
+                    <button (click)="prevImgIns()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+                    <button (click)="nextImgIns()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+                    <ngx-slick-carousel class="carousel" #slickModalInst="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                        <div ngxSlickItem *ngFor="let datos of listarInstagram index as i" class="slide">
+
+                            <div class="instagram m-2" (mouseover)="animarnoticia(i)" (mouseout)="noanimarnoticia(i)">
+                                <!-- <p class="px-2">{{datos.media_type}}</p>   -->
+                                <img [src]="banner_prueba" alt="" width="100%" height="auto">
+                                <!-- <video class="pages-media" controls>
+                                    <source src="{{datos.media_url}}">
+                                </video> -->
+                                <div [className]="'conte_instagram accion'+i">
+                                    <p><img src="{{datos.thumbnail_url}}" width="100%"></p>
+                                    <p class="small px-2">{{datos.like_count}} me gusta | {{datos.comments_count}} comentarios</p>
+                                    <p class="descripcion px-2"><span class="text-1">#{{datos.username}}</span> {{datos.caption}} </p>
+                                   
+                                </div>
+                                <div class="pie_instagram">
+                                    <div class="row">
+                                        <div class="col-6"><p class="px-2 small">{{datos.timestamp| date:"d MMMM"}}</p></div>
+                                        <div class="col-6 text-right px-2">...más</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                        
-        
-        
                         </div>
                     </ngx-slick-carousel>
-                    <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+             
+                </div>
+                <div class="col-10 py-4">
+                    <hr>
                 </div>
             </div>
         </section>
+
+        
 
         <section>
             <div class="row justify-content-center">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-10">
                     
-                        <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
-                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigConvenios" responsive="breakpoints">
+                        <button (click)="prevImgConv()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+                        <button (click)="nextImgConv()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+                        <ngx-slick-carousel class="carousel" #slickModalConv="slick-carousel" [config]="slideConfigConvenios" responsive="breakpoints">
                             <div ngxSlickItem *ngFor="let datos of listarConvenios index as i" class="slide p-4">
                             <div class="row">
-                                <div class="col-xl-6">
+                                <div class="col-xl-6 vertical-align-center">
                                     <img src="https://ciaf.digital/public/web_convenios/{{datos.imagen_convenio}}" alt="{{datos.nombre_convenio}}" width="90%">
                                 </div>
                                 <div class="col-xl-6">
                                     <h3 class="bolder-1">{{datos.nombre_convenio}}</h3>
                                     <p>{{datos.descripcion_convenio}}</p>
+                                    <p><a href="" class="btn bg-3 btn-sm">Acceder al convenio</a></p>
                                 </div>
                             </div>  
             
                             </div>
                         </ngx-slick-carousel>
-                        <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+                       
                   
                     
                 </div>

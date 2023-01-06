@@ -12,7 +12,10 @@
     position:relative;
 
   }
-
+  .instagram{
+    border: 1px solid #f9f9f9;
+    margin: 10px;
+}
 .nombre-calidad{
     background-color:rgba(0, 21, 80, 0.5);
     color: #fff;
@@ -35,9 +38,9 @@
     line-height: 20px;
 }
 
-.boton-prev {
-    left: 10%;
-    margin-top: 10%;
+.boton-prev{
+    left: 5%;
+    margin-top:10%;
     z-index: 2!important;
     transition: all .5s;
     position: absolute;
@@ -45,8 +48,8 @@
     border: none;
 }
 .boton-next {
-    right:10%;
-    margin-top: -12%;
+    right:5%;
+    margin-top: 10%;
     z-index: 2!important;
     transition: all .5s;
     position: absolute;
@@ -80,6 +83,23 @@
  	line-height: 40px;
 }
 
+
+.slide .descripcion {
+	overflow: hidden;
+	color: #666666;
+	font-size: 14px;
+	line-height: 20px;
+    height: 80px; 
+    opacity: 1;
+	transition: all 1s;
+}
+
+.conte_instagram{
+    position: relative;
+    top: 0px;
+    background-color: #fff;
+    transition: all 1s;
+}
 
 @media (max-width:1024px){
     .padding-bienestar{
