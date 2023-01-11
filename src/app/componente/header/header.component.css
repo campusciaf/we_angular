@@ -121,7 +121,7 @@ nav .nav-item{
     background-color: #001550 !important;
     color:#fff;
     border:0;
-    font-size:0px;
+    font-size:36px;
     font-weight:bold;
     cursor:pointer;
     outline:none;
@@ -132,6 +132,8 @@ nav .nav-item{
     background:#fff;  
     position:absolute; 
     text-align:center; 
+    top:86px;
+    left: 0px;
 
 }
 

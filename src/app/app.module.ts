@@ -19,6 +19,12 @@ import{HttpClientModule} from '@angular/common/http';
 /* import para el slick */
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 /* ************************ */
+
+/* modulo parael multiselect */
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+/* ************************ */
+
+
 import { CalidadycrecimientoComponent } from './componente/calidadycrecimiento/calidadycrecimiento.component';
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { HeaderComponent } from './componente/header/header.component';
@@ -62,7 +68,8 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
     IngSoftwareComponent,
     EventosComponent,
     ContinuadaDetalleComponent,
-    EnfermeriaComponent
+    EnfermeriaComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -71,7 +78,12 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgMultiSelectDropDownModule.forRoot(),
+   
+    
+
+    
  
 
   ],

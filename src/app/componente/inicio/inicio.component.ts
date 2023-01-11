@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { CargarjsService } from 'src/app/servicios/cargarjs.service';
+
+
+declare var jQuery:any;
+declare var $:any;
 
 @Component({
   selector: 'app-inicio',
@@ -15,14 +21,15 @@ export class InicioComponent implements OnInit {
 
 
   ]
-  constructor() { }
 
-  ngOnInit(): void {
 
- 
+  constructor(private _CargarJsService:CargarjsService,) {
+
+   }
+  ngOnInit() {
+
+
+
+
   }
-
-
-
-
 }

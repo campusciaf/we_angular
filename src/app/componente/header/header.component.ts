@@ -34,18 +34,21 @@ $(window).scroll(function() {
  
 function posicionarMenu() {
     var altura_del_header = $('.header').outerHeight(true);
-    var altura_del_menu = $('.menu').outerHeight(true);
+    var altura_del_menu = $('.menu').outerHeight(true) + 50;
  
     if ($(window).scrollTop() >= altura_del_header){
         $('.menu').addClass('fixed');
-        $('.wrapper').css('margin-top', (altura_del_menu) + 'px');
+        // $('.wrapper').css('margin-top', (altura_del_menu) + 'px');
+         $('.wrapper').css('margin-top', (altura_del_menu) + 'px');
         $( ".buscador" ).hide();
         $( ".cross" ).hide();
         $( ".hamburger" ).show();
+        console.log(altura_del_menu);
        
     } else {
         $('.menu').removeClass('fixed');
-        $('.wrapper').css('margin-top', '0');
+        $('.wrapper').css('margin-top', '50px');
+        console.log(altura_del_menu);
     }
 }
 /* **************************************** */

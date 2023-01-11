@@ -6,9 +6,9 @@
         <div class="col-xl-10 col-lg-10 col-md-10 col-10">
 
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
-                <div ngxSlickItem *ngFor="let datosaliados of aliados; index as i" class="slide">
+                <div ngxSlickItem *ngFor="let datos of listarAliados; index as i" class="slide">
                     
-                    <img src="{{datosaliados.imagen}}" width="100%" alt="{{datosaliados.titulo}}">
+                    <img src="https://ciaf.digital/public/web_aliados/{{datos.imagen_aliado}}" width="100%" alt="{{datos.nombre_aliado}}">
 
 
                 </div>

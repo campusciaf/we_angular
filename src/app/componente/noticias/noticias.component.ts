@@ -34,7 +34,7 @@ export class NoticiasComponent implements OnInit {
   listarNoticias2:any;
 
   slideConfig = {
-    "dots":"true","slidesToShow": 3, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+    "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
     responsive: [
       {
         breakpoint: 1048,
