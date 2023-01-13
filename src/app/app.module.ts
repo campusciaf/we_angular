@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import YouTubePlayer from 'youtube-player';
 
 /* Idioma del proyecto */
 import localeEs from '@angular/common/locales/es';
