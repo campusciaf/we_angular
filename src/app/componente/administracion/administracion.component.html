@@ -1,10 +1,11 @@
 <section>
-    <div class="row banner-interno">
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
-            <img src="{{banner_pc}}" alt="Administración de empresas">
+    <div class="row banner-interno" *ngFor="let datos of listarPrograma">
+     
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas}}" alt="Administración de empresas">
        </div>
        <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
-        <img src="{{banner_movil}}" alt="Administración de empresas">
+        <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas_movil}}" alt="Administración de empresas">
    </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
             <div class="row justify-content-center vertical-align-center">
@@ -145,7 +146,7 @@
                         </div>
 
                         <div class="col-xl-10 col-lg-10 col-md-10 col-11 py-4">
-                            <!-- <img src="{{niveles_software}}" alt="Tres Títulos" width="100%" class="py-4"> -->
+                           
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center pb-xl-0 pb-lg-0 pb-md-2 pb-3">
                                     <h3>Título: Técnica profesional en 

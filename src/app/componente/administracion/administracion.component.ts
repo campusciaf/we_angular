@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+
 
 declare var jQuery:any;
 declare var $:any;
@@ -11,12 +13,8 @@ declare var $:any;
 export class AdministracionComponent implements OnInit {
 
 
-
-public banner_pc="assets/image/ingenieria-de-software.webp";
-public banner_movil="assets/image/ingenieria-de-software-movil.webp";
 public sotfware_pic="assets/image/software-pic.webp";
 public img_li="assets/image/img-li.webp";
-public niveles_software="assets/image/niveles-software.webp";
 public next="assets/image/btn-next.webp";
 public prev="assets/image/btn-prev.webp";
 public descargar="assets/image/descargar.webp";
@@ -149,13 +147,15 @@ slideConfig = {
 
 };
 
-  pagina:any;
-  activo:any;
+pagina:any;
+activo:any;
 
 isValid1:boolean = true;
 isValid2:boolean = false;
 isValid3:boolean = false;
 isValid4:boolean = false;
+
+listarPrograma: any;
 
   paginas(pagina:string){
 
@@ -199,12 +199,21 @@ isValid4:boolean = false;
   ];
 
 
-  constructor() { }
+  constructor(private conectarApiService:ConectarApiService) { }
 
   ngOnInit(): void {
     this.activo="1";
     this.pagina="1";
     this.paginas(this.pagina);
+
+    var id:number = 1;
+
+    this.conectarApiService.obtenerProgramaId(id).subscribe(respuesta=>{
+      this.listarPrograma=respuesta
+  
+    }); 
+
+
   }
 
 }

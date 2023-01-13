@@ -29,7 +29,7 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
 
   ngOnInit(): void {
     var id:number = +this._route.snapshot.paramMap.getAll('id');
-    console.log(id);
+ 
 
     this.conectarApiService.obtenerContinuadaId(id).subscribe(respuesta=>{
       this.detalleCurso=respuesta

@@ -43,12 +43,12 @@ function posicionarMenu() {
         $( ".buscador" ).hide();
         $( ".cross" ).hide();
         $( ".hamburger" ).show();
-        console.log(altura_del_menu);
+
        
     } else {
         $('.menu').removeClass('fixed');
         $('.wrapper').css('margin-top', '50px');
-        console.log(altura_del_menu);
+
     }
 }
 /* **************************************** */

@@ -59,5 +59,10 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/aliados.php',{headers});
   }
 
+  obtenerProgramaId(id:number): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/programa.php?id='+id,{headers});
+  }
+
   
 }
