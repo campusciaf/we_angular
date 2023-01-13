@@ -25,6 +25,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 /* ************************ */
 
 
+
 import { CalidadycrecimientoComponent } from './componente/calidadycrecimiento/calidadycrecimiento.component';
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { HeaderComponent } from './componente/header/header.component';
@@ -80,6 +81,7 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
     ReactiveFormsModule,
     HttpClientModule,
     NgMultiSelectDropDownModule.forRoot(),
+    
    
     
 
