@@ -5,16 +5,17 @@
         </div>
         <div class="col-xl-10 col-lg-10 col-md-10 col-10">
             <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                <div ngxSlickItem *ngFor="let slide of slides index as i" class="slide">
-                    <div (mouseover)="animarcalidad(i)" (mouseout)="noanimarcalidad(i)">
-                        <img src="{{slide.imagen}}" alt="{{slide.titulo}}" width="100%" [className]="'e-img-'+i">
-                        <div class="nombre-calidad"><span>{{slide.titulo}}</span></div>
+
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                    <div ngxSlickItem *ngFor="let datos of listarCalidadCrecimiento index as i" class="slide">
+                        <div (mouseover)="animarcalidad(i)" (mouseout)="noanimarcalidad(i)">
+                            <img src="https://ciaf.digital/public/web_calidad_crecimiento/{{datos.imagen_calidad}}" alt="{{datos.titulo_calidad}}" width="100%" [className]="'e-img-'+i">
+                            <div class="nombre-calidad"><span>{{datos.titulo_calidad}}</span></div>
+                        </div>
                     </div>
+                </ngx-slick-carousel>
 
-
-                </div>
-            </ngx-slick-carousel>
             <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
         </div>
     </div>

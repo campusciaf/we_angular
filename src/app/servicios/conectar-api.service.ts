@@ -64,5 +64,9 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/programa.php?id='+id,{headers});
   }
 
+  obtenerCalidadCrecimiento(): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/calidad_crecimiento.php',{headers});
+  }
   
 }

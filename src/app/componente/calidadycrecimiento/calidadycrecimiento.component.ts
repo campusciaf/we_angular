@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 
 declare var jQuery:any;
 declare var $:any;
@@ -15,19 +16,9 @@ export class CalidadycrecimientoComponent implements OnInit {
   public prev="assets/image/btn-prev-3.webp";
   public next="assets/image/btn-next-3.webp";
 
-  public pic1="assets/image/sistema-aseguramiento-calidad.webp";
-  public pic2="assets/image/investigaciones.webp";
-  public pic3="assets/image/relacionamiento-empresarial.webp";
-  public pic4="assets/image/egresados.webp";
-  public pic5="assets/image/rendicion-de-cuentas.webp";
 
-  slides = [
-    {imagen:this.pic1,titulo:'Sistema de Aseguramiento de la Calidad'},
-    {imagen:this.pic2,titulo:'Investigaciones e Internacionalización'},
-    {imagen:this.pic3,titulo:'Relacionamiento Empresarial'},
-    {imagen:this.pic4,titulo:'Egresados'},
-    {imagen:this.pic5,titulo:'Rendición de cuentas'}
-  ];
+
+
   slideConfig = {
     "slidesToShow": 4, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
     responsive: [
@@ -55,6 +46,9 @@ export class CalidadycrecimientoComponent implements OnInit {
   
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
+  
+  listarCalidadCrecimiento: any;
+
   prevImg(){
     this.slickModal.slickPrev();
   }
@@ -75,9 +69,15 @@ export class CalidadycrecimientoComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private conectarApiService:ConectarApiService) { }
 
   ngOnInit(): void {
+
+    this.conectarApiService.obtenerCalidadCrecimiento().subscribe(respuesta=>{
+      this.listarCalidadCrecimiento=respuesta;
+
+    });
+
   }
 
 }
