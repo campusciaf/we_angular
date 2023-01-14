@@ -1,0 +1,10 @@
+.slide img{
+    -webkit-transform:scale(1);
+    transform:scale(1); 
+    transition: all 1s;
+}
+
+.slide img:hover{
+    -webkit-transform:scale(1.3);
+    transform:scale(1.3); 
+}

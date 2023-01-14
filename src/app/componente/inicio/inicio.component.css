@@ -2,9 +2,15 @@
 
 .card-pos-creatividad{
     margin-top: 100px !important;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
 }
 
+.border-card{
+    border-left: 1px solid rgb(255, 255, 255);
+    height: 100px;
+    float: left;
+    margin-top: -80px;
+}
 .img-pos{
     margin-top: -75px;
 }
@@ -26,9 +32,11 @@
     margin: auto;
 }
 
-.complemento .campo-input{
-    background-color: rgba(0, 0, 0, 0);
-    color: #FFF;
+.titulo-creatividad{
+    height: 40px;
+}
+.titulo-modelo{
+    height: 50px;
 }
 /* *********************** cratividad e innovacion *************************/
 
