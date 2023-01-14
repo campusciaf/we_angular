@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
+declare var jQuery:any;
+declare var $:any;
+
 @Component({
   selector: 'app-calidadycrecimiento',
   templateUrl: './calidadycrecimiento.component.html',
@@ -58,6 +61,19 @@ export class CalidadycrecimientoComponent implements OnInit {
   nextImg(){
     this.slickModal.slickNext();
   }
+
+
+  animarcalidad(id:any){
+    $(".e-img-"+id).css("filter","saturate(180%)");
+    $(".e-img-"+id).css("transform","scale(1.3)");
+  }
+  noanimarcalidad(id:any){
+    $(".e-img-"+id).css("filter","saturate(0%)");
+    $(".e-img-"+id).css("transform","scale(1)");
+  }
+
+
+
 
   constructor() { }
 
