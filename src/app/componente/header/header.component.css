@@ -29,7 +29,12 @@ nav .nav-item{
     justify-content: space-between;
     text-align: center;
     padding: 0px;
+    transition: all 1s;
    
+    
+}
+nav .nav-item:hover{
+    background-color: #fff ;
     
 }
  nav .nav-item li{
@@ -43,8 +48,16 @@ nav .nav-item{
     cursor: pointer;
     text-decoration: none;
     width: 140px; 
+    transition: all 1s;
  }
-
+ nav .nav-item a:hover{
+    color: #79AB3A !important;
+ }
+ 
+ .active-link-dropdow{
+    background-color: #fff !important;
+    color:#79AB3A !important;
+ }
 .border-1{
     border: 1px solid greenyellow;
 }
@@ -66,7 +79,13 @@ nav .nav-item{
     padding: 14px 0px;
     border: none;
     width: 120px;
+    transition: all 1s;
    
+  }
+  .dropbtn:hover{
+    color:#79AB3A;
+    background-color: #fff !important;
+
   }
   .dropdown h3{
     font-size: 19px !important;
@@ -88,6 +107,8 @@ nav .nav-item{
     z-index: 1;
     border-top: 8px solid #001550;
     padding: 6px;
+    transition: all 1s;
+    opacity: 0;
   }
   
   .dropdown-content a {
@@ -101,7 +122,7 @@ nav .nav-item{
 
   .dropdown-content a:hover {background-color: #ddd;}
 
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {display: block; transition: all 1s; opacity: 1;}
   
   .dropdown:hover .dropbtn {background-color: #001550;}
 
@@ -167,6 +188,12 @@ nav .nav-item{
 }
 .redes-header img{
     width: 40px;
+    transition: all 1s;
+    margin-bottom: 2px;
+}
+.redes-header img:hover{
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
 }
 
 /* ********************** */

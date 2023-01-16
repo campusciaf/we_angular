@@ -40,7 +40,7 @@ footer .logo-creatividad p{
 	line-height: 12px;
 	padding-top: 10px;
 }
-::placeholder { 
+footer ::placeholder { 
     color: #fff; 
     font-size: 14px;
 }

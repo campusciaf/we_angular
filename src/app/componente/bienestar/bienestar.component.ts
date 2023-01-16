@@ -223,6 +223,11 @@ activo:any;
       $(".accion"+id).css("top","0px");
     }
 
+    activarLinkMenu(){
+      $("#uno").removeClass("active-link-dropdow");
+      $("#dos").removeClass("active-link-dropdow");
+    }
+
   constructor(private conectarApiService:ConectarApiService) { 
 
   }
@@ -243,7 +248,7 @@ activo:any;
     });
 
     
-
+    this.activarLinkMenu();
  
   }
 

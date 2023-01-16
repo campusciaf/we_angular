@@ -19,6 +19,12 @@ export class ContinuadaComponent implements OnInit {
 
   listarCursos:any;
   miCurso:any;
+  
+
+  activarLinkMenu(){
+    $("#uno").removeClass("active-link-dropdow");
+    $("#dos").removeClass("active-link-dropdow");
+  }
 
   constructor(private conectarApiService:ConectarApiService) {}
     consultar(id:number){
@@ -28,10 +34,14 @@ export class ContinuadaComponent implements OnInit {
   ngOnInit(): void {
     this.conectarApiService.obtenerContinuada().subscribe(respuesta=>{
       this.listarCursos=respuesta
-    }); 
+    });
+    
+    this.activarLinkMenu();
+
+    
   }
 
 
-
+  
 
 }

@@ -198,6 +198,10 @@ listarPrograma: any;
 
   ];
 
+  activarLinkMenu(){
+    $("#uno").addClass("active-link-dropdow");
+    $("#dos").removeClass("active-link-dropdow");
+  }
 
   constructor(private conectarApiService:ConectarApiService) { }
 
@@ -213,7 +217,8 @@ listarPrograma: any;
   
     }); 
 
-
+   this.activarLinkMenu();
+   
   }
 
 }

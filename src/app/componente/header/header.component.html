@@ -56,7 +56,7 @@
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                                 <div class="dropdown">
-                                    <button class="dropbtn">Carreras Universitarias</button>
+                                    <button class="dropbtn" id="uno">Carreras Universitarias</button>
                                     <div class="dropdown-content">
                                         <h3>Escuela de Ciencias administrativas</h3>
                                         <a href="#" class="" routerLink="/administracion"  routerLinkActive="active-link">Administración de Empresas</a>
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
 
-                                <div class="dropdown">
+                                <div class="dropdown" id="dos">
                                     <button class="dropbtn" >Carreras T. Laborales</button>
                                     <div class="dropdown-content">
 
@@ -147,107 +147,104 @@
 </nav>
 
 
-
-
 <!-- hasta aqui llega el buscador    -->
-
-  <div class="wrapper" *ngIf="false">aqui funciona el scroll</div>
-
+<div class="wrapper" *ngIf="false">aqui funciona el scroll</div>
 
 
-  <div class="redes-header">
 
-    <li><a href=""><img [src]="img_apfacebook" alt="facebook"></a></li>
-    <li><a href=""><img [src]="img_apinstagram" alt="Instagram"></a></li>
-    <li><a href=""><img [src]="img_apyoutube" alt="Youtube"></a></li>
-    <li><a href=""><img [src]="img_aptwitter" alt="Twitter"></a></li>
-    <li><a href=""><img [src]="img_aptiktok" alt="Tik Tok"></a></li>
+<div class="redes-header">
+
+<li><a href=""><img [src]="img_apfacebook" alt="facebook"></a></li>
+<li><a href=""><img [src]="img_apinstagram" alt="Instagram"></a></li>
+<li><a href=""><img [src]="img_apyoutube" alt="Youtube"></a></li>
+<li><a href=""><img [src]="img_aptwitter" alt="Twitter"></a></li>
+<li><a href=""><img [src]="img_aptiktok" alt="Tik Tok"></a></li>
 
 
-  </div>
+</div>
 
-    <div class="api-whatsapp">
-        <a href="https://api.whatsapp.com"  target="_blank">
-            <img src="assets/image/icono-whatsapp.svg" alt="Mi SVG feliz"/>
-        </a>
+<div class="api-whatsapp">
+    <a href="https://api.whatsapp.com"  target="_blank">
+        <img src="assets/image/icono-whatsapp.svg" alt="Mi SVG feliz"/>
+    </a>
+</div>
+
+<div class="row m-menu bg-1" *ngIf="false">
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="dropup pt-2">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>Conoce el programa</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
     </div>
 
-    <div class="row m-menu bg-1" *ngIf="false">
-
-        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-            <div class="dropup pt-2">
-                    <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
-                        <div class="col-12">
-                            <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                        </div>
-                        <div class="col-12">
-                            <p>Conoce el programa</p>
-                        </div>
-                    </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link 1</a></li>
-                  <li><a class="dropdown-item" href="#">Link 2</a></li>
-                  <li><a class="dropdown-item" href="#">Link 3</a></li>
-                </ul>
-              </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-            <div class="dropup">
-                    <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
-                        <div class="col-12">
-                            <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                        </div>
-                        <div class="col-12">
-                            <p>carreras</p>
-                        </div>
-                    </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link 1</a></li>
-                  <li><a class="dropdown-item" href="#">Link 2</a></li>
-                  <li><a class="dropdown-item" href="#">Link 3</a></li>
-                </ul>
-              </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-            <div class="dropup">
-                    <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
-                        <div class="col-12">
-                            <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                        </div>
-                        <div class="col-12">
-                            <p>carreras</p>
-                        </div>
-                    </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link 1</a></li>
-                  <li><a class="dropdown-item" href="#">Link 2</a></li>
-                  <li><a class="dropdown-item" href="#">Link 3</a></li>
-                </ul>
-              </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-            <div class="dropup">
-                    <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
-                        <div class="col-12">
-                            <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                        </div>
-                        <div class="col-12">
-                            <p>carreras</p>
-                        </div>
-                    </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link 1</a></li>
-                  <li><a class="dropdown-item" href="#">Link 2</a></li>
-                  <li><a class="dropdown-item" href="#">Link 3</a></li>
-                </ul>
-              </div>
-        </div>
-
-
-
-
-   
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>carreras</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
     </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>carreras</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>carreras</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
+    </div>
+
+
+
+
+
+</div>

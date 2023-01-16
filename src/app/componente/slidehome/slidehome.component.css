@@ -1,0 +1,9 @@
+
+.efecto-img-slide{
+    -webkit-transform:scale(1);transform:scale(1);
+    transition: all 1s;
+}
+
+.efecto-img-slide:hover{
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+}

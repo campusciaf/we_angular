@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { CargarjsService } from 'src/app/servicios/cargarjs.service';
 
 
 declare var jQuery:any;
@@ -22,14 +20,18 @@ export class InicioComponent implements OnInit {
 
   ]
 
-
-  constructor(private _CargarJsService:CargarjsService,) {
+  activarLinkMenu(){
+    $("#uno").removeClass("active-link-dropdow");
+    $("#dos").removeClass("active-link-dropdow");
+  }
+  
+  constructor() {
 
    }
   ngOnInit() {
 
 
-
+    this.activarLinkMenu();
 
   }
 }
