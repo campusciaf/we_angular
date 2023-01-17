@@ -8,7 +8,7 @@
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
                 <div ngxSlickItem *ngFor="let datos of listarAliados; index as i" class="slide">
                     
-                    <img src="https://ciaf.digital/public/web_aliados/{{datos.imagen_aliado}}" width="100%" alt="{{datos.nombre_aliado}}">
+                    <img src="https://ciaf.digital/public/web_aliados/{{datos.imagen_aliado}}" width="100%" height="auto" alt="{{datos.nombre_aliado}}">
 
 
                 </div>

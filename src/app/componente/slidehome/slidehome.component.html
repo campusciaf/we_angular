@@ -1,8 +1,8 @@
 <ngb-carousel >
 	<ng-template *ngFor="let slides of listarSlider; let iControl2=index; index as i" ngbSlide>
 		<div class="picsum-img-wrapper efecto-img-slide">
-      		<img src="https://ciaf.digital/public/web_baner/{{slides.img_pc}} " class="d-xl-block d-lg-block d-md-block d-none w-100" alt="...">
-			<img src="https://ciaf.digital/public/web_baner/{{slides.img_movil}} " class="d-xl-none d-lg-none d-md-none d-block w-100" alt="...">
+      		<img src="https://ciaf.digital/public/web_baner/{{slides.img_pc}} " class="d-xl-block d-lg-block d-md-block d-none w-100" alt="{{slides.titulo}}" width="100%" height="auto">
+			<img src="https://ciaf.digital/public/web_baner/{{slides.img_movil}} " class="d-xl-none d-lg-none d-md-none d-block w-100" alt="{{slides.titulo}}" width="100%" height="auto">
 		</div>
 		<div class="carousel-caption">
 			<h3>{{slides.titulo}} </h3>

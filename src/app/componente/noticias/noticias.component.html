@@ -21,13 +21,13 @@
                                             <div class="month">Mar</div>
                                         </div> -->
                                         <div *ngIf="noticias.material=='2'">
-                                            <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="">
+                                            <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}" width="100%" height="auto">
                                         </div>
                                         <div *ngIf="noticias.material=='1'">
 
                                             <a (click)="open(content);videoYoutube(noticias.url_video,noticias.titulo_noticias)" style="cursor:pointer">
                                                 <div class="link-video"><img src="assets/image/video.webp"></div>
-                                                <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}">
+                                                <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}" width="100%" height="auto">
                                             </a>
 
                                         </div>
@@ -41,10 +41,14 @@
                                         <div class="post-meta">
                                             <div class="row">
                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">
-                                                    <span class="timestamp"><img src="{{calendario}}" alt="Publicado"> Pub. {{noticias.fecha_noticias | date:"d MMM"}}</span>
+                                                    <span class="timestamp">
+                                                        <img src="{{calendario}}" alt="Publicado"> Pub. {{noticias.fecha_noticias | date:"d MMM"}}
+                                                    </span>
                                                 </div>
                                                 <div class="col-xl-2 col-lg-2 col-md-2 col-4 pt-1 mb-2"> 
-                                                    <span class="comments">39 <img src="{{vistas}}" alt="Publicado"> </span>
+                                                    <span class="comments">39 
+                                                        <img src="{{vistas}}" alt="Publicado"> 
+                                                    </span>
                                                 </div>
                                                 <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center"> 
                                                     <a href="" class="btn btn-light btn-sm text-black">Leer más</a>

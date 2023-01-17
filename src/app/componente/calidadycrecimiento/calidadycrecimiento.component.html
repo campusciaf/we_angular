@@ -10,7 +10,7 @@
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
                     <div ngxSlickItem *ngFor="let datos of listarCalidadCrecimiento index as i" class="slide">
                         <div (mouseover)="animarcalidad(i)" (mouseout)="noanimarcalidad(i)">
-                            <img src="https://ciaf.digital/public/web_calidad_crecimiento/{{datos.imagen_calidad}}" alt="{{datos.titulo_calidad}}" width="100%" [className]="'e-img-'+i">
+                            <img src="https://ciaf.digital/public/web_calidad_crecimiento/{{datos.imagen_calidad}}" alt="{{datos.titulo_calidad}}" width="100%" height="auto" [className]="'e-img-'+i">
                             <div class="nombre-calidad"><span>{{datos.titulo_calidad}}</span></div>
                         </div>
                     </div>
