@@ -3,7 +3,7 @@ import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { end } from '@popperjs/core';
+
 
 
 declare var jQuery:any;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
-
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 declare var jQuery:any;
 declare var $:any;
@@ -155,7 +155,8 @@ isValid2:boolean = false;
 isValid3:boolean = false;
 isValid4:boolean = false;
 
-listarPrograma: any;
+  listarPrograma: any;
+  listarProgramaVideo: any;
 
   paginas(pagina:string){
 
@@ -203,7 +204,15 @@ listarPrograma: any;
     $("#dos").removeClass("active-link-dropdow");
   }
 
-  constructor(private conectarApiService:ConectarApiService) { }
+  total:any;
+ 
+  videoYoutube(valor:any){
+    this.total=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + valor); 
+    
+  }
+
+
+  constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { }
 
   ngOnInit(): void {
     this.activo="1";
@@ -216,6 +225,13 @@ listarPrograma: any;
       this.listarPrograma=respuesta
   
     }); 
+
+    this.conectarApiService.obtenerProgramaId(id).subscribe(respuesta2=>{
+      this.listarProgramaVideo=respuesta2[0]["video_descripcion"];
+ 
+      this.videoYoutube(this.listarProgramaVideo);
+    });
+    
 
    this.activarLinkMenu();
    
