@@ -44,28 +44,29 @@
                     <div class="col-xl-3 col-lg-6 col-md-8 col-10">
 
                         <div class="formulario pt-4">
-                            <form>
+                            <form #clienteForm="ngForm" (ngSubmit)="agregar()">
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white" id="basic-addon1">1</span>
-                                  <input type="text" class="form-control campo-input" placeholder="Nombre completo" aria-label="username" aria-describedby="basic-addon1" required="">
+                                  <input type="text" class="form-control campo-input" placeholder="Nombre completo" aria-label="username" aria-describedby="basic-addon1" required="" name="valor" [(ngModel)]="micliente.valor">
                                </div>
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white " id="basic-addon1">2</span>
-                                  <input type="text" class="form-control campo-input" placeholder="Correo" aria-label="email" aria-describedby="basic-addon1" required="">
+                                  <input type="text" class="form-control campo-input" placeholder="Correo" aria-label="email" aria-describedby="basic-addon1" required="" name="valor2" [(ngModel)]="micliente.valor2">
                                </div>
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white" id="basic-addon1">3</span>
-                                  <input type="number" class="form-control campo-input" placeholder="Celular" aria-label="telefono" aria-describedby="basic-addon1" required="">
+                                  <input type="number" class="form-control campo-input" placeholder="Celular" aria-label="telefono" aria-describedby="basic-addon1" required="" name="valor3" [(ngModel)]="micliente.valor3">
                                </div>
                                <div class="input-group mb-3 input-group-lg">
                                     <span class="input-group-text bg-3 text-white" id="basic-addon1">4</span>
                                    
-                                    <select name="programa" class="form-control">
+                                    <select class="form-control" name="valor4" [(ngModel)]="micliente.valor4">
                                         <option value="">Seleccionar Programa</option>
-                                        <option value="1">Administración de Empresas</option>
-                                        <option value="1">Contaduría Pública</option>
-                                        <option value="1">Ingeniería de Software</option>
-                                        <option value="1">Seguridad y salud en el Trabajo</option>
+                                        <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas</option>
+                                        <option value="Técnica Profesional en Gestión Financiera">Contaduría Pública</option>
+                                        <option value="Nivel 1 - Técnica profesional en programación de software">Ingeniería de Software</option>
+                                        <option value="Nivel 1 - Técnico Profesional en Procesos de Seguridad y Salud en el Trabajo">Seguridad y salud en el Trabajo</option>
+                                        <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Ingeniería Industrial</option>
                                     </select>
 
                                 </div>

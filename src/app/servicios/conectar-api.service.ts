@@ -68,5 +68,11 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.get(this.API+ '/calidad_crecimiento.php',{headers});
   }
+
+  insertarCliente(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    // return this.clienteHttp.post(this.API+ '/agregarDatos.php',{headers});
+    return this.clienteHttp.post(this.API+ '/agregarDatos.php',JSON.stringify(cliente),{headers});
+  }
   
 }
