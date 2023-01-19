@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { cliente } from 'src/app/clases/cliente';
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
-
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 declare var jQuery:any;
 declare var $:any;
@@ -26,20 +27,39 @@ export class InicioComponent implements OnInit {
     $("#uno").removeClass("active-link-dropdow");
     $("#dos").removeClass("active-link-dropdow");
   }
-  
+ 
+  form!: FormGroup;
+
   micliente = new cliente('','','','');
-  constructor(private conectarApiService:ConectarApiService) {}
+  constructor(private conectarApiService:ConectarApiService,private formBuilder: FormBuilder) {
+    this.buildForm();
+  }
+
+
+
 
   ngOnInit() {
     this.activarLinkMenu();
+
   }
 
-  agregar(){
 
-       this.conectarApiService.insertarCliente(this.micliente).subscribe(respuesta=>{
-      this.insertarNuevoCliente=respuesta;
-        
-      }); 
+  private buildForm(){
+    this.form = this.formBuilder.group({
+      nombre: [0, Validators.min(18)],
+      correo: [0, Validators.min(18)],
+      celular: [0, Validators.min(18)],
+     
+    })
+  }
+
+
+  agregar(){
+    console.log(this.form.value);
+      // this.conectarApiService.insertarCliente(this.micliente).subscribe(respuesta=>{
+      //   this.insertarNuevoCliente=respuesta;
+      // }); 
+
   }
 
 
