@@ -44,24 +44,33 @@
                     <div class="col-xl-3 col-lg-6 col-md-8 col-10">
 
                         <div class="formulario pt-4">
-                            <form [formGroup]="form" (ngSubmit)="agregar()">
+                            <form [formGroup]="myForm" (ngSubmit)="agregar()">
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white" id="basic-addon1">1</span>
-                                  <input type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre" [(ngModel)]="micliente.nombre" formControlName="nombre">
+                                    <input matInput type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre"  formControlName="nombre" required>
                                </div>
+
+                               <div *ngFor="let validation of account_validation_messages.nombre">
+                                    <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
                             
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white " id="basic-addon1">2</span>
-                                  <input type="text" class="form-control campo-input" placeholder="Correo" aria-label="email" aria-describedby="basic-addon1" required="" name="correo" [(ngModel)]="micliente.correo" formControlName="correo">
+                                  <input matInput type="text" class="form-control campo-input" placeholder="Correo" aria-label="email" aria-describedby="basic-addon1" required="" name="correo"  formControlName="correo">
                                </div>
+                               <div *ngFor="let validation of account_validation_messages.correo">
+                                <div class="error-message" *ngIf="myForm.get('correo')?.hasError(validation.type) && (myForm.get('correo')?.dirty || myForm.get('correo')?.touched)">{{validation.message}}
+                                </div>
+                            </div>
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white" id="basic-addon1">3</span>
-                                  <input type="number" class="form-control campo-input" placeholder="Celular" aria-label="telefono" aria-describedby="basic-addon1" required="" name="celular" [(ngModel)]="micliente.celular" formControlName="celular">
+                                  <input matInput type="number" class="form-control campo-input" placeholder="Celular" aria-label="telefono" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular">
                                </div>
-                               <!-- <div class="input-group mb-3 input-group-lg">
+                               <div class="input-group mb-3 input-group-lg">
                                     <span class="input-group-text bg-3 text-white" id="basic-addon1">4</span>
                                    
-                                    <select class="form-control" name="fo_programa" [(ngModel)]="micliente.fo_programa" formControlName="fo_programa">
+                                    <select matInput class="form-control" name="fo_programa"  formControlName="fo_programa">
                                         <option value="">Seleccionar Programa</option>
                                         <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas</option>
                                         <option value="Técnica Profesional en Gestión Financiera">Contaduría Pública</option>
@@ -70,19 +79,19 @@
                                         <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Ingeniería Industrial</option>
                                     </select>
 
-                                </div> -->
+                                </div> 
 
                               
-                               <!-- <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
                                   <label class="form-check-label" for="flexCheckDefault">
                                      <p class="copy text-left text-white" style="line-height: 10px;">
                                         Acepto el envío de información a mi correo electrónico. He revisado la politica de protección de datos y la politica de devoluciones y acumulados.
                                     </p>
                                   </label>
-                               </div> -->
+                               </div>
                                <div class="col-xl-12 text-center">
-                                    <button type="submit" class="btn bg-3 btn-lg">Enviar</button>
+                                    <button type="submit" class="btn bg-3 btn-lg" [disabled]="!myForm.valid">Enviar</button>
                                </div>
                             </form>
                          </div>
@@ -146,4 +155,5 @@
 <!-- ******************************** -->
 
 <app-aliados></app-aliados>
+
 

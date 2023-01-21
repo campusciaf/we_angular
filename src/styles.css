@@ -563,7 +563,13 @@ figure{
 }
 /* ***************************** */
 
-
+/*  mensaje de error en los formularios */
+.error-message{
+    width: 100%;
+    color: rgb(216, 70, 70);
+    margin-top: -15px;
+}
+/* ***************************************** */
 /* ***************************** */
 @media (max-width:1024px){
     .btn-financiacion{
