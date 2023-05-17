@@ -44,6 +44,9 @@ import { EventosComponent } from './componente/eventos/eventos.component';
 import { ContinuadaDetalleComponent } from './componente/continuada-detalle/continuada-detalle.component';
 import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.component';
 import { ConocenosComponent } from './componente/conocenos/conocenos.component';
+import { MotocicletasComponent } from './componente/motocicletas/motocicletas.component';
+import { AdministrativosaludComponent } from './componente/administrativosalud/administrativosalud.component';
+
 
 
 
@@ -71,6 +74,9 @@ import { ConocenosComponent } from './componente/conocenos/conocenos.component';
     ContinuadaDetalleComponent,
     EnfermeriaComponent,
     ConocenosComponent,
+    MotocicletasComponent,
+    AdministrativosaludComponent,
+
 
   ],
   imports: [

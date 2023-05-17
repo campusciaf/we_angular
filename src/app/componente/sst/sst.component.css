@@ -105,3 +105,51 @@
 	
 }
 /* ***************************** */
+.m-menu {
+    display: none;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 4;
+}
+
+.m-menu a {
+    text-decoration: none !important;
+}
+.m-menu a p{
+    color: #fff;
+    font-size: 10px !important;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none !important;
+	line-height: 10px;
+}
+
+.m-menu img {
+	width: 26px;
+}
+.active-m{
+	background-color: #5a802d !important;
+	height: 100%;
+}
+@media(max-width:768px){
+	.bg-software{
+		background-color: rgba(0,97,168,1);
+	}
+    .m-menu {
+        display: block;
+        display: flex;
+    }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+	.m-menu {
+		display: block;
+		display: flex;
+		height: 55px;
+		overflow: hidden;
+	}
+}

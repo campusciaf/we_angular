@@ -1,11 +1,13 @@
 <section>
-    <div class="row banner-interno">
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
-            <img src="{{banner_pc}}" alt="Administración de empresas">
-       </div>
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
-        <img src="{{banner_movil}}" alt="Administración de empresas">
-   </div>
+    <div class="row banner-interno" *ngFor="let datos of listarPrograma">
+     
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas}}" alt="Administración de empresas">
+        </div>
+        <div class="col-xx-l12 col-xl-12 col-lg-12 col-md-12 col-12 movil">
+            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas_movil}}" alt="Administración de empresas">
+        </div>
+        
         <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
             <div class="row justify-content-center vertical-align-center">
 
@@ -13,14 +15,14 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-8 col-9 text-white">
                             <div class="lema text-center">Técnico Laboral en</div>
-                            <h1 class="text-center">Auxiliar <br>de Emfermería</h1>
-                            <p class="snies text-right">Resolución: 15449 del 30 Dic. 2019</p>
-                            <p class="lema text-center"> Gerente creativo e innovador  de empresas y emprendimientos </p>
+                            <h1 class="text-center">Auxiliar <br>de Enfermería</h1>
+                            <p class="snies text-right">Res. {{datos.snies}}</p>
+                            <p class="lema text-center"> {{datos.frase_programa}} </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 pt-4">
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-xl-11 col-lg-11 col-md-11 col-8 wrap-programas">
@@ -30,21 +32,21 @@
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-hourglass"></i><b> Programa</b> Técnico *</b></div>
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-water"></i> Duración</b> 3 semestres</div>
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-bookmark-heart"></i> Diferentes</b> Jornadas</div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-code"></i> Modalidad</b> Presencial (PAT)</div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-code"></i> Modalidad</b> Presencial</div>
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-12" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''">
-                                        Conoce elPrograma
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                        Conoce el programa
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-12" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''">
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Plan de estudios
                                     </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-12" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''">
+                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Valores y financiación directa
                                     </a>
-                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-12" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
                                         Inicia tu proceso de matrícula
                                     </a>
                                 </div>
@@ -61,3 +63,459 @@
     </div>
 </section>
 
+
+<section class="p-0 m-0">
+
+    <div id="content-programa">
+
+        <div id="pag-one" *ngIf="isValid1">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4 d-xl-block d-lg-block d-md-none d-none"></div>
+
+                <div class="col-xl-4 col-lg-5 col-md-10 col-12" *ngFor="let datos2 of listarPrograma">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <h2 class="titulo-2 pb-4">{{datos2.titulo_descripcion}}</h2>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                            <p class="text-justify">
+                                {{datos2.descripcion_programa}}
+                                
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-5 col-md-10 col-10 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <iframe [src]="total" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+                
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12"></div>
+
+                <div class="col-xl-4 col-lg-5 col-md-10 col-10" *ngFor="let datos3 of listarPrograma">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <img src="https://www.ciaf.digital/public/web_programa_descripcion/{{datos3.imagen_descripcion}}" alt="{{datos3.nombre_programa}}" width="100%" height="auto">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-5 col-md-10 col-12">
+                    <div class="row justify-content-center">
+
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <h2 class="titulo-2">Campo Profesional:</h2>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-10 desempenate" *ngFor="let datos4 of listarDesempenate">
+                            <li> <img src="{{img_li}}" alt="desempeñate"> {{datos4.nombre_desempenate}}.</li>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-xl-8 col-lg-8 col-md-8 col-10 py-4 my-4"><hr></div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                    <div class="row bg-image-1 py-4 justify-content-end">
+
+                       <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-10 d-flex align-items-end pb-4">
+                        <img [src]="tres_semestres" alt="Programas en 3 semestres" width="350px" height="144px">
+                       </div>
+
+                        
+                    </div>
+                   
+                </div>
+
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-right py-4">
+                    <a (click)="paginas('2')" class="btn" (click)="activo='2'">
+                        Ve al plan de estudios
+                        <img src="{{next}}" alt="boton siguiente">
+                    </a>
+                </div>
+
+            </div> 
+
+        </div><!-- cierra pagina uno -->
+
+        <div id="pag-two" *ngIf="isValid2">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4 d-xl-block d-lg-block d-md-block d-none"></div>
+                        
+                        <div class="col-xl-10 py-4">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-9 col-md-8 col-12">
+                                    <h2 class="text-left">Ahora... descubre el plan de estudios</h2>
+                                </div>
+                                <div class="col-xl-4 col-lg-3 col-md-4 col-12">
+                                    <a href="" class="btn"> 
+                                        <span class="asterisco">150 créditos</span><br>
+                                        <img src="{{descargar}}" alt="boton siguiente">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-6 rounded-3 py-4 my-4 conoceplan">
+
+                            <div class="row justify-content-center">
+                                <div class="col-xl-12 text-center">
+                                    <h2 class="titulo-2 pt-4">Técnico Laboral en Auxiliar de Enfermería</h2>
+                                    <p>Con capacidad para realizar aplicaciones en un ambiente y con herramientas específicas.</p>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+
+
+                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
+                                   <div class="row">
+                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                                            <div ngxSlickItem *ngFor="let datos of listarSemestres1; index as i" class="slide">
+                                                <ng-container>
+                                                    <div class="semestre m-4 bg-sem{{i+1}}">
+                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
+                                                        <div class="desplegar">
+                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
+                                                        </div>
+                                                        <div *ngFor="let mate of listarMaterias">
+                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </ngx-slick-carousel>
+                                   </div>
+                                 </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6 col-mb-6 col-6  py-4">
+                            <a (click)="paginas('1')" class="btn" (click)="activo='1'">
+                                <img src="{{prev}}" alt="boton siguiente"> 
+                                Regresar
+                                
+                            </a>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6 col-mb-6 col-6 text-right py-4">
+                            <a (click)="paginas('3')" class="btn" (click)="activo='3'">
+                                Conoce nuestra financiación
+                                <img src="{{next}}" alt="boton siguiente">
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            
+       
+
+        </div><!-- cierra pagina dos -->
+
+        <div id="pag-three" *ngIf="isValid3">
+
+            <div class="row">
+                
+                    <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                        <div class="row financiacion-interno">
+                            <img src="{{banner_financiacion}}" alt="Financiación 0% interes">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 financiacion-contenido ">
+                               <div class="row justify-content-center vertical-align-center h-100 text-center">
+                                    <div class="col-xl-8 col-lg-8 col-md-9 col-10">
+                                        <h2 class="text-white tamano-1"> FINANCIACIÓN 0% INTERÉS </h2>
+                                        <p class="text-1">Garantizamos descuentos durante TODA tu carrera</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+            </div> 
+
+            <div class="row justify-content-center valoresyfinanciacion">
+                <div class="col-xl-3 col-lg-3 col-md-10 col-8 border-right-1">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-12 col-md-5 col-10">
+                            <h2 class="titulo-2 text-3 pt-4">Financiación directa:</h2>
+                        </div>
+                        <div class="col-xl-8 col-lg-10 col-md-5 col-10 pt-4">
+                            <p class="text-right text-1">
+                                Facil<br>
+                                Sin fiadores<br>
+                                Sin revisar centrales de riesgo<br>
+                                Y con solo 2 clicks
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-10">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-1 numero-financiacion text-3 hv-100 vertical-align-center">1</div>
+                        <div class="col-xl-8 col-md-8 col-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
+                            <div class="row">
+                                <span class="col-12 fs-5 pt-4">Valor inscripción</span>
+                                <span class="col-12 fs-1">$100.446</span><br>
+                                <span class="small">Incluye seguro</span> 
+                                <span class="small">(Ins. $90.141 + $10.305))</span>
+                                <span class="small">(Pago único)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-10">
+                    <div class="row d-flex justify-content-center vertical-align-center">
+
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-1 numero-financiacion text-3 hv-100">2</div>
+                        <div class="col-xl-8 col-md-8 col-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
+                            <div class="row">
+                              
+                                <span class="col-12 fs-5">Matrícula Ordinaria</span>
+                                <span class="fs-6 text-decoration-line-through">$2.500.000 </span>
+                                <span class="col-12 fs-1">$1.563.038</span>
+                                <span class="small">Estos valores incrementarán de acuerdo al nivel de formación. (conoce más)</span> 
+                                <span class="col-12 fs-2">Jornadas</span>
+                                <span class="small">Diurna, nocturna, fines de semana y sólo sábados</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+
+                <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                    <div class="row beneficios-interno">
+                        <img src="{{beneficios}}" alt="Beneficios">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 beneficios-contenido ">
+                           <div class="row justify-content-center vertical-align-center h-100 text-center">
+
+                                <div class="col-xl-2 col-lg-2 col-md-12 col-10 text-white bolder-1 py-xl-1 py-lg-1 py-md-1 py-4">
+                                    <span class="fs-3">BENEFICIOS</span>
+                                </div>
+                                
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Metodologías de <br>Aprendizaje Creativo
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Jornadas <br>Diurna, nocturna <br>Fines de semana
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Descuentos en <br>tu matrícula
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Financiación <br>Directa y sin <br>Intereses
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Recibe <br>3 Títulos
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block py-2"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+
+                
+                <div class="col-xl-5 col-lg-5 col-mb-5 col-5 py-4">
+                    <a (click)="paginas('2')" class="btn" (click)="activo='2'">
+                        <img src="{{prev}}" alt="boton siguiente"> 
+                        Regresar
+                        
+                    </a>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-mb-5 col-5 text-right py-4">
+                    <a (click)="paginas('4')" class="btn" (click)="activo='4'">
+                        Ahora sí, vive la experiencia. ¡INSCRÍBETE! 
+                        <img src="{{next}}" alt="boton siguiente">
+                    </a>
+                </div>
+
+            </div>
+
+            
+
+        </div><!-- cierra el tres -->
+
+        <div id="pag-four" *ngIf="isValid4">
+
+            <div class="row d-flex justify-content-center">
+        
+                <div class="col-xl-12 col-lg-10 col-md-10 col-10 text-center py-4 my-4">
+                    <h2 class="titulo-2 tamano-1 py-4">Inscripción, asesoría y matrícula</h2>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-center pb-4 my-4"><hr></div>
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-center pb-4 my-4">
+                   <h3 class="titulo-3 tamano-2"> La experiencia inicia aquí</h3>
+                </div>
+
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10 ">
+                    <div class="row">
+
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                            <div ngxSlickItem *ngFor="let datos of listarContacto; index as i" class="slide">
+                                <ng-container>
+                                  
+                                       
+                                        <div class=" bg-1 text-white border-bottom-1 text-center m-4">
+                                            <div class="inicia-titulo"><h4 class="p-4">{{datos.titulo}}</h4></div>
+                                            <img src="{{datos.pic}}" alt="{{datos.pic}}" width="auto" height="auto" class="mx-auto">
+                                            <div class="inicia-detalle"><span class="small">{{datos.detalle}}</span></div>
+                                            <div class="text-center p-4 ">
+                                                <a href="{{datos.link}}" target="_blank" class="btn btn-light">Inscripción</a>
+                                            </div>
+                                        </div>
+                           
+                                    
+                                </ng-container>
+                            </div>
+                        </ngx-slick-carousel>
+
+  
+                    </div>
+
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center py-4 my-4"></div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-3 py-4 my-4">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-10 text-white">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0 fs-4">Conoce</div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0 inicia-nuestro">Nuestro</div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 fs-4 p-0 m-0">ADN</div>
+                        </div> 
+                        <div class="col-xl-5 col-lg-6 col-md-6 col-10 text-white fs-5">
+
+                            <ol>
+                                <li> Metodologías de aprendizaje<span class="bolder-1"> creativas</span> </li>
+                                <li> Modelo presencial <span class="bolder-1">asistido por tecnologías.</span></li>
+                                <li> Financiación <span class="bolder-1">directa, sin intereses, sin fiadores y sin revisar centrales de riesgo. </span></li>
+                                <li> Formación por <span class="bolder-1">ciclos.</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-10 col-lg-10 col-mb-10 col-10  py-4">
+                    <a (click)="paginas('3')" class="btn" (click)="activo='3'">
+                        <img src="{{prev}}" alt="boton siguiente"> 
+                        Regresar
+                        
+                    </a>
+                </div>
+
+
+
+            </div>
+
+        </div><!-- cierra pagina cuatro -->
+
+
+    </div>
+</section>
+
+<div class="row m-menu bg-1">
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-1-1">
+            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Conoce <br>el programa</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-2-1">
+            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Plan de <br>estudios</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-3-1">
+            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Valores y <br>Financiación</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-4-1">
+            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Iniciar proceso <br>de matricula</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3" *ngIf="false">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>Inicia tu <br>proceso de matricula</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
+    </div>
+
+
+
+
+
+</div>
