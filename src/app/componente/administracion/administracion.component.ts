@@ -49,75 +49,84 @@ listarSemestres3 = [
 ];
 
 listarMaterias =[
-  {semestre:1,materia:'Matemáticas I'},
-  {semestre:1,materia:'Proyecto de vida'},
-  {semestre:1,materia:'Teoría del conocimiento'},
-  {semestre:1,materia:'Lógica de programación'},
-  {semestre:1,materia:'Introducción a la informática'},
-  {semestre:1,materia:'Introducción a la Ingeniería de Software'},
+  {semestre:1,materia:'Matemática aplicada'},
+  {semestre:1,materia:'Constitución y cátedra de paz'},
+  {semestre:1,materia:'T.I.C'},
+  {semestre:1,materia:'Fundamentos de economía'},
+  {semestre:1,materia:'Administración'},
+  {semestre:1,materia:'Teorías y tendencias mercadeo'},
+  {semestre:1,materia:'Lectoescritura'},
 
-  {semestre:2,materia:'Matemáticas II'},
-  {semestre:2,materia:'Programación II'},
-  {semestre:2,materia:'Lecto-escritura'},
-  {semestre:2,materia:'Diseño WEB'},
-  {semestre:2,materia:'Metodología de la Investigación'},
-  {semestre:2,materia:'Pensamiento empresarial tendencias de emprendimiento'},
+  {semestre:2,materia:'Estadística aplicada'},
+  {semestre:2,materia:'Legislación comercial'},
+  {semestre:2,materia:'Microeconomía'},
+  {semestre:2,materia:'Contabilidad aplicada'},
+  {semestre:2,materia:'>Proceso administrativo'},
+  {semestre:2,materia:'Teoría del conocimiento'},
+  {semestre:2,materia:'Electiva I'},
 
-  {semestre:3,materia:'Fisica I'},
-  {semestre:3,materia:'Estructura de datos'},
-  {semestre:3,materia:'Programación III'},
-  {semestre:3,materia:'Plan de negocios'},
-  {semestre:3,materia:'Herramientas multiplataformas redes I'},
-  {semestre:3,materia:'Cálculo multivariado'},
+  {semestre:3,materia:'Algebra Lineal'},
+  {semestre:3,materia:'Macroeconomía'},
+  {semestre:3,materia:'Matemática financiera'},
+  {semestre:3,materia:'Gestión documental en las organizaciones'},
+  {semestre:3,materia:'Comportamiento del consumidor'},
+  {semestre:3,materia:'Procesos talento humano'},
+  {semestre:3,materia:'Anteproyecto'},
 
-  {semestre:4,materia:'Legislación'},
-  {semestre:4,materia:'Trabajo de grado'},
-  {semestre:4,materia:'Bases de datos I'},
-  {semestre:4,materia:'Algebra lineal'},
-  {semestre:4,materia:'Programación y servicios WEB'},
-  {semestre:4,materia:'Principios de la Ingeniería de Software'},
+  {semestre:4,materia:'Legislación laboral'},
+  {semestre:4,materia:'Procesos productivos'},
+  {semestre:4,materia:'Operación de inventarios'},
+  {semestre:4,materia:'Teorías de la negociación y servicios a clientes'},
+  {semestre:4,materia:'Opción de grado'},
+  {semestre:4,materia:'Cultura de la legalidad y la transparencia'},
+  {semestre:4,materia:'Electiva II'},
+  {semestre:4,materia:'Planeación estratégica'},
 
-  {semestre:5,materia:'Matemáticas I'},
-  {semestre:5,materia:'Proyecto de vida'},
-  {semestre:5,materia:'Teoría del conocimiento'},
-  {semestre:5,materia:'Lógica de programación'},
-  {semestre:5,materia:'Introducción a la informática'},
-  {semestre:5,materia:'Introducción a la Ingeniería de Software'},
+  {semestre:5,materia:'Cálculo'},
+  {semestre:5,materia:'Estadística inferencial'},
+  {semestre:5,materia:'Legislación tributario'},
+  {semestre:5,materia:'Hojas de cálculo avanzadas y aplicadas'},
+  {semestre:5,materia:'Contabilidad de costos I'},
+  {semestre:5,materia:'Estructura y comunicación organizacional'},
+  {semestre:5,materia:'Habilidades comunicativas orales'},
 
-  {semestre:6,materia:'Matemáticas II'},
-  {semestre:6,materia:'Programación II'},
-  {semestre:6,materia:'Lecto-escritura'},
-  {semestre:6,materia:'Diseño WEB'},
-  {semestre:6,materia:'Metodología de la Investigación'},
-  {semestre:6,materia:'Pensamiento empresarial tendencias de emprendimiento'},
+  {semestre:6,materia:'Contabilidad de costos II'},
+  {semestre:6,materia:'Análisis financiero'},
+  {semestre:6,materia:'S.I.G'},
+  {semestre:6,materia:'Investigación de mercados'},
+  {semestre:6,materia:'Métodos de investigación'},
+  {semestre:6,materia:'Responsabilidad social'},
 
-  {semestre:7,materia:'Fisica I'},
-  {semestre:7,materia:'Estructura de datos'},
-  {semestre:7,materia:'Programación III'},
-  {semestre:7,materia:'Plan de negocios'},
-  {semestre:7,materia:'Herramientas multiplataformas redes I'},
-  {semestre:7,materia:'Cálculo multivariado'},
+  {semestre:7,materia:'Presupuestos'},
+  {semestre:7,materia:'Auditoría administrativa y control interno'},
+  {semestre:7,materia:'Distribución de planta'},
+  {semestre:7,materia:'Desarrollo y desempeño organizacional'},
+  {semestre:7,materia:'Opción de grado tecnológico'},
+  {semestre:7,materia:'Electiva III'},
+  {semestre:7,materia:'Gerencia estratégica de marketing'},
+  {semestre:7,materia:'Logística y D.F.I'},
 
-  {semestre:8,materia:'Cálculo multivariado'},
-  {semestre:8,materia:'Cálculo multivariado'},
-  {semestre:8,materia:'Cálculo multivariado'},
-  {semestre:8,materia:'Cálculo multivariado'},
-  {semestre:8,materia:'Cálculo multivariado'},
-  {semestre:8,materia:'Cálculo multivariado'},
+  {semestre:8,materia:'Investigación de operaciones'},
+  {semestre:8,materia:'Geopolítica'},
+  {semestre:8,materia:'Cloud computing'},
+  {semestre:8,materia:'Prospectiva empresarial'},
+  {semestre:8,materia:'Negociación internacional y toma decisiones'},
+  {semestre:8,materia:'Comercio electrónico'},
+  {semestre:8,materia:'Relaciones públicas'},
 
-  {semestre:9,materia:'Cálculo multivariado'},
-  {semestre:9,materia:'Cálculo multivariado'},
-  {semestre:9,materia:'Cálculo multivariado'},
-  {semestre:9,materia:'Cálculo multivariado'},
-  {semestre:9,materia:'Cálculo multivariado'},
-  {semestre:9,materia:'Cálculo multivariado'},
+  {semestre:9,materia:'Modelo de exportación e Importación'},
+  {semestre:9,materia:'Gerencia financiera'},
+  {semestre:9,materia:'Administración de la producción'},
+  {semestre:9,materia:'Formulación y evaluación de proyectos'},
+  {semestre:9,materia:'Proyecto de vida'},
+  {semestre:9,materia:'Electiva de profundización profesional'},
 
-  {semestre:10,materia:'Cálculo multivariado'},
-  {semestre:10,materia:'Cálculo multivariado'},
-  {semestre:10,materia:'Cálculo multivariado'},
-  {semestre:10,materia:'Cálculo multivariado'},
-  {semestre:10,materia:'Cálculo multivariado'},
-  {semestre:10,materia:'Cálculo multivariado'},
+  {semestre:10,materia:'Derecho comercial internacional'},
+  {semestre:10,materia:'Dirección organizacional'},
+  {semestre:10,materia:'Simulación gerencial'},
+  {semestre:10,materia:'Negocios internacionales'},
+  {semestre:10,materia:'Gerencia del talento humano'},
+  {semestre:10,materia:'Opción de grado'},
 ];
 
 
@@ -157,6 +166,7 @@ isValid4:boolean = false;
 
   listarPrograma: any;
   listarProgramaVideo: any;
+  listarDesempenate: any;
 
   paginas(pagina:string){
 
@@ -166,6 +176,16 @@ isValid4:boolean = false;
       this.isValid2= false;
       this.isValid3= false;
       this.isValid4= false;
+      window.scroll(0,280);
+      $("#btn-1").addClass("active");
+      $("#btn-2").removeClass("active");
+      $("#btn-3").removeClass("active");
+      $("#btn-4").removeClass("active");
+
+      $("#btn-1-1").addClass("active-m");
+      $("#btn-2-1").removeClass("active-m");
+      $("#btn-3-1").removeClass("active-m");
+      $("#btn-4-1").removeClass("active-m");
     }
     
     if(pagina == "2"){
@@ -173,6 +193,17 @@ isValid4:boolean = false;
       this.isValid2= true;
       this.isValid3= false;
       this.isValid4= false;
+      window.scroll(0,280);
+      $("#btn-1").removeClass("active");
+      $("#btn-2").addClass("active");
+      $("#btn-3").removeClass("active");
+      $("#btn-4").removeClass("active");
+
+      $("#btn-1-1").removeClass("active-m");
+      $("#btn-2-1").addClass("active-m");
+      $("#btn-3-1").removeClass("active-m");
+      $("#btn-4-1").removeClass("active-m");
+      
     }
     
     if(pagina == "3"){
@@ -180,6 +211,16 @@ isValid4:boolean = false;
       this.isValid2= false;
       this.isValid3= true;
       this.isValid4= false;
+      window.scroll(0,280);
+      $("#btn-1").removeClass("active");
+      $("#btn-2").removeClass("active");
+      $("#btn-3").addClass("active");
+      $("#btn-4").removeClass("active");
+
+      $("#btn-1-1").removeClass("active-m");
+      $("#btn-2-1").removeClass("active-m");
+      $("#btn-3-1").addClass("active-m");
+      $("#btn-4-1").removeClass("active-m");
     }
     
     if(pagina == "4"){
@@ -187,6 +228,16 @@ isValid4:boolean = false;
       this.isValid2= false;
       this.isValid3= false;
       this.isValid4= true;
+      window.scroll(0,280);
+      $("#btn-1").removeClass("active");
+      $("#btn-2").removeClass("active");
+      $("#btn-3").removeClass("active");
+      $("#btn-4").addClass("active");
+
+      $("#btn-1-1").removeClass("active-m");
+      $("#btn-2-1").removeClass("active-m");
+      $("#btn-3-1").removeClass("active-m");
+      $("#btn-4-1").addClass("active-m");
     }
 
   }
@@ -223,7 +274,6 @@ isValid4:boolean = false;
 
     this.conectarApiService.obtenerProgramaId(id).subscribe(respuesta=>{
       this.listarPrograma=respuesta
-  
     }); 
 
     this.conectarApiService.obtenerProgramaId(id).subscribe(respuesta2=>{
@@ -231,6 +281,11 @@ isValid4:boolean = false;
  
       this.videoYoutube(this.listarProgramaVideo);
     });
+
+    this.conectarApiService.obtenerDesempenateId(id).subscribe(respuesta3=>{
+      this.listarDesempenate=respuesta3
+    }); 
+
     
 
    this.activarLinkMenu();

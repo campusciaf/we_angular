@@ -1,30 +1,31 @@
 <section>
     <div class="row banner-interno" *ngFor="let datos of listarPrograma">
      
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pc">
             <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas}}" alt="Administración de empresas">
-       </div>
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
-        <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas_movil}}" alt="Administración de empresas">
-   </div>
+        </div>
+        <div class="col-xx-l12 col-xl-12 col-lg-12 col-md-12 col-12 movil">
+            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas_movil}}" alt="Administración de empresas">
+        </div>
+        
         <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
             <div class="row justify-content-center vertical-align-center">
 
-                <div class="col-xl-10 col-lg-10 col-md-10 col-12 padding">
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding ">
                     <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
                             <h1 class="text-center">Adminstración <br>de Empresas</h1>
-                            <p class="snies text-right">SNIES 108796</p>
-                            <p class="lema text-center"> Gerente creativo e innovador  de empresas y emprendimientos </p>
+                            <p class="snies text-right">SNIES {{datos.snies}}</p>
+                            <p class="lema text-center"> {{datos.frase_programa}} </p>
                         </div>
                         <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
                     </div>
                 </div>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-xl-11 col-lg-11 col-md-11 col-9 wrap-programas">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-8 wrap-programas">
                 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-software superior">
                                 <div class="row text-center small text-white">    
@@ -34,18 +35,18 @@
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-code"></i> Modalidad</b> Presencial (PAT)</div>
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''">
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Conoce el programa
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''">
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Plan de estudios
                                     </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''">
+                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Valores y financiación directa
                                     </a>
-                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
                                         Inicia tu proceso de matrícula
                                     </a>
                                 </div>
@@ -109,19 +110,10 @@
                     <div class="row justify-content-center">
 
                         <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
-                            <h2 class="titulo-2">Desempéñate como:</h2>
+                            <h2 class="titulo-2">Campo Profesional:</h2>
                         </div>
-                        <div class="col-xl-10 col-lg-10 col-10">
-                            <p class="p-2">
-                                <img src="{{img_li}}" alt="desempeñate"> Gerenciar organizaciones de carácter privado y/o público.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Gerenciar proyectos.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Ser asesor y consultor de organizaciones empresariales.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Dirigir áreas en las organizaciones.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Dirigir la planeación estratégica, fijando planes, objetivos, metas, seguimiento y evaluación de los resultados de las empresas.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Formular, presentar y evaluar proyectos de inversión.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Dirigir su propio emprendimiento.<br>
-
-                            </p>
+                        <div class="col-xl-10 col-lg-10 col-10 desempenate" *ngFor="let datos4 of listarDesempenate">
+                            <li> <img src="{{img_li}}" alt="desempeñate"> {{datos4.nombre_desempenate}}.</li>
                         </div>
 
                     </div>
@@ -148,7 +140,7 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center pb-xl-0 pb-lg-0 pb-md-2 pb-3">
                                     <h3>Título: Técnica profesional en 
-                                        <span class="text-7"> Programación de Software</span>
+                                        <span class="text-7"> Procesos Empresariales</span>
                                     </h3>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-3 bg-8 text-white">
@@ -164,7 +156,7 @@
                                         <div class="col-xl-11 col-lg-11 col-md-11 col-12">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-xl-0 py-lg-0 py-md-2 py-3">
                                                 <h3>Título: Tecnología en 
-                                                    <span class="text-4"> Desarrollo de Software</span>
+                                                    <span class="text-4"> Gestión y Auditoría Administrativa</span>
                                                 </h3>
                                             </div>
                                         </div>
@@ -200,7 +192,7 @@
                                         <div class="col-xl-11 col-lg-11 col-md-11">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-xl-0 py-lg-0 py-md-2 py-3">
                                                 <h3>Título: Profesional Universitario en 
-                                                    <span class="text-5"> Ingeniería de Software</span>
+                                                    <span class="text-5"> Administración de Empresas</span>
                                                 </h3>
                                             </div>
                                         </div>
@@ -258,7 +250,7 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4">Nivel 1: Técnico profesional en Programación de Software</h2>
+                                    <h2 class="titulo-2 pt-4">Nivel 1: Técnico profesional en Procesos Empresariales</h2>
                                     <p>Con capacidad para realizar aplicaciones en un ambiente y con herramientas específicas.</p>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
@@ -292,7 +284,7 @@
                                 <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
                                 <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4 text-4">Nivel 2: Tecnología en Desarrollo de Software</h2>
+                                    <h2 class="titulo-2 pt-4 text-4">Nivel 2: Tecnología en Gestión y Auditoría Administrativa</h2>
                                     <p>Con capacidad para analizar, diseñar y desarrollar software.</p>
                                 </div>
                             <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
@@ -323,7 +315,7 @@
                                 <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
                                 <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4 text-5">Nivel 3: Profesional Universitario en Ingeniería de Software</h2>
+                                    <h2 class="titulo-2 pt-4 text-5">Nivel 3: Profesional Universitario en Administración de Empresas</h2>
                                     <p>Con capacidad para analizar, diseñar, desarrollar e implementar soluciones tecnológicas.</p>
                                 </div>
                             <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
@@ -591,3 +583,82 @@
 
     </div>
 </section>
+
+<div class="row m-menu bg-1">
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-1-1">
+            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Conoce <br>el programa</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-2-1">
+            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Plan de <br>estudios</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-3-1">
+            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Valores y <br>Financiación</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-4-1">
+            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Iniciar proceso <br>de matricula</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3" *ngIf="false">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>Inicia tu <br>proceso de matricula</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
+    </div>
+
+
+
+
+
+</div>

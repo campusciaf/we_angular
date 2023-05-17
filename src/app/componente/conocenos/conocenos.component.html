@@ -1,0 +1,158 @@
+<section>
+    <div class="row banner-interno">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="{{bg_pc}}" alt="Administración de empresas">
+       </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
+        <img src="{{bg_m}}" alt="Administración de empresas">
+   </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center vertical-align-center">
+            
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-titulo">
+                    <div class="row justify-content-center vertical-align-center">
+                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+                            <h1 class="text-center bolder-1">Conoce tu institución</h1>
+                            
+                            <p class="lema text-center"> Te damos la bienvenida a la <span class="bolder-1">comunidad CIAF</span> </p>
+                        </div>
+                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-9 wrap-programas">
+                
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-opciones superior">
+                                <div class="row text-center small text-white justify-content-center">    
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">PEI</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Reglamentos</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Memorias Institucionales</a></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0">
+                                <div class="row tabs" ng-init="inicioAlgo()">
+                                    <a (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''"  class="col-xl-2 col-lg-2 col-md-2 col-4">
+                                        Quienes Somos
+                                    </a>
+                                    <a (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" class="col-xl-3 col-lg-2 col-md-2 col-4">
+                                        Direccionamiento Estratégico
+                                    </a>
+                                    <a href="" class="col-xl-2 col-lg-2 col-md-2 col-4">
+                                        Modelo Pedagógico
+                                    </a>
+                                    <a href="" class="col-xl-2 col-lg-2 col-md-2 col-4">
+                                        Plan Estratégico
+                                    </a>
+                                    <a href="" class="col-xl-3 col-lg-2 col-md-2 col-4">
+                                       Trabaja con Nosotros
+                                    </a>
+
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+
+<section class="p-0 m-0">
+    <div id="content-programa">
+
+        <div id="pag-ini" *ngIf="isValid1">
+
+
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">Quienes somos </h2>
+                    </div>
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <p>
+                            CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, 
+                            redefinida por ciclos propedéuticos, reconocida como tal a través de la 
+                            Resolución No. 17652 del 8 de noviembre de 2018, cuyo lugar de desarrollo es Pereira (Risaralda).
+                        </p>
+                        <p>
+                            CIAF para responder a las demandas del mundo 4,0, formando profesionales altamente calificados. 
+                            Por lo tanto, inicia un proceso de implementación de creatividad e innovación en sus procesos 
+                            a través de los programas institucionales, compilados en nuestras memorias institucionales 
+                            <a href="https://issuu.com/sistemasdeinformacion/docs/pensamiento_institucional" target="_blank">
+                                (ver link: https://issuu.com/sistemasdeinformacion/docs/pensamiento_institucional)
+                            </a>
+                        </p>
+                        <p>
+                            Nuestra Institución, cuyo centro de su misión son los estudiantes o seres originales, 
+                            tiene como Propósito Superior: “Despertar pasión en los seres humano para transformar sus vidas”, 
+                            convirtiendo los procesos académicos y administrativos en Experiencias, 
+                            que se construyen día a día con los inspiradores, influencers, empresas amigas, 
+                            programas institucionales que se describen a continuación, desde la perspectiva del 
+                            cumplimiento de la normatividad vigente.
+                        </p>
+                        
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div id="pag-ini" *ngIf="isValid2">
+
+
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">Direccionamiento estratégico </h2>
+                    </div>
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <h3>MISIÓN:</h3>
+                        <p>
+                            CIAF es una Institución de Educación Superior que tiene la misión de formar personas 
+                            creativas e innovadoras a través de educación permanente, programas profesionales 
+                            universitarios por ciclos y especializaciones, para conectar con las necesidades de las 
+                            organizaciones y el Estado generando desarrollo consciente.
+                        </p>
+                        <h3>VISIÓN:</h3>
+                        <p>
+                            Para el 2030 CIAF será una institución de educación superior reconocida en la sociedad por su 
+                            creatividad e innovación en todos sus procesos académicos, administrativos y estratégicos.
+                        </p>
+                        <h3>PRINCIPIOS RECTORES:</h3>
+                        <p>
+                            Son 4 los principios que CIAF define como su gran valor: 
+                            relacionados con el estudiante, los docentes, los empleados y los graduados.
+                        </p>
+                        <ul>
+                            <li>
+                                a) El estudiante: El estudiante es el centro de la misión, respetar al estudiante es cumplirle 
+                                la promesa hecha al acceder a la institución.
+                            </li>
+                            <li>
+                                b) El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante, 
+                                Ciaf seleccionará y cualificará a sus docentes para que tengan las herramientas para conectar 
+                                con el estudiante, para que sean creativos e innovadores.
+                            </li>
+                            <li>
+                                c) Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes 
+                                para brindarles bienestar y lograr brindar una educación integral y de calidad.
+                            </li>
+                            <li>
+                                d) Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte 
+                                que hace la institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </section>
+
+        </div>

@@ -12,6 +12,7 @@ import { IndustrialComponent } from './componente/industrial/industrial.componen
 import { PageNotFoundComponent } from './componente/page-not-found/page-not-found.component';
 import { ContinuadaDetalleComponent } from './componente/continuada-detalle/continuada-detalle.component';
 import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.component';
+import { ConocenosComponent } from './componente/conocenos/conocenos.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -19,12 +20,13 @@ const routes: Routes = [
   {path: 'administracion', component:AdministracionComponent},
   {path: 'software', component:IngSoftwareComponent},
   {path: 'contaduria', component:ContaduriaComponent},
-  {path: 'continuada', component:ContinuadaComponent},
-  {path: 'continuadadetalle/:id', component:ContinuadaDetalleComponent},
-  {path: 'bienestar', component:BienestarComponent},
   {path: 'sst', component:SstComponent},
   {path: 'industrial', component:IndustrialComponent},
   {path: 'enfermeria', component:EnfermeriaComponent},
+  {path: 'continuada', component:ContinuadaComponent},
+  {path: 'continuadadetalle/:id', component:ContinuadaDetalleComponent},
+  {path: 'bienestar', component:BienestarComponent},
+  {path: 'conocenos', component:ConocenosComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];

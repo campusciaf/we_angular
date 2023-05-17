@@ -13,8 +13,10 @@
               
                 <div class="col-xl-3 col-lg-3 col-md-6 col-6 bg-1 text-center card-pos-creatividad" *ngFor="let creatividad of creatividadPic index as i">
                     <div class="img-pos text-center">
-                        <img src="{{creatividad.imagen}}" alt="Vitrina de empredimientos" width="" height="">
-                        <p class="titulo-creatividad">{{creatividad.titulo}}</p>
+                        <a href="{{creatividad.link}}" target="_blank" class="btn">
+                            <img src="{{creatividad.imagen}}" alt="Vitrina de empredimientos" width="" height="">
+                            <p class="titulo-creatividad">{{creatividad.titulo}}</p>
+                        </a>
                     </div>
                     <div *ngIf="i>0" class="border-card"></div>
                 </div>
@@ -65,8 +67,12 @@
                             </div>
                                <div class="input-group mb-3 input-group-lg">
                                   <span class="input-group-text bg-3 text-white" id="basic-addon1">3</span>
-                                  <input matInput type="number" class="form-control campo-input" placeholder="Celular" aria-label="telefono" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular">
+                                  <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular" #celular pattern="[1-9]\d{6,10}">
                                </div>
+                                <div *ngFor="let validation of account_validation_messages.celular">
+                                    <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
                                <div class="input-group mb-3 input-group-lg">
                                     <span class="input-group-text bg-3 text-white" id="basic-addon1">4</span>
                                    
@@ -90,6 +96,10 @@
                                     </p>
                                   </label>
                                </div>
+                               <div *ngFor="let validation of account_validation_messages.terms">
+                                <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
+                                </div>
+                                </div>
                                <div class="col-xl-12 text-center">
                                     <button type="submit" class="btn bg-3 btn-lg" [disabled]="!myForm.valid">Enviar</button>
                                </div>
@@ -133,8 +143,10 @@
 
                 <div class="col-xl-3 col-lg-3 col-md-6 col-6 bg-1 text-center card-pos-creatividad">
                     <div class="img-pos">
-                        <img src="assets/image/cv.webp" alt="Ingresa tu HDV Trabaja con Nosotros" width="" height="">
-                        <p class="titulo-modelo">Ingresa tu HDV <br> Trabaja con <br>Nosotros</p>
+                        <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="btn">
+                            <img src="assets/image/cv.webp" alt="Ingresa tu HDV Trabaja con Nosotros" width="" height="">
+                            <p class="titulo-modelo">Ingresa tu HDV <br> Trabaja con <br>Nosotros</p>
+                        </a>
                     </div>
                     <div class="border-card"></div>
                 </div>

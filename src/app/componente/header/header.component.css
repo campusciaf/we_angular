@@ -247,27 +247,6 @@ nav .nav-item:hover{
 
 
 
-.m-menu {
-   
-    display: none;
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 4;
-
-}
-
-.m-menu a {
-    text-decoration: none !important;
-}
-.m-menu a p{
-    color: #fff;
-    font-size: 12px !important;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none !important;
-}
 
 
 
@@ -303,10 +282,7 @@ nav .nav-item:hover{
         width: 130px;
         text-align: left;
     }
-    .m-menu {
-        display: block;
-        display: flex;
-    }
+
 
 }
 
@@ -373,12 +349,6 @@ nav .nav-item:hover{
 
 }
 
-.m-menu {
-    display: block;
-    display: flex;
-    height: 60px;
-    overflow: hidden;
-}
 
 
   }

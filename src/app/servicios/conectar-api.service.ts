@@ -64,6 +64,11 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/programa.php?id='+id,{headers});
   }
 
+  obtenerDesempenateId(id:number): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/programa_desempenate.php?id='+id,{headers});
+  }
+
   obtenerCalidadCrecimiento(): Observable<any>{
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.get(this.API+ '/calidad_crecimiento.php',{headers});
@@ -74,5 +79,7 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     // return this.clienteHttp.post(this.API+ '/agregarDatos.php',{headers});
     return this.clienteHttp.post(this.API+ '/agregarDatos.php',JSON.stringify(cliente),{headers});
   }
+
+
   
 }

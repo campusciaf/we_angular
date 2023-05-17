@@ -1,44 +1,52 @@
 <section>
-    <div class="row banner-interno">
-        <img src="{{ingenieria_sotfware}}" alt="">
+    <div class="row banner-interno" *ngFor="let datos of listarPrograma">
+     
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas}}" alt="Administración de empresas">
+        </div>
+        <div class="col-xx-l12 col-xl-12 col-lg-12 col-md-12 col-12 movil">
+            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas_movil}}" alt="Administración de empresas">
+        </div>
+        
         <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center vertical-align-center">
 
-                <div class="col-xl-10 padding">
-                    <div class="row">
-                        <div class="col-xl-6 text-white">
-                            <h1 class="text-center">Ingeniería<br> Industrial</h1>
-                            <p class="snies text-right">SNIES 108796</p>
-                            <p class="lema text-center"> Gerente creativo e innovador  de empresas y emprendimientos </p>
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding ">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+                            <h1 class="text-center">Adminstración <br>de Empresas</h1>
+                            <p class="snies text-right">SNIES {{datos.snies}}</p>
+                            <p class="lema text-center"> {{datos.frase_programa}} </p>
                         </div>
+                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
                     </div>
                 </div>
 
-                <div class="col-xl-12 pt-4">
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-xl-11 wrap-programas">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-8 wrap-programas">
                 
-                            <div class="col-xl-12 bg-software superior">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-software superior">
                                 <div class="row text-center small text-white">    
-                                    <div class="col-xl-3"><b><i class="bi bi-hourglass"></i><b> Programa</b> profesional *</b></div>
-                                    <div class="col-xl-3"><b><i class="bi bi-water"></i> Duración</b> 10 semestres</div>
-                                    <div class="col-xl-3"><b><i class="bi bi-bookmark-heart"></i> Diferentes</b> Jornadas</div>
-                                    <div class="col-xl-3"><b><i class="bi bi-code"></i> Modalidad</b> Presencial (PAT)</div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-hourglass"></i><b> Programa</b> profesional *</b></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-water"></i> Duración</b> 10 semestres</div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-bookmark-heart"></i> Diferentes</b> Jornadas</div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-code"></i> Modalidad</b> Presencial (PAT)</div>
                                 </div>
                             </div>
-                            <div class="col-xl-12 p-0">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" (click)="activo='1'" class="col-xl-3" [ngClass] = "activo=='1'  ?  'active'  :  ''">
-                                        Conoce elPrograma
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                        Conoce el programa
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''">
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Plan de estudios
                                     </a>
-                                    <a (click)="paginas('3')" class="col-xl-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''">
+                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Valores y financiación directa
                                     </a>
-                                    <a (click)="paginas('4')" class="col-xl-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
                                         Inicia tu proceso de matrícula
                                     </a>
                                 </div>
@@ -47,54 +55,42 @@
                         </div>
                     </div>
 
-
-
                 </div>
-
-
-
-
-
 
             </div>
         </div>
-    
-         
     
     </div>
 </section>
 
 <section class="p-0 m-0">
 
-
     <div id="content-programa">
 
-        <div id="pag-one" style="display:block">
-
-
+        <div id="pag-one" *ngIf="isValid1">
 
             <div class="row d-flex justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4 d-xl-block d-lg-block d-md-none d-none"></div>
 
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-lg-5 col-md-10 col-12" *ngFor="let datos2 of listarPrograma">
                     <div class="row justify-content-center">
-                        <div class="col-xl-10 pt-4">
-                            <h2 class="titulo-2 pb-4">Propositivo, con capacidad de anticiparte y de crear oportunidades.</h2>
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <h2 class="titulo-2 pb-4">{{datos2.titulo_descripcion}}</h2>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
                             <p class="text-justify">
-                                El programa profesional universitario en Administración de Empresas te formará 
-                                como un líder con la capacidad de dirigir organizaciones para tomar decisiones 
-                                administrativas, financieras, de mercadeo, de recursos humanos y utilizando herramientas 
-                                tecnológicas que te permitirán alcanzar objetivos estratégicos.
+                                {{datos2.descripcion_programa}}
+                                
 
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 text-center">
+                <div class="col-xl-4 col-lg-5 col-md-10 col-10 text-center">
                     <div class="row justify-content-center">
-                        <div class="col-xl-10 pt-4">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/gFLxr7VFB3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-programa"></iframe>
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <iframe [src]="total" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
                 
                         </div>
                     </div>
@@ -102,49 +98,123 @@
 
                 <div class="col-12"></div>
 
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-lg-5 col-md-10 col-10" *ngFor="let datos3 of listarPrograma">
                     <div class="row justify-content-center">
-                        <div class="col-xl-10 pt-4">
-                            <img src="{{sotfware_pic}}" alt="Ingenieria de Software" width="100%">
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <img src="https://www.ciaf.digital/public/web_programa_descripcion/{{datos3.imagen_descripcion}}" alt="{{datos3.nombre_programa}}" width="100%" height="auto">
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 ">
+                <div class="col-xl-4 col-lg-5 col-md-10 col-12">
                     <div class="row justify-content-center">
 
-                        <div class="col-xl-10 pt-4">
-                            <h2 class="titulo-2">Desempéñate como:</h2>
-                            <p class="p-2">
-                                <img src="{{img_li}}" alt="desempeñate"> Gerenciar organizaciones de carácter privado y/o público.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Gerenciar proyectos.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Ser asesor y consultor de organizaciones empresariales.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Dirigir áreas en las organizaciones.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Dirigir la planeación estratégica, fijando planes, objetivos, metas, seguimiento y evaluación de los resultados de las empresas.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Formular, presentar y evaluar proyectos de inversión.<br>
-                                <img src="{{img_li}}" alt="desempeñate"> Dirigir su propio emprendimiento.<br>
-
-                            </p>
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
+                            <h2 class="titulo-2">Campo Profesional:</h2>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-10 desempenate" *ngFor="let datos4 of listarDesempenate">
+                            <li> <img src="{{img_li}}" alt="desempeñate"> {{datos4.nombre_desempenate}}.</li>
                         </div>
 
                     </div>
                 </div>
 
-                <div class="col-xl-8 py-4 my-4"><hr></div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-10 py-4 my-4"><hr></div>
 
-                <div class="col-xl-10 text-center mt-4 pt-4 bg-6 rounded-4">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center mt-4 pt-4 bg-6 rounded-4">
                     <div class="row justify-content-center">
-                        <div class="col-xl-12 py-4 my-4">
-                            <h2 class="titulo-2">Gradúate con Tres Títulos</h2>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-12 col-lg-12 col-mb-12 col-12 text-center">
+                                    <h2 class="tamano-2 text-1">Gradúate con Tres Títulos</h2>
+                                </div>
+                                <div class="col-xl-6 col-lg-9 col-md-7 col-8">
+                                    <div class="titulo-copy text-2 text-right">*por ciclos</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-xl-8 py-4">
-                            <img src="{{niveles_software}}" alt="Tres Títulos" width="100%" class="py-4">
+
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-11 py-4">
+                           
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center pb-xl-0 pb-lg-0 pb-md-2 pb-3">
+                                    <h3>Título: Técnica profesional en 
+                                        <span class="text-7"> Logística de Producción</span>
+                                    </h3>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 bg-8 text-white">
+                                    <div class="triangulo-equilatero-bottom-left d-xl-block d-lg-block d-md-block d-none"></div>
+                                    <div class="py-2">Semestre 1</div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 bg-9 py-2 text-white">Semestre 2 </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 bg-10 py-2 text-white">Semestre 3 </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 bg-11 py-2 text-white">Semestre 4 </div>
+
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <div class="row vertical-align-center">
+                                        <div class="col-xl-11 col-lg-11 col-md-11 col-12">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-xl-0 py-lg-0 py-md-2 py-3">
+                                                <h3>Título: Tecnología en 
+                                                    <span class="text-4"> Gestión Industrial</span>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-0 d-xl-block d-lg-block d-md-block d-none">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-12"><div class="titulo-cuadro bg-11"></div></div>
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-12"><div class="titulo-cuadro bg-12"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+
+                               <div class="col-xl-4 col-lg-4 col-md-4 bg-14 py-3 text-white">
+                                    
+                                    <span class="d-xl-block d-lg-block d-md-block d-none">Semestre 7</span> 
+                                    <span class="d-xl-none d-lg-none d-md-none d-block">Semestre 5</span>
+
+                                </div>
+                               <div class="col-xl-4 col-lg-4 col-md-4 bg-13 py-3 text-white">Semestre 6 </div>
+                               <div class="col-xl-4 col-lg-4 col-md-4 bg-12 py-3 text-white">
+                                    <span class="d-xl-block d-lg-block d-md-block d-none">Semestre 5</span> 
+                                    <span class="d-xl-none d-lg-none d-md-none d-block">Semestre 7</span>
+                                </div>
+
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <div class="row vertical-align-center">
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-0 d-xl-block d-lg-block d-md-block d-none">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-12"><div class="titulo-cuadro-2 bg-14"></div></div>
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-12"><div class="titulo-cuadro-2 bg-15"></div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-11 col-lg-11 col-md-11">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-xl-0 py-lg-0 py-md-2 py-3">
+                                                <h3>Título: Profesional Universitario en 
+                                                    <span class="text-5"> Ingeniería Industrial</span>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-4 col-md-4 bg-15 py-4 text-white">Semestre 8 </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 bg-16 py-4 text-white">Semestre 9 </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 bg-17 text-white">
+                                    <div class="triangulo-equilatero-bottom-right d-xl-block d-lg-block d-md-block d-none"></div>
+                                    <div class="pt-4 pb-xl-0 pb-lg-0 pb-md-0 pb-4">Semestre 10</div>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
                    
                 </div>
 
-                <div class="col-xl-10 text-right py-4">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-right py-4">
                     <a (click)="paginas('2')" class="btn" (click)="activo='2'">
                         Ve al plan de estudios
                         <img src="{{next}}" alt="boton siguiente">
@@ -155,18 +225,18 @@
 
         </div><!-- cierra pagina uno -->
 
-        <div id="pag-two" style="display:none">
+        <div id="pag-two" *ngIf="isValid2">
             <div class="row d-flex justify-content-center">
-                <div class="col-xl-10">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-10">
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4 d-xl-block d-lg-block d-md-block d-none"></div>
                         
                         <div class="col-xl-10 py-4">
                             <div class="row">
-                                <div class="col-xl-7">
+                                <div class="col-xl-7 col-lg-9 col-md-8 col-12">
                                     <h2 class="text-left">Ahora... descubre el plan de estudios</h2>
                                 </div>
-                                <div class="col-xl-4">
+                                <div class="col-xl-4 col-lg-3 col-md-4 col-12">
                                     <a href="" class="btn"> 
                                         <span class="asterisco">150 créditos</span><br>
                                         <img src="{{descargar}}" alt="boton siguiente">
@@ -180,136 +250,62 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4">Nivel 1: Técnico profesional en Programación de Software</h2>
+                                    <h2 class="titulo-2 pt-4">Nivel 1: Técnico profesional en Logística de Producción</h2>
                                     <p>Con capacidad para realizar aplicaciones en un ambiente y con herramientas específicas.</p>
                                 </div>
-                            <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem1">
-                                            <div class="py-3 bg-white text-1">Semestre 1</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Matemáticas I</div>
-                                            <div class="materia">Proyecto de vida</div>
-                                            <div class="materia">Teoría del conocimiento</div>
-                                            <div class="materia">Lógica de programación</div>
-                                            <div class="materia">Introducción a la informática</div>
-                                            <div class="materia">Introducción a la Ingeniería de Software</div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
 
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem2">
-                                            <div class="py-3 bg-white text-1">Semestre 2</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Matemáticas II</div>
-                                            <div class="materia">Programación II </div>
-                                            <div class="materia">Lecto-escritura</div>
-                                            <div class="materia">Diseño WEB</div>
-                                            <div class="materia">Metodología de la Investigación</div>
-                                            <div class="materia">Pensamiento empresarial tendencias de emprendimiento</div>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
+                                   <div class="row">
+                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                                            <div ngxSlickItem *ngFor="let datos of listarSemestres1; index as i" class="slide">
+                                                <ng-container>
+                                                    <div class="semestre m-4 bg-sem{{i+1}}">
+                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
+                                                        <div class="desplegar">
+                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
+                                                        </div>
+                                                        <div *ngFor="let mate of listarMaterias">
+                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </ngx-slick-carousel>
+                                   </div>
+                                 </div>
 
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem3">
-                                            <div class="py-3 bg-white text-1">Semestre 3</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Fisica I</div>
-                                            <div class="materia">Estructura de datos </div>
-                                            <div class="materia">Programación III</div>
-                                            <div class="materia">Plan de negocios</div>
-                                            <div class="materia">Herramientas multiplataformas redes I</div>
-                                            <div class="materia">Cálculo multivariado</div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
 
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem4">
-                                            <div class="py-3 bg-white text-1">Semestre 4</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Legislación</div>
-                                            <div class="materia">Trabajo de grado</div>
-                                            <div class="materia">Bases de datos I</div>
-                                            <div class="materia">Algebra lineal</div>
-                                            <div class="materia">Programación y servicios WEB </div>
-                                            <div class="materia">Principios de la Ingeniería de Software</div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-        
-                                
-                                
-        
+
                             </div>
 
                             <div class="row justify-content-center">
                                 <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
                                 <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4 text-4">Nivel 2: Tecnología en Desarrollo de Software</h2>
+                                    <h2 class="titulo-2 pt-4 text-4">Nivel 2: Tecnología en Gestión Industrial</h2>
                                     <p>Con capacidad para analizar, diseñar y desarrollar software.</p>
                                 </div>
                             <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem5">
-                                            <div class="py-3 bg-white text-1">Semestre 5</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Matemáticas I</div>
-                                            <div class="materia">Proyecto de vida</div>
-                                            <div class="materia">Teoría del conocimiento</div>
-                                            <div class="materia">Lógica de programación</div>
-                                            <div class="materia">Introducción a la informática</div>
-                                            <div class="materia">Introducción a la Ingeniería de Software</div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem6">
-                                            <div class="py-3 bg-white text-1">Semestre 6</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Matemáticas II</div>
-                                            <div class="materia">Programación II </div>
-                                            <div class="materia">Lecto-escritura</div>
-                                            <div class="materia">Diseño WEB</div>
-                                            <div class="materia">Metodología de la Investigación</div>
-                                            <div class="materia">Pensamiento empresarial tendencias de emprendimiento</div>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem7">
-                                            <div class="py-3 bg-white text-1">Semestre 7</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Fisica I</div>
-                                            <div class="materia">Estructura de datos </div>
-                                            <div class="materia">Programación III</div>
-                                            <div class="materia">Plan de negocios</div>
-                                            <div class="materia">Herramientas multiplataformas redes I</div>
-                                            <div class="materia">Cálculo multivariado</div>
-                                        </div>
-                                        
+                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
+                                    <div class="row">
+                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                                            <div ngxSlickItem *ngFor="let datos of listarSemestres2; index as i" class="slide">
+                                                <ng-container>
+                                                    <div class="semestre m-4 bg-sem{{i+5}}">
+                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
+                                                        <div class="desplegar">
+                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
+                                                        </div>
+                                                        <div *ngFor="let mate of listarMaterias">
+                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </ngx-slick-carousel>
                                     </div>
                                 </div>
         
@@ -319,61 +315,33 @@
                                 <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
                                 <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4 text-5">Nivel 3: Profesional Universitario en Ingeniería de Software</h2>
+                                    <h2 class="titulo-2 pt-4 text-5">Nivel 3: Profesional Universitario en Ingeniería Industrial</h2>
                                     <p>Con capacidad para analizar, diseñar, desarrollar e implementar soluciones tecnológicas.</p>
                                 </div>
                             <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
 
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem8">
-                                            <div class="py-3 bg-white text-1">Semestre 8</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Matemáticas I</div>
-                                            <div class="materia">Proyecto de vida</div>
-                                            <div class="materia">Teoría del conocimiento</div>
-                                            <div class="materia">Lógica de programación</div>
-                                            <div class="materia">Introducción a la informática</div>
-                                            <div class="materia">Introducción a la Ingeniería de Software</div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem9">
-                                            <div class="py-3 bg-white text-1">Semestre 9</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Matemáticas II</div>
-                                            <div class="materia">Programación II </div>
-                                            <div class="materia">Lecto-escritura</div>
-                                            <div class="materia">Diseño WEB</div>
-                                            <div class="materia">Metodología de la Investigación</div>
-                                            <div class="materia">Pensamiento empresarial tendencias de emprendimiento</div>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-10 semestre p-0 m-0 bg-sem10">
-                                            <div class="py-3 bg-white text-1">Semestre 10</div>
-                                            <div class="desplegar"><img src="{{desplegar}}" alt="desplegar"></div>
-                                            <div class="materia">Fisica I</div>
-                                            <div class="materia">Estructura de datos </div>
-                                            <div class="materia">Programación III</div>
-                                            <div class="materia">Plan de negocios</div>
-                                            <div class="materia">Herramientas multiplataformas redes I</div>
-                                            <div class="materia">Cálculo multivariado</div>
-                                        </div>
-                                        
+                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
+                                    <div class="row">
+                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                                            <div ngxSlickItem *ngFor="let datos of listarSemestres3; index as i" class="slide">
+                                                <ng-container>
+                                                    <div class="semestre m-4 bg-sem{{i+8}}">
+                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
+                                                        <div class="desplegar">
+                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
+                                                        </div>
+                                                        <div *ngFor="let mate of listarMaterias">
+                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </ngx-slick-carousel>
                                     </div>
                                 </div>
         
                             </div>
+
                         </div>
 
                         <div class="col-xl-6 col-lg-6 col-mb-6 col-6  py-4">
@@ -401,16 +369,16 @@
 
         </div><!-- cierra pagina dos -->
 
-        <div id="pag-three" style="display:none">
+        <div id="pag-three" *ngIf="isValid3">
 
             <div class="row">
                 
                     <div class="col-xl-12 col-lg-12 colmd-12 col-12">
                         <div class="row financiacion-interno">
-                            <img src="{{banner_financiacion}}" alt="Financiación 0% interes" width="100%">
+                            <img src="{{banner_financiacion}}" alt="Financiación 0% interes">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 financiacion-contenido ">
                                <div class="row justify-content-center vertical-align-center h-100 text-center">
-                                    <div class="col-xl-8">
+                                    <div class="col-xl-8 col-lg-8 col-md-9 col-10">
                                         <h2 class="text-white tamano-1"> FINANCIACIÓN 0% INTERÉS </h2>
                                         <p class="text-1">Garantizamos descuentos durante TODA tu carrera</p>
                                     </div>
@@ -423,11 +391,13 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
             </div> 
 
-            <div class="row justify-content-center">
-                <div class="col-xl-3 border-right-1">
+            <div class="row justify-content-center valoresyfinanciacion">
+                <div class="col-xl-3 col-lg-3 col-md-10 col-8 border-right-1">
                     <div class="row justify-content-center">
-                        <div class="col-xl-8">
+                        <div class="col-xl-8 col-lg-12 col-md-5 col-10">
                             <h2 class="titulo-2 text-3 pt-4">Financiación directa:</h2>
+                        </div>
+                        <div class="col-xl-8 col-lg-10 col-md-5 col-10 pt-4">
                             <p class="text-right text-1">
                                 Facil<br>
                                 Sin fiadores<br>
@@ -437,11 +407,12 @@
                         </div>
                     </div>
                 </div>
+               
 
-                <div class="col-xl-3">
-                    <div class="row d-flex justify-content-center ">
-                        <div class="col-xl-1 numero-financiacion text-3 hv-100 vertical-align-center">1</div>
-                        <div class="col-xl-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-10">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-1 numero-financiacion text-3 hv-100 vertical-align-center">1</div>
+                        <div class="col-xl-8 col-md-8 col-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
                             <div class="row">
                                 <span class="col-12 fs-5 pt-4">Valor inscripción</span>
                                 <span class="col-12 fs-1">$100.446</span><br>
@@ -454,11 +425,11 @@
                 </div>
 
 
-                <div class="col-xl-3">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-10">
                     <div class="row d-flex justify-content-center vertical-align-center">
 
-                        <div class="col-xl-1 numero-financiacion text-3 hv-100">2</div>
-                        <div class="col-xl-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-1 numero-financiacion text-3 hv-100">2</div>
+                        <div class="col-xl-8 col-md-8 col-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
                             <div class="row">
                               
                                 <span class="col-12 fs-5">Matrícula Ordinaria</span>
@@ -469,6 +440,44 @@
                                 <span class="small">Diurna, nocturna, fines de semana y sólo sábados</span>
                                 
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+
+                <div class="col-xl-12 col-lg-12 colmd-12 col-12">
+                    <div class="row beneficios-interno">
+                        <img src="{{beneficios}}" alt="Beneficios">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 beneficios-contenido ">
+                           <div class="row justify-content-center vertical-align-center h-100 text-center">
+
+                                <div class="col-xl-2 col-lg-2 col-md-12 col-10 text-white bolder-1 py-xl-1 py-lg-1 py-md-1 py-4">
+                                    <span class="fs-3">BENEFICIOS</span>
+                                </div>
+                                
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Metodologías de <br>Aprendizaje Creativo
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Jornadas <br>Diurna, nocturna <br>Fines de semana
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Descuentos en <br>tu matrícula
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Financiación <br>Directa y sin <br>Intereses
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
+                                    Recibe <br>3 Títulos
+                                </div>
+                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block py-2"></div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -497,11 +506,11 @@
 
         </div><!-- cierra el tres -->
 
-        <div id="pag-four" style="display:none">
+        <div id="pag-four" *ngIf="isValid4">
 
             <div class="row d-flex justify-content-center">
         
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center py-4 my-4">
+                <div class="col-xl-12 col-lg-10 col-md-10 col-10 text-center py-4 my-4">
                     <h2 class="titulo-2 tamano-1 py-4">Inscripción, asesoría y matrícula</h2>
                 </div>
                 <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-center pb-4 my-4"><hr></div>
@@ -511,58 +520,25 @@
 
                 <div class="col-xl-10 col-lg-10 col-md-10 col-10 ">
                     <div class="row">
-                        
-                        <div class="col-xl-3 text-center">
-                            <div class="row justify-content-center">
-                                <div class="col-10 shadow-lg bg-1 text-white border-bottom-1">
-                                    <h4 class="p-4">¡Incríbete <br>en línea!</h4>
-                                    <img src="{{inscribete_en_linea}}" alt="inscríbete en linea">
-                                    <p class="small text-1">.</p>
-                                    <div class="text-center p-4 ">
-                                        <a href="" class="btn btn-light">Inscripción</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-xl-3 text-center">
-                            <div class="row justify-content-center">
-                                <div class="col-10 shadow-lg bg-1 text-white border-bottom-1">
-                                    <h4 class="p-4">¡Escríbeme y te <br>asesoro!</h4>
-                                    <img src="{{te_asesoro}}" alt="Escríbeme y te asesoro">
-                                    <p class="small text-1">.</p>
-                                    <div class="text-center p-4 ">
-                                        <a href="" class="btn btn-light">Inscripción</a>
-                                    </div>
-                                </div>
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                            <div ngxSlickItem *ngFor="let datos of listarContacto; index as i" class="slide">
+                                <ng-container>
+                                  
+                                       
+                                        <div class=" bg-1 text-white border-bottom-1 text-center m-4">
+                                            <div class="inicia-titulo"><h4 class="p-4">{{datos.titulo}}</h4></div>
+                                            <img src="{{datos.pic}}" alt="{{datos.pic}}" width="auto" height="auto" class="mx-auto">
+                                            <div class="inicia-detalle"><span class="small">{{datos.detalle}}</span></div>
+                                            <div class="text-center p-4 ">
+                                                <a href="{{datos.link}}" target="_blank" class="btn btn-light">Inscripción</a>
+                                            </div>
+                                        </div>
+                           
+                                    
+                                </ng-container>
                             </div>
-                        </div>
-
-                        <div class="col-xl-3 text-center">
-                            <div class="row justify-content-center">
-                                <div class="col-10 shadow-lg bg-1 text-white border-bottom-1">
-                                    <h4 class="p-4">¿Prefieres <br>llamarme?</h4>
-                                    <img src="{{llamame}}" alt="¿Prefieres llamarme?">
-                                    <p class="small text-1">.</p>
-                                    <div class="text-center p-4 ">
-                                        <a href="" class="btn btn-light">Llámanos</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 text-center">
-                            <div class="row justify-content-center">
-                                <div class="col-10 shadow-lg bg-1 text-white border-bottom-1">
-                                    <h4 class="p-4">¡Date una pasadita <br>por nuestra sede!</h4>
-                                    <img src="{{visita_sede}}" alt="Date una pasadita por nuestra sede">
-                                    <p class="small">Cra. 6 No. 24-56 • Pereira</p>
-                                    <div class="text-center p-4 ">
-                                        <a href="" class="btn btn-light">Agenda una cita</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </ngx-slick-carousel>
 
   
                     </div>
@@ -571,14 +547,14 @@
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center py-4 my-4"></div>
 
-                <div class="col-xl-12 bg-3 py-4 my-4">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-3 py-4 my-4">
                     <div class="row justify-content-center">
-                        <div class="col-xl-3 text-white">
-                            <div class="col-xl-12 p-0 m-0 fs-4">Conoce</div>
-                            <div class="col-xl-12 fs-1 p-0 m-0">Nuestro</div>
-                            <div class="col-xl-12 fs-4 p-0 m-0">ADN</div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-10 text-white">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0 fs-4">Conoce</div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0 inicia-nuestro">Nuestro</div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 fs-4 p-0 m-0">ADN</div>
                         </div> 
-                        <div class="col-xl-5 text-white fs-5">
+                        <div class="col-xl-5 col-lg-6 col-md-6 col-10 text-white fs-5">
 
                             <ol>
                                 <li> Metodologías de aprendizaje<span class="bolder-1"> creativas</span> </li>
@@ -607,3 +583,82 @@
 
     </div>
 </section>
+
+<div class="row m-menu bg-1">
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-1-1">
+            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Conoce <br>el programa</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-2-1">
+            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Plan de <br>estudios</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-3-1">
+            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Valores y <br>Financiación</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-4-1">
+            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Iniciar proceso <br>de matricula</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3" *ngIf="false">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>Inicia tu <br>proceso de matricula</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
+    </div>
+
+
+
+
+
+</div>

@@ -252,4 +252,10 @@
 		margin-top: -18%;
 
 	}
+	.post-module .post-content .category {
+		right: 2%;
+		padding: 5px 10px;
+		font-size: 12px;
+
+	}
 }

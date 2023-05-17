@@ -336,6 +336,8 @@ figure{
     display:inline-block;
     margin:0;
     overflow: hidden;
+    width: 100%;
+    max-height: 685px;
 }
 .banner-interno .pc{
     display: block;
@@ -352,6 +354,7 @@ figure{
     height:100%;
     top:0;
     display: block;
+   
 }
 .banner-interno h1{
     font-style:normal;
@@ -373,7 +376,7 @@ figure{
 }
 
 .banner-interno .padding{
-	padding-top: 80px;
+	padding-top: 50px;
 }
 .wrap-programas .superior{
     padding:10px 0;
@@ -417,10 +420,14 @@ figure{
     background:#fff;
     margin:0
 }
+.desempenate li{
+    list-style: none;
+}
 .financiacion-interno{
     position: relative;
     display: inline-block;
 	margin: 0px;
+    width: 100%;
 }
 .financiacion-interno img{
     width:100%
@@ -444,6 +451,7 @@ figure{
     position: relative;
     display: inline-block;
 	margin: 0px;
+    width: 100%;
 }
 .beneficios-interno img{
     width:100%
@@ -571,6 +579,7 @@ figure{
 }
 /* ***************************************** */
 /* ***************************** */
+
 @media (max-width:1024px){
     .btn-financiacion{
         font-size:12px
@@ -588,7 +597,7 @@ figure{
         margin-bottom:0px;
     }
     .banner-interno .padding{
-        padding-top: 40px;
+        padding-top: 80px;
     }
     .banner-interno .lema{
         font-weight:700;
@@ -692,6 +701,12 @@ figure{
         font-size:16px!important;
         line-height:20px
     }
+
+    .banner-interno .banner-contenido{
+        background-color: rgba(0, 0, 0, 0.25);
+    
+    }
+
     .banner-interno img{
         width: 100%;
         /* height: 300px; */

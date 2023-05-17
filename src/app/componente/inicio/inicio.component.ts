@@ -15,10 +15,10 @@ declare var $:any;
 export class InicioComponent implements OnInit {
 
   creatividadPic:Array<any> =[
-    {imagen:'assets/image/emprendimientos.webp',titulo:'Vitrina de Emprendimientos'},
-    {imagen:'assets/image/pereira4ri.webp',titulo:'Pereira 4RI '},
-    {imagen:'assets/image/hub.webp',titulo:'HUB de la Creatividad'},
-    {imagen:'assets/image/memorias-institucionales.webp',titulo:'Memorias Institucionales'},
+    {imagen:'assets/image/emprendimientos.webp',titulo:'Vitrina de Emprendimientos',link:''},
+    {imagen:'assets/image/pereira4ri.webp',titulo:'Pereira 4RI ',link:"https://pereira4ri.com/"},
+    {imagen:'assets/image/hub.webp',titulo:'HUB de la Creatividad',link:""},
+    {imagen:'assets/image/memorias-institucionales.webp',titulo:'Memorias Institucionales',link:"https://publuu.com/flip-book/96771/265548/page/1"},
   ]
 
   insertarNuevoCliente: any;
@@ -63,7 +63,16 @@ export class InicioComponent implements OnInit {
         ],
         updateOn: 'blur'
     }],
-    celular: ['', [Validators.required, Validators.minLength(11)]],
+   celular:[null,{
+      validators: [
+        Validators.required, 
+        Validators.minLength(10),
+        Validators.maxLength(10),
+        Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
+        
+     ],
+     updateOn: 'blur'
+    }],
     fo_programa: ['',[Validators.required,]],
     acepto: ['',[Validators.required,Validators.requiredTrue]]
     });
@@ -94,7 +103,14 @@ export class InicioComponent implements OnInit {
     ],
     'correo': [
       { type: 'required', message: 'campo de correo requerido' },
-      { type: 'pattern', message: 'Enter a valid email' }
+      { type: 'email', message: 'Ingresar un correo valido' }
+    ],
+    'celular': [
+      { type: 'required', message: 'Campo de nombre requerido' },
+      { type: 'minlength', message: 'El numero debe terner 10 caracteres' },
+      { type: 'maxlength', message: 'El numero debe terner 10 caracteres' },
+      { type: 'pattern', message: 'solo debe contener numeros' }
+
     ],
     'confirm_password': [
       { type: 'required', message: 'Confirm password is required' },
