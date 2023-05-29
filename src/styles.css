@@ -376,7 +376,7 @@ figure{
 }
 
 .banner-interno .padding{
-	padding-top: 50px;
+	padding-top: 80px;
 }
 .wrap-programas .superior{
     padding:10px 0;
@@ -597,7 +597,7 @@ figure{
         margin-bottom:0px;
     }
     .banner-interno .padding{
-        padding-top: 80px;
+        padding-top:40px;
     }
     .banner-interno .lema{
         font-weight:700;
@@ -620,6 +620,9 @@ figure{
         display:inline-block;
         margin:0;
         height: 340px;
+    }
+    .banner-interno .padding{
+        padding-top: 40px;
     }
     .banner-interno h1 {
         font-style: normal;
@@ -707,6 +710,9 @@ figure{
     
     }
 
+    .banner-interno .padding{
+        padding-top: 40px;
+    }
     .banner-interno img{
         width: 100%;
         /* height: 300px; */
@@ -730,6 +736,10 @@ figure{
         font-size: 11px;
     }
 
+    .wrap-programas .superior{
+        padding:10px 0;
+        border-radius:10px 10px 10px 10px;
+    }
     .banner-interno{
         position:relative;
         display:inline-block;
@@ -761,8 +771,8 @@ figure{
         
     }
     .financiacion-interno .financiacion-contenido p{
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 20px !important;
+        line-height: 20px !important;
    }
 
     .tamano-1{
