@@ -192,7 +192,9 @@ figure{
 }
 .btn-1{
     color:#fff;
+    font-size: 14px;
     background-color:#f16126;
+    line-height: 14px;
     transition:all 1s
 }
 .btn-1:hover{
@@ -586,8 +588,6 @@ figure{
     }
     .btn-1{
         font-size:12px;
-        padding-top:9px;
-        padding-bottom:9px
     }
     .banner-interno h1{
         font-style:normal;

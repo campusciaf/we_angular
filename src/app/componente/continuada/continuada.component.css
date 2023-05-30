@@ -193,4 +193,24 @@
 	opacity: 1 !important;
 }
 
+@media(max-width:1024px){
+	.padding-continuada{
+		padding-top: 20px;
+	}
+
+}
+
+@media(max-width:768px){
+	.padding-continuada{
+		padding-top: 14px;
+	}
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+
+
+}
+
 

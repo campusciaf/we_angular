@@ -20,36 +20,32 @@
                     </div>
                 </div>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-9 wrap-programas">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
                 
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-opciones superior">
-                                <div class="row text-center small text-white justify-content-center">    
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">PEI</a></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Reglamentos</a></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Memorias Institucionales</a></div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
+                                <div class="row text-center small text-white">    
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-hourglass"></i> PEI</b></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-water"></i> Reglamentos</b></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-bookmark-heart"></i> Memorias Institucionales</b></div>
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''"  class="col-xl-2 col-lg-2 col-md-2 col-4">
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Quienes Somos
                                     </a>
-                                    <a (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" class="col-xl-3 col-lg-2 col-md-2 col-4">
-                                        Direccionamiento Estratégico
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                        Direcionamiento Estratégico
                                     </a>
-                                    <a href="" class="col-xl-2 col-lg-2 col-md-2 col-4">
+                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Modelo Pedagógico
                                     </a>
-                                    <a href="" class="col-xl-2 col-lg-2 col-md-2 col-4">
-                                        Plan Estratégico
+                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                        Trabaja con Nosotros
                                     </a>
-                                    <a href="" class="col-xl-3 col-lg-2 col-md-2 col-4">
-                                       Trabaja con Nosotros
-                                    </a>
-
                                 </div>
                             </div>
                 
@@ -68,15 +64,15 @@
 <section class="p-0 m-0">
     <div id="content-programa">
 
-        <div id="pag-ini" *ngIf="isValid1">
+        <div id="pag-one" *ngIf="isValid1">
 
 
             <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
                 <div class="row justify-content-center">
                     <div class="col-xl-12 mb-4 pb-4">
-                        <h2 class="titulo-2 text-center">Quienes somos </h2>
+                        <h2 class="titulo-2 text-center">Quienes Somos </h2>
                     </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                    <div class="col-xl-6 col-lg-10 col-md-10 col-10 p-4">
                         <p>
                             CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, 
                             redefinida por ciclos propedéuticos, reconocida como tal a través de la 
@@ -100,20 +96,29 @@
                         </p>
                         
                     </div>
+                    <div class="col-xl-4 col-lg-10 col-md-10 col-10 p-4">
+                        <img [src]="equipo_inspira" alt="Aqeuipo que inspira" width="90%" height="auto">
+                    </div>
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-right py-4">
+                        <a (click)="paginas('2')" class="btn" (click)="activo='2'">
+                            Direccionamiento Estratégico
+                            <img src="{{next}}" alt="boton siguiente">
+                        </a>
+                    </div>
                 </div>
             </section>
 
         </div>
 
-        <div id="pag-ini" *ngIf="isValid2">
+        <div id="pag-two" *ngIf="isValid2">
 
 
             <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
                 <div class="row justify-content-center">
                     <div class="col-xl-12 mb-4 pb-4">
-                        <h2 class="titulo-2 text-center">Direccionamiento estratégico </h2>
+                        <h2 class="titulo-2 text-center">Direccionamiento Estratégico </h2>
                     </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4">
                         <h3>MISIÓN:</h3>
                         <p>
                             CIAF es una Institución de Educación Superior que tiene la misión de formar personas 
@@ -152,7 +157,107 @@
                         </ul>
                         
                     </div>
+                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4">
+                        <img [src]="organigrama" alt="Aqeuipo que inspira" width="90%" height="auto">
+                    </div>
+
+                    <div class="col-xl-5 col-lg-5 col-mb-5 col-6  py-4">
+                        <a (click)="paginas('1')" class="btn" (click)="activo='1'">
+                            <img src="{{prev}}" alt="boton siguiente"> 
+                            Quienes Somos
+                            
+                        </a>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-5 col-mb-5 col-6 text-right py-4">
+                        <a (click)="paginas('3')" class="btn" (click)="activo='3'">
+                            Modelo Pedagógico
+                            <img src="{{next}}" alt="boton siguiente">
+                        </a>
+                    </div>
+                    
                 </div>
             </section>
 
         </div>
+    </div>
+</section>
+
+<div class="row m-menu bg-1">
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-1-1">
+            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Conoce <br>el programa</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-2-1">
+            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Plan de <br>estudios</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-3-1">
+            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Valores y <br>Financiación</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+        <div class="pt-1" id="btn-4-1">
+            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Iniciar proceso <br>de matricula</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-3" *ngIf="false">
+        <div class="dropup">
+                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
+                    <div class="col-12">
+                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    </div>
+                    <div class="col-12">
+                        <p>Inicia tu <br>proceso de matricula</p>
+                    </div>
+                </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+            </div>
+    </div>
+
+
+
+
+
+</div>

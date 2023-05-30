@@ -95,7 +95,9 @@ export class AdministrativosaludComponent {
     listarDesempenate: any;
   
     paginas(pagina:string){
-  
+      if(pagina == "0"){
+        window.scroll(0,0);
+      }
       if(pagina == "1"){
   
         this.isValid1= true;
@@ -194,7 +196,7 @@ export class AdministrativosaludComponent {
   
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="1";
+      this.pagina="0";
       this.paginas(this.pagina);
   
       var id:number = 8;

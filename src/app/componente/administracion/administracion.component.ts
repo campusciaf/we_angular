@@ -159,6 +159,7 @@ slideConfig = {
 pagina:any;
 activo:any;
 
+
 isValid1:boolean = true;
 isValid2:boolean = false;
 isValid3:boolean = false;
@@ -169,6 +170,9 @@ isValid4:boolean = false;
   listarDesempenate: any;
 
   paginas(pagina:string){
+    if(pagina == "0"){
+      window.scroll(0,0);
+    }
 
     if(pagina == "1"){
 
@@ -267,7 +271,7 @@ isValid4:boolean = false;
 
   ngOnInit(): void {
     this.activo="1";
-    this.pagina="1";
+    this.pagina="0";
     this.paginas(this.pagina);
 
     var id:number = 1;

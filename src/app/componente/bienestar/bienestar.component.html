@@ -20,36 +20,38 @@
                     </div>
                 </div>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+    
+
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-9 wrap-programas">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
                 
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-opciones superior">
-                                <div class="row text-center small text-white justify-content-center">    
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Política de Bienestar</a></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Programa ¡Quédate!</a></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-4"><a href="" class="btn btn-sm text-white">Cartilla Estudiantil</a></div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
+                                <div class="row text-center small text-white">    
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Política de Bienestar</a></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Programa ¡Quédate!</a></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="https://ciaf.digital/public/web_bienestar/cartilla_inducciones.pdf" target="_blank" class="btn btn-sm text-white">Cartilla Estudiantil</a></div>
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''">
+                                    <a (click)="paginas('1')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Salud y vida
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''">
+                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Recreación y Deportes
                                     </a>
-                                    <a (click)="paginas('3')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''">
+                                    <a (click)="paginas('3')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Arte y Cultura
                                     </a>
-                                    <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''">
+                                    <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
                                         Desarrollo Humano
                                     </a>
-                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''">
+                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''" id="btn-5">
                                         Promoción Socioeconómica
                                     </a>
-                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''">
+                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''" id="btn-6">
                                         Meta: graduación
                                     </a>
                                 </div>
@@ -318,7 +320,7 @@
 
 
 
-        <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+        <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0 " *ngIf="false">
             <div class="row justify-content-center">
                 <div class="col-xl-12 mb-4 pb-4">
                     <h2 class="titulo-2 text-center">¿Qué está pasando en este parche? </h2>
@@ -399,3 +401,90 @@
 
     </div>
 </section>
+
+<div class="row m-menu bg-1">
+
+    <div class="col-xl-3 col-lg-3 col-md-2 col-3">
+        <div class="pt-1" id="btn-1-1">
+            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Salud <br>y Vida</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-2 col-3">
+        <div class="pt-1" id="btn-2-1">
+            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>recreación <br>y Deportes</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-2 col-3">
+        <div class="pt-1" id="btn-3-1">
+            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Arte <br> y Cultura</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-2 col-3">
+        <div class="pt-1" id="btn-4-1">
+            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Desarrollo <br>Humano</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="col-xl-3 col-lg-3 col-md-2 col-3">
+        <div class="pt-1" id="btn-5-1">
+            <a class="text-center" (click)="paginas('5')" (click)="activo='4'" [ngClass] = "activo=='5'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Prom.<br>Socioeconómica</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-2 col-3">
+        <div class="pt-1" id="btn-6-1">
+            <a class="text-center" (click)="paginas('6')" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Meta<br>Graduación</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+</div>

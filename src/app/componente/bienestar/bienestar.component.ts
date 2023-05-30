@@ -145,6 +145,7 @@ activo:any;
   isValid6:boolean = false;
   
     paginas(pagina:string){
+
       if(pagina == "0"){
         this.isValid0= true;
         this.isValid1= false;
@@ -153,6 +154,9 @@ activo:any;
         this.isValid4= false;
         this.isValid5= false;
         this.isValid6= false;
+        window.scroll(0,0);
+
+        
       }
   
       if(pagina == "1"){
@@ -163,6 +167,22 @@ activo:any;
         this.isValid4= false;
         this.isValid5= false;
         this.isValid6= false;
+        window.scroll(0,280);
+
+        $("#btn-1").addClass("active");
+        $("#btn-2").removeClass("active");
+        $("#btn-3").removeClass("active");
+        $("#btn-4").removeClass("active");
+        $("#btn-5").removeClass("active");
+        $("#btn-6").removeClass("active");
+  
+        $("#btn-1-1").addClass("active-m");
+        $("#btn-2-1").removeClass("active-m");
+        $("#btn-3-1").removeClass("active-m");
+        $("#btn-4-1").removeClass("active-m");
+        $("#btn-5-1").removeClass("active-m");
+        $("#btn-6-1").removeClass("active-m");
+
       }
       
       if(pagina == "2"){
@@ -173,6 +193,24 @@ activo:any;
         this.isValid4= false;
         this.isValid5= false;
         this.isValid6= false;
+        window.scroll(0,280);
+
+        
+        $("#btn-1").removeClass("active");
+        $("#btn-2").addClass("active");
+        $("#btn-3").removeClass("active");
+        $("#btn-4").removeClass("active");
+        $("#btn-5").removeClass("active");
+        $("#btn-6").removeClass("active");
+  
+        $("#btn-1-1").removeClass("active-m");
+        $("#btn-2-1").addClass("active-m");
+        $("#btn-3-1").removeClass("active-m");
+        $("#btn-4-1").removeClass("active-m");
+        $("#btn-5-1").removeClass("active-m");
+        $("#btn-6-1").removeClass("active-m");
+
+
       }
       
       if(pagina == "3"){
@@ -183,6 +221,21 @@ activo:any;
         this.isValid4= false;
         this.isValid5= false;
         this.isValid6= false;
+        window.scroll(0,280);
+
+        $("#btn-1").removeClass("active");
+        $("#btn-2").removeClass("active");
+        $("#btn-3").addClass("active");
+        $("#btn-4").removeClass("active");
+        $("#btn-5").removeClass("active");
+        $("#btn-6").removeClass("active");
+  
+        $("#btn-1-1").removeClass("active-m");
+        $("#btn-2-1").removeClass("active-m");
+        $("#btn-3-1").addClass("active-m");
+        $("#btn-4-1").removeClass("active-m");
+        $("#btn-5-1").removeClass("active-m");
+        $("#btn-6-1").removeClass("active-m");
       }
       
       if(pagina == "4"){
@@ -193,6 +246,21 @@ activo:any;
         this.isValid4= true;
         this.isValid5= false;
         this.isValid6= false;
+        window.scroll(0,280);
+
+        $("#btn-1").removeClass("active");
+        $("#btn-2").removeClass("active");
+        $("#btn-3").removeClass("active");
+        $("#btn-4").addClass("active");
+        $("#btn-5").removeClass("active");
+        $("#btn-6").removeClass("active");
+  
+        $("#btn-1-1").removeClass("active-m");
+        $("#btn-2-1").removeClass("active-m");
+        $("#btn-3-1").removeClass("active-m");
+        $("#btn-4-1").addClass("active-m");
+        $("#btn-5-1").removeClass("active-m");
+        $("#btn-6-1").removeClass("active-m");
       }
       if(pagina == "5"){
         this.isValid0= false;
@@ -202,6 +270,21 @@ activo:any;
         this.isValid4= false;
         this.isValid5= true;
         this.isValid6= false;
+        window.scroll(0,280);
+
+        $("#btn-1").removeClass("active");
+        $("#btn-2").removeClass("active");
+        $("#btn-3").removeClass("active");
+        $("#btn-4").removeClass("active");
+        $("#btn-5").addClass("active");
+        $("#btn-6").removeClass("active");
+  
+        $("#btn-1-1").removeClass("active-m");
+        $("#btn-2-1").removeClass("active-m");
+        $("#btn-3-1").removeClass("active-m");
+        $("#btn-4-1").removeClass("active-m");
+        $("#btn-5-1").addClass("active-m");
+        $("#btn-6-1").removeClass("active-m");
       }
       if(pagina == "6"){
         this.isValid0= false;
@@ -211,6 +294,21 @@ activo:any;
         this.isValid4= false;
         this.isValid5= false;
         this.isValid6= true;
+        window.scroll(0,280);
+
+        $("#btn-1").removeClass("active");
+        $("#btn-2").removeClass("active");
+        $("#btn-3").removeClass("active");
+        $("#btn-4").removeClass("active");
+        $("#btn-5").removeClass("active");
+        $("#btn-6").addClass("active");
+  
+        $("#btn-1-1").removeClass("active-m");
+        $("#btn-2-1").removeClass("active-m");
+        $("#btn-3-1").removeClass("active-m");
+        $("#btn-4-1").removeClass("active-m");
+        $("#btn-5-1").removeClass("active-m");
+        $("#btn-6-1").addClass("active-m");
       }
   
     }

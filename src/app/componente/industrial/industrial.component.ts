@@ -173,7 +173,9 @@ export class IndustrialComponent implements OnInit {
     listarDesempenate: any;
   
     paginas(pagina:string){
-  
+      if(pagina == "0"){
+        window.scroll(0,0);
+      }
       if(pagina == "1"){
   
         this.isValid1= true;
@@ -271,7 +273,7 @@ export class IndustrialComponent implements OnInit {
   
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="1";
+      this.pagina="0";
       this.paginas(this.pagina);
   
       var id:number = 4;

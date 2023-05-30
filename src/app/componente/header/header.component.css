@@ -100,6 +100,7 @@ nav .nav-item:hover{
     position: relative;
     display: inline-block;
     text-align: left;
+ 
   }
   
   .dropdown-content {
@@ -142,7 +143,7 @@ nav .nav-item:hover{
   border:none;
 }
 .cross{
-    padding-top: 14px;
+    padding-top: 0px;
     background-color: #001550 !important;
     color:#fff;
     border:0;
@@ -150,6 +151,7 @@ nav .nav-item:hover{
     font-weight:bold;
     cursor:pointer;
     outline:none;
+    line-height: 40px;
 }
 .buscador{
     z-index:2; 
@@ -267,6 +269,11 @@ nav .nav-item:hover{
 }
 
 @media(max-width:768px){
+    .dropdown-content {
+        display: none;
+        position: relative;
+
+    }
 
     .dropbtn {
         width: 420px !important;
@@ -315,6 +322,8 @@ nav .nav-item:hover{
     width: 320px;
     
     }
+
+
     
 /* redes header */
 

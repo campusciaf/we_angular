@@ -174,7 +174,9 @@ isValid4:boolean = false;
   listarDesempenate: any;
 
   paginas(pagina:string){
-
+    if(pagina == "0"){
+      window.scroll(0,0);
+    }
     if(pagina == "1"){
 
       this.isValid1= true;
@@ -272,7 +274,7 @@ isValid4:boolean = false;
 
   ngOnInit(): void {
     this.activo="1";
-    this.pagina="1";
+    this.pagina="0";
     this.paginas(this.pagina);
 
     var id:number = 3;
