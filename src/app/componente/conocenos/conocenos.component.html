@@ -27,25 +27,23 @@
                 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
                                 <div class="row text-center small text-white">    
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-hourglass"></i> PEI</b></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-hourglass"></i> Nuestro Proyecto Educativo</b></div>
                                     <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-water"></i> Reglamentos</b></div>
                                     <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><i class="bi bi-bookmark-heart"></i> Memorias Institucionales</b></div>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                    <a (click)="paginas('1')" class="col-xl-4 col-lg-4 col-md-4 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Quienes Somos
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                    <a (click)="paginas('2')" class="col-xl-4 col-lg-4 col-md-4 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Direcionamiento Estratégico
                                     </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
-                                        Modelo Pedagógico
-                                    </a>
-                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                    <a (click)="paginas('3')" class="col-xl-4 col-lg-4 col-md-4 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Trabaja con Nosotros
                                     </a>
+
                                 </div>
                             </div>
                 
@@ -73,7 +71,7 @@
                         <h2 class="titulo-2 text-center">Quienes Somos </h2>
                     </div>
                     <div class="col-xl-6 col-lg-10 col-md-10 col-10 p-4">
-                        <p>
+                        <p class="text-justfy">
                             CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, 
                             redefinida por ciclos propedéuticos, reconocida como tal a través de la 
                             Resolución No. 17652 del 8 de noviembre de 2018, cuyo lugar de desarrollo es Pereira (Risaralda).
@@ -182,6 +180,56 @@
         </div>
     </div>
 </section>
+
+
+<!-- creatividad e innovación -->
+
+
+<section class="pt-4 mt-4 mostrar">
+    <div class="row justify-content-center">
+
+        <div class="col-xl-12 col-lg-12 col-mb-12 col-12 mb-4 pb-4">
+            
+        </div>
+        
+
+        <div class="col-xl-12 col-lg-10 col-md-10 col-10">
+
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                <div ngxSlickItem *ngFor="let listareglamento of reglamentos index as i" class="slide">
+                    <div class="col-xl-12 bg-1 card-pos-creatividad">
+                    
+                       <div class="row img-pos">
+                            <div class="text-center ">
+                                <img src="{{listareglamento.imagen}}" alt="Vitrina de empredimientos" width="84px" height="80px" class="text-center">
+                                
+                            </div>
+                            <div class=" text-center">
+                                <a href="{{listareglamento.link}}" target="_blank" class="btn">
+                                    
+                                    <p class="titulo-creatividad">{{listareglamento.titulo}}</p>
+                                </a>
+                            </div>
+                       </div>
+
+                        <div *ngIf="i>0" class="border-card"></div>
+                    </div>
+
+
+                </div>
+            </ngx-slick-carousel>
+           
+        </div>
+
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-12 p-4"></div>
+</div>
+
+
+
 
 <div class="row m-menu bg-1">
 

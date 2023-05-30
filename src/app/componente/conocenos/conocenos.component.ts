@@ -16,6 +16,44 @@ export class ConocenosComponent {
   public organigrama="assets/image/organigrama.webp";
   public next="assets/image/btn-next.webp";
   public prev="assets/image/btn-prev.webp";
+
+  reglamentos:Array<any> =[
+    {imagen:'assets/image/emprendimientos.webp',titulo:'Nuestro Proyecto Educativo',link:''},
+    {imagen:'assets/image/pereira4ri.webp',titulo:'Modelo Pedagógico ',link:"https://pereira4ri.com/"},
+    {imagen:'assets/image/hub.webp',titulo:'Plan Etratégico',link:""},
+    {imagen:'assets/image/memorias-institucionales.webp',titulo:'Rendición de Cuentas',link:"https://publuu.com/flip-book/96771/265548/page/1"},
+    {imagen:'assets/image/hub.webp',titulo:'Reglamento Estudiantil',link:""},
+    {imagen:'assets/image/memorias-institucionales.webp',titulo:'Reglamento Institucional',link:"https://publuu.com/flip-book/96771/265548/page/1"},
+    {imagen:'assets/image/memorias-institucionales.webp',titulo:'SST',link:"https://publuu.com/flip-book/96771/265548/page/1"},
+  ]
+
+
+
+  slideConfig = {
+    "slidesToShow": 5, "slidesToScroll": 1, "dots": true, "infinite": false, "nextArrow":false,"prevArrow":false, "autoplay": true,
+    responsive: [
+      {
+        breakpoint: 1048,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 778,
+        settings: {
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  
+  };
+
   
   pagina:any;
   activo:any;

@@ -50,12 +50,69 @@
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-.m-menu {
-    display: block;
-    display: flex;
-    height: 55px;
-    overflow: hidden;
+    .m-menu {
+        display: block;
+        display: flex;
+        height: 55px;
+        overflow: hidden;
+    }
+
+
 }
 
+/* *********************** cratividad e innovacion *************************/
 
-  }
+.card-pos-creatividad{
+    margin-top: 100px !important;
+    padding-bottom: 60px;
+}
+
+.border-card{
+    border-left: 1px solid rgb(255, 255, 255);
+    height: 100px;
+    float: left;
+    margin-top: -80px;
+}
+/* .img-pos{
+    margin-top: -75px;
+    
+  
+} */
+
+.img-pos img{
+    text-align: center !important;
+    margin-bottom: 30px;
+    position: relative;
+    margin-top: -60px;
+    margin-left: 80px;
+
+    
+}
+
+.img-pos p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFF;
+    width: 150px;
+    margin: auto;
+}
+
+.titulo-creatividad{
+    height: 40px;
+}
+.titulo-modelo{
+    height: 50px;
+}
+/* *********************** cratividad e innovacion *************************/
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+    .card-pos-creatividad{
+        margin-bottom: 150px;
+    }
+}
+
