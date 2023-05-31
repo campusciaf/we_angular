@@ -16,38 +16,47 @@ export class ConocenosComponent {
   public organigrama="assets/image/organigrama.webp";
   public next="assets/image/btn-next.webp";
   public prev="assets/image/btn-prev.webp";
+  public ico_pdf="assets/image/icono_pdf.webp";
 
   reglamentos:Array<any> =[
-    {imagen:'assets/image/emprendimientos.webp',titulo:'Nuestro Proyecto Educativo',link:''},
-    {imagen:'assets/image/pereira4ri.webp',titulo:'Modelo Pedagógico ',link:"https://pereira4ri.com/"},
-    {imagen:'assets/image/hub.webp',titulo:'Plan Etratégico',link:""},
-    {imagen:'assets/image/memorias-institucionales.webp',titulo:'Rendición de Cuentas',link:"https://publuu.com/flip-book/96771/265548/page/1"},
-    {imagen:'assets/image/hub.webp',titulo:'Reglamento Estudiantil',link:""},
-    {imagen:'assets/image/memorias-institucionales.webp',titulo:'Reglamento Institucional',link:"https://publuu.com/flip-book/96771/265548/page/1"},
-    {imagen:'assets/image/memorias-institucionales.webp',titulo:'SST',link:"https://publuu.com/flip-book/96771/265548/page/1"},
+    {estado:'1',imagen:'assets/image/emprendimientos.webp',titulo:'Nuestro Proyecto Educativo',link:'https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf',modal:""},
+    {estado:'1',imagen:'assets/image/pereira4ri.webp',titulo:'Estatutos Generales',link:"https://ciaf.digital/public/web_normativa/estatutos_actuales.pdf",modal:""},
+    {estado:'2',imagen:'assets/image/hub.webp',titulo:'Plan Estratégico',link:"", modal:"#modalplanestrategico"},
+    {estado:'1',imagen:'assets/image/hub.webp',titulo:'Reglamentos',link:"",modal:""},
+    {estado:'2',imagen:'assets/image/memorias-institucionales.webp',titulo:'Seguridad Y Salud en el Trabajo',link:"https://publuu.com/flip-book/96771/265548/page/1",modal:"#modalsst"},
+    {estado:'1',imagen:'assets/image/hub.webp',titulo:'Protocolo de Violencia Sexual',link:"https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf",modal:""},
+  ]
+
+  sstnormativa:Array<any> =[
+    {imagen:'assets/image/politica-sst.webp'},
+    {imagen:'assets/image/copasst.webp'},
+    {imagen:'assets/image/comite-convivencia.webp'},
+    {imagen:'assets/image/brigada-emergencia.webp'},
+    {imagen:'assets/image/campana-autocuidado.webp'},
+    {imagen:'assets/image/galeria-actividades.webp'},
+
   ]
 
 
-
   slideConfig = {
-    "slidesToShow": 5, "slidesToScroll": 1, "dots": true, "infinite": false, "nextArrow":false,"prevArrow":false, "autoplay": true,
+    "slidesToShow": 6, "slidesToScroll": 1, "dots": true, "infinite": false, "nextArrow":false,"prevArrow":false, "autoplay": true,
     responsive: [
       {
         breakpoint: 1048,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 6
         }
       },
       {
         breakpoint: 778,
         settings: {
-          slidesToShow: 1
+          slidesToShow: 4
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1
+          slidesToShow: 2
         }
       }
     ]
