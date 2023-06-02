@@ -80,6 +80,16 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.post(this.API+ '/agregarDatos.php',JSON.stringify(cliente),{headers});
   }
 
+  obtenercategoriasReglamentos(): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/categorias_reglamentos.php',{headers});
+  }
+  obtenerReglamentos(id:number): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/reglamentos.php?id='+id,{headers});
+  }
+
+
 
   
 }

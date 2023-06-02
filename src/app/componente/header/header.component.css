@@ -18,7 +18,7 @@ header .icono img{
     position:fixed; 
     top:0; 
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* ******** */
@@ -257,6 +257,7 @@ nav .nav-item:hover{
     .dropbtn {
         width: 110px !important;
         text-align: center !important;
+        font-size: 12px;
     }
     nav .nav-item a{
         width: 110px;

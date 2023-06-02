@@ -27,20 +27,24 @@
                 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
                                 <div class="row text-center small text-white">    
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="blank" class="btn btn-sm text-white"> Nuestro Proyecto Educativo</a></b></div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><a href="#" target="blank" class="btn btn-sm text-white"> Reglamentos</a></b></div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-12"><b><a href="https://heyzine.com/flip-book/97549097a8.html" target="blank" class="btn btn-sm text-white">Memorias Institucionales</a></b></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="blank" class="btn btn-sm text-white"> Nuestro Proyecto Educativo</a></b></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a href="#" target="blank" class="btn btn-sm text-white"> Reglamentos</a></b></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a href="#" target="blank" class="btn btn-sm text-white"> Rendición de Cuentas</a></b></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a href="https://heyzine.com/flip-book/97549097a8.html" target="blank" class="btn btn-sm text-white">Memorias Institucionales</a></b></div>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-4 col-lg-4 col-md-4 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Quienes Somos
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-4 col-lg-4 col-md-4 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Direcionamiento Estratégico
                                     </a>
-                                    <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="col-xl-4 col-lg-4 col-md-4 col-4">
+                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
+                                        Consejo Superior y Funcionarios
+                                    </a>
+                                    <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="col-xl-3 col-lg-3 col-md-3 col-3">
                                         Trabaja con Nosotros
                                     </a>
 
@@ -159,12 +163,84 @@
                         <img [src]="organigrama" alt="Aqeuipo que inspira" width="90%" height="auto">
                     </div>
 
-                    <div class="col-xl-10 col-lg-10 col-mb-10 col-11  py-4">
+                    <div class="col-xl-5 col-lg-5 col-mb-5 col-5  py-4">
                         <a (click)="paginas('1')" class="btn" (click)="activo='1'">
                             <img src="{{prev}}" alt="boton siguiente"> 
                             Quienes Somos
                         </a>
                     </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-5 text-right py-4">
+                        <a (click)="paginas('3')" class="btn" (click)="activo='3'">
+                            Consejo Superior y Funcionarios
+                            <img src="{{next}}" alt="boton siguiente">
+                        </a>
+                    </div>
+
+
+                    
+                </div>
+            </section>
+
+        </div>
+
+        <div id="pag-three" *ngIf="isValid3">
+
+
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">Consejo Superior y Funcionarios </h2>
+                    </div>
+                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4">
+                        <h3>MISIÓN:</h3>
+                        <p class="text-justify">
+                            CIAF es una Institución de Educación Superior que tiene la misión de formar personas 
+                            creativas e innovadoras a través de educación permanente, programas profesionales 
+                            universitarios por ciclos y especializaciones, para conectar con las necesidades de las 
+                            organizaciones y el Estado generando desarrollo consciente.
+                        </p>
+                        <h3>VISIÓN:</h3>
+                        <p class="text-justify">
+                            Para el 2030 CIAF será una institución de educación superior reconocida en la sociedad por su 
+                            creatividad e innovación en todos sus procesos académicos, administrativos y estratégicos.
+                        </p>
+                        <h3>PRINCIPIOS RECTORES:</h3>
+                        <p class="text-justify">
+                            Son 4 los principios que CIAF define como su gran valor: 
+                            relacionados con el estudiante, los docentes, los empleados y los graduados.
+                        </p>
+                        <ol type="a">
+                            <li>
+                                El estudiante: El estudiante es el centro de la misión, respetar al estudiante es cumplirle 
+                                la promesa hecha al acceder a la institución.
+                            </li>
+                            <li>
+                                El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante, 
+                                Ciaf seleccionará y cualificará a sus docentes para que tengan las herramientas para conectar 
+                                con el estudiante, para que sean creativos e innovadores.
+                            </li>
+                            <li>
+                                Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes 
+                                para brindarles bienestar y lograr brindar una educación integral y de calidad.
+                            </li>
+                            <li>
+                                Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte 
+                                que hace la institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
+                            </li>
+                        </ol>
+                        
+                    </div>
+                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4 text-center">
+                        <img [src]="organigrama" alt="Aqeuipo que inspira" width="90%" height="auto">
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-mb-10 col-11  py-4">
+                        <a (click)="paginas('2')" class="btn" (click)="activo='2'">
+                            <img src="{{prev}}" alt="boton siguiente"> 
+                            Direcionamiento Estratégico
+                        </a>
+                    </div>
+
 
 
                     
@@ -388,6 +464,42 @@
                  </a>
             </div>
           </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Modal reglamentos-->
+<div class="modal fade" id="modalreglamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-6" id="exampleModalLabel">Reglamentos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div *ngFor="let datos_cate of listarCategorias index as i" class="">
+                <h2 class="fs-6">{{datos_cate.categoria_reglamento}}</h2>
+
+                <!-- {{ this.hola(datos_cate.categoria_reglamento) }} -->
+                
+                <div *ngFor="let datos_reg of listarReglamentos index as j" class="" >
+                    <div *ngIf="datos_reg.id_categoria_reglamento==datos_cate.id_categoria_reglamento">
+                        <a href="https://ciaf.digital/public/web_reglamentos/{{datos_reg.url_reglamento}}" target="_blank" class="btn btn-sm">
+                            <img [src]="ico_pdf" width="18px" height="18px" alt="descargar PDF"> {{datos_reg.nombre_reglamento}}
+                        </a>
+                    </div>
+                </div>
+               
+
+            </div>
           
         </div>
         <div class="modal-footer">

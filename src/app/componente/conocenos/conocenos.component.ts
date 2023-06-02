@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 
 declare var jQuery:any;
 declare var $:any;
-
 
 @Component({
   selector: 'app-conocenos',
@@ -18,11 +18,14 @@ export class ConocenosComponent {
   public prev="assets/image/btn-prev.webp";
   public ico_pdf="assets/image/icono_pdf.webp";
 
-  reglamentos:Array<any> =[
+  listarCategorias:any;
+  listarReglamentos:any;
+
+    reglamentos:Array<any> =[
     {estado:'1',imagen:'assets/image/emprendimientos.webp',titulo:'Nuestro Proyecto Educativo',link:'https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf',modal:""},
     {estado:'1',imagen:'assets/image/pereira4ri.webp',titulo:'Estatutos Generales',link:"https://ciaf.digital/public/web_normativa/estatutos_actuales.pdf",modal:""},
     {estado:'2',imagen:'assets/image/hub.webp',titulo:'Plan Estratégico',link:"", modal:"#modalplanestrategico"},
-    {estado:'1',imagen:'assets/image/hub.webp',titulo:'Reglamentos',link:"",modal:""},
+    {estado:'2',imagen:'assets/image/hub.webp',titulo:'Reglamentos',link:"",modal:"#modalreglamento"},
     {estado:'2',imagen:'assets/image/memorias-institucionales.webp',titulo:'Seguridad Y Salud en el Trabajo',link:"https://publuu.com/flip-book/96771/265548/page/1",modal:"#modalsst"},
     {estado:'1',imagen:'assets/image/hub.webp',titulo:'Protocolo de Violencia Sexual',link:"https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf",modal:""},
   ]
@@ -66,7 +69,7 @@ export class ConocenosComponent {
   
   pagina:any;
   activo:any;
-
+  valor:any;
 
 
   isValid1:boolean = true;
@@ -180,12 +183,31 @@ export class ConocenosComponent {
   
     }
 
+    constructor(private conectarApiService:ConectarApiService) { 
+
+    }
+
+    largo:any;
+    uno:number=0;
+    
     ngOnInit(): void {
       this.activo="1";
       this.pagina="0";
       this.paginas(this.pagina);
 
+        this.conectarApiService.obtenercategoriasReglamentos().subscribe(respuesta=>{
+        this.listarCategorias=respuesta;
+      });
+
+        this.conectarApiService.obtenerReglamentos(1).subscribe(resp=>{
+        this.listarReglamentos=resp;
+        
+      });
+     
+      
+      
     }
-  
+
+
 
 }
