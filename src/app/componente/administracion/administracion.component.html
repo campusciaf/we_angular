@@ -584,16 +584,16 @@
     </div>
 </section>
 
-<div class="row m-menu bg-1">
+<div class="row m-menu bg-2">
 
     <div class="col-xl-3 col-lg-3 col-md-3 col-3">
         <div class="pt-1" id="btn-1-1">
             <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
                 <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    <img [src]="programas_m" alt="Conoce el programa">
                 </div>
                 <div class="col-12">
-                    <p>Conoce <br>el programa</p>
+                    <p>Conoce el<br> programa</p>
                 </div>
             </a>
         </div>
@@ -603,7 +603,7 @@
         <div class="pt-1" id="btn-2-1">
             <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
                 <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    <img [src]="plan_m" alt="Plan de estudios">
                 </div>
                 <div class="col-12">
                     <p>Plan de <br>estudios</p>
@@ -616,7 +616,7 @@
         <div class="pt-1" id="btn-3-1">
             <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
                 <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    <img [src]="valores_m" alt="Plan de estudios">
                 </div>
                 <div class="col-12">
                     <p>Valores y <br>Financiación</p>
@@ -629,7 +629,7 @@
         <div class="pt-1" id="btn-4-1">
             <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
                 <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                    <img [src]="registro_m" alt="Proceso de matricula">
                 </div>
                 <div class="col-12">
                     <p>Iniciar proceso <br>de matricula</p>

@@ -39,6 +39,16 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/continuada.php?id='+id,{headers});
   }
 
+  obtenerEmprendimientos(): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/emprendimientos.php',{headers});
+  }
+
+  obtenerEmprendimientoId(id:number): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/emprendimientos.php?id='+id,{headers});
+  }
+
   obtenerEventos(): Observable<any>{
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.get(this.API+ '/eventos.php',{headers});

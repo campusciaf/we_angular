@@ -27,6 +27,10 @@ public visita_sede="assets/image/visita-sede.webp";
 public banner_financiacion="assets/image/banner-financiacion.webp";
 public beneficios="assets/image/beneficios.webp";
 
+public programas_m="assets/image/programas-m.webp";
+public plan_m="assets/image/ico-plan.webp";
+public valores_m="assets/image/ico-valores.webp";
+public registro_m="assets/image/ico-registro.webp";
 
 listarSemestres1 = [
   {semestre:1},

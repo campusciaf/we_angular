@@ -13,10 +13,20 @@
               
                 <div class="col-xl-3 col-lg-3 col-md-6 col-6 bg-1 text-center card-pos-creatividad" *ngFor="let creatividad of creatividadPic index as i">
                     <div class="img-pos text-center">
-                        <a href="{{creatividad.link}}" target="_blank" class="btn">
+                       <div *ngIf="creatividad.tipolink==1">
+
+                        <a routerLink="{{creatividad.link}}" class="btn">
                             <img src="{{creatividad.imagen}}" alt="Vitrina de empredimientos" width="" height="">
                             <p class="titulo-creatividad">{{creatividad.titulo}}</p>
                         </a>
+                            
+                       </div>
+                       <div *ngIf="creatividad.tipolink==2">
+                            <a href="{{creatividad.link}}" target="_blank" class="btn">
+                                <img src="{{creatividad.imagen}}" alt="Vitrina de empredimientos" width="" height="">
+                                <p class="titulo-creatividad">{{creatividad.titulo}}</p>
+                            </a>
+                       </div>
                     </div>
                     <div *ngIf="i>0" class="border-card"></div>
                 </div>

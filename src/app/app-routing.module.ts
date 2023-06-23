@@ -15,6 +15,8 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
 import { ConocenosComponent } from './componente/conocenos/conocenos.component';
 import { MotocicletasComponent } from './componente/motocicletas/motocicletas.component';
 import { AdministrativosaludComponent } from './componente/administrativosalud/administrativosalud.component';
+import { EmprendimientosComponent } from './componente/emprendimientos/emprendimientos.component';
+import { EmprendimientodetalleComponent } from './componente/emprendimientodetalle/emprendimientodetalle.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path: 'conocenos', component:ConocenosComponent},
   {path: 'motocicletas', component:MotocicletasComponent},
   {path: 'administrativo', component:AdministrativosaludComponent},
+  {path: 'emprendimientos', component:EmprendimientosComponent},
+  {path: 'emprendimientodetalle/:id', component:EmprendimientodetalleComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];

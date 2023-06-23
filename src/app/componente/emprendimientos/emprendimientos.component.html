@@ -1,0 +1,92 @@
+<section>
+    <div class="row banner-interno">
+
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="{{banner_pc}}" alt="Vitrina de emprendimientos">
+        </div>
+        <div class="col-xx-12 col-xl-12 col-lg-12 col-md-12 col-12 movil">
+            <img src="{{banner_movil}}" alt="Vitrina de emprendimientos">
+        </div>
+
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center ">
+
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 padding-continuada">
+                    
+                    <div class="row">
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-2 text-left">
+                            <img src="{{logo}}" alt="Emprendimientos" class="pt-4 mt-4" width="90%">
+                        </div>
+
+                       
+                        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-white">
+                            <h1 class=" pt-4 mt-4">Vitrina de <br><span class="bolder-1">Emprendimientos</span></h1>
+                            
+                        </div>
+
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h2 class="tamano-2 text-6 bolder-1">#compraCIAF</h2>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+         
+    
+    </div>
+</section>
+
+
+<section class="pt-4 mt-4 mostrar">
+    <div class="row justify-content-center">
+
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+
+
+
+            <div class="row">
+
+                <div class="cards col-xl-4" *ngFor="let emprendimientos of listarEmprendimientos index as i">
+                    <div class="column m-4">
+                        <div [className]="'post-module'" >
+                            <div class="thumbnail">
+                                
+                                <img src="https://ciaf.digital/public/web_emprendimientos/{{emprendimientos.imagen_emprendimiento}}" alt="{{emprendimientos.imagen_emprendimiento}}" width="90%">
+                            </div>
+                            <div class="post-content">
+                                <div class="category" [ngStyle]="{'background-color': emprendimientos.color}" >{{emprendimientos.nombre_emprendimiento}}</div>
+                                <h1 class="title">{{emprendimientos.nombre_curso}}</h1>
+                                <!-- <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
+                                <p [className]="'description'" >{{noticias.contenido_noticias}}</p> -->
+                                <div class="post-meta">
+                                    <div class="row">
+                                        <div class="col-xl-7 pt-1">
+                                            <span class="timestamp"><img src="{{calendario}}" alt="Publicado"> Publicado  {{ emprendimientos.fecha_publicacion | date:"d MMM" }}</span>
+                                        </div>
+                                        <div class="col-xl-2 pt-1"> 
+                                            <span class="comments">39 <img src="{{vistas}}" alt="Publicado"> </span>
+                                        </div>
+                                        <div class="col-xl-3"> 
+                                            <a [routerLink]="['/emprendimientodetalle',emprendimientos.id_web_emprendimientos]" class="btn btn-light btn-sm text-black">Leer más </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+

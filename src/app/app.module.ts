@@ -46,6 +46,8 @@ import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.componen
 import { ConocenosComponent } from './componente/conocenos/conocenos.component';
 import { MotocicletasComponent } from './componente/motocicletas/motocicletas.component';
 import { AdministrativosaludComponent } from './componente/administrativosalud/administrativosalud.component';
+import { EmprendimientosComponent } from './componente/emprendimientos/emprendimientos.component';
+import { EmprendimientodetalleComponent } from './componente/emprendimientodetalle/emprendimientodetalle.component';
 
 
 
@@ -76,6 +78,8 @@ import { AdministrativosaludComponent } from './componente/administrativosalud/a
     ConocenosComponent,
     MotocicletasComponent,
     AdministrativosaludComponent,
+    EmprendimientosComponent,
+    EmprendimientodetalleComponent,
 
 
   ],

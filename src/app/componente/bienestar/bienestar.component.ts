@@ -45,6 +45,13 @@ public b_desarrollo="assets/image/b_desarrollo.webp";
 public b_promocion="assets/image/b_promocion.webp";
 public b_grado="assets/image/b_grado.webp";
 
+public ico_salud="assets/image/ico-salud.webp";
+public ico_deportes="assets/image/ico-deportes.webp";
+public ico_arte="assets/image/ico-arte.webp";
+public ico_humano="assets/image/ico-humano.webp";
+public ico_social="assets/image/ico-social.webp";
+public ico_grado="assets/image/ico-grado.webp";
+
 public banner_prueba="assets/image/prueba_instagram.webp";
 
 listarInstagram:any;

@@ -1,0 +1,90 @@
+
+
+<section>
+    <div class="row justify-content-center">
+        <div class="col-xl-8 py-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a routerLink="/inicio">Inicio</a></li>
+                  <li class="breadcrumb-item"><a routerLink="/emprendimientos">Vitrina de emprendimientos</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Emprendimiento</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="col-xl-8" *ngFor="let emprendimiento of detalleEmprendimiento index as i">
+            <div class="titulo-1 text-1 text-center py-4 my-4">{{emprendimiento.nombre_curso}}</div>
+
+            <div class="row">
+                <div class="col-xl-10 text-center"> 
+                    <h2 class="titulo-2 pb-4 bolder">{{emprendimiento.nombre_emprendimiento}}</h2> 
+                </div>
+                <div class="col-xl-8">
+                    <div class="row justify-content-center">
+                        
+                        <div class="col-xl-10">
+                             <img src="https://ciaf.digital/public/web_emprendimientos/{{emprendimiento.imagen_emprendimiento}}" alt="{{emprendimiento.imagen_emprendimiento}}" width="100%">
+                        </div>  
+                        
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="row">
+                        <div class="col-xl-12 bg-1 p-4 text-white">
+                            <p>{{emprendimiento.descripcion_emprendimiento}}</p>
+                        </div>
+                        <div class="col-xl-12 py-4 text-center">
+                            <a href="" class="btn-pagos"><span class="icono bg-3"> >> </span> <span class="boton">Pago en linea</span></a>
+                            <a href="" class="btn-pagos "><span class="icono bg-3"> >> </span> <span class="boton">Inscribirme</span></a>
+                        </div>
+                        <div class="col-xl-12 p-2 text-center">
+                            <h3><a href="" class="btn-pagos"><span class="icono bg-3"> Inversión </span> <span class="boton">$ {{emprendimiento.precio_curso}}</span></a></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 bg-7 text-3 px-4 py-1">
+                            Nivel
+                        </div>
+                        <div class="col-xl-6 bg-7 px-4 py-1">
+                            {{emprendimiento.nivel_educacion}}
+                        </div>
+                        <div class="col-xl-6 text-3 px-4 py-1">
+                            Modalidad
+                        </div>
+                        <div class="col-xl-6 px-4 py-1">
+                            {{emprendimiento.modalidad_curso}}
+                        </div>
+                        <div class="col-xl-6 bg-7 text-3 px-4 py-1">
+                            Duración
+                        </div>
+                        <div class="col-xl-6 bg-7 px-4 py-1">
+                            {{emprendimiento.duracion_educacion}} horas
+                        </div>
+                        <div class="col-xl-6 text-3 px-4 py-1">
+                            Fecha de inicio
+                        </div>
+                        <div class="col-xl-6 px-4 py-1">
+                            <!-- {{emprendimiento.fecha_inicio}} -->
+                            {{ emprendimiento.fecha_inicio | date:"d MMMM Y" }}  
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xl-8 col-lg-8 col-mb-8 col-10 py-4">
+            <a routerLink="/emprendimientos" class="btn">
+                <img src="{{prev}}" alt="Volver"> 
+                Regresar
+            </a>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 m-4 p-4"></div>
+
+    </div>
+    
+
+</section>

@@ -17,6 +17,10 @@ export class ConocenosComponent {
   public next="assets/image/btn-next.webp";
   public prev="assets/image/btn-prev.webp";
   public ico_pdf="assets/image/icono_pdf.webp";
+  public quienes_somos="assets/image/quienes-somos.webp";
+  public estrategico="assets/image/estrategico.webp";
+  public funcionarios="assets/image/funcionarios.webp";
+  public trabaja_nosotros="assets/image/trabaja-nosotros.webp";
 
   listarCategorias:any;
   listarReglamentos:any;
@@ -99,8 +103,8 @@ export class ConocenosComponent {
         $("#btn-3").removeClass("active");
         $("#btn-4").removeClass("active");
   
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").addClass("active-m");
+        $("#btn-1-1").addClass("active-m");
+        $("#btn-2-1").removeClass("active-m");
         $("#btn-3-1").removeClass("active-m");
         $("#btn-4-1").removeClass("active-m");
       }
