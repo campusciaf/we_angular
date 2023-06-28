@@ -1,0 +1,120 @@
+<section>
+    <div class="row banner-interno">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="{{logo_pc}}" alt="Egresados">
+       </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
+        <img src="{{logo_m}}" alt="Egresados">
+   </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center vertical-align-center">
+            
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar">
+                    <div class="row justify-content-center vertical-align-center">
+                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+                            <h1 class="text-center bolder-1">EGRESADOS</h1>
+                            
+                            <p class="lema text-center"> Un carnet sin fecha de vencimiento </p>
+                        </div>
+                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+                    </div>
+                </div>
+
+    
+
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
+                
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
+                                <div class="row text-center small text-white">    
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Plan Estratégico</a></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Plan Operativo Anual</a></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Politica de Egresados</a></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
+                                <div class="row tabs" ng-init="inicioAlgo()">
+                                    <a (click)="paginas('1')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                        Club de egresados
+                                    </a>
+                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                        Educación continua
+                                    </a>
+                                    <a (click)="paginas('3')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
+                                        caracterización
+                                    </a>
+                                    <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                        Plan de egresados
+                                    </a>
+                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''" id="btn-5">
+                                        Bases de datos
+                                    </a>
+                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''" id="btn-6">
+                                        Bolsa de empleo
+                                    </a>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+
+<section class="p-0 m-0">
+    <div id="content-programa">
+
+        <div id="pag-ini" *ngIf="isValid1">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-10 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">Club de Egresados </h2>
+                    </div>
+                    
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-5 mb-4 pb-4">
+                                <h3 class="titulo-2 fs-4">Un lazo que nos conecta para toda la vida.</h3>
+                                <p>Estrechar lazos entre la institución y los egresados promoviendo el intercambio de vivencias 
+                                    académicas, profesionales, emprendedoras y sociales a largo plazo logrando así la colaboración 
+                                    pertinente y creativa con la sociedad y la comunidad CIAF.
+                                </p>
+                            </div>
+                            <div class="col-xxl-5 mb-4 pb-4">foto</div>
+                            <div class="col-xxl-5 mb-4 pb-4 vertical-align-center justify-content-center text-center"> <h3 class="titulo-2">Beneficios del <br>Club de Egresados</h3></div>
+                            <div class="col-xxl-5 mb-4 pb-4">
+                                <ul>
+                                    <li>Acceso al servicio de Biblioteca virtual y física.</li>
+                                    <li>Acceso a ofertas laborales vigentes y publicación de tu hoja de vida en la bolsa de empleo.</li>
+                                    <li>Divulgación e invitación a eventos académicos, culturales y sociales.</li>
+                                    <li>Descuentos del 10% en programas de educación continuada para ti y para tu familia.</li>
+                                    <li>Acceso a los diferentes convenios de la comunidad CIAF con los establecimientos comerciales.</li>
+                                    <li>Encuentro anual de egresados. 
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="row justify-content-center">
+        <div class="col-xxl-10 mb-4 pb-4">
+            <h2 class="titulo-2 text-center">Los egresados nos cuentan su experiencia </h2>
+        </div>
+    </div>
+</section>

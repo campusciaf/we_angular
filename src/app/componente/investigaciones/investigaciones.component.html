@@ -1,0 +1,465 @@
+<section>
+    <div class="row banner-interno">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="{{logo_pc}}" alt="Egresados">
+       </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
+        <img src="{{logo_m}}" alt="Egresados">
+   </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center vertical-align-center">
+            
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar">
+                    <div class="row justify-content-center vertical-align-center">
+                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+                            <h1 class="text-center bolder-1">INVESTIGACIÓN</h1>
+                            
+                            <p class="lema text-center"> Ciencia, Creatividad e Innovación</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+                    </div>
+                </div>
+
+    
+
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
+                
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
+                                <div class="row text-center small text-white">    
+                                    <div class="col-xl-2 col-lg-2 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Plan Estratégico</a></div>
+                                    <div class="col-xl-2 col-lg-2 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Plan Operativo Anual</a></div>
+                                    <div class="col-xl-3 col-lg-2 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Política de Investigaciones</a></div>
+                                    <div class="col-xl-3 col-lg-2 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Política de Internacionalización</a></div>
+                                    <div class="col-xl-2 col-lg-2 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Política de Extensión</a></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
+                                <div class="row tabs" ng-init="inicioAlgo()">
+                                    <a (click)="paginas('1')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                        Grupo de investigación
+                                    </a>
+                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                        Semilleros de investigación
+                                    </a>
+                                    <a (click)="paginas('3')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
+                                        Convocatorias
+                                    </a>
+                                    <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                        Eventos
+                                    </a>
+                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''" id="btn-5">
+                                        Internacionalización
+                                    </a>
+                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''" id="btn-6">
+                                        Centro de Proyección e innovación (HUB)
+                                    </a>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+
+<section class="p-0 m-0">
+    <div id="content-programa">
+
+        <div id="pag-one" *ngIf="isValid1">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-10 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center bolder-1">Grupo de investigación </h2>
+                    </div>
+                    
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="row justify-content-center">
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                              
+                                <p>
+                                    En busca de una cultura del conocimiento CIAF debe establecer estrategias de formación 
+                                    para docentes y estudiantes en investigación que les permita desarrollar pensamiento 
+                                    crítico y creativo, entre tanto, debe incorporar programas, proyectos, etc., 
+                                    que involucren la investigación y/o la innovación artística, 
+                                    evidenciando resultados tangibles en los lineamientos establecidos por Minciencias. 
+                                </p>
+                                <p>
+                                    En este orden de ideas, CIAF entiende los grupos de investigación, desarrollo tecnológico o innovación, 
+                                    como una de las principales unidades del sistema nacional de ciencia, tecnología e innovación de Colombia 
+                                    y también de nuestra institución ya que se encuentra conformado por un conjunto de personas expertas que 
+                                    interactúan para investigar y generar productos de nuevo conocimiento en uno o varios temas. 
+                                    Un grupo para Minciencias será reconocido siempre que demuestre continuamente resultados 
+                                    verificables, derivados de proyectos, de otras actividades del plan de trabajo 
+                                    institucional de CIAF y que además cumpla con los siguientes requisitos mínimos para su reconocimiento: 
+
+                                </p>
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4">
+                                <img [src]="grupo_investigacion" width="90%" alt="Grupo de Investigación"><br>
+                                Semana Original 2022 (Un pereirano en la NASA)
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4">
+                                <img [src]="investigacion_reconocimiento" width="90%" alt="Reconocimiento investigaciones">
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 desempenate"> 
+                               
+                                
+                                    <li><img [src]="img_li" alt="icono"> Estar registrado en el sistema GrupLAC de la Plataforma ScienTI - Colombia en COLCIENCIAS.</li> 
+                                    <li><img [src]="img_li" alt="icono"> Tener un mínimo de dos (2) integrantes. </li>
+                                    <li><img [src]="img_li" alt="icono"> Tener uno (1) o más años de existencia (edad declarada) </li>
+                                    <li><img [src]="img_li" alt="icono"> Estar avalado al menos por una Institución registrada en el sistema InstituLAC de la Plataforma ScienTI – Colombia. 
+                                        Previamente, el grupo debió registrar su pertenencia institucional. </li>
+                                    <li><img [src]="img_li" alt="icono"> Tener un proyecto de investigación, de desarrollo tecnológico o de innovación en ejecución.
+                                        El Líder del grupo deberá tener título de Pregrado, Maestría o Doctorado. </li>
+                                    <li><img [src]="img_li" alt="icono"> Tener una producción de nuevo conocimiento o de resultados de actividades de desarrollo tecnológico e innovación, 
+                                        en la ventana de observación equivalente a un mínimo de un (1) producto por un año declarado de existencia.</li>
+                                    <li><img [src]="img_li" alt="icono"> Tener una producción de apropiación social y circulación del conocimiento o productos resultado de actividades 
+                                        relacionadas con la Formación de Recurso Humano en CTI, en la ventana de observación equivalente a un mínimo de un (1) 
+                                        producto por un año declarado de existencia.</li>
+                                        
+                                
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 desempenate"> 
+                               
+                                <p>
+                                    También, para un grupo de investigación buscar una categoría en C, 
+                                    debe cumplir con otros requisitos adicionales:
+                                </p>
+                                <p>Cumplir con la totalidad de los siguientes requisitos.</p>
+                                <li><img [src]="img_li" alt="icono"> Tener un Indicador de Grupo mayor que cero (0).</li> 
+                                <li><img [src]="img_li" alt="icono"> Tener un Indicador de Productos Tipo TOP o de Productos Tipo A mayor que cero (0).</li>
+                                <li><img [src]="img_li" alt="icono">Tener un indicador de Productos de Apropiación Social del Conocimiento y Divulgación 
+                                    Pública de la Ciencia mayor que cero (0).</li>
+                                <li><img [src]="img_li" alt="icono">Tener un Indicador de Productos de Actividades Relacionadas con la Formación de Recurso 
+                                    Humano para la CTeI - Tipo A o Tipo B mayor que cero (0).</li>
+                                <li><img [src]="img_li" alt="icono">Desarrollar al menos un (1) producto de nuevo conocimiento en un periodo máximo de treinta (30) meses; 
+                                Indicador de Estabilidad de la Producción menor o igual a treinta (30).</li>
+                                <li><img [src]="img_li" alt="icono">Tener un Indicador de Permanencia de Investigadores mayor o igual que (0.5).</li>
+                                <li><img [src]="img_li" alt="icono">Tener un Indicador de Trayectoria mayor o igual que menos cero punto siete (-0.7).</li>
+                                <li><img [src]="img_li" alt="icono"> Tener al menos dos (2) años de existencia.</li>
+
+                                    
+                            
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4">
+                                <img [src]="investigacion_requisitos" width="90%" alt="Investigacion requisitos">
+                            </div>
+
+                            <div class="col-xxl-10 mb-4 pb-4 p-4 ">
+                                <p>La institución cuenta con un grupo de investigación categorizado en C y cinco líneas de investigación que 
+                                fundamentan la investigación formativa y en sentido estricto de los programas académicos de CIAF.</p>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-10 mb-4 pb-4 p-4 text-center">
+                                <h2 class="titulo-2 bolder-1">Lineas de Investigación</h2>
+                            </div>
+                            <div class="col-xxl-12 mb-4 pb-4 p-4 text-center">
+                                <div class="row">
+                                    <div class="col-xxl-2 text-center">
+                                      <img [src]="biodiversidad" alt="Biodiversidad" width="200px" class="p-4">
+                                      <p class="text-1 fw-bolder fst-italic fs-6">Biodiversidad</p>  
+                                    </div>
+                                    <div class="col-xxl-2 text-center">
+                                        <img [src]="innovacion" alt="Innovación social" width="200px" class="p-4">
+                                        <p class="text-1 fw-bolder fst-italic fs-6">Innovación social</p>  
+                                    </div>
+                                    <div class="col-xxl-2 text-center">
+                                        <img [src]="desarrollo" alt="Desarrollo e implementación de software" width="200px" class="p-4">
+                                        <p class="text-1 fw-bolder fst-italic fs-6">Desarrollo e implementación de software</p>  
+                                    </div>
+                                    <div class="col-xxl-3 text-center">
+                                        <img [src]="gestion" alt="Gestión organizacional y desarrollo sostenible" width="200px" class="p-4">
+                                        <p class="text-1 fw-bolder fst-italic fs-6">Gestión organizacional y desarrollo sostenible</p>  
+                                    </div>
+                                    <div class="col-xxl-3 text-center">
+                                        <img [src]="seguridad" alt="Seguridad integral" width="200px" class="p-4">
+                                        <p class="text-1 fw-bolder fst-italic fs-6">Seguridad integral, técnicas de seguridad y prevención de riesgos</p>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-10 mb-4 pb-4 p-4 text-justify">
+                                <p>
+                                    El grupo de investigación Organizaciones e Innovación es un grupo con 12 años 
+                                    de experiencia investigativa con más de 200 tesis de trabajos de pregrado y 8 de maestría, 
+                                    5 desarrollos de software, 12 artículos de investigación en revistas indexadas de alto impacto, 
+                                    5 libros publicados, 8 capítulos de libros, participación en 32 congresos nacionales e internacionales, 
+                                    ha participado con 8 jóvenes investigadores en convocatorias de Minciencias, 
+                                    cuenta con investigadores categorizados como Junior y Asociado, y se encuentra 
+                                    categorizado en C ante el ministerio de ciencia y tecnología.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="pag-two" *ngIf="isValid2">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">SEMILLEROS DE INVESTIGACIÓN</h2>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                                <p class="text-justify">
+                                    Los Semilleros de Investigación son una estrategia de Formación Investigativa, 
+                                    en la que un grupo de estudiantes liderados por un docente tutor, 
+                                    con experiencia en investigación, adelantan procesos investigativos 
+                                    que fortalecen la formación en investigación y promueven el desarrollo 
+                                    de una cultura investigativa, a través de la ciencia, la tecnología y 
+                                    la innovación; propiciando el trabajo interdisciplinario donde prima el 
+                                    trabajo en equipo, el debate de propuestas, la divulgación de resultados 
+                                    y el ejercicio de la crítica y la argumentación.
+
+                                </p>
+                                <p class="text-justify">
+                                    Los productos derivados de este ejercicio formativo son divulgados mediante 
+                                    la publicación de libros o capítulos de libro, artículos publicados en revistas 
+                                    indexadas científicas y académicas y mediante la participación en eventos de 
+                                    divulgación de conocimiento con ponencias o posters.
+
+                                </p>
+                                <p class="text-justify">
+                                    El resultado de este trabajo es un producto de investigación elaborado de forma autónoma por los estudiantes.
+                                </p>
+
+                                
+                                <h3 class="titulo-2 pt-4">Beneficios de participar en los semilleros:</h3>
+                                
+
+                            </div>
+                       
+                            <div class="col-xxl-5 col-lg-10 col-md-10 col-10 p-4">
+                                <img [src]="investigacion_semillero" width="90%" alt="Investigacion Semillero">
+                            </div>
+
+                            
+                            <div class="col-xxl-10 mb-4 pb-4 p-4 desempenate"> 
+                        
+                                <li>
+                                    <img [src]="img_li" alt="icono"> Recibir permisos académicos y el apoyo económico para participar 
+                                    en nombre de CIAF en eventos académicos o publicaciones académico-científicas de nivel local, 
+                                    nacional o internacional. Para lo anterior se requiere el visto bueno del comité general de 
+                                    investigaciones de la escuela y el aval del director de investigaciones.
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono"> Obtener certificados y cartas de recomendación institucionales para la hoja de vida 
+                                    como futuro profesional o como requisito para procesos de admisión a programas de 
+                                    posgrados, aplicar a becas, convocatorias nacionales e internacionales, pasantías y 
+                                    demás procesos académico-científicos a los que tenga lugar. 
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono"> Tener prioridad por parte de los grupos de investigación para participar en las 
+                                    convocatorias de jóvenes investigadores o afines, en proyectos de investigación 
+                                    financiados por convocatorias bien sean internas o externas; siempre y cuando 
+                                    cumplan con los perfiles y requerimientos definidos por el director del proyecto de investigación. 
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono"> Los estudiantes pertenecientes a semilleros de investigación que participen en proyectos
+                                    de investigación con financiación interna o externa, podrán tener un reconocimiento 
+                                    económico por las labores realizadas dentro del proyecto. Dicha financiación deberá 
+                                    ser incluida dentro del presupuesto del respectivo proyecto de investigación.
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono"> Los proyectos de investigación que realicen estudiantes pertenecientes al semillero de 
+                                    investigación como parte de un macro proyecto, podrán ser presentados en modalidades de 
+                                    trabajo de grado de acuerdo con la reglamentación de cada programa académico. 
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono"> Mayor apoyo económico a los estudiantes que hagan pasantías internacionales 
+                                    y que pertenezcan a los semilleros de investigación.
+                                </li>
+
+                            </div>
+
+                            <div class="col-xxl-5 col-lg-10 col-md-10 col-10 p-4">
+                                <img [src]="investigacion_actividades" width="90%" alt="Investigacion Actividades">
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 desempenate"> 
+                                <p class="titulo-2 pb-4">¿Qué actividades se realizan?</p>
+                                <li>
+                                    <img [src]="img_li" alt="icono">Reuniones de trabajo asociadas a las temáticas del semillero.
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Lectura, socialización y discusión de artículos científicos. 
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Programación de actividades, asignación de tareas y responsabilidades asociadas a las temáticas del semillero.
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Capacitación en metodologías y herramientas para llevar a cabo investigación.
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Asesoría y desarrollo de trabajos de grado que cumplan con los requisitos exigidos en el acuerdo 04 del 2017 de modalidades de grados. 
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Participación y elaboración de talleres.
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Desarrollo de estudios de caso. 
+                                </li> 
+                                <li>
+                                    <img [src]="img_li" alt="icono">Apoyo a la experimentación. 
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono">Apoyo a la formulación y desarrollo de proyectos de investigación. 
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono">Apoyo en la participación, organización y desarrollo de eventos académicos y científicos.
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono">Apoyo en la redacción de artículos científicos.
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono">Apoyo en la búsqueda sistemática de bibliografía en bases de datos, elaboración de revisiones de literatura y estado del arte. 
+                                </li>
+                                <li>
+                                    <img [src]="img_li" alt="icono">Participación y/o apoyo en la realización de encuentros de semilleros de investigación.
+                                </li>
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
+                                <p class="titulo-2 pb-4">En la actualidad CIAF cuenta con 6 Semilleros de investigación</p>
+                               <div class="row">
+                                <div class="col-12">
+                                    <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Bioevolución Legal</span>
+                                </div>
+                                <div class="col-12 text-1">
+                                    <p class="ps-4">
+                                        Docente coordinador: Yeison Antonio Quiroga Henao<br>
+                                        Correo: yeison.quiroga@ciaf.edu.co
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <img [src]="img_li_ok" alt="icono" class="pe-3"> <span class="text-1 bolder-1 fs-5">Talento Innova</span>
+                                </div>
+                                <div class="col-12 text-1">
+                                    <p class="ps-4">
+                                        Docente coordinador: Rosalba Loaiza<br>
+                                        Correo: Rosalba.loaiza@ciaf.edu.co
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <img [src]="img_li_ok" alt="icono" class="pe-3"> <span class="text-1 bolder-1 fs-5">SIEMXSIEM</span>
+                                </div>
+                                <div class="col-12 text-1">
+                                    <p class="ps-4">
+                                        Docente coordinador: Nestor German Sánchez<br>
+                                        Correo: german.sanchez@ciaf.edu.co
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <img [src]="img_li_ok" alt="icono" class="pe-3"> <span class="text-1 bolder-1 fs-5">Machine Learning</span>
+                                </div>
+                                <div class="col-12 text-1">
+                                    <p class="ps-4">
+                                        Docente coordinador: Luis Ariosto Serna Cardona<br>
+                                        Correo: luis.serna@ciaf.edu.co
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <img [src]="img_li_ok" alt="icono" class="pe-3"> <span class="text-1 bolder-1 fs-5">Ciencias de datos</span>
+                                </div>
+                                <div class="col-12 text-1">
+                                    <p class="ps-4">
+                                        Docente coordinador: Luis Ariosto Serna Cardona<br>
+                                        Correo: luis.serna@ciaf.edu.co
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <img [src]="img_li_ok" alt="icono" class="pe-3"> <span class="text-1 bolder-1 fs-5">Seguridad y Salud en el Trabajo</span>
+                                </div>
+                                <div class="col-12 text-1">
+                                    <p class="ps-4">
+                                        Docente coordinador: Iván Dario Tabares<br>
+                                        Correo: ivan.tabares@ciaf.edu.co
+                                    </p>
+                                </div>
+                                
+
+                               </div>
+                                    
+                              
+
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4">
+                                <img [src]="investigacion_ganador" width="90%" alt="Investigacion Ganador">
+                                <p>Grupo de investigación ganador del</p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="pag-four" *ngIf="isValid4">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">
+                            MONITOREANDO LA EXPERIENCIA<br>
+                            <span class="titulo-3">¿Cómo vamos en la gestión?</span>
+                        </h2>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                              
+                                <p>
+                                    El programa institucional Monitoreando la Experiencia, 
+                                    es una iniciativa que busca identificar el cumplimiento 
+                                    de los compromisos asumidos por cada dependencia y las metas 
+                                    para cumplir el desarrollo del Plan Estratégico 2019-2022, 
+                                    y definir las estrategias para el mejoramiento continuo de 
+                                    los procesos académicos de CIAF, dentro del eje de la Cultura de la calidad.
+                                </p>
+                                <p>
+                                    Nuestra área se encarga del cumplimiento de esta estrategia mediante auditorías, 
+                                    visitas, formularios, etc. 
+                                    presenciales o virtuales de manera directa o a través de la plataforma SAC.
+                                </p>
+                            </div>
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4"><img [src]="investigacion_ganador" width="90%" alt="SAC Gestión"></div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+</section>
+

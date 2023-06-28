@@ -1,0 +1,205 @@
+<section>
+    <div class="row banner-interno">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+            <img src="{{logo_pc}}" alt="Egresados">
+       </div>
+       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
+        <img src="{{logo_m}}" alt="Egresados">
+   </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+            <div class="row justify-content-center vertical-align-center">
+            
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar">
+                    <div class="row justify-content-center vertical-align-center">
+                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+                            <h1 class="text-center bolder-1">SAC</h1>
+                            
+                            <p class="lema text-center"> Sistema de Aseguramiento de la Calidad</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+                    </div>
+                </div>
+
+    
+
+                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
+                
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
+                                <div class="row text-center small text-white">    
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">SAC</a></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Autoevaluación y Autoregulación</a></div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Plan Estratégico</a></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
+                                <div class="row tabs" ng-init="inicioAlgo()">
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                        Acuerdo No. 11 de dic 28 de 2018
+                                    </a>
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                        Política de Autoevaluación Institucional
+                                    </a>
+                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
+                                        Modelo de Autoevaluación Institucional y de Programas Académicos
+                                    </a>
+                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                        Monitoreando la Experiencia
+                                    </a>
+
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+
+<section class="p-0 m-0">
+    <div id="content-programa">
+
+        <div id="pag-ini" *ngIf="isValid1">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-10 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">Un Parche Lleno de Calidad </h2>
+                    </div>
+                    
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                              
+                                <p>Sistema de Aseguramiento de la Calidad SAC CIAF, 
+                                    es la estructura que permite la interacción orientada a la calidad 
+                                    y el establecimiento de una cultura de mejoramiento continuo en 
+                                    el desarrollo de las actividades académicas y administrativas.
+                                </p>
+                                <p>La articulación de los procesos de planeación, autoevaluación 
+                                    y mejoramiento continuo consolidan al SAC y su coherencia, con 
+                                    los estándares generalmente aceptados en la Educación Superior 
+                                    y la capacidad Institucional, en cuanto a eficiencia del uso de 
+                                    los recursos y la sostenibilidad presupuestal.
+                                </p>
+                            </div>
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4"><img [src]="pensar_diferente" width="90%" alt="Un Parche Lleno de Calidad"></div>
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4"><img [src]="sac_queremos" width="90%" alt="Qué queremos con el SAC"></div>
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
+                                <h3 class="titulo-2 pb-3">¿Qué queremos con el SAC?</h3>
+                                <p>
+                                    Para el año 2023, el SAC consolide a nivel institucional, la cultura de compromiso, 
+                                    autoevaluación, planeación, gestión y mejoramiento continuo que dirija a CIAF, 
+                                    al cambio de carácter para convertirse en una Institución de Educación Superior.
+                                </p>
+                                <p>
+                                    Visión del SAC hacia el cumplimiento de la visión institucional: 2030 cambio de carácter académico
+                                </p>
+                            </div>
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
+                                <h3 class="titulo-2 pb-3">Modelo para la planeación y autoevaluación para el desarrollo del SAC. </h3>
+                                <p>
+                                    El SAC CIAF, atendiendo a los cuatro ejes del Plan estratégico 2019-2022 
+                                    Creatividad para un mundo en evolución, desarrolla la metodología para establecer, 
+                                    hacer seguimiento y mejorar los compromisos, metas y acciones de mejoramiento.
+
+                                </p>
+                                <p>
+                                    Por lo tanto, establece el modelo de planeación y modelo de autoevaluación 
+                                    institucional que a continuación se describen.
+                                </p>
+                            </div>
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4"><img [src]="sac_planeacion" width="90%" alt="Modelo para la planeación"></div>
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4"><img [src]="sac_planeamos" width="90%" alt="Modelo para la planeación"></div>
+                        
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
+                                <h3 class="titulo-2 pb-3">¿Cómo planeamos en CIAF? </h3>
+                                <p>
+                                    La planeación para CIAF, constituye el mecanismo de articulación, 
+                                    entre procesos, organización y cargos el cumplimiento de labores 
+                                    académicas y administrativas, a través de tres modalidades: 
+                                    Plan Estratégico Institucional, Plan Operativo Anual y Plan de Transición. 
+
+                                </p>
+
+                            </div>
+                        
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="pag-three" *ngIf="isValid3">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">MODELO DE AUTOEVALUACIÓN INSTITUCIONAL Y DE PROGRAMAS ACADÉMICOS </h2>
+                    </div>
+                    
+                    <div class="col-xlx-8 col-lg-10 col-md-10 col-10">
+                     <p>
+                        El Modelo de Autoevaluación Institucional y de Programas CIAF pretende instaurar una retroalimentación 
+                        permanente de los procesos académicos e institucionales, para promocionar la cultura de la evaluación 
+                        continua y autorregulación dentro de sus actores, fortaleciendo a la entidad y conduciendo hacia 
+                        un mejoramiento continuo.
+
+                     </p>
+                        
+                    </div>
+                    <div class="col-xxl-6 col-lg-10 col-md-10 col-10 p-4">
+                        <img [src]="modelo_planeacion" width="90%" alt="Modelo de Planeación">
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="pag-four" *ngIf="isValid4">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center">
+                            MONITOREANDO LA EXPERIENCIA<br>
+                            <span class="titulo-3">¿Cómo vamos en la gestión?</span>
+                        </h2>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                              
+                                <p>
+                                    El programa institucional Monitoreando la Experiencia, 
+                                    es una iniciativa que busca identificar el cumplimiento 
+                                    de los compromisos asumidos por cada dependencia y las metas 
+                                    para cumplir el desarrollo del Plan Estratégico 2019-2022, 
+                                    y definir las estrategias para el mejoramiento continuo de 
+                                    los procesos académicos de CIAF, dentro del eje de la Cultura de la calidad.
+                                </p>
+                                <p>
+                                    Nuestra área se encarga del cumplimiento de esta estrategia mediante auditorías, 
+                                    visitas, formularios, etc. 
+                                    presenciales o virtuales de manera directa o a través de la plataforma SAC.
+                                </p>
+                            </div>
+                            <div class="col-xxl-5 mb-4 pb-4 text-center p-4"><img [src]="sac_gestion" width="90%" alt="SAC Gestión"></div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+</section>
+

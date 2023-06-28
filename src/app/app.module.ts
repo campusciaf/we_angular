@@ -48,6 +48,9 @@ import { MotocicletasComponent } from './componente/motocicletas/motocicletas.co
 import { AdministrativosaludComponent } from './componente/administrativosalud/administrativosalud.component';
 import { EmprendimientosComponent } from './componente/emprendimientos/emprendimientos.component';
 import { EmprendimientodetalleComponent } from './componente/emprendimientodetalle/emprendimientodetalle.component';
+import { EgresadosComponent } from './componente/egresados/egresados.component';
+import { SacComponent } from './componente/sac/sac.component';
+import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 
 
 
@@ -80,6 +83,9 @@ import { EmprendimientodetalleComponent } from './componente/emprendimientodetal
     AdministrativosaludComponent,
     EmprendimientosComponent,
     EmprendimientodetalleComponent,
+    EgresadosComponent,
+    SacComponent,
+    InvestigacionesComponent,
 
 
   ],

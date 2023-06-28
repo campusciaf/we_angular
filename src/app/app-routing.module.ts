@@ -17,6 +17,9 @@ import { MotocicletasComponent } from './componente/motocicletas/motocicletas.co
 import { AdministrativosaludComponent } from './componente/administrativosalud/administrativosalud.component';
 import { EmprendimientosComponent } from './componente/emprendimientos/emprendimientos.component';
 import { EmprendimientodetalleComponent } from './componente/emprendimientodetalle/emprendimientodetalle.component';
+import { EgresadosComponent } from './componente/egresados/egresados.component';
+import { SacComponent } from './componente/sac/sac.component';
+import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -35,6 +38,9 @@ const routes: Routes = [
   {path: 'administrativo', component:AdministrativosaludComponent},
   {path: 'emprendimientos', component:EmprendimientosComponent},
   {path: 'emprendimientodetalle/:id', component:EmprendimientodetalleComponent},
+  {path: 'egresados', component:EgresadosComponent},
+  {path: 'sac', component:SacComponent},
+  {path: 'investigaciones', component:InvestigacionesComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];
