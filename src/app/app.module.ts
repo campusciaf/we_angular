@@ -51,6 +51,7 @@ import { EmprendimientodetalleComponent } from './componente/emprendimientodetal
 import { EgresadosComponent } from './componente/egresados/egresados.component';
 import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
+import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 
 
 
@@ -86,6 +87,7 @@ import { InvestigacionesComponent } from './componente/investigaciones/investiga
     EgresadosComponent,
     SacComponent,
     InvestigacionesComponent,
+    RelacionExternoComponent,
 
 
   ],

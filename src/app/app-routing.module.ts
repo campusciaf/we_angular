@@ -20,6 +20,7 @@ import { EmprendimientodetalleComponent } from './componente/emprendimientodetal
 import { EgresadosComponent } from './componente/egresados/egresados.component';
 import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
+import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path: 'egresados', component:EgresadosComponent},
   {path: 'sac', component:SacComponent},
   {path: 'investigaciones', component:InvestigacionesComponent},
+  {path: 'relacion-externo', component:RelacionExternoComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];

@@ -105,6 +105,12 @@
     transition: all 1s;
 }
 
+.pic-float img{
+    position: absolute;
+    width: 300px;
+    margin-top: -80px;
+}
+
 @media (max-width:1024px){
     .padding-bienestar{
         padding-top: 100px;
@@ -146,17 +152,6 @@
         height: 220px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -26,6 +26,8 @@ export class InvestigacionesComponent {
   public desarrollo="assets/image/desarrollo.webp";
   public gestion="assets/image/gestion-sostenible.webp";
   public seguridad="assets/image/seguridad.webp";
+  public investigacion_eventos="assets/image/investigacion-eventos.webp";
+  public investigacion_participacion="assets/image/investigacion-participacion.webp";
 
   pagina:any;
 activo:any;
@@ -212,7 +214,7 @@ activo:any;
   
     ngOnInit(): void {
       this.activo="0";
-      this.pagina="2";
+      this.pagina="6";
       this.paginas(this.pagina);
   
 
