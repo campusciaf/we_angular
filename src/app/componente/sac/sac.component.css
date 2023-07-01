@@ -2,8 +2,8 @@
   .bg-opciones{
     background-color: rgba(0,97,168,0.8);
 }
-.padding-bienestar{
-    padding-top: 200px;
+.padding-sac{
+    padding-top: 150px;
 }
 .bg-software{
 	background-color: rgba(0,97,168,0.8);
@@ -106,13 +106,13 @@
 }
 
 @media (max-width:1024px){
-    .padding-bienestar{
-        padding-top: 100px;
+    .padding-sac{
+        padding-top: 50px;
     }
 }
 
 @media (max-width:768px){
-    .padding-bienestar{
+    .padding-sac{
         padding-top: 80px;
     }
 
@@ -123,7 +123,7 @@
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-    .padding-bienestar{
+    .padding-sac{
         padding-top: 70px;
     }
     .b-interno .b-contenido p{

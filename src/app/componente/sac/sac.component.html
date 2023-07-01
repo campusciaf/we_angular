@@ -9,7 +9,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
             <div class="row justify-content-center vertical-align-center">
             
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar">
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-sac">
                     <div class="row justify-content-center vertical-align-center">
                         <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
                             <h1 class="text-center bolder-1">SAC</h1>
@@ -29,23 +29,22 @@
                 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
                                 <div class="row text-center small text-white">    
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">SAC</a></div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Autoevaluación y Autoregulación</a></div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Plan Estratégico</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="" class="btn btn-sm text-white">Acuerdo No. 11 de dic 28 de 2018</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="https://ciaf.digital/public/web_reglamentos/Acuerdo-13-de-2019.pdf" target="_blank" class="btn btn-sm text-white">Política de Autoevaluación Institucional</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="https://ciaf.digital/public/web_reglamentos/modelo_autoevaluacion.pdf" target="_blank" class="btn btn-sm text-white">Autoevaluación y Autoregulación</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Plan Estratégico</a></div>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
-                                        Acuerdo No. 11 de dic 28 de 2018
+                                    <a (click)="paginas('1')" class="col-xl-4 col-lg-3 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                        SAC
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
-                                        Política de Autoevaluación Institucional
+
+                                    <a (click)="paginas('3')" class="col-xl-4 col-lg-5 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
+                                        Modelo de Autoevaluación y de Programas Académicos
                                     </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
-                                        Modelo de Autoevaluación Institucional y de Programas Académicos
-                                    </a>
-                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                    <a (click)="paginas('4')" class="col-xl-4 col-lg-4 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
                                         Monitoreando la Experiencia
                                     </a>
 
@@ -203,3 +202,51 @@
     </div>
 </section>
 
+<div class="row m-menu bg-2">
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
+        <div class="pt-1" id="btn-1-1">
+            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>SAC<br> Sistema de Calidad</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
+        <div class="pt-1" id="btn-2-1">
+            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Modelo de Autoevalución <br>y de Programas</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
+        <div class="pt-1" id="btn-3-1">
+            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
+                <div class="col-12">
+                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
+                </div>
+                <div class="col-12">
+                    <p>Monitoreando <br>la Experiencia</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
