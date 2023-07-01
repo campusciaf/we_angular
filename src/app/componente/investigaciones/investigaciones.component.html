@@ -38,10 +38,10 @@
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
                                 <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
+                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Grupo de investigación
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
                                         Semilleros de investigación
                                     </a>
                                     <a (click)="paginas('3')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
@@ -53,9 +53,7 @@
                                     <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''" id="btn-5">
                                         Internacionalización
                                     </a>
-                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''" id="btn-6">
-                                        Centro de Proyección e innovación (HUB)
-                                    </a>
+
                                 </div>
                             </div>
                 
@@ -423,7 +421,81 @@
             </section>
         </div>
 
-        <div id="pag-six" *ngIf="isValid6">
+        <div id="pag-three" *ngIf="isValid3">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center bolder-1 text-3">CONVOCATORIAS</h2>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-xxl-5 col-lg-10 col-md-10 col-10 p-4">
+                                <img [src]="investigaciones_convocatorias" width="90%" alt="Investigaciones convocatorias">
+                            </div>
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                                <p class="text-justify">
+                                    Minciencias es el ente encargado de diseñar, formular, coordinar, 
+                                    promover la implementación y evaluar la política pública, los planes, 
+                                    programas y estrategias que se encaminan a fomentar, fortalecer y 
+                                    desarrollar la Ciencia, la Tecnología y la Innovación, para consolidar 
+                                    una sociedad basada en el conocimiento, en fundamentación al mismo.  
+                                    CIAF, siguiendo uno de los lineamientos de la función sustantiva 
+                                    como lo es la investigación, aporta en la generación de investigaciones 
+                                    de alto impacto, líneas de investigación y grupos de investigación que 
+                                    están alineados a una sociedad del conocimiento.
+
+                                </p>
+                                <p class="text-justify">
+                                    En este orden de ideas, CIAF anualmente realiza convocatorias de 
+                                    investigación internas que tienen como finalidad, financiar proyectos 
+                                    de investigación generados en los semilleros de investigación, 
+                                    o investigaciones que los docentes y estudiantes vienen adelantando 
+                                    y que son de relevancia para el país, el departamento, el municipio 
+                                    o a nivel institucional, así como convocatorias de pasantías nacionales e 
+                                    internacionales para los estudiantes de CIAF.
+
+                                </p>
+
+
+                            </div>
+                       
+
+                          
+                            <div class="col-xxl-5 mb-4 pb-4 p-4 vertical-align-center"> 
+                               <div class="row justify-content-center text-center">
+                                <div class="col-xxl-12">
+                                    <p class="titulo-2 pb-4 text-center text-3 ">Entérate aquí:</p>
+                                </div>
+                                <div class="col-xxl-5 p-4">
+                                    <img [src]="convocatorias_internas" width="90%" alt="Convocatorias Internas">
+                                    <p class="text-1 bolder-1 pt-4 fs-6">Convocatorias <br>Internas</p>
+                                </div>
+                                <div class="col-xxl-5 p-4">
+                                    <img [src]="convocatorias_externas" width="90%" alt="Convocatorias Externas">
+                                    <p class="text-1 bolder-1 pt-4 fs-6">Convocatorias <br>Externas</p>
+                                </div>
+                               </div>
+
+                            </div>
+
+                            <div class="col-xxl-5 col-lg-10 col-md-10 col-10 p-4">
+                                <img [src]="investigaciones_enterate" width="90%" alt="Investigacion Enterate">
+                            </div>
+
+
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="pag-four" *ngIf="isValid4">
             <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
                 <div class="row justify-content-center py-4 my-4">
                    
@@ -479,6 +551,74 @@
 
 
 
+                </div>
+            </section>
+        </div>
+
+        <div id="pag-five" *ngIf="isValid5">
+            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 mb-4 pb-4">
+                        <h2 class="titulo-2 text-center bolder-1 text-3">INTERNACIONALIZACIÓN</h2>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+
+                        <div class="row justify-content-center">
+
+                           
+
+                            <div class="col-xxl-5 mb-4 pb-4 p-4">
+                                <p class="text-justify">
+                                    como parte fundamental de una de las funciones sustantivas de la educación, 
+                                    la internacionalización hace parte fundamental y es un proceso que fomenta 
+                                    los lazos de cooperación e integración de las Instituciones de Educación 
+                                    Superior con sus pares en otros lugares del mundo, con el fin de alcanzar 
+                                    mayor presencia y visibilidad internacional en un mundo cada vez más globalizado.
+
+                                </p>
+                                <p class="text-justify">
+                                    Este proceso les confiere una dimensión internacional e intercultural a los 
+                                    mecanismos de enseñanza e investigación de CIAF. En este orden de ideas, 
+                                    CIAF tiene diferentes convenios y ha participado en diferentes pasantías internacionales como: 
+                                </p>
+                                <p class="text-justify">
+                                    En este orden de ideas, CIAF tiene diferentes convenios y ha participado en diferentes pasantias 
+                                    internacionales como:
+
+                                </p>
+
+                              <div class="desempenate p-2">
+                            
+                                    <li class="p-2">
+                                        <img [src]="img_li" alt="icono"> XXIV Verano de investigación científica y tecnológica del pacifico
+                                    </li> 
+                                    <li class="p-2">
+                                        <img [src]="img_li" alt="icono"> XXV verano de investigación científica y tecnológica del pacifico 
+                                    </li>
+                                    <li class="p-2">
+                                        <img [src]="img_li" alt="icono">XXVI Verano de investigación científica y tecnológica del pacifico
+                                    </li>
+                                    <li class="p-2">
+                                        <img [src]="img_li" alt="icono"> XXVII Verano de investigación científica y tecnológica del pacifico
+                                    </li>
+                                   
+                                </div>    
+
+
+                            </div>
+                            <div class="col-xxl-5 col-lg-10 col-md-10 col-10 p-4 text-center vertical-align-center justify-content-center">
+                                <img [src]="internacionalizacion_investigacion" width="80%" alt="Internacionalizacion e Investigacion">
+                            </div>
+                       
+
+
+
+
+                            
+                        </div>
+
+                    </div>
                 </div>
             </section>
         </div>

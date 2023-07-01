@@ -28,9 +28,15 @@ export class InvestigacionesComponent {
   public seguridad="assets/image/seguridad.webp";
   public investigacion_eventos="assets/image/investigacion-eventos.webp";
   public investigacion_participacion="assets/image/investigacion-participacion.webp";
+  public investigaciones_convocatorias="assets/image/investigaciones-convocatorias.webp";
+  public investigaciones_enterate="assets/image/investigaciones-enterate.webp";
+  public convocatorias_internas="assets/image/convocatorias-internas.webp";
+  public convocatorias_externas="assets/image/convocatorias-externas.webp";
+  public internacionalizacion_investigacion="assets/image/internacionalizacion-investigacion.webp";
+  
 
   pagina:any;
-activo:any;
+  activo:any;
 
   isValid0:boolean = false;
   isValid1:boolean = false;
@@ -214,7 +220,7 @@ activo:any;
   
     ngOnInit(): void {
       this.activo="0";
-      this.pagina="6";
+      this.pagina="1";
       this.paginas(this.pagina);
   
 
