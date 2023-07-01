@@ -9,11 +9,21 @@
 
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
                     <div ngxSlickItem *ngFor="let datos of listarCalidadCrecimiento index as i" class="slide">
-                        <div (mouseover)="animarcalidad(i)" (mouseout)="noanimarcalidad(i)">
-                            <a routerLink="{{datos.url_calidad}}">
-                                <img src="https://ciaf.digital/public/web_calidad_crecimiento/{{datos.imagen_calidad}}" alt="{{datos.titulo_calidad}}" width="100%" height="auto" [className]="'e-img-'+i">
-                                <div class="nombre-calidad"><span>{{datos.titulo_calidad}}</span></div>
-                            </a>
+                        <div *ngIf="datos.tipo_link==1">
+                            <div (mouseover)="animarcalidad(i)" (mouseout)="noanimarcalidad(i)">
+                                <a routerLink="{{datos.url_calidad}}">
+                                    <img src="https://ciaf.digital/public/web_calidad_crecimiento/{{datos.imagen_calidad}}" alt="{{datos.titulo_calidad}}" width="100%" height="auto" [className]="'e-img-'+i">
+                                    <div class="nombre-calidad"><span>{{datos.titulo_calidad}}</span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div *ngIf="datos.tipo_link==0">
+                            <div (mouseover)="animarcalidad(i)" (mouseout)="noanimarcalidad(i)">
+                                <a href="{{datos.url_calidad}}" target="_blank">
+                                    <img src="https://ciaf.digital/public/web_calidad_crecimiento/{{datos.imagen_calidad}}" alt="{{datos.titulo_calidad}}" width="100%" height="auto" [className]="'e-img-'+i">
+                                    <div class="nombre-calidad"><span>{{datos.titulo_calidad}}</span></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </ngx-slick-carousel>
