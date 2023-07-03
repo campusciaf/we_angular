@@ -255,16 +255,18 @@ nav .nav-item:hover{
 @media(max-width:1024px){
 
     .dropbtn {
-        width: 110px !important;
+        width: 92px !important;
         text-align: center !important;
-        font-size: 12px;
+        font-size: 11px;
     }
     nav .nav-item a{
-        width: 110px;
+        width: 92px;
+        font-size: 11px;
     }
     .logo img{
-        width: 130px;
+        width: 100px;
         text-align: center;
+        padding-top: 10px;
     }
 
 }

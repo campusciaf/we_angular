@@ -233,8 +233,6 @@ figure{
     color:#fff;
     text-align:center;
     text-decoration:none;
-    line-height:14px;
-    border-radius:8px;
     padding:5px;
     background-color:#89c442
 }
@@ -772,6 +770,10 @@ figure{
     }
     .banner-interno .movil{
         display: block;
+    }
+
+    .btn-financiacion{
+        border-radius: 0px;
     }
 
     .financiacion-interno{

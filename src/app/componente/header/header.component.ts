@@ -21,6 +21,8 @@ export class HeaderComponent implements OnInit {
   public img_apyoutube="assets/image/ap-youtube.webp";
   public img_aptwitter="assets/image/ap-twitter.webp";
   public img_aptiktok="assets/image/ap-tiktok.webp";
+
+  public pagos="assets/image/epayco_web.webp";
   constructor() { }
 
   ngOnInit(): void {

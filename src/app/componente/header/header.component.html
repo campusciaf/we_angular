@@ -3,14 +3,14 @@
         <div class="col-xl-6 col-lg-8 col-md-12 col-12">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono"> 
-                    <a class="btn-link-1 vertical-align-center justify-content-center"> 
+                    <a class="btn-link-1 vertical-align-center justify-content-center" a href="#direccion" data-bs-toggle="modal"> 
                         <!-- <img [src]="img_destino" alt="Ubicación CIAF"> -->
                         <span class="ml-2">Guiate con MAPS</span>
                     </a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono"> 
                     <a class="btn-link-1 vertical-align-center justify-content-center">
-                        <!-- <img [src]="img_ubicacion" alt="Ubicación CIAF">  -->
+                        
                         <span class="ml-2">Cra. 6 No. 24-56 Pereira</span>
                     </a>
                 </div>
@@ -27,21 +27,21 @@
 
 
 <div class="row menu bg-1">
-    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-7 col-7">
+    <div class="col-xxl-8 col-xl-9 col-lg-7 col-md-6 col-12">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-1 pt-2" aria-label="Sixth navbar example">
             <div class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-12">
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
 
                     <div class="row container-fluid justify-content-center">
 
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-11 col-11">
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-11 col-12">
                             <div class="row">
-                                    <div class="col-xl-12 col-lg-12 col-md-6 col-8">
+                                    <div class="col-xl-12 col-lg-12 col-md-6 col-10">
                                         <span class="logo">
                                             <a class="navbar-brand" routerLink="/inicio" target="_top"><img [src]="img_logo" alt="Carreras profesionales"></a>
                                         </span>
                                     </div>
-                                    <div class="col-xl-12 col-lg-12 col-md-6 col-4 pt-2">
+                                    <div class="col-xl-12 col-lg-12 col-md-6 col-2 pt-2">
                                         <button class="navbar-toggler collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>
                                         </button>
@@ -49,7 +49,7 @@
 
                             </div>
                         </div>
-                        <div class="col-xxl-7 col-xl-7 col-lg-10 col-md-11 col-11">
+                        <div class="col-xxl-7 col-xl-7 col-lg-10 col-md-11 col-12">
 
                             <div class="navbar-collapse collapse" id="navbarsExample06">
 
@@ -121,21 +121,30 @@
         </nav>
     </div>
 
-    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-5 pt-xxl-3 pt-xl-3 pt-lg-3 pt-md-3 pt-0 ">
+    <div class="col-xxl-3 col-xl-3 col-lg-5 col-md-5 col-12 pt-xxl-3 pt-xl-3 pt-lg-3 pt-md-3 pt-0 ">
         <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-2 col-3 pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 pt-3" id="opbuscar">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-2 d-md-block d-none pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 pt-3" id="opbuscar">
                 <button class="hamburger"><img [src]="img_lupa" alt="Ubicación CIAF"></button>
                 <button class="cross">&#735;</button>
             </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-9 pt-xxl-0 pt-xl-0 pt-lg-0 pt-md-0 pt-1">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-10 pt-xxl-0 pt-xl-0 pt-lg-0 pt-md-0 pt-1">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
                         <a href="https://ciaf.digital/inscribete/" target="_blank" class="btn btn-financiacion btn-sm py-xxl-2 py-xl-2 py-lg-2 py-md-2 py-1 col-12">Financiación Directa</a>
                     </div>
-                    <div class="col-xl-5 col-lg-6 col-md-6 col-12">
-                        <a href="https://ciaf.digital/inscripciones/" target="_blank" class="btn btn-1 col-12 py-xxl-2 py-lg-2 py-md-2 py-1 ">Inscríbete Aquí</a>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
+                        <a href="https://ciaf.digital/inscripciones/" target="_blank" class="btn btn-1 col-12 py-xxl-2 py-lg-2 py-md-2 py-1 rounded-0">Inscríbete Aquí</a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-4 pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 text-end">
+                        <a href="https://ciaf.digital/pagos_pse/" target="_blank" class="col-12 py-xxl-2 py-lg-2 py-md-2 py-1">
+                            <img [src]="pagos" width="100px" height="32px" title="Pagos en linea">
+                        </a>
                     </div>
                 </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-2 d-md-none d-block pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 pt-1 text-center" id="opbuscar">
+                <button class="hamburger"><img [src]="img_lupa" alt="Ubicación CIAF"></button>
+                <button class="cross">&#735;</button>
             </div>
         </div>
     </div>
@@ -165,6 +174,37 @@
 <!-- hasta aqui llega el buscador    -->
 <div class="wrapper" *ngIf="false">aqui funciona el scroll</div>
 
+
+
+<!-- Modal mapa-->
+<div class="modal fade" id="direccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-6" id="exampleModalLabel">Nuestra sede</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+            <iframe
+                width="100%"
+                height="560"
+                frameborder="0" style="border:0"
+                referrerpolicy="no-referrer-when-downgrade" 
+                languaje="esp"
+                src="https://maps.google.com/maps?q=Cra.+6+No.+24-56+Pereira&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen>
+            </iframe>
+
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+</div>
 
 
 <div class="redes-header">
