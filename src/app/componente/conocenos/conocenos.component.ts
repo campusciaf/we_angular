@@ -21,6 +21,9 @@ export class ConocenosComponent {
   public estrategico="assets/image/estrategico.webp";
   public funcionarios="assets/image/funcionarios.webp";
   public trabaja_nosotros="assets/image/trabaja-nosotros.webp";
+  public img_li_ok="assets/image/img-li-ok.webp";
+  public colaboradores="assets/image/colaboradores.webp";
+
 
   listarCategorias:any;
   listarReglamentos:any;
@@ -196,7 +199,7 @@ export class ConocenosComponent {
     
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="0";
+      this.pagina="2";
       this.paginas(this.pagina);
 
         this.conectarApiService.obtenercategoriasReglamentos().subscribe(respuesta=>{

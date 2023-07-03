@@ -121,19 +121,19 @@
                         <h2 class="titulo-2 text-center">Direccionamiento Estratégico </h2>
                     </div>
                     <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4">
-                        <h3>MISIÓN:</h3>
+                        <h3 class="text-1">MISIÓN:</h3>
                         <p class="text-justify">
                             CIAF es una Institución de Educación Superior que tiene la misión de formar personas 
                             creativas e innovadoras a través de educación permanente, programas profesionales 
                             universitarios por ciclos y especializaciones, para conectar con las necesidades de las 
                             organizaciones y el Estado generando desarrollo consciente.
                         </p>
-                        <h3>VISIÓN:</h3>
+                        <h3 class="text-1">VISIÓN:</h3>
                         <p class="text-justify">
                             Para el 2030 CIAF será una institución de educación superior reconocida en la sociedad por su 
                             creatividad e innovación en todos sus procesos académicos, administrativos y estratégicos.
                         </p>
-                        <h3>PRINCIPIOS RECTORES:</h3>
+                        <h3 class="text-1">PRINCIPIOS RECTORES:</h3>
                         <p class="text-justify">
                             Son 4 los principios que CIAF define como su gran valor: 
                             relacionados con el estudiante, los docentes, los empleados y los graduados.
@@ -189,50 +189,374 @@
             <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
                 <div class="row justify-content-center">
                     <div class="col-xl-12 mb-4 pb-4">
-                        <h2 class="titulo-2 text-center">Consejo Superior y Funcionarios </h2>
+                        <h2 class="titulo-2 text-center bolder-1">Consejo Superior y Funcionarios </h2>
                     </div>
-                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4">
-                        <h3>MISIÓN:</h3>
+                    <div class="col-xl-4 col-lg-10 col-md-10 col-10 p-4">
+                        <h3 class="text-1">CONSEJO SUPERIOR</h3>
                         <p class="text-justify">
-                            CIAF es una Institución de Educación Superior que tiene la misión de formar personas 
-                            creativas e innovadoras a través de educación permanente, programas profesionales 
-                            universitarios por ciclos y especializaciones, para conectar con las necesidades de las 
-                            organizaciones y el Estado generando desarrollo consciente.
+                            Máximo órgano de gobierno de CIAF, integrado por miembros activos, 
+                            miembros honorarios e invitados especialmente. Encargados principalmente de:
                         </p>
-                        <h3>VISIÓN:</h3>
-                        <p class="text-justify">
-                            Para el 2030 CIAF será una institución de educación superior reconocida en la sociedad por su 
-                            creatividad e innovación en todos sus procesos académicos, administrativos y estratégicos.
-                        </p>
-                        <h3>PRINCIPIOS RECTORES:</h3>
-                        <p class="text-justify">
-                            Son 4 los principios que CIAF define como su gran valor: 
-                            relacionados con el estudiante, los docentes, los empleados y los graduados.
-                        </p>
-                        <ol type="a">
-                            <li>
-                                El estudiante: El estudiante es el centro de la misión, respetar al estudiante es cumplirle 
-                                la promesa hecha al acceder a la institución.
-                            </li>
-                            <li>
-                                El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante, 
-                                Ciaf seleccionará y cualificará a sus docentes para que tengan las herramientas para conectar 
-                                con el estudiante, para que sean creativos e innovadores.
-                            </li>
-                            <li>
-                                Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes 
-                                para brindarles bienestar y lograr brindar una educación integral y de calidad.
-                            </li>
-                            <li>
-                                Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte 
-                                que hace la institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
-                            </li>
-                        </ol>
-                        
+                            <ol>
+                                <li>Fijar y velar por el cumplimiento de las normas de carácter general para el funcionamiento de la Institución.</li>
+                                <li>Aprobar el presupuesto anual y vigilar que los recursos sean empleados correctamente.</li>
+                                <li>Aprobar la creación, suspensión o supresión de programas académicos.</li>
+                                <li>Autorizar y ratificar la celebración de contratos o convenios con otras instituciones</li>
+                            </ol>
+
                     </div>
                     <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4 text-center">
-                        <img [src]="organigrama" alt="Aqeuipo que inspira" width="90%" height="auto">
+                        <img [src]="colaboradores" alt="Equipo que inspira" width="90%" height="auto">
                     </div>
+                    
+                    <div class="col-10 text-center">
+                        <p class="titulo-2 pb-4 bolder-1">Equipo de Inspira</p>
+                    </div>
+
+                    <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
+                        <div class="row ani-1">
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Presidente Consejo Superior</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Gina Marcela Barreto Moreno<br>
+                                    gina.barreto@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Secretario General</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Jairo Rodríguez Valderrama<br>
+                                    secretariagnral@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Rectora</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Gina Marcela Barreto Moreno<br>
+                                    gina.barreto@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director SAC (Sistema de aseguramiento de calidad)</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Alejandro Muñoz<br>
+                                    sac@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director de Investigaciones e Innovación</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Luis Ariosto Serna Cardona<br>
+                                    luis.serna@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Programa Administración de Empresas</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Alexander Valencia<br>
+                                    alexander.valencia@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Programa de Contaduría</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Nilson Valencia Reina<br>
+                                    nilson.valencia@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Programa de Ingeniería</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Luis Ariosto Serna Cardona<br>
+                                    luis.serna@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Directora Programa Seguridad y Salud en el Trabajo</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Luis Ariosto Serna Cardona<br>
+                                    luis.serna@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Administrativo y Financiero</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Juan Manuel Vallejo Vargas<br>
+                                    juan.vallejo@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Sistemas de Información</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Julián Arlig Jiménez López<br>
+                                    sistemasdeinformacion@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadoras Académicas</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Paula Andrea Rengifo Briñez<br>
+                                    paula.rengifo@ciaf.edu.co
+                                </div>
+                                <div class="ps-4 ms-4 pt-3">
+                                    Gloria Elizabeth Muñoz Tabares<br>
+                                    elizabeth.munoz@ciaf.edu.co
+                                </div>
+                                <div class="ps-4 ms-4 pt-3">
+                                    Yenny Alejandra Restrepo Uribe<br>
+                                    yenny.restrepo@ciaf.edu.co
+                                </div>
+                                <div class="ps-4 ms-4 pt-3">
+                                    Rosalba Loaiza<br>
+                                    rosa.loaiza@ciaf.edu.co
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadora de Bienestar Institucional</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Ángela Viviana Aragón Largo<br>
+                                    angela.aragon@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadora de Comunicaciones</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Diana Marcela Giraldo Mora<br>
+                                    diana.giraldo@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinador Audiovisuales</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Francisco Benitez<br>
+                                    francisco.benitez@ciaf.edu.co
+                                </div>
+                            </div>
+
+                        
+
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
+                        <div class="row ani-1">
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Revisor Fiscal</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Manuel Ricardo Melo<br>
+                                    revisorfiscal@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Contadora</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Denys Yaneth Niño Mahecha<br>
+                                    denys.nino@ciaf.edu.co
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadora Administrativa</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Diana Catalina Moncada Alvarez<br>
+                                    area.administrativa@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinador de Registro y Control</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Wilbert René Ramírez Delgado<br>
+                                    registroycontrol@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadora de Mercadeo</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Leidy Johana López Márquez<br>
+                                    mercadeo@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinador Técnico de Sistemas</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Ferney Benitez<br>
+                                    sistemas@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadora de recaudo y cartera</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Vanessa Veloza Montoya<br>
+                                    vanessa.veloza@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistente Contable</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Alejandra Gonzalez Quintero<br>
+                                    alejandra.quintero@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistentes Sistemas de Información</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    David González Manrique<br>
+                                    david.gonzalez@ciaf.edu.co
+                                </div>
+
+                                <div class="ps-4 ms-4 pt-3">
+                                    Jaime Andrés Perez Londoño<br>
+                                    ja.perez30@ciaf.edu.co
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar administrativo</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Olga Yuliet Restrepo Uribe<br>
+                                    yuliet.restrepo@ciaf.edu.co
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar Educativo</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Yohany Paola Rosales Martinez<br>
+                                    paola.rosales@ciaf.edu.co
+                                </div>
+                                <div class="ps-4 ms-4 pt-3">
+                                    Carolina Ochoa González<br>
+                                    carolina.ochoa@ciaf.edu.co
+                                </div>
+                                <div class="ps-4 ms-4 pt-3">
+                                    Anyi Dahiana Arias Arenas<br>
+                                    anyi.arias@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar de Bienestar institucional</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Jhyliana Janneth Angel Arango<br>
+                                    jhyli.angel@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistente de Bienestar Institucional</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Leidy Daniela Mejía Rodas<br>
+                                    daniela.mejia@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Servicios Generales</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Gladys Ramírez Marín<br>
+                                    serviciosgenerales@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar Servicios Generales</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Anderson Adalberto Zapata<br>
+                                    serviciosgenerales@ciaf.edu.co
+                                </div>
+                            </div>
+
+                        
+
+                        </div>
+                    </div>
+
+
 
                     <div class="col-xl-10 col-lg-10 col-mb-10 col-11  py-4">
                         <a (click)="paginas('2')" class="btn" (click)="activo='2'">

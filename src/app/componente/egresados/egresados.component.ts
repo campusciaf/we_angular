@@ -13,6 +13,9 @@ export class EgresadosComponent {
 
   public logo_pc="assets/image/egresados_pc.webp";
   public logo_m="assets/image/egresados_m.webp";
+  public club_egresados="assets/image/club-egresados.webp";
+  public testimonio_egresado_1="assets/image/testimonio-egresado-1.webp";
+  
   pagina:any;
 activo:any;
 

@@ -2,8 +2,8 @@
   .bg-opciones{
     background-color: rgba(0,97,168,0.8);
 }
-.padding-bienestar{
-    padding-top: 200px;
+.padding-banner{
+    padding-top: 150px;
 }
 .bg-software{
 	background-color: rgba(0,97,168,0.8);
@@ -105,31 +105,36 @@
     transition: all 1s;
 }
 
-.pic-float img{
-    position: absolute;
+.pic-eventos img{
     width: 300px;
-    margin-top: -80px;
+
 }
 
 @media (max-width:1024px){
-    .padding-bienestar{
-        padding-top: 100px;
+    .padding-banner{
+        padding-top: 60px;
     }
 }
 
 @media (max-width:768px){
-    .padding-bienestar{
-        padding-top: 80px;
+    .padding-banner{
+        padding-top: 40px;
     }
 
     .b-interno .b-contenido p{
         font-size: 26px;
         line-height: 22px;
    }
+
+   .pic-eventos img{
+    width: 250px;
+    padding-top: 40px;
+
+    }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-    .padding-bienestar{
+    .padding-banner{
         padding-top: 70px;
     }
     .b-interno .b-contenido p{
