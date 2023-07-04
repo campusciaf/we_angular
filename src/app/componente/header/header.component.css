@@ -159,7 +159,7 @@ nav .nav-item:hover{
     background:#fff;  
     position:absolute; 
     text-align:center; 
-    top:86px;
+    top:110px;
     left: 0px;
 
 }
@@ -352,12 +352,16 @@ nav .nav-item:hover{
     font-size: 30px;
 }
 
-
-
-
 .api-whatsapp img{
     width: 35px;
     padding-top: 2px;
+
+}
+
+.buscador{
+
+    top:155px;
+    left: 0px;
 
 }
 

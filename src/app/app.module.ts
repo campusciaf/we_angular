@@ -52,6 +52,7 @@ import { EgresadosComponent } from './componente/egresados/egresados.component';
 import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
+import { NoticiasHomeComponent } from './componente/noticias-home/noticias-home.component';
 
 
 
@@ -88,6 +89,7 @@ import { RelacionExternoComponent } from './componente/relacion-externo/relacion
     SacComponent,
     InvestigacionesComponent,
     RelacionExternoComponent,
+    NoticiasHomeComponent,
 
 
   ],

@@ -9,16 +9,12 @@ import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstra
 declare var jQuery:any;
 declare var $:any;
 
-
-
 @Component({
-  selector: 'app-noticias',
-  templateUrl: './noticias.component.html',
-  styleUrls: ['./noticias.component.css']
+  selector: 'app-noticias-home',
+  templateUrl: './noticias-home.component.html',
+  styleUrls: ['./noticias-home.component.css']
 })
-
-
-export class NoticiasComponent implements OnInit {
+export class NoticiasHomeComponent {
 
   safeSrc: SafeResourceUrl | undefined;
 
@@ -34,7 +30,7 @@ export class NoticiasComponent implements OnInit {
   listarNoticias2:any;
 
   slideConfig = {
-    "slidesToShow": 1, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+    "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
     responsive: [
       {
         breakpoint: 1048,
@@ -146,5 +142,6 @@ export class NoticiasComponent implements OnInit {
  
 
 }
+
 
 
