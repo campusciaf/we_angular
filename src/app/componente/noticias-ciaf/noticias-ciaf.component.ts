@@ -8,17 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 
 declare var jQuery:any;
 declare var $:any;
-
-
-
 @Component({
-  selector: 'app-noticias',
-  templateUrl: './noticias.component.html',
-  styleUrls: ['./noticias.component.css']
+  selector: 'app-noticias-ciaf',
+  templateUrl: './noticias-ciaf.component.html',
+  styleUrls: ['./noticias-ciaf.component.css']
 })
+export class NoticiasCiafComponent {
 
-
-export class NoticiasComponent implements OnInit {
 
   safeSrc: SafeResourceUrl | undefined;
 
@@ -130,19 +126,20 @@ export class NoticiasComponent implements OnInit {
     $(".accion"+id).css("height","0px");
   }
  
- 
+  detalleCurso:any;
   ngOnInit(): void {
 
-    this.conectarApiService.obtenerNoticias().subscribe(respuesta=>{
-      this.listarNoticias=respuesta;
-
-    });
-
+    var id:any = +this._route.snapshot.paramMap.getAll('id');
+ 
+    this.conectarApiService.obtenerContinuadaId(id).subscribe(respuesta=>{
+      this.detalleCurso=respuesta
+      console.log(id);
+    }); 
 
   }
+
+
 
  
 
 }
-
-

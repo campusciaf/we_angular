@@ -22,6 +22,7 @@ import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 import { NoticiasComponent } from './componente/noticias/noticias.component';
+import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path: 'investigaciones', component:InvestigacionesComponent},
   {path: 'relacion-externo', component:RelacionExternoComponent},
   {path: 'noticias', component:NoticiasComponent},
+  {path: 'noticiasciaf/:id', component:NoticiasCiafComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];

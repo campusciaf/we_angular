@@ -15,6 +15,8 @@ export class EgresadosComponent {
   public logo_m="assets/image/egresados_m.webp";
   public club_egresados="assets/image/club-egresados.webp";
   public testimonio_egresado_1="assets/image/testimonio-egresado-1.webp";
+  public testimonio_egresado_2="assets/image/testimonio-egresado-2.webp";
+  public testimonio_egresado_3="assets/image/testimonio-egresado-3.webp";
   
   pagina:any;
 activo:any;

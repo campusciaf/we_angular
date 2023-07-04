@@ -53,6 +53,7 @@ import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 import { NoticiasHomeComponent } from './componente/noticias-home/noticias-home.component';
+import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
 
 
 
@@ -90,6 +91,7 @@ import { NoticiasHomeComponent } from './componente/noticias-home/noticias-home.
     InvestigacionesComponent,
     RelacionExternoComponent,
     NoticiasHomeComponent,
+    NoticiasCiafComponent,
 
 
   ],
