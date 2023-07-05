@@ -25,7 +25,7 @@
                     <div class="col-12" *ngIf="tipobusquedad==undefined">
                         <!-- <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button> -->
                         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                            <div ngxSlickItem *ngFor="let noticias of listarNoticias index as i" class="slide">
+                            <div ngxSlickItem *ngFor="let noticias of listarNoticiasPrincipal index as i" class="slide">
                                 
                                 <div class="row justify-content-center">
 

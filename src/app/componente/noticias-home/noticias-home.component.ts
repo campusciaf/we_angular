@@ -26,8 +26,7 @@ export class NoticiasHomeComponent {
   public next="assets/image/next.webp";
   public btn_next="assets/image/btn-next.webp";
 
-  listarNoticias:any;
-  listarNoticias2:any;
+
 
   slideConfig = {
     "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
@@ -125,14 +124,13 @@ export class NoticiasHomeComponent {
     $(".accion"+id).css("height","0px");
   }
  
+  listarNoticias:any;
+  listarNoticias2:any;
 
   ngOnInit(): void {
    
-    this.conectarApiService.obtenerNoticias().subscribe(respuesta=>{
+    this.conectarApiService.obtenerNoticiasPrincipal("codefc").subscribe(respuesta=>{
       this.listarNoticias=respuesta;
-
-    console.log(respuesta);
- 
     
 
     });

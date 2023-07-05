@@ -33,6 +33,7 @@ export class NoticiasComponent implements OnInit {
   listarNoticias:any;
   listarNoticias2:any;
   detalleNoticia:any;
+  listarNoticiasPrincipal:any;
 
   tipobusquedad:any;
 
@@ -137,20 +138,22 @@ export class NoticiasComponent implements OnInit {
 
   ngOnInit(): void {
     
-  
+    this.conectarApiService.obtenerNoticiasPrincipal("codefc").subscribe(respuesta=>{
+      this.listarNoticiasPrincipal=respuesta;
+
+    });
 
    
     
     this.conectarApiService.obtenerNoticiaId(this.id).subscribe(respuesta=>{
       this.detalleNoticia=respuesta;
       this.tipobusquedad=this.id[0];
-      console.log(this.tipobusquedad);
     }); 
 
     this.conectarApiService.obtenerNoticias().subscribe(respuesta=>{
       this.listarNoticias=respuesta;
       this.tipobusquedad=this.id[0];
-      console.log(this.tipobusquedad);
+
 
     });
 
@@ -164,8 +167,7 @@ export class NoticiasComponent implements OnInit {
       this.detalleNoticia=respuesta;
 
       this.tipobusquedad=this.id[0];
-      console.log(this.tipobusquedad);
-      
+  
     }); 
    
 
