@@ -79,9 +79,6 @@ export class NoticiasCiafComponent {
   }
   
 
-
-
-
   constructor(
 
     private conectarApiService:ConectarApiService,
@@ -91,9 +88,7 @@ export class NoticiasCiafComponent {
     
   ) { 
 
-  
 
-    
     
   }
   closeResult = '';
@@ -129,11 +124,10 @@ export class NoticiasCiafComponent {
   detalleCurso:any;
   ngOnInit(): void {
 
-    var id:any = +this._route.snapshot.paramMap.getAll('id');
- 
-    this.conectarApiService.obtenerContinuadaId(id).subscribe(respuesta=>{
+    var id:any= this._route.snapshot.paramMap.getAll('id');
+
+    this.conectarApiService.obtenerNoticiaId(id).subscribe(respuesta=>{
       this.detalleCurso=respuesta
-      console.log(id);
     }); 
 
   }

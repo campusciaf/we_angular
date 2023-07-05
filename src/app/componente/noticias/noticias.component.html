@@ -3,8 +3,10 @@
         <div class="col-10 pt-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="/inicio">Inicio</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Noticias</li>
+                  <li class="breadcrumb-item"><a routerLink="/inicio">Inicio</a></li>
+                  <li class="breadcrumb-item active" *ngIf="tipobusquedad==undefined" aria-current="page">Noticias</li>
+                  <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page"><a routerLink="/noticias">Noticias</a></li>
+                  <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page">{{tipobusquedad}}</li>
                 </ol>
             </nav>
         </div>
@@ -20,7 +22,7 @@
                         <h2 class="titulo-2 bolder-1">Noticias que inspiran </h2>
                     </div>
                             
-                    <div class="col-12">
+                    <div class="col-12" *ngIf="tipobusquedad==undefined">
                         <!-- <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button> -->
                         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
                             <div ngxSlickItem *ngFor="let noticias of listarNoticias index as i" class="slide">
@@ -53,7 +55,7 @@
                                                 <h4 class="fs-6 bolder-1">{{noticias.subtitulo_noticias}}</h4>
                                                 <p class="contenido-noti-corto">{{noticias.contenido_noticias}}</p>
                                                 <div class=" col-12 text-end"> 
-                                                    <a [routerLink]="['/noticiasciaf',noticias.link_noticia]"  class="btn bg-3 btn-sm text-white">Leer más</a>
+                                                    <a [routerLink]="['/noticias',noticias.link_noticia]"  (click)="traerNoticia()" class="btn bg-3 btn-sm text-white">Leer más</a>
                                                 </div>
                                             
                                             </div>
@@ -68,6 +70,62 @@
                         </ngx-slick-carousel>
                         <!-- <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button> -->
                     </div>
+
+                    <div class="col-12" *ngIf="tipobusquedad!=undefined">
+                        <!-- <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button> -->
+                       
+                            <div  *ngFor="let noticiasdetalle of detalleNoticia index as i" class="slide">
+                                
+                                <div class="row justify-content-center">
+
+                                    <div class="card border border-0 col-xl-11">
+
+                                        <div class="row g-0">
+
+                                        <div class="col-md-12 p-4">
+                                            <div class="row">
+                                                <div class="col-12 timestamp text-3">
+                                                    Pub. {{noticiasdetalle.fecha_noticias | date:"d MMM"}}
+                                                </div>
+                                                <div class="col-12"><h3 class="fs-2 text-1 py-4">{{noticiasdetalle.titulo_noticias}}</h3></div>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-md-8">
+                                                        <div *ngIf="noticiasdetalle.material=='2'">
+                                                            <img src="https://ciaf.digital/public/web_noticias/{{noticiasdetalle.img_noticias}}" alt="{{noticiasdetalle.titulo_noticias}}" width="100%" height="auto">
+                                                        </div>
+                                                        <div *ngIf="noticiasdetalle.material=='1'">
+            
+                                                            <a (click)="open(content);videoYoutube(noticiasdetalle.url_video,noticiasdetalle.titulo_noticias)" style="cursor:pointer">
+                                                                <div class="link-video"><img src="assets/image/video.webp"></div>
+                                                                <img src="https://ciaf.digital/public/web_noticias/{{noticiasdetalle.img_noticias}}" alt="{{noticiasdetalle.titulo_noticias}}" width="100%" height="auto">
+                                                            </a>
+            
+                                                        </div>
+                                                        <div class="category-noti text-center" [ngStyle]="{'background-color': noticiasdetalle.color}" >{{noticiasdetalle.nombre_categoria}}</div>
+                                                    </div>
+                                                </div>
+
+                                                <h4 class="fs-4 bolder-1 py-4 text-3">{{noticiasdetalle.subtitulo_noticias}}</h4>
+                                                <p class="text-justify lh-lg">{{noticiasdetalle.contenido_noticias}}</p>
+
+                                            
+                                            </div>
+                                        </div>
+
+                                        
+                                        
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        
+                        <!-- <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button> -->
+                    </div>
+
+
 
                     <div class="col-xl-12 col-lg-12 col-mb-12 col-12 p-4 m-4">
                         <h2 class="titulo-2">Otros resultados </h2>
@@ -114,7 +172,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center"> 
-                                                        <a href="" class="btn btn-light btn-sm text-black">Leer más</a>
+                                                        <a [routerLink]="['/noticias',noticias.link_noticia]"  target="_parent" (click)="traerNoticia()" class="btn btn-light btn-sm text-black">Leer más</a>
                                                     </div>
                                                 </div>
                                             </div>

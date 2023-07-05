@@ -46,7 +46,7 @@ const routes: Routes = [
   {path: 'investigaciones', component:InvestigacionesComponent},
   {path: 'relacion-externo', component:RelacionExternoComponent},
   {path: 'noticias', component:NoticiasComponent},
-  {path: 'noticiasciaf/:id', component:NoticiasCiafComponent},
+  {path: 'noticias/:id', component:NoticiasComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];

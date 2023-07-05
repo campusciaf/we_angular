@@ -23,6 +23,10 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.get(this.API+ '/noticias.php',{headers});
   }
+  obtenerNoticiaId(id:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/noticias.php?id='+id,{headers});
+  }
 
   obtenerSlide(): Observable<any>{
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});

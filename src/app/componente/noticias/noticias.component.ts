@@ -32,6 +32,9 @@ export class NoticiasComponent implements OnInit {
 
   listarNoticias:any;
   listarNoticias2:any;
+  detalleNoticia:any;
+
+  tipobusquedad:any;
 
   slideConfig = {
     "slidesToShow": 1, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
@@ -130,14 +133,41 @@ export class NoticiasComponent implements OnInit {
     $(".accion"+id).css("height","0px");
   }
  
- 
+  id:any= this._route.snapshot.paramMap.getAll('id');
+
   ngOnInit(): void {
+    
+  
+
+   
+    
+    this.conectarApiService.obtenerNoticiaId(this.id).subscribe(respuesta=>{
+      this.detalleNoticia=respuesta;
+      this.tipobusquedad=this.id[0];
+      console.log(this.tipobusquedad);
+    }); 
 
     this.conectarApiService.obtenerNoticias().subscribe(respuesta=>{
       this.listarNoticias=respuesta;
+      this.tipobusquedad=this.id[0];
+      console.log(this.tipobusquedad);
 
     });
 
+    
+  }
+
+  traerNoticia(){
+ 
+   
+    this.conectarApiService.obtenerNoticiaId(this.id).subscribe(respuesta=>{
+      this.detalleNoticia=respuesta;
+
+      this.tipobusquedad=this.id[0];
+      console.log(this.tipobusquedad);
+      
+    }); 
+   
 
   }
 

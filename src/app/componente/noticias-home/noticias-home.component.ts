@@ -127,9 +127,13 @@ export class NoticiasHomeComponent {
  
 
   ngOnInit(): void {
-
+   
     this.conectarApiService.obtenerNoticias().subscribe(respuesta=>{
       this.listarNoticias=respuesta;
+
+    console.log(respuesta);
+ 
+    
 
     });
 
