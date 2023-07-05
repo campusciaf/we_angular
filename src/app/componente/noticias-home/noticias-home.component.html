@@ -37,7 +37,7 @@
                                         <div class="category" [ngStyle]="{'background-color': noticias.color}" >{{noticias.nombre_categoria}}</div>
                                         <h1 class="title">{{noticias.titulo_noticias}}</h1>
                                         <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
-                                        <p [className]="'description accion'+i">{{noticias.contenido_noticias}}</p>
+                                        <p [className]="'description accion'+i" [innerHTML]="noticias.contenido_noticias"></p>
                                         <div class="post-meta">
                                             <div class="row">
                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">

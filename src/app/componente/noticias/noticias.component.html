@@ -53,7 +53,7 @@
                                                 </span>
                                                 <h3 class="fs-4 text-1">{{noticias.titulo_noticias}}</h3>
                                                 <h4 class="fs-6 bolder-1">{{noticias.subtitulo_noticias}}</h4>
-                                                <p class="contenido-noti-corto">{{noticias.contenido_noticias}}</p>
+                                                <p class="contenido-noti-corto" [innerHTML]="noticias.contenido_noticias"></p>
                                                 <div class=" col-12 text-end"> 
                                                     <a [routerLink]="['/noticias',noticias.link_noticia]"  (click)="traerNoticia()" class="btn bg-3 btn-sm text-white">Leer más</a>
                                                 </div>
@@ -106,7 +106,7 @@
                                                 </div>
 
                                                 <h4 class="fs-4 bolder-1 py-4 text-3">{{noticiasdetalle.subtitulo_noticias}}</h4>
-                                                <p class="text-justify lh-lg">{{noticiasdetalle.contenido_noticias}}</p>
+                                                <p class="text-justify lh-lg" [innerHTML]="noticiasdetalle.contenido_noticias"></p>
 
                                             
                                             </div>
@@ -157,8 +157,8 @@
                                         <div class="post-content">
                                             <div class="category" [ngStyle]="{'background-color': noticias.color}" >{{noticias.nombre_categoria}}</div>
                                             <h1 class="title">{{noticias.titulo_noticias}}</h1>
-                                            <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
-                                            <p [className]="'description accion'+i">{{noticias.contenido_noticias}}</p>
+                                            <h2 class="sub_title" >{{noticias.subtitulo_noticias}}</h2>
+                                            <p [className]="'description accion'+i" [innerHTML]="noticias.contenido_noticias"></p>
                                             <div class="post-meta">
                                                 <div class="row">
                                                     <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">
