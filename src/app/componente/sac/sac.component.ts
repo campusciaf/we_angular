@@ -20,6 +20,7 @@ export class SacComponent {
   public sac_planeamos="assets/image/sac-planeamos.webp";
   public modelo_planeacion="assets/image/modelo-planeacion.webp";
   public sac_gestion="assets/image/sac-gestion.webp";
+  public icono_doc="assets/image/icono-doc.webp";
 
   pagina:any;
 activo:any;

@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 declare var jQuery:any;
 declare var $:any;
+declare let alertify: any;
 
 @Component({
   selector: 'app-inicio',
@@ -88,11 +89,25 @@ export class InicioComponent implements OnInit {
 
   agregar(){
     console.log(this.myForm.value);
-      // this.conectarApiService.insertarCliente(this.myForm.value).subscribe(respuesta=>{
-      //   this.insertarNuevoCliente=respuesta;
-      // }); 
+      this.conectarApiService.insertarCliente(this.myForm.value).subscribe(respuesta=>{
+        this.insertarNuevoCliente=respuesta;
+        console.log(respuesta);
+        if(respuesta>0){
+          this.completeLogin();
+          alertify.set('notifier','position', 'top-center');
+          alertify.success('Registro correcto');   
+        }
+      }); 
+
+      
 
   }
+  
+
+  completeLogin(){   
+    this.myForm.reset();   
+  }
+
   account_validation_messages = {
     'nombre': [
       { type: 'required', message: 'Campo de nombre requerido' },
