@@ -39,20 +39,20 @@
                                     <a (click)="paginas('1')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
                                         Salud y vida
                                     </a>
-                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
-                                        Recreación y Deportes
+                                    <a (click)="paginas('2')" class="col-xl-2 col-lg-2 col-md-2 col-4 lh-1" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
+                                        Recreación y <br>Deportes
                                     </a>
                                     <a (click)="paginas('3')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
                                         Arte y Cultura
                                     </a>
-                                    <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
-                                        Desarrollo Humano
+                                    <a (click)="paginas('4')" class="col-xl-2 col-lg-2 col-md-2 col-4 lh-1" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
+                                        Desarrollo<br> Humano
                                     </a>
-                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''" id="btn-5">
-                                        Promoción Socioeconómica
+                                    <a (click)="paginas('5')" class="col-xl-2 col-lg-2 col-md-2 col-4 lh-1" (click)="activo='5'" [ngClass] = "activo=='5'  ?  'active'  :  ''" id="btn-5">
+                                        Promoción <br> Socioeconómica
                                     </a>
-                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''" id="btn-6">
-                                        Meta: graduación
+                                    <a (click)="paginas('6')" class="col-xl-2 col-lg-2 col-md-2 col-4 lh-1" (click)="activo='6'" [ngClass] = "activo=='6'  ?  'active'  :  ''" id="btn-6">
+                                        Meta: <br>graduación
                                     </a>
                                 </div>
                             </div>
@@ -179,16 +179,39 @@
             
             <div class="col-xl-12 col-lg-12 colmd-12 col-12">
                 <div class="row b-interno">
-                    <img src="{{b_salud}}" alt="Financiación 0% interes">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
-                       <div class="row justify-content-center vertical-align-center h-100 text-center">
-                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
-                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                    <img src="{{b_salud}}" alt="Linea de salud">
+                </div>
+            </div>
+
+            <div class="row justify-content-center bg-light ">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-10 text-center py-4">
+                    <p class="text-1 fs-4 py-4">
+                        Encuentra el equilibrio y el bienestar que mereces en la comunidad que transforma vidas, 
+                        comienza tu viaje hacia una vida en armonía 
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center my-4">
+                <div class="col-12">
+                    <h3 class="titulo-1 py-4 text-3 text-center">Servicio de Bienestar </h3>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-7 text-center py-4">
+                    <a href="https://forms.gle/UL4ZHowqt7LSnWvq6" target="_blank" class="btn">
+                        <div class="row">
+                            <div class="col-12 text-center py-2">
+                                <img [src]="icono_psi" alt="Acompañamiento de psicoorientación" width="80px" height="88px">
+                            </div>
+                            <div class="col-12 text-center lh-1 text-1 bolder-1">
+                                Acompañamiento<br>de psicoorientación
                             </div>
                         </div>
-                        
-                    </div>
+                    </a>
                 </div>
+
+                <div class="col-12 py-4"></div>
+
+                
             </div>
 
         </div>
@@ -197,7 +220,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 my-4 py-4 text-center">
-                    <h2 class="titulo-2 text-3"> Deportes </h2>
+                    <h2 class="titulo-2 text-3"> Deporte y Recreación </h2>
                     <h3 class="text-1">Disfruta de tu tiempo libre y aprovecha tu cuerpo al máximo.</h3>
                 </div>
             </div>
@@ -205,15 +228,37 @@
             <div class="col-xl-12 col-lg-12 colmd-12 col-12">
                 <div class="row b-interno">
                     <img src="{{b_deportes}}" alt="Financiación 0% interes" >
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
-                       <div class="row justify-content-center vertical-align-center h-100 text-center">
-                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
-                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center bg-light ">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-10 text-center py-4">
+                    <p class="text-1 fs-4 py-4">
+                        Activa tu bienestar físico y descubre el equilibrio de tu vida a través del deporte y la recreación.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center my-4">
+                <div class="col-12">
+                    <h3 class="titulo-1 py-4 text-3 text-center">Servicio de Bienestar </h3>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-7 text-center py-4">
+                    <a href="https://forms.gle/igcWbdtq4RYWZjvV7" target="_blank" class="btn">
+                        <div class="row">
+                            <div class="col-12 text-center py-2">
+                                <img [src]="icono_deportes" alt="Deportes" width="80px" height="88px">
+                            </div>
+                            <div class="col-12 text-center lh-1 text-1 bolder-1">
+                                Selección CIAF<br>de Futsala
                             </div>
                         </div>
-                        
-                    </div>
+                    </a>
                 </div>
+
+                <div class="col-12 py-4"></div>
+
+                
             </div>
 
         </div>
@@ -222,7 +267,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 my-4 py-4 text-center">
-                    <h2 class="titulo-2 text-3">Cultura </h2>
+                    <h2 class="titulo-2 text-3">Arte y Cultura </h2>
                     <h3 class="text-1">Alimentando tu espíritu creativo con cultura y arte.</h3>
                 </div>
             </div>
@@ -231,15 +276,65 @@
                 <div class="row b-interno">
                     <img src="{{b_cultura}}" alt="Financiación 0% interes" >
                     <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
-                       <div class="row justify-content-center vertical-align-center h-100 text-center">
-                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
-                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
-                            </div>
-                        </div>
+                       
                         
                     </div>
                 </div>
             </div>
+
+            <div class="row justify-content-center bg-light ">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-10 text-center py-4">
+                    <p class="text-1 fs-4 py-4">
+                        Sumérgete en un mundo lleno de creatividad, expresión y descubrimiento. 
+                        ¡Únete a la comunidad que celebra la diversidad y despierta tu pasión.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center my-4">
+                <div class="col-12">
+                    <h3 class="titulo-1 py-4 text-3 text-center">Servicio de Bienestar </h3>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-7 text-center py-4">
+                    <a href="https://forms.gle/pAM3qf1HuMo5pWzQA" target="_blank" class="btn">
+                        <div class="row">
+                            <div class="col-12 text-center py-2">
+                                <img [src]="icono_sound" alt="Grupo Musical" width="80px" height="88px">
+                            </div>
+                            <div class="col-12 text-center lh-1 text-1 bolder-1">
+                                Grupo Musical<br>Sound CIAF
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-7 text-center py-4">
+                    <a href="https://forms.gle/6hxWmhXbnuYqEeYE6" target="_blank" class="btn">
+                        <div class="row">
+                            <div class="col-12 text-center py-2">
+                                <img [src]="icono_baile" alt="Grupo de baile" width="80px" height="88px">
+                            </div>
+                            <div class="col-12 text-center lh-1 text-1 bolder-1">
+                                Grupo de<br> Baile 
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-7 text-center py-4">
+                    <a href="https://forms.gle/Mmvem6bT7GNYrTqo6" target="_blank" class="btn">
+                        <div class="row">
+                            <div class="col-12 text-center py-2">
+                                <img [src]="icono_fotografia" alt="Fotoparche colectivo" width="80px" height="88px">
+                            </div>
+                            <div class="col-12 text-center lh-1 text-1 bolder-1">
+                                Fotoparche colectivo<br>de fotografía
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 py-4"></div>
+
+                
+            </div>
+           
 
         </div>
 
@@ -254,15 +349,17 @@
             
             <div class="col-xl-12 col-lg-12 colmd-12 col-12">
                 <div class="row b-interno">
-                    <img src="{{b_desarrollo}}" alt="Financiación 0% interes" >
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
-                       <div class="row justify-content-center vertical-align-center h-100 text-center">
-                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
-                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    <img src="{{b_desarrollo}}" alt="Desarrollo Humano" >
+
+                </div>
+            </div>
+
+            <div class="row justify-content-center bg-light ">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-10 text-center py-4">
+                    <p class="text-1 fs-4 py-4">
+                        Descubre las herramientas para crecer, aprender y evolucionar hacia tu mejor versión. 
+                        Únete a la comunidad que desafía los límites.
+                    </p>
                 </div>
             </div>
 
@@ -280,14 +377,16 @@
             <div class="col-xl-12 col-lg-12 colmd-12 col-12">
                 <div class="row b-interno">
                     <img src="{{b_promocion}}" alt="Financiación 0% interes" >
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 b-contenido ">
-                       <div class="row justify-content-center vertical-align-center h-100 text-center">
-                            <div class="col-xl-8 col-lg-8 col-md-9 col-10">
-                                <p class="text-white">Las experiencias de nuestra comunidad CIAF estan representadas en una permanente interacción y empoderamiento de toda la comunidad.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center bg-light ">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-10 text-center py-4">
+                    <p class="text-1 fs-4 py-4">
+                        Busquemos juntos las posibilidades de que puedas ser profesional por medio de apoyos 
+                        socioeconómicos, Juntos, podemos construir un futuro brillante!
+                    </p>
                 </div>
             </div>
 
@@ -341,7 +440,7 @@
                                     <p><img src="{{datos.thumbnail_url}}" width="100%"></p>
                                     <p class="small px-2">{{datos.like_count}} me gusta | {{datos.comments_count}} comentarios</p>
                                     <p class="descripcion px-2"><span class="text-1">#{{datos.username}}</span> {{datos.caption}} </p>
-                                   
+                                    
                                 </div>
                                 <div class="pie_instagram">
                                     <div class="row">
@@ -351,10 +450,10 @@
                                 </div>
                             </div>
                             
-                       
+                        
                         </div>
                     </ngx-slick-carousel>
-             
+                
                 </div>
                 <div class="col-10 py-4">
                     <hr>

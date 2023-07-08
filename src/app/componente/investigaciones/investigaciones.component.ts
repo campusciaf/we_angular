@@ -33,7 +33,15 @@ export class InvestigacionesComponent {
   public convocatorias_internas="assets/image/convocatorias-internas.webp";
   public convocatorias_externas="assets/image/convocatorias-externas.webp";
   public internacionalizacion_investigacion="assets/image/internacionalizacion-investigacion.webp";
-  
+
+  public ciencia_innovacion="assets/image/ciencia-innovacion.webp";
+  public next="assets/image/btn-next.webp";
+  public prev="assets/image/btn-prev.webp";
+  public icono_doc="assets/image/icono-doc.webp";
+  public icono_ok="assets/image/icono-ok.webp";
+  public icono_calendario="assets/image/icono-calendario.webp";
+  public icono_planta="assets/image/icono-planta.webp";
+
 
   pagina:any;
   activo:any;
@@ -220,7 +228,7 @@ export class InvestigacionesComponent {
   
     ngOnInit(): void {
       this.activo="0";
-      this.pagina="1";
+      this.pagina="5";
       this.paginas(this.pagina);
   
 

@@ -53,6 +53,12 @@ public ico_social="assets/image/ico-social.webp";
 public ico_grado="assets/image/ico-grado.webp";
 
 public banner_prueba="assets/image/prueba_instagram.webp";
+public icono_psi="assets/image/icono-psi.webp";
+public icono_deportes="assets/image/icono-deportes.webp";
+
+public icono_sound="assets/image/icono-sound.webp";
+public icono_baile="assets/image/icono-baile.webp";
+public icono_fotografia="assets/image/icono-fotografia.webp";
 
 listarInstagram:any;
 listarConvenios:any;

@@ -32,7 +32,13 @@ figure{
     margin-inline-start:0px!important;
     margin-inline-end:0px!important
 }
-
+.font-2{
+    font-family: "fuente3";
+}
+.fs-big{
+    font-size: 70px !important;
+    line-height: 50px !important;
+}
 .carousel-indicators{
     z-index: 1 !important;
 }
@@ -703,6 +709,11 @@ figure{
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+
+    .fs-big{
+        font-size: 50px !important;
+        line-height: 30px !important;
+    }
     .btn-link-1{
         color:#999a9d;
         font-size:10px
