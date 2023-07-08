@@ -109,6 +109,15 @@
     .padding-bienestar{
         padding-top: 100px;
     }
+    .boton-prev {
+        left: 5%;
+        margin-top: 180px;
+    }
+    .boton-next {
+    right:10%;
+    margin-top: 180px;
+
+    }
 }
 
 @media (max-width:768px){
@@ -120,6 +129,15 @@
         font-size: 26px;
         line-height: 22px;
    }
+   .boton-prev {
+    left: 5%;
+    margin-top: 180px;
+    }
+    .boton-next {
+        right:10%;
+        margin-top: 180px;
+
+    }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
@@ -133,11 +151,11 @@
    }
 	.boton-prev {
 		left: 10%;
-		margin-top: 320px;
+		margin-top: 150px;
 	}
 	.boton-next {
 		right:10%;
-		margin-top: -60px;
+		margin-top: 150px;
 
 	}
 

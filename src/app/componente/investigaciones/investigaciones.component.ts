@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
-
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 declare var jQuery:any;
 declare var $:any;
@@ -17,6 +17,7 @@ export class InvestigacionesComponent {
   public investigacion_reconocimiento="assets/image/investigacion-reconocimiento.webp";
   public img_li="assets/image/img-li.webp";
   public img_li_ok="assets/image/img-li-ok.webp";
+  public inves_innova="assets/image/inves-innova.webp";
   public investigacion_requisitos="assets/image/investigacion-requisitos.webp";
   public investigacion_semillero="assets/image/investigacion-semillero.webp";
   public investigacion_actividades="assets/image/investigacion-actividades.webp";
@@ -53,6 +54,14 @@ export class InvestigacionesComponent {
   isValid4:boolean = false;
   isValid5:boolean = false;
   isValid6:boolean = false;
+
+  total:any;
+ 
+  videoYoutube(valor:any){
+
+    this.total=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + valor); 
+    
+  }
   
     paginas(pagina:string){
 
@@ -222,16 +231,16 @@ export class InvestigacionesComponent {
       }
   
     }
-    constructor(private conectarApiService:ConectarApiService) { 
+    constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { 
 
     }
   
     ngOnInit(): void {
       this.activo="0";
-      this.pagina="5";
+      this.pagina="1";
       this.paginas(this.pagina);
   
-
+      this.videoYoutube("S9xfJWYE3x8");
     }
   
 }
