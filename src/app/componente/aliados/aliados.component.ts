@@ -14,21 +14,21 @@ export class AliadosComponent implements OnInit {
     "slidesToShow": 6, "slidesToScroll": 1, "infinite": true, "autoplay": true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1048,
         settings: {
-          slidesToShow: 6
+          slidesToShow: 4,
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 778,
         settings: {
-          slidesToShow: 5
+          slidesToShow: 3
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3
+          slidesToShow: 2
         }
       }
     ]
