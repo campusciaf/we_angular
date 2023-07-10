@@ -31,7 +31,7 @@ export class ConocenosComponent {
     reglamentos:Array<any> =[
     {estado:'1',imagen:'assets/image/emprendimientos.webp',titulo:'Nuestro Proyecto Educativo',link:'https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf',modal:""},
     {estado:'1',imagen:'assets/image/pereira4ri.webp',titulo:'Estatutos Generales',link:"https://ciaf.digital/public/web_normativa/estatutos_actuales.pdf",modal:""},
-    {estado:'2',imagen:'assets/image/hub.webp',titulo:'Plan Estratégico',link:"", modal:"#modalplanestrategico"},
+    {estado:'1',imagen:'assets/image/hub.webp',titulo:'Plan Estratégico',link:"https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf", modal:""},
     {estado:'2',imagen:'assets/image/hub.webp',titulo:'Reglamentos',link:"",modal:"#modalreglamento"},
     {estado:'2',imagen:'assets/image/memorias-institucionales.webp',titulo:'Seguridad Y Salud en el Trabajo',link:"https://publuu.com/flip-book/96771/265548/page/1",modal:"#modalsst"},
     {estado:'1',imagen:'assets/image/hub.webp',titulo:'Protocolo de Violencia Sexual',link:"https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf",modal:""},

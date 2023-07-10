@@ -237,7 +237,7 @@
                                     <h2 class="text-left">Ahora... descubre el plan de estudios</h2>
                                 </div>
                                 <div class="col-xl-4 col-lg-3 col-md-4 col-12">
-                                    <a href="" class="btn"> 
+                                    <a href="assets/planes/malla_administracion.pdf" target="_blank" class="btn"> 
                                         <span class="asterisco">150 créditos</span><br>
                                         <img src="{{descargar}}" alt="boton siguiente">
                                     </a>
@@ -399,7 +399,7 @@
                         </div>
                         <div class="col-xl-8 col-lg-10 col-md-5 col-10 pt-4">
                             <p class="text-right text-1">
-                                Facil<br>
+                                Fácil<br>
                                 Sin fiadores<br>
                                 Sin revisar centrales de riesgo<br>
                                 Y con solo 2 clicks
@@ -437,7 +437,7 @@
                                 <span class="col-12 fs-1">$1.733.000</span>
                                 <span class="small">Estos valores incrementarán de acuerdo al nivel de formación. (conoce más)</span> 
                                 <span class="col-12 fs-2">Jornadas</span>
-                                <span class="small">Diurna, nocturna, fines de semana y sólo sábados</span>
+                                <span class="small">Diurna, nocturna y fines de semana</span>
                                 
                             </div>
                         </div>
@@ -461,7 +461,7 @@
                                 </div>
                                 <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
                                 <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
-                                    Jornadas <br>Diurna, nocturna <br>Fines de semana
+                                    Jornadas <br>Diurna, nocturna <br> Fines de semana
                                 </div>
                                 <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
                                 <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
@@ -526,14 +526,17 @@
                                 <ng-container>
                                   
                                        
-                                        <div class=" bg-1 text-white border-bottom-1 text-center m-4">
-                                            <div class="inicia-titulo"><h4 class="p-4">{{datos.titulo}}</h4></div>
-                                            <img src="{{datos.pic}}" alt="{{datos.pic}}" width="auto" height="auto" class="mx-auto">
-                                            <div class="inicia-detalle"><span class="small">{{datos.detalle}}</span></div>
-                                            <div class="text-center p-4 ">
-                                                <a href="{{datos.link}}" target="_blank" class="btn btn-light">Inscripción</a>
-                                            </div>
+                                    <div class=" bg-1 text-white border-bottom-1 text-center m-4">
+                                        <div class="inicia-titulo"><h4 class="p-4">{{datos.titulo}}</h4></div>
+                                        <img src="{{datos.pic}}" alt="{{datos.pic}}" width="auto" height="auto" class="mx-auto">
+                                        <div class="inicia-detalle"><span class="small">{{datos.detalle}}</span></div>
+                                        <div class="text-center p-4" *ngIf="datos.tipo_link=='1'">
+                                            <a href="{{datos.link}}" target="_blank" class="btn btn-light">{{datos.boton}}</a>
                                         </div>
+                                        <div class="text-center p-4" *ngIf="datos.tipo_link=='2'">
+                                            <a data-bs-toggle="modal" href="{{datos.link}}" class="btn btn-light">{{datos.boton}}</a>
+                                        </div>
+                                    </div>
                            
                                     
                                 </ng-container>

@@ -34,6 +34,8 @@ export class InvestigacionesComponent {
   public convocatorias_internas="assets/image/convocatorias-internas.webp";
   public convocatorias_externas="assets/image/convocatorias-externas.webp";
   public internacionalizacion_investigacion="assets/image/internacionalizacion-investigacion.webp";
+  public investigaciones_grupo_investigacion="assets/image/investigaciones-grupo-investigacion.webp";
+  
 
   public ciencia_innovacion="assets/image/ciencia-innovacion.webp";
   public next="assets/image/btn-next.webp";

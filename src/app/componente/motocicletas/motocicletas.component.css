@@ -36,10 +36,15 @@
 	background-color: #C00B53;
 }
 
+.titulo-motos{
+    font-size: 70px !important;
+    line-height: 60px;
+}
 
 .bg-image-1{
     background-image: url("https://ciaf.edu.co/web_angular/assets/image/bg-motocicletas.webp");
     height: 450px;
+
    
 }
 

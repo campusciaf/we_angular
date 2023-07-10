@@ -348,10 +348,10 @@ activo:any;
     this.pagina="0";
     this.paginas(this.pagina);
 
-    this.conectarApiService.obtenerInstagram().subscribe(respuesta=>{
-      this.listarInstagram=respuesta.business_discovery.media.data
-      console.log(respuesta.business_discovery.media.data);
-    });
+    // this.conectarApiService.obtenerInstagram().subscribe(respuesta=>{
+    //   this.listarInstagram=respuesta.business_discovery.media.data
+    //   console.log(respuesta.business_discovery.media.data);
+    // });
 
     this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2=>{
       this.listarConvenios=respuesta2

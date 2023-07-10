@@ -180,10 +180,10 @@ export class EnfermeriaComponent implements OnInit {
     }
   
     listarContacto =[
-      {titulo:'¡Inscríbete en linea!', pic:this.inscribete_en_linea, link:'https://ciaf.digital/inscripciones/', detalle:''},
-      {titulo:'¡Escríbeme y te asesoro!', pic:this.te_asesoro, link:'https://ciaf.digital/inscripciones/', detalle:''},
-      {titulo:'¿Prefieres llamarme?', pic:this.llamame, link:'https://ciaf.digital/inscripciones/', detalle:''},
-      {titulo:'¡Date una pasadita por nuestra sede!', pic:this.visita_sede, link:'https://ciaf.digital/inscripciones/', detalle:'Cra. 6 No. 24-56 • Pereira'},
+      {tipo_link:'1',titulo:'¡Inscríbete en línea!', pic:this.inscribete_en_linea, link:'https://ciaf.digital/inscripciones/', detalle:'',boton:'Inscipción'},
+      {tipo_link:'1',titulo:'¡Escríbeme y te asesoro!', pic:this.te_asesoro, link:'https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20enfermeria%20web', detalle:'',boton:'Escribeme'},
+      {tipo_link:'1',titulo:'¿Prefieres llamarme?', pic:this.llamame, link:'tel:+573143400100', detalle:'',boton:'Llamar'},
+      {tipo_link:'2',titulo:'¡Date una pasadita por nuestra sede!', pic:this.visita_sede, link:'#direccion', detalle:'Cra. 6 No. 24-56 • Pereira',boton:'Google Maps'},
   
     ];
   
