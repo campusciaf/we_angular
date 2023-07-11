@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 declare var jQuery:any;
 declare var $:any;
@@ -85,6 +86,14 @@ export class ConocenosComponent {
   isValid4:boolean = false;
   isValid5:boolean = false;
   isValid6:boolean = false;
+
+  total:any;
+ 
+  videoYoutube(valor:any){
+
+    this.total=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + valor); 
+    
+  }
   
     paginas(pagina:string){
 
@@ -190,7 +199,7 @@ export class ConocenosComponent {
   
     }
 
-    constructor(private conectarApiService:ConectarApiService) { 
+    constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { 
 
     }
 
@@ -211,7 +220,7 @@ export class ConocenosComponent {
         
       });
      
-      
+      this.videoYoutube("BMzWQWkUiIA");
       
     }
 

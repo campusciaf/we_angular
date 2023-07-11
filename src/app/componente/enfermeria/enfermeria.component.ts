@@ -48,12 +48,12 @@ export class EnfermeriaComponent implements OnInit {
     {semestre:1,materia:'Laboratorio simulación I'},
 
     {semestre:2,materia:'Ética profesional y valores'},
-    {semestre:2,materia:'Cuidados medicoquirúrgicos'},
+    {semestre:2,materia:'Cuidados medicoquirúrgicos (Asistencia básica al usuario)'},
     {semestre:2,materia:'Preparación, adminsitración y registro de medicamentos'},
-    {semestre:2,materia:'Quirurgicos'},
+    {semestre:2,materia:'Quirúrgicos'},
     {semestre:2,materia:'Laboratorio simulación II'},
 
-    {semestre:3,materia:'Ginecologia'},
+    {semestre:3,materia:'Ginecología'},
     {semestre:3,materia:'Atención al niño y adolescente'},
     {semestre:3,materia:'Práctica Integral'},
 
@@ -205,7 +205,7 @@ export class EnfermeriaComponent implements OnInit {
   
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="0";
+      this.pagina="0aux";
       this.paginas(this.pagina);
   
       var id:number = 7;

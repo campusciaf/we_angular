@@ -52,24 +52,24 @@ export class IndustrialComponent implements OnInit {
     {semestre:1,materia:'Informática aplicada'},
     {semestre:1,materia:'Introducción a la producción'},
     {semestre:1,materia:'Supply Chain'},
-    {semestre:1,materia:'Contabilidad aplicada '},
+    {semestre:1,materia:'Contabilidad aplicada'},
     {semestre:1,materia:'Administración'},
   
     {semestre:2,materia:'Teoría del conocimiento'},
     {semestre:2,materia:'Matemáticas aplicadas'},
     {semestre:2,materia:'Estadística descriptiva'},
     {semestre:2,materia:'Hojas de cálculo avanzadas y aplicadas '},
-    {semestre:2,materia:'>Herramientas para el control de producción'},
-    {semestre:2,materia:'Gestión de centro logístico'},
+    {semestre:2,materia:'Herramientas para el control de producción'},
+    {semestre:2,materia:'Gestión de los centros logísticos'},
     {semestre:2,materia:'Costos'},
     {semestre:2,materia:'Fundamentos de seguridad y salud en el trabajo'},
   
     {semestre:3,materia:'Metodología de la investigación'},
-    {semestre:3,materia:'Electiva profundización I'},
+    {semestre:3,materia:'Electiva de profundización I'},
     {semestre:3,materia:'Constitución política y cátedra de paz'},
     {semestre:3,materia:'Máquinas y herramientas'},
     {semestre:3,materia:'Logística de compras y aprovisionamiento'},
-    {semestre:3,materia:'Control de calidad '},
+    {semestre:3,materia:'Control de calidad'},
     {semestre:3,materia:'Presupuestos'},
     {semestre:3,materia:'Mercados'},
   
@@ -85,52 +85,57 @@ export class IndustrialComponent implements OnInit {
     {semestre:5,materia:'Gestión ambiental'},
     {semestre:5,materia:'Cálculo diferencial'},
     {semestre:5,materia:'Estadística inferencial'},
-    {semestre:5,materia:'Dibujo de ingeniería '},
+    {semestre:5,materia:'Dibujo de ingeniería'},
     {semestre:5,materia:'Planeación y programación de la producción'},
     {semestre:5,materia:'Logística industrial y distribución de planta'},
     {semestre:5,materia:'Costos industriales'},
-    {semestre:5,materia:'Legislación Laboral'},
     {semestre:5,materia:'Proceso de talento humano'},
   
-    {semestre:6,materia:'Métodos de investigación '},
-    {semestre:6,materia:'Cálculo Integral'},
-    {semestre:6,materia:'Control estadístico de calidad '},
+    {semestre:6,materia:'Métodos de investigación'},
+    {semestre:6,materia:'Control estadístico de calidad'},
     {semestre:6,materia:'Física I y Lab'},
     {semestre:6,materia:'Logística de distribución nacional e internacional'},
     {semestre:6,materia:'Gestión de la calidad'},
+    {semestre:5,materia:'Análisis financiero'},
     {semestre:6,materia:'Investigación de mercados'},
+    
   
     {semestre:7,materia:'Opción de grado tecnológica'},
-    {semestre:7,materia:'Física II y Lab'},
+    {semestre:5,materia:'Electiva de profundización II'},
+    {semestre:7,materia:'Investigación de operaciones I'},
     {semestre:7,materia:'Microeconomía'},
     {semestre:7,materia:'Sistema integral de gestión'},
-    {semestre:7,materia:'Análisis financiero'},
-    {semestre:7,materia:'Planeación estratética'},
-    {semestre:7,materia:'Cálculo Multivariado'},
-    {semestre:7,materia:'Investigación de operaciones I'},
-  
-    {semestre:8,materia:'Ecuaciones Diferenciales'},
+    {semestre:7,materia:'Planeación estratégica'},
+    {semestre:7,materia:'Legislación laboral'},
+    {semestre:7,materia:'Física II y Lab'},
+
+    
+    {semestre:8,materia:'Calculo integral'},
     {semestre:8,materia:'Investigación de operaciones II'},
     {semestre:8,materia:'Química y laboratorio'},
     {semestre:8,materia:'Termodinámica'},
     {semestre:8,materia:'Materiales de ingeniería'},
     {semestre:8,materia:'Logística de servicios'},
     {semestre:8,materia:'Ingeniería Económica'},
+
   
     {semestre:9,materia:'Formulación y gestión de proyectos'},
     {semestre:9,materia:'Comunicación estratégica'},
-    {semestre:9,materia:'Métodos cuantitativos'},
     {semestre:9,materia:'Procesos Estocásticos'},
     {semestre:9,materia:'Automatización y minería de datos'},
     {semestre:9,materia:'Procesos industriales'},
     {semestre:9,materia:'Logística inversa'},
-  
+    {semestre:9,materia:'Gestión del talento humano'},
+
+
     {semestre:10,materia:'Opción de grado profesional '},
-    {semestre:10,materia:'Electiva profundización II'},
+    {semestre:10,materia:'Electiva profundización III'},
     {semestre:10,materia:'Ética profesional'},
+    {semestre:8,materia:'Gerencia de producción'},
+    {semestre:8,materia:'Logística estratégica'},
     {semestre:10,materia:'Reingeniería de procesos'},
     {semestre:10,materia:'Estrategias de marketing'},
-    {semestre:10,materia:'Gestión del Talento Humano'},
+
   ];
   
   

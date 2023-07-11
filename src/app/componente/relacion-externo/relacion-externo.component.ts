@@ -20,6 +20,7 @@ export class RelacionExternoComponent {
   public conversatorio="assets/image/conversatorio.webp";
 
   public diplomado_logistica="assets/image/diplomado-logistica.webp";
+  public empresas_amigas_reunion="assets/image/empresas-amigas-reunion.webp";
   
   public next="assets/image/btn-next.webp";
   public prev="assets/image/btn-prev.webp";

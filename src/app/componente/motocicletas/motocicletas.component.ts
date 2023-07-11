@@ -31,7 +31,6 @@ export class MotocicletasComponent {
   listarSemestres1 = [
     {semestre:1},
     {semestre:2},
-    {semestre:3},
 
   ];
   
@@ -47,12 +46,11 @@ export class MotocicletasComponent {
   
     {semestre:2,materia:'Presupuesto básico'},
     {semestre:2,materia:'Sistema eléctrico y electrónico'},
-    {semestre:2,materia:'Sistema full injecton'},
+    {semestre:2,materia:'Sistema fuel injecton'},
     {semestre:2,materia:'Mantenimiento preventivo de la motocicleta'},
+    {semestre:2,materia:'Servicio al cliente'},
 
-    {semestre:3,materia:'Servicio al cliente'},
-    {semestre:3,materia:'Sistema de gestión de SST - MIPYME I;II;III'},
-    {semestre:3,materia:'Teorías del conocimiento'},
+
   
 
 
@@ -200,7 +198,7 @@ export class MotocicletasComponent {
   
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="0";
+      this.pagina="1";
       this.paginas(this.pagina);
   
       var id:number = 6;

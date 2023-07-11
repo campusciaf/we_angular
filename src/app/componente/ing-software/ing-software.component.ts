@@ -51,52 +51,52 @@ export class IngSoftwareComponent implements OnInit {
   
   listarMaterias =[
     {semestre:1,materia:'Matemáticas I'},
+    {semestre:1,materia:'Lógica de programación'},
+    {semestre:1,materia:'Introducción a la informática y herramientas'},
+    {semestre:1,materia:'Introducción a la Ingeniería de Software'},
     {semestre:1,materia:'Proyecto de vida'},
     {semestre:1,materia:'Teoría del conocimiento'},
-    {semestre:1,materia:'Lógica de programación'},
-    {semestre:1,materia:'Introducción a la informática'},
-    {semestre:1,materia:'Introducción a la Ingeniería de Software'},
+    
   
     {semestre:2,materia:'Matemáticas II'},
     {semestre:2,materia:'Programación II'},
-    {semestre:2,materia:'Lecto-escritura'},
     {semestre:2,materia:'Diseño WEB'},
-    {semestre:2,materia:'Metodología de la Investigación'},
-    {semestre:2,materia:'Pensamiento empresarial tendencias de emprendimiento'},
+    {semestre:2,materia:'Lecto-escritura'},
+    {semestre:2,materia:'Anteproyecto'},
+    {semestre:2,materia:'Pensamiento empresarial o tendencias de emprendimiento'},
   
-    {semestre:3,materia:'Fisica I'},
-    {semestre:3,materia:'Estructura de datos'},
+    {semestre:3,materia:'Fisica I y lab'},
     {semestre:3,materia:'Programación III'},
-    {semestre:3,materia:'Plan de negocios'},
-    {semestre:3,materia:'Herramientas multiplataformas redes I'},
-    {semestre:3,materia:'Cálculo multivariado'},
-  
+    {semestre:3,materia:'Estructura de datos'},
+    {semestre:3,materia:'Herramientas multiplataformas I o redes I'},
+    {semestre:3,materia:'Plan de negocios o estratégias de negocios'},
+    
+    {semestre:4,materia:'Bases de datos I'},
+    {semestre:4,materia:'Programación y servicios WEB'},
     {semestre:4,materia:'Legislación'},
     {semestre:4,materia:'Trabajo de grado'},
-    {semestre:4,materia:'Bases de datos I'},
-    {semestre:4,materia:'Algebra lineal'},
-    {semestre:4,materia:'Programación y servicios WEB'},
+    {semestre:4,materia:'Álgebra lineal'},
     {semestre:4,materia:'Principios de la Ingeniería de Software'},
   
-    {semestre:5,materia:'Matemáticas I'},
-    {semestre:5,materia:'Proyecto de vida'},
-    {semestre:5,materia:'Teoría del conocimiento'},
-    {semestre:5,materia:'Lógica de programación'},
-    {semestre:5,materia:'Introducción a la informática'},
-    {semestre:5,materia:'Introducción a la Ingeniería de Software'},
+    {semestre:5,materia:'Cálculo integral'},
+    {semestre:5,materia:'Estadistica descriptiva'},
+    {semestre:5,materia:'Progamación IV'},
+    {semestre:5,materia:'Ingeniería de software I'},
+    {semestre:5,materia:'Calidad en el desarrollo de software'},
+    {semestre:5,materia:'Constitución política y cátedra de paz'},
   
-    {semestre:6,materia:'Matemáticas II'},
-    {semestre:6,materia:'Programación II'},
-    {semestre:6,materia:'Lecto-escritura'},
-    {semestre:6,materia:'Diseño WEB'},
-    {semestre:6,materia:'Metodología de la Investigación'},
-    {semestre:6,materia:'Pensamiento empresarial tendencias de emprendimiento'},
+    {semestre:6,materia:'Estadística inferencial y probabilidad'},
+    {semestre:6,materia:'Sistemas operativos'},
+    {semestre:6,materia:'Programación de redes'},
+    {semestre:6,materia:'Herramientas multiplataformas II o redes II'},
+    {semestre:6,materia:'Ética profesional'},
+    {semestre:6,materia:'Métodos de investigación'},
   
-    {semestre:7,materia:'Fisica I'},
-    {semestre:7,materia:'Estructura de datos'},
-    {semestre:7,materia:'Programación III'},
-    {semestre:7,materia:'Plan de negocios'},
-    {semestre:7,materia:'Herramientas multiplataformas redes I'},
+    {semestre:7,materia:'Programación V'},
+    {semestre:7,materia:'Base de datos II'},
+    {semestre:7,materia:'Opción de grado tecnólogico'},
+    {semestre:7,materia:'Fuentes de financiamiento nacional o internacional'},
+    {semestre:7,materia:'Programación lineal'},
     {semestre:7,materia:'Cálculo multivariado'},
   
     {semestre:8,materia:'Ecuaciones diferenciales'},
@@ -104,7 +104,7 @@ export class IngSoftwareComponent implements OnInit {
     {semestre:8,materia:'Bases de datos III'},
     {semestre:8,materia:'Auditoría de software'},
     {semestre:8,materia:'Inteligencia artificial'},
-    {semestre:8,materia:'Economía naranja desarrollo sostenible'},
+    {semestre:8,materia:'Economía naranja o desarrollo sostenible'},
   
     {semestre:9,materia:'Matemáticas discretas'},
     {semestre:9,materia:'Procesos estocásticos y determinísticos'},
@@ -116,7 +116,7 @@ export class IngSoftwareComponent implements OnInit {
     {semestre:10,materia:'Cálculo vectorial'},
     {semestre:10,materia:'Arquitectura de software'},
     {semestre:10,materia:'Compiladores'},
-    {semestre:10,materia:'Minería de datos herramientas de gestión'},
+    {semestre:10,materia:'Minería de datos o herramientas de gestión'},
     {semestre:10,materia:'Seguridad de la información'},
     {semestre:10,materia:'Proyecto de grado'},
   ];
@@ -261,7 +261,7 @@ export class IngSoftwareComponent implements OnInit {
   
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="0";
+      this.pagina="1";
       this.paginas(this.pagina);
   
       var id:number = 2;

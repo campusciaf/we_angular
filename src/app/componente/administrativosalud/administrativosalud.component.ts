@@ -39,7 +39,7 @@ export class AdministrativosaludComponent {
   listarMaterias =[
     {semestre:1,materia:'Modulo básico'},
     {semestre:1,materia:'Atender y orientar a las personas en relación con sus necesidades y expectativas de acuerdo con políticas institucionales y normas vigentes'},
-    {semestre:1,materia:'Afiliar a la población al sistema general de seguridad social el salud según normatividad vigente'},
+    {semestre:1,materia:'Afiliar a la población al sistema general de seguridad social de salud según normatividad vigente'},
 
 
     {semestre:2,materia:'Admitir al usuario en la red de servicios de salud según niveles de atención y normativa vigente'},
@@ -196,7 +196,7 @@ export class AdministrativosaludComponent {
   
     ngOnInit(): void {
       this.activo="1";
-      this.pagina="0";
+      this.pagina="1";
       this.paginas(this.pagina);
   
       var id:number = 8;

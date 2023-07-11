@@ -49,24 +49,24 @@ listarSemestres3 = [
 
 listarMaterias =[
   {semestre:1,materia:'Matemática'},
-  {semestre:1,materia:'Fundamentos de NIF origen y marco legal'},
+  {semestre:1,materia:'Fundamentos de NIIF origen y marco legal'},
   {semestre:1,materia:'Constitución política y cátedra de paz'},
   {semestre:1,materia:'Administración'},
-  {semestre:1,materia:'Tic'},
+  {semestre:1,materia:'TIC'},
   {semestre:1,materia:'Lecto escritura'},
   {semestre:1,materia:'Electiva I (Mercadeo, pensamiento empresarial)'},
 
   {semestre:2,materia:'Estadística descriptiva'},
-  {semestre:2,materia:'Contabilidad bajo  NIF I'},
+  {semestre:2,materia:'Contabilidad bajo NIIF I'},
   {semestre:2,materia:'Electiva II  (administración de talento humano, trabajo en equipo)'},
   {semestre:2,materia:'Matemática financiera'},
   {semestre:2,materia:'Estructura de las organizaciones'},
-  {semestre:2,materia:'Sistemas de organización contable I'},
+  {semestre:2,materia:'Sistemas de información contable I'},
   {semestre:2,materia:'Teoría del conocimiento'},
 
   {semestre:3,materia:'Fundamentos de economía'},
   {semestre:3,materia:'Legislación comercial'},
-  {semestre:3,materia:'Contabilidad bajo NIF II'},
+  {semestre:3,materia:'Contabilidad bajo NIIF II'},
   {semestre:3,materia:'Costos y presupuestos'},
   {semestre:3,materia:'Sistemas de información contable II'},
   {semestre:3,materia:'Tributaria I'},
@@ -74,7 +74,7 @@ listarMaterias =[
 
   {semestre:4,materia:'Legislación laboral'},
   {semestre:4,materia:'Administración financiera'},
-  {semestre:4,materia:'Estructurtas de productos financieros'},
+  {semestre:4,materia:'Estructuras de productos financieros'},
   {semestre:4,materia:'Contabilidad industrial'},
   {semestre:4,materia:'Tributaria II'},
   {semestre:4,materia:'Opción de grado'},
@@ -109,18 +109,19 @@ listarMaterias =[
 
   {semestre:8,materia:'Macroeconomía'},
   {semestre:8,materia:'Procedimiento tributario integral'},
-  {semestre:8,materia:'Contabilidad Avanzada l'},
+  {semestre:8,materia:'Contabilidad avanzada l'},
   {semestre:8,materia:'Inglés 7'},
   {semestre:8,materia:'Normas contables de información financiera'},
   {semestre:8,materia:'Metodología de la investigación aplicada'},
   {semestre:8,materia:'Auditoría basada en riesgos'},
+  {semestre:8,materia:'Proyecto integrador profesional'},
 
-  {semestre:9,materia:'Proyecto integrador profesional'},
+  
   {semestre:9,materia:'Conyuntura económica'},
-  {semestre:9,materia:'Comercio Internacional'},
+  {semestre:9,materia:'Comercio internacional'},
   {semestre:9,materia:'Contabilidad avanzada II formas societarias'},
   {semestre:9,materia:'Investigación contable'},
-  {semestre:9,materia:'habilidades directivas'},
+  {semestre:9,materia:'Habilidades directivas'},
   {semestre:9,materia:'Auditoría tributaria y de sistemas'},
   {semestre:9,materia:'Mercado de capitales'},
 
@@ -273,7 +274,7 @@ isValid4:boolean = false;
 
   ngOnInit(): void {
     this.activo="1";
-    this.pagina="0";
+    this.pagina="1";
     this.paginas(this.pagina);
 
     var id:number = 3;

@@ -75,10 +75,10 @@ export class SstComponent implements OnInit {
 
   
     {semestre:4,materia:'Factores de riesgos Locativos y señalización'},
-    {semestre:4,materia:'ntrodución a los Sistemas gestíon Integrados'},
+    {semestre:4,materia:'Introdución a los sistemas gestión integrados'},
     {semestre:4,materia:'Modalidad de grado'},
     {semestre:4,materia:'Ética empresarial y profesional'},
-    {semestre:4,materia:'Creatividad empresaria'},
+    {semestre:4,materia:'Creatividad empresarial'},
     {semestre:4,materia:'Gestión ambiental y Desarrollo sostenible'},
   
     {semestre:5,materia:'Higiene industrial'},
@@ -108,7 +108,7 @@ export class SstComponent implements OnInit {
     {semestre:8,materia:'Toxicología laboral'},
     {semestre:8,materia:'Derecho laboral aplicado'},
     {semestre:8,materia:'NTC:ISO 45001'},
-    {semestre:8,materia:'Auditoria a los sistemas de gestión'},
+    {semestre:8,materia:'Auditoría a los sistemas de gestión'},
     {semestre:8,materia:'Técnicas de pedagogía en SST'},
     {semestre:8,materia:'Liderazgo y pensamiento estratégico'},
 

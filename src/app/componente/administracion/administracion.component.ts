@@ -65,7 +65,7 @@ listarMaterias =[
   {semestre:2,materia:'Legislación comercial'},
   {semestre:2,materia:'Microeconomía'},
   {semestre:2,materia:'Contabilidad aplicada'},
-  {semestre:2,materia:'>Proceso administrativo'},
+  {semestre:2,materia:'Proceso administrativo'},
   {semestre:2,materia:'Teoría del conocimiento'},
   {semestre:2,materia:'Electiva I'},
 
@@ -118,7 +118,7 @@ listarMaterias =[
   {semestre:8,materia:'Comercio electrónico'},
   {semestre:8,materia:'Relaciones públicas'},
 
-  {semestre:9,materia:'Modelo de exportación e Importación'},
+  {semestre:9,materia:'Modelo de exportación e importación'},
   {semestre:9,materia:'Gerencia financiera'},
   {semestre:9,materia:'Administración de la producción'},
   {semestre:9,materia:'Formulación y evaluación de proyectos'},
@@ -275,7 +275,7 @@ isValid4:boolean = false;
 
   ngOnInit(): void {
     this.activo="1";
-    this.pagina="0";
+    this.pagina="1";
     this.paginas(this.pagina);
 
     var id:number = 1;

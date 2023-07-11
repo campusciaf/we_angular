@@ -99,7 +99,7 @@
                         
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-10 col-10 p-4 text-center">
-                        <img [src]="equipo_inspira" alt="Aqeuipo que inspira" width="90%" height="auto">
+                        <iframe [src]="total" width="100%" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-right py-4">
                         <a (click)="paginas('2')" class="btn" (click)="activo='2'">
@@ -236,6 +236,16 @@
                             </div>
 
                             <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Revisor Fiscal</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Manuel Ricardo Melo<br>
+                                    revisorfiscal@ciaf.edu.co
+                                </div>
+                            </div>
+
+                            <div class="col-12">
                                 <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Rectora</span>
                             </div>
                             <div class="col-12 text-1">
@@ -296,12 +306,12 @@
                             </div>
 
                             <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Directora Programa Seguridad y Salud en el Trabajo</span>
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Programa Seguridad y Salud en el Trabajo</span>
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
-                                    Luis Ariosto Serna Cardona<br>
-                                    luis.serna@ciaf.edu.co
+                                    Ivan Tabares Ocampo<br>
+                                    ivan.tabares@ciaf.edu.co
                                 </div>
                             </div>
 
@@ -345,6 +355,10 @@
                                     Rosalba Loaiza<br>
                                     rosa.loaiza@ciaf.edu.co
                                 </div>
+                                <div class="ps-4 ms-4 pt-3">
+                                    Sandra Milena Rodríguez Duque<br>
+                                    sandra.rodriguez@ciaf.edu.co
+                                </div>
 
                             </div>
 
@@ -353,8 +367,8 @@
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
-                                    Ángela Viviana Aragón Largo<br>
-                                    angela.aragon@ciaf.edu.co
+                                    Natalia Cárdenas<br>
+                                   natalia.cardenas@ciaf.edu.co
                                 </div>
                             </div>
 
@@ -385,23 +399,19 @@
 
                     <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
                         <div class="row ani-1">
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Revisor Fiscal</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Manuel Ricardo Melo<br>
-                                    revisorfiscal@ciaf.edu.co
-                                </div>
-                            </div>
+                            
 
                             <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Contadora</span>
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Contadoras</span>
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
                                     Denys Yaneth Niño Mahecha<br>
                                     denys.nino@ciaf.edu.co
+                                </div>
+                                <div class="ps-4 ms-4 pt-4">
+                                    Claudia Osorio Duque<br>
+                                    claudia.osorio@ciaf.edu.co
                                 </div>
                             </div>
                             
@@ -410,7 +420,7 @@
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
-                                    Diana Catalina Moncada Alvarez<br>
+                                    Diana Catalina Moncada Álvarez<br>
                                     area.administrativa@ciaf.edu.co
                                 </div>
                             </div>
@@ -462,9 +472,12 @@
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
-                                    Alejandra Gonzalez Quintero<br>
+                                    Alejandra González Quintero<br>
                                     alejandra.quintero@ciaf.edu.co
                                 </div>
+
+                                
+
                             </div>
 
                             <div class="col-12">
@@ -477,7 +490,7 @@
                                 </div>
 
                                 <div class="ps-4 ms-4 pt-3">
-                                    Jaime Andrés Perez Londoño<br>
+                                    Jaime Andrés Pérez Londoño<br>
                                     ja.perez30@ciaf.edu.co
                                 </div>
 
@@ -492,16 +505,22 @@
                                     yuliet.restrepo@ciaf.edu.co
                                 </div>
                             </div>
+
+                            <div class="col-12">
+                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar diseño grafico</span>
+                            </div>
+                            <div class="col-12 text-1">
+                                <div class="ps-4 ms-4">
+                                    Dania Giraldo Duque<br>
+                                    dania.giraldo@ciaf.edu.co
+                                </div>
+                            </div>
                             
                             <div class="col-12">
                                 <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar Educativo</span>
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
-                                    Yohany Paola Rosales Martinez<br>
-                                    paola.rosales@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
                                     Carolina Ochoa González<br>
                                     carolina.ochoa@ciaf.edu.co
                                 </div>
@@ -516,7 +535,7 @@
                             </div>
                             <div class="col-12 text-1">
                                 <div class="ps-4 ms-4">
-                                    Jhyliana Janneth Angel Arango<br>
+                                    Jhyliana Janneth Ángel Arango<br>
                                     jhyli.angel@ciaf.edu.co
                                 </div>
                             </div>
@@ -549,6 +568,7 @@
                                     Anderson Adalberto Zapata<br>
                                     serviciosgenerales@ciaf.edu.co
                                 </div>
+
                             </div>
 
                         
