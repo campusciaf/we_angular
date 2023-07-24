@@ -23,6 +23,7 @@ import { InvestigacionesComponent } from './componente/investigaciones/investiga
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 import { NoticiasComponent } from './componente/noticias/noticias.component';
 import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
+import { TratamientodatosComponent } from './componente/tratamientodatos/tratamientodatos.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path: 'relacion-externo', component:RelacionExternoComponent},
   {path: 'noticias', component:NoticiasComponent},
   {path: 'noticias/:id', component:NoticiasComponent},
+  {path: 'tratamientodatos', component:TratamientodatosComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];
