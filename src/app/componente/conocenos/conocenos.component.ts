@@ -30,7 +30,7 @@ export class ConocenosComponent {
   listarReglamentos:any;
 
     reglamentos:Array<any> =[
-    {estado:'1',imagen:'assets/image/emprendimientos.webp',titulo:'Nuestro Proyecto Educativo',link:'https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf',modal:""},
+    {estado:'2',imagen:'assets/image/emprendimientos.webp',titulo:'Derechos Pecuniarios',link:'',modal:"#modalpecuniarios"},
     {estado:'1',imagen:'assets/image/pereira4ri.webp',titulo:'Estatutos Generales',link:"https://ciaf.digital/public/web_normativa/estatutos_actuales.pdf",modal:""},
     {estado:'1',imagen:'assets/image/hub.webp',titulo:'Plan Estratégico',link:"https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf", modal:""},
     {estado:'2',imagen:'assets/image/hub.webp',titulo:'Reglamentos',link:"",modal:"#modalreglamento"},
