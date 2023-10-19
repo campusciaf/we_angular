@@ -55,6 +55,7 @@ import { RelacionExternoComponent } from './componente/relacion-externo/relacion
 import { NoticiasHomeComponent } from './componente/noticias-home/noticias-home.component';
 import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
 import { TratamientodatosComponent } from './componente/tratamientodatos/tratamientodatos.component';
+import { HorariosComponent } from './componente/horarios/horarios.component';
 
 
 
@@ -94,6 +95,7 @@ import { TratamientodatosComponent } from './componente/tratamientodatos/tratami
     NoticiasHomeComponent,
     NoticiasCiafComponent,
     TratamientodatosComponent,
+    HorariosComponent,
 
 
   ],

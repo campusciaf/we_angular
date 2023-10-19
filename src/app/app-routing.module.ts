@@ -23,6 +23,7 @@ import { InvestigacionesComponent } from './componente/investigaciones/investiga
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 import { NoticiasComponent } from './componente/noticias/noticias.component';
 import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
+import { HorariosComponent } from './componente/horarios/horarios.component';
 import { TratamientodatosComponent } from './componente/tratamientodatos/tratamientodatos.component';
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path: 'noticias', component:NoticiasComponent},
   {path: 'noticias/:id', component:NoticiasComponent},
   {path: 'tratamientodatos', component:TratamientodatosComponent},
+  {path: 'horarios', component:HorariosComponent},
 
   {path: '**', component:PageNotFoundComponent}
 ];

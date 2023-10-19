@@ -1,6 +1,7 @@
+
 <div #topScrollAnchor></div><!-- div para que recargue al inicio de la pagina  -->
-<app-header></app-header>
+<app-header *ngIf="this.router.url!='/horarios'"></app-header>
 <router-outlet (deactivate)="onDeactivate()"></router-outlet>
-<app-footer></app-footer>
+<app-footer *ngIf="this.router.url!='/horarios'"></app-footer>
 
 <!-- deactive carga el evento para recargar la pagina desde el scroll top -->
