@@ -108,6 +108,11 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/reglamentos.php?id='+id,{headers});
   }
 
+  obtenerHorario(): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/horarios.php',{headers});
+  }
+
 
 
   
