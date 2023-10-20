@@ -16,7 +16,7 @@ export class HorariosComponent {
   public img_logo="assets/image/logo-blanco.webp";
 
   slideConfig = {
-    "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "autoplay": true, "rows":10, "autoplaySpeed":6000, "dots": true,
+    "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "autoplay": true, "rows":7, "autoplaySpeed":6000, "dots": true,
     responsive: [
       {
         breakpoint: 1048,
@@ -67,6 +67,8 @@ export class HorariosComponent {
   constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { }
 
   listarHorario: any;
+  listarHorarioProximo: any;
+  id:any;
     ngOnInit(): void {
 
       this.clock = document.getElementById('clock');
@@ -83,10 +85,24 @@ export class HorariosComponent {
         this.listarHorario=respuesta
       }); 
 
-      
+      this.conectarApiService.obtenerHorarioProximo(123).subscribe(respuesta2=>{
+        this.listarHorarioProximo=respuesta2
+    
+      }); 
+
+      function actualizar(){
+        location.reload()
+      }
+       // Función para actualizar cada 4 segundos(4000 milisegundos)
+       setInterval(actualizar,300000);
+
+     
 
     
     }
+
+  
+
 
 }
 

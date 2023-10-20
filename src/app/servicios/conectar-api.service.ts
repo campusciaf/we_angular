@@ -113,6 +113,11 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/horarios.php',{headers});
   }
 
+  obtenerHorarioProximo(id:number): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/horarios.php?id='+id,{headers});
+  }
+
 
 
   

@@ -143,10 +143,6 @@ figure{
 }
 
 .bg-8{
-    background-color: #191917 !important;
-}
-
-.bg-8{
     background-color: #99A8D3;
 }
 .bg-9{
@@ -175,6 +171,10 @@ figure{
 }
 .bg-17{
     background-color: #A32857;
+}
+
+.bg-18{
+    background-color: #191917 !important;
 }
 
 .text-1{

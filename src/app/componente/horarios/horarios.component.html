@@ -1,246 +1,248 @@
-<section class="m-0 p-0 bg-8">
-    <div class="row">
-        <!-- <div class="col-12 py-2 bg-1">
-            <div class="row justify-content-center">
-                <div class="col-6 ps-4">
-                    <img [src]="img_logo" alt="CIAF educación superior" width="150px">
+<div class="contenido">
+    <section class="m-0 p-0 bg-18">
+        <div class="row">
+            <!-- <div class="col-12 py-2 bg-1">
+                <div class="row justify-content-center">
+                    <div class="col-6 ps-4">
+                        <img [src]="img_logo" alt="CIAF educación superior" width="150px">
+                    </div>
+                    <div class="col-6 text-right text-white pt-3">
+                        <h1 class="fs-3 pe-4">INFORMACIÓN CLASES</h1>
+                    </div>
                 </div>
-                <div class="col-6 text-right text-white pt-3">
-                    <h1 class="fs-3 pe-4">INFORMACIÓN CLASES</h1>
+            </div> -->
+            <div class="col-9 border-end border-dark">
+                <div class="row m-0 p-0  bg-7 ">
+                    <div class="col-xl-1 text-center py-2 fw-bolder">Hora</div>
+                    <div class="col-xl-3 py-2">Docente</div>
+                    <div class="col-xl-5 py-2">Asignatura</div>
+                    <div class="col-xl-1 py-2">Programa</div>
+                    <div class="col-xl-1 py-2">Salón</div>
+                    <div class="col-xl-1 py-2 text-center">Semestre</div>
                 </div>
-            </div>
-        </div> -->
-        <div class="col-9 border-end border-dark">
-            <div class="row m-0 p-0  bg-7 ">
-                <div class="col-xl-1 text-center py-2 fw-bolder">Hora</div>
-                <div class="col-xl-3 py-2">Docente</div>
-                <div class="col-xl-5 py-2">Asignatura</div>
-                <div class="col-xl-1 py-2">Programa</div>
-                <div class="col-xl-1 py-2">Salón</div>
-                <div class="col-xl-1 py-2 text-center">Semestre</div>
-            </div>
-            <div class="row">
-                <div class="col-12 pt-4">
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
-                        <div ngxSlickItem *ngFor="let datos of listarHorario; index as i" class="slide">
-                            <div class="row m-0 p-0 text-white">
-                                <div class="col-xl-1 text-center text-3">{{datos.hora }}</div>
-                                <div class="col-xl-3">
+                <div class="row">
+                    <div class="col-12 pt-4">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
+                            <div ngxSlickItem *ngFor="let datos of listarHorario; index as i" class="slide">
+                                <div class="row m-0 p-0 text-white">
+                                    <div class="col-xl-1 text-center text-3">{{datos.hora }}</div>
+                                    <div class="col-xl-3">
 
-                                    <div class="row">
-                                        <div class="col-1">
+                                        <div class="row">
+                                            <div class="col-1">
 
-                                            <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
-                                            <ng-template #thenBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/null.jpg'"
-                                                style="width: 30px; height:30px; border-radius: 100px;"
-                                                class=""
-                                                />
-                                            </ng-template>
-                                            <ng-template #elseBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
-                                                style="width: 30px; height:30px; border-radius: 100px;"
-                                                />
-                                            </ng-template>
-                                        </div>
-                                        <div class="col-11 pt-1">
-                                            <span class="ms-2 pt-2">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</span>
+                                                <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
+                                                <ng-template #thenBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/null.jpg'"
+                                                    style="width: 30px; height:30px; border-radius: 100px;"
+                                                    class=""
+                                                    />
+                                                </ng-template>
+                                                <ng-template #elseBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
+                                                    style="width: 30px; height:30px; border-radius: 100px;"
+                                                    />
+                                                </ng-template>
+                                            </div>
+                                            <div class="col-11 pt-1">
+                                                <span class="ms-2 pt-2">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</span>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-xl-5">{{ datos.nombre_asignatura }}</div>
+                                    <div class="col-xl-1">{{ datos.nombre_escuela }}</div>
+                                    <div class="col-xl-1">{{ datos.salon }}</div>
+                                    <div class="col-xl-1 text-center">{{ datos.semestre }}</div>
                                 </div>
-                                <div class="col-xl-5">{{ datos.nombre_asignatura }}</div>
-                                <div class="col-xl-1">{{ datos.nombre_escuela }}</div>
-                                <div class="col-xl-1">{{ datos.salon }}</div>
-                                <div class="col-xl-1 text-center">{{ datos.semestre }}</div>
+                    
                             </div>
-                
-                        </div>
-                    </ngx-slick-carousel>
+                        </ngx-slick-carousel>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-3 bg-8">
-            <div class="row">
-                <div class="col-12">
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2" >
-                        <div ngxSlickItem *ngFor="let datos of listarHorario; index as i" class="slide">
-                            <div class="row text-white justify-content-center">
-                                <div class="col-xl-12 bg-3">
+            <div class="col-3 bg-18">
+                <div class="row">
+                    <div class="col-12">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2" >
+                            <div ngxSlickItem *ngFor="let datos of listarHorario; index as i" class="slide">
+                                <div class="row text-white justify-content-center">
+                                    <div class="col-xl-12 bg-3">
 
-                                    <div class="row">
-                                        <div class="col-2 p-3">
+                                        <div class="row">
+                                            <div class="col-2 p-2">
 
-                                            <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
-                                            <ng-template #thenBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/null.jpg'"
-                                                style="width: 50px; height:50px; border-radius: 200px;"
-                                                class=""
-                                                />
-                                            </ng-template>
-                                            <ng-template #elseBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
-                                                style="width: 50px; height:50px; border-radius: 200px;"
-                                                />
-                                            </ng-template>
+                                                <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
+                                                <ng-template #thenBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/null.jpg'"
+                                                    style="width: 50px; height:50px; border-radius: 200px;"
+                                                    class=""
+                                                    />
+                                                </ng-template>
+                                                <ng-template #elseBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
+                                                    style="width: 50px; height:50px; border-radius: 200px;"
+                                                    />
+                                                </ng-template>
+                                            </div>
+                                            <div class="col-10 pt-2">
+                                                <div class="ms-4 pt-3">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</div>
+                                            </div>
                                         </div>
-                                        <div class="col-10 pt-3">
-                                            <div class="ms-4 pt-3">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</div>
+                                    </div>
+
+                                    <div class="col-xl-11 fs-5 lh-1 text-center py-4">{{ datos.nombre_asignatura }}</div>
+
+                                    <div class="col-xl-6 ps-4 fs-4 text-3">{{datos.hora }}</div>
+                                    <div class="col-xl-6 text-center fs-4">{{ datos.salon }}</div>
+                                    <div class="col-11"><hr></div>
+                                    <div class="col-xl-12 ps-4 pb-2 text-3">{{ datos.nombre_escuela }}</div>
+                                    <div class="col-xl-12 ps-4 pb-2">{{ datos.nombre_programa }}</div>
+                                    
+                                    <div class="col-xl-4 text-center bg-3">
+                                        <div class="row">
+                                            <div class="col-12 pt-2">
+                                                Semestre
+                                            </div>
+                                            <div class="col-12 fs-6">
+                                                {{ datos.semestre }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-xl-11 fs-5 lh-1 text-center py-4">{{ datos.nombre_asignatura }}</div>
-
-                                <div class="col-xl-6 ps-4 fs-4 text-3">{{datos.hora }}</div>
-                                <div class="col-xl-6 text-center fs-4">{{ datos.salon }}</div>
-                                <div class="col-11"><hr></div>
-                                <div class="col-xl-12 ps-4 pb-2 text-3">{{ datos.nombre_escuela }}</div>
-                                <div class="col-xl-12 ps-4 pb-2">{{ datos.nombre_programa }}</div>
-                                
-                                <div class="col-xl-4 text-center bg-3">
-                                    <div class="row">
-                                        <div class="col-12 pt-2">
-                                            Semestre
-                                        </div>
-                                        <div class="col-12 fs-3">
-                                            {{ datos.semestre }}
-                                        </div>
-                                    </div>
-                                </div>
+                    
                             </div>
-                
-                        </div>
-                    </ngx-slick-carousel>
+                        </ngx-slick-carousel>
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    </div>
-</section>
-<section class="m-0 p-0 bg-8">
-    <div class="row">
-        <div class="col-12 bg-1">
-            <div class="row justify-content-center">
-                <div class="col-9 ps-4 py-2">
-                    <img [src]="img_logo" alt="CIAF educación superior" width="150px">
-                </div>
-                <div class="col-3 text-center text-white pt-4">
-                    <h1 class="fs-3 pe-4 text-6" id="clock">Hora actual</h1>
-                </div>
             </div>
         </div>
-        <div class="col-9 border-end border-dark">
-            <div class="row m-0 p-0  bg-7 ">
-                <div class="col-xl-1 text-center py-2 fw-bolder">Hora</div>
-                <div class="col-xl-3 py-2">Docente</div>
-                <div class="col-xl-5 py-2">Asignatura</div>
-                <div class="col-xl-1 py-2">Programa</div>
-                <div class="col-xl-1 py-2">Salón</div>
-                <div class="col-xl-1 py-2 text-center">Semestre</div>
+    </section>
+    <section class="m-0 p-0 bg-18">
+        <div class="row">
+            <div class="col-12 bg-1">
+                <div class="row justify-content-center">
+                    <div class="col-9 ps-4 py-2">
+                        <img [src]="img_logo" alt="CIAF educación superior" width="150px">
+                    </div>
+                    <div class="col-3 text-center text-white pt-4">
+                        <h1 class="fs-3 pe-4 text-6" id="clock">Hora actual</h1>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-12 pt-4">
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
-                        <div ngxSlickItem *ngFor="let datos of listarHorario; index as i" class="slide">
-                            <div class="row m-0 p-0 text-white">
-                                <div class="col-xl-1 text-center text-2">{{datos.hora }}</div>
-                                <div class="col-xl-3">
+            <div class="col-9 border-end border-dark">
+                <div class="row m-0 p-0  bg-7 ">
+                    <div class="col-xl-1 text-center py-2 fw-bolder">Hora</div>
+                    <div class="col-xl-3 py-2">Docente</div>
+                    <div class="col-xl-5 py-2">Asignatura</div>
+                    <div class="col-xl-1 py-2">Programa</div>
+                    <div class="col-xl-1 py-2">Salón</div>
+                    <div class="col-xl-1 py-2 text-center">Semestre</div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-4">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
+                            <div ngxSlickItem *ngFor="let datos of listarHorarioProximo; index as i" class="slide">
+                                <div class="row m-0 p-0 text-white">
+                                    <div class="col-xl-1 text-center text-2">{{datos.hora }}</div>
+                                    <div class="col-xl-3">
 
-                                    <div class="row">
-                                        <div class="col-1">
+                                        <div class="row">
+                                            <div class="col-1">
 
-                                            <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
-                                            <ng-template #thenBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/null.jpg'"
-                                                style="width: 30px; height:30px; border-radius: 100px;"
-                                                class=""
-                                                />
-                                            </ng-template>
-                                            <ng-template #elseBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
-                                                style="width: 30px; height:30px; border-radius: 100px;"
-                                                />
-                                            </ng-template>
-                                        </div>
-                                        <div class="col-11 pt-1">
-                                            <span class="ms-2 pt-2">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</span>
+                                                <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
+                                                <ng-template #thenBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/null.jpg'"
+                                                    style="width: 30px; height:30px; border-radius: 100px;"
+                                                    class=""
+                                                    />
+                                                </ng-template>
+                                                <ng-template #elseBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
+                                                    style="width: 30px; height:30px; border-radius: 100px;"
+                                                    />
+                                                </ng-template>
+                                            </div>
+                                            <div class="col-11 pt-1">
+                                                <span class="ms-2 pt-2">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</span>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-xl-5">{{ datos.nombre_asignatura }}</div>
+                                    <div class="col-xl-1">{{ datos.nombre_escuela }}</div>
+                                    <div class="col-xl-1">{{ datos.salon }}</div>
+                                    <div class="col-xl-1 text-center">{{ datos.semestre }}</div>
                                 </div>
-                                <div class="col-xl-5">{{ datos.nombre_asignatura }}</div>
-                                <div class="col-xl-1">{{ datos.nombre_escuela }}</div>
-                                <div class="col-xl-1">{{ datos.salon }}</div>
-                                <div class="col-xl-1 text-center">{{ datos.semestre }}</div>
+                    
                             </div>
-                
-                        </div>
-                    </ngx-slick-carousel>
+                        </ngx-slick-carousel>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-3 bg-8">
-            <div class="row">
-                <div class="col-12">
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2" >
-                        <div ngxSlickItem *ngFor="let datos of listarHorario; index as i" class="slide">
-                            <div class="row text-white justify-content-center">
-                                <div class="col-xl-12 bg-2">
+            <div class="col-3 bg-18">
+                <div class="row">
+                    <div class="col-12">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2" >
+                            <div ngxSlickItem *ngFor="let datos of listarHorarioProximo; index as i" class="slide">
+                                <div class="row text-white justify-content-center">
+                                    <div class="col-xl-12 bg-2">
 
-                                    <div class="row">
-                                        <div class="col-2 p-3">
+                                        <div class="row">
+                                            <div class="col-2 p-2">
 
-                                            <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
-                                            <ng-template #thenBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/null.jpg'"
-                                                style="width: 50px; height:50px; border-radius: 200px;"
-                                                class=""
-                                                />
-                                            </ng-template>
-                                            <ng-template #elseBlock>
-                                                <img
-                                                [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
-                                                style="width: 50px; height:50px; border-radius: 200px;"
-                                                />
-                                            </ng-template>
+                                                <div *ngIf="datos.usuario_imagen==''; then thenBlock else elseBlock"></div>
+                                                <ng-template #thenBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/null.jpg'"
+                                                    style="width: 50px; height:50px; border-radius: 200px;"
+                                                    class=""
+                                                    />
+                                                </ng-template>
+                                                <ng-template #elseBlock>
+                                                    <img
+                                                    [src]="'https://ciaf.digital/files/docentes/' + datos.usuario_imagen"
+                                                    style="width: 50px; height:50px; border-radius: 200px;"
+                                                    />
+                                                </ng-template>
+                                            </div>
+                                            <div class="col-10 pt-2">
+                                                <div class="ms-4 pt-3">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</div>
+                                            </div>
                                         </div>
-                                        <div class="col-10 pt-3">
-                                            <div class="ms-4 pt-3">{{ datos.usuario_nombre +  ' ' + datos.usuario_apellido }}</div>
+                                    </div>
+
+                                    <div class="col-xl-11 fs-5 lh-1 text-center py-4">{{ datos.nombre_asignatura }}</div>
+
+                                    <div class="col-xl-6 ps-4 fs-4 text-2">{{datos.hora }}</div>
+                                    <div class="col-xl-6 text-center fs-4">{{ datos.salon }}</div>
+                                    <div class="col-11"><hr></div>
+                                    <div class="col-xl-12 ps-4 pb-2 text-2">{{ datos.nombre_escuela }}</div>
+                                    <div class="col-xl-12 ps-4 pb-2">{{ datos.nombre_programa }}</div>
+                                    
+                                    <div class="col-xl-4 text-center bg-2">
+                                        <div class="row">
+                                            <div class="col-12 pt-2">
+                                                Semestre
+                                            </div>
+                                            <div class="col-12 fs-6">
+                                                {{ datos.semestre }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-xl-11 fs-5 lh-1 text-center py-4">{{ datos.nombre_asignatura }}</div>
-
-                                <div class="col-xl-6 ps-4 fs-4 text-2">{{datos.hora }}</div>
-                                <div class="col-xl-6 text-center fs-4">{{ datos.salon }}</div>
-                                <div class="col-11"><hr></div>
-                                <div class="col-xl-12 ps-4 pb-2 text-2">{{ datos.nombre_escuela }}</div>
-                                <div class="col-xl-12 ps-4 pb-2">{{ datos.nombre_programa }}</div>
-                                
-                                <div class="col-xl-4 text-center bg-2">
-                                    <div class="row">
-                                        <div class="col-12 pt-2">
-                                            Semestre
-                                        </div>
-                                        <div class="col-12 fs-3">
-                                            {{ datos.semestre }}
-                                        </div>
-                                    </div>
-                                </div>
+                    
                             </div>
-                
-                        </div>
-                    </ngx-slick-carousel>
+                        </ngx-slick-carousel>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
