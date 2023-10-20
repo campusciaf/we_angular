@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
@@ -12,22 +13,80 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 
 export class HorariosComponent {
 
+  public img_logo="assets/image/logo-blanco.webp";
 
+  slideConfig = {
+    "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "autoplay": true, "rows":10, "autoplaySpeed":6000, "dots": true,
+    responsive: [
+      {
+        breakpoint: 1048,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 778,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
+  };
+
+  slideConfig2 = {
+    "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "autoplay": true, "autoplaySpeed":9000, "dots": false,
+    responsive: [
+      {
+        breakpoint: 1048,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 778,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
+  };
+
+  clock:any;
   constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { }
 
   listarHorario: any;
-  ngOnInit(): void {
+    ngOnInit(): void {
 
+      this.clock = document.getElementById('clock');
+      setInterval( () => {
+          var date = new Date();
+         this.clock.innerText = date.toLocaleTimeString('es-CO', {
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+          });
+      }, 1000);
 
+      this.conectarApiService.obtenerHorario().subscribe(respuesta=>{
+        this.listarHorario=respuesta
+      }); 
 
-    this.conectarApiService.obtenerHorario().subscribe(respuesta=>{
-      this.listarHorario=respuesta
-    }); 
+      
 
     
-
-   
-  }
+    }
 
 }
 
