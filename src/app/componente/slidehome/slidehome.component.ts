@@ -17,9 +17,12 @@ export class SlidehomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.conectarApiService.obtenerSlide().subscribe(respuesta=>{
       this.listarSlider=respuesta
     });
+    
+
   }
 
 }

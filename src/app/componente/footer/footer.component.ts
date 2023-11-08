@@ -19,6 +19,7 @@ export class FooterComponent implements OnInit {
   public logo_blanco="assets/image/logo-blanco.webp";
   public vigilada="assets/image/vigilada.webp";
   public creatividad="assets/image/creatividad.webp";
+  public correociaf="contacto@ciaf.edu.co";
   constructor() { }
 
 

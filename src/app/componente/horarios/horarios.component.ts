@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 
 import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { Time } from '@angular/common';
+import { Timestamp } from 'rxjs';
+
+
+declare var jQuery:any;
+declare var $:any;
 
 @Component({
   selector: 'app-horarios',
@@ -13,10 +20,12 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 
 export class HorariosComponent {
 
+
+
   public img_logo="assets/image/logo-blanco.webp";
 
   slideConfig = {
-    "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "autoplay": true, "rows":7, "autoplaySpeed":6000, "dots": true,
+    "slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "autoplay": true, "rows":6, "autoplaySpeed":6000, "dots": true,
     responsive: [
       {
         breakpoint: 1048,
@@ -68,8 +77,15 @@ export class HorariosComponent {
 
   listarHorario: any;
   listarHorarioProximo: any;
+  expiration_date:any;
+ 
+
+
+
   id:any;
     ngOnInit(): void {
+
+     
 
       this.clock = document.getElementById('clock');
       setInterval( () => {
@@ -96,13 +112,21 @@ export class HorariosComponent {
        // Función para actualizar cada 4 segundos(4000 milisegundos)
        setInterval(actualizar,300000);
 
-     
+
 
     
     }
 
-  
 
+    
+    test(hora:any):void {
+
+    var dato=moment(hora,'H:m:s').format('hh:mm:ss a')
+
+
+      $("#horaaa").innerHTML=dato
+    
+    }
 
 }
 
