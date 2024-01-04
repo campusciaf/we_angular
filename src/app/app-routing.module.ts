@@ -25,6 +25,9 @@ import { NoticiasComponent } from './componente/noticias/noticias.component';
 import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
 import { HorariosComponent } from './componente/horarios/horarios.component';
 import { TratamientodatosComponent } from './componente/tratamientodatos/tratamientodatos.component';
+import { VeterinariaComponent } from './componente/veterinaria/veterinaria.component';
+import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -41,6 +44,8 @@ const routes: Routes = [
   {path: 'conocenos', component:ConocenosComponent},
   {path: 'motocicletas', component:MotocicletasComponent},
   {path: 'administrativo', component:AdministrativosaludComponent},
+  {path: 'veterinaria', component:VeterinariaComponent},
+  {path: 'adultomayor', component:AdultomayorComponent},
   {path: 'emprendimientos', component:EmprendimientosComponent},
   {path: 'emprendimientodetalle/:id', component:EmprendimientodetalleComponent},
   {path: 'egresados', component:EgresadosComponent},

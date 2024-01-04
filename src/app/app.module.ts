@@ -56,6 +56,8 @@ import { NoticiasHomeComponent } from './componente/noticias-home/noticias-home.
 import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
 import { TratamientodatosComponent } from './componente/tratamientodatos/tratamientodatos.component';
 import { HorariosComponent } from './componente/horarios/horarios.component';
+import { VeterinariaComponent } from './componente/veterinaria/veterinaria.component';
+import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
 
 
 
@@ -96,6 +98,8 @@ import { HorariosComponent } from './componente/horarios/horarios.component';
     NoticiasCiafComponent,
     TratamientodatosComponent,
     HorariosComponent,
+    VeterinariaComponent,
+    AdultomayorComponent,
 
 
   ],

@@ -1,0 +1,98 @@
+.bg-software{
+	background-color: rgba(0,97,168,0.8);
+}
+
+.bg-sem1{
+	background: linear-gradient(180deg, #001550 9.07%, #1E22BC 80.95%);
+}
+
+.bg-sem2{
+	background: linear-gradient(180deg, #1E22BC 11.32%, #1E22BC 34.07%, #1E22BC 52.75%, #79AB3A 69.94%, #79AB3A 80.41%);
+}
+.bg-sem3{
+	background: linear-gradient(180deg, #79AB3A 2.93%, #79AB3A 23.62%, #79AB3A 43.59%, #638C2F 63.22%, #638C2F 82.07%);
+}
+.bg-sem4{
+	background: linear-gradient(180deg, #024CA0 7.53%, #054DA0 20.52%, #0F50A2 31.2%, #2155A4 41.05%, #395CA7 50.42%, #5865AB 59.44%, #7E71AF 68.19%, #AB7EB5 76.58%, #C686B8 81.07%);
+}
+
+.bg-sem5{
+	background: linear-gradient(180deg, #C686B8 3.34%, #C583B7 28.99%, #C279B2 50.06%, #BD67AB 69.43%, #BB61A8 75.05%);
+}
+.bg-sem6{
+	background: linear-gradient(180deg, #BB61A8 27.05%, #B95DA6 48.06%, #B4519F 69.11%, #B24B9B 76.34%);
+}
+.bg-sem7{
+	background: linear-gradient(180deg, #B24B9B 42.81%, #B44B9A 56.8%, #BD4A98 64.83%, #CB4995 71.35%, #DE4890 77.07%, #F8468A 82.21%, #FF4688 83.4%);
+}
+
+.bg-sem8{
+	background: linear-gradient(180deg, #FF4688 57.95%, #FB3A7F 61.9%, #F52B74 69%, #F2236E 77.46%, #F1206C 90.62%);
+}
+.bg-sem9{
+	background: linear-gradient(180deg, #F1206C 23.49%, #C00B53 81.82%);
+}
+.bg-sem10{
+	background-color: #C00B53;
+}
+
+.titulo-motos{
+    font-size: 70px !important;
+    line-height: 60px;
+}
+
+.bg-image-1{
+    background-image: url("https://ciaf.edu.co/assets/image/bg-motocicletas.webp");
+    height: 450px;
+
+   
+}
+
+.m-menu {
+    display: none;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 4;
+}
+
+.m-menu a {
+    text-decoration: none !important;
+}
+.m-menu a p{
+    color: #fff;
+    font-size: 10px !important;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none !important;
+	line-height: 10px;
+}
+
+.m-menu img {
+	width: 26px;
+}
+.active-m{
+	background-color: #5a802d !important;
+	height: 100%;
+}
+@media(max-width:768px){
+	.bg-software{
+		background-color: rgba(0,97,168,1);
+	}
+    .m-menu {
+        display: block;
+        display: flex;
+    }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .m-menu {
+        display: block;
+        display: flex;
+        height: 55px;
+        overflow: hidden;
+    }
+}
