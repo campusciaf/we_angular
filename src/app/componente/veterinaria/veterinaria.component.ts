@@ -36,18 +36,28 @@ export class VeterinariaComponent {
 
   
   listarMaterias =[
-    {semestre:1,materia:'Herramientas y seguridad industrial'},
-    {semestre:1,materia:'Sistema de carrocería y chasis'},
-    {semestre:1,materia:'Motores de combustión interna de 2 y 4 tiempos'},
-    {semestre:1,materia:'Sistema de transmisión de potencia'},
-    {semestre:1,materia:'Ética y valores'},
+    {semestre:1,materia:'Anatomía I'},
+    {semestre:1,materia:'Fisiología'},
+    {semestre:1,materia:'Semiología '},
+    {semestre:1,materia:'Aspectos éticos del quehacer veterinario'},
+    {semestre:1,materia:'Estética canina y felina I'},
+    {semestre:1,materia:'Patología clínica'},
+    {semestre:1,materia:'Adiestramiento canino'},
+    {semestre:1,materia:'Iniciativa empresarial'},
+    {semestre:1,materia:'TIC´s'},
+    {semestre:1,materia:'Práctica I '},
 
   
-    {semestre:2,materia:'Presupuesto básico'},
-    {semestre:2,materia:'Sistema eléctrico y electrónico'},
-    {semestre:2,materia:'Sistema fuel injecton'},
-    {semestre:2,materia:'Mantenimiento preventivo de la motocicleta'},
-    {semestre:2,materia:'Servicio al cliente'},
+    {semestre:2,materia:'Anatomía II '},
+    {semestre:2,materia:'Animales exóticos'},
+    {semestre:2,materia:'Primeros auxilios'},
+    {semestre:2,materia:'Estética canina y felina II'},
+    {semestre:2,materia:'Nutrición animal e inocuidad del producto'},
+    {semestre:2,materia:'Farmacología y planes sanitarios'},
+    {semestre:2,materia:'Producción y reproducción pecuaria'},
+    {semestre:2,materia:'Salud Pública (Bioseguridad, AT, EL, Zoonosis)'},
+    {semestre:2,materia:'Técnicas quirúrgicas y protocolos'},
+    {semestre:2,materia:'Práctica II'},
 
 
   
