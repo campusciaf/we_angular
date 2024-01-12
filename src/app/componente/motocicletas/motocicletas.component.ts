@@ -12,7 +12,7 @@ declare var $:any;
 })
 export class MotocicletasComponent {
 
-  public tres_semestres="assets/image/tres-semestres.webp";
+  public tres_semestres="assets/image/dos-semestres.webp";
   public sotfware_pic="assets/image/software-pic.webp";
   public img_li="assets/image/img-li.webp";
   public next="assets/image/btn-next.webp";

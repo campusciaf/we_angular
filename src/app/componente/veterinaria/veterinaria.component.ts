@@ -11,7 +11,7 @@ declare var $:any;
 })
 export class VeterinariaComponent {
 
-  public tres_semestres="assets/image/tres-semestres.webp";
+  public tres_semestres="assets/image/dos-semestres.webp";
   public sotfware_pic="assets/image/software-pic.webp";
   public img_li="assets/image/img-li.webp";
   public next="assets/image/btn-next.webp";
@@ -44,7 +44,7 @@ export class VeterinariaComponent {
     {semestre:1,materia:'Patología clínica'},
     {semestre:1,materia:'Adiestramiento canino'},
     {semestre:1,materia:'Iniciativa empresarial'},
-    {semestre:1,materia:'TIC´s'},
+    {semestre:1,materia:'TICs'},
     {semestre:1,materia:'Práctica I '},
 
   
