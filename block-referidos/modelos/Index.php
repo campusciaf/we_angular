@@ -12,7 +12,7 @@ class RegistrarUsuario{
 		$consulta = $mbd->prepare($sql);
         if($consulta->execute()){
                 $id_retorna = $mbd->lastInsertId();	
-                $fecha_graduacion="0000-00-00";
+                $fecha_graduacion=NULL;
                 $sql3="INSERT INTO on_interesados_datos(id_estudiante, fecha_graduacion) VALUES ('$id_retorna', '$fecha_graduacion')";
 				global $mbd;
 				$consulta3 = $mbd->prepare($sql3);
