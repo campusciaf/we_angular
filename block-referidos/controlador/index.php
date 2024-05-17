@@ -2,6 +2,14 @@
 //Llamamo el modelo para utilizar las conexiones a bd 
 require_once "../modelos/Index.php";
 $registrarusuario = new RegistrarUsuario();
+
+// definimos las variables para el periodo actual.
+$rsptaperiodo = $registrarusuario->periodoactual();	
+$periodo_ingreso=$rsptaperiodo["periodo_actual"];
+$periodo_campana=$rsptaperiodo["periodo_siguiente"];
+
+
+
 //tiempo en horas a colombia y se incluye el correo para enviar credenciales
 date_default_timezone_set("America/Bogota");		
 $fecha = date('Y-m-d');
@@ -32,18 +40,20 @@ switch($_GET["op"]){
 		$medio = "Marketing-digital";
         $conocio = "Referido";
 		$estado = "Interesado";
-		$periodo_ingreso = $_SESSION['periodo_actual'];
-		$periodo_campana = $_SESSION['periodo_campana'];
 		$rspta = $registrarusuario->insertarCliente($identificacion, $fo_programa, $jornada_e, $nombre, $celular, $email, $clave, $periodo_ingreso, $fecha, $hora, $medio, $conocio, $estado, $periodo_campana, $id_usuario,$nombre2,$celular2,$email2,$relacion);
 		echo $rspta ? "registro Exitoso" : "No se pudo registrar";
     break;
 }
 //generea un codigo aleatorio
 function generarCodigo($longitud){
-	 $key = '';
-	 $pattern = '1234567890';
-	 $max = strlen($pattern)-1;
-	 for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
-	 return $key;
+    $key = '';
+    $pattern = '1234567890';
+    $max = strlen($pattern) - 1;
+    for($i = 0; $i < $longitud; $i++) {
+        $key .= $pattern[mt_rand(0, $max)];
+    }
+    return $key;
 }
+
+
 ?>

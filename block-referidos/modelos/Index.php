@@ -5,6 +5,19 @@ class RegistrarUsuario{
 	//Implementamos nuestro constructor
 	public function __construct(){
 	}
+
+
+	public function periodoactual()
+    {
+    	$sql="SELECT * FROM periodo_actual"; 
+
+		global $mbd;
+		$consulta = $mbd->prepare($sql);
+		$consulta->execute();
+		$resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+		return $resultado;
+    }
+	
 	//Implementamos un método para insertar seguimiento
 	public function insertarCliente($identificacion, $fo_programa, $jornada_e, $nombre, $celular, $email, $clave, $periodo_ingreso, $fecha, $hora, $medio, $conocio, $estado, $periodo_campana, $id_usuario,$nombre2,$celular2,$email2,$relacion){
 		$sql="INSERT INTO on_interesados(identificacion, fo_programa, jornada_e, nombre, celular, email, clave, periodo_ingreso, fecha_ingreso, hora_ingreso, medio, conocio, estado, periodo_campana, id_usuario) VALUES('$identificacion', '$fo_programa', '$jornada_e', '$nombre', '$celular', '$email', '$clave', '$periodo_ingreso', '$fecha' ,'$hora' ,'$medio', '$conocio', '$estado', '$periodo_campana', '$id_usuario')";
