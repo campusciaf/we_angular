@@ -144,8 +144,8 @@
 			<div class="col-12"><br>
 				<ul style="padding-left: 5%; color: #fff; line-height: 14px">
 					<li><span class="text-white" style="font-size:12px"> <b>Participantes:</b> Todos los miembros de la comunidad CIAF (estudiantes, graduados, docentes y administrativos).</span></li>
-					<li><span class="text-white" style="font-size:12px"> <b>Vigencia:</b> Desde el 1 de abril de 2023 hasta el 29 de julio de 2023.</span></li>
-					<li><span class="text-white" style="font-size:12px"> <b>Premios:</b> $80.000 en efectivo por cada amigo que se matricule en alguno de los programas ofrecidos por CIAF para el semestre 2023-2. Aplica para estudiantes nuevos. </span></li>
+					<li><span class="text-white" style="font-size:12px"> <b>Vigencia:</b> Desde el 30 de marzo de 2024 hasta 15 de agosto de 2024.</span></li>
+					<li><span class="text-white" style="font-size:12px"> <b>Premios:</b> $80.000 en efectivo por cada amigo que se matricule en alguno de los programas ofrecidos por CIAF para el semestre 2024-2. Aplica para estudiantes nuevos. </span></li>
 					<li><span class="text-white" style="font-size:12px"> <b>Verificación:</b> el área de mercadeo verificará los datos y registros de los concursantes. En el caso que dos o más personas refieran a la misma persona, se tendrá en cuenta solo el primer registro de acuerdo a la fecha y hora de haber sido realizado.</span></li> 
 					<li><span class="text-white" style="font-size:12px"> <b>El referido no debe estar registrado en las bases de datos de CIAF al momento de ser referido ni obtener beneficios en el proceso de inscripción.</span></li>
 					
