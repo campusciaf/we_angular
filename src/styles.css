@@ -25,10 +25,18 @@
     font-display: swap;
   }
 
+  @font-face {
+	font-family: "fuente4";
+	src: url("assets/fonts/ethnocentric.ttf") format("opentype");
+    font-display: swap;
+}
 
 body{
     font-family:"fuente1";
     font-size:14px
+}
+.pointer{
+    cursor: pointer;
 }
 figure{
     display:block;
@@ -54,6 +62,10 @@ figure{
 .row>*{
     margin:0!important;
     padding:0
+}
+.font-ciaf {
+    font-family: "fuente4" !important;
+  
 }
 .titulo-logo{
     font-family:"fuente-logo" !important
@@ -198,6 +210,74 @@ figure{
 .text-7{
     color: #37549B !important;
 }
+
+
+/* ****** tamaño de texto ******* **/
+.fs-10{
+	font-size: 10px !important;
+}
+.fs-12{
+	font-size: 12px !important;
+}
+.fs-14{
+	font-size: 14px !important;
+}
+.fs-16{
+	font-size: 16px !important;
+}
+.fs-18{
+	font-size: 18px !important;
+}
+.fs-20{
+	font-size: 20px !important;
+}
+.fs-22{
+	font-size: 22px !important;
+}
+.fs-24{
+	font-size: 24px !important;
+}
+.fs-28{
+	font-size: 28px !important;
+}
+.fs-32{
+	font-size: 32px !important;
+}
+.fs-36{
+	font-size: 36px !important;
+}
+.fs-42{
+	font-size: 42px !important;
+}
+.fs-48{
+	font-size: 48px !important;
+}
+.fs-56{
+	font-size: 56px !important;
+}
+/*  *******fin **/
+
+
+.lh-16 {
+    line-height: 16px !important;
+}
+.lh-18 {
+    line-height: 18px !important;
+}
+.lh-20 {
+    line-height: 20px !important;
+}
+.lh-22 {
+    line-height: 22px !important;
+}
+.lh-24 {
+    line-height: 24px !important;
+}
+.lh-30 {
+    line-height: 30px !important;
+}
+
+
 .asterisco{
     font-weight:500;
     font-size:14px;

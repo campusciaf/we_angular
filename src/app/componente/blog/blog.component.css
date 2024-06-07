@@ -1,0 +1,140 @@
+figure.snipblog {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  cursor:pointer;
+}
+figure.snipblog * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+figure.snipblog img {
+  max-width: 100%;
+  vertical-align: top;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+figure.snipblog figcaption {
+
+  position: relative;
+}
+figure.snipblog .date,
+figure.snipblog i {
+  background-color: #7CAC3B;
+  top: 25px;
+  color: #fff;
+  left: 25px;
+  min-height: 60px;
+  min-width: 60px;
+  position: absolute;
+  text-align: center;
+}
+figure.snipblog .date {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+figure.snipblog .date span {
+  display: block;
+  line-height: 30px;
+}
+figure.snipblog .date .month {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+figure.snipblog i {
+  line-height: 60px;
+  font-size: 30px;
+  -webkit-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+figure.snipblog h3,
+figure.snipblog p {
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  overflow: hidden;
+}
+figure.snipblog h3 {
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+}
+figure.snipblog p {
+  font-size: 0.8em;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+figure.snipblog .btn-leer {
+  border: medium none;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #7CAC3B;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  width: 150px;
+  text-decoration: none;
+}
+figure.snipblog a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+figure.snipblog:hover img,
+figure.snipblog.hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+figure.snipblog:hover .date,
+figure.snipblog.hover .date {
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+figure.snipblog:hover i,
+figure.snipblog.hover i {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+figure.snipblog:hover .btn-leer,
+figure.snipblog.hover .btn-leer {
+  background-color: #117964;
+}
+
+.description {
+	overflow: hidden;
+	color: #666666;
+	font-size: 14px;
+	line-height: 1.8em;
+    overflow: hidden;
+    height: 0px; 
+    opacity: 1;
+	transition: all 1s;
+}
+

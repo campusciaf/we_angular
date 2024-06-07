@@ -11,14 +11,22 @@ export class ConectarApiService {
 // produccion//
 API: string='https://ciaf.edu.co/api_rest';
 
-
 //local//
-// API: string='http://localhost/web-angular/api_rest';
+// API: string='http://localhost/api_rest';
 autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
 
 
   constructor(private clienteHttp:HttpClient) { }
 
+
+  obtenerBlog(){
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/blog.php',{headers});
+  }
+  obtenerBlogId(id:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/blog.php?id='+id,{headers});
+  }
   obtenerNoticias(){
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.get(this.API+ '/noticias.php',{headers});
@@ -118,7 +126,20 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/horarios.php?id='+id,{headers});
   }
 
+  insertarClienteExpou(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    // return this.clienteHttp.post(this.API+ '/agregarDatos.php',{headers});
+    return this.clienteHttp.post(this.API+ '/agregarDatosExpoU.php',JSON.stringify(cliente),{headers});
+  }
 
-
+  insertarClienteContinuada(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/agregarDatosContinuada.php',JSON.stringify(cliente),{headers});
+  }
   
+
+  verificarClienteContinuada(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/verificarDatosContinuada.php',JSON.stringify(cliente),{headers});
+  }
 }

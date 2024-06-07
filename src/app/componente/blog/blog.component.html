@@ -1,0 +1,222 @@
+
+<section>
+    <div class="row justify-content-center bg-light">
+        <div class="col-11 pt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">Estamos en:</li>
+                  <li class="breadcrumb-item active" *ngIf="tipobusquedad==undefined" aria-current="page">Blog post</li>
+                  <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page"><a routerLink="/blog">Blog</a></li>
+                  <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page">{{tipobusquedad}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<section class="pt-4 mt-4 mostrar">
+    <div class="row justify-content-center">
+
+            <div class="col-xl-8">
+                <div class="row">
+
+                    <div class="col-xl-12 col-lg-12 col-mb-12 col-12 p-4 m-4">
+                        <h2 class="titulo-2 bolder-1">Trasnformación digital </h2>
+                    </div>
+                            
+                    <div class="col-12" *ngIf="tipobusquedad==undefined">
+                        <div *ngFor="let valor of listarBlog; first as isFirst">
+                            <div class="py-4 p-md-5 my-4 rounded  bg-6" *ngIf="isFirst">
+                                <div class="col-lg-6 px-0">
+                                    <h1 class="fs-42 fst-italic lh-30">{{valor.titulo_blog}}</h1>
+                                    <p class="lead fs-16 my-3 d" [innerHTML]="valor.contenido_blog"></p>
+                                    <p class="lead mb-0"><a [routerLink]="['/blog',valor.link_blog]"  target="_parent" (click)="traerBlog()" class=" btn-sm text-black">Continuar leyendo...</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12" *ngIf="tipobusquedad!=undefined">
+                        <!-- <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button> -->
+                       
+                            <div  *ngFor="let blogdetalle of detalleBlog index as i" class="slide">
+                                
+                                <div class="row justify-content-center">
+
+                                    <div class="card border border-0 col-xl-11">
+
+                                        <div class="row g-0">
+
+                                        <div class="col-md-12 p-4">
+                                            <div class="row">
+                                                <div class="col-12 timestamp text-3">
+                                                    Pub. {{blogdetalle.fecha_blog | date:"d MMM"}}
+                                                </div>
+                                                <div class="col-12"><h3 class="fs-2 text-1 py-4">{{blogdetalle.titulo_blog}}</h3></div>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-md-8">
+                                                        <div *ngIf="blogdetalle.material=='2'">
+                                                            <img src="https://ciaf.digital/public/web_blog/{{blogdetalle.blog_img}}" alt="{{blogdetalle.titulo_blog}}" width="100%" height="auto">
+                                                        </div>
+                                                        <div *ngIf="blogdetalle.material=='1'">
+            
+                                                            <a (click)="open(content);videoYoutube(blogdetalle.url_video,blogdetalle.titulo_blog)" style="cursor:pointer">
+                                                                <div class="link-video"><img src="assets/image/video.webp" alt="Video noticia"></div>
+                                                                <img src="https://ciaf.digital/public/web_blog/{{blogdetalle.blog_img}}" alt="{{blogdetalle.titulo_blog}}" width="100%" height="auto">
+                                                            </a>
+            
+                                                        </div>
+                                                        <div class="category-noti text-center" [ngStyle]="{'background-color': blogdetalle.color}" >{{blogdetalle.nombre_categoria}}</div>
+                                                    </div>
+                                                </div>
+
+                                                <h4 class="fs-4 bolder-1 py-4 text-3">{{blogdetalle.subtitulo_blog}}</h4>
+                                                <p class="text-justify lh-lg" [innerHTML]="blogdetalle.contenido_blog"></p>
+
+                                            
+                                            </div>
+                                        </div>
+
+                                        
+                                        
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        
+                        <!-- <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button> -->
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-mb-12 col-12 p-4 m-4">
+                        <h2 class="titulo-2">Otras entradas </h2>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-4 p-2" *ngFor="let blog of listarBlog index as i">
+                                <figure class="snipblog">
+                                    <img src="https://ciaf.digital/public/web_blog/{{blog.blog_img}}" alt="{{blog.titulo_blog}}" width="100%" height="auto">
+                                    <div class="date">
+                                        <span class="day">{{blog.fecha_blog | date:"d"}}</span>
+                                        <span class="month">{{blog.fecha_blog | date:"MMM"}}</span>
+                                    </div>
+                                        <i class="fa-solid fa-newspaper"></i>
+                                    <figcaption class="p-4">
+                                        <h1 class="fs-22 fw-bold">{{blog.titulo_blog}}</h1>
+                                        <h2 class="fs-16 fw-semibold">{{blog.subtitulo_blog}}</h2>
+                                        <p [innerHTML]="blog.contenido_blog"></p>
+                                    </figcaption>
+                                    <figcaption class="p-4 ">
+                                     
+                                            <a [routerLink]="['/blog',blog.link_blog]"  target="_parent" (click)="traerBlog()" class="btn-leer">Leer más</a>
+                                     
+                                    </figcaption>
+                                        
+                                  </figure>
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-xl-3">
+               <div class="row">
+                    <div class="col-12">
+                        Post recientes
+                    </div>
+                    <div class="col-12">
+                        Archivos
+                    </div>
+               </div>
+            </div>
+           
+        
+
+
+
+    </div>
+</section>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{titulo}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<iframe [src]="total" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen
+      allowfullscreen ></iframe>
+	</div>
+	<div class="modal-footer">
+		
+	</div>
+</ng-template>
+
+        
+                <!-- 
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+                        <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                            <div ngxSlickItem *ngFor="let blog of listarBlog index as i" class="slide">
+                                
+                                <div class="row cards justify-content-center">
+                                    <div class="col-xl-12 col-lg-12 col-md-10 col-11">
+                                        <div class="column m-4">
+                                            <div [className]="'post-module'" (mouseover)="animarnoticia(i)" (mouseout)="noanimarnoticia(i)">
+                                                <div class="thumbnail">
+                                                    <div class="date">
+                                                        <div class="day">27</div>
+                                                        <div class="month">Mar</div>
+                                                    </div>
+                                                    <div *ngIf="blog.material=='2'">
+                                                        <img src="https://ciaf.digital/public/web_blog/{{blog.img_blog}}" alt="{{blog.titulo_blog}}" width="100%" height="auto">
+                                                    </div>
+                                                    <div *ngIf="blog.material=='1'">
+
+                                                        <a (click)="open(content);videoYoutube(blog.url_video,blog.titulo_blog)" style="cursor:pointer">
+                                                            <div class="link-video"><img src="assets/image/video.webp"></div>
+                                                            <img src="https://ciaf.digital/public/web_blog/{{blog.img_blog}}" alt="{{blog.titulo_blog}}" width="100%" height="auto">
+                                                        </a>
+
+                                                    </div>
+                                                
+                                                </div>
+                                                <div class="post-content">
+                                                    <div class="category" [ngStyle]="{'background-color': blog.color}" >{{blog.nombre_categoria}}</div>
+                                                    <h1 class="title">{{blog.titulo_blog}}</h1>
+                                                    <h2 class="sub_title">{{blog.subtitulo_blog}}</h2>
+                                                    <p [className]="'description accion'+i">{{blog.contenido_blog}}</p>
+                                                    <div class="post-meta">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">
+                                                                <span class="timestamp">
+                                                                    <img src="{{calendario}}" alt="Publicado"> Pub. {{blog.fecha_blog | date:"d MMM"}}
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-xl-2 col-lg-2 col-md-2 col-4 pt-1 mb-2"> 
+                                                                <span class="comments">39 
+                                                                    <img src="{{vistas}}" alt="Publicado"> 
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center"> 
+                                                                <a href="" class="btn btn-light btn-sm text-black">Leer más</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> 
+                -->
+
+
+
+
+
+
+

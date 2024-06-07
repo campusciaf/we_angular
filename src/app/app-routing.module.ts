@@ -22,11 +22,12 @@ import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
 import { NoticiasComponent } from './componente/noticias/noticias.component';
-import { NoticiasCiafComponent } from './componente/noticias-ciaf/noticias-ciaf.component';
+import { BlogComponent } from './componente/blog/blog.component';
 import { HorariosComponent } from './componente/horarios/horarios.component';
 import { TratamientodatosComponent } from './componente/tratamientodatos/tratamientodatos.component';
 import { VeterinariaComponent } from './componente/veterinaria/veterinaria.component';
 import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
+import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 
 
 const routes: Routes = [
@@ -54,8 +55,15 @@ const routes: Routes = [
   {path: 'relacion-externo', component:RelacionExternoComponent},
   {path: 'noticias', component:NoticiasComponent},
   {path: 'noticias/:id', component:NoticiasComponent},
+  {path: 'blog', component: BlogComponent},
+  {path: 'blog/:id', component:BlogComponent},
+ 
   {path: 'tratamientodatos', component:TratamientodatosComponent},
   {path: 'horarios', component:HorariosComponent},
+
+  /* **** landing pages **** */
+  {path: 'expo-u', component:ExpoUComponent},
+
 
   {path: '**', component:PageNotFoundComponent}
 ];

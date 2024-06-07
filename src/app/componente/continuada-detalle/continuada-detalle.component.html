@@ -32,8 +32,8 @@
                             <p>{{cursos.descripcion_curso}}</p>
                         </div>
                         <div class="col-xl-12 py-4 text-center">
-                            <a href="" class="btn-pagos"><span class="icono bg-3"> >> </span> <span class="boton">Pago en linea</span></a>
-                            <a href="" class="btn-pagos "><span class="icono bg-3"> >> </span> <span class="boton">Inscribirme</span></a>
+                            <a (click)="modalverificacion()" data-bs-toggle="modal" class="btn-pagos "><span class="icono bg-3"> 1 </span> <span class="boton pointer">Inscribirme</span></a>
+                            <a (click)="modalverificar()" data-bs-toggle="modal" class="btn-pagos"><span class="icono bg-3"> 2 </span> <span class="boton pointer">Pago en linea</span></a>
                         </div>
                         <div class="col-xl-12 p-2 text-center">
                             <h3><a href="" class="btn-pagos"><span class="icono bg-3"> Inversión </span> <span class="boton">$ {{cursos.precio_curso}}</span></a></h3>
@@ -63,7 +63,8 @@
                         </div>
                         <div class="col-xl-6 px-4 py-1">
                             <!-- {{cursos.fecha_inicio}} -->
-                            {{ cursos.fecha_inicio | date:"d MMMM Y" }}  
+                            <!-- {{ cursos.fecha_inicio | date:"d MMMM Y" }}   -->
+                              Próximamente
                         </div>
 
                     </div>
@@ -86,3 +87,116 @@
     
 
 </section>
+
+
+<!-- Modal registro-->
+<div class="modal fade" id="modalregistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-6" id="exampleModalLabel">Formulario de registro</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="myForm" (ngSubmit)="agregar()">
+                <div class="input-group mb-3 input-group-lg" *ngIf="element"> 
+                    <input type="text" class="form-control campo-input" placeholder="" name="id_curso"  formControlName="id_curso"  required>
+                </div>
+
+                <div class="input-group mb-3 input-group-lg">
+                    <span class="input-group-text bg-2 text-white" id="basic-addon1">1</span>
+                    <input matInput type="number" class="form-control campo-input" placeholder="Identificacion" aria-label="identificacion" aria-describedby="basic-addon1" required="" name="identificacion"  formControlName="identificacion">
+                 </div>
+                <div *ngFor="let validation of account_validation_messages.identificacion">
+                    <div class="error-message p-2" *ngIf="myForm.get('identificacion')?.hasError(validation.type) && (myForm.get('identificacion')?.dirty || myForm.get('identificacion')?.touched)">{{validation.message}}
+                    </div>
+                </div>
+
+                <div class="input-group mb-3 input-group-lg">
+                    <span class="input-group-text bg-2 text-white" id="basic-addon1">2</span>
+                      <input matInput type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre"  formControlName="nombre" required>
+                 </div>
+                <div *ngFor="let validation of account_validation_messages.nombre">
+                    <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
+                    </div>
+                </div>
+
+                <div class="input-group mb-3 input-group-lg">
+                    <span class="input-group-text bg-2 text-white" id="basic-addon1">3</span>
+                    <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular"  pattern="[1-9]\d{6,10}">
+                 </div>
+                <div *ngFor="let validation of account_validation_messages.celular">
+                    <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
+                    </div>
+                </div>
+            
+               <div class="input-group mb-3 input-group-lg">
+                  <span class="input-group-text bg-2 text-white " id="basic-addon1">4</span>
+                  <input matInput type="text" class="form-control campo-input" placeholder="Correo electronico" aria-label="email" aria-describedby="basic-addon1" required="" name="email"  formControlName="email">
+               </div>
+               <div *ngFor="let validation of account_validation_messages.email">
+                    <div class="error-message" *ngIf="myForm.get('email')?.hasError(validation.type) && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">{{validation.message}}
+                    </div>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       <p class="copy text-left" style="line-height: 10px;">
+                          Acepto el envío de información a mi correo electrónico. He revisado la politica de protección de datos y la politica de devoluciones y acumulados.
+                      </p>
+                    </label>
+                 </div>
+                 <div *ngFor="let validation of account_validation_messages.terms">
+                  <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
+                  </div>
+                  </div>
+                 <div class="col-xl-12 text-center">
+                      <button type="submit" class="btn bg-2 btn-lg" [disabled]="!myForm.valid">Enviar</button>
+                 </div>
+
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal pago-->
+<div class="modal fade" id="modalverificar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-6" id="exampleModalLabel">Formulario de pago</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="myFormverificar" (ngSubmit)="verificar()">
+                <div class="input-group mb-3 input-group-lg" *ngIf="element"> 
+                    <input type="text" class="form-control campo-input" placeholder="" name="id_curso_verificar"  formControlName="id_curso_verificar"  required>
+                </div>
+
+                <div class="input-group mb-3 input-group-lg">
+                    <span class="input-group-text bg-2 text-white" id="basic-addon1">1</span>
+                    <input type="number" class="form-control campo-input" placeholder="Número de identificación" aria-label="identificacion_verificar" aria-describedby="basic-addon1" required="" name="identificacion_verificar"  formControlName="identificacion_verificar">
+                 </div>
+                <div *ngFor="let validation of verificar_validation_messages.identificacion_verificar">
+                    <div class="error-message p-2" *ngIf="myFormverificar.get('identificacion_verificar')?.hasError(validation.type) && (myFormverificar.get('identificacion_verificar')?.dirty || myFormverificar.get('identificacion_verificar')?.touched)">{{validation.message}}
+                    </div>
+                </div>
+                <div class="col-xl-12 text-center">
+                    <button type="submit" class="btn bg-2 btn-lg" [disabled]="!myFormverificar.valid">Enviar</button>
+               </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+</div>
+

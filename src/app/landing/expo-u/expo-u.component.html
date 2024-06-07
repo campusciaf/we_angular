@@ -1,0 +1,204 @@
+<div class="row fondo-parallax complemento mt-4" *ngIf="element">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 complemento-fondo">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-6 col-md-6 col-12">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <h2 class="titulo-2 text-white bolder-1">¡Estas a un paso de sumarte al parche creativo más grande del eje cafetero!</h2>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <p class="text-white  fs-20 lh-16">Te invitamos a conocer el #ParcheCIAF donde vivirás las mejores experiencias creativas e innovadoras en tu proceso de aprendizaje.</p>
+                    </div>
+                    <div class="col-10">
+                        <p class="text-2 fs-18 ">Déjanos tus datos y descubre todo lo que tenemos para ti.</p>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-6 col-md-8 col-10">
+
+                        <div class="formulario pt-4">
+                            <form [formGroup]="myForm" (ngSubmit)="agregar()">
+                               <div class="input-group mb-3 input-group-lg">
+                                  <span class="input-group-text bg-2 text-white" id="basic-addon1">1</span>
+                                    <input matInput type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre"  formControlName="nombre" required>
+                               </div>
+
+                               <div *ngFor="let validation of account_validation_messages.nombre">
+                                    <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-2 text-white" id="basic-addon1">2</span>
+                                    <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular" #celular pattern="[1-9]\d{6,10}">
+                                 </div>
+                                <div *ngFor="let validation of account_validation_messages.celular">
+                                    <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+                            
+                               <div class="input-group mb-3 input-group-lg">
+                                  <span class="input-group-text bg-2 text-white " id="basic-addon1">3</span>
+                                  <input matInput type="text" class="form-control campo-input" placeholder="Correo" aria-label="email" aria-describedby="basic-addon1" required="" name="correo"  formControlName="correo">
+                               </div>
+                               <div *ngFor="let validation of account_validation_messages.correo">
+                                    <div class="error-message" *ngIf="myForm.get('correo')?.hasError(validation.type) && (myForm.get('correo')?.dirty || myForm.get('correo')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-2 text-white" id="basic-addon1">4</span>
+                                      <input matInput type="text" class="form-control campo-input" placeholder="Nombre del acudiente" name="nombre_acudiente"  formControlName="nombre_acudiente" required>
+                                 </div>
+  
+                                 <div *ngFor="let validation of account_validation_messages.nombre_acudiente">
+                                      <div class="error-message" *ngIf="myForm.get('nombre_acudiente')?.hasError(validation.type) && (myForm.get('nombre_acudiente')?.dirty || myForm.get('nombre_acudiente')?.touched)">{{validation.message}}
+                                      </div>
+                                </div>
+
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-2 text-white" id="basic-addon1">5</span>
+                                    <input matInput type="text" class="form-control campo-input" placeholder="celular acudiente" aria-label="celular_acudiente" aria-describedby="basic-addon1" required="" name="celular_acudiente"  formControlName="celular_acudiente" #celular pattern="[1-9]\d{6,10}">
+                                 </div>
+                                <div *ngFor="let validation of account_validation_messages.celular_acudiente">
+                                    <div class="error-message p-2" *ngIf="myForm.get('celular_acudiente')?.hasError(validation.type) && (myForm.get('celular_acudiente')?.dirty || myForm.get('celular_acudiente')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+                               
+                               <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-2 text-white" id="basic-addon1">6</span>
+                                   
+                                    <select matInput class="form-control" name="fo_programa"  formControlName="fo_programa">
+                                        <option value="">Seleccionar Programa</option>
+                                        <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas</option>
+                                        <option value="Técnica Profesional en Gestión Financiera">Contaduría Pública</option>
+                                        <option value="Nivel 1 - Técnica profesional en programación de software">Ingeniería de Software</option>
+                                        <option value="Nivel 1 - Técnico Profesional en Procesos de Seguridad y Salud en el Trabajo">Seguridad y salud en el Trabajo</option>
+                                        <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Ingeniería Industrial</option>
+                                        <option value="Técnico laboral por competencias en auxiliar en enfermería">Auxiliar de Enfermería</option>
+                                        <option value="Técnico Laboral por Competencias en Administrativo en Salud">Auxiliar en Administrativo en Salud</option>
+                                        <option value="Técnico Laboral en Mecánica y Mantenimiento de Motocicletas">Mecánica y Mantenimiento de Motocicletas</option>
+                                        <option value="Técnico laboral por competencias en auxiliar de veterinaria y cuidado de mascotas">Auxiliar de Veterinaria y cuidado de Mascotas</option>
+                                        <option value="Técnico Laboral en Asistencia en Cuidado al Adulto Mayor">Asistencia en Cuidado al Adulto Mayor</option>
+                                        
+                                        
+                                    </select>
+
+                                </div> 
+
+                              
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                     <p class="copy text-left text-white" style="line-height: 10px;">
+                                        Acepto el envío de información a mi correo electrónico. He revisado la politica de protección de datos y la politica de devoluciones y acumulados.
+                                    </p>
+                                  </label>
+                               </div>
+                               <div *ngFor="let validation of account_validation_messages.terms">
+                                <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
+                                </div>
+                                </div>
+                               <div class="col-xl-12 text-center">
+                                    <button type="submit" class="btn bg-2 btn-lg" [disabled]="!myForm.valid">Enviar</button>
+                               </div>
+                            </form>
+                         </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<section class="mt-4" *ngIf="element2">
+    <div class="row">
+        <div class="col-xl-2"></div>
+        <div class="col-xl-2">
+            <div class="row">
+                <a routerLink="/inicio" class="btn lh-24 text-center">
+                    <div class="col-12 font-ciaf fs-48">CIAF</div>
+                    <div class="col-12">Educación superior</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-8"></div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-xl-6">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>
+                        <span class="parrafo-1">¡Hola! </span>
+                        <span class="titulo-1" style="text-transform:capitalize"><span id="nombre_completo"></span>.</span>
+                    </h1>
+                    <p class="parrafo-1">Iniciaste el proceso para obtener tu título.</p>
+                </div>
+            </div>
+        
+            <div class="row diploma justify-content-center">
+                <div class="col-12 text-center" style="padding-top: 80px;">
+                    <p>
+                        <b>La República de Colombia<br>
+                        Ministerio de Educación superior</b><br>
+                        y en su nombre<br><br>
+                    </p>
+                </div>
+                <div class="col-12 formato-logo text-center">
+                    <span class="font-ciaf fs-56 lh-24">CIAF<br></span><span class="bolder">Educación superior</span>
+                </div>
+                <div class="col-12 text-center">
+                   <br> Certifica a:
+                </div>
+        
+                <div class="col-8 text-center">
+                    <span class="titulo-2 fs-28"  style="text-transform:capitalize">{{nombrediploma}}</span>
+                </div>
+                <div class="col-8 text-center">
+                    <hr>
+                </div>
+                <div class="col-12 text-center">
+                    En:<br>
+                </div>
+                <div class="col-12 text-center">
+                    <span class="titulo-2 fs-20 lh-20"  style="text-transform:capitalize">{{programadiploma}}</span>
+                </div>
+                
+                <div class="col-12 text-center" style="padding-bottom: 40px;">
+                    <img src="../assets/image/logo-50.webp" alt="Logo 50 años CIAF" class="logo-50">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center text-center">
+        <div class="col-xl-6">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center"><br>
+                    <p class="fs-20">Un asesor te llamará lo más pronto posible  para contarte que pasa en CIAF
+                    que la gente quiere estudiar aquí, o si deseas llámanos, estaremos felices de escucharte.</p>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-6 col-6"><a href="tel:3143400100">3143400100</a></div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-6"><a href="tel:3116265945">3116265945</a></div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-6"><a href="tel:3128802142">3128802142</a></div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-6"><a href="tel:32336230210">3233623021</a></div>
+                
+            </div>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center link-inscripcion">
+            <a href="https://api.whatsapp.com/send?phone=+3143400100&amp;text=Hola,%20vi%20la%20informaci%C3%B3n%20en%20facebook%20y%20me%20interesa%20Ingenier%C3%ADa%20de%20Software." target="_blank"><img src="../assets/image/link.webp" alt="inscripción"></a>
+        </div>
+    </div>
+</section>

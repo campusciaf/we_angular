@@ -58,6 +58,8 @@ import { TratamientodatosComponent } from './componente/tratamientodatos/tratami
 import { HorariosComponent } from './componente/horarios/horarios.component';
 import { VeterinariaComponent } from './componente/veterinaria/veterinaria.component';
 import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
+import { BlogComponent } from './componente/blog/blog.component';
+import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 
 
 
@@ -100,6 +102,8 @@ import { AdultomayorComponent } from './componente/adultomayor/adultomayor.compo
     HorariosComponent,
     VeterinariaComponent,
     AdultomayorComponent,
+    BlogComponent,
+    ExpoUComponent,
 
 
   ],
