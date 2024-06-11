@@ -19,17 +19,22 @@
             <div class="col-xl-8">
                 <div class="row">
 
-                    <div class="col-xl-12 col-lg-12 col-mb-12 col-12 p-4 m-4">
-                        <h2 class="titulo-2 bolder-1">Trasnformación digital </h2>
+                    <div class="col-xl-12 col-lg-12 col-mb-12 col-12 px-xl-4 px-lg-4 px-md-4 px-0">
+                        <h2 class="titulo-2 bolder-1">Transformación digital </h2>
                     </div>
                             
                     <div class="col-12" *ngIf="tipobusquedad==undefined">
                         <div *ngFor="let valor of listarBlog; first as isFirst">
                             <div class="py-4 p-md-5 my-4 rounded  bg-6" *ngIf="isFirst">
-                                <div class="col-lg-6 px-0">
-                                    <h1 class="fs-42 fst-italic lh-30">{{valor.titulo_blog}}</h1>
-                                    <p class="lead fs-16 my-3 d" [innerHTML]="valor.contenido_blog"></p>
-                                    <p class="lead mb-0"><a [routerLink]="['/blog',valor.link_blog]"  target="_parent" (click)="traerBlog()" class=" btn-sm text-black">Continuar leyendo...</a></p>
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 px-0">
+                                        <h1 class="fs-42 fst-italic lh-30 px-xl-0 px-lg-0 px-md-0 px-4">{{valor.titulo_blog}}</h1>
+                                        <p class="lead fs-16 my-3 px-xl-0 px-lg-0 px-md-0 px-4" [innerHTML]="valor.contenido_blog" style="height: 160px; overflow: hidden;"></p>
+                                        <p class="lead mb-0 px-xl-0 px-lg-0 px-md-0 px-4 pb-2"><a [routerLink]="['/blog',valor.link_blog]"  target="_parent" (click)="traerBlog()" class=" btn-sm text-black">Continuar leyendo...</a></p>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 px-0 py-2">
+                                        <img src="https://ciaf.digital/public/web_blog/{{valor.blog_img}}" width="100%" alt="{{valor.titulo_blog}}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +99,7 @@
                     </div>
                     <div class="col-xl-12">
                         <div class="row">
-                            <div class="col-4 p-2" *ngFor="let blog of listarBlog index as i">
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 p-2" *ngFor="let blog of listarBlog index as i">
                                 <figure class="snipblog">
                                     <img src="https://ciaf.digital/public/web_blog/{{blog.blog_img}}" alt="{{blog.titulo_blog}}" width="100%" height="auto">
                                     <div class="date">
@@ -113,8 +118,7 @@
                                      
                                     </figcaption>
                                         
-                                  </figure>
-                                    
+                                  </figure>    
                             </div>
                         </div>
                     </div>

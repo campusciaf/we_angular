@@ -369,6 +369,9 @@ figure{
   .carousel-control-next {
     right: 30px;
 }
+.carousel-control-next, .carousel-control-prev {
+    z-index: 0;
+}
 
 .complemento{
     margin-bottom:120px!important
