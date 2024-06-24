@@ -29,7 +29,7 @@
                 <div class="col-xl-4">
                     <div class="row">
                         <div class="col-xl-12 bg-1 p-4 text-white">
-                            <p>{{cursos.descripcion_curso}}</p>
+                            <p [innerHTML]="cursos.descripcion_curso"></p>
                         </div>
                         <div class="col-xl-12 py-4 text-center">
                             <a (click)="modalverificacion()" data-bs-toggle="modal" class="btn-pagos "><span class="icono bg-3"> 1 </span> <span class="boton pointer">Inscribirme</span></a>
@@ -40,12 +40,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-6 bg-7 text-3 px-4 py-1">
+                        <!-- <div class="col-xl-6 bg-7 text-3 px-4 py-1">
                             Nivel
                         </div>
                         <div class="col-xl-6 bg-7 px-4 py-1">
                             {{cursos.nivel_educacion}}
-                        </div>
+                        </div> -->
                         <div class="col-xl-6 text-3 px-4 py-1">
                             Modalidad
                         </div>
