@@ -37,18 +37,19 @@ export class MotocicletasComponent {
 
   
   listarMaterias =[
-    {semestre:1,materia:'Herramientas y seguridad industrial'},
-    {semestre:1,materia:'Sistema de carrocería y chasis'},
-    {semestre:1,materia:'Motores de combustión interna de 2 y 4 tiempos'},
-    {semestre:1,materia:'Sistema de transmisión de potencia'},
-    {semestre:1,materia:'Ética y valores'},
+    {semestre:1,materia:'Técnicas de estudio e inducción y valores institucionales'},
+    {semestre:1,materia:'Fomentar prácticas seguras y saludables en los ambientes de trabajo'},
+    {semestre:1,materia:'Diagnosticar motocicletas de acuerdo con procedimientos'},
+    {semestre:1,materia:'Operar herramientas informáticas y digitales'},
+    {semestre:1,materia:'Evaluar motocicletas de acuerdo con la legislación y normativa'},
+    {semestre:1,materia:'Reparar motocicletas de acuerdo con procedimientos'},
 
   
-    {semestre:2,materia:'Presupuesto básico'},
-    {semestre:2,materia:'Sistema eléctrico y electrónico'},
-    {semestre:2,materia:'Sistema fuel injecton'},
-    {semestre:2,materia:'Mantenimiento preventivo de la motocicleta'},
-    {semestre:2,materia:'Servicio al cliente'},
+    {semestre:2,materia:'Emprendimiento'},
+    {semestre:2,materia:'Acondicionar motocicletas de acuerdo con procedimientos'},
+    {semestre:2,materia:'Programar mantenimiento según procedimientos'},
+    {semestre:2,materia:'Coordinar la atención a usuarios'},
+    {semestre:2,materia:'Calcular costos de operaciones'},
 
 
   
