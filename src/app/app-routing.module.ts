@@ -28,6 +28,7 @@ import { TratamientodatosComponent } from './componente/tratamientodatos/tratami
 import { VeterinariaComponent } from './componente/veterinaria/veterinaria.component';
 import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
 import { ExpoUComponent } from './landing/expo-u/expo-u.component';
+import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,7 @@ const routes: Routes = [
  
   {path: 'tratamientodatos', component:TratamientodatosComponent},
   {path: 'horarios', component:HorariosComponent},
+  {path: 'permanencia', component:PermanenciaComponent},
 
   /* **** landing pages **** */
   {path: 'expo-u', component:ExpoUComponent},

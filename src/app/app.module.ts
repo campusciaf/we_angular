@@ -60,6 +60,7 @@ import { VeterinariaComponent } from './componente/veterinaria/veterinaria.compo
 import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
 import { BlogComponent } from './componente/blog/blog.component';
 import { ExpoUComponent } from './landing/expo-u/expo-u.component';
+import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
 
 
 
@@ -104,6 +105,7 @@ import { ExpoUComponent } from './landing/expo-u/expo-u.component';
     AdultomayorComponent,
     BlogComponent,
     ExpoUComponent,
+    PermanenciaComponent,
 
 
   ],
