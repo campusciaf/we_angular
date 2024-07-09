@@ -30,34 +30,32 @@ export class VeterinariaComponent {
   listarSemestres1 = [
     {semestre:1},
     {semestre:2},
-
   ];
   
 
   
   listarMaterias =[
-    {semestre:1,materia:'Anatomía I'},
+    {semestre:1,materia:'Ética profesional'},
+    {semestre:1,materia:'Herramientas informáticas'},
+    {semestre:1,materia:'Anatomía'},
+    {semestre:1,materia:'Primeros auxilios'},
+    {semestre:1,materia:'Farmacología'},
     {semestre:1,materia:'Fisiología'},
-    {semestre:1,materia:'Semiología '},
-    {semestre:1,materia:'Aspectos éticos del quehacer veterinario'},
-    {semestre:1,materia:'Estética canina y felina I'},
-    {semestre:1,materia:'Patología clínica'},
-    {semestre:1,materia:'Adiestramiento canino'},
-    {semestre:1,materia:'Iniciativa empresarial'},
-    {semestre:1,materia:'TICs'},
-    {semestre:1,materia:'Práctica I '},
+    {semestre:1,materia:'Semiología'},
+    {semestre:1,materia:'Patología'},
+    {semestre:1,materia:'Práctica I'},
 
   
-    {semestre:2,materia:'Anatomía II '},
-    {semestre:2,materia:'Animales exóticos'},
-    {semestre:2,materia:'Primeros auxilios'},
-    {semestre:2,materia:'Estética canina y felina II'},
+    {semestre:2,materia:'Estética Animal'},
+    {semestre:2,materia:'Adiestramiento y comportamiento animal'},
+    {semestre:2,materia:'Salud pública'},
+    {semestre:2,materia:'Producción y reproducción'},
     {semestre:2,materia:'Nutrición animal e inocuidad del producto'},
-    {semestre:2,materia:'Farmacología y planes sanitarios'},
-    {semestre:2,materia:'Producción y reproducción pecuaria'},
-    {semestre:2,materia:'Salud Pública (Bioseguridad, AT, EL, Zoonosis)'},
-    {semestre:2,materia:'Técnicas quirúrgicas y protocolos'},
+    {semestre:2,materia:'Exóticos'},
+    {semestre:2,materia:'Nutrición animal'},
+    {semestre:2,materia:'Técnicas quirúrgicas'},
     {semestre:2,materia:'Práctica II'},
+
 
 
   
