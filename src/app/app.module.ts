@@ -61,6 +61,7 @@ import { AdultomayorComponent } from './componente/adultomayor/adultomayor.compo
 import { BlogComponent } from './componente/blog/blog.component';
 import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
+import { BienestarnoticiasComponent } from './componente/bienestarnoticias/bienestarnoticias.component';
 
 
 
@@ -106,6 +107,7 @@ import { PermanenciaComponent } from './componente/permanencia/permanencia.compo
     BlogComponent,
     ExpoUComponent,
     PermanenciaComponent,
+    BienestarnoticiasComponent,
 
 
   ],

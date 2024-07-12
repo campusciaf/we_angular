@@ -345,7 +345,7 @@ activo:any;
 
   ngOnInit(): void {
     this.activo="0";
-    this.pagina="0";
+    this.pagina="1";
     this.paginas(this.pagina);
 
     // this.conectarApiService.obtenerInstagram().subscribe(respuesta=>{

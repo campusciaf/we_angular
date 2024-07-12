@@ -1,0 +1,92 @@
+<section class="pt-4 mt-4 mostrar">
+    <div class="row justify-content-center">
+
+
+        
+
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+                <div ngxSlickItem *ngFor="let noticias of listarNoticias index as i" class="slide">
+                    
+                    <div class="row cards justify-content-center" *ngIf="i<6">
+                        <div class="col-xl-12 col-lg-12 col-md-10 col-11">
+                            <div class="column m-4">
+                                <div [className]="'post-module'" (mouseover)="animarnoticia(i)" (mouseout)="noanimarnoticia(i)">
+                                    <div class="thumbnail">
+                                        <!-- <div class="date">
+                                            <div class="day">27</div>
+                                            <div class="month">Mar</div>
+                                        </div> -->
+                                        <div *ngIf="noticias.material=='2'">
+                                            <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}" width="100%" height="auto">
+                                        </div>
+                                        <div *ngIf="noticias.material=='1'">
+
+                                            <a (click)="open(content);videoYoutube(noticias.url_video,noticias.titulo_noticias)" style="cursor:pointer">
+                                                <div class="link-video"><img src="assets/image/video.webp"></div>
+                                                <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}" width="100%" height="auto">
+                                            </a>
+
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="category" [ngStyle]="{'background-color': noticias.color}" >{{noticias.nombre_categoria}}</div>
+                                        <h1 class="title">{{noticias.titulo_noticias}}</h1>
+                                        <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
+                                        <p [className]="'description accion'+i" [innerHTML]="noticias.contenido_noticias"></p>
+                                        <div class="post-meta">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">
+                                                    <span class="timestamp">
+                                                        <img src="{{calendario}}" alt="Publicado"> Pub. {{noticias.fecha_noticias | date:"d MMM"}}
+                                                    </span>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-md-2 col-4 pt-1 mb-2"> 
+                                                    <span class="comments">39 
+                                                        <img src="{{vistas}}" alt="Publicado"> 
+                                                    </span>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center"> 
+                                                    <a [routerLink]="['/noticias',noticias.link_noticia]" class="btn btn-light btn-sm text-black">Leer más</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </ngx-slick-carousel>
+            <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
+        </div>
+        <div class="col-xl-10 text-right pr-4 mr-4">
+            <a routerLink="/noticias" class="btn">
+                Ver todas las noticias <img [src]="btn_next">
+            </a>
+        </div>
+    </div>
+</section>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{titulo}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<iframe [src]="total" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen
+      allowfullscreen ></iframe>
+	</div>
+	<div class="modal-footer">
+		
+	</div>
+</ng-template>
+
+
+
+

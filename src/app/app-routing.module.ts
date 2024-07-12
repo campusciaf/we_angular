@@ -29,6 +29,7 @@ import { VeterinariaComponent } from './componente/veterinaria/veterinaria.compo
 import { AdultomayorComponent } from './componente/adultomayor/adultomayor.component';
 import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
+import { BienestarnoticiasComponent } from './componente/bienestarnoticias/bienestarnoticias.component';
 
 
 const routes: Routes = [
@@ -56,6 +57,8 @@ const routes: Routes = [
   {path: 'relacion-externo', component:RelacionExternoComponent},
   {path: 'noticias', component:NoticiasComponent},
   {path: 'noticias/:id', component:NoticiasComponent},
+  {path: 'bienestarnoticias', component:BienestarnoticiasComponent},
+  
   {path: 'blog', component: BlogComponent},
   {path: 'blog/:id', component:BlogComponent},
  
