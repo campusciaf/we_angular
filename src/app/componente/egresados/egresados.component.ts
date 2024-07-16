@@ -52,7 +52,7 @@ activo:any;
         this.isValid4= false;
         this.isValid5= false;
         this.isValid6= false;
-        window.scroll(0,280);
+        window.scroll(0,0);
 
         $("#btn-1").addClass("active");
         $("#btn-2").removeClass("active");
