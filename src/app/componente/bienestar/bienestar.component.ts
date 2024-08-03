@@ -16,16 +16,16 @@ export class BienestarComponent implements OnInit {
   public pic3="assets/image/salud.webp";
   public pic4="assets/image/promocion.webp";
   public pic5="assets/image/deportes.webp";
-  public pic6="assets/image/graduacion.webp";
+
 
   imagenesExperiencias:Array<any> =[
 
-    {imagen:this.pic1,titulo:'Cultura'},
-    {imagen:this.pic2,titulo:'Desarrollo Humano'},
-    {imagen:this.pic3,titulo:'Salud'},
-    {imagen:this.pic4,titulo:'Promoción Socioeconómica'},
-    {imagen:this.pic5,titulo:'Deportes'},
-    {imagen:this.pic6,titulo:'Éxito Estudiantil Meta: Graduación'}
+    {imagen:this.pic1,titulo:'Equilibrio para lograr tus sueños',link:'https://drive.google.com/drive/folders/1oND30Hhz7LTjH-L9WXaP5PZy6MaXKFz5?usp=drive_link'},
+    {imagen:this.pic2,titulo:'Guía creativa contra la depresión',link:'https://drive.google.com/drive/folders/18POK6y9X1AIiJatEiOo6eCsJtOlOrIPJ?usp=drive_link'},
+    {imagen:this.pic3,titulo:'Tips creativos para controlar la ansiedad',link:'https://drive.google.com/drive/folders/1eRdbd9rdPImor6peVYmU2JKUjaHEB7W8?usp=drive_link'},
+    {imagen:this.pic4,titulo:'Pon límites aprendiendo a priorizarte',link:'https://drive.google.com/drive/folders/1DcZ1MW3R0GnzHOVhidvJCT5RZNc2d85p?usp=drive_link'},
+    {imagen:this.pic5,titulo:'Mente clara, emociones equilibradas: Gestiona tu bienestar emocional',link:'https://drive.google.com/drive/folders/1dfp46G6RvbpCSACrnfu3Mko6nzlkKMv6?usp=drive_link'},
+
 
   ]
 

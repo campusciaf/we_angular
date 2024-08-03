@@ -142,4 +142,20 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.post(this.API+ '/verificarDatosContinuada.php',JSON.stringify(cliente),{headers});
   }
+
+  verificarEgresado(id:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/egresados.php?id='+id,{headers});
+  }
+
+  verificarRegistro(id:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/egresados.php?id_credencial='+id,{headers});
+  }
+
+  actualizarEgresado(datos:any): Observable<any>{
+    return this.clienteHttp.put(this.API+ '/egresados.php', datos);
+  }
+  
+
 }

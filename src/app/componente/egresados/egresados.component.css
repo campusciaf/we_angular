@@ -104,6 +104,19 @@
     background-color: #fff;
     transition: all 1s;
 }
+.micampo{
+    width: 100%;
+    padding: 15px 5px;
+    margin: 0px 4px 10px 4px;
+    border-radius: 6px;
+    border: 1px solid #edf4f8;
+
+}
+.datosegresados label{
+    color: #607d8b;
+    font-weight: 200;
+    font-size: 12px;
+}
 
 @media (max-width:1024px){
     .padding-bienestar{

@@ -29,9 +29,10 @@
                 
                             <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
                                 <div class="row text-center small text-white">    
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Plan Estratégico</a></div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="" class="btn btn-sm text-white">Plan Operativo Anual</a></div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Politica de Egresados</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="" class="btn btn-sm text-white">Plan Estratégico</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="" class="btn btn-sm text-white">Plan Operativo Anual</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="#" target="_blank" class="btn btn-sm text-white">Politica de Egresados</a></div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a (click)="mostrarModalInfo()" class="btn btn-sm text-white">Actualización de datos</a></div>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
@@ -208,3 +209,304 @@
 
 
 </div>
+
+
+
+<ng-template #myModalInfo let-modal>
+
+   
+        <div class="modal-content">
+          <div class="modal-header">
+                <h1 class="modal-title fs-6" id="exampleModalLabel">Actualización de datos</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close()"> 
+                    <span aria-hidden="true">&times;</span>
+                </button>
+          </div>
+          <div class="modal-body">
+            <h3 class="fs-6"></h3>
+            <div class="row">
+  
+              <div class="row mt-4">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                      <div class="row justify-content-center">
+                          <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+              
+                              <div class="row justify-content-center">
+                                  <div class="col-xl-12">
+              
+                                      <div class="datosegresados">
+
+                                          <div class="col-12" id="validacion" *ngIf="element1 == true">
+                                              <label>Número de identificación</label>
+                                              <input type="number" id="numberField" [(ngModel)]="numericValue" class="micampo" placeholder="Numero de identificación"  >
+                                              <button (click)="captureValue()" class="btn bg-3 btn-lg col-12">Verificar documento</button>
+                                          </div>
+                                          
+  
+                                          <form [formGroup]="myForm" (ngSubmit)="actualizar()" *ngIf="element == true" class="row">
+                                              <div class="col-xl-12 d-none">
+                                                  <label>Credencial estudiante</label>
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      
+                                                      <input matInput type="number" class="micampo" placeholder="Credencial" name="id_credencial" formControlName="id_credencial" >
+                                                  </div>
+                      
+                                                  <div *ngFor="let validation of account_validation_messages.id_credencial">
+                                                      <div class="error-message" *ngIf="myForm.get('id_credencial')?.hasError(validation.type) && (myForm.get('id_credencial')?.dirty || myForm.get('id_credencial')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div> 
+  
+                                              <div class="col-xl-6">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>Tienes hijos (si/no)</label>
+                                                      <select class="micampo" name="egresados_tiene_hijos"  formControlName="egresados_tiene_hijos"  (ngModelChange)="mostrarcampo(1)">
+                                                          <option value="no">No</option>
+                                                          <option value="si">Si</option>
+                                                      </select>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_tiene_hijos">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_tiene_hijos')?.hasError(validation.type) && (myForm.get('egresados_tiene_hijos')?.dirty || myForm.get('egresados_tiene_hijos')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div> 
+  
+                                              <div class="col-xl-6"  *ngIf="element2 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Cuántos hijos tienes?</label>
+                                                      <select class="micampo" name="egresados_num_hijos"  formControlName="egresados_num_hijos" >
+                                                          <option value="1">1</option>
+                                                          <option value="2">2</option>
+                                                          <option value="3">3 o más</option>
+                                                      </select>
+                                                  </div>
+                                              </div> 
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Trabajas actualmente?</label> 
+                                                      <select class="micampo" name="egresados_trabaja"  formControlName="egresados_trabaja"  (ngModelChange)="mostrarcampo(3)" required>
+                                                          <option value="no">No</option>
+                                                          <option value="si">Si</option>
+                                                      </select>
+                                                      <div *ngFor="let validation of account_validation_messages.egresados_trabaja">
+                                                          <div class="error-message" *ngIf="myForm.get('egresados_trabaja')?.hasError(validation.type) && (myForm.get('egresados_trabaja')?.dirty || myForm.get('egresados_trabaja')?.touched)">{{validation.message}}
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div> 
+  
+                                              <div class="col-xl-12" *ngIf="element4 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Qué tipo de trabajador eres?</label>
+                                                      <select class="micampo" name="egresados_tipo_trabajador" formControlName="egresados_tipo_trabajador">
+                                                          <option value="No aplica">No aplica</option>
+                                                          <option value="Empleado">Empleado</option>
+                                                          <option value="Independiente">Independiente</option>
+                                                          <option value="Emprendedor">Emprendedor</option>
+                                                          <option value="Empresario">Empresario</option>
+                                                          <option value="Freelance">Freelance</option>
+                                                      </select>
+                                                  </div>
+                                              </div> 
+  
+                                              <div class="col-xl-12" *ngIf="element5 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>Nombre de la empresa en que laboras</label>
+                                                      <input matInput type="text" class="micampo"  name="egresados_empresa" formControlName="egresados_empresa">
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12" *ngIf="element6 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>Sector de la empresa en que laboras</label>
+                                                      <select class="micampo" name="egresados_sector_empresa" formControlName="egresados_sector_empresa">
+                                                          <option value="No aplica">No aplica</option>
+                                                          <option value="Público">Público</option>
+                                                          <option value="Servicios">Servicios</option>
+                                                          <option value="Industrial">Industrial</option>
+                                                          <option value="Comercio">Comercio</option>
+                                                          <option value="Agropecuario">Agropecuario</option>
+                                                          <option value="Transporte y/o distribución">Transporte y/o distribución</option>
+                                                          <option value="Turismo">Turismo</option>
+                                                          <option value="Tecnología">Tecnología</option>
+                                                          <option value="Cultura y entretenimiento">Cultura y entretenimiento</option>
+                                                          <option value="Educación">Educación</option>
+                                                          <option value="Financiero">Financiero</option>
+                                                          <option value="Salud">Salud</option>
+                                                      </select>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12" *ngIf="element7 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Qué cargo desempeñas?</label>
+                                                      <input matInput type="text" class="micampo"  name="egresados_cargo" formControlName="egresados_cargo">
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12" *ngIf="element8 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Laboras en el campo de tu profesión?</label>
+                                                      <select class="micampo" name="egresados_profesion" formControlName="egresados_profesion">
+                                                          <option value="no">No</option>
+                                                          <option value="si">Si</option>
+                                                      </select>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12" *ngIf="element9 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Qué salario mensual devengas?</label>
+                                                      <select class="micampo" name="egresados_salario" formControlName="egresados_salario">
+                                                          <option value="Ninguno">Ninguno</option>
+                                                          <option value="Entre 0 a 1 SMLV">Entre 0 a 1 SMLV</option>
+                                                          <option value="De 1 SMLV A 3SMLV">De 1 SMLV A 3SMLV</option>
+                                                          <option value="4 o más SMLC">4 o más SMLC</option>
+                                                      </select>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Qué estudios adicionales requieres para complementar tu perfil profesional?</label>
+                                                      <textarea class="micampo" name="egresados_estudio_adicional" formControlName="egresados_estudio_adicional" required></textarea>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_estudio_adicional">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_estudio_adicional')?.hasError(validation.type) && (myForm.get('egresados_estudio_adicional')?.dirty || myForm.get('egresados_estudio_adicional')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg" >
+                                                      <label>¿Tiene necesidades de formación profesional en este momento?</label>
+                                                      <select class="micampo" name="egresados_formacion"  formControlName="egresados_formacion"  (ngModelChange)="mostrarcampo(11)" required>
+                                                          <option value="no">No</option>
+                                                          <option value="si">Si</option>
+                                                      </select>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_formacion">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_formacion')?.hasError(validation.type) && (myForm.get('egresados_formacion')?.dirty || myForm.get('egresados_formacion')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div> 
+  
+                                              <div class="col-xl-12" *ngIf="element12 == false">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>Si su respuesta es sí, por favor especifique las necesidades de formación</label>
+                                                      <input matInput type="text" class="micampo"  name="egresados_tipo_formacion" formControlName="egresados_tipo_formacion">
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Por cuál medio recibes la información institucional de CIAF?</label>
+                                                      <select class="micampo" name="egresados_informacion" formControlName="egresados_informacion" required>
+                                                          <option value="Correo">Correo</option>
+                                                          <option value="Campus virtual">Campus virtual</option>
+                                                          <option value="Redes sociales">Redes sociales</option>
+                                                          <option value="Llamada telefónica">Llamada telefónica</option>
+                                                          <option value="WhatsApp">WhatsApp</option>
+                                                      </select>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_informacion">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_informacion')?.hasError(validation.type) && (myForm.get('egresados_informacion')?.dirty || myForm.get('egresados_informacion')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿En la actualidad se encuentra realizando algún tipo de posgrado?</label>
+                                                      <select class="micampo" name="egresados_posgrado" formControlName="egresados_posgrado" required>
+                                                          <option value="Ninguno">Ninguno</option>
+                                                           <option value="Diplomado">Diplomado</option>
+                                                           <option value="Especialización">Especialización</option>
+                                                           <option value="Maestría">Maestría</option>
+                                                           <option value="Doctorado">Doctorado</option>
+                                                       </select>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_posgrado">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_posgrado')?.hasError(validation.type) && (myForm.get('egresados_posgrado')?.dirty || myForm.get('egresados_posgrado')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Le gustaría participar en alguno de los siguientes programas para fomentar la red colaborativa de egresados CIAF?</label>
+                                                      <select class="micampo" name="egresados_colaborativa" formControlName="egresados_colaborativa" required="">
+                                                          <option value="Voluntariado">Voluntariado</option>
+                                                          <option value="Apadrinamiento estudiantil">Apadrinamiento estudiantil</option>
+                                                          <option value="Comparte la Experiencia">Comparte la Experiencia</option>
+                                                          <option value="En ninguno">En ninguno</option>
+                                                      </select>
+  
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_colaborativa">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_colaborativa')?.hasError(validation.type) && (myForm.get('egresados_colaborativa')?.dirty || myForm.get('egresados_colaborativa')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>¿Conoces las últimas actualizaciones de CIAF?</label>
+                                                      <select class="micampo" name="egresados_actualizacion" formControlName="egresados_actualizacion" required>
+                                                          <option value="no">No</option>
+                                                          <option value="si">Si</option>
+                                                      </select>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_actualizacion">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_actualizacion')?.hasError(validation.type) && (myForm.get('egresados_actualizacion')?.dirty || myForm.get('egresados_actualizacion')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div>
+  
+                                              <div class="col-xl-12">
+                                                  <div class="input-group mb-3 input-group-lg">
+                                                      <label>De 1 a 5, ¿qué tan probable es que recomiendes a CIAF con otra persona?</label>
+                                                      <select class="micampo" name="egresados_recomendar" formControlName="egresados_recomendar" required>
+                                                          <option value="1">1</option>
+                                                          <option value="2">2</option>
+                                                          <option value="3">3</option>
+                                                          <option value="4">4</option>
+                                                          <option value="5">5</option>
+                                                      </select>
+                                                  </div>
+                                                  <div *ngFor="let validation of account_validation_messages.egresados_recomendar">
+                                                      <div class="error-message" *ngIf="myForm.get('egresados_recomendar')?.hasError(validation.type) && (myForm.get('egresados_recomendar')?.dirty || myForm.get('egresados_recomendar')?.touched)">{{validation.message}}
+                                                      </div>
+                                                  </div>
+                                              </div>
+  
+  
+  
+                                              <div class="col-xl-12 text-center">
+                                                      <button type="submit" class="btn bg-3 btn-lg" [disabled]="!myForm.valid">Enviar</button>
+                                              </div>
+                                             
+                                          </form>
+
+                                       </div>
+              
+                                  </div>
+              
+                              </div>
+                              
+                          </div>
+              
+                      </div>
+                  </div>
+              
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+   
+  
+</ng-template>
+
