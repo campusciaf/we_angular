@@ -30,6 +30,7 @@ import { AdultomayorComponent } from './componente/adultomayor/adultomayor.compo
 import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
 import { BienestarnoticiasComponent } from './componente/bienestarnoticias/bienestarnoticias.component';
+import { CvadministrativoComponent } from './componente/cvadministrativo/cvadministrativo.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,9 @@ const routes: Routes = [
   {path: 'noticias', component:NoticiasComponent},
   {path: 'noticias/:id', component:NoticiasComponent},
   {path: 'bienestarnoticias', component:BienestarnoticiasComponent},
+  {path: 'cvadministrativos', component:CvadministrativoComponent},
+  
+
   
   {path: 'blog', component: BlogComponent},
   {path: 'blog/:id', component:BlogComponent},

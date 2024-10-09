@@ -62,6 +62,7 @@ import { BlogComponent } from './componente/blog/blog.component';
 import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
 import { BienestarnoticiasComponent } from './componente/bienestarnoticias/bienestarnoticias.component';
+import { CvadministrativoComponent } from './componente/cvadministrativo/cvadministrativo.component';
 
 
 
@@ -108,6 +109,7 @@ import { BienestarnoticiasComponent } from './componente/bienestarnoticias/biene
     ExpoUComponent,
     PermanenciaComponent,
     BienestarnoticiasComponent,
+    CvadministrativoComponent,
 
 
   ],

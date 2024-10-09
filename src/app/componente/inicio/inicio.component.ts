@@ -139,6 +139,6 @@ export class InicioComponent implements OnInit {
     'terms': [
       { type: 'pattern', message: 'You must accept terms and conditions' }
     ]
-    }
+  }
 
 }

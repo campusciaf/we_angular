@@ -156,6 +156,15 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
   actualizarEgresado(datos:any): Observable<any>{
     return this.clienteHttp.put(this.API+ '/egresados.php', datos);
   }
-  
+
+  insertarCVadmin(datos:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/cvadmin.php',datos,{headers});
+  }
+  dependencias(): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.get(this.API+ '/cvadmin.php',{headers});
+  }
+
 
 }

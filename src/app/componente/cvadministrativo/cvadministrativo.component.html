@@ -1,0 +1,110 @@
+<!-- Formulario de registro -->
+<section class="my-4">
+    <div class="row fondo-parallax  mt-4">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12 complemento-fondo">
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                    <h2 class="titulo-2 text-center text-white">Registra tus datos para ser parte de nuestra experiencia transformadora:</h2>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-lg-6 col-md-8 col-10">
+
+                            <div class="formulario pt-4">
+                                <form [formGroup]="myForm" (ngSubmit)="agregar()">
+
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-3 text-white" id="basic-addon1">1</span>
+                                        <input matInput type="text" class="form-control campo-input" placeholder="Numero de identificación" name="identificacion"  formControlName="identificacion" required>
+                                </div>
+                                <div *ngFor="let validation of account_validation_messages.identificacion">
+                                    <div class="error-message" *ngIf="myForm.get('identificacion')?.hasError(validation.type) && (myForm.get('identificacion')?.dirty || myForm.get('identificacion')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-3 text-white" id="basic-addon1">2</span>
+                                        <input matInput type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre"  formControlName="nombre" required>
+                                </div>
+
+                                <div *ngFor="let validation of account_validation_messages.nombre">
+                                    <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-3 text-white " id="basic-addon1">3</span>
+                                    <input matInput type="text" class="form-control campo-input" placeholder="Correo" aria-label="email" aria-describedby="basic-addon1" required="" name="correo"  formControlName="correo">
+                                </div>
+                                <div *ngFor="let validation of account_validation_messages.correo">
+                                    <div class="error-message" *ngIf="myForm.get('correo')?.hasError(validation.type) && (myForm.get('correo')?.dirty || myForm.get('correo')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-3 text-white" id="basic-addon1">4</span>
+                                    <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular" #celular pattern="[1-9]\d{6,10}">
+                                </div>
+                                    <div *ngFor="let validation of account_validation_messages.celular">
+                                        <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
+                                        </div>
+                                    </div>
+                                <div class="col-12 mx-0">
+                                    <p class="alert alert-info mb-0">Seleccionar el cargo para postularse</p>
+                                </div>
+                                <div class="input-group mb-3 input-group-lg mt-0">
+                                    <span class="input-group-text bg-3 text-white" id="basic-addon1">5</span>
+                                
+                                    <select matInput class="form-control" name="cargo"  formControlName="cargo" placeholder="Cargo">
+                                        <option *ngFor="let datos of listadependencias" [value]="datos.nombre">{{datos.nombre}}</option>
+                                    </select>
+                                </div> 
+                                <div *ngFor="let validation of account_validation_messages.cargo">
+                                    <div class="error-message p-2" *ngIf="myForm.get('cargo')?.hasError(validation.type) && (myForm.get('cargo')?.dirty || myForm.get('cargo')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+
+
+                                <div class="input-group mb-3 input-group-lg">
+                                    <span class="input-group-text bg-3 text-white" id="basic-addon1">6</span>
+                                    <div class="form-floating">
+                                        <input class="form-control  border-start-0" placeholder="" type="file" formControlName="pdf" name="pdf" accept="image/*" (change)="onFileChange($event)">
+                                        <label>Cargar Hoja de vida (PDF)</label>
+                                    </div>
+                                </div>
+                                <div *ngFor="let validation of account_validation_messages.pdf">
+                                    <div class="error-message p-2" *ngIf="myForm.get('pdf')?.hasError(validation.type) && (myForm.get('pdf')?.dirty || myForm.get('pdf')?.touched)">{{validation.message}}
+                                    </div>
+                                </div>
+
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        <p class="copy text-left text-white" style="line-height: 10px;">
+                                            Acepto el envío de información a mi correo electrónico. He revisado la politica de protección de datos y la politica de devoluciones y acumulados.
+                                        </p>
+                                    </label>
+                                </div>
+                                <div *ngFor="let validation of account_validation_messages.terms">
+                                    <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
+                                    </div>
+                                    </div>
+                                <div class="col-xl-12 text-center">
+                                        <button type="submit" class="btn bg-3 btn-lg" [disabled]="!myForm.valid">Enviar</button>
+                                </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- ******************************** -->
