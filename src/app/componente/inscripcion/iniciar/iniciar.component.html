@@ -1,0 +1,107 @@
+<div class="row justify-content-center bg-6 ">
+    <div class="col-xl-8 mx-4 pt-4">
+        <div class="row ">
+            <div class="col-xl-6 mt-4 pt-4">
+                <div class="row">
+                      <!-- alert messages -->
+                      <div class="col-12">
+                        <p class="fs-48 lh-36 fw-bolder font-5">Carreras Profesionales Universitarias</p>
+                    </div>
+                    <div class="col-xl-8">
+                        <p>En CIAF estamos listos para iniciar juntos esta experiencia creativa. Por eso diseñamos una financiación directa, 
+                            garantizada y lo mejor sin intereses .
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 p-4">
+
+                <form class="mb-4 text-start" (ngSubmit)="registro()">
+                    <div class="form-group mb-2 position-relative check-valid text-dark is-valid">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text text-theme bg-2 border-0"><img src="../../../../assets/image/user.webp"></span>
+                            <div class="form-floating">
+                                <input class="form-control border-start-0" placeholder="Identificación" autofocus="" type="number" name="identificacion" [(ngModel)]="user_password" required autocomplete="on">
+                                <label for="password">Número de identificación</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 position-relative check-valid text-dark is-valid">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text text-theme bg-2 border-0"><img src="../../../../assets/image/user.webp"></span>
+                            <div class="form-floating">
+                            <input class="form-control border-start-0" placeholder="Confirmar documento" autofocus="" type="number" name="identificacion" [(ngModel)]="user_password" required autocomplete="on">
+                                <label for="repeat_password">Repetir número de identificación</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 position-relative check-valid text-dark is-valid">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text text-theme bg-2 border-0"><img src="../../../../assets/image/nombre.webp"></span>
+                            <div class="form-floating">
+                            <input class="form-control border-start-0" placeholder="Nombre completo" autofocus="" type="text" name="nombre" [(ngModel)]="user_password" required autocomplete="on">
+                                <label for="repeat_password">Nombre completo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 position-relative check-valid text-dark is-valid">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text text-theme bg-2 border-0"><img src="../../../../assets/image/correo.webp"></span>
+                            <div class="form-floating">
+                            <input class="form-control border-start-0" placeholder="Correo electrónico" autofocus="" type="email" name="email" [(ngModel)]="user_password" required autocomplete="on">
+                                <label for="repeat_password">Correo electrónico</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 position-relative check-valid text-dark is-valid">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text text-theme bg-2 border-0"><img src="../../../../assets/image/movil.webp"></span>
+                            <div class="form-floating">
+                                <input class="form-control border-start-0" placeholder="Número de contacto" autofocus="" type="number" name="celular" [(ngModel)]="user_password" required autocomplete="on">
+                                <label for="repeat_password">Número de contacto</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-2 position-relative check-valid text-dark is-valid">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text text-theme bg-2 border-0"><img src="../../../../assets/image/movil.webp"></span>
+                            <div class="form-floating">
+                                <select name="fo_programa" id="fo_programa" class="form-control border-start-0">
+                                    <option value="" selected="" disabled=""> Selecciona el programa de tu interés </option>
+                                    <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Profesional Administración de empresas</option>
+                                    <option value="Técnica Profesional en Gestión Financiera">Profesional Contaduría pública</option>
+                                    <option value="Nivel 1 - Técnico Profesional en Seguridad y Salud en el Trabajo">Profesional Seguridad y salud en el trabajo</option>
+                                    <option value="Nivel 1 - Técnica profesional en programación de software">Profesional Ingeniería de software</option>
+                                    <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Profesional Ingeniería Industrial</option>
+                                    <option value="Programas técnicos laborales">Profesional Programas técnicos laborales</option>
+                                    <option value="Diplomados y educación continua">Diplomados y educación continua</option>
+                                    <option value="Homologaciones y nivelaciones">Homologaciones y nivelaciones</option>
+                                </select>
+                                <label for="repeat_password">Selecciona el programa</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto my-1">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" name="proteccion_datos" id="proteccion_datos" required="">
+                            <label class="custom-control-label" for="proteccion_datos" style="font-size: 13px"> Acepto los 
+                                <strong>
+                                    <a href="https://www.ciaf.edu.co/tratamiento_datos.php">términos y condiciones</a>
+                                </strong> para el uso de mi información.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" id="ingresar_inscripcion" class="btn btn-lg bg-2 text-white">Iniciar Proceso</button>
+                    </div>
+
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+</div>

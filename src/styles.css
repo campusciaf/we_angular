@@ -25,9 +25,16 @@
     font-display: swap;
   }
 
-  @font-face {
-	font-family: "fuente4";
-	src: url("assets/fonts/ethnocentric.ttf") format("opentype");
+@font-face {
+    font-family: "fuente4";
+    src: url("assets/fonts/ethnocentric.ttf") format("opentype");
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "fuente5";
+    src: url("assets/fonts/montserrat_bold.ttf") format("opentype");
     font-display: swap;
 }
 
@@ -47,6 +54,9 @@ figure{
 }
 .font-2{
     font-family: "fuente3";
+}
+.font-5{
+    font-family: "fuente5";
 }
 .fs-big{
     font-size: 70px !important;
@@ -275,6 +285,9 @@ figure{
 }
 .lh-30 {
     line-height: 30px !important;
+}
+.lh-36 {
+    line-height: 36px !important;
 }
 
 

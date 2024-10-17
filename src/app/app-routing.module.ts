@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './guards/login.guards';
 
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { AdministracionComponent } from './componente/administracion/administracion.component';
@@ -31,6 +32,11 @@ import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
 import { BienestarnoticiasComponent } from './componente/bienestarnoticias/bienestarnoticias.component';
 import { CvadministrativoComponent } from './componente/cvadministrativo/cvadministrativo.component';
+import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.component';
+import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
+import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
+
+
 
 
 const routes: Routes = [
@@ -60,8 +66,11 @@ const routes: Routes = [
   {path: 'noticias/:id', component:NoticiasComponent},
   {path: 'bienestarnoticias', component:BienestarnoticiasComponent},
   {path: 'cvadministrativos', component:CvadministrativoComponent},
+ 
+  {path: 'iniciar', component:IniciarComponent},
+  {path: 'onlogin', component:OnloginComponent},
+  {path: 'ondashboard', component:OndashboardComponent, canActivate:[LoginGuard]},
   
-
   
   {path: 'blog', component: BlogComponent},
   {path: 'blog/:id', component:BlogComponent},
@@ -72,9 +81,13 @@ const routes: Routes = [
 
   /* **** landing pages **** */
   {path: 'expo-u', component:ExpoUComponent},
+  {path: '**', component:PageNotFoundComponent},
+
+ 
+
+  
 
 
-  {path: '**', component:PageNotFoundComponent}
 ];
 
 @NgModule({

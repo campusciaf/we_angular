@@ -63,6 +63,11 @@ import { ExpoUComponent } from './landing/expo-u/expo-u.component';
 import { PermanenciaComponent } from './componente/permanencia/permanencia.component';
 import { BienestarnoticiasComponent } from './componente/bienestarnoticias/bienestarnoticias.component';
 import { CvadministrativoComponent } from './componente/cvadministrativo/cvadministrativo.component';
+import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.component';
+import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
+import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
+
+
 
 
 
@@ -110,6 +115,11 @@ import { CvadministrativoComponent } from './componente/cvadministrativo/cvadmin
     PermanenciaComponent,
     BienestarnoticiasComponent,
     CvadministrativoComponent,
+    IniciarComponent,
+    OndashboardComponent,
+    OnloginComponent,
+   
+
 
 
   ],

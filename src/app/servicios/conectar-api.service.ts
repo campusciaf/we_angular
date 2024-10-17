@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 export class ConectarApiService {
 
 // produccion//
-API: string='https://ciaf.edu.co/api_rest';
+// API: string='https://ciaf.edu.co/api_rest';
 
 //local//
-// API: string='http://localhost/api_rest';
+API: string='http://localhost/api_rest';
 autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
 
 
@@ -164,6 +164,16 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
   dependencias(): Observable<any>{
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.get(this.API+ '/cvadmin.php',{headers});
+  }
+
+
+/* on interesados */
+  login(datos: any): Observable<any> {
+    return this.clienteHttp.post(this.API+ '/login.php', datos);
+  }
+  
+  onInteresados(id:any,token: any): Observable<any>{
+    return this.clienteHttp.get(this.API+ '/oninteresados.php?id='+id+'&token='+token);
   }
 
 
