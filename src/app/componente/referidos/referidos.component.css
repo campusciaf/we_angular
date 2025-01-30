@@ -1,0 +1,21 @@
+.fondo-parallax_referidos{
+    position:relative;
+    background: url("../../../assets/referidos/fondo.webp") no-repeat fixed;
+    background-position:center center;
+    background-size:cover;
+    min-height:500px
+}
+.bg-form-ref{
+    background-color: rgba(35,57,117,0.5);
+    border-radius: 10px;
+ 
+}
+.formulario-ref input{
+    background-color: rgba(35,57,117,0.5);
+    border: none;
+    color: white;
+}
+
+.formulario-ref input::placeholder {
+    color: white !important;
+  }

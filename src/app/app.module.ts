@@ -66,6 +66,7 @@ import { CvadministrativoComponent } from './componente/cvadministrativo/cvadmin
 import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.component';
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
+import { ReferidosComponent } from './componente/referidos/referidos.component';
 
 
 
@@ -118,6 +119,7 @@ import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.compo
     IniciarComponent,
     OndashboardComponent,
     OnloginComponent,
+    ReferidosComponent,
    
 
 

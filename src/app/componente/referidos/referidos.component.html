@@ -1,0 +1,165 @@
+<!-- Formulario de registro -->
+<div class="row fondo-parallax_referidos mt-4">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 ">
+        <div class="row justify-content-center">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12 mt-4 pt-4">
+
+                <div class="row justify-content-center ">
+                    <div class="col-xl-4">
+                        <div class="row">
+                            <div class="col-6"><img [src]="imprime" alt="Imprime tu futuro"></div>
+                            <div class="col-6"><img [src]="logo" alt="Educación superior"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 p-4"></div>
+
+                    <div class="col-xl-4 bg-1 text-center text-white rounded-pill lh-1 p-4">
+                        <span class="fs-56 p-2">Gana</span><br>
+                        <span class="fs-42 p-2">con tu parche</span>
+                    </div>
+
+                    <div class="col-12 p-3"></div>
+
+                    <div class="col-xl-4">
+                        <p class="text-1 bolder fs-18 text-center">Si tienes a alguien en mente que quiera comenzar a estudiar y cumplir sus metas, compártenos sus datos y obtén beneficios. En CIAF, nos encargaremos de brindarle toda la información para iniciar este camino lleno de oportunidades. </p>
+                    </div>
+
+                    <div class="col-12"></div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-8 col-10">
+
+                        <div class="formulario-ref pt-4">
+                            <form [formGroup]="myForm" (ngSubmit)="agregar()">
+
+                                <div class="col-12 text-center text-white my-3"><span class="bg-1 fs-28 p-2 rounded-pill">Referente</span></div>
+
+                                <div class="col-12 bg-form-ref p-2">
+                                    <div class="row border">
+                                        <div class="col-12 p-2">
+                                            <div class="input-group mb-3 input-group-lg">
+                                                <input matInput type="text" class="form-control  mi-input" placeholder="Nombre completo" name="nombre_r"  formControlName="nombre_r" required>
+                                            </div>
+                                            <div *ngFor="let validation of account_validation_messages.nombre_r">
+                                                <div class="error-message" *ngIf="myForm.get('nombre_r')?.hasError(validation.type) && (myForm.get('nombre_r')?.dirty || myForm.get('nombre_r')?.touched)">{{validation.message}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            <div class="input-group mb-3 input-group-lg">
+                                            
+                                                <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular_r" aria-describedby="basic-addon1" required="" name="celular_r"  formControlName="celular_r" #celular pattern="[1-9]\d{6,10}">
+                                            </div>
+                                            <div *ngFor="let validation of account_validation_messages.celular_r">
+                                                <div class="error-message p-2" *ngIf="myForm.get('celular_r')?.hasError(validation.type) && (myForm.get('celular_r')?.dirty || myForm.get('celular_r')?.touched)">{{validation.message}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2"><h2 class="title text-white">Cargo</h2></div>
+                                        <div class="col-12 p-2">
+                                            <div class="input-group mb-3 input-group-lg">
+                                                <div class="text-white">
+                                                    <div class="form-check" *ngFor="let relacion of cargos">
+                                                        <input class="form-check-input" type="radio" name="relacion" [value]="relacion.valor" formControlName="relacion">
+                                                        <label class="form-check-label">{{ relacion.texto }}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 text-center text-white my-3"><span class="bg-1 fs-28 p-2 rounded-pill">Referido</span></div>
+
+                                <div class="col-12 bg-form-ref p-2">
+                                    <div class="row border">
+
+                                        <div class="col-12 p-2">
+                                            <div class="input-group mb-3 input-group-lg">
+                                                    <input matInput type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre"  formControlName="nombre" required>
+                                            </div>
+                                            <div *ngFor="let validation of account_validation_messages.nombre">
+                                                <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-12 p-2">
+                                            <div class="input-group mb-3 input-group-lg">
+                                                
+                                                <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular" #celular pattern="[1-9]\d{6,10}">
+                                            </div>
+                                            <div *ngFor="let validation of account_validation_messages.celular">
+                                                <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2"><h2 class="title text-white">Programa de interés</h2></div>
+                                        <div class="col-12 p-2">
+
+                                            <div class="input-group mb-3 input-group-lg">
+                                                <div class="text-white">
+                                                    <div class="form-check" *ngFor="let programa of programas">
+                                                        <input class="form-check-input" type="radio" name="fo_programa" [value]="programa.valor" formControlName="fo_programa">
+                                                        <label class="form-check-label">{{ programa.texto }}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2"><h2 class="title text-white">Jornada</h2></div>
+                                        <div class="col-12 p-2">
+                                            <div class="input-group mb-3 input-group-lg">
+                                                <div class="text-white">
+                                                    <div class="form-check" *ngFor="let jornada of jornadas">
+                                                        <input class="form-check-input" type="radio" name="jornada_e" [value]="jornada.valor" formControlName="jornada_e">
+                                                        <label class="form-check-label">{{ jornada.texto }}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 bg-form-ref p-2 mt-4">
+                                    <div class="row border">
+                              
+                                      
+                                            <div class="col-12 p-2 text-white">
+                                                <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
+                                                Acepto el envío de información a mi correo electrónico. He revisado las <a routerLink="/tratamientodatos" target="_blank">Políticas de protección de Datos y Términos condiciones.</a>
+                                                    
+                                                
+                                            </div>
+                                            
+                                        
+                                    </div>
+                                </div>
+
+
+
+                               <div *ngFor="let validation of account_validation_messages.terms">
+                                <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
+                                </div>
+                                </div>
+                               <div class="col-xl-12 text-center my-4">
+                                    <button type="submit" class="btn bg-1 btn-lg text-white" [disabled]="!myForm.valid">Enviar</button>
+                                 
+                               </div>
+                            </form>
+                         </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- ******************************** -->

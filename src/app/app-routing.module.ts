@@ -35,6 +35,7 @@ import { CvadministrativoComponent } from './componente/cvadministrativo/cvadmin
 import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.component';
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
+import { ReferidosComponent } from './componente/referidos/referidos.component';
 
 
 
@@ -66,6 +67,8 @@ const routes: Routes = [
   {path: 'noticias/:id', component:NoticiasComponent},
   {path: 'bienestarnoticias', component:BienestarnoticiasComponent},
   {path: 'cvadministrativos', component:CvadministrativoComponent},
+  {path: 'referidos', component:ReferidosComponent},
+
  
   {path: 'iniciar', component:IniciarComponent},
   {path: 'onlogin', component:OnloginComponent},

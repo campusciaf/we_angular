@@ -176,5 +176,10 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.get(this.API+ '/oninteresados.php?id='+id+'&token='+token);
   }
 
+  insertarReferido(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/referidos.php',JSON.stringify(cliente),{headers});
+  }
+
 
 }
