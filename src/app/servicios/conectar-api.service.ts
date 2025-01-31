@@ -171,10 +171,17 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
   login(datos: any): Observable<any> {
     return this.clienteHttp.post(this.API+ '/login.php', datos);
   }
+  registroInteresado(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/registro.php',JSON.stringify(cliente),{headers});
+  }
   
   onInteresados(id:any,token: any): Observable<any>{
     return this.clienteHttp.get(this.API+ '/oninteresados.php?id='+id+'&token='+token);
   }
+
+
+  /* referidos */
 
   insertarReferido(cliente:any): Observable<any>{
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});

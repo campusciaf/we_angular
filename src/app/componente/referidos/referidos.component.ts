@@ -78,7 +78,6 @@ export class ReferidosComponent {
   insertarReferido: any;
 
   agregar(){
-    console.log(this.myForm.value);
       this.conectarApiService.insertarReferido(this.myForm.value).subscribe(respuesta=>{
         this.insertarReferido=respuesta;
         if(respuesta>0){
