@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ConectarApiService {
 
 // produccion//
- //API: string='https://ciaf.edu.co/api_rest';
+//  API: string='https://ciaf.edu.co/api_rest';
 
 //local//
 API: string='http://localhost/api_rest';
@@ -176,14 +176,36 @@ autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
     return this.clienteHttp.post(this.API+ '/registro.php',JSON.stringify(cliente),{headers});
   }
   
-  onInteresados(id:any,token: any): Observable<any>{
-    return this.clienteHttp.get(this.API+ '/oninteresados.php?id='+id+'&token='+token);
+  onInteresados(id:any,token:any,opcion:any): Observable<any>{
+    return this.clienteHttp.get(this.API+ '/oninteresados.php?id='+id+'&token='+token+'&opcion='+opcion);
   }
 
   traerDatosPrograma(datos:any): Observable<any>{
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
     return this.clienteHttp.post(this.API+ '/oninteresados.php',JSON.stringify(datos),{headers});
   }
+
+  guardarPago(datos:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/oninteresados.php',JSON.stringify(datos),{headers});
+  }
+
+  actualizarFormulario(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/oninteresados.php',JSON.stringify(cliente),{headers});
+  }
+  insertarEntrevista(cliente:any): Observable<any>{
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+    return this.clienteHttp.post(this.API+ '/oninteresados.php',JSON.stringify(cliente),{headers});
+  }
+  subirDocumento(datos: any ): Observable<any> {
+    return this.clienteHttp.post(this.API+ '/subirdocumentos.php', datos);
+  }
+
+  onSoportes(id:any,token: any,opcion:any): Observable<any>{
+    return this.clienteHttp.get(this.API+ '/oninteresados.php?id='+id+'&token='+token+'&opcion='+opcion);
+  }
+
 
 
   /* referidos */
