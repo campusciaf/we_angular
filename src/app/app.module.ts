@@ -49,6 +49,7 @@ import { AdministrativosaludComponent } from './componente/administrativosalud/a
 import { EmprendimientosComponent } from './componente/emprendimientos/emprendimientos.component';
 import { EmprendimientodetalleComponent } from './componente/emprendimientodetalle/emprendimientodetalle.component';
 import { EgresadosComponent } from './componente/egresados/egresados.component';
+import { EgresadosdataComponent } from './componente/egresadosdata/egresadosdata.component';
 import { SacComponent } from './componente/sac/sac.component';
 import { InvestigacionesComponent } from './componente/investigaciones/investigaciones.component';
 import { RelacionExternoComponent } from './componente/relacion-externo/relacion-externo.component';
@@ -67,6 +68,7 @@ import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.compo
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
+
 
 
 
@@ -120,6 +122,7 @@ import { ReferidosComponent } from './componente/referidos/referidos.component';
     OndashboardComponent,
     OnloginComponent,
     ReferidosComponent,
+    EgresadosdataComponent,
    
 
 
