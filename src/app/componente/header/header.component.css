@@ -363,7 +363,7 @@ header .icono img{
 
 .nav .navbar-item {
     display: inline-block;
-    width: 120px; /* Set a fixed width for each menu item */
+    max-width: 128px; /* Set a fixed width for each menu item 120 */
     line-height: 14px;
 }
 

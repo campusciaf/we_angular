@@ -68,6 +68,7 @@ import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.compo
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
+import { CifrasComponent } from './componente/cifras/cifras.component';
 
 
 
@@ -123,6 +124,7 @@ import { ReferidosComponent } from './componente/referidos/referidos.component';
     OnloginComponent,
     ReferidosComponent,
     EgresadosdataComponent,
+    CifrasComponent,
    
 
 

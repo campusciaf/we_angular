@@ -1,0 +1,13 @@
+<section class="pt-4 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-xl-12 mb-4 pb-4">
+            <h2 class="titulo-2 text-center">CIAF en Cifras </h2><br><br><br><br><br>
+        </div>
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <div *ngFor="let item of counters" class="counter" #counter [attr.data-target]="item.target">{{ item.value }}</div>
+        </div>
+    </div>
+</section>
+
+
+

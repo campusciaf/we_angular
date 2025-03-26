@@ -5,7 +5,7 @@
 }
 @font-face {
 	font-family: "fuente1";
-	src: url("assets/fonts/montserrat_semibold.ttf") format("opentype");
+	src: url("assets/fonts/static/Nunito-ExtraBold.ttf") format("opentype");
     font-display: swap;
 }
 @font-face {
@@ -24,6 +24,7 @@
 	url("assets/fonts/sunvalley/812d5f559ddf2a956ba25c5016aec4cc.svg#Sun Valley") format("svg"); /* iOS 4.1- */
     font-display: swap;
   }
+
 
 @font-face {
     font-family: "fuente4";
@@ -300,12 +301,13 @@ figure{
 .btn-1{
     color:#fff;
     font-size: 12px;
-    background-color:#f16126;
+    background-color:#013084;
     line-height: 12px;
-    transition:all 1s
+    transition:all 1s;
 }
 .btn-1:hover{
-    background-color:#c43c06
+    color:#fff;
+    background-color:#012057
 }
 .btn-2{
     color:#fff;
@@ -331,7 +333,7 @@ figure{
     line-height:12px;
     border-radius:5px;
     padding:5px;
-    background-color:#5a802d;
+    background-color:#0699d9;
     transition:all 1s;
     margin:0% 1%;
     font-size: 12px;
@@ -341,7 +343,7 @@ figure{
     text-align:center;
     text-decoration:none;
     padding:5px;
-    background-color:#89c442
+    background-color:#08719e;
 }
 .btn-submit{
     background-color:#fff;
