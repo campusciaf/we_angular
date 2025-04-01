@@ -53,6 +53,9 @@ figure{
     margin-inline-start:0px!important;
     margin-inline-end:0px!important
 }
+.font-1{
+    font-family: "fuente1";
+}
 .font-2{
     font-family: "fuente3";
 }
@@ -199,6 +202,10 @@ figure{
 .bg-18{
     background-color: #191917 !important;
 }
+.bg-19{
+    background-color: #0699d9 !important;
+}
+
 
 .text-1{
     color:#001550!important
@@ -284,13 +291,21 @@ figure{
 .lh-24 {
     line-height: 24px !important;
 }
+.lh-26 {
+    line-height: 26px !important;
+}
+.lh-28 {
+    line-height: 28px !important;
+}
 .lh-30 {
     line-height: 30px !important;
 }
 .lh-36 {
     line-height: 36px !important;
 }
-
+.lh-40 {
+    line-height: 40px !important;
+}
 
 .asterisco{
     font-weight:500;

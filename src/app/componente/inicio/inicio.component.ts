@@ -75,6 +75,7 @@ export class InicioComponent implements OnInit {
      updateOn: 'blur'
     }],
     fo_programa: ['',[Validators.required,]],
+    jornada_e: ['',[Validators.required,]],
     acepto: ['',[Validators.required,Validators.requiredTrue]]
     });
   }

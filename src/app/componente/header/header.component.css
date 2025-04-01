@@ -231,76 +231,7 @@ header .icono img{
 
 /* ******************** */
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-    .dropdown-content {
-        display: none;
-        position: relative;
-
-    }
-
-    .dropbtn {
-        background-color: #001550;
-        color: white;
-        padding: 15px 8px ;
-        border: none;
-        width: 320px;
-        text-align: left;
-    }
-    nav .nav-item{
-        padding: 8px;
-        
-    }
-
-    nav .nav-item a{
-    list-style: none;
-    line-height: 16px;
-    width: 320px;
-    
-    }
-
-
-    
-/* redes header */
-
-.redes-header{
-    right: 6px;
-    top:34%;
-    width: 34px;
-   }
-
-   .redes-header img{
-       width: 34px;
-       padding-bottom: 5px;
-   }
-   /* ***************************** */
-
-.api-whatsapp {
-    color: white;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 20%;
-    right: 10px;
-    font-size: 30px;
-}
-
-.api-whatsapp img{
-    width: 35px;
-    padding-top: 2px;
-
-}
-
-.buscador{
-
-    top:155px;
-    left: 0px;
-
-}
-
-
-
-  } 
 
 
 
@@ -324,7 +255,7 @@ header .icono img{
     position: absolute;
     top: 0;
     right: 0;
-    padding: 14px 20px;
+    padding: 24px 45px 0 0;
     cursor: pointer;
 }
 
@@ -415,6 +346,9 @@ header .icono img{
     display: block;
 }
 
+.pagos{
+    height: 58px;
+}
 
 @media(max-width:1024px){
 
@@ -426,7 +360,7 @@ header .icono img{
     .logo img{
         width: 100px;
         text-align: center;
-        padding-top: 10px;
+        
     }
     
     }
@@ -453,3 +387,77 @@ header .icono img{
         position: static;
     }
 }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .dropdown-content {
+        display: none;
+        position: relative;
+
+    }
+
+    .dropbtn {
+        background-color: #001550;
+        color: white;
+        padding: 15px 8px ;
+        border: none;
+        width: 320px;
+        text-align: left;
+    }
+    nav .nav-item{
+        padding: 8px;
+        
+    }
+
+    nav .nav-item a{
+    list-style: none;
+    line-height: 16px;
+    width: 320px;
+    
+    }
+
+
+    
+/* redes header */
+
+.redes-header{
+    right: 6px;
+    top:34%;
+    width: 34px;
+   }
+
+   .redes-header img{
+       width: 34px;
+       padding-bottom: 5px;
+   }
+   /* ***************************** */
+
+.api-whatsapp {
+    color: white;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20%;
+    right: 10px;
+    font-size: 30px;
+}
+
+.api-whatsapp img{
+    width: 35px;
+    padding-top: 2px;
+
+}
+
+.buscador{
+
+    top:155px;
+    left: 0px;
+
+}
+
+.pagos{
+    height: 34px;
+}
+
+} 

@@ -1,4 +1,4 @@
-<section class="my-4 py-4 bg-3">
+<section class="py-4 bg-19">
 
        <div class="row justify-content-center">
 
@@ -7,8 +7,8 @@
             <div class="row justify-content-center">
                <div class="col-xl-2 col-lg-3 col-md-10 col-12 vertical-align-center">
                   <div class="row ">
-                     <div class="col-12">
-                        <h2 class="titulo-2 text-white">Próximos eventos</h2>
+                     <div class="col-12 text-center px-2">
+                        <h2 class="titulo-2 text-white fs-48">Próximos eventos</h2>
                         <p class="text-white">Entérate y participa de los eventos que transforman.</p>
                      </div>
                   </div>
@@ -18,10 +18,12 @@
                   <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
                      <div ngxSlickItem *ngFor="let datos of listarEventos; index as i" class="slide">
       
-                        <div class="evento">
-                           <div class="bolder-1 fs-3 text-1">{{datos.fecha_inicio | date:"d MMM" }}</div>
+                        <div class="evento text-white rounded-4">
+                           <div class="bolder-1 fs-3 ">{{datos.fecha_inicio | date:"d MMM" }}</div>
                            <div class="small py-2 evento-titulo">{{datos.evento}}</div>
-                           <div class="py-2 evento-hora"><img src="{{time}}" alt="Hora del evento"> {{ datos.hora }} </div>
+                           <div class="py-2 evento-hora">
+                              <img src="{{time}}" alt="Hora del evento"> {{ datos.horaDate | date: 'h:mm a' }}
+                           </div>
                            <!-- <div><a class="btn bg-3 btn-sm">Ver evento</a></div> -->
                         </div>
       

@@ -6,6 +6,14 @@ import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
 declare var jQuery:any;
 declare var $:any;
 
+interface Evento {
+  hora: string; // Ejemplo: "14:00:00"
+  fecha_inicio: string; // Fecha del evento
+  evento: string; // Nombre del evento
+  horaDate?: Date; // Nueva propiedad para la conversión
+}
+
+
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
@@ -47,12 +55,22 @@ export class EventosComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
+    this.conectarApiService.obtenerEventos().subscribe((respuesta: Evento[]) => {
+      this.listarEventos = respuesta.map((evento: Evento) => {
+        const [hours, minutes, seconds] = evento.hora.split(':');
 
-    this.conectarApiService.obtenerEventos().subscribe(respuesta=>{
-      this.listarEventos=respuesta
+        // Crear una fecha usando la fecha del evento (si está disponible) o la fecha actual
+        let fechaBase = evento.fecha_inicio ? new Date(evento.fecha_inicio) : new Date();
+
+        // Establecer la hora en la fecha base
+        fechaBase.setHours(+hours, +minutes, +seconds || 0, 0);
+
+        return { ...evento, horaDate: fechaBase }; // Asignar la nueva fecha/hora
+      });
     });
-
   }
+  
 
 }

@@ -14,9 +14,9 @@
                                 <form class="col-xl-10 col-lg-10 col-md-10">
                                     <div class="input-group  input-group-sm">
                                         
-                                        <input type="text" class="form-control suscripcion-input" placeholder="Correo electrónico" aria-label="username" aria-describedby="basic-addon1" required="">
-                                        <span class="input-group-text bg-2 text-white" id="basic-addon1">
-                                            <button type="submit" class="btn">Suscribirse ahora</button>
+                                        <input type="text" class="form-control border-0 bg-19" placeholder="Correo electrónico" aria-label="username"  required="">
+                                        <span class=" bg-1 text-white" >
+                                            <button type="submit" class="btn btn-1 fs-20 p-4">Suscribirse ahora</button>
                                         </span>
                                     </div>
                                     
@@ -24,22 +24,20 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-12 pt-4">
-                            <h3 class="titulo-3">Conócenos</h3>
-                                <li><a routerLink="/blog" class="link-light">Blog </a></li>
-                                <li><a routerLink="conocenos"  class="link-light">Sobre nosotros</a></li>
-                                <li><a routerLink="horarios" class="link-light">Horarios</a></li>
-                                <li><a href="#" class="link-light">Centro de Idiomas</a></li>
-                                <li><a routerLink="tratamientodatos"  class="link-light">Política de datos</a></li>
-                        </div>
+
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-12 pt-4">
-                            <h3 class="titulo-3">Contáctanos</h3>
-                            <li><a href="#" class="link-light">{{correociaf}}</a></li>
-                            <li><a href="#" class="link-light">314 340 0100 </a></li>
-                            <li><a href="#" class="link-light">PQR</a></li>
-                            <li><a href="#" class="link-light">Cra. 6 No. 24-56 Pereira</a></li>
-                            <li><a href="#" class="link-light">CRAI - Calle 20#4-57 Pereira</a></li>
+                            <h3 class="titulo-1 text-white">Contáctanos</h3>
+                            <a href="#" class="link-light">{{correociaf}}</a><br>
+                            <a href="#" class="link-light">314 340 0100 </a><br>
+                            <a href="#" class="link-light">PQR</a><br>
+                            <a href="#" class="link-light">Cra. 6 No. 24-56 Pereira</a><br>
+                            <a href="#" class="link-light">CRAI - Calle 20#4-57 Pereira</a><br>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-12 pt-4">
+                            <h3 class="titulo-1 text-white">Aspectos legales</h3>
+                            <a routerLink="/tratamientodatos" class="link-light">Política de tratamiento de datos</a><br>
+
 
                         </div>
                         
@@ -47,8 +45,8 @@
                 </div>
         
                 <div class="col-xl-6 col-lg-12 pt-4 mt-4">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 redes_footer">
+                    <div class="row ">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 redes_footer p-4">
                             <h2 class="titulo-2 text-white pb-4">Síguenos</h2>
 
                             <a href="https://www.facebook.com/ComunidadCIAF" title="Facebook" target="_blank">
@@ -69,7 +67,7 @@
                             </a>
                                 
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-4">
                             <p>CIAF Educación Superior SNIES 4825. <br>
                                 Personería Jurídica Res. No.19348 Ministerio de Educación 19 de nov. de 1985 <br>
                                 Institución de carácter Técnica Profesional redefinida por ciclos propedéuticos<br> 
@@ -81,7 +79,8 @@
                                 <div class="col-xl-3 col-lg-3 col-md-3 col-12 logo text-center pb-xl-0 pb-lg-0 pb-md-2 pb-3">
                                     <img [src]="logo_blanco" alt="Ubicación CIAF">
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-12 text-center logo-creatividad">
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-12 text-center logo-creatividad d-none">
                                     <div class="row">
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-12">
                                             <div class="content">
@@ -101,6 +100,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-xl-2 col-lg-2 col-md-2 col-12 text-center pt-xl-0 pt-lg-0 pt-md-2 pt-4">
                                     <img [src]="vigilada" alt="Ubicación CIAF">
                                 </div>
@@ -110,9 +110,9 @@
                 </div>
 
                 <div class="col-xl-12">
-                    <hr>
+                    <!-- <hr> -->
                 </div>
-                <div class="col-xl-12 text-center small">
+                <div class="col-xl-12 text-center fs-14 pt-4">
                     Copyright © 2022 Todos los derechos reservados | CIAF educación superior
                 </div>
 

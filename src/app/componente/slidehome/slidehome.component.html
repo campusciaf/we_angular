@@ -1,14 +1,33 @@
 <ngb-carousel>
 	<ng-template *ngFor="let slides of listarSlider; let iControl2=index; index as i" ngbSlide >
-		<div class="picsum-img-wrapper efecto-img-slide ">
+		<div class="picsum-img-wrapper efecto-img-slide-no ">
       		<a href="{{slides.ruta_url}}" target="_blank">
-				<img src="https://ciaf.digital/public/web_baner/{{slides.img_pc}} " class="d-xl-block d-lg-block d-md-block d-none w-100" alt="{{slides.titulo}}" width="100%" height="auto">
-				<img src="https://ciaf.digital/public/web_baner/{{slides.img_movil}} " class="d-xl-none d-lg-none d-md-none d-block w-100" alt="{{slides.titulo}}" width="100%" height="auto">
+
+				<ng-container *ngIf="slides.tipo === 1">
+
+					<img src="https://ciaf.digital/public/web_baner/{{slides.img_pc}} " class="d-xl-block d-lg-block d-md-block d-none w-100" alt="{{slides.titulo}}" width="100%" height="auto">
+					<img src="https://ciaf.digital/public/web_baner/{{slides.img_movil}} " class="d-xl-none d-lg-none d-md-none d-block w-100" alt="{{slides.titulo}}" width="100%" height="auto">
+				</ng-container>
+
+				<ng-container *ngIf="slides.tipo === 2">
+				
+					<video class="video-banner w-100" id="video_background" preload="auto" autoplay="autoplay" loop="true" muted="" playsinline="">
+						<source src="assets/image/{{slides.img_pc}}.mp4" type="video/mp4">
+						<source src="assets/image/img/{{slides.img_pc}}.ogg" type="video/ogg">
+						<source src="assets/image/img/{{slides.img_pc}}.webm" type="video/webm">
+					</video> 
+				</ng-container>
 			</a>
 		</div>
+
 		<div class="carousel-caption">
 			<!-- <h3>{{slides.titulo}} </h3>
 			<p>{{slides.descripcion}} </p> -->
 		</div>
 	</ng-template>
-</ngb-carousel>
+
+</ngb-carousel>	
+
+
+
+		
