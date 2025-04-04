@@ -27,8 +27,8 @@ export class CifrasComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.counters = [
-      { target: 5000, value: 0 },
-      { target: 1000, value: 0 },
+      { target: 15, value: 0 },
+      { target: 6, value: 0 },
       { target: 0, value: 0 },
       { target: 0, value: 0 } // Inicializamos con 0
     ];
