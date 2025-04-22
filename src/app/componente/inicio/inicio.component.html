@@ -50,33 +50,48 @@
         <div class="col-xl-10 col-lg-10 col-md-10 col-10 py-4 my-4">
             <div class="row text-center justify-content-center">
                 <div class="col-lg-4 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/administracion.webp'" width="250px" alt="Administración de Empresas">
-                    <div class="counter fs-36 fw-bold mt-4">Administración <br>de Empresas</div>
-                    <div class="mt-1 fs-22">SNIES 108591</div>
+                    <a routerLink="/administracion" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/administracion.webp'" width="250px" alt="Administración de Empresas">
+                        <div class="text-right text-1">*por ciclos</div>
+                        <div class="counter fs-36 fw-bold ">Administración <br>de Empresas</div>
+                        <div class="mt-1 fs-22">SNIES 108591</div>
+                    </a>
                 </div>
                 
                 <div class="col-lg-4 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/contaduria.webp'" width="250px"  alt="Contaduría Pública">
-                    <div class="counter fs-36 fw-bold mt-4">Contaduría <br>Pública</div>
-                    <div class="mt-1 fs-22">SNIES 53026</div>
+                    <a routerLink="/contaduria" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/contaduria.webp'" width="250px"  alt="Contaduría Pública">
+                        <div class="text-right text-1">*por ciclos</div>
+                        <div class="counter fs-36 fw-bold">Contaduría <br>Pública</div>
+                        <div class="mt-1 fs-22">SNIES 53026</div>
+                    </a>
+                    </div>
+            
+                <div class="col-lg-4 col-md-6 col-12 lh-30">
+                    <a routerLink="/industrial" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/industrial.webp'" width="250px" alt="Ingeniería Industrial">
+                        <div class="text-right text-1">*por ciclos</div>
+                        <div class="counter fs-36 fw-bold">Ingeniería <br>Industrial</div>
+                        <div class="mt-1 fs-22">SNIES 006629</div>
+                    </a>
                 </div>
             
                 <div class="col-lg-4 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/industrial.webp'" width="250px" alt="Ingeniería Industrial">
-                    <div class="counter fs-36 fw-bold mt-4">Ingeniería <br>Industrial</div>
-                    <div class="mt-1 fs-22">SNIES 006629</div>
-                </div>
-            
-                <div class="col-lg-4 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/software.webp'" width="250px" alt="Ingeniería de Software">
-                    <div class="counter fs-36 fw-bold mt-4">Ingeniería <br>de Software</div>
-                    <div class="mt-1 fs-22">SNIES 108796</div>
+                    <a routerLink="/software" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/software.webp'" width="250px" alt="Ingeniería de Software">
+                        <div class="text-right text-1">*por ciclos</div>
+                        <div class="counter fs-36 fw-bold">Ingeniería <br>de Software</div>
+                        <div class="mt-1 fs-22">SNIES 108796</div>
+                    </a>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12 lh-30" width="250px">
-                    <img [src]="'assets/image/sst.webp'" alt="Seguridad y Salud en el Trabajo" width="250px">
-                    <div class="counter fs-36 fw-bold mt-4">Seguridad y Salud <br>en el Trabajo</div>
-                    <div class="mt-1 fs-22">SNIES 108623</div>
+                    <a routerLink="/sst" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/sst.webp'" alt="Seguridad y Salud en el Trabajo" width="250px">
+                        <div class="text-right text-1">*por ciclos</div>
+                        <div class="counter fs-36 fw-bold">Seguridad y Salud <br>en el Trabajo</div>
+                        <div class="mt-1 fs-22">SNIES 108623</div>
+                    </a>
                 </div>
 
               </div>
@@ -93,27 +108,35 @@
         <div class="col-xl-10 col-lg-10 col-md-10 col-10 py-4 my-4">
             <div class="row text-center justify-content-center">
                 <div class="col-lg-3 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/enfermeria.webp'" width="250px" alt="Administración de Empresas">
-                    <div class="counter fs-36 fw-bold mt-4">Auxiliar en <br> enfermería</div>
-                    <div class="mt-1 fs-20">Res. No. 005299 de 27 junio 2023</div>
+                    <a routerLink="/enfermeria" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/enfermeria.webp'" width="250px" alt="Administración de Empresas">
+                        <div class="counter fs-36 fw-bold mt-4">Auxiliar en <br> enfermería</div>
+                        <div class="mt-1 fs-14">Res. No. 005299 de 27 junio 2023</div>
+                    </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/administrativo-salud.webp'" width="250px"  alt="Contaduría Pública">
-                    <div class="counter fs-36 fw-bold mt-4">Administrativo de <br> salud</div>
-                    <div class="mt-1 fs-20">Res. No. 005299 de 27 junio 2023</div>
+                    <a routerLink="/administrativo" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/administrativo-salud.webp'" width="250px"  alt="Contaduría Pública">
+                        <div class="counter fs-36 fw-bold mt-4">Administrativo de <br> salud</div>
+                        <div class="mt-1 fs-14">Res. No. 005299 de 27 junio 2023</div>
+                    </a>
                 </div>
             
                 <div class="col-lg-3 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/veterinaria.webp'" width="250px" alt="Ingeniería Industrial">
-                    <div class="counter fs-36 fw-bold mt-4">Auxiliar en <br> veterinaria</div>
-                    <div class="mt-1 fs-20">Res. No. 005299 de 27 junio 2023</div>
+                    <a routerLink="/veterinaria" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/veterinaria.webp'" width="250px" alt="Ingeniería Industrial">
+                        <div class="counter fs-36 fw-bold mt-4">Auxiliar en <br> veterinaria</div>
+                        <div class="mt-1 fs-14">Res. No. 005299 de 27 junio 2023</div>
+                    </a>
                 </div>
             
                 <div class="col-lg-3 col-md-6 col-12 lh-30">
-                    <img [src]="'assets/image/motos.webp'" width="250px" alt="Ingeniería de Software">
-                    <div class="counter fs-36 fw-bold mt-4">Mecánica y mantenimiento <br> de motocicletas</div>
-                    <div class="mt-1 fs-20">Res. No. 005299 de 27 junio 2023</div>
+                    <a routerLink="/motocicletas" target="_top" class="btn lh-28 text-white">
+                        <img [src]="'assets/image/motos.webp'" width="250px" alt="Ingeniería de Software">
+                        <div class="counter fs-36 fw-bold mt-4">Mecánica y mantenimiento <br> de motocicletas</div>
+                        <div class="mt-1 fs-14">Res. No. 005299 de 27 junio 2023</div>
+                    </a>
                 </div>
 
 

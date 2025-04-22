@@ -7,14 +7,14 @@
           <div *ngIf="counters.length > 0">
               <div class="row text-center">
                   <div class="col-lg-3 col-md-6 col-12 lh-20">
-                      <img [src]="'assets/image/d-financiados.webp'">
-                      <div class="counter fs-48 fw-bold mt-4" #counter [attr.data-target]="counters[0].target"> + {{ counters[0].value }}B<span class="fs-18">(Billones)</span></div>
+                      <img [src]="'assets/image/d-financiacion.webp'">
+                      <div class="counter fs-48 fw-bold mt-4" #counter [attr.data-target]="counters[0].target"> + {{ counters[0].value }}M<span class="fs-18">(Millones)</span></div>
                       <div class="mt-3 fs-36">Financiación</div>
                   </div>
                   
                   <div class="col-lg-3 col-md-6 col-12 lh-20">
                       <img [src]="'assets/image/d-becas.webp'">
-                      <div class="counter fs-48 fw-bold mt-4" #counter [attr.data-target]="counters[1].target"> + {{ counters[1].value }}B<span class="fs-18">(Billones)</span></div>
+                      <div class="counter fs-48 fw-bold mt-4" #counter [attr.data-target]="counters[1].target"> + {{ counters[1].value }}M<span class="fs-18">(Millones)</span></div>
                       <div class="mt-3 fs-36">Becas</div>
                   </div>
               
