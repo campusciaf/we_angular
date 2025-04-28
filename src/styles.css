@@ -206,6 +206,12 @@ figure{
     background-color: #0699d9 !important;
 }
 
+.bg-img-1{
+    background-image:url("assets/image/bg-inscripcion.webp")!important;
+    background-size:cover!important;
+    background-position:center center!important
+}
+
 
 .text-1{
     color:#001550!important
@@ -270,6 +276,9 @@ figure{
 .fs-48{
 	font-size: 48px !important;
 }
+.fs-52{
+	font-size: 52px !important;
+}
 .fs-56{
 	font-size: 56px !important;
 }
@@ -305,6 +314,12 @@ figure{
 }
 .lh-40 {
     line-height: 40px !important;
+}
+.lh-44 {
+    line-height: 44px !important;
+}
+.lh-48 {
+    line-height: 48px !important;
 }
 
 .asterisco{
