@@ -203,7 +203,11 @@ figure{
     background-color: #191917 !important;
 }
 .bg-19{
-    background-color: #0699d9 !important;
+    background-color: #f0f0f0 !important;
+}
+
+.bg-20{
+    background-color:rgba(0,21,80,0.3)!important
 }
 
 .bg-img-1{

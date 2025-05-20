@@ -294,7 +294,7 @@ header .icono img{
 
 .nav .navbar-item {
     display: inline-block;
-    max-width: 128px; /* Set a fixed width for each menu item 120 */
+    width: 128px; /* Set a fixed width for each menu item 120 */
     line-height: 14px;
 }
 
@@ -417,7 +417,9 @@ header .icono img{
     
     }
 
-
+    .nav .navbar-item {
+        width: 425px;
+    }
     
 /* redes header */
 

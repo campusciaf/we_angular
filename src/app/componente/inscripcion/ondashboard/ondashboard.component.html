@@ -26,7 +26,7 @@
     </div>
 </header>
 
-<nav class="p-3 mb-3 border-bottom bg-1">
+<nav class="p-3  border-bottom bg-1">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
@@ -54,28 +54,25 @@
       </div>
     </div>
 </nav>
-<div class="row justify-content-center">
+<div class="row justify-content-center bg-img-1">
     <div class="col-xl-9">
         <div class="row">
 
             <div class="col-6">
-                <p class="m-0 lh-1">
-                    <span class="titulo-2 fs-18 text-semibold">My Dashboard</span>
-                </p>
+               
             </div>
-            <div class="col-6 text-right">
+            <div class="col-6 text-right py-2">
                 <button class="btn btn-sm btn-outline-warning px-2 py-0" onclick="iniciarTour()"><i class="fa-solid fa-play"></i> Tour</button>
             </div>
 
-            <div class="col-xl-8 col-12 col-md py-3 py-md-5">
-                <h2 class="fw-light mb-0 text-secondary">Bienvenido,</h2>
-                <h1 class="display-3 username ">IMPRIME TU FUTURO</h1>
-                <h2 class="fs-18">{{nombreprograma}} <span class="badge text-bg-info">{{jornada}}</span></h2>
+            <div class="col-xl-8 col-12 col-md pt-4 py-md-5">
+                <h1 class="fs-42 username text-7 ">{{nombre}}, nos encanta tenerte aquí</h1>
+                <h2 class="fs-22"><b>{{nombreprograma}} </b><span class="badge text-bg-info">{{jornada}}</span></h2>
             </div>
 
             <div class="col-4 d-flex align-items-center p-0 m-0" id="t-tip">
-                <div class="card m-2">
-                   <div class="card-header bg-success">
+                <div class="card m-2 bg-20">
+                   <div class="card-header bg-20 text-white">
                       <div class="row align-items-center">
                             <div class="col">
                                <h6 class="titulo-2 fs-18 text-semibold text-white">
@@ -86,13 +83,13 @@
 
                       </div>
                    </div>
-                   <div class="card-body ">
+                   <div class="card-body text-white">
                       <p>
                         En CIAF estamos listos para iniciar juntos esta experiencia creativa. 
                         Por eso diseñamos una financiación directa, garantizada y lo mejor sin intereses. 
-                        Haz click en el botón verde y comienza a vivir este increíble #ParcheCIAF.
+                        Haz click en el botón verde y comienza a vivir este increíble #ParcheCIAF.<br><br>
 
-                         <a class="btn btn-success" href="https://ciaf.digital/inscribete/" target="_blank">Crédito educativo</a>
+                         <a class="btn bg-1 text-white" href="https://ciaf.digital/inscribete/" target="_blank">Crédito educativo</a>
                       </p>
                    </div>
 
@@ -104,8 +101,8 @@
                 <div class="row">
 
                     <div class="col-sm-6">
-                      <div class="card m-2">
-                        <div class="card-header">
+                      <div class="card m-2 bg-20">
+                        <div class="card-header bg-20 text-white">
                           <div class="row align-items-center">
                             <div class="col-2"><img src="../../../assets/image/icono-doc.webp" width="40px"></div>
                             <div class="col-10">Diligencia el formulario de inscripción.</div>
@@ -114,12 +111,9 @@
                        </div>
                         <div class="card-body">
                           <div class="row" *ngIf="formulario === 1; else formularioOk">
-                            <div class="col-12 ">
+                            <div class="col-12 text-center">
 
-                              <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                              </p>
-                              <a data-bs-toggle="modal" data-bs-target="#formulario" class="btn btn-primary">
+                              <a data-bs-toggle="modal" data-bs-target="#formulario" class="btn bg-1 text-white">
                                 Completar formulario
                               </a>
 
@@ -129,7 +123,7 @@
                           <!-- Bloque alternativo si matricula NO es 1 -->
                           <ng-template #formularioOk>
                             <div class="row">
-                              <p class="card-text">
+                              <p class="card-text text-white">
                                Formulario validado
                               </p>
                             </div>
@@ -140,8 +134,8 @@
                     </div>
 
                     <div class="col-sm-6">
-                      <div class="card m-2">
-                        <div class="card-header">
+                      <div class="card m-2 bg-20">
+                        <div class="card-header bg-20 text-white">
                           <div class="row align-items-center">
                             <div class="col-2"><img src="../../../assets/image/icono-doc.webp" width="40px"></div>
                             <div class="col-10">Diligencia el formulario de entrevista.</div>
@@ -149,12 +143,9 @@
                        </div>
                         <div class="card-body">
                           <div class="row" *ngIf="entrevista === 1; else entrevistaOk">
-                            <div class="col-12 ">
+                            <div class="col-12 text-center">
 
-                              <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                              </p>
-                              <a data-bs-toggle="modal" data-bs-target="#entrevista" class="btn btn-primary">
+                              <a data-bs-toggle="modal" data-bs-target="#entrevista" class="btn bg-1 text-white">
                                 Realizar entrevista
                               </a>
 
@@ -164,7 +155,7 @@
                           <!-- Bloque alternativo si matricula NO es 1 -->
                           <ng-template #entrevistaOk>
                             <div class="row">
-                              <p class="card-text">
+                              <p class="card-text text-white">
                                Entrevista terminada
                               </p>
                             </div>
@@ -174,15 +165,15 @@
                     </div>
 
                     <div class="col-sm-6">
-                      <div class="card m-2">
-                        <div class="card-header">
+                      <div class="card m-2 bg-20">
+                        <div class="card-header bg-20 text-white">
                           <div class="row align-items-center">
                             <div class="col-2"><img src="../../../assets/image/icono-ok.webp" width="40px"></div>
                             <div class="col-10">Realizar pago de inscripción.</div>
     
                           </div>
                        </div>
-                        <div class="card-body">
+                        <div class="card-body text-white">
                           
           
                           <div class="row" *ngIf="inscripcion === 1; else pagoExitosoins">
@@ -207,15 +198,15 @@
                     </div>
 
                     <div class="col-sm-6">
-                      <div class="card m-2">
-                        <div class="card-header">
+                      <div class="card m-2 bg-20">
+                        <div class="card-header bg-20 text-white">
                           <div class="row align-items-center">
                             <div class="col-2"><img src="../../../assets/image/icono-ok.webp" width="40px"></div>
                             <div class="col-10">Realizar pago de matricula.</div>
     
                           </div>
                        </div>
-                        <div class="card-body">
+                        <div class="card-body text-white">
           
                           <div class="row" *ngIf="matricula === 1; else pagoExitoso">
                             <span class="col-12 fs-5">Matrícula Ordinaria</span>
@@ -226,7 +217,7 @@
                               <div class="row">
                                 <div class="col-auto" id="payment-container-e"></div>
                                 <div class="col-auto" id="payment-container"></div>
-                                <div class="col-auto"><a href="#" class="btn btn-success py-2">Solicita tu crédito</a></div>
+                                <div class="col-auto"><a href="#" class="btn bg-1 text-white">Solicita tu crédito</a></div>
                               </div>
                             </div>
                           
@@ -247,15 +238,15 @@
             </div>
 
             <div class="col-xl-4">
-                <div class="card m-2">
+                <div class="card m-2 bg-20">
 
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
+                    <div class="card-body bg-20 text-white">
                         <h5 class="card-title">Documentos personales y académicos.</h5>
                         <p class="card-text">El tamaño de la imagen o PDF no puede superar: 2MB</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
+                    <ul class="list-group-flush ">
+                        <li class="list-group-item py-1">
 
                           <div class="col-12" *ngIf="isValidForm1; else documento1"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(1)" #uploadForm="ngForm">
@@ -263,7 +254,7 @@
                                 <input type="file" (change)="onFileChange($event)" hidden />
                                 {{ selectedFileName || "Cargar cedula" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento1>
@@ -271,56 +262,56 @@
                           </ng-template>
 
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item py-1">
                           <div class="col-12" *ngIf="isValidForm2; else documento2"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(2)" #uploadForm="ngForm">
                               <label class="custom-file-upload">
                                 <input type="file" (change)="onFileChange2($event)" hidden />
                                 {{ selectedFileName2 || "Cargar diploma" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile2" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile2" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento2>
                             <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte diploma cargado</span></div>
                           </ng-template>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item py-1">
                           <div class="col-12" *ngIf="isValidForm3; else documento3"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(3)" #uploadForm="ngForm">
                               <label class="custom-file-upload">
                                 <input type="file" (change)="onFileChange3($event)" hidden />
                                 {{ selectedFileName3 || "Acta de grado" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile3" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile3" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento3>
                             <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte acta de grado cargado</span></div>
                           </ng-template>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item py-1">
                           <div class="col-12" *ngIf="isValidForm4; else documento4"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(4)" #uploadForm="ngForm">
                               <label class="custom-file-upload">
                                 <input type="file" (change)="onFileChange4($event)" hidden />
                                 {{ selectedFileName4 || "Seguro EPS" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile4" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile4" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento4>
                             <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte EPS cargado</span></div>
                           </ng-template>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item py-1">
                           <div class="col-12" *ngIf="isValidForm5; else documento5"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(5)" #uploadForm="ngForm">
                               <label class="custom-file-upload">
                                 <input type="file" (change)="onFileChange5($event)" hidden />
                                 {{ selectedFileName5 || "Pruebas saber" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile5" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile5" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento5>
@@ -328,14 +319,14 @@
                           </ng-template>
                         </li>
 
-                        <li class="list-group-item">
+                        <li class="list-group-item py-1">
                           <div class="col-12" *ngIf="isValidForm6; else documento6"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(6)" #uploadForm="ngForm">
                               <label class="custom-file-upload">
                                 <input type="file" (change)="onFileChange6($event)" hidden />
                                 {{ selectedFileName6 || "Soporte Compromiso" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile6" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile6" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento6>
@@ -343,14 +334,14 @@
                           </ng-template>
                         </li>
 
-                        <li class="list-group-item">
+                        <li class="list-group-item py-1">
                           <div class="col-12" *ngIf="isValidForm7; else documento7"><!-- // cedula de ciudadania -->
                             <form (ngSubmit)="onSubmit(7)" #uploadForm="ngForm">
                               <label class="custom-file-upload">
                                 <input type="file" (change)="onFileChange7($event)" hidden />
                                 {{ selectedFileName7 || "Soporte protección datos" }}
                               </label>
-                              <button type="submit" [disabled]="!selectedFile7" class="btn btn-success rounded-0 rounded-end">Guardar</button>
+                              <button type="submit" [disabled]="!selectedFile7" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
                             </form>
                           </div>
                           <ng-template #documento7>
