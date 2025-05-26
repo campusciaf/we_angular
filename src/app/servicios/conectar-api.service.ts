@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 export class ConectarApiService {
 
 // produccion//
-//API: string='https://ciaf.edu.co/api_rest';
+API: string='https://ciaf.edu.co/api_rest';
 
 //local//
 
 
-API: string='http://localhost/api_rest';
+//API: string='http://localhost/api_rest';
 autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
 
 
