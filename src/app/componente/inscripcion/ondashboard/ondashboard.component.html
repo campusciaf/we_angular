@@ -472,21 +472,344 @@
 
         <form [formGroup]="myEntrevista" (ngSubmit)="guardarEntrevista()">
           <div class="row">
-            <div class="form-group col-md-12">
-              <label>¿Cómo describirías tu salud física en general?</label>
+
+
+
+            <div class="form-group col-md-6">
+              <label>¿Cómo describirías tu salud física y mental actualmente?</label>
               <select formControlName="salud_fisica" class="form-control">
                 <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="Excelente">Excelente</option>
-                <option value="Buena">Buena</option>
-                <option value="Regular">Regular</option>
-                <option value="Pobre">Pobre</option>
+                <option value="5">Excelente</option>
+                <option value="4">Buena</option>
+                <option value="3">Regular</option>
+                <option value="2">Mala</option>
+                <option value="1">Muy mala</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>¿Cómo describirías tu salud mental actualmente?</label>
+              <select formControlName="salud_mental" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="5">Excelente</option>
+                <option value="4">Buena</option>
+                <option value="3">Regular</option>
+                <option value="2">Mala</option>
+                <option value="1">Muy mala</option>
               </select>
             </div>
         
             <div class="col-12 py-2">
              <div class="row">
                 <div class="col-12 pb-2">
-                  <label>¿Tienes alguna condición de salud que requiera atención especial en CIAF?</label>
+                  <label>¿Tienes alguna condición médica, neurológica o emocional que requiera atención especial en CIAF?</label>
+                </div>
+                <div class="form-group col-4">
+                
+                  <select formControlName="condicion_especial" class="form-control">
+                    <option value="" disabled>-- Selecciona una opción --</option>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                  </select>
+                </div>
+              
+                <div class="form-group col-md-8" *ngIf="myEntrevista.get('condicion_especial')?.value === '1'">
+                  <input type="text" formControlName="nombre_condicion_especial" class="form-control" placeholder="Ingrese su condición">
+                </div>
+              </div>
+            </div>
+
+
+
+             <div class="form-group col-md-12 p-2">
+              <label>¿Has sentido estrés, ansiedad o tristeza con frecuencia en los últimos 6 meses?</label>
+              <select formControlName="estres_reciente" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">N0</option>
+              </select>
+            </div>
+
+
+            <div class="form-group col-md-12 p-2">
+              <label>¿Te gustaría recibir apoyo en temas relacionados con la salud mental durante tu tiempo en CIAF?</label>
+              <select formControlName="desea_apoyo_mental" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6 p-2">
+              <label>¿Eres tú quien asume los costos de tus estudios?</label>
+              <select formControlName="costea_estudios" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6 p-2">
+              <label>¿Laboras actualmente?</label>
+              <select formControlName="labora_actualmente" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6 p-2" *ngIf="myEntrevista.get('labora_actualmente')?.value === '1'">
+              <label>¿En qué empresa laboras?</label>
+              <input type="text" formControlName="donde_labora" class="form-control" placeholder="Ingrese empresa">
+            </div>
+
+            <div class="form-group col-md-6 p-2" *ngIf="myEntrevista.get('labora_actualmente')?.value === '1'">
+              <label>¿Cuánto tiempo llevas laborando en esta entidad?</label>
+              <select formControlName="tiempo_laborando" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="0 a 6 meses">0 a 6 meses</option>
+                <option value="6 meses a 1 año">6 meses a un año</option>
+                <option value="un año a dos años">un año a dos años</option>
+                <option value="mayor a dos años">mayor a dos años</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
+              ¿Has solicitado o estás interesado en solicitar algún tipo de beca o ayuda financiera?<br>
+              <select formControlName="desea_beca" class="form-control">
+                <option value="" selected disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
+             ¿Tienes responsabilidades familiares que podrían afectar tu tiempo de estudio?<br>
+              <select formControlName="responsabilidades_familiares" class="form-control">
+                <option value="" selected disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
+             ¿Qué tan seguro/a te sientes de que es el programa correcto para ti?<br>
+              <select formControlName="seguridad_carrera" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="5">Muy seguro</option>
+                <option value="4">Seguro</option>
+                <option value="3">Indeciso</option>
+                <option value="2">Poco seguro</option>
+                <option value="1">Nada seguro</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
+             ¿Has considerado abandonar tus estudios en algún momento antes de comenzar?<br>
+              <select formControlName="penso_abandonar" class="form-control">
+                <option value="" selected disabled>-- Selecciona una opción --</option>
+                <option value="1">Sí</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6 p-2">
+              <label>¿Te gustaría referir personas para que inicien su experiencia profesional en CIAF?</label>
+              <select formControlName="desea_referir" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+
+            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
+            ¿Cómo describirías tu rendimiento académico en el colegio o estudios anteriores?<br>
+            <select formControlName="rendimiento_prev" class="form-control">
+              <option value="" selected disabled>-- Selecciona una opción --</option>
+              <option value="5">Excelente</option>
+              <option value="4">Buena</option>
+              <option value="3">Regular</option>
+              <option value="2">Malo</option>
+              <option value="1">Muy malo</option>
+            </select>
+          </div>
+
+          
+          <div class="col-12 py-2">
+            <div class="row">
+               <div class="col-12 pb-2">
+                 <label>¿Tienes alguna materia o área en la que sientas que necesitas apoyo adicional?</label>
+               </div>
+               <div class="form-group col-4">
+               
+                 <select formControlName="necesita_apoyo_academico" class="form-control">
+                   <option value="" disabled>-- Selecciona una opción --</option>
+                   <option value="1">Si</option>
+                   <option value="2">NO</option>
+                 </select>
+               </div>
+             
+               <div class="form-group col-md-8 px-2" *ngIf="myEntrevista.get('necesita_apoyo_academico')?.value === '1'">
+                 <input type="text" formControlName="nombre_materia" class="form-control" placeholder="¿Cual materia?">
+               </div>
+             </div>
+           </div>
+
+           <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
+            ¿Sientes que tienes las habilidades necesarias para organizarte y enfrentar las exigencias académicas?<br>
+            <select formControlName="tiene_habilidades_organizativas" class="form-control">
+               <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+            </select>
+          </div>
+
+
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
+            ¿Qué tan cómodo te sientes con el uso de herramientas digitales para el aprendizaje?<br>
+            <select formControlName="comodidad_herramientas_digitales" class="form-control">
+              <option value="" selected disabled>-- Selecciona una opción --</option>
+              <option value="5">Muy cómodo</option>
+              <option value="4">Cómodo</option>
+              <option value="3">Neutral</option>
+              <option value="2">Poco cómodo</option>
+              <option value="1">Nada cómodo</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6 p-2">
+            <label>¿Tienes internet en casa?</label>
+            <select formControlName="acceso_internet" class="form-control">
+              <option value="" disabled>-- Selecciona una opción --</option>
+              <option value="1">Si</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6 p-2">
+            <label>¿Tienes computador en casa?</label>
+            <select formControlName="acceso_computador" class="form-control">
+              <option value="" disabled>-- Selecciona una opción --</option>
+              <option value="1">Si</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+            <div class="form-group col-md-6">
+              <label>¿Cuál es tu estrato socioeconómico?</label>
+              <select formControlName="estrato" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>¿En qué municipio resides actualmente?</label>
+              <input type="text" formControlName="municipio_residencia" class="form-control" placeholder="Ingrese el nombre">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>¿Cuál es tu dirección de residencia actual?</label>
+              <input type="text" formControlName="direccion_residencia" class="form-control" placeholder="Ingrese el nombre">
+            </div>
+
+
+          <div class="form-group col-xl-6 p-2">
+            <label>Escribe el nombre completo de tu referencia familiar</label>
+            <input type="text" formControlName="nombre_referencia_familiar" class="form-control" placeholder="Ingrese el nombre">
+          </div>
+
+
+          <div class="form-group col-md-6 p-2">
+            Escribe el número de contacto de tu referencia familiar<br>
+            <input formControlName="telefono_referencia_familiar" placeholder="Escribe el número de contacto de tu referencia familiar" class="form-control">
+          </div>
+
+        
+          <div class="form-group col-md-6 p-2">
+            ¿Cuál es el parentesco con tu referencia familiar?<br>
+            <select formControlName="parentesco_referencia_familiar" class="form-control">
+              <option value="" selected disabled>-- Selecciona una opción --</option>
+              <option value="Padre">Padre</option>
+              <option value="Madre">Madre</option>
+              <option value="Pareja">Pareja</option>
+              <option value="Hermano/a">Hermano/a</option>
+              <option value="Tío/a">Tío/a</option>
+              <option value="Abuelo/a">Abuelo/a</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          
+
+        </div>
+        <div *ngIf="myEntrevista.invalid" class="alert alert-danger">
+          <p>Diligenciar estos campos, si falta 1 no puede guardar</p>
+          <ul>
+            <li *ngFor="let control of invalidControls">{{ control }}</li>
+          </ul>
+        </div>
+        
+          <button type="submit" class="btn btn-outline-success col-12" [disabled]="myEntrevista.invalid">Guardar y terminar Entrevista</button>
+        </form>
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal entrevista anterior con opcion si-->
+<!-- <div class="modal fade" id="entrevista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">Entrevista</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="myEntrevista" (ngSubmit)="guardarEntrevista()">
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label>¿Cómo describirías tu salud física y mental actualmente?</label>
+              <select formControlName="salud_fisica" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="Excelente">Excelente</option>
+                <option value="Buena">Buena</option>
+                <option value="Regular">Regular</option>
+                <option value="Mala">Mala</option>
+                <option value="Muymala">Muy mala</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label>2.	¿Cómo describirías tu salud mental actualmente?</label>
+              <select formControlName="salud_mental" class="form-control">
+                <option value="" disabled>-- Selecciona una opción --</option>
+                <option value="Excelente">Excelente</option>
+                <option value="Buena">Buena</option>
+                <option value="Regular">Regular</option>
+                <option value="Mala">Mala</option>
+                <option value="Muymala">Muy mala</option>
+              </select>
+            </div>
+        
+            <div class="col-12 py-2">
+             <div class="row">
+                <div class="col-12 pb-2">
+                  <label>¿Tienes alguna condición médica, neurológica o emocional que requiera atención especial en CIAF?</label>
                 </div>
                 <div class="form-group col-4">
                 
@@ -494,7 +817,6 @@
                     <option value="" disabled>-- Selecciona una opción --</option>
                     <option value="si">SI</option>
                     <option value="no">NO</option>
-                    <option value="Prefiero no responder">Prefiero no responder</option>
                   </select>
                 </div>
               
@@ -742,4 +1064,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
