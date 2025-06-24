@@ -6,12 +6,11 @@
         <div class="col-xl-11 col-lg-11 col-md-11 col-11 py-4 my-4">
           <div *ngIf="counters.length > 0">
               <div class="row text-center">
+
                   <div class="col-lg-3 col-md-6 col-12 lh-20">
-                        <img [src]="'assets/image/d-financiacion.webp'">
-                        <div class="counter fs-32 fw-bold mt-4" #counter [attr.data-target]="counters[0].target">
-                            + {{ counters[0].value | number:'1.0-0' }}<span class="fs-14">(Millones)</span>
-                        </div>
-                        <div class="mt-3 fs-24">Financiación</div>
+                      <img [src]="'assets/image/d-egresados.webp'">
+                      <div class="counter fs-32 fw-bold mt-4" #counter [attr.data-target]="counters[0].target"> + {{ counters[0].value | number:'1.0-0' }}<span class="fs-14">(Millones)</span></div>
+                      <div class="mt-3 fs-24">Financiación</div>
                   </div>
                   
                   <div class="col-lg-3 col-md-6 col-12 lh-20">

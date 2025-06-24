@@ -27,7 +27,7 @@ export class CifrasComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.counters = [
-      { target: 15000000000, value: 0 },
+      { target: 0, value: 0 },
       { target: 6000000000, value: 0 },
       { target: 0, value: 0 },
       { target: 0, value: 0 } // Inicializamos con 0
@@ -37,12 +37,14 @@ export class CifrasComponent implements OnInit, AfterViewInit {
 
   // Llamar a ambas APIs en paralelo
   forkJoin({
+    financiacion: this.conectarApiService.cifras(0),
     creditos: this.conectarApiService.cifras(2),
     egresados: this.conectarApiService.cifras(1)
-  }).subscribe(({ creditos, egresados }) => {
+  }).subscribe(({ creditos, egresados, financiacion }) => {
 
     const numeroCreditos = creditos[0]?.total ?? 0;
     const numeroEgresados = egresados.total ?? 0;
+    const numeroFinanciacion = financiacion[0]?.total ?? 0;
 
     // Actualizar los valores en la lista de contadores
     if (numeroCreditos > 0) {
@@ -53,6 +55,9 @@ export class CifrasComponent implements OnInit, AfterViewInit {
       this.counters[3].target = numeroEgresados; // Se asume que el índice 3 es para egresados
     }
 
+    if (numeroFinanciacion > 0) {
+      this.counters[0].target = numeroFinanciacion; // Se asume que el índice 0 es para financiación
+    }
 
     // Iniciar animación después de que ambos valores se hayan actualizado
     setTimeout(() => {
@@ -75,26 +80,26 @@ export class CifrasComponent implements OnInit, AfterViewInit {
     }
   }
 
-  startAnimation() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetValue = entry.target.getAttribute('data-target');
-          if (targetValue) {
-            const counter = this.counters.find(c => c.target === +targetValue);
-            if (counter) {
-              this.animateCounter(counter);
-              observer.unobserve(entry.target);
-            }
-          }
-        }
-      });
-    }, { threshold: 0.1 });
+startAnimation() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Obtener el índice del elemento en el DOM
+        const index = this.counterElements.toArray().findIndex(el => el.nativeElement === entry.target);
 
-    this.counterElements.forEach(counterElement => {
-      observer.observe(counterElement.nativeElement);
+        if (index !== -1 && this.counters[index]) {
+          this.animateCounter(this.counters[index]);
+          observer.unobserve(entry.target); // Deja de observar después de animar
+        }
+      }
     });
-  }
+  }, { threshold: 0.1 });
+
+  this.counterElements.forEach(counterElement => {
+    observer.observe(counterElement.nativeElement);
+  });
+}
+
 
   animateCounter(counter: { target: number; value: number; }) {
     const updateCounter = () => {
