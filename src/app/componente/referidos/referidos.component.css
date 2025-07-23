@@ -1,21 +1,110 @@
-.fondo-parallax_referidos{
-    position:relative;
-    background: url("../../../assets/referidos/fondo.webp") no-repeat fixed;
-    background-position:center center;
-    background-size:cover;
-    min-height:500px
+
+
+.mtop-4{
+    position: relative;
+    top:-150px
 }
-.bg-form-ref{
-    background-color: rgba(35,57,117,0.5);
-    border-radius: 10px;
- 
+@media (max-width: 576px) {
+  .mtop-4 {
+    top: -20px;
+  }
 }
-.formulario-ref input{
-    background-color: rgba(35,57,117,0.5);
-    border: none;
-    color: white;
+.rounded-5{
+    border-radius: 100px;
+}
+.titulo-como-funciona {
+  background: linear-gradient(to right, #A7D97B, #0A9D4D); /* Degradado verde */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: relative;
 }
 
-.formulario-ref input::placeholder {
-    color: white !important;
-  }
+/* Pico inferior centrado */
+.titulo-como-funciona::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #0A9D4D; /* mismo color final del degradado */
+}
+
+.pasos-circulares {
+  counter-reset: paso;
+  list-style: none;
+  padding-left: 0;
+}
+
+.pasos-circulares li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 16px;
+  color: #22306D; /* Azul institucional */
+}
+
+.pasos-circulares li::before {
+  content: counter(paso);
+  counter-increment: paso;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  background-color: #72A12D; /* Verde institucional */
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.titulo-degradado {
+  background: linear-gradient(to right, #00B2FF, #000B57); /* Celeste a azul oscuro */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.form-line-input {
+  border: none;
+  border-bottom: 2px solid #A0DAF8; /* Celeste claro */
+  outline: none;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 15px;
+  background-color: transparent;
+  color: #22306D;
+  transition: border-color 0.3s;
+}
+
+.form-line-input:focus {
+  border-bottom-color: #00B2FF; /* Celeste más fuerte */
+}
+
+.btn-enviar {
+  background: linear-gradient(to right, #00B2FF, #002E86); /* Celeste a azul oscuro */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  width: 100%; /* O quítalo si prefieres que se ajuste al texto */
+}
+
+.btn-enviar:hover {
+  opacity: 0.9;
+}

@@ -16,6 +16,7 @@ export class ReferidosComponent {
 
   public imprime="assets/referidos/imprime_futuro.webp";
   public logo="assets/referidos/ciaf.webp";
+   public banner_r="assets/referidos/banner_r.webp";
 
   constructor(private conectarApiService:ConectarApiService,private formBuilder: FormBuilder) {
     this.buildForm();
