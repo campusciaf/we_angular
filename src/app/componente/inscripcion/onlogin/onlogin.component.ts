@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 

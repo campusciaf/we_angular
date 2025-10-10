@@ -1,25 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '@/environments/environment';
 import { Observable } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConectarApiService {
 
-// produccion//
-API: string='https://ciaf.edu.co/api_rest';
+  API: string = '';
+  autorizacion: string = '';
 
-//local//
-
-
-//API: string='http://localhost/api_rest';
-autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
-
-
-  constructor(private clienteHttp:HttpClient) { }
-
+  constructor(private clienteHttp:HttpClient) {
+    this.API = environment.base_url;
+    this.autorizacion = 'KFTDQFYvqbPLXkHTuXQJR4Qy3vUryK';
+  }
 
   obtenerBlog(){
     const headers = new HttpHeaders({'Autorizacion': this.autorizacion});

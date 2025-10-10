@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cliente } from 'src/app/clases/cliente';
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 

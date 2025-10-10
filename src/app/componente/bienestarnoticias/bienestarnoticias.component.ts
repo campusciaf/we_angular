@@ -1,5 +1,5 @@
   import { Component, OnInit, ViewChild } from '@angular/core';
-  import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+  import { ConectarApiService } from '@/app/core/services/conectar-api.service';
   import { SlickCarouselComponent } from 'ngx-slick-carousel';
   import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
   import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginGuard } from './guards/login.guards';
+import { LoginGuard } from './core/guards/login.guards';
 
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { AdministracionComponent } from './componente/administracion/administracion.component';
@@ -37,10 +37,6 @@ import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.compo
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
-
-
-
-
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -86,14 +82,8 @@ const routes: Routes = [
   {path: 'permanencia', component:PermanenciaComponent},
 
   /* **** landing pages **** */
-  {path: 'expo-u', component:ExpoUComponent},
-  {path: '**', component:PageNotFoundComponent},
-
- 
-
-  
-
-
+  {path: 'expo-u', component: ExpoUComponent},
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({

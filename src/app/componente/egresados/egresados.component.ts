@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { FormBuilder,FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 declare var jQuery:any;

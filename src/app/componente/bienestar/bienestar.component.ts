@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 
 declare var jQuery:any;
 declare var $:any;

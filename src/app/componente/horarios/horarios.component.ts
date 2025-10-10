@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import * as moment from 'moment';
 
 
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { Time } from '@angular/common';
 import { Timestamp } from 'rxjs';
