@@ -1,0 +1,163 @@
+<div class="row justify-content-center bg-img-1">
+  <div class="col-xl-8 mx-4 pt-4">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 p-4">
+        <h2 class="fs-48 lh-48 fw-bolder text-1 text-center">Formulario PQRSDF</h2>
+        <p class="text-center text-muted">
+          Diligencia este formulario para enviar tu petición, queja, reclamo, sugerencia, denuncia o felicitación.
+        </p>
+
+        <form class="mb-4 text-start" [formGroup]="pqrsdfForm" (ngSubmit)="onSubmit()">
+
+          <!-- Tipo de caso -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/user.webp" />
+              </span>
+              <div class="form-floating">
+                <select class="form-control border-start-0" formControlName="tipoCaso" required>
+                  <option value="" disabled selected>Selecciona el tipo de caso</option>
+                  <option value="Petición">Petición</option>
+                  <option value="Queja">Queja</option>
+                  <option value="Reclamo">Reclamo</option>
+                  <option value="Sugerencia">Sugerencia</option>
+                  <option value="Denuncia">Denuncia</option>
+                  <option value="Felicitación">Felicitación</option>
+                </select>
+                <label>Tipo de caso (PQRSDF)</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nombre completo -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/nombre.webp" />
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Nombre completo" type="text" formControlName="nombreCompleto" required>
+                <label>Nombre completo</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tipo de documento -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/user.webp" />
+              </span>
+              <div class="form-floating">
+                <select class="form-control border-start-0" formControlName="tipoDocumento" required>
+                  <option value="" disabled selected>Selecciona tipo de documento</option>
+                  <option value="CC">Cédula de ciudadanía</option>
+                  <option value="TI">Tarjeta de identidad</option>
+                  <option value="CE">Cédula de extranjería</option>
+                  <option value="Pasaporte">Pasaporte</option>
+                </select>
+                <label>Tipo de documento</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Número de documento -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/id.webp" />
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Número de documento" type="number" formControlName="numeroDocumento" required>
+                <label>Número de documento</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/movil.webp" />
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Teléfono" type="tel" formControlName="telefono" required>
+                <label>Teléfono</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Correo electrónico -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/correo.webp" />
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Correo electrónico" type="email" formControlName="correo" required>
+                <label>Correo electrónico</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asunto -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/ico-registro.webp" />
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Asunto" type="text" formControlName="asunto" required>
+                <label>Asunto</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Descripción -->
+          <div class="form-group mb-3">
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Descripción detallada" style="height: 150px" formControlName="descripcion" required></textarea>
+              <label>Descripción del caso</label>
+            </div>
+          </div>
+
+          <!-- Área -->
+          <div class="form-group mb-3 position-relative check-valid text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-1 border-0 text-white">
+                <img src="/assets/image/user.webp" />
+              </span>
+              <div class="form-floating">
+                <select class="form-control border-start-0" formControlName="area" required>
+                  <option value="" disabled selected>Selecciona el área</option>
+                  <option value="Plataforma">Plataforma</option>
+                  <option value="Financiera">Financiera</option>
+                  <option value="Académica">Académica</option>
+                </select>
+                <label>Área de destino</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Habeas data -->
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" formControlName="aceptoDatos" id="aceptoDatos">
+            <label class="custom-control-label" for="aceptoDatos" style="font-size: 13px"> Acepto los 
+                <strong>
+                    <a href="https://www.ciaf.edu.co/tratamiento_datos.php">términos y condiciones</a>
+                </strong> para el uso de mi información.
+            </label>
+          </div>
+
+          <!-- Botón -->
+          <div class="d-grid">
+            <button type="submit" class="btn btn-lg bg-1 text-white" [disabled]="!pqrsdfForm.valid">
+              Enviar formulario
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
