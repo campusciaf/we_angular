@@ -74,6 +74,7 @@ import { CifrasComponent } from './componente/cifras/cifras.component';
 import { PayComponent } from '@/app/features/pay/pay.component';
 import { OutstandingPaymentsComponent } from './features/pay/outstanding-payments/outstanding-payments.component';
 import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
+import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +126,7 @@ import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
     PayComponent,
     OutstandingPaymentsComponent,
     SafeHtmlPipe,
+    PqrsdfComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+.bg-img-1 {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.text-1 {
+  color: #004085;
+}
+
+.bg-1 {
+  background-color: #004085 !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(0, 64, 133, 0.5);
+  border-color: #004085;
+}
+
+button:disabled {
+  background-color: #ccc !important;
+  border-color: #ccc !important;
+}
+
+.form-check-label a {
+  color: #004085;
+  text-decoration: none;
+}
+.form-check-label a:hover {
+  text-decoration: underline;
+}

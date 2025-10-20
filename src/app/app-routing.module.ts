@@ -39,6 +39,7 @@ import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.compo
 import { ReferidosComponent } from './componente/referidos/referidos.component';
 import { PayComponent } from '@/app/features/pay/pay.component';
 import { OutstandingPaymentsComponent } from '@/app/features/pay/outstanding-payments/outstanding-payments.component';
+import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
@@ -86,6 +87,8 @@ const routes: Routes = [
 
   {path: 'pago-online', component: PayComponent},
   {path: 'pagos-pendientes', component: OutstandingPaymentsComponent},
+
+  {path: 'pqrsdf', component: PqrsdfComponent},
 
   /* **** landing pages **** */
   {path: 'expo-u', component: ExpoUComponent},
