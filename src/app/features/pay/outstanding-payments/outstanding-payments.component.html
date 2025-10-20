@@ -1,0 +1,176 @@
+<div class="container-fluid py-5 px-5">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <h2 class="fw-semibold text-dark">Cuota actual</h2>
+    </div>
+  </div>
+
+  <div class="row g-4 px-2">
+    <div *ngFor="let it of installments" class="col-12 col-md-6 col-lg-4">
+      <div
+        class="card border-0 h-100"
+        style="
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+          border-radius: 1rem;
+          min-height: 280px;
+          padding: 1rem;
+          background-color: #f8f9fa;
+        "
+      >
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <p class="text-secondary mb-1 fs-6">
+              Financiación matrícula&nbsp;<strong>#{{ it.id_credito }}</strong>
+            </p>
+
+            <h2
+              class="fw-bold mb-3"
+              style="color: #001550; font-size: 2rem; letter-spacing: -0.5px;"
+            >
+              $&nbsp;{{ it.valor_formato }}
+            </h2>
+
+            <p class="text-dark mb-4">
+              <span class="fw-semibold">Fecha límite de pago:&nbsp;</span>
+              <span class="text-primary">{{ it.fecha_limite_pago }}</span>
+            </p>
+          </div>
+
+          <button
+            class="btn btn-lg bg-1 text-white w-100 fw-semibold py-2"
+            style="
+              font-size: 1.1rem;
+              border-radius: 0.6rem;
+              transition: all 0.3s ease;
+            "
+            (click)="openPaymentPanel(it)"
+            onmouseover="this.style.backgroundColor='#4a0072'"
+            onmouseout="this.style.backgroundColor='#6a1b9a'"
+          >
+            Pagar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!installments.length" class="col-12 text-center py-5">
+      <p class="text-muted fs-5">No tienes cuotas pendientes por pagar.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Drawer lateral para generar el pago -->
+<div
+  class="offcanvas offcanvas-end shadow"
+  tabindex="-1"
+  id="paymentPanel"
+  aria-labelledby="offcanvasLabel"
+>
+  <div class="offcanvas-header bg-purple text-white">
+    <h5
+      id="offcanvasLabel"
+      class="mb-0 fw-bold"
+      style="color: #001550; font-size: 1.15rem; letter-spacing: -0.3px;"
+    >
+      {{ step === 1 ? 'Selecciona el monto a pagar' : 'Selecciona el método de pago' }}
+    </h5>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body" style="font-size: 1rem;">
+    <!-- Paso 1: Selección de monto -->
+    <div *ngIf="step === 1">
+      <p class="fw-semibold text-dark mb-4 fs-5">
+        Financiación <span class="text-primary">#{{ selected?.id_credito }}</span>
+      </p>
+
+      <div class="mb-4">
+        <label class="fw-bold mb-3 text-dark fs-6">Seleccionar monto:</label>
+
+        <div
+          *ngFor="let option of paymentOptions"
+          class="d-flex align-items-center justify-content-between mb-3 p-2 rounded"
+          style="background-color: #f9f9fb;"
+        >
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="amountOption"
+              [value]="option.id"
+              [(ngModel)]="selectedOption"
+              id="option-{{ option.id }}"
+            />
+            <label
+              class="form-check-label fw-medium"
+              for="option-{{ option.id }}"
+              style="font-size: 1rem;"
+            >
+              {{ option.label }}
+            </label>
+          </div>
+
+          <ng-container *ngIf="option.amount && option.id !== 'pago_parcial'">
+            <span class="fw-bold text-secondary fs-6">
+              {{ option.amount | currency:'COP':'symbol':'1.0-0' }}
+            </span>
+          </ng-container>
+
+          <input
+            *ngIf="option.id === 'pago_parcial'"
+            type="number"
+            class="form-control w-50"
+            placeholder="Ingresa el valor"
+            [(ngModel)]="customAmount"
+            [disabled]="selectedOption !== 'pago_parcial'"
+            style="font-size: 0.95rem;"
+          />
+        </div>
+      </div>
+
+      <div class="text-end">
+        <button
+          class="btn btn-lg bg-1 text-white fw-semibold px-4"
+          style="font-size: 1.05rem;"
+          (click)="goToPaymentMethods()"
+          [disabled]="!selectedOption || (selectedOption === 'pago_parcial' && !customAmount)"
+        >
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <!-- Paso 2: Selección de método de pago -->
+    <div *ngIf="step === 2">
+      <p class="fw-semibold text-dark mb-4 fs-5">
+        Total a pagar:
+        <span class="text-primary fw-bold">
+          $&nbsp;{{ computedAmount | currency:'COP':'symbol':'1.0-0' }}
+        </span>
+      </p>
+
+      <div class="text-end mt-4">
+        <button
+          class="btn btn-lg bg-1 text-white fw-semibold px-4"
+          style="font-size: 1.05rem;"
+          (click)="confirmPayment()"
+          [disabled]="!selectedMethod"
+        >
+          Continuar con el pago
+        </button>
+      </div>
+
+      <div class="mt-4 col-12" *ngIf="paymentFormHtml">
+        <h6 class="fw-semibold mb-3 text-dark">Finaliza tu pago:</h6>
+        <div id="epayco-container col-12 row" [innerHTML]="paymentFormHtml"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, Inject, Renderer2 } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
 

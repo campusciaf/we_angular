@@ -23,7 +23,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 /* ************************ */
 
-
+/* import del store */
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './state/user.reducer';
 
 import { CalidadycrecimientoComponent } from './componente/calidadycrecimiento/calidadycrecimiento.component';
 import { InicioComponent } from './componente/inicio/inicio.component';
@@ -69,14 +71,9 @@ import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondas
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
 import { CifrasComponent } from './componente/cifras/cifras.component';
-
-
-
-
-
-
-
-
+import { PayComponent } from '@/app/features/pay/pay.component';
+import { OutstandingPaymentsComponent } from './features/pay/outstanding-payments/outstanding-payments.component';
+import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
 
 @NgModule({
   declarations: [
@@ -125,10 +122,9 @@ import { CifrasComponent } from './componente/cifras/cifras.component';
     ReferidosComponent,
     EgresadosdataComponent,
     CifrasComponent,
-   
-
-
-
+    PayComponent,
+    OutstandingPaymentsComponent,
+    SafeHtmlPipe,
   ],
   imports: [
     BrowserModule,
@@ -139,13 +135,7 @@ import { CifrasComponent } from './componente/cifras/cifras.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgMultiSelectDropDownModule.forRoot(),
-    
-   
-    
-
-    
- 
-
+    StoreModule.forRoot({ user: userReducer }),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' } /*idioma del proyecto */

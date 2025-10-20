@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConectarApiService } from 'src/app/servicios/conectar-api.service';
+import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 declare var jQuery:any;

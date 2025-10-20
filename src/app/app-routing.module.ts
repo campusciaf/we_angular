@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginGuard } from './guards/login.guards';
+import { LoginGuard } from './core/guards/login.guards';
 
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { AdministracionComponent } from './componente/administracion/administracion.component';
@@ -37,13 +37,12 @@ import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.compo
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
-
-
-
-
+import { PayComponent } from '@/app/features/pay/pay.component';
+import { OutstandingPaymentsComponent } from '@/app/features/pay/outstanding-payments/outstanding-payments.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio' , pathMatch:'full'},
+
   {path: 'inicio', component:InicioComponent},
   {path: 'administracion', component:AdministracionComponent},
   {path: 'software', component:IngSoftwareComponent},
@@ -85,15 +84,12 @@ const routes: Routes = [
   {path: 'horarios', component:HorariosComponent},
   {path: 'permanencia', component:PermanenciaComponent},
 
+  {path: 'pago-online', component: PayComponent},
+  {path: 'pagos-pendientes', component: OutstandingPaymentsComponent},
+
   /* **** landing pages **** */
-  {path: 'expo-u', component:ExpoUComponent},
-  {path: '**', component:PageNotFoundComponent},
-
- 
-
-  
-
-
+  {path: 'expo-u', component: ExpoUComponent},
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
