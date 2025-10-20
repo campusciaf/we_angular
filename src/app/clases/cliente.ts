@@ -4,9 +4,5 @@ export class cliente{
         public correo:string,
         public celular:string,
         public fo_programa:string,
-    ){
-
-    }
-        
-    
+    ) { }
 }

@@ -1,0 +1,104 @@
+
+
+<div class="row justify-content-center bg-img-1">
+  <div class="col-xl-8 mx-4 pt-4">
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-10 mt-4 pt-4">
+        <div class="row">
+          <div class="col-xl-10 col-12">
+            <h2 class="fs-48 lh-48 fw-bolder text-1">Pago de matrícula CIAF</h2>
+          </div>
+          <div class="col-xl-8 col-12">
+            <p class="bg-1 text-white p-4 rounded-pill">
+              Ingresa tus datos para realizar el pago del semestre.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-6 p-4">
+        <form class="mb-4 text-start" [formGroup]="myForm" (ngSubmit)="registro()">
+
+          <div class="form-group mb-3 position-relative text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text text-theme bg-1 border-0">
+                <img src="/assets/image/user.webp" />
+              </span>
+              <div class="form-floating">
+                <input
+                  class="form-control border-start-0"
+                  placeholder="Identificación"
+                  type="text"
+                  name="user_identificacion"
+                  formControlName="user_identificacion"
+                  required
+                />
+                <label for="user_identificacion">Número de identificación</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 py-2">
+            <div *ngFor="let validation of account_validation_messages.user_identificacion">
+              <div
+                class="error-message"
+                *ngIf="
+                  myForm.get('user_identificacion')?.hasError(validation.type) &&
+                  (myForm.get('user_identificacion')?.dirty ||
+                    myForm.get('user_identificacion')?.touched)
+                "
+              >
+                {{ validation.message }}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mb-3 position-relative text-dark">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text text-theme bg-1 border-0">
+                <img src="/assets/image/id.webp" />
+              </span>
+              <div class="form-floating">
+                <input
+                  class="form-control border-start-0"
+                  placeholder="Credencial estudiante"
+                  type="text"
+                  name="user_credencial"
+                  formControlName="user_credencial"
+                  required
+                />
+                <label for="user_credencial">Ping ciaf</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 py-2">
+            <div *ngFor="let validation of account_validation_messages.user_credencial">
+              <div
+                class="error-message"
+                *ngIf="
+                  myForm.get('user_credencial')?.hasError(validation.type) &&
+                  (myForm.get('user_credencial')?.dirty ||
+                    myForm.get('user_credencial')?.touched)
+                "
+              >
+                {{ validation.message }}
+              </div>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button
+              type="submit"
+              id="btn_pagar"
+              class="btn btn-lg bg-1 text-white"
+              [disabled]="!myForm.valid"
+            >
+              Realizar Pago
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

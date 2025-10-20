@@ -1,0 +1,29 @@
+.card {
+  border-radius: 0.75rem;
+  background-color: #faf8fb;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #2e3a59;
+}
+
+.btn {
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+
+form {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  margin: 1%;
+}
