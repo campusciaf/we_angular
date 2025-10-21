@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Offcanvas } from 'bootstrap';
 import { Store } from '@ngrx/store';
@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { UserState } from '@/app/state/user.reducer';
 import { Installment } from '@/app/clases/payment';
 import { PayService } from '@/app/core/services/pay.service';
+import { DOCUMENT } from '@angular/common';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -48,7 +49,10 @@ export class OutstandingPaymentsComponent {
     private store: Store<{ user: UserState }>,
     private svc: PayService,
     private router: Router,
+    private renderer: Renderer2,
+    private renderere: Renderer2,
     private sanitizer: DomSanitizer,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.loadAll();
   }
@@ -105,41 +109,6 @@ export class OutstandingPaymentsComponent {
         ? this.paymentOptions.find(opt => opt.id === 'pago_total')?.amount
         : this.customAmount || 0;
 
-    var data = {
-      //Parametros compra (obligatorio)
-      name: "Vestido Mujer Primavera",
-      description: "Vestido Mujer Primavera",
-      invoice: "FAC-1234",
-      currency: "cop",
-      amount: "5000",
-      tax_base: "4000",
-      tax: "500",
-      tax_ico: "500",
-      country: "co",
-      lang: "en",
-
-      //Onpage="false" - Standard="true"
-      external: "true",
-
-      //Atributos opcionales
-      extra1: "extra1",
-      extra2: "extra2",
-      extra3: "extra3",
-      confirmation: "http://secure2.payco.co/prueba_curl.php",
-      response: "http://secure2.payco.co/prueba_curl.php",
-
-      //Atributos cliente
-      name_billing: "Jhon Doe",
-      address_billing: "Carrera 19 numero 14 91",
-      type_doc_billing: "cc",
-      mobilephone_billing: "3050000000",
-      number_doc_billing: "100000000",
-      email_billing: "jhondoe@epayco.com",
-
-      //atributo deshabilitación método de pago
-      methodsDisable: ["TDC", "PSE","SP","CASH","DP"]
-    };
-      
     const payload = {
       tipo_pago: this.selectedOption || 'pago_total',
       consecutivo_pago: this.selected?.id_credito,
@@ -147,8 +116,8 @@ export class OutstandingPaymentsComponent {
       input_pagar_total: this.computedAmount,
       otro_valor: this.customAmount,
       input_pagar_minimo: this.computedAmount,
-      prefijo: 'CI',
-      tipoDocumento: 'CC',
+      prefijo: this.selected.prefijo,
+      tipoDocumento: this.selected.tipoDocumento,
       motivo: this.selected.motivo,
       input_mora: this.selected.total_interes,
     };
@@ -156,8 +125,90 @@ export class OutstandingPaymentsComponent {
     this.svc.createPayment(payload).subscribe({
       next: async (res) => {
         if (res.success === true) {
-         await this.setPaymentHtml(res.html);
-         this.ejecutarScripts();
+
+          /**
+           * Pago en Efectivo
+           * */
+          const efectivo = res.efectivo;
+
+          const script = this.renderere.createElement('script');
+          script.src = 'https://checkout.epayco.co/checkout.js';
+
+          // Agregamos los atributos necesarios para ePayco
+          script.setAttribute('data-epayco-key', '8b4e82b040c208b31bc5be3f33830392');
+          script.setAttribute('data-epayco-amount', efectivo.amount.toString());
+          script.setAttribute('data-epayco-tax', '0');
+          script.setAttribute('data-epayco-tax-base', efectivo.tax_base);
+          script.setAttribute('data-epayco-name', efectivo.name.toString());
+          script.setAttribute('data-epayco-description', 'inscripcion');
+          script.setAttribute('data-epayco-extra1', efectivo.extra1.toString());
+          script.setAttribute('data-epayco-extra2', efectivo.extra2.toString());
+          script.setAttribute('data-epayco-extra3', efectivo.extra3.toString());
+          script.setAttribute('data-epayco-extra4', efectivo.extra4.toString());
+          script.setAttribute('data-epayco-extra5', efectivo.extra5.toString());
+          script.setAttribute('data-epayco-extra6', '');
+          script.setAttribute('data-epayco-extra7', '');
+          script.setAttribute('data-epayco-extra8', '');
+          script.setAttribute('data-epayco-extra9', '');
+          script.setAttribute('data-epayco-currency', 'cop');
+          script.setAttribute('data-epayco-country', 'CO');
+          script.setAttribute('data-epayco-test', 'true');
+          script.setAttribute('data-epayco-external', 'false');
+          script.setAttribute('data-epayco-response', 'https://ciaf.edu.co/ondashboard');
+          script.setAttribute('data-epayco-confirmation', 'https://ciaf.edu.co/ondashboard');
+          script.setAttribute('data-epayco-button', 'https://ciaf.digital/public/img/pago-efectivo.webp');
+
+          script.className = 'epayco-button';
+
+          const container = this.document.getElementById('payment-container-i-e');
+          if (container) {
+            this.renderer.appendChild(container, script);
+
+            console.log('Script de ePayco agregado al contenedor #payment-container-i-e.');
+          } else {
+            console.error('No se encontró el contenedor #payment-container-i-e.');
+          }
+
+          /**
+           * Pago PSE y Tarjeta
+           * */
+          const pse = res.pse;
+          
+          const scriptPse = this.renderer.createElement('script');
+          scriptPse.src = 'https://checkout.epayco.co/checkout.js';
+
+          // Agregamos los atributos necesarios para ePayco
+          scriptPse.setAttribute('data-epayco-key', 'd4b482f39f386634f5c50ba7076eecff');
+          scriptPse.setAttribute('data-epayco-amount', pse.amount.toString());
+          scriptPse.setAttribute('data-epayco-tax', '0');
+          scriptPse.setAttribute('data-epayco-tax-base', pse.tax_base.toString());
+          scriptPse.setAttribute('data-epayco-name', pse.name.toString());
+          scriptPse.setAttribute('data-epayco-description', 'inscripcion');
+          scriptPse.setAttribute('data-epayco-extra1', pse.extra1.toString());
+          scriptPse.setAttribute('data-epayco-extra2', pse.extra2.toString());
+          scriptPse.setAttribute('data-epayco-extra3', pse.extra3.toString());
+          scriptPse.setAttribute('data-epayco-extra4', pse.extra4.toString());
+          scriptPse.setAttribute('data-epayco-extra5', pse.extra5.toString());
+          scriptPse.setAttribute('data-epayco-extra6', pse.extra6.toString());
+          scriptPse.setAttribute('data-epayco-extra7', pse.extra7.toString());
+          scriptPse.setAttribute('data-epayco-extra8', pse.extra8.toString());
+          scriptPse.setAttribute('data-epayco-extra9', pse.extra9.toString());
+          scriptPse.setAttribute('data-epayco-currency', 'cop');
+          scriptPse.setAttribute('data-epayco-country', 'CO');
+          scriptPse.setAttribute('data-epayco-test', 'true');
+          scriptPse.setAttribute('data-epayco-external', 'false');
+          scriptPse.setAttribute('data-epayco-response', 'https://ciaf.edu.co/ondashboard');
+          scriptPse.setAttribute('data-epayco-confirmation', 'https://ciaf.edu.co/ondashboard');
+          scriptPse.setAttribute('data-epayco-button', 'https://ciaf.digital/public/img/pagos-pse.webp');
+
+          scriptPse.className = 'epayco-button';
+
+          const containerPse = this.document.getElementById('payment-container-i');
+          if (containerPse) {
+            this.renderer.appendChild(containerPse, scriptPse);
+          } else {
+            console.error('No se encontró el contenedor #payment-container-i.');
+          }
         } else {
           alertify.error(res.message || 'Error generando pago');
         }
@@ -166,45 +217,5 @@ export class OutstandingPaymentsComponent {
     });
 
     this.step = 2;
-  }
-
-  paymentFormHtml: SafeHtml | null = null;
-
-  setPaymentHtml(html: string) {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = html;
-
-    const forms = Array.from(tempDiv.querySelectorAll('form'));
-    const scripts = Array.from(tempDiv.querySelectorAll('script'));
-
-    const combinedHtml = forms.map(f => f.outerHTML).join('');
-
-    this.paymentFormHtml = this.sanitizer.bypassSecurityTrustHtml(combinedHtml);
-
-    document.querySelectorAll('script[src*="checkout.epayco.co"]').forEach(s => s.remove());
-
-    setTimeout(() => {
-      scripts.forEach(script => {
-        const newScript = document.createElement('script');
-        Array.from(script.attributes).forEach(attr => {
-          newScript.setAttribute(attr.name, attr.value);
-        });
-        document.body.appendChild(newScript);
-      });
-    }, 300);
-  }
-
-
-  confirmPayment() {
-    console.log('Pago confirmado con método:', this.selectedMethod);
-    alertify.success(`Pago de ${this.computedAmount} con ${this.selectedMethod}`);
-  }
-
-  ejecutarScripts() {
-    const script = document.createElement('script');
-
-    script.src = 'https://checkout.epayco.co/checkout.js';
-    script.async = true;
-    document.body.appendChild(script);
   }
 }

@@ -342,7 +342,7 @@ export class OndashboardComponent {
     script.className = 'epayco-button';
 
 
-    if(this.matricula==1){// si no ha realizado pago
+    if (this.matricula==1) { // si no ha realizado pago
       // Buscamos el contenedor con id 'payment-container'
       const container = this.document.getElementById('payment-container-i-e');
       if (container) {
@@ -352,9 +352,7 @@ export class OndashboardComponent {
       } else {
         console.error('No se encontró el contenedor #payment-container-i-e.');
       } 
-  }
-
-
+    }
   }
 
   crearRegistro(data: any): void {
