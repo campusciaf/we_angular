@@ -155,20 +155,14 @@
         </span>
       </p>
 
-      <div class="text-end mt-4">
-        <button
-          class="btn btn-lg bg-1 text-white fw-semibold px-4"
-          style="font-size: 1.05rem;"
-          (click)="confirmPayment()"
-          [disabled]="!selectedMethod"
-        >
-          Continuar con el pago
-        </button>
-      </div>
-
-      <div class="mt-4 col-12" *ngIf="paymentFormHtml">
+      <div class="mt-4 col-12">
         <h6 class="fw-semibold mb-3 text-dark">Finaliza tu pago:</h6>
-        <div id="epayco-container col-12 row" [innerHTML]="paymentFormHtml"></div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-auto" id="payment-container-i-e"></div>
+            <div class="col-auto" id="payment-container-i"></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -12,7 +12,8 @@ export interface Installment {
 export interface PaymentCreationResponse {
   transaction_id: string;
   payment_url: string;
-  html: string;
+  efectivo: any;
+  pse: any;
   message: string;
   success: boolean;
 }
