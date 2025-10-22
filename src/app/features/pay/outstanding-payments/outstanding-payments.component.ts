@@ -183,7 +183,7 @@ export class OutstandingPaymentsComponent {
           scriptPse.setAttribute('data-epayco-tax', '0');
           scriptPse.setAttribute('data-epayco-tax-base', pse.tax_base.toString());
           scriptPse.setAttribute('data-epayco-name', pse.name.toString());
-          scriptPse.setAttribute('data-epayco-description', 'inscripcion');
+          scriptPse.setAttribute('data-epayco-description', pse.description.toString());
           scriptPse.setAttribute('data-epayco-extra1', pse.extra1.toString());
           scriptPse.setAttribute('data-epayco-extra2', pse.extra2.toString());
           scriptPse.setAttribute('data-epayco-extra3', pse.extra3.toString());
