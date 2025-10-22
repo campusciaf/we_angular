@@ -140,7 +140,7 @@ export class OutstandingPaymentsComponent {
           script.setAttribute('data-epayco-tax', '0');
           script.setAttribute('data-epayco-tax-base', efectivo.tax_base);
           script.setAttribute('data-epayco-name', efectivo.name.toString());
-          script.setAttribute('data-epayco-description', 'inscripcion');
+          script.setAttribute('data-epayco-description', efectivo.description.toString());
           script.setAttribute('data-epayco-extra1', efectivo.extra1.toString());
           script.setAttribute('data-epayco-extra2', efectivo.extra2.toString());
           script.setAttribute('data-epayco-extra3', efectivo.extra3.toString());
