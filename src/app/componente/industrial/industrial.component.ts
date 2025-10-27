@@ -91,6 +91,7 @@ export class IndustrialComponent implements OnInit {
     {semestre:5,materia:'Costos industriales'},
     {semestre:5,materia:'Proceso de talento humano'},
   
+    {semestre:6,materia:'Calculo integral'},
     {semestre:6,materia:'Métodos de investigación'},
     {semestre:6,materia:'Control estadístico de calidad'},
     {semestre:6,materia:'Física I y Lab'},
@@ -110,7 +111,6 @@ export class IndustrialComponent implements OnInit {
     {semestre:7,materia:'Física II y Lab'},
 
     
-    {semestre:8,materia:'Calculo integral'},
     {semestre:8,materia:'Investigación de operaciones II'},
     {semestre:8,materia:'Química y laboratorio'},
     {semestre:8,materia:'Termodinámica'},
