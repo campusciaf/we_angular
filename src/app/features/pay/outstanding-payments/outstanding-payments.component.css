@@ -38,3 +38,19 @@ header .icono img{
 .custom-file-upload:hover {
   background-color: #212529;
 }
+
+.payment-buttons .epayco-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: none;
+  margin-right: 10px;
+}
+.payment-buttons .epayco-button img {
+  border-radius: 8px;
+  width: 150px;
+  transition: transform 0.2s ease;
+}
+.payment-buttons .epayco-button img:hover {
+  transform: scale(1.05);
+}

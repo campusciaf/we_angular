@@ -126,89 +126,81 @@ export class OutstandingPaymentsComponent {
       next: async (res) => {
         if (res.success === true) {
 
-          /**
-           * Pago en Efectivo
-           * */
-          const efectivo = res.efectivo;
-
-          const script = this.renderere.createElement('script');
-          script.src = 'https://checkout.epayco.co/checkout.js';
-
-          // Agregamos los atributos necesarios para ePayco
-          script.setAttribute('data-epayco-key', '8b4e82b040c208b31bc5be3f33830392');
-          script.setAttribute('data-epayco-amount', efectivo.amount.toString());
-          script.setAttribute('data-epayco-tax', '0');
-          script.setAttribute('data-epayco-tax-base', efectivo.tax_base);
-          script.setAttribute('data-epayco-name', efectivo.name.toString());
-          script.setAttribute('data-epayco-description', efectivo.description.toString());
-          script.setAttribute('data-epayco-extra1', efectivo.extra1.toString());
-          script.setAttribute('data-epayco-extra2', efectivo.extra2.toString());
-          script.setAttribute('data-epayco-extra3', efectivo.extra3.toString());
-          script.setAttribute('data-epayco-extra4', efectivo.extra4.toString());
-          script.setAttribute('data-epayco-extra5', efectivo.extra5.toString());
-          script.setAttribute('data-epayco-extra6', '');
-          script.setAttribute('data-epayco-extra7', '');
-          script.setAttribute('data-epayco-extra8', '');
-          script.setAttribute('data-epayco-extra9', '');
-          script.setAttribute('data-epayco-currency', 'cop');
-          script.setAttribute('data-epayco-country', 'CO');
-          script.setAttribute('data-epayco-test', 'false');
-          script.setAttribute('data-epayco-external', 'false');
-          script.setAttribute('data-epayco-response', 'https://ciaf.edu.co/ondashboard');
-          script.setAttribute('data-epayco-confirmation', 'https://ciaf.edu.co/ondashboard');
-          script.setAttribute('data-epayco-button', 'https://ciaf.digital/public/img/pago-efectivo.webp');
-
-          script.className = 'epayco-button';
-
-          const container = this.document.getElementById('payment-container-i-e');
-          if (container) {
-            this.renderer.appendChild(container, script);
-
-            console.log('Script de ePayco agregado al contenedor #payment-container-i-e.');
-          } else {
-            console.error('No se encontró el contenedor #payment-container-i-e.');
+          const existing = document.querySelector('script[src="https://checkout.epayco.co/checkout.js"]');
+          if (!existing) {
+            const script = this.renderer.createElement('script');
+            script.src = 'https://checkout.epayco.co/checkout.js';
+            script.async = true;
+            this.renderer.appendChild(this.document.body, script);
           }
 
-          /**
-           * Pago PSE y Tarjeta
-           * */
+          const efectivo = res.efectivo;
+          const containerEf = this.document.getElementById('payment-container-i-e');
+          if (containerEf) {
+            containerEf.innerHTML = `
+              <button id="btn-efectivo" style="background:none;border:none;cursor:pointer;">
+                <img src="https://ciaf.digital/public/img/pago-efectivo.webp" width="90">
+              </button>
+            `;
+          }
+
           const pse = res.pse;
-          
-          const scriptPse = this.renderer.createElement('script');
-          scriptPse.src = 'https://checkout.epayco.co/checkout.js';
-
-          // Agregamos los atributos necesarios para ePayco
-          scriptPse.setAttribute('data-epayco-key', 'd4b482f39f386634f5c50ba7076eecff');
-          scriptPse.setAttribute('data-epayco-amount', pse.amount.toString());
-          scriptPse.setAttribute('data-epayco-tax', '0');
-          scriptPse.setAttribute('data-epayco-tax-base', pse.tax_base.toString());
-          scriptPse.setAttribute('data-epayco-name', pse.name.toString());
-          scriptPse.setAttribute('data-epayco-description', pse.description.toString());
-          scriptPse.setAttribute('data-epayco-extra1', pse.extra1.toString());
-          scriptPse.setAttribute('data-epayco-extra2', pse.extra2.toString());
-          scriptPse.setAttribute('data-epayco-extra3', pse.extra3.toString());
-          scriptPse.setAttribute('data-epayco-extra4', pse.extra4.toString());
-          scriptPse.setAttribute('data-epayco-extra5', pse.extra5.toString());
-          scriptPse.setAttribute('data-epayco-extra6', pse.extra6.toString());
-          scriptPse.setAttribute('data-epayco-extra7', pse.extra7.toString());
-          scriptPse.setAttribute('data-epayco-extra8', pse.extra8.toString());
-          scriptPse.setAttribute('data-epayco-extra9', pse.extra9.toString());
-          scriptPse.setAttribute('data-epayco-currency', 'cop');
-          scriptPse.setAttribute('data-epayco-country', 'CO');
-          scriptPse.setAttribute('data-epayco-test', 'false');
-          scriptPse.setAttribute('data-epayco-external', 'false');
-          scriptPse.setAttribute('data-epayco-response', 'https://ciaf.edu.co/ondashboard');
-          scriptPse.setAttribute('data-epayco-confirmation', 'https://ciaf.edu.co/ondashboard');
-          scriptPse.setAttribute('data-epayco-button', 'https://ciaf.digital/public/img/pagos-pse.webp');
-
-          scriptPse.className = 'epayco-button';
-
           const containerPse = this.document.getElementById('payment-container-i');
           if (containerPse) {
-            this.renderer.appendChild(containerPse, scriptPse);
-          } else {
-            console.error('No se encontró el contenedor #payment-container-i.');
+            containerPse.innerHTML = `
+              <button id="btn-pse" style="background:none;border:none;cursor:pointer;">
+                <img src="https://ciaf.digital/public/img/pagos-pse.webp" width="90">
+              </button>
+            `;
           }
+
+          setTimeout(() => {
+            const handlerEf = (window as any).ePayco.checkout.configure({
+              key: '8b4e82b040c208b31bc5be3f33830392',
+              test: false,
+            });
+
+            const handlerPse = (window as any).ePayco.checkout.configure({
+              key: 'd4b482f39f386634f5c50ba7076eecff',
+              test: false,
+            });
+
+            document.getElementById('btn-efectivo')?.addEventListener('click', () => {
+              handlerEf.open({
+                amount: efectivo.amount,
+                name: efectivo.name,
+                description: efectivo.description,
+                currency: 'cop',
+                country: 'CO',
+                external: false,
+                tax: 0,
+                tax_base: efectivo.tax_base,
+                extra1: efectivo.extra1,
+                extra2: efectivo.extra2,
+                extra3: efectivo.extra3,
+                response: 'https://ciaf.edu.co/ondashboard',
+                confirmation: 'https://ciaf.edu.co/ondashboard',
+              });
+            });
+
+            document.getElementById('btn-pse')?.addEventListener('click', () => {
+              handlerPse.open({
+                amount: pse.amount,
+                name: pse.name,
+                description: pse.description,
+                currency: 'cop',
+                country: 'CO',
+                external: false,
+                tax: 0,
+                tax_base: pse.tax_base,
+                extra1: pse.extra1,
+                extra2: pse.extra2,
+                extra3: pse.extra3,
+                response: 'https://ciaf.edu.co/ondashboard',
+                confirmation: 'https://ciaf.edu.co/ondashboard',
+              });
+            });
+          }, 800);
         } else {
           alertify.error(res.message || 'Error generando pago');
         }
