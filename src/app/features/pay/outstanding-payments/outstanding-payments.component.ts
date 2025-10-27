@@ -152,7 +152,7 @@ export class OutstandingPaymentsComponent {
           script.setAttribute('data-epayco-extra9', '');
           script.setAttribute('data-epayco-currency', 'cop');
           script.setAttribute('data-epayco-country', 'CO');
-          script.setAttribute('data-epayco-test', 'true');
+          script.setAttribute('data-epayco-test', 'false');
           script.setAttribute('data-epayco-external', 'false');
           script.setAttribute('data-epayco-response', 'https://ciaf.edu.co/ondashboard');
           script.setAttribute('data-epayco-confirmation', 'https://ciaf.edu.co/ondashboard');
@@ -195,7 +195,7 @@ export class OutstandingPaymentsComponent {
           scriptPse.setAttribute('data-epayco-extra9', pse.extra9.toString());
           scriptPse.setAttribute('data-epayco-currency', 'cop');
           scriptPse.setAttribute('data-epayco-country', 'CO');
-          scriptPse.setAttribute('data-epayco-test', 'true');
+          scriptPse.setAttribute('data-epayco-test', 'false');
           scriptPse.setAttribute('data-epayco-external', 'false');
           scriptPse.setAttribute('data-epayco-response', 'https://ciaf.edu.co/ondashboard');
           scriptPse.setAttribute('data-epayco-confirmation', 'https://ciaf.edu.co/ondashboard');
