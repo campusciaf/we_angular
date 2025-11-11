@@ -17,7 +17,7 @@ export class InvestigacionesComponent {
   public investigacion_reconocimiento="assets/image/investigacion-reconocimiento.webp";
   public img_li="assets/image/img-li.webp";
   public img_li_ok="assets/image/img-li-ok.webp";
-  public inves_innova="assets/image/inves-innova.webp";
+  public inves_innova="assets/investigaciones/innovathon.webp";
   public investigacion_requisitos="assets/image/investigacion-requisitos.webp";
   public investigacion_semillero="assets/image/investigacion-semillero.webp";
   public investigacion_actividades="assets/image/investigacion-actividades.webp";
