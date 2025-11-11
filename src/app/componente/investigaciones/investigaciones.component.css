@@ -225,12 +225,80 @@
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-.m-menu {
-    display: block;
-    display: flex;
-    height: 55px;
-    overflow: hidden;
+  .m-menu {
+      display: block;
+      display: flex;
+      height: 55px;
+      overflow: hidden;
+  }
 }
 
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #0c2d6b;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 15px;
+  color: #001f54;
 
+  thead {
+    background-color: #1f3d7a; /* azul oscuro */
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+
+    th {
+      padding: 1rem;
+      text-align: center;
+      vertical-align: middle;
+    }
   }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #0c2d6b;
+      transition: background-color 0.3s;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: #f0f4ff;
+      }
+    }
+
+    td {
+      padding: 0.9rem;
+      text-align: left;
+      border-right: 1px solid #0c2d6b;
+      color: #001f54;
+      font-weight: 500;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    td[rowspan] {
+      vertical-align: middle;
+      font-weight: 700;
+      color: #0c2d6b;
+    }
+  }
+}
+
+/* Bordes redondeados globales */
+.custom-table th:first-child {
+  border-top-left-radius: 12px;
+}
+.custom-table th:last-child {
+  border-top-right-radius: 12px;
+}
+.custom-table tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+.custom-table tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}

@@ -34,119 +34,127 @@
 
 <div class="row menu bg-1 z-3 justify-content-center">
 
-    <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-7 py-2">
-        <nav class="nav navbar navbar-expand-lg navbar-dark bg-1 p-0 col-xl-12 col-lg-12 col-md-12 col-12">
-            <div class="navbar-brand p-0 m-0">
-                <span class="logo">
-                    <a  routerLink="/inicio" target="_top">
-                        <img [src]="img_logo" alt="Carreras profesionales">
-                    </a>
-                </span>
+    <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-7 py-2 menu-container">
+    <nav class="nav navbar navbar-expand-lg navbar-dark bg-1 p-0 col-xl-12 col-lg-12 col-md-12 col-12">
+        <div class="navbar-brand p-0 m-0">
+        <span class="logo">
+            <a routerLink="/inicio" target="_top">
+            <img [src]="img_logo" alt="Carreras profesionales">
+            </a>
+        </span>
+        </div>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label mt-2">
+        <span></span>
+        </label>
+
+        <ul class="navbar-menu m-auto fs-16 dropdown-responsive">
+        <li class="navbar-item submenu">
+            <a class="navbar-link">Carreras Universitarias</a>
+            <div class="dropdown">
+            <h3>Escuela de Ciencias administrativas</h3>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/administracion" routerLinkActive="active-link" target="_top">
+                Administración de Empresas
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/contaduria" routerLinkActive="active-link" target="_top">
+                Contaduría Pública
+                </a>
+            </li>
+            <hr class="py-0 my-0">
+            <h3>Escuela de Ingenierías</h3>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/software" routerLinkActive="active-link" target="_top">
+                Ingeniería de Desarrollo de Software
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/industrial" routerLinkActive="active-link" target="_top">
+                Ingeniería Industrial
+                </a>
+            </li>
+            <hr class="py-0 my-0">
+            <h3>Escuela de Salud</h3>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/sst" routerLinkActive="active-link" target="_top">
+                Seguridad y Salud en el Trabajo (SSTG)
+                </a>
+            </li>
             </div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle ">
-            <label for="nav-toggle" class="nav-toggle-label mt-2">
-                <span></span>
-            </label>
-            <ul class="navbar-menu m-auto fs-16">
-        
-                <li class="navbar-item submenu">
-                    <a  class="navbar-link">Carreras Universitarias</a>
-                    <div class="dropdown">
-                        <h3>Escuela de Ciencias administrativas</h3>
-                        <li class="dropdown-item">
-                            <a  class="dropdown-link" routerLink="/administracion"  routerLinkActive="active-link" target="_top">
-                                Administración de Empresas
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a class="dropdown-link" routerLink="/contaduria"  routerLinkActive="active-link" target="_top">
-                                Contaduría Pública
-                            </a>
-                        </li>
-                        <hr class="py-0 my-0">
-                        <h3>Escuela de Ingenierías</h3>
-                        <li class="dropdown-item">
-                            <a  class="dropdown-link" routerLink="/software"  routerLinkActive="active-link" target="_top">
-                                Ingeniería de Desarrollo de Software
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a class="dropdown-link" routerLink="/industrial"  routerLinkActive="active-link" target="_top">
-                                Ingeniería Industrial
-                            </a>
-                        </li>
-                        <hr class="py-0 my-0">
+        </li>
 
-                        <h3>Escuela de Salud</h3>
-                        <li class="dropdown-item">
-                            <a class="dropdown-link" routerLink="/sst"  routerLinkActive="active-link" target="_top">
-                                Seguridad y Salud en el Trabajo (SSTG)
-                            </a>
-                        </li>
-                    </div>
-                </li>
+        <li class="navbar-item submenu">
+            <a class="navbar-link">Carreras T. Laborales</a>
+            <div class="dropdown">
+            <h3>Escuela de Ingenierías</h3>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/motocicletas" routerLinkActive="active-link" target="_top">
+                Mecánica y Mantenimiento de Motocicletas
+                </a>
+            </li>
+            <hr class="py-0 my-0">
+            <h3>Escuela de Salud</h3>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/adultomayor" routerLinkActive="active-link" target="_top">
+                Atención al Adulto Mayor
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/veterinaria" routerLinkActive="active-link" target="_top">
+                Auxiliar de Veterinaria
+                </a>
+            </li>
+            </div>
+        </li>
 
-                <li class="navbar-item submenu">
+        <li class="navbar-item">
+            <a routerLink="/continuada" routerLinkActive="active-link" target="_top" class="navbar-link">Educación Continuada</a>
+        </li>
 
-                    <a  class="navbar-link">Carreras T. Laborales</a>
-                    <div class="dropdown">
-                        <h3>Escuela de Ingenierías</h3>
-                        
-                        <li class="dropdown-item">
-                            <a  class="dropdown-link" routerLink="/motocicletas"  routerLinkActive="active-link" target="_top">
-                                Mecánica y Mantenimiento de Motocicletas
-                            </a>
-                        </li>
-                        <hr class="py-0 my-0">
-                        <h3>Escuela de Salud</h3>
-                        <li class="dropdown-item d-none">
-                            <a  class="dropdown-link" routerLink="/enfermeria"  routerLinkActive="active-link" target="_top">
-                                Auxiliar Enfermería
-                            </a>
-                        </li>
-                        <li class="dropdown-item d-none">
-                            <a class="dropdown-link" routerLink="/administrativo"  routerLinkActive="active-link" target="_top">
-                                Auxiliar Administrativo en Salud
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a  class="dropdown-link" routerLink="/adultomayor"  routerLinkActive="active-link" target="_top">
-                                Atención al Adulto Mayor
-                            </a>
-                        </li>
+        <li class="navbar-item submenu">
+            <a class="navbar-link">Nuestra institución</a>
+            <div class="dropdown">
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/conocenos" routerLinkActive="active-link" target="_top">
+                    Quienes Somos
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/#" routerLinkActive="active-link" target="_top">
+                    Proyección social y Extensión
+                </a>
+            </li>
+            </div>
+        </li>
 
-                        <li class="dropdown-item">
-                            <a class="dropdown-link" routerLink="/veterinaria"  routerLinkActive="active-link" target="_top">
-                                Auxiliar de Veterinaria
-                            </a>
-                        </li>
-                    </div>
-                </li>
+        <li class="navbar-item pt-2">
+            <a routerLink="/bienestar" routerLinkActive="active-link" target="_top" class="navbar-link">Bienestar</a>
+        </li>
 
-                <li class="navbar-item">
-                    <a routerLink="/continuada" routerLinkActive="active-link" target="_top" class="navbar-link">Educación Continuada</a>
-                </li>
-                <li class="navbar-item">
-                    <a routerLink="/conocenos" routerLinkActive="active-link" target="_top" class="navbar-link">Quienes Somos</a>
-                </li>
-                <li class="navbar-item pt-2">
-                    <a routerLink="/bienestar" routerLinkActive="active-link" target="_top" class="navbar-link">Bienestar</a>
-                </li>
-                
-                <li class="navbar-item pt-2">
-                    <a href="https://crailab.com"  target="_top" class="navbar-link">CRAILAB</a>
-                </li>
-                <li class="navbar-item pt-2 ">
-                    <a routerLink="/blog" routerLinkActive="active-link" target="_top" class="navbar-link">Blog </a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a routerLink="/bienestar" routerLinkActive="active-link" target="_top" class="navbar-link">Experiencias de Bienestar</a>
-                </li> -->
-                
-               
-            
-            </ul>
-        </nav>
+        <li class="navbar-item submenu">
+            <a class="navbar-link">Investigaciones</a>
+            <div class="dropdown">
+            <li class="dropdown-item">
+                <a class="dropdown-link" routerLink="/investigaciones" routerLinkActive="active-link" target="_top">
+                    Ciencia, creatividad e innovación
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a class="dropdown-link" href="https://crailab.com/" target="_blank">
+                    CRAILAB
+                </a>
+            </li>
+            </div>
+        </li>
+
+        <li class="navbar-item pt-2">
+            <a routerLink="/egresados" routerLinkActive="active-link" target="_top" class="navbar-link">Egresados</a>
+        </li>
+        </ul>
+    </nav>
     </div>
 
     <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-5 pt-xl-2 pt-lg-3 pt-md-1 pe-5 pe-lg-3 pe-xl-2 pe-xxl-2">
