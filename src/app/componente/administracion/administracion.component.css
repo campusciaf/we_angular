@@ -1,90 +1,180 @@
-.bg-software{
-	background-color: rgba(0,97,168,0.8);
+.bg-software {
+  background-color: rgba(0, 97, 168, 0.8);
 }
 
-.bg-sem1{
-	background: linear-gradient(180deg, #93A8D8 9.07%, #6C81BF 80.95%);
+.bg-sem1 {
+  background: linear-gradient(180deg, #93a8d8 9.07%, #6c81bf 80.95%);
 }
 
-.bg-sem2{
-	background: linear-gradient(180deg, #6C81BF 11.32%, #697FBE 34.07%, #5F78BB 52.75%, #4D6DB5 69.94%, #3F64B0 80.41%);
-}
-.bg-sem3{
-	background: linear-gradient(180deg, #3F64B0 2.93%, #3B62AF 23.62%, #305EAC 43.59%, #1C56A7 63.22%, #024CA0 82.07%);
-}
-.bg-sem4{
-	background: linear-gradient(180deg, #024CA0 7.53%, #054DA0 20.52%, #0F50A2 31.2%, #2155A4 41.05%, #395CA7 50.42%, #5865AB 59.44%, #7E71AF 68.19%, #AB7EB5 76.58%, #C686B8 81.07%);
-}
-
-.bg-sem5{
-	background: linear-gradient(180deg, #C686B8 3.34%, #C583B7 28.99%, #C279B2 50.06%, #BD67AB 69.43%, #BB61A8 75.05%);
-}
-.bg-sem6{
-	background: linear-gradient(180deg, #BB61A8 27.05%, #B95DA6 48.06%, #B4519F 69.11%, #B24B9B 76.34%);
-}
-.bg-sem7{
-	background: linear-gradient(180deg, #B24B9B 42.81%, #B44B9A 56.8%, #BD4A98 64.83%, #CB4995 71.35%, #DE4890 77.07%, #F8468A 82.21%, #FF4688 83.4%);
+.bg-sem2 {
+  background: linear-gradient(
+    180deg,
+    #6c81bf 11.32%,
+    #697fbe 34.07%,
+    #5f78bb 52.75%,
+    #4d6db5 69.94%,
+    #3f64b0 80.41%
+  );
 }
 
-.bg-sem8{
-	background: linear-gradient(180deg, #FF4688 57.95%, #FB3A7F 61.9%, #F52B74 69%, #F2236E 77.46%, #F1206C 90.62%);
-}
-.bg-sem9{
-	background: linear-gradient(180deg, #F1206C 23.49%, #C00B53 81.82%);
-}
-.bg-sem10{
-	background-color: #C00B53;
+.bg-sem3 {
+  background: linear-gradient(
+    180deg,
+    #3f64b0 2.93%,
+    #3b62af 23.62%,
+    #305eac 43.59%,
+    #1c56a7 63.22%,
+    #024ca0 82.07%
+  );
 }
 
+.bg-sem4 {
+  background: linear-gradient(
+    180deg,
+    #024ca0 7.53%,
+    #054da0 20.52%,
+    #0f50a2 31.2%,
+    #2155a4 41.05%,
+    #395ca7 50.42%,
+    #5865ab 59.44%,
+    #7e71af 68.19%,
+    #ab7eb5 76.58%,
+    #c686b8 81.07%
+  );
+}
 
+.bg-sem5 {
+  background: linear-gradient(
+    180deg,
+    #c686b8 3.34%,
+    #c583b7 28.99%,
+    #c279b2 50.06%,
+    #bd67ab 69.43%,
+    #bb61a8 75.05%
+  );
+}
+
+.bg-sem6 {
+  background: linear-gradient(
+    180deg,
+    #bb61a8 27.05%,
+    #b95da6 48.06%,
+    #b4519f 69.11%,
+    #b24b9b 76.34%
+  );
+}
+
+.bg-sem7 {
+  background: linear-gradient(
+    180deg,
+    #b24b9b 42.81%,
+    #b44b9a 56.8%,
+    #bd4a98 64.83%,
+    #cb4995 71.35%,
+    #de4890 77.07%,
+    #f8468a 82.21%,
+    #ff4688 83.4%
+  );
+}
+
+.bg-sem8 {
+  background: linear-gradient(
+    180deg,
+    #ff4688 57.95%,
+    #fb3a7f 61.9%,
+    #f52b74 69%,
+    #f2236e 77.46%,
+    #f1206c 90.62%
+  );
+}
+
+.bg-sem9 {
+  background: linear-gradient(180deg, #f1206c 23.49%, #c00b53 81.82%);
+}
+
+.bg-sem10 {
+  background-color: #c00b53;
+}
 
 .m-menu {
-    display: none;
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 4;
+  display: none;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 4;
 }
 
 .m-menu a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
-.m-menu a p{
-    color: #fff;
-    font-size: 10px !important;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none !important;
-	line-height: 10px;
+
+.m-menu a p {
+  color: #fff;
+  font-size: 10px !important;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none !important;
+  line-height: 10px;
 }
 
 .m-menu img {
-	width: 26px;
-}
-.active-m{
-	background-color: #5a802d !important;
-	height: 100%;
-}
-@media(max-width:768px){
-	.bg-software{
-		background-color: rgba(0,97,168,1);
-	}
-    .m-menu {
-        display: block;
-        display: flex;
-    }
-
+  width: 26px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+.active-m {
+  background-color: #5a802d !important;
+  height: 100%;
+}
 
-    .m-menu {
-        display: block;
-        display: flex;
-        height: 55px;
-        overflow: hidden;
-    }
+@media (max-width: 768px) {
+  .bg-software {
+    background-color: rgba(0, 97, 168, 1);
+  }
+  .m-menu {
+    display: block;
+    display: flex;
+  }
+}
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .m-menu {
+    display: block;
+    display: flex;
+    height: 55px;
+    overflow: hidden;
+  }
+}
 
+.info-academica {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.info-academica i {
+  color: #999;
+}
+
+.text-7 {
+  color: #315da8;
+} /* Ejemplo color técnico */
+.text-4 {
+  color: #9b59b6;
+} /* Ejemplo color tecnólogo */
+.text-5 {
+  color: #c2185b;
+} /* Ejemplo color profesional */
+
+.bg-8,
+.bg-9,
+.bg-10,
+.bg-11,
+.bg-12,
+.bg-14,
+.bg-15,
+.bg-16,
+.bg-17 {
+  border-radius: 0 !important;
 }
