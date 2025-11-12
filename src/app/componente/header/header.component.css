@@ -462,4 +462,17 @@ header .icono img{
     height: 34px;
 }
 
-} 
+}
+
+
+.navbar-link {
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+}
+
+.navbar-item {
+  min-width: max-content;
+  margin: 0 6px;
+}
