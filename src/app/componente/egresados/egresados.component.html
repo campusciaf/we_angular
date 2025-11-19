@@ -1,221 +1,316 @@
 <section>
-    <div class="row banner-interno">
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
-            <img src="{{logo_pc}}" alt="Egresados">
-       </div>
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
-        <img src="{{logo_m}}" alt="Egresados">
-   </div>
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
-            <div class="row justify-content-center vertical-align-center">
-            
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar">
-                    <div class="row justify-content-center vertical-align-center">
-                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
-                            <h1 class="text-center bolder-1">EGRESADOS</h1>
-                            
-                            <p class="lema text-center"> Un carnet sin fecha de vencimiento </p>
-                        </div>
-                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
-                    </div>
-                </div>
-
-    
-
-                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
-
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
-                
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
-                                <div class="row text-center small text-white">
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a href="https://ciaf.digital/public/web_reglamentos/Acuerdo%20No%2009%20de%202022%20Por%20medio%20del%20cual%20se%20expide%20la%20Pol%C3%ADtica%20de%20Egresados%20de%20CIAF%20.pdf" target="_blank" class="btn btn-sm text-white">Politica de Egresados</a></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a (click)="mostrarModalInfo()" class="btn btn-sm text-white">Actualización de datos</a></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-10"><a (click)="mostrarModalInfo()" class="btn btn-sm text-white">Conoce tu politica</a></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
-                                <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-2 col-4" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
-                                        Club de egresados
-                                    </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-2 col-4" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
-                                        Educación continuada
-                                    </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-2 col-4" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
-                                        Egresados destacados
-                                    </a>
-                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-2 col-4" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-6">
-                                        Bolsa de empleo
-                                    </a>
-                                </div>
-                            </div>
-                
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row banner-interno">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+      <img src="{{ logo_pc }}" alt="Egresados" />
     </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
+      <img src="{{ logo_m }}" alt="Egresados" />
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+      <div class="row justify-content-center vertical-align-center">
+        <div
+          class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar"
+        >
+          <div class="row justify-content-center vertical-align-center">
+            <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+              <h1 class="text-center bolder-1">EGRESADOS</h1>
+
+              <p class="lema text-center">Un carnet sin fecha de vencimiento</p>
+            </div>
+            <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+          </div>
+        </div>
+
+        <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+          <div class="row d-flex justify-content-center">
+            <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
+              <div
+                class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior"
+              >
+                <div class="row text-center small text-white">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-10">
+                    <a
+                      href="https://ciaf.digital/public/web_reglamentos/Acuerdo%20No%2009%20de%202022%20Por%20medio%20del%20cual%20se%20expide%20la%20Pol%C3%ADtica%20de%20Egresados%20de%20CIAF%20.pdf"
+                      target="_blank"
+                      class="btn btn-sm text-white"
+                      >Politica de Egresados</a
+                    >
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-10">
+                    <a
+                      (click)="mostrarModalInfo()"
+                      class="btn btn-sm text-white"
+                      >Actualización de datos</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none"
+              >
+                <div class="row tabs" ng-init="inicioAlgo()">
+                  <a
+                    (click)="paginas('1')"
+                    class="col-xl-3 col-lg-3 col-md-2 col-4"
+                    (click)="activo = '1'"
+                    [ngClass]="activo == '1' ? 'active' : ''"
+                    id="btn-1"
+                  >
+                    Club de egresados
+                  </a>
+                  <a
+                    (click)="paginas('2')"
+                    class="col-xl-3 col-lg-3 col-md-2 col-4"
+                    (click)="activo = '2'"
+                    [ngClass]="activo == '2' ? 'active' : ''"
+                    id="btn-2"
+                  >
+                    Educación continuada
+                  </a>
+                  <a
+                    (click)="paginas('3')"
+                    class="col-xl-3 col-lg-3 col-md-2 col-4"
+                    (click)="activo = '3'"
+                    [ngClass]="activo == '3' ? 'active' : ''"
+                    id="btn-3"
+                  >
+                    Egresados destacados
+                  </a>
+                  <a
+                    (click)="paginas('4')"
+                    class="col-xl-3 col-lg-3 col-md-2 col-4"
+                    (click)="activo = '4'"
+                    [ngClass]="activo == '4' ? 'active' : ''"
+                    id="btn-6"
+                  >
+                    Bolsa de empleo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
 <section class="p-0 m-0" *ngIf="isValid1">
-    <div id="content-programa">
-        <div id="pag-ini">
-            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-                        <div class="row justify-content-center">
-                            <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-                                <div class="row">
-                                    <h3 class="titulo-2 pb-4">Un lazo que nos conecta<br> para toda la vida.</h3>
-                                    <p>
-                                        En CIAF estrechamos lazos con nuestros egresados para seguir construyendo juntos.
-                                        Promovemos el intercambio de experiencias académicas, profesionales, emprendedoras y
-                                        sociales, generando una colaboración constante con la comunidad y la sociedad.
-                                        Porque ser egresado CIAF es seguir transformando realidades con creatividad, innovación y
-                                        propósito.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-                                <div class="row">
-                                    <h3 class="titulo-2 pb-4">Estar cerca de ti nos permite<br> seguir creciendo contigo.</h3>
-                                    <p>
-                                        Como egresado CIAF sigues siendo parte de nuestra historia. Por eso, hemos diseñado programas
-                                        que te acompañan en cada etapa de tu desarrollo profesional, personal y social.
-                                        <br><br>
-                                        ¿Qué tenemos para ti?
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 mb-4 pb-4 text-center"><img [src]="seguimiento_egresados" alt="Club de egresados" width="90%"></div>                            
-                        </div>
-                    </div>
+  <div id="content-programa">
+    <div id="pag-ini">
+      <section
+        class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0"
+      >
+        <div class="row justify-content-center">
+          <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <div class="row justify-content-center">
+              <div
+                class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center"
+              >
+                <div class="row">
+                  <h3 class="titulo-2 pb-4">
+                    Estar cerca de ti nos permite<br />
+                    seguir creciendo contigo.
+                  </h3>
+                  <p>
+                    Como egresado CIAF sigues siendo parte de nuestra historia.
+                    Por eso, hemos diseñado programas que te acompañan en cada
+                    etapa de tu desarrollo profesional, personal y social.
+                    <br /><br />
+                    ¿Qué tenemos para ti?
+                  </p>
                 </div>
-            </section>
+              </div>
+              <div class="col-xxl-5 mb-4 pb-4 text-center">
+                <img
+                  [src]="seguimiento_egresados"
+                  alt="Club de egresados"
+                  width="90%"
+                />
+              </div>
+              <div
+                class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center"
+              >
+                <div class="row">
+                  <h3 class="titulo-2 pb-4">
+                    Un lazo que nos conecta<br />
+                    para toda la vida.
+                  </h3>
+                  <p>
+                    En CIAF estrechamos lazos con nuestros egresados para seguir
+                    construyendo juntos. Promovemos el intercambio de
+                    experiencias académicas, profesionales, emprendedoras y
+                    sociales, generando una colaboración constante con la
+                    comunidad y la sociedad. Porque ser egresado CIAF es seguir
+                    transformando realidades con creatividad, innovación y
+                    propósito.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
     </div>
+  </div>
 </section>
 
 <section class="pt-4 mt-4 mostrar" *ngIf="isValid2">
-    <div class="row justify-content-center">
-        <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-            <div class="row">
-                <h3 class="titulo-2 pb-4">Tu crecimiento profesional<br> no se detiene.</h3>
-                <p>
-                    Seguir apostándole a tu desarrollo es nuestro compromiso.
-                    <br><br>
-                    Por eso, como egresado CIAF, obtienes un 10 % de descuento en los programas de Educación
-                    Continua que te ayudarán a fortalecer tus habilidades, actualizar tus conocimientos y ampliar tus
-                    oportunidades laborales.
-                </p>
-            </div>
-        </div>
-
-        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-            <div class="row">
-                <div class="cards col-xl-4" *ngFor="let cursos of listarCursos index as i">
-                    <div class="column m-4">
-                        <div [className]="'post-module'" >
-                            <div class="thumbnail">
-                                <img src="https://ciaf.digital/public/img_educacion/{{cursos.imagen_curso}}" alt="{{cursos.nombre_curso}}" style="width:100%">
-                            </div>
-                            <div class="post-content">
-                                <div class="category" [ngStyle]="{'background-color': cursos.color}" >{{cursos.modalidad_curso}}</div>
-                                <h1 class="title">{{cursos.nombre_curso}}</h1>
-                                <div class="post-meta">
-                                    <div class="row">
-                                        <div class="col-xl-7 pt-1">
-                                            <span class="timestamp"><img src="{{calendario}}" alt="Publicado"> Publicado  {{ cursos.create_dt | date:"d MMM" }}</span>
-                                        </div>
-                                        <div class="col-xl-2 pt-1"> 
-                                            <span class="comments">39 <img src="{{vistas}}" alt="Publicado"> </span>
-                                        </div>
-                                        <div class="col-xl-3"> 
-                                            <a [routerLink]="['/continuadadetalle',cursos.id_curso]" class="btn btn-light btn-sm text-black">Leer más </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
+      <div class="row">
+        <h3 class="titulo-2 pb-4">
+          Tu crecimiento profesional<br />
+          no se detiene.
+        </h3>
+        <p>
+          Seguir apostándole a tu desarrollo es nuestro compromiso.
+          <br /><br />
+          Por eso, como egresado CIAF, obtienes un 10 % de descuento en los
+          programas de Educación Continua que te ayudarán a fortalecer tus
+          habilidades, actualizar tus conocimientos y ampliar tus oportunidades
+          laborales.
+        </p>
+      </div>
     </div>
+
+    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+      <div class="row">
+        <div
+          class="cards col-xl-4"
+          *ngFor="let cursos of listarCursos; index as i"
+        >
+          <div class="column m-4">
+            <div [className]="'post-module'">
+              <div class="thumbnail">
+                <img
+                  src="https://ciaf.digital/public/img_educacion/{{
+                    cursos.imagen_curso
+                  }}"
+                  alt="{{ cursos.nombre_curso }}"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="post-content">
+                <div
+                  class="category"
+                  [ngStyle]="{ 'background-color': cursos.color }"
+                >
+                  {{ cursos.modalidad_curso }}
+                </div>
+                <h1 class="title">{{ cursos.nombre_curso }}</h1>
+                <div class="post-meta">
+                  <div class="row">
+                    <div class="col-xl-7 pt-1">
+                      <span class="timestamp"
+                        ><img src="{{ calendario }}" alt="Publicado" />
+                        Publicado {{ cursos.create_dt | date : "d MMM" }}</span
+                      >
+                    </div>
+                    <div class="col-xl-2 pt-1">
+                      <span class="comments"
+                        >39 <img src="{{ vistas }}" alt="Publicado" />
+                      </span>
+                    </div>
+                    <div class="col-xl-3">
+                      <a
+                        [routerLink]="['/continuadadetalle', cursos.id_curso]"
+                        class="btn btn-light btn-sm text-black"
+                        >Leer más
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="pt-4 mt-4 mostrar" *ngIf="isValid3">
-    <div class="row justify-content-center">
-         <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-            <div class="row">
-                <h3 class="titulo-2 pb-4">Historias que inspiran, transforman<br> y nos llenan de orgullo.</h3>
-                <p>
-                    Reconocemos la trayectoria, el impacto y la transformación de quienes con su talento y
-                    compromiso siguen dejando huella en la sociedad.
-                    <br><br>
-                    Ellos son algunos de los egresados CIAF que nos inspiran a seguir transformando vidas.
-                </p>
-            </div>
-        </div>
-        <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-9 col-9">
-            <div class="row justify-content-center">
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center">
-                    <p class="fs-4 bolder-1 text-1 ">Esteban Ganan</p>
-                    <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-                    <img [src]="testimonio_egresado_1" alt="testimonio" width="70%">
-                    <p class="fst-italic p-4 fs-5">
-                        Fue el concejal más joven de Pereira, comprometido con la defensa de los intereses
-                        de los pereiranos y la generación de nuevas oportunidades para la ciudad.
-                    </p>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center">
-                    <p class="fs-4 bolder-1 text-1 ">Ana Carolina Mas</p>
-                    <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-                    <img [src]="testimonio_egresado_2" alt="testimonio" width="70%">
-                    <p class="fst-italic p-4 fs-5">
-                        Destacada como una de las mejores directoras comerciales de la marca Toyota,
-                        combina su liderazgo empresarial con una profunda vocación por las labores
-                        sociales.
-                    </p>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center">
-                    <p class="fs-4 bolder-1 text-1 ">Daniel Mora</p>
-                    <p class="fst-italic lh-1 fs-5">Ingeniería de software</p>
-                    <img [src]="testimonio_egresado_3" alt="testimonio" width="70%">
-                    <p class="fst-italic p-4 fs-5">
-                        Su historia refleja coraje, superación y propósito. Lidera con el ejemplo,
-                        transforma con su voz e inspira con su camino.
-                        <br>
-                        Lleva en sí el sello CIAF: compromiso, resiliencia y transformación de vida.
-                    </p>
-                </div>
-            </div>
-            
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
+      <div class="row">
+        <h3 class="titulo-2 pb-4">
+          Historias que inspiran, transforman<br />
+          y nos llenan de orgullo.
+        </h3>
+        <p>
+          Reconocemos la trayectoria, el impacto y la transformación de quienes
+          con su talento y compromiso siguen dejando huella en la sociedad.
+          <br /><br />
+          Ellos son algunos de los egresados CIAF que nos inspiran a seguir
+          transformando vidas.
+        </p>
+      </div>
     </div>
+    <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-9 col-9">
+      <div class="row justify-content-center">
+        <div
+          class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center"
+        >
+          <p class="fs-4 bolder-1 text-1">Esteban Ganan</p>
+          <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
+          <img [src]="testimonio_egresado_1" alt="testimonio" width="70%" />
+          <p class="fst-italic p-4 fs-5">
+            Fue el concejal más joven de Pereira, comprometido con la defensa de
+            los intereses de los pereiranos y la generación de nuevas
+            oportunidades para la ciudad.
+          </p>
+        </div>
+        <div
+          class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center"
+        >
+          <p class="fs-4 bolder-1 text-1">Ana Carolina Mas</p>
+          <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
+          <img [src]="testimonio_egresado_2" alt="testimonio" width="70%" />
+          <p class="fst-italic p-4 fs-5">
+            Destacada como una de las mejores directoras comerciales de la marca
+            Toyota, combina su liderazgo empresarial con una profunda vocación
+            por las labores sociales.
+          </p>
+        </div>
+        <div
+          class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center"
+        >
+          <p class="fs-4 bolder-1 text-1">Daniel Mora</p>
+          <p class="fst-italic lh-1 fs-5">Ingeniería de software</p>
+          <img [src]="testimonio_egresado_3" alt="testimonio" width="70%" />
+          <p class="fst-italic p-4 fs-5">
+            Su historia refleja coraje, superación y propósito. Lidera con el
+            ejemplo, transforma con su voz e inspira con su camino.
+            <br />
+            Lleva en sí el sello CIAF: compromiso, resiliencia y transformación
+            de vida.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="pt-4 mt-4 mostrar" *ngIf="isValid4">
   <div class="row justify-content-center">
-
     <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
-        <div class="row">
-            <div class="col-xxl-12 mb-4 pb-4 text-center">
-                <h3 class="titulo-2 pb-4">Conéctate con nuevas oportunidades<br> laborales.</h3>
-                <p>
-                    En CIAF le apostamos a tu empleabilidad y crecimiento profesional.
-                    Por eso, te compartimos plataformas donde podrás registrarte, postularte y conectar con
-                    empresas que valoran tu talento.
-                </p>
-            </div>
-            
+      <div class="row">
+        <div class="col-xxl-12 mb-4 pb-4 text-center">
+          <h3 class="titulo-2 pb-4">
+            Conéctate con nuevas oportunidades<br />
+            laborales.
+          </h3>
+          <p>
+            En CIAF le apostamos a tu empleabilidad y crecimiento profesional.
+            Por eso, te compartimos plataformas donde podrás registrarte,
+            postularte y conectar con empresas que valoran tu talento.
+          </p>
         </div>
+      </div>
     </div>
 
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-10 pb-4">
       <div class="row">
         <div class="col-xxl-12 mb-4 pb-4 text-center">
           <h2 class="titulo-2">Red Colaborativa de Egresados CIAF</h2>
@@ -226,18 +321,21 @@
 
         <div class="col-12 text-center mb-4">
           <p class="fs-5">
-            Desde CIAF fortalecemos una red que une talento, propósito y transformación.<br>
-            Nuestros egresados participan activamente en proyectos que fortalecen la comunidad educativa y<br>
+            Desde CIAF fortalecemos una red que une talento, propósito y
+            transformación.<br />
+            Nuestros egresados participan activamente en proyectos que
+            fortalecen la comunidad educativa y<br />
             generan impacto social, académico y empresarial.
           </p>
         </div>
 
         <!-- CÓMO PARTICIPAR - TRES ICONOS -->
         <div class="col-12 mb-5">
-          <h3 class="text-1 bolder-1 text-center mb-4">¿Cómo puedes participar?</h3>
-          
+          <h3 class="text-1 bolder-1 text-center mb-4">
+            ¿Cómo puedes participar?
+          </h3>
+
           <div class="row justify-content-center">
-            
             <!-- VOLUNTARIADO -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
               <div class="participacion-card text-center">
@@ -246,8 +344,9 @@
                 </div>
                 <h4 class="text-1 bolder-1 mb-3">Voluntariado CIAF</h4>
                 <p class="text-justify">
-                  Comparte tu tiempo y talento apoyando actividades sociales, académicas o institucionales.
-                  Tu experiencia puede transformar realidades y motivar a nuevas generaciones.
+                  Comparte tu tiempo y talento apoyando actividades sociales,
+                  académicas o institucionales. Tu experiencia puede transformar
+                  realidades y motivar a nuevas generaciones.
                 </p>
               </div>
             </div>
@@ -260,8 +359,9 @@
                 </div>
                 <h4 class="text-1 bolder-1 mb-3">Apadrina un estudiante</h4>
                 <p class="text-justify">
-                  Acompaña el crecimiento de un estudiante CIAF brindando orientación, mentoría o apoyo económico.
-                  Ser padrino CIAF es creer en el poder de la educación para cambiar vidas.
+                  Acompaña el crecimiento de un estudiante CIAF brindando
+                  orientación, mentoría o apoyo económico. Ser padrino CIAF es
+                  creer en el poder de la educación para cambiar vidas.
                 </p>
               </div>
             </div>
@@ -274,31 +374,34 @@
                 </div>
                 <h4 class="text-1 bolder-1 mb-3">Comparte la Experiencia</h4>
                 <p class="text-justify">
-                  Sé parte de nuestros conversatorios, charlas o clases abiertas donde los egresados inspiran con su historia profesional.
-                  Tu trayectoria puede convertirse en ejemplo y guía para quienes hoy inician su camino.
+                  Sé parte de nuestros conversatorios, charlas o clases abiertas
+                  donde los egresados inspiran con su historia profesional. Tu
+                  trayectoria puede convertirse en ejemplo y guía para quienes
+                  hoy inician su camino.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
 
         <!-- CONTACTO EGRESADOS -->
         <div class="col-12 text-center bg-light py-4 rounded">
-          <h4 class="text-1 bolder-1 mb-3">¿Quieres hacer parte de esta red?</h4>
+          <h4 class="text-1 bolder-1 mb-3">
+            ¿Quieres hacer parte de esta red?
+          </h4>
           <p class="fs-5 mb-3">
-            Déjanos tus datos o escríbenos a 
-            <a href="mailto:egresados@ciaf.edu.co" class="text-1 bolder-1">egresados@ciaf.edu.co</a><br>
+            Déjanos tus datos o escríbenos a
+            <a href="mailto:egresados@ciaf.edu.co" class="text-1 bolder-1"
+              >egresados@ciaf.edu.co</a
+            ><br />
             para integrarte a las iniciativas del Programa de Egresados CIAF.
           </p>
-          <button class="btn btn-primary btn-lg">
-            Únete a la Red
-          </button>
+          <button class="btn btn-primary btn-lg">Únete a la Red</button>
         </div>
       </div>
     </div>
 
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4 mt-10 pt-10">
       <div class="row">
         <div class="col-xxl-12 mb-4 pb-4 text-center">
           <h2 class="titulo-2">Modelo de Bienestar</h2>
@@ -309,461 +412,750 @@
 
         <div class="col-12 text-center mb-4">
           <p class="fs-5">
-            Ser egresado CIAF es seguir disfrutando de un entorno que promueve la salud, el arte, el deporte y<br>
-            el desarrollo humano. El Modelo de Bienestar Institucional se mantiene activo para ti, acompañando<br>
-            tu vida profesional y personal en seis ejes que fortalecen tu conexión con la comunidad CIAF.
+            Ser egresado CIAF es seguir disfrutando de un entorno que promueve
+            la salud, el arte, el deporte y<br />
+            el desarrollo humano. El Modelo de Bienestar Institucional se
+            mantiene activo para ti, acompañando<br />
+            tu vida profesional y personal en seis ejes que fortalecen tu
+            conexión con la comunidad CIAF.
           </p>
         </div>
 
         <!-- EJES DE BIENESTAR -->
         <div class="col-12">
           <div class="row justify-content-center">
-            
-            <!-- SALUD Y VIDA -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
-              <div class="bienestar-card text-center h-100">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-heartbeat fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Salud y Vida</h4>
-                <p class="text-justify">
-                  Promovemos el equilibrio físico y emocional a través de campañas y jornadas de autocuidado.
-                </p>
-              </div>
+            <div class="col-xxl-5 mb-4 pb-4 text-center">
+              <img
+                [src]="modelo_bienestar_egresados"
+                alt="Club de egresados"
+                width="90%"
+              />
             </div>
-
-            <!-- RECREACIÓN Y DEPORTES -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
-              <div class="bienestar-card text-center h-100">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-running fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Recreación y Deportes</h4>
-                <p class="text-justify">
-                  Te invitamos a seguir participando en torneos, encuentros y actividades recreativas CIAF.
-                </p>
-              </div>
-            </div>
-
-            <!-- ARTE Y CULTURA -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
-              <div class="bienestar-card text-center h-100">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-palette fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Arte y Cultura</h4>
-                <p class="text-justify">
-                  La creatividad sigue siendo parte de ti: exposiciones, música, danza y fotografía con sello CIAF.
-                </p>
-              </div>
-            </div>
-
-            <!-- DESARROLLO HUMANO -->
-            <div class="col-xl-6 col-lg-6 col-md-8 col-12 mb-4">
-              <div class="bienestar-card text-center h-100">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-chart-line fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Desarrollo Humano</h4>
-                <p class="text-justify">
-                  Espacios de crecimiento personal y profesional. Participa en las actividades institucionales 
-                  de Bienestar y continúa siendo parte de nuestra comunidad.
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-xl-10 col-lg-10 col-md-12 col-12">
-      <div class="row justify-content-center">
-        <div class="col-xl-12 mb-4 pb-4">
-          <h2 class="titulo-2 text-center">Aliados Estratégicos</h2>
+        <div class="row justify-content-center">
+            <div class="col-xl-12 mb-4 pb-4">
+            <h2 class="titulo-2 text-center">Convenios</h2>
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <ngx-slick-carousel
+                class="carousel"
+                #slickModal="slick-carousel"
+                [config]="slideConfig"
+            >
+                <div ngxSlickItem class="slide">
+                <div class="logo-container">
+                    <img
+                    src="{{ aliado_egresados_1 }}"
+                    alt="Servicio de empleo"
+                    class="logo-img logo-large"
+                    />
+                </div>
+                </div>
+                <div ngxSlickItem class="slide">
+                <div class="logo-container">
+                    <img
+                    src="{{ aliado_egresados_2 }}"
+                    alt="adecco"
+                    class="logo-img logo-white"
+                    />
+                </div>
+                </div>
+                <div ngxSlickItem class="slide">
+                <div class="logo-container">
+                    <img
+                    src="{{ aliado_egresados_3 }}"
+                    alt="RisaraldaEmplea2025"
+                    class="logo-img"
+                    />
+                </div>
+                </div>
+            </ngx-slick-carousel>
+            </div>
         </div>
-        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-          <ngx-slick-carousel
-            class="carousel"
-            #slickModal="slick-carousel"
-            [config]="slideConfig"
-          >
-            <div ngxSlickItem class="slide">
-              <img
-                src="{{aliado_egresados_1}}"
-                width="100%"
-                height="auto"
-                alt="Servicio de empleo"
-              />
-            </div>
-            <div ngxSlickItem class="slide">
-              <img
-                src="{{aliado_egresados_2}}"
-                width="100%"
-                height="auto"
-                alt="adecco"
-              />
-            </div>
-            <div ngxSlickItem class="slide">
-              <img
-                src="{{aliado_egresados_3}}"
-                width="100%"
-                height="auto"
-                alt="RisaraldaEmplea2025"
-              />
-            </div>
-          </ngx-slick-carousel>
-        </div>
-      </div>
     </div>
 
   </div>
 </section>
 
 <div class="row m-menu bg-2">
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-1-1">
-            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Club <br>de Egresados</p>
-                </div>
-            </a>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="pt-1" id="btn-1-1">
+      <a
+        class="text-center"
+        (click)="paginas('1')"
+        (click)="activo = '1'"
+        [ngClass]="activo == '1' ? 'active-m' : ''"
+      >
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
         </div>
+        <div class="col-12">
+          <p>Club <br />de Egresados</p>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-2-1">
-           <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Educación <br>Continuada</p>
-                </div>
-            </a>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="pt-1" id="btn-2-1">
+      <a
+        class="text-center"
+        (click)="paginas('2')"
+        (click)="activo = '2'"
+        [ngClass]="activo == '2' ? 'active-m' : ''"
+      >
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
         </div>
+        <div class="col-12">
+          <p>Educación <br />Continuada</p>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-3-1">
-            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Egresados <br>destacados</p>
-                </div>
-            </a>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="pt-1" id="btn-3-1">
+      <a
+        class="text-center"
+        (click)="paginas('3')"
+        (click)="activo = '3'"
+        [ngClass]="activo == '3' ? 'active-m' : ''"
+      >
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
         </div>
+        <div class="col-12">
+          <p>Egresados <br />destacados</p>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-4-1">
-            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Bolsa <br>de Empleo</p>
-                </div>
-            </a>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="pt-1" id="btn-4-1">
+      <a
+        class="text-center"
+        (click)="paginas('4')"
+        (click)="activo = '4'"
+        [ngClass]="activo == '4' ? 'active-m' : ''"
+      >
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
         </div>
+        <div class="col-12">
+          <p>Bolsa <br />de Empleo</p>
+        </div>
+      </a>
     </div>
+  </div>
 </div>
 
 <ng-template #myModalInfo let-modal>
-    <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-6" id="exampleModalLabel">Actualización de datos</h1>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close()"> 
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-        <h3 class="fs-6"></h3>
-        <div class="row">
-
-            <div class="row mt-4">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-            
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12">
-            
-                                    <div class="datosegresados">
-
-                                        <div class="col-12" id="validacion" *ngIf="element1 == true">
-                                            <label>Número de identificación</label>
-                                            <input type="number" id="numberField" [(ngModel)]="numericValue" class="micampo" placeholder="Numero de identificación"  >
-                                            <button (click)="captureValue()" class="btn bg-3 btn-lg col-12">Verificar documento</button>
-                                        </div>
-                                        
-
-                                        <form [formGroup]="myForm" (ngSubmit)="actualizar()" *ngIf="element == true" class="row">
-                                            <div class="col-xl-12 d-none">
-                                                <label>Credencial estudiante</label>
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    
-                                                    <input matInput type="number" class="micampo" placeholder="Credencial" name="id_credencial" formControlName="id_credencial" >
-                                                </div>
-                    
-                                                <div *ngFor="let validation of account_validation_messages.id_credencial">
-                                                    <div class="error-message" *ngIf="myForm.get('id_credencial')?.hasError(validation.type) && (myForm.get('id_credencial')?.dirty || myForm.get('id_credencial')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div> 
-
-                                            <div class="col-xl-6">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>Tienes hijos (si/no)</label>
-                                                    <select class="micampo" name="egresados_tiene_hijos"  formControlName="egresados_tiene_hijos"  (ngModelChange)="mostrarcampo(1)">
-                                                        <option value="no">No</option>
-                                                        <option value="si">Si</option>
-                                                    </select>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_tiene_hijos">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_tiene_hijos')?.hasError(validation.type) && (myForm.get('egresados_tiene_hijos')?.dirty || myForm.get('egresados_tiene_hijos')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div> 
-
-                                            <div class="col-xl-6"  *ngIf="element2 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Cuántos hijos tienes?</label>
-                                                    <select class="micampo" name="egresados_num_hijos"  formControlName="egresados_num_hijos" >
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3 o más</option>
-                                                    </select>
-                                                </div>
-                                            </div> 
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Trabajas actualmente?</label> 
-                                                    <select class="micampo" name="egresados_trabaja"  formControlName="egresados_trabaja"  (ngModelChange)="mostrarcampo(3)" required>
-                                                        <option value="no">No</option>
-                                                        <option value="si">Si</option>
-                                                    </select>
-                                                    <div *ngFor="let validation of account_validation_messages.egresados_trabaja">
-                                                        <div class="error-message" *ngIf="myForm.get('egresados_trabaja')?.hasError(validation.type) && (myForm.get('egresados_trabaja')?.dirty || myForm.get('egresados_trabaja')?.touched)">{{validation.message}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> 
-
-                                            <div class="col-xl-12" *ngIf="element4 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Qué tipo de trabajador eres?</label>
-                                                    <select class="micampo" name="egresados_tipo_trabajador" formControlName="egresados_tipo_trabajador">
-                                                        <option value="No aplica">No aplica</option>
-                                                        <option value="Empleado">Empleado</option>
-                                                        <option value="Independiente">Independiente</option>
-                                                        <option value="Emprendedor">Emprendedor</option>
-                                                        <option value="Empresario">Empresario</option>
-                                                        <option value="Freelance">Freelance</option>
-                                                    </select>
-                                                </div>
-                                            </div> 
-
-                                            <div class="col-xl-12" *ngIf="element5 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>Nombre de la empresa en que laboras</label>
-                                                    <input matInput type="text" class="micampo"  name="egresados_empresa" formControlName="egresados_empresa">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12" *ngIf="element6 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>Sector de la empresa en que laboras</label>
-                                                    <select class="micampo" name="egresados_sector_empresa" formControlName="egresados_sector_empresa">
-                                                        <option value="No aplica">No aplica</option>
-                                                        <option value="Público">Público</option>
-                                                        <option value="Servicios">Servicios</option>
-                                                        <option value="Industrial">Industrial</option>
-                                                        <option value="Comercio">Comercio</option>
-                                                        <option value="Agropecuario">Agropecuario</option>
-                                                        <option value="Transporte y/o distribución">Transporte y/o distribución</option>
-                                                        <option value="Turismo">Turismo</option>
-                                                        <option value="Tecnología">Tecnología</option>
-                                                        <option value="Cultura y entretenimiento">Cultura y entretenimiento</option>
-                                                        <option value="Educación">Educación</option>
-                                                        <option value="Financiero">Financiero</option>
-                                                        <option value="Salud">Salud</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12" *ngIf="element7 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Qué cargo desempeñas?</label>
-                                                    <input matInput type="text" class="micampo"  name="egresados_cargo" formControlName="egresados_cargo">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12" *ngIf="element8 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Laboras en el campo de tu profesión?</label>
-                                                    <select class="micampo" name="egresados_profesion" formControlName="egresados_profesion">
-                                                        <option value="no">No</option>
-                                                        <option value="si">Si</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12" *ngIf="element9 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Qué salario mensual devengas?</label>
-                                                    <select class="micampo" name="egresados_salario" formControlName="egresados_salario">
-                                                        <option value="Ninguno">Ninguno</option>
-                                                        <option value="Entre 0 a 1 SMLV">Entre 0 a 1 SMLV</option>
-                                                        <option value="De 1 SMLV A 3SMLV">De 1 SMLV A 3SMLV</option>
-                                                        <option value="4 o más SMLC">4 o más SMLC</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Qué estudios adicionales requieres para complementar tu perfil profesional?</label>
-                                                    <textarea class="micampo" name="egresados_estudio_adicional" formControlName="egresados_estudio_adicional" required></textarea>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_estudio_adicional">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_estudio_adicional')?.hasError(validation.type) && (myForm.get('egresados_estudio_adicional')?.dirty || myForm.get('egresados_estudio_adicional')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg" >
-                                                    <label>¿Tiene necesidades de formación profesional en este momento?</label>
-                                                    <select class="micampo" name="egresados_formacion"  formControlName="egresados_formacion"  (ngModelChange)="mostrarcampo(11)" required>
-                                                        <option value="no">No</option>
-                                                        <option value="si">Si</option>
-                                                    </select>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_formacion">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_formacion')?.hasError(validation.type) && (myForm.get('egresados_formacion')?.dirty || myForm.get('egresados_formacion')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div> 
-
-                                            <div class="col-xl-12" *ngIf="element12 == false">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>Si su respuesta es sí, por favor especifique las necesidades de formación</label>
-                                                    <input matInput type="text" class="micampo"  name="egresados_tipo_formacion" formControlName="egresados_tipo_formacion">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Por cuál medio recibes la información institucional de CIAF?</label>
-                                                    <select class="micampo" name="egresados_informacion" formControlName="egresados_informacion" required>
-                                                        <option value="Correo">Correo</option>
-                                                        <option value="Campus virtual">Campus virtual</option>
-                                                        <option value="Redes sociales">Redes sociales</option>
-                                                        <option value="Llamada telefónica">Llamada telefónica</option>
-                                                        <option value="WhatsApp">WhatsApp</option>
-                                                    </select>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_informacion">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_informacion')?.hasError(validation.type) && (myForm.get('egresados_informacion')?.dirty || myForm.get('egresados_informacion')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿En la actualidad se encuentra realizando algún tipo de posgrado?</label>
-                                                    <select class="micampo" name="egresados_posgrado" formControlName="egresados_posgrado" required>
-                                                        <option value="Ninguno">Ninguno</option>
-                                                        <option value="Diplomado">Diplomado</option>
-                                                        <option value="Especialización">Especialización</option>
-                                                        <option value="Maestría">Maestría</option>
-                                                        <option value="Doctorado">Doctorado</option>
-                                                    </select>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_posgrado">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_posgrado')?.hasError(validation.type) && (myForm.get('egresados_posgrado')?.dirty || myForm.get('egresados_posgrado')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Le gustaría participar en alguno de los siguientes programas para fomentar la red colaborativa de egresados CIAF?</label>
-                                                    <select class="micampo" name="egresados_colaborativa" formControlName="egresados_colaborativa" required="">
-                                                        <option value="Voluntariado">Voluntariado</option>
-                                                        <option value="Apadrinamiento estudiantil">Apadrinamiento estudiantil</option>
-                                                        <option value="Comparte la Experiencia">Comparte la Experiencia</option>
-                                                        <option value="En ninguno">En ninguno</option>
-                                                    </select>
-
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_colaborativa">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_colaborativa')?.hasError(validation.type) && (myForm.get('egresados_colaborativa')?.dirty || myForm.get('egresados_colaborativa')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>¿Conoces las últimas actualizaciones de CIAF?</label>
-                                                    <select class="micampo" name="egresados_actualizacion" formControlName="egresados_actualizacion" required>
-                                                        <option value="no">No</option>
-                                                        <option value="si">Si</option>
-                                                    </select>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_actualizacion">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_actualizacion')?.hasError(validation.type) && (myForm.get('egresados_actualizacion')?.dirty || myForm.get('egresados_actualizacion')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-12">
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <label>De 1 a 5, ¿qué tan probable es que recomiendes a CIAF con otra persona?</label>
-                                                    <select class="micampo" name="egresados_recomendar" formControlName="egresados_recomendar" required>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.egresados_recomendar">
-                                                    <div class="error-message" *ngIf="myForm.get('egresados_recomendar')?.hasError(validation.type) && (myForm.get('egresados_recomendar')?.dirty || myForm.get('egresados_recomendar')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="col-xl-12 text-center">
-                                                    <button type="submit" class="btn bg-3 btn-lg" [disabled]="!myForm.valid">Enviar</button>
-                                            </div>
-                                            
-                                        </form>
-
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-                            
-                        </div>
-            
-                    </div>
-                </div>
-            
-            </div>
-
-        </div>
-        </div>
-
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-6" id="exampleModalLabel">
+        Actualización de datos
+      </h1>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+        (click)="modal.close()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+    <div class="modal-body">
+      <h3 class="fs-6"></h3>
+      <div class="row">
+        <div class="row mt-4">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+            <div class="row justify-content-center">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <div class="row justify-content-center">
+                  <div class="col-xl-12">
+                    <div class="datosegresados">
+                      <div
+                        class="col-12"
+                        id="validacion"
+                        *ngIf="element1 == true"
+                      >
+                        <label>Número de identificación</label>
+                        <input
+                          type="number"
+                          id="numberField"
+                          [(ngModel)]="numericValue"
+                          class="micampo"
+                          placeholder="Numero de identificación"
+                        />
+                        <button
+                          (click)="captureValue()"
+                          class="btn bg-3 btn-lg col-12"
+                        >
+                          Verificar documento
+                        </button>
+                      </div>
+
+                      <form
+                        [formGroup]="myForm"
+                        (ngSubmit)="actualizar()"
+                        *ngIf="element == true"
+                        class="row"
+                      >
+                        <div class="col-xl-12 d-none">
+                          <label>Credencial estudiante</label>
+                          <div class="input-group mb-3 input-group-lg">
+                            <input
+                              matInput
+                              type="number"
+                              class="micampo"
+                              placeholder="Credencial"
+                              name="id_credencial"
+                              formControlName="id_credencial"
+                            />
+                          </div>
+
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.id_credencial
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('id_credencial')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('id_credencial')?.dirty ||
+                                  myForm.get('id_credencial')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>Tienes hijos (si/no)</label>
+                            <select
+                              class="micampo"
+                              name="egresados_tiene_hijos"
+                              formControlName="egresados_tiene_hijos"
+                              (ngModelChange)="mostrarcampo(1)"
+                            >
+                              <option value="no">No</option>
+                              <option value="si">Si</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_tiene_hijos
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_tiene_hijos')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_tiene_hijos')?.dirty ||
+                                  myForm.get('egresados_tiene_hijos')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6" *ngIf="element2 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>¿Cuántos hijos tienes?</label>
+                            <select
+                              class="micampo"
+                              name="egresados_num_hijos"
+                              formControlName="egresados_num_hijos"
+                            >
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3 o más</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>¿Trabajas actualmente?</label>
+                            <select
+                              class="micampo"
+                              name="egresados_trabaja"
+                              formControlName="egresados_trabaja"
+                              (ngModelChange)="mostrarcampo(3)"
+                              required
+                            >
+                              <option value="no">No</option>
+                              <option value="si">Si</option>
+                            </select>
+                            <div
+                              *ngFor="
+                                let validation of account_validation_messages.egresados_trabaja
+                              "
+                            >
+                              <div
+                                class="error-message"
+                                *ngIf="
+                                  myForm
+                                    .get('egresados_trabaja')
+                                    ?.hasError(validation.type) &&
+                                  (myForm.get('egresados_trabaja')?.dirty ||
+                                    myForm.get('egresados_trabaja')?.touched)
+                                "
+                              >
+                                {{ validation.message }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element4 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>¿Qué tipo de trabajador eres?</label>
+                            <select
+                              class="micampo"
+                              name="egresados_tipo_trabajador"
+                              formControlName="egresados_tipo_trabajador"
+                            >
+                              <option value="No aplica">No aplica</option>
+                              <option value="Empleado">Empleado</option>
+                              <option value="Independiente">
+                                Independiente
+                              </option>
+                              <option value="Emprendedor">Emprendedor</option>
+                              <option value="Empresario">Empresario</option>
+                              <option value="Freelance">Freelance</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element5 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>Nombre de la empresa en que laboras</label>
+                            <input
+                              matInput
+                              type="text"
+                              class="micampo"
+                              name="egresados_empresa"
+                              formControlName="egresados_empresa"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element6 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>Sector de la empresa en que laboras</label>
+                            <select
+                              class="micampo"
+                              name="egresados_sector_empresa"
+                              formControlName="egresados_sector_empresa"
+                            >
+                              <option value="No aplica">No aplica</option>
+                              <option value="Público">Público</option>
+                              <option value="Servicios">Servicios</option>
+                              <option value="Industrial">Industrial</option>
+                              <option value="Comercio">Comercio</option>
+                              <option value="Agropecuario">Agropecuario</option>
+                              <option value="Transporte y/o distribución">
+                                Transporte y/o distribución
+                              </option>
+                              <option value="Turismo">Turismo</option>
+                              <option value="Tecnología">Tecnología</option>
+                              <option value="Cultura y entretenimiento">
+                                Cultura y entretenimiento
+                              </option>
+                              <option value="Educación">Educación</option>
+                              <option value="Financiero">Financiero</option>
+                              <option value="Salud">Salud</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element7 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>¿Qué cargo desempeñas?</label>
+                            <input
+                              matInput
+                              type="text"
+                              class="micampo"
+                              name="egresados_cargo"
+                              formControlName="egresados_cargo"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element8 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>¿Laboras en el campo de tu profesión?</label>
+                            <select
+                              class="micampo"
+                              name="egresados_profesion"
+                              formControlName="egresados_profesion"
+                            >
+                              <option value="no">No</option>
+                              <option value="si">Si</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element9 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label>¿Qué salario mensual devengas?</label>
+                            <select
+                              class="micampo"
+                              name="egresados_salario"
+                              formControlName="egresados_salario"
+                            >
+                              <option value="Ninguno">Ninguno</option>
+                              <option value="Entre 0 a 1 SMLV">
+                                Entre 0 a 1 SMLV
+                              </option>
+                              <option value="De 1 SMLV A 3SMLV">
+                                De 1 SMLV A 3SMLV
+                              </option>
+                              <option value="4 o más SMLC">4 o más SMLC</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >¿Qué estudios adicionales requieres para
+                              complementar tu perfil profesional?</label
+                            >
+                            <textarea
+                              class="micampo"
+                              name="egresados_estudio_adicional"
+                              formControlName="egresados_estudio_adicional"
+                              required
+                            ></textarea>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_estudio_adicional
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_estudio_adicional')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_estudio_adicional')
+                                  ?.dirty ||
+                                  myForm.get('egresados_estudio_adicional')
+                                    ?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >¿Tiene necesidades de formación profesional en
+                              este momento?</label
+                            >
+                            <select
+                              class="micampo"
+                              name="egresados_formacion"
+                              formControlName="egresados_formacion"
+                              (ngModelChange)="mostrarcampo(11)"
+                              required
+                            >
+                              <option value="no">No</option>
+                              <option value="si">Si</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_formacion
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_formacion')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_formacion')?.dirty ||
+                                  myForm.get('egresados_formacion')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12" *ngIf="element12 == false">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >Si su respuesta es sí, por favor especifique las
+                              necesidades de formación</label
+                            >
+                            <input
+                              matInput
+                              type="text"
+                              class="micampo"
+                              name="egresados_tipo_formacion"
+                              formControlName="egresados_tipo_formacion"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >¿Por cuál medio recibes la información
+                              institucional de CIAF?</label
+                            >
+                            <select
+                              class="micampo"
+                              name="egresados_informacion"
+                              formControlName="egresados_informacion"
+                              required
+                            >
+                              <option value="Correo">Correo</option>
+                              <option value="Campus virtual">
+                                Campus virtual
+                              </option>
+                              <option value="Redes sociales">
+                                Redes sociales
+                              </option>
+                              <option value="Llamada telefónica">
+                                Llamada telefónica
+                              </option>
+                              <option value="WhatsApp">WhatsApp</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_informacion
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_informacion')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_informacion')?.dirty ||
+                                  myForm.get('egresados_informacion')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >¿En la actualidad se encuentra realizando algún
+                              tipo de posgrado?</label
+                            >
+                            <select
+                              class="micampo"
+                              name="egresados_posgrado"
+                              formControlName="egresados_posgrado"
+                              required
+                            >
+                              <option value="Ninguno">Ninguno</option>
+                              <option value="Diplomado">Diplomado</option>
+                              <option value="Especialización">
+                                Especialización
+                              </option>
+                              <option value="Maestría">Maestría</option>
+                              <option value="Doctorado">Doctorado</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_posgrado
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_posgrado')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_posgrado')?.dirty ||
+                                  myForm.get('egresados_posgrado')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >¿Le gustaría participar en alguno de los
+                              siguientes programas para fomentar la red
+                              colaborativa de egresados CIAF?</label
+                            >
+                            <select
+                              class="micampo"
+                              name="egresados_colaborativa"
+                              formControlName="egresados_colaborativa"
+                              required=""
+                            >
+                              <option value="Voluntariado">Voluntariado</option>
+                              <option value="Apadrinamiento estudiantil">
+                                Apadrinamiento estudiantil
+                              </option>
+                              <option value="Comparte la Experiencia">
+                                Comparte la Experiencia
+                              </option>
+                              <option value="En ninguno">En ninguno</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_colaborativa
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_colaborativa')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_colaborativa')?.dirty ||
+                                  myForm.get('egresados_colaborativa')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >¿Conoces las últimas actualizaciones de
+                              CIAF?</label
+                            >
+                            <select
+                              class="micampo"
+                              name="egresados_actualizacion"
+                              formControlName="egresados_actualizacion"
+                              required
+                            >
+                              <option value="no">No</option>
+                              <option value="si">Si</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_actualizacion
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_actualizacion')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_actualizacion')?.dirty ||
+                                  myForm.get('egresados_actualizacion')
+                                    ?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="input-group mb-3 input-group-lg">
+                            <label
+                              >De 1 a 5, ¿qué tan probable es que recomiendes a
+                              CIAF con otra persona?</label
+                            >
+                            <select
+                              class="micampo"
+                              name="egresados_recomendar"
+                              formControlName="egresados_recomendar"
+                              required
+                            >
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
+                          <div
+                            *ngFor="
+                              let validation of account_validation_messages.egresados_recomendar
+                            "
+                          >
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                myForm
+                                  .get('egresados_recomendar')
+                                  ?.hasError(validation.type) &&
+                                (myForm.get('egresados_recomendar')?.dirty ||
+                                  myForm.get('egresados_recomendar')?.touched)
+                              "
+                            >
+                              {{ validation.message }}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12 text-center">
+                          <button
+                            type="submit"
+                            class="btn bg-3 btn-lg"
+                            [disabled]="!myForm.valid"
+                          >
+                            Enviar
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ng-template>
