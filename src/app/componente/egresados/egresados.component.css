@@ -515,3 +515,61 @@
 .slide {
   padding: 0 15px;
 }
+
+/* Estilos para el carrusel de convenios */
+.carousel {
+  margin: 20px 0;
+}
+
+.slide {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 10px;
+}
+
+.logo-img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* Logo más grande para el primero */
+.logo-large {
+  max-height: 140px !important;
+  transform: scale(1.1);
+}
+
+/* Estilo para el logo blanco */
+.logo-white {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .logo-container {
+    height: 120px;
+  }
+  
+  .logo-img {
+    max-height: 100px;
+  }
+  
+  .logo-large {
+    max-height: 110px !important;
+  }
+}
