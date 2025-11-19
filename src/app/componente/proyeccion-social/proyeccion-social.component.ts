@@ -11,8 +11,13 @@ declare var $: any;
   styleUrls: ['./proyeccion-social.component.css'],
 })
 export class ProyeccionSocialComponent implements OnInit {
-  public logo_pc = 'assets/image/investigaciones-pc.webp';
-  public logo_m = 'assets/image/investigaciones-m.webp';
+  public logo_pc = 'assets/image/extensioon_proyeccion_social.webp';
+  public logo_m = 'assets/image/extensioon_proyeccion_social.webp';
+
+  public focus_group = 'assets/image/focus_group.webp';
+
+  public festival_poesia = 'assets/image/luna_locos.webp';
+
   public grupo_investigacion = 'assets/image/grupo-investigacion.webp';
   public investigacion_reconocimiento =
     'assets/image/investigacion-reconocimiento.webp';
@@ -39,8 +44,7 @@ export class ProyeccionSocialComponent implements OnInit {
     'assets/image/investigaciones-enterate.webp';
   public convocatorias_internas = 'assets/image/convocatorias-internas.webp';
   public convocatorias_externas = 'assets/image/convocatorias-externas.webp';
-  public internacionalizacion_investigacion =
-    'assets/image/internacionalizacion-investigacion.webp';
+
   public investigaciones_grupo_investigacion =
     'assets/image/investigaciones-grupo-investigacion.webp';
 
@@ -55,7 +59,7 @@ export class ProyeccionSocialComponent implements OnInit {
   public convenios = [
     {
       titulo: 'Convenio Sumando Sueños',
-      url: 'https://clubactivo2030.org/',
+      url: 'https://www.instagram.com/2030pereira',
       resumen:
         'Alianza entre CIAF y el Movimiento Sociocultural Transformadores On Going para impulsar proyectos educativos, comunitarios y culturales.',
       imagen: 'assets/img/proyeccion/sumando-suenos.jpg',
@@ -77,13 +81,11 @@ export class ProyeccionSocialComponent implements OnInit {
         'Apoyo logístico para líderes culturales nominados en Titanes Caracol 2024.'
       ],
       fotos: [
-        'assets/img/proyeccion/sumando/1.jpg',
-        'assets/img/proyeccion/sumando/2.jpg',
-        'assets/img/proyeccion/sumando/3.jpg',
-        'assets/img/proyeccion/sumando/4.jpg'
+        'assets/image/proyeccion/sumando/1.webp',
+        'assets/image/proyeccion/sumando/2.webp',
+        'assets/image/proyeccion/sumando/3.webp'
       ]
     },
-
     {
       titulo: 'Convenio Club Activo 2030',
       url: 'https://clubactivo2030.org/',
@@ -104,12 +106,50 @@ export class ProyeccionSocialComponent implements OnInit {
         'Convenio firmado en abril de 2025 para fortalecer la acción social y educativa.'
       ],
       fotos: [
-        'assets/img/proyeccion/club/1.jpg',
-        'assets/img/proyeccion/club/2.jpg',
-        'assets/img/proyeccion/club/3.jpg'
       ]
     }
   ];
+
+  public slideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 500,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
+    centerMode: true,
+    centerPadding: '60px',
+    focusOnSelect: true
+  };
+
+  public aliado_proyeccion_social_1 = 'assets/image/aliado_proyeccion_social_1.webp';
+  public aliado_proyeccion_social_2 = 'assets/image/aliado_proyeccion_social_2.webp';
+  public aliado_proyeccion_social_3 = 'assets/image/aliado_proyeccion_social_3.webp';
 
 
   pagina: any;

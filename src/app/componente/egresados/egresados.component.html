@@ -199,9 +199,11 @@
 </section>
 
 <section class="pt-4 mt-4 mostrar" *ngIf="isValid4">
-    <div class="row justify-content-center">
-         <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-            <div class="row">
+  <div class="row justify-content-center">
+
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+        <div class="row">
+            <div class="col-xxl-12 mb-4 pb-4 text-center">
                 <h3 class="titulo-2 pb-4">Conéctate con nuevas oportunidades<br> laborales.</h3>
                 <p>
                     En CIAF le apostamos a tu empleabilidad y crecimiento profesional.
@@ -209,91 +211,213 @@
                     empresas que valoran tu talento.
                 </p>
             </div>
-        </div>
-        <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-9 col-9">
-            <div class="row justify-content-center">
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center">
-                    <p class="fs-4 bolder-1 text-1 ">Esteban Ganan</p>
-                    <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-                    <img [src]="testimonio_egresado_1" alt="testimonio" width="70%">
-                    <p class="fst-italic p-4 fs-5">
-                        Fue el concejal más joven de Pereira, comprometido con la defensa de los intereses
-                        de los pereiranos y la generación de nuevas oportunidades para la ciudad.
-                    </p>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center">
-                    <p class="fs-4 bolder-1 text-1 ">Ana Carolina Mas</p>
-                    <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-                    <img [src]="testimonio_egresado_2" alt="testimonio" width="70%">
-                    <p class="fst-italic p-4 fs-5">
-                        Destacada como una de las mejores directoras comerciales de la marca Toyota,
-                        combina su liderazgo empresarial con una profunda vocación por las labores
-                        sociales.
-                    </p>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center">
-                    <p class="fs-4 bolder-1 text-1 ">Daniel Mora</p>
-                    <p class="fst-italic lh-1 fs-5">Ingeniería de software</p>
-                    <img [src]="testimonio_egresado_3" alt="testimonio" width="70%">
-                    <p class="fst-italic p-4 fs-5">
-                        Su historia refleja coraje, superación y propósito. Lidera con el ejemplo,
-                        transforma con su voz e inspira con su camino.
-                        <br>
-                        Lleva en sí el sello CIAF: compromiso, resiliencia y transformación de vida.
-                    </p>
-                </div>
-            </div>
             
         </div>
-
-
-        <div class="row justify-content-center">
-            <div class="col-xl-12 mb-4 pb-4">
-                <h2 class="titulo-2 text-center">Aliados Estratégicos</h2>
-            </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-                <ngx-slick-carousel
-                    class="carousel"
-                    #slickModal="slick-carousel"
-                    [config]="slideConfig"
-                >
-                    <div
-                        ngxSlickItem
-                        class="slide"
-                    >
-                    <img
-                        src="{{aliado_egresados_1}}"
-                        width="100%"
-                        height="auto"
-                        alt="Servicio de empleo"
-                    />
-                    </div>
-                    <div
-                        ngxSlickItem
-                        class="slide"
-                    >
-                    <img
-                        src="{{aliado_egresados_2}}"
-                        width="100%"
-                        height="auto"
-                        alt="adecco"
-                    />
-                    </div>
-                    <div
-                        ngxSlickItem
-                        class="slide"
-                    >
-                    <img
-                        src="{{aliado_egresados_3}}"
-                        width="100%"
-                        height="auto"
-                        alt="RisaraldaEmplea2025"
-                    />
-                    </div>
-                </ngx-slick-carousel>
-            </div>
-        </div>
     </div>
+
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+      <div class="row">
+        <div class="col-xxl-12 mb-4 pb-4 text-center">
+          <h2 class="titulo-2">Red Colaborativa de Egresados CIAF</h2>
+          <p class="lead fs-4 text-1">
+            Porque ser egresado CIAF es seguir dejando huella.
+          </p>
+        </div>
+
+        <div class="col-12 text-center mb-4">
+          <p class="fs-5">
+            Desde CIAF fortalecemos una red que une talento, propósito y transformación.<br>
+            Nuestros egresados participan activamente en proyectos que fortalecen la comunidad educativa y<br>
+            generan impacto social, académico y empresarial.
+          </p>
+        </div>
+
+        <!-- CÓMO PARTICIPAR - TRES ICONOS -->
+        <div class="col-12 mb-5">
+          <h3 class="text-1 bolder-1 text-center mb-4">¿Cómo puedes participar?</h3>
+          
+          <div class="row justify-content-center">
+            
+            <!-- VOLUNTARIADO -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+              <div class="participacion-card text-center">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-hands-helping fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Voluntariado CIAF</h4>
+                <p class="text-justify">
+                  Comparte tu tiempo y talento apoyando actividades sociales, académicas o institucionales.
+                  Tu experiencia puede transformar realidades y motivar a nuevas generaciones.
+                </p>
+              </div>
+            </div>
+
+            <!-- APADRINAR -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+              <div class="participacion-card text-center">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-user-graduate fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Apadrina un estudiante</h4>
+                <p class="text-justify">
+                  Acompaña el crecimiento de un estudiante CIAF brindando orientación, mentoría o apoyo económico.
+                  Ser padrino CIAF es creer en el poder de la educación para cambiar vidas.
+                </p>
+              </div>
+            </div>
+
+            <!-- COMPARTIR EXPERIENCIA -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+              <div class="participacion-card text-center">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-comments fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Comparte la Experiencia</h4>
+                <p class="text-justify">
+                  Sé parte de nuestros conversatorios, charlas o clases abiertas donde los egresados inspiran con su historia profesional.
+                  Tu trayectoria puede convertirse en ejemplo y guía para quienes hoy inician su camino.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CONTACTO EGRESADOS -->
+        <div class="col-12 text-center bg-light py-4 rounded">
+          <h4 class="text-1 bolder-1 mb-3">¿Quieres hacer parte de esta red?</h4>
+          <p class="fs-5 mb-3">
+            Déjanos tus datos o escríbenos a 
+            <a href="mailto:egresados@ciaf.edu.co" class="text-1 bolder-1">egresados@ciaf.edu.co</a><br>
+            para integrarte a las iniciativas del Programa de Egresados CIAF.
+          </p>
+          <button class="btn btn-primary btn-lg">
+            Únete a la Red
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+      <div class="row">
+        <div class="col-xxl-12 mb-4 pb-4 text-center">
+          <h2 class="titulo-2">Modelo de Bienestar</h2>
+          <p class="lead fs-4 text-1">
+            Porque el bienestar CIAF también crece contigo.
+          </p>
+        </div>
+
+        <div class="col-12 text-center mb-4">
+          <p class="fs-5">
+            Ser egresado CIAF es seguir disfrutando de un entorno que promueve la salud, el arte, el deporte y<br>
+            el desarrollo humano. El Modelo de Bienestar Institucional se mantiene activo para ti, acompañando<br>
+            tu vida profesional y personal en seis ejes que fortalecen tu conexión con la comunidad CIAF.
+          </p>
+        </div>
+
+        <!-- EJES DE BIENESTAR -->
+        <div class="col-12">
+          <div class="row justify-content-center">
+            
+            <!-- SALUD Y VIDA -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+              <div class="bienestar-card text-center h-100">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-heartbeat fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Salud y Vida</h4>
+                <p class="text-justify">
+                  Promovemos el equilibrio físico y emocional a través de campañas y jornadas de autocuidado.
+                </p>
+              </div>
+            </div>
+
+            <!-- RECREACIÓN Y DEPORTES -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+              <div class="bienestar-card text-center h-100">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-running fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Recreación y Deportes</h4>
+                <p class="text-justify">
+                  Te invitamos a seguir participando en torneos, encuentros y actividades recreativas CIAF.
+                </p>
+              </div>
+            </div>
+
+            <!-- ARTE Y CULTURA -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+              <div class="bienestar-card text-center h-100">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-palette fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Arte y Cultura</h4>
+                <p class="text-justify">
+                  La creatividad sigue siendo parte de ti: exposiciones, música, danza y fotografía con sello CIAF.
+                </p>
+              </div>
+            </div>
+
+            <!-- DESARROLLO HUMANO -->
+            <div class="col-xl-6 col-lg-6 col-md-8 col-12 mb-4">
+              <div class="bienestar-card text-center h-100">
+                <div class="icono-azul mb-3">
+                  <i class="fas fa-chart-line fa-3x"></i>
+                </div>
+                <h4 class="text-1 bolder-1 mb-3">Desarrollo Humano</h4>
+                <p class="text-justify">
+                  Espacios de crecimiento personal y profesional. Participa en las actividades institucionales 
+                  de Bienestar y continúa siendo parte de nuestra comunidad.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12">
+      <div class="row justify-content-center">
+        <div class="col-xl-12 mb-4 pb-4">
+          <h2 class="titulo-2 text-center">Aliados Estratégicos</h2>
+        </div>
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+          <ngx-slick-carousel
+            class="carousel"
+            #slickModal="slick-carousel"
+            [config]="slideConfig"
+          >
+            <div ngxSlickItem class="slide">
+              <img
+                src="{{aliado_egresados_1}}"
+                width="100%"
+                height="auto"
+                alt="Servicio de empleo"
+              />
+            </div>
+            <div ngxSlickItem class="slide">
+              <img
+                src="{{aliado_egresados_2}}"
+                width="100%"
+                height="auto"
+                alt="adecco"
+              />
+            </div>
+            <div ngxSlickItem class="slide">
+              <img
+                src="{{aliado_egresados_3}}"
+                width="100%"
+                height="auto"
+                alt="RisaraldaEmplea2025"
+              />
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <div class="row m-menu bg-2">
