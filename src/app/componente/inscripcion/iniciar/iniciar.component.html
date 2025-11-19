@@ -134,7 +134,7 @@
                     </div>
                     <div class="col-auto my-1">
                         <div class="custom-control custom-checkbox mr-sm-2">
-                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
                             <label class="custom-control-label" for="proteccion_datos" style="font-size: 13px"> Acepto los 
                                 <strong>
                                     <a href="https://www.ciaf.edu.co/tratamiento_datos.php">términos y condiciones</a>
@@ -142,17 +142,24 @@
                             </label>
                         </div>
                     </div>
-                    <div class="d-grid gap-2">
-                        <button type="submit" id="ingresar_inscripcion" class="btn btn-lg bg-1 text-white"  [disabled]="!myForm.valid">Iniciar Proceso</button>
-
+                    <div class="col-auto my-1">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault1" formControlName="politic" name="politic">
+                                Acepto el envío de información a mi correo electrónico. He revisado las
+                            <a routerLink="/tratamientodatos" target="_blank">
+                                Políticas de protección de Datos
+                            </a> y
+                            <a href="https://ciaf.edu.co/assets/referidos/terminosycondiciones.pdf" target="_blank">
+                                Términos condiciones
+                            </a>.
+                        </div>
                     </div>
 
+                    <div class="d-grid gap-2">
+                        <button type="submit" id="ingresar_inscripcion" class="btn btn-lg bg-1 text-white"  [disabled]="!myForm.valid">Iniciar Proceso</button>
+                    </div>
                 </form>
-
             </div>
-            
-
         </div>
     </div>
-    
 </div>

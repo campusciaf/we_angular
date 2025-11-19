@@ -75,6 +75,7 @@ import { PayComponent } from '@/app/features/pay/pay.component';
 import { OutstandingPaymentsComponent } from './features/pay/outstanding-payments/outstanding-payments.component';
 import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
 import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
+import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
     OutstandingPaymentsComponent,
     SafeHtmlPipe,
     PqrsdfComponent,
+    ProyeccionSocialComponent,
   ],
   imports: [
     BrowserModule,

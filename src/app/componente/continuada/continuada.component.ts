@@ -38,11 +38,5 @@ export class ContinuadaComponent implements OnInit {
     });
     
     this.activarLinkMenu();
-
-    
   }
-
-
-  
-
 }

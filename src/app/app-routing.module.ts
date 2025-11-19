@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './componente/page-not-found/page-not-foun
 import { ContinuadaDetalleComponent } from './componente/continuada-detalle/continuada-detalle.component';
 import { EnfermeriaComponent } from './componente/enfermeria/enfermeria.component';
 import { ConocenosComponent } from './componente/conocenos/conocenos.component';
+import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
 import { MotocicletasComponent } from './componente/motocicletas/motocicletas.component';
 import { AdministrativosaludComponent } from './componente/administrativosalud/administrativosalud.component';
 import { EmprendimientosComponent } from './componente/emprendimientos/emprendimientos.component';
@@ -55,6 +56,7 @@ const routes: Routes = [
   {path: 'continuadadetalle/:id', component:ContinuadaDetalleComponent},
   {path: 'bienestar', component:BienestarComponent},
   {path: 'conocenos', component:ConocenosComponent},
+  {path: 'proyeccion-social', component:ProyeccionSocialComponent},
   {path: 'motocicletas', component:MotocicletasComponent},
   {path: 'administrativo', component:AdministrativosaludComponent},
   {path: 'veterinaria', component:VeterinariaComponent},

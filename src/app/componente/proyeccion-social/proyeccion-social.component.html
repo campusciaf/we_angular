@@ -1,0 +1,317 @@
+<section>
+  <div class="row banner-interno">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
+      <img src="{{ logo_pc }}" alt="Egresados" />
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
+      <img src="{{ logo_m }}" alt="Egresados" />
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
+      <div class="row justify-content-center vertical-align-center">
+        <div
+          class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-banner"
+        >
+          <div class="row justify-content-center vertical-align-center">
+            <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
+              <h1 class="text-center bolder-1 titulo-banner">
+                EXTENSIÓN Y PROYECCIÓN SOCIAL
+              </h1>
+
+              <p class="lema text-center">
+                Formamos para transformar. Conectamos conocimiento con
+                territorio.
+              </p>
+            </div>
+            <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-0 m-0">
+  <div class="row justify-content-center">
+    <div id="content-programa">
+
+      <div id="pag-two">
+        <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+          <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-10 col-10">
+              <div class="row">
+                <div class="col-xxl-12 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+                  <h3 class="text-3 font-2 fs-big py-4 text-center">Convenios</h3>
+                </div>
+
+                <!-- Componente de Convenios - ACTIVADO -->
+                <div class="col-12">
+                  <section class="convenios-section">
+                    <div class="convenios-list">
+                      
+                      <!-- Convenio Sumando Sueños -->
+                      <div class="convenio-card" *ngFor="let c of convenios; let i = index">
+                        <div class="convenio-head">
+                          <div class="convenio-meta">
+                            <div class="convenio-text">
+                              <h3>{{ c.titulo }}</h3>
+                              <p class="convenio-resumen">{{ c.resumen }}</p>
+                            </div>
+                          </div>
+
+                          <button class="btn-conoce" (click)="toggleConvenio(i)"
+                                  [attr.aria-expanded]="c.abierto ? 'true' : 'false'"
+                                  [attr.aria-controls]="'panel-convenio-' + i">
+                            <span *ngIf="!c.abierto">Conoce más</span>
+                            <span *ngIf="c.abierto">Cerrar</span>
+                            <i class="chev" [class.open]="c.abierto"></i>
+                          </button>
+                        </div>
+
+                        <!-- PANEL DESPLEGABLE -->
+                        <div class="convenio-panel" id="{{ 'panel-convenio-' + i }}"
+                            [class.open]="c.abierto"
+                            [attr.aria-hidden]="c.abierto ? 'false' : 'true'">
+                          <div class="panel-inner">
+                            <div class="panel-left">
+                              <h4>¿Qué hacemos juntos?</h4>
+                              <ul class="feature-list">
+                                <li *ngFor="let a of c.acciones">{{ a }}</li>
+                              </ul>
+
+                              <h5>Acciones destacadas</h5>
+                              <ul class="feature-list small">
+                                <li *ngFor="let d of c.destacados">{{ d }}</li>
+                              </ul>
+
+                              <!-- Enlaces específicos para cada convenio -->
+                              <div class="convenio-links mt-4">
+                                <a *ngIf="c.titulo === 'Convenio Sumando Sueños'" 
+                                  href="https://www.instagram.com/laferrotransformadores/" 
+                                  target="_blank" 
+                                  class="btn-outline me-3">
+                                  <i class="fab fa-instagram"></i> Instagram LaFerro
+                                </a>
+                                <a *ngIf="c.titulo === 'Convenio Club Activo 2030'" 
+                                  href="https://www.instagram.com/2030pereira/?hl=es" 
+                                  target="_blank" 
+                                  class="btn-outline me-3">
+                                  <i class="fab fa-instagram"></i> Instagram Club Activo 2030
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="panel-right">
+                            <div class="mini-carousel" *ngIf="c.fotos?.length">
+                              <div class="img-track">
+                                <img *ngFor="let f of c.fotos" [src]="f" alt="{{ c.titulo }}" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- COLUMNA DERECHA - NORMATIVIDAD -->
+            <div class="col-xl-3 col-lg-4 col-md-8 col-12 px-4">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <h3 class="fs-4 text-1 text-center">Normatividad</h3>
+                </div>
+                <div class="col-10 text-white bg-1">
+                  <hr class="m-0" />
+                </div>
+                <div class="col-10 bg-1">
+                  <a
+                    href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf"
+                    class="btn text-white"
+                    target="_blank"
+                  >
+                    > Politica de Extensión y Proyección Social
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="pag-six">
+        <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
+          <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-10 col-10">
+              <div class="row">
+                <div class="col-xxl-12 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+                  <h3 class="text-3 font-2 fs-big text-center">Eventos y Actividades</h3>
+                </div>
+
+                <!-- EVENTO 1: Focus Group -->
+                <div class="col-12 mb-5">
+                  <h4 class="text-1 bolder-1 mb-3">Focus Group — Distrito Creativo La Concordia</h4>
+                  <p>
+                    En CIAF creemos en los proyectos que transforman territorios.
+                    <br><br>
+                    Por eso reunimos a empresarios, gerentes y líderes públicos de Pereira 
+                    para escuchar, conectar y construir juntos la visión del
+                    <span class="text-1 bolder-1 bold">Distrito Creativo La Concordia</span>, 
+                    un espacio llamado a revitalizar el corazón de la ciudad.
+                    <br><br>
+                    Desde las voces de la comunidad y con el liderazgo de nuestras directivas 
+                    y docentes, identificamos retos, motivaciones y oportunidades que impulsarán 
+                    un centro más vivo, más creativo y con mayor impacto social.
+                    <br><br>
+                    El encuentro se realizó el <span class="text-1 bolder-1 bold">18 de julio de 2024</span> 
+                    en el <span class="text-1 bolder-1 bold">CRAI de CIAF</span>, con una participación 
+                    que reafirma nuestro propósito: 
+                    <span class="text-1 bolder-1 bold">sumar conocimiento para transformar realidades.</span>
+                  </p>
+                  <div class="col-12 text-center py-2 mb-4">
+                    <img
+                      [src]="focus_group"
+                      width="98%"
+                      alt="Focus Group Distrito Creativo La Concordia"
+                    /><br />
+                  </div>
+                </div>
+
+                <br><br>
+
+                <div class="col-12 mb-5">
+                  <h4 class="text-1 bolder-1 mb-3">Simposio de Seguridad y Salud en el Trabajo</h4>
+                  <p>
+                    El <span class="text-1 bolder-1 bold">3 de diciembre de 2023</span> CIAF llevó a cabo su primer 
+                    <span class="text-1 bolder-1 bold">Simposio de Seguridad y Salud en el Trabajo</span>, 
+                    un espacio académico diseñado para fortalecer la formación de nuestros estudiantes y ampliar 
+                    su mirada frente a los desafíos reales del sector.
+                    <br><br>
+                    El evento contó con la participación de profesionales en <span class="text-1 bolder-1 bold">Derecho</span> 
+                    y <span class="text-1 bolder-1 bold">PESV</span>, además de la intervención del actor 
+                    <span class="text-1 bolder-1 bold">Mauricio Flórez</span>, quien, a través de su puesta en escena 
+                    "El Culebrero y Margarito", representó de manera creativa y crítica las situaciones más frecuentes 
+                    en SST dentro de las organizaciones.
+                    <br><br>
+                    Un encuentro que reafirma nuestro compromiso con una formación pertinente, humana y orientada 
+                    a la transformación del entorno laboral.
+                  </p>
+                </div>
+
+                <br><br>
+
+                <div class="col-12 mb-5">
+                  <h4 class="text-1 bolder-1 mb-3">XIX Festival Internacional de Poesía Luna de Locos</h4>
+                  <p>
+                    Entre el <span class="text-1 bolder-1 bold">25 y el 30 de agosto de 2025</span>, Pereira fue escenario del 
+                    <span class="text-1 bolder-1 bold">XIX Festival Internacional de Poesía Luna de Locos</span>, 
+                    un encuentro que reunió a más de 25 poetas de países como India, Estados Unidos, Canadá, México, 
+                    Venezuela, Ecuador, Argentina y España.
+                    <br><br>
+                    El <span class="text-1 bolder-1 bold">28 de agosto</span>, CIAF se vinculó apoyando a la 
+                    <span class="text-1 bolder-1 bold">IE Boyacá</span> en una jornada que contó con la participación 
+                    de destacados poetas como <span class="text-1 bolder-1 bold">Alejandro Simón Partal</span> y 
+                    <span class="text-1 bolder-1 bold">Miriam Reyes</span>.
+                    <br><br>
+                    Una experiencia que reafirma nuestro compromiso con la cultura, el arte y la formación integral 
+                    que inspira a nuestros estudiantes y a la comunidad.
+                    <br><br>
+                    <a href="https://www.lunadelocoselfestival.com/" target="_blank" class="text-1 bolder-1">
+                      Conoce más sobre el festival aquí
+                    </a>
+                  </p>
+                  <div class="col-12 text-center py-2 mb-4">
+                    <img
+                      [src]="festival_poesia"
+                      width="98%"
+                      alt="XIX Festival Internacional de Poesía Luna de Locos"
+                    /><br />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <!-- COLUMNA DERECHA (se mantiene vacía para el diseño) -->
+            <div class="col-xl-3 col-lg-5 col-md-8 col-12 px-4"></div>
+          </div>
+        </section>
+      </div>
+
+      <div id="pag-contacto">
+        <section
+          class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0"
+        >
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8 col-md-10 col-10">
+              <div class="row">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-12 mb-4 pb-4">
+                  <h3 class="text-3 font-2 fs-big text-center">Contacto</h3>
+                </div>
+
+                <div class="col-12 text-center">
+                  <div class="contacto-info">
+                    <h4 class="text-1 bolder-1 mb-3">Proyección Social</h4>
+                    <p class="fs-5">
+                      <a
+                        href="mailto:proyeccion.social@ciaf.edu.co"
+                        class="text-1"
+                        >proyeccion.social@ciaf.edu.co</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-5 col-md-8 col-12 px-4"></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="pt-4 mt-4 mostrar">
+        <div class="row justify-content-center">
+          <div class="row justify-content-center">
+            <div class="col-xxl-12 col-lg-12 col-md-12 col-12 mb-4 pb-4">
+              <h3 class="text-3 font-2 fs-big text-center">Aliados Estratégicos</h3>
+            </div>
+
+            <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+              <ngx-slick-carousel
+                class="carousel"
+                #slickModal="slick-carousel"
+                [config]="slideConfig"
+              >
+                <div ngxSlickItem class="slide">
+                  <img
+                    src="{{ aliado_proyeccion_social_1 }}"
+                    width="100%"
+                    height="auto"
+                    alt="Servicio de empleo"
+                  />
+                </div>
+                <div ngxSlickItem class="slide">
+                  <img
+                    src="{{ aliado_proyeccion_social_2 }}"
+                    width="100%"
+                    height="auto"
+                    alt="adecco"
+                  />
+                </div>
+                <div ngxSlickItem class="slide">
+                  <img
+                    src="{{ aliado_proyeccion_social_3 }}"
+                    width="100%"
+                    height="auto"
+                    alt="RisaraldaEmplea2025"
+                  />
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
