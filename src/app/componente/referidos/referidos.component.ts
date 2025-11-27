@@ -128,7 +128,7 @@ export class ReferidosComponent {
   programas = [
       { valor: "Nivel 1 - Técnico Profesional en Procesos Empresariales", texto: "Administración de Empresas" },
       { valor: "Técnica Profesional en Gestión Financiera", texto: "Contaduría Pública" },
-      { valor: "Nivel 1 - Técnica profesional en programación de software", texto: "Ingeniería de desarrollo de software" },
+      { valor: "Nivel 1 - Técnica profesional en programación de software", texto: "Ingeniería de Software" },
       { valor: "Nivel 1 - Técnico Profesional en Logística de Producción", texto: "Ingeniería Industrial" },
       { valor: "Nivel 1 - Técnico Profesional en Procesos de Seguridad y Salud en el Trabajo", texto: "Seguridad y salud en el trabajo (SSTG)" },
       { valor: "Técnico laboral por competencias en mecánica de motocicletas", texto: "Mecánica y mantenimiento de motocicletas" },
