@@ -17,6 +17,8 @@ import {
   NgbModalRef,
   NgbModalConfig,
 } from '@ng-bootstrap/ng-bootstrap';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
+
 declare var jQuery: any;
 declare var $: any;
 declare let alertify: any;
@@ -68,6 +70,10 @@ export class EgresadosComponent {
   public testimonio_egresado_1 = 'assets/image/testimonio-egresado-1.webp';
   public testimonio_egresado_2 = 'assets/image/testimonio-egresado-2.webp';
   public testimonio_egresado_3 = 'assets/image/testimonio-egresado-3.webp';
+  public testimonio_egresado_4 = 'assets/image/testimonio-egresado-4.webp';
+
+  public testimonio_egresado_video = 'assets/video/egresados.mp4';
+  
 
   public aliado_egresados_1 = 'assets/image/aliado_egresados_1.webp';
   public aliado_egresados_2 = 'assets/image/aliado_egresados_2.webp';
@@ -264,6 +270,10 @@ export class EgresadosComponent {
     
     this.conectarApiService.obtenerContinuada().subscribe(respuesta=>{
       this.listarCursos=respuesta
+    });
+    
+    this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2=>{
+      this.listarConvenios=respuesta2
     });
   }
 
@@ -582,5 +592,45 @@ export class EgresadosComponent {
     this.element = false;
     this.modalService.open(this.myModalInfo, { centered: true });
     this.numericValue = '';
+  }
+
+  @ViewChild('slickModalConv')
+  slickModalConv!: SlickCarouselComponent;
+
+  slideConfigConvenios = {
+    "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+    responsive: [
+      {
+        breakpoint: 1048,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 778,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+
+  };
+
+  listarConvenios:any;
+
+  public next="assets/image/btn-next.webp";
+  public prev="assets/image/btn-prev.webp";
+
+  prevImgConv(){
+    this.slickModalConv.slickPrev();
+  }
+  nextImgConv(){
+    this.slickModalConv.slickNext();
   }
 }

@@ -428,21 +428,20 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 }
 
-
-.slide img{
-  -webkit-transform:scale(1);
-  transform:scale(1); 
+.slide img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
   transition: all 1s;
 }
 
-.slide img:hover{
-  -webkit-transform:scale(1.3);
-  transform:scale(1.3); 
+.slide img:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
-
 /* Estilos para la sección de Egresados */
-.participacion-card, .bienestar-card {
+.participacion-card,
+.bienestar-card {
   background: #fff;
   border-radius: 12px;
   padding: 30px 20px;
@@ -452,7 +451,8 @@
   height: 100%;
 }
 
-.participacion-card:hover, .bienestar-card:hover {
+.participacion-card:hover,
+.bienestar-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border-color: #001550;
@@ -496,12 +496,13 @@
   .titulo-2 {
     font-size: 1.8rem;
   }
-  
-  .participacion-card, .bienestar-card {
+
+  .participacion-card,
+  .bienestar-card {
     padding: 20px 15px;
     margin-bottom: 20px;
   }
-  
+
   .icono-azul i {
     font-size: 2.5rem !important;
   }
@@ -536,7 +537,7 @@
   padding: 15px;
   background-color: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: 0 10px;
 }
 
@@ -564,12 +565,153 @@
   .logo-container {
     height: 120px;
   }
-  
+
   .logo-img {
     max-height: 100px;
   }
-  
+
   .logo-large {
     max-height: 110px !important;
+  }
+}
+
+/* Estilos para centrar verticalmente y mejorar el botón */
+.cards {
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+}
+
+.post-content {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.title {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.btn-custom {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white !important;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(135deg, #2980b9, #2471a3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-custom:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .cards {
+    min-height: 180px;
+  }
+
+  .title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    min-height: 160px;
+  }
+
+  .post-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .btn-custom {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .padding-bienestar {
+    padding-top: 100px;
+  }
+  .boton-prev {
+    left: 5%;
+    margin-top: 180px;
+  }
+  .boton-next {
+    right: 10%;
+    margin-top: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .padding-bienestar {
+    padding-top: 80px;
+  }
+
+  .b-interno .b-contenido p {
+    font-size: 26px;
+    line-height: 22px;
+  }
+  .boton-prev {
+    left: 5%;
+    margin-top: 180px;
+  }
+  .boton-next {
+    right: 10%;
+    margin-top: 180px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .padding-bienestar {
+    padding-top: 70px;
+  }
+  .b-interno .b-contenido p {
+    font-size: 20px !important;
+    line-height: 22px;
+  }
+  .boton-prev {
+    left: 10%;
+    margin-top: 150px;
+  }
+  .boton-next {
+    right: 10%;
+    margin-top: 150px;
+  }
+
+  .b-interno img {
+    width: 100%;
+    height: 220px;
   }
 }

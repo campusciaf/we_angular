@@ -155,69 +155,118 @@
   </div>
 </section>
 
-<section class="pt-4 mt-4 mostrar" *ngIf="isValid2">
-  <div class="row justify-content-center">
-    <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-      <div class="row">
-        <h3 class="titulo-2 pb-4">
-          Tu crecimiento profesional<br />
-          no se detiene.
-        </h3>
-        <p>
-          Seguir apostándole a tu desarrollo es nuestro compromiso.
-          <br /><br />
-          Por eso, como egresado CIAF, obtienes un 10 % de descuento en los
-          programas de Educación Continua que te ayudarán a fortalecer tus
-          habilidades, actualizar tus conocimientos y ampliar tus oportunidades
-          laborales.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-      <div class="row">
-        <div
-          class="cards col-xl-4"
-          *ngFor="let cursos of listarCursos; index as i"
-        >
-          <div class="column m-4">
-            <div [className]="'post-module'">
-              <div class="thumbnail">
-                <img
-                  src="https://ciaf.digital/public/img_educacion/{{
-                    cursos.imagen_curso
-                  }}"
-                  alt="{{ cursos.nombre_curso }}"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="post-content">
-                <div
-                  class="category"
-                  [ngStyle]="{ 'background-color': cursos.color }"
-                >
-                  {{ cursos.modalidad_curso }}
+<section class="p-0 m-0" *ngIf="isValid2">
+  <div id="content-programa">
+    <div id="pag-ini">
+      <section
+        class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0"
+      >
+        <div class="row justify-content-center">
+          <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+            <div class="row justify-content-center">
+              <div
+                class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center"
+              >
+                <div class="row">
+                  <h3 class="titulo-2 pb-4">
+                    Tu crecimiento profesional<br />
+                    no se detiene.
+                  </h3>
+                  <p>
+                    Seguir apostándole a tu desarrollo es nuestro compromiso.
+                    <br /><br />
+                    Por eso, como egresado CIAF, obtienes un 10 % de descuento
+                    en los programas de Educación Continua que te ayudarán a
+                    fortalecer tus habilidades, actualizar tus conocimientos y
+                    ampliar tus oportunidades laborales.
+                  </p>
                 </div>
-                <h1 class="title">{{ cursos.nombre_curso }}</h1>
-                <div class="post-meta">
+              </div>
+              <div class="mb-4 pb-4 text-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
                   <div class="row">
-                    <div class="col-xl-7 pt-1">
-                      <span class="timestamp"
-                        ><img src="{{ calendario }}" alt="Publicado" />
-                        Publicado {{ cursos.create_dt | date : "d MMM" }}</span
-                      >
+                    <div
+                      class="cards col-xl-4"
+                      *ngFor="let cursos of listarCursos; index as i"
+                    >
+                      <div class="column m-4">
+                        <div [className]="'post-module'">
+                          <div class="thumbnail">
+                            <img
+                              src="https://ciaf.digital/public/img_educacion/{{
+                                cursos.imagen_curso
+                              }}"
+                              alt="{{ cursos.nombre_curso }}"
+                              style="width: 100%"
+                            />
+                          </div>
+                          <div class="post-content">
+                            <div
+                              class="category"
+                              [ngStyle]="{ 'background-color': cursos.color }"
+                            >
+                              {{ cursos.modalidad_curso }}
+                            </div>
+                            <h1 class="title">{{ cursos.nombre_curso }}</h1>
+                            <div class="post-meta">
+                              <div class="row">
+                                <div class="col-xl-7 pt-1">
+                                  <span class="timestamp"
+                                    ><img
+                                      src="{{ calendario }}"
+                                      alt="Publicado"
+                                    />
+                                    Publicado
+                                    {{
+                                      cursos.create_dt | date : "d MMM"
+                                    }}</span
+                                  >
+                                </div>
+                                <div class="col-xl-2 pt-1">
+                                  <span class="comments"
+                                    >39
+                                    <img src="{{ vistas }}" alt="Publicado" />
+                                  </span>
+                                </div>
+                                <div class="col-xl-3">
+                                  <a
+                                    [routerLink]="[
+                                      '/continuadadetalle',
+                                      cursos.id_curso
+                                    ]"
+                                    class="btn btn-light btn-sm text-black"
+                                    >Leer más
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-xl-2 pt-1">
-                      <span class="comments"
-                        >39 <img src="{{ vistas }}" alt="Publicado" />
-                      </span>
-                    </div>
-                    <div class="col-xl-3">
-                      <a
-                        [routerLink]="['/continuadadetalle', cursos.id_curso]"
-                        class="btn btn-light btn-sm text-black"
-                        >Leer más
-                      </a>
+
+                    <div class="cards col-xl-4">
+                      <div class="column m-4">
+                        <div class="post-content">
+                          <h3 class="title">
+                            Descubre más programas y mantén activa tu membresía
+                            CIAF
+                          </h3>
+                          <div class="post-meta">
+                            <div class="row">
+                              <div class="col-xl-12 text-center">
+                                <a
+                                  href="https://www.ciaf.edu.co/continuada"
+                                  class="btn btn-custom"
+                                  target="_blank"
+                                >
+                                  Más programas
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -225,7 +274,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </section>
@@ -248,44 +297,85 @@
       </div>
     </div>
     <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-9 col-9">
-      <div class="row justify-content-center">
-        <div
-          class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center"
-        >
-          <p class="fs-4 bolder-1 text-1">Esteban Ganan</p>
-          <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-          <img [src]="testimonio_egresado_1" alt="testimonio" width="70%" />
-          <p class="fst-italic p-4 fs-5">
-            Fue el concejal más joven de Pereira, comprometido con la defensa de
-            los intereses de los pereiranos y la generación de nuevas
-            oportunidades para la ciudad.
-          </p>
+      <div class="row">
+        <!-- Columna izquierda: 4 testimonios en grid 2x2 -->
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12">
+          <div class="row">
+            <!-- Fila 1 -->
+            <div
+              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
+            >
+              <p class="fs-4 bolder-1 text-1">Esteban Ganan</p>
+              <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
+              <img [src]="testimonio_egresado_1" alt="testimonio" width="70%" />
+              <p class="fst-italic p-3 fs-6">
+                Fue el concejal más joven de Pereira, comprometido con la
+                defensa de los intereses de los pereiranos y la generación de
+                nuevas oportunidades para la ciudad.
+              </p>
+            </div>
+            <div
+              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
+            >
+              <p class="fs-4 bolder-1 text-1">Ana Carolina Mas</p>
+              <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
+              <img [src]="testimonio_egresado_2" alt="testimonio" width="70%" />
+              <p class="fst-italic p-3 fs-6">
+                Destacada como una de las mejores directoras comerciales de la
+                marca Toyota, combina su liderazgo empresarial con una profunda
+                vocación por las labores sociales.
+              </p>
+            </div>
+
+            <!-- Fila 2 -->
+            <div
+              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
+            >
+              <p class="fs-4 bolder-1 text-1">Daniel Mora</p>
+              <p class="fst-italic lh-1 fs-5">Ingeniería de software</p>
+              <img [src]="testimonio_egresado_3" alt="testimonio" width="70%" />
+              <p class="fst-italic p-3 fs-6">
+                Su historia refleja coraje, superación y propósito. Lidera con
+                el ejemplo, transforma con su voz e inspira con su camino.
+                <br />
+                Lleva en sí el sello CIAF: compromiso, resiliencia y
+                transformación de vida.
+              </p>
+            </div>
+            <div
+              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
+            >
+              <!-- Aquí va el cuarto testimonio que necesitas agregar -->
+              <p class="fs-4 bolder-1 text-1">John Jairo Celis</p>
+              <p class="fst-italic lh-1 fs-5">
+                Seguridad y salud en el trabajo
+              </p>
+              <img [src]="testimonio_egresado_4" alt="testimonio" width="70%" />
+              <p class="fst-italic p-3 fs-6">
+                Lídera procesos clave en distintas empresas del sector, siendo
+                un ejemplo de compromiso, liderazgo y superación.
+                <br />
+                Su trayectoria demuestra que cuando se quiere, se puede, sin
+                importar la edad ni los desafíos del camino.
+              </p>
+            </div>
+          </div>
         </div>
-        <div
-          class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center"
-        >
-          <p class="fs-4 bolder-1 text-1">Ana Carolina Mas</p>
-          <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-          <img [src]="testimonio_egresado_2" alt="testimonio" width="70%" />
-          <p class="fst-italic p-4 fs-5">
-            Destacada como una de las mejores directoras comerciales de la marca
-            Toyota, combina su liderazgo empresarial con una profunda vocación
-            por las labores sociales.
-          </p>
-        </div>
-        <div
-          class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 p-4 text-center"
-        >
-          <p class="fs-4 bolder-1 text-1">Daniel Mora</p>
-          <p class="fst-italic lh-1 fs-5">Ingeniería de software</p>
-          <img [src]="testimonio_egresado_3" alt="testimonio" width="70%" />
-          <p class="fst-italic p-4 fs-5">
-            Su historia refleja coraje, superación y propósito. Lidera con el
-            ejemplo, transforma con su voz e inspira con su camino.
-            <br />
-            Lleva en sí el sello CIAF: compromiso, resiliencia y transformación
-            de vida.
-          </p>
+
+        <!-- Columna derecha: Video -->
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-12">
+          <div class="p-3 text-center">
+            <h4 class="mb-3">Conoce más historias</h4>
+            <!-- Reemplaza 'tu_url_de_video' con tu URL interna -->
+            <video width="100%" controls poster="ruta/a/tu/miniatura.jpg">
+              <source [src]="testimonio_egresado_video" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+            <p class="mt-3 fst-italic">
+              Nuestros egresados son el reflejo de la educación con propósito
+              que nos inspira cada día.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -297,26 +387,80 @@
     <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
       <div class="row">
         <div class="col-xxl-12 mb-4 pb-4 text-center">
-          <h3 class="titulo-2 pb-4">
-            Conéctate con nuevas oportunidades<br />
-            laborales.
-          </h3>
-          <p>
+          <h2 class="titulo-2 text-3">Conéctate con nuevas oportunidades laborales.</h2>
+          <h3 class="text-1">
             En CIAF le apostamos a tu empleabilidad y crecimiento profesional.
             Por eso, te compartimos plataformas donde podrás registrarte,
             postularte y conectar con empresas que valoran tu talento.
-          </p>
+          </h3>
         </div>
       </div>
     </div>
 
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-10 pb-4">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-10">
+            <ngx-slick-carousel
+              class="carousel"
+              #slickModal="slick-carousel"
+              [config]="slideConfig"
+            >
+              <div ngxSlickItem class="slide">
+                <a
+                  href="https://personas.serviciodeempleo.gov.co/Registrocuenta.aspx"
+                  target="_blank"
+                >
+                  <div class="logo-container">
+                    <img
+                      src="{{ aliado_egresados_1 }}"
+                      alt="Servicio de empleo"
+                      class="logo-img logo-large"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div ngxSlickItem class="slide">
+                <a
+                  href="https://empleo.adecco.com.co/account/register"
+                  target="_blank"
+                >
+                  <div class="logo-container">
+                    <img
+                      src="{{ aliado_egresados_2 }}"
+                      alt="adecco"
+                      class="logo-img logo-color"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div ngxSlickItem class="slide">
+                <a
+                  href="https://sites.google.com/camarapereira.org.co/RisaraldaEmplea2025"
+                  target="_blank"
+                >
+                  <div class="logo-container">
+                    <img
+                      src="{{ aliado_egresados_3 }}"
+                      alt="RisaraldaEmplea2025"
+                      class="logo-img"
+                    />
+                  </div>
+                </a>
+              </div>
+            </ngx-slick-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-10 pb-4 nt-4">
       <div class="row">
-        <div class="col-xxl-12 mb-4 pb-4 text-center">
-          <h2 class="titulo-2">Red Colaborativa de Egresados CIAF</h2>
-          <p class="lead fs-4 text-1">
-            Porque ser egresado CIAF es seguir dejando huella.
-          </p>
+        <div class="col-xxl-12 mb-4 pb-4 text-center mt-4">
+          <h2 class="titulo-2 text-3">Red Colaborativa de Egresados CIAF</h2>
+          <h3 class="text-1">
+           Porque ser egresado CIAF es seguir dejando huella.
+          </h3>
         </div>
 
         <div class="col-12 text-center mb-4">
@@ -401,13 +545,16 @@
       </div>
     </div>
 
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4 mt-10 pt-10">
+    <div
+      class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4 mt-10 pt-10"
+      style="margin-top: 10px; padding-top: 10px;"
+    >
       <div class="row">
-        <div class="col-xxl-12 mb-4 pb-4 text-center">
-          <h2 class="titulo-2">Modelo de Bienestar</h2>
-          <p class="lead fs-4 text-1">
+        <div class="col-xxl-12 mb-4 pb-4 text-center mt-4">
+          <h2 class="titulo-2 text-3">Modelo de Bienestar</h2>
+          <h3 class="text-1">
             Porque el bienestar CIAF también crece contigo.
-          </p>
+          </h3>
         </div>
 
         <div class="col-12 text-center mb-4">
@@ -436,49 +583,61 @@
       </div>
     </div>
 
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12">
-        <div class="row justify-content-center">
-            <div class="col-xl-12 mb-4 pb-4">
-            <h2 class="titulo-2 text-center">Convenios</h2>
-            </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-            <ngx-slick-carousel
-                class="carousel"
-                #slickModal="slick-carousel"
-                [config]="slideConfig"
+    <section>
+      <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
+          <button (click)="prevImgConv()" class="boton-prev">
+            <img src="{{ prev }}" alt="Anterior" />
+          </button>
+          <button (click)="nextImgConv()" class="boton-next">
+            <img src="{{ next }}" alt="Siguiente" />
+          </button>
+          <ngx-slick-carousel
+            class="carousel"
+            #slickModalConv="slick-carousel"
+            [config]="slideConfigConvenios"
+            responsive="breakpoints"
+          >
+            <div
+              ngxSlickItem
+              *ngFor="let datos of listarConvenios; index as i"
+              class="slide p-4"
             >
-                <div ngxSlickItem class="slide">
-                <div class="logo-container">
-                    <img
-                    src="{{ aliado_egresados_1 }}"
-                    alt="Servicio de empleo"
-                    class="logo-img logo-large"
-                    />
+              <div class="row">
+                <div class="col-xl-6 vertical-align-center">
+                  <a href="{{ datos.url_convenio }}" target="_blank"
+                    ><img
+                      src="https://ciaf.digital/public/web_convenios/{{
+                        datos.imagen_convenio
+                      }}"
+                      alt="{{ datos.nombre_convenio }}"
+                      width="90%"
+                      class="shadow-sm"
+                  /></a>
                 </div>
+                <div class="col-xl-6">
+                  <h3 class="bolder-1 lh-1 fs-4 mt-3">
+                    {{ datos.nombre_convenio }}
+                  </h3>
+                  <p class="lh-1">{{ datos.descripcion_convenio }}</p>
+                  <p>
+                    <a
+                      class="btn bg-3 btn-sm"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfWtSMEueIVsH0pPp4WCIMj8ePgj8DQUlMG3GtiBv9RC5JO7g/viewform?usp=sf_link"
+                      target="_blank"
+                    >
+                      Acceder al convenio
+                    </a>
+                  </p>
                 </div>
-                <div ngxSlickItem class="slide">
-                <div class="logo-container">
-                    <img
-                    src="{{ aliado_egresados_2 }}"
-                    alt="adecco"
-                    class="logo-img logo-white"
-                    />
-                </div>
-                </div>
-                <div ngxSlickItem class="slide">
-                <div class="logo-container">
-                    <img
-                    src="{{ aliado_egresados_3 }}"
-                    alt="RisaraldaEmplea2025"
-                    class="logo-img"
-                    />
-                </div>
-                </div>
-            </ngx-slick-carousel>
+              </div>
             </div>
+          </ngx-slick-carousel>
         </div>
-    </div>
+      </div>
+    </section>
 
+    <app-eventos></app-eventos>
   </div>
 </section>
 
