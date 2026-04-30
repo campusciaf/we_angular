@@ -1,0 +1,89 @@
+<div class="craia-container">
+
+  <!-- MENSAJE FLOTANTE -->
+  <div class="craia-tooltip" *ngIf="mostrarTooltip">
+
+    <!-- typing -->
+    <div *ngIf="estadoTooltip === 'typing'" class="typing">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- mensaje -->
+    <div *ngIf="estadoTooltip === 'mensaje'">
+      Hola 👋 soy Craia <br>
+      ¿Te ayudo a elegir tu programa?
+    </div>
+
+  </div>
+  <!-- BOTÓN -->
+  <div class="craia-button" (click)="toggleChat()">
+    <img src="assets/image/craia-avatar.webp" alt="Craia" />
+  </div>
+
+</div>
+
+<!-- PANEL -->
+<div class="craia-panel" *ngIf="abierto">
+
+  <!-- HEADER -->
+  <div class="craia-header">
+    <img src="assets/image/craia-avatar.webp" alt="Craia" />
+    <div>
+      <strong>Craia</strong>
+      <small>Asesora virtual</small>
+    </div>
+    <span (click)="toggleChat()">✖</span>
+  </div>
+
+  <!-- MENSAJES -->
+  <div class="craia-body">
+
+    <!-- HISTORIAL -->
+  <div *ngFor="let m of mensajes; let i = index" class="fila" [ngClass]="m.tipo">
+
+    <div class="mensaje" [ngClass]="m.tipo">
+
+      <!-- NOMBRE -->
+      <div 
+        *ngIf="m.tipo === 'bot' && (i === 0 || mensajes[i - 1]?.tipo !== 'bot')" 
+        class="nombre-bot">
+        Craia
+      </div>
+
+      <!-- CONTENIDO -->
+      <ng-container *ngIf="m.texto === 'Escribiendo...'; else textoNormal">
+        <div class="typing">
+          <span></span><span></span><span></span>
+        </div>
+      </ng-container>
+
+      <ng-template #textoNormal>
+        <div [innerHTML]="formatearTexto(m.texto)"></div>
+      </ng-template>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <div class="sugerencias" *ngIf="sugerencias.length">
+
+    <button 
+      class="sugerencia-btn"
+      *ngFor="let s of sugerencias"
+      (click)="clickSugerencia(s)">
+      
+      {{ s }}
+      
+    </button>
+
+  </div>
+
+  <!-- INPUT -->
+  <div class="craia-input">
+    <input [(ngModel)]="mensaje" placeholder="Escribe tu mensaje..." (keyup.enter)="enviar()">
+    <button (click)="enviar()">➤</button>
+  </div>
+
+</div>

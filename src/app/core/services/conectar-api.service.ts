@@ -220,4 +220,17 @@ export class ConectarApiService {
   }
 
 
+  /* craia */
+  enviarMensajeCraia(mensaje: string): Observable<any> {
+    const headers = new HttpHeaders({'Autorizacion': this.autorizacion});
+
+    return this.clienteHttp.post(
+      this.API + '/craia.php',
+      { mensaje: mensaje },
+      { headers }
+    );
+  }
+
+
+
 }

@@ -76,6 +76,9 @@ import { OutstandingPaymentsComponent } from './features/pay/outstanding-payment
 import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
 import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
+import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.component';
+
+
 
 @NgModule({
   declarations: [
@@ -129,6 +132,7 @@ import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyec
     SafeHtmlPipe,
     PqrsdfComponent,
     ProyeccionSocialComponent,
+    CraiaWidgetComponent,
   ],
   imports: [
     BrowserModule,
