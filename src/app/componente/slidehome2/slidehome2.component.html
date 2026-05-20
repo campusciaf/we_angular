@@ -1,0 +1,108 @@
+<div class="kuizi-slider-wrapper" *ngIf="listarSlider?.length">
+
+    <ngb-carousel
+      class="kuizi-hero-carousel"
+      [activeId]="activeId"
+      [interval]="6500"
+      [pauseOnHover]="false"
+      [pauseOnFocus]="false"
+      [showNavigationArrows]="true"
+      [showNavigationIndicators]="true"
+      (slide)="onSlide($event)"
+    >
+  
+      <ng-template
+        *ngFor="let slide of listarSlider; let i = index"
+        ngbSlide
+        [id]="'slide-' + i"
+      >
+  
+        <section class="kuizi-hero">
+  
+          <div class="kuizi-hero-link">
+  
+            <ng-container *ngIf="slide.tipo === 1">
+              <picture>
+                <source
+                  media="(max-width: 767px)"
+                  [srcset]="slide.img_movil"
+                >
+  
+                <img
+                  [src]="slide.img_pc"
+                  [alt]="slide.titulo || 'CIAF'"
+                  class="kuizi-hero-media"
+                >
+              </picture>
+            </ng-container>
+  
+            <div class="kuizi-hero-overlay"></div>
+  
+            <div class="kuizi-particles">
+              <span *ngFor="let p of particles"></span>
+            </div>
+  
+            <div class="kuizi-hero-content">
+  
+              <div class="kuizi-social">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-x-twitter"></i>
+              </div>
+  
+              <span class="kuizi-label">
+                {{ slide.categoria || 'CIAF Digital' }}
+              </span>
+  
+              <h1>
+                {{ slide.titulo }}
+              </h1>
+  
+              <p *ngIf="slide.descripcion">
+                {{ slide.descripcion }}
+              </p>
+  
+              <div class="kuizi-actions">
+                <a
+                  class="kuizi-btn kuizi-btn-primary"
+                  [href]="slide.ruta_url || '#'"
+                  target="_blank"
+                >
+                  Conoce más
+                </a>
+  
+                <a
+                  class="kuizi-btn kuizi-btn-outline"
+                  href="https://ciaf.edu.co/contacto"
+                  target="_blank"
+                >
+                  Contacto
+                </a>
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </section>
+  
+      </ng-template>
+  
+    </ngb-carousel>
+  
+    <div class="kuizi-slider-bottom">
+
+        <span class="kuizi-slide-number">
+          {{ activeIndex + 1 }}
+        </span>
+      
+        <div class="kuizi-slider-bars"></div>
+      
+        <span class="kuizi-slide-number">
+          {{ listarSlider.length }}
+        </span>
+      
+      </div>
+  
+  </div>

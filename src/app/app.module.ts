@@ -77,6 +77,8 @@ import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
 import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
 import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.component';
+import { Slidehome2Component } from './componente/slidehome2/slidehome2.component';
+import { Header2Component } from './componente/header2/header2.component';
 
 
 
@@ -133,6 +135,8 @@ import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.com
     PqrsdfComponent,
     ProyeccionSocialComponent,
     CraiaWidgetComponent,
+    Slidehome2Component,
+    Header2Component,
   ],
   imports: [
     BrowserModule,

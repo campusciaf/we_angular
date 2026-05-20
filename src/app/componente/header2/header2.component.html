@@ -1,0 +1,252 @@
+<header class="ciaf-header2">
+  <div class="ciaf-topbar">
+    <div class="ciaf-container ciaf-topbar-content">
+      <div class="ciaf-top-left">
+        <span><i class="fas fa-phone-alt"></i> +57 606 340 1000</span>
+        <span><i class="fas fa-envelope"></i> info@ciaf.edu.co</span>
+      </div>
+
+      <div class="ciaf-top-right">
+        <span>Follow Us On :</span>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="ciaf-navbar">
+    <div class="ciaf-logo-wrap">
+      <a routerLink="/inicio" class="ciaf-logo">
+        <img src="assets/image/logo-azul.webp" alt="CIAF" />
+      </a>
+    </div>
+
+    <div class="ciaf-container ciaf-nav-content">
+      <div class="ciaf-nav-spacer"></div>
+
+      <ul class="ciaf-menu">
+        <li class="ciaf-has-mega">
+          <a href="javascript:void(0)">
+            Oferta Académica <i class="fas fa-chevron-down"></i>
+          </a>
+
+          <div class="ciaf-mega-menu">
+            <!-- PROFESIONALES -->
+            <div class="ciaf-mega-column">
+              <h4>
+                <i class="fas fa-graduation-cap"></i>
+                Carreras Profesionales
+              </h4>
+
+              <a routerLink="/programa/administracion-de-empresas">
+                Administración de Empresas
+              </a>
+
+              <a routerLink="/programa/ingenieria-de-sistemas">
+                Ingeniería de Sistemas
+              </a>
+
+              <a routerLink="/programa/contaduria-publica">
+                Contaduría Pública
+              </a>
+
+              <a routerLink="/programa/derecho"> Derecho </a>
+
+              <a routerLink="/programa/psicologia"> Psicología </a>
+            </div>
+
+            <!-- LABORALES -->
+            <div class="ciaf-mega-column">
+              <h4>
+                <i class="fas fa-briefcase"></i>
+                Carreras Laborales
+              </h4>
+
+              <a routerLink="/programa/auxiliar-administrativo">
+                Auxiliar Administrativo
+              </a>
+
+              <a routerLink="/programa/seguridad-laboral">
+                Seguridad Laboral
+              </a>
+
+              <a routerLink="/programa/auxiliar-contable">
+                Auxiliar Contable
+              </a>
+
+              <a routerLink="/programa/asistente-talento-humano">
+                Asistente Talento Humano
+              </a>
+            </div>
+
+            <!-- CONTINUADA -->
+            <div class="ciaf-mega-column">
+              <h4>
+                <i class="fas fa-chalkboard-teacher"></i>
+                Educación Continuada
+              </h4>
+
+              <a routerLink="/educacion-continuada"> Diplomados </a>
+
+              <a routerLink="/educacion-continuada"> Cursos </a>
+
+              <a routerLink="/educacion-continuada"> Seminarios </a>
+
+              <a routerLink="/educacion-continuada">
+                Ver Educación Continuada
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li><a routerLink="/institucional">Institucional</a></li>
+        <li><a routerLink="/bienestar">Bienestar</a></li>
+        <li><a routerLink="/investigacion">Investigación</a></li>
+        <li><a routerLink="/contacto">Contacto</a></li>
+      </ul>
+
+      <div class="ciaf-nav-actions">
+
+        <button class="ciaf-search">
+          <i class="fas fa-search"></i>
+        </button>
+      
+        <a href="https://ciaf.digital" target="_blank" class="ciaf-btn">
+          Campus Virtual <i class="fas fa-arrow-right"></i>
+        </a>
+      
+        <!-- BOTON MOVIL -->
+        <button
+          class="ciaf-menu-toggle"
+          type="button"
+          (click)="abrirMenu()"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      
+      </div>
+    </div>
+  </nav>
+
+  <div
+    class="ciaf-mobile-overlay"
+    [class.active]="mobileMenuOpen"
+    (click)="cerrarMenu()"
+  ></div>
+
+  <aside class="ciaf-mobile-menu" [class.active]="mobileMenuOpen">
+    <div class="ciaf-mobile-header">
+      <a routerLink="/inicio" class="ciaf-mobile-logo" (click)="cerrarMenu()">
+        <img src="assets/image/logo-blanco.webp" alt="CIAF" />
+      </a>
+
+      <button class="ciaf-mobile-close" type="button" (click)="cerrarMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="ciaf-mobile-search">
+      <input type="text" placeholder="Buscar..." />
+      <button type="button">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+    <nav class="ciaf-mobile-nav">
+      <a routerLink="/inicio" (click)="cerrarMenu()"> Inicio </a>
+
+      <button
+        type="button"
+        class="ciaf-mobile-dropdown-btn"
+        (click)="toggleOferta()"
+      >
+        <span>Oferta Académica</span>
+        <i class="fas" [ngClass]="ofertaOpen ? 'fa-minus' : 'fa-plus'"></i>
+      </button>
+
+      <div class="ciaf-mobile-submenu" [class.active]="ofertaOpen">
+        <div class="ciaf-mobile-subtitle">Carreras Profesionales</div>
+
+        <a
+          routerLink="/programa/administracion-de-empresas"
+          (click)="cerrarMenu()"
+        >
+          Administración de Empresas
+        </a>
+
+        <a routerLink="/programa/ingenieria-de-sistemas" (click)="cerrarMenu()">
+          Ingeniería de Sistemas
+        </a>
+
+        <a routerLink="/programa/contaduria-publica" (click)="cerrarMenu()">
+          Contaduría Pública
+        </a>
+
+        <a routerLink="/programa/derecho" (click)="cerrarMenu()"> Derecho </a>
+
+        <a routerLink="/programa/psicologia" (click)="cerrarMenu()">
+          Psicología
+        </a>
+
+        <div class="ciaf-mobile-subtitle">Carreras Laborales</div>
+
+        <a
+          routerLink="/programa/auxiliar-administrativo"
+          (click)="cerrarMenu()"
+        >
+          Auxiliar Administrativo
+        </a>
+
+        <a routerLink="/programa/seguridad-laboral" (click)="cerrarMenu()">
+          Seguridad Laboral
+        </a>
+
+        <a routerLink="/programa/auxiliar-contable" (click)="cerrarMenu()">
+          Auxiliar Contable
+        </a>
+
+        <a
+          routerLink="/programa/asistente-talento-humano"
+          (click)="cerrarMenu()"
+        >
+          Asistente Talento Humano
+        </a>
+
+        <div class="ciaf-mobile-subtitle">Educación Continuada</div>
+
+        <a routerLink="/educacion-continuada" (click)="cerrarMenu()">
+          Ver Educación Continuada
+        </a>
+      </div>
+
+      <a routerLink="/institucional" (click)="cerrarMenu()"> Institucional </a>
+
+      <a routerLink="/bienestar" (click)="cerrarMenu()"> Bienestar </a>
+
+      <a routerLink="/investigacion" (click)="cerrarMenu()"> Investigación </a>
+
+      <a routerLink="/contacto" (click)="cerrarMenu()"> Contacto </a>
+    </nav>
+
+    <div class="ciaf-mobile-contact">
+      <p>
+        <i class="fas fa-phone-alt"></i>
+        +57 606 340 1000
+      </p>
+
+      <p>
+        <i class="fas fa-envelope"></i>
+        info@ciaf.edu.co
+      </p>
+    </div>
+
+    <div class="ciaf-mobile-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </aside>
+</header>
