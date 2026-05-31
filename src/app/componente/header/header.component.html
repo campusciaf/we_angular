@@ -24,7 +24,7 @@
             Contacto
           </a>
   
-          <a href="#pqrsf" class="top-link hide-md">
+          <a routerLink="/pqrsdf" class="top-link hide-md">
             <i class="fa-regular fa-file-lines"></i>
             PQRSF
           </a>
@@ -36,19 +36,35 @@
         <div class="container-xxl">
         <div class="header-inner">
 
-            <a href="/" class="brand-logo">
+            <a routerLink="/inicio" class="brand-logo">
             <img [src]="img_logo" alt="CIAF">
             </a>
 
             <nav class="main-nav d-none d-lg-flex">
 
             <!-- Oferta Académica -->
-            <div class="nav-item has-mega">
-                <button type="button" class="nav-link-btn">
+            <div
+              class="nav-item has-mega"
+              (mouseenter)="abrirMega('oferta')"
+              (mouseleave)="programarCierreMega()"
+            >
+                <button
+                  type="button"
+                  class="nav-link-btn"
+                  [class.is-active]="megaAbierto === 'oferta'"
+                  [attr.aria-expanded]="megaAbierto === 'oferta'"
+                  (click)="alternarMega('oferta', $event)"
+                >
                 Oferta Académica <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
-                <div class="mega-menu">
+                <div
+                  class="mega-menu"
+                  [class.is-open]="megaAbierto === 'oferta'"
+                  (mouseenter)="cancelarCierreMega()"
+                  (mouseleave)="programarCierreMega()"
+                  (click)="onMegaPanelClick($event)"
+                >
                 <div class="mega-panel">
                     <div class="row g-5">
 
@@ -66,12 +82,12 @@
                         <div class="mega-section">
                         <p class="mega-section-title">Escuela de Ciencias Administrativas</p>
 
-                        <a href="/programas/administracion-de-empresas" class="mega-link">
+                        <a routerLink="/administracion" routerLinkActive="active-link" class="mega-link">
                             Administración de Empresas
                             <span>Liderazgo, estrategia y gestión.</span>
                         </a>
 
-                        <a href="#carreras-universitarias" class="mega-link">
+                        <a routerLink="/contaduria" routerLinkActive="active-link" class="mega-link">
                             Contaduría Pública
                             <span>Convenio INTEP.</span>
                         </a>
@@ -80,12 +96,12 @@
                         <div class="mega-section">
                         <p class="mega-section-title">Escuela de Ingenierías</p>
 
-                        <a href="#carreras-universitarias" class="mega-link">
+                        <a routerLink="/software" routerLinkActive="active-link" class="mega-link">
                             Ingeniería de Software
                             <span>Construye productos digitales.</span>
                         </a>
 
-                        <a href="#carreras-universitarias" class="mega-link">
+                        <a routerLink="/industrial" routerLinkActive="active-link" class="mega-link">
                             Ingeniería Industrial
                             <span>Optimiza procesos del futuro.</span>
                         </a>
@@ -94,7 +110,7 @@
                         <div class="mega-section">
                         <p class="mega-section-title">Escuela de Salud</p>
 
-                        <a href="#carreras-universitarias" class="mega-link">
+                        <a routerLink="/sst" routerLinkActive="active-link" class="mega-link">
                             Seguridad y Salud en el Trabajo
                             <span>Bienestar laboral con propósito.</span>
                         </a>
@@ -114,22 +130,22 @@
                         <div class="mega-section">
                         <p class="mega-section-title">Escuela de Salud</p>
 
-                        <a href="#carreras-laborales" class="mega-link">
+                        <a routerLink="/enfermeria" routerLinkActive="active-link" class="mega-link">
                             Auxiliar de Enfermería
                             <span>Cuidado humano profesional.</span>
                         </a>
 
-                        <a href="#carreras-laborales" class="mega-link">
+                        <a routerLink="/administrativo" routerLinkActive="active-link" class="mega-link">
                             Auxiliar Administrativo en Salud
                             <span>Gestión clínica eficiente.</span>
                         </a>
 
-                        <a href="#carreras-laborales" class="mega-link">
+                        <a routerLink="/adultomayor" routerLinkActive="active-link" class="mega-link">
                             Atención al Adulto Mayor
                             <span>Acompañamiento y cuidado integral.</span>
                         </a>
 
-                        <a href="#carreras-laborales" class="mega-link">
+                        <a routerLink="/veterinaria" routerLinkActive="active-link" class="mega-link">
                             Auxiliar de Veterinaria y Cuidado de Mascotas
                             <span>Cuidado y bienestar animal.</span>
                         </a>
@@ -147,10 +163,10 @@
                         </div>
 
                         <div class="mega-section">
-                        <a href="#educacion-continuada" class="mega-link">Diplomados</a>
-                        <a href="#educacion-continuada" class="mega-link">Cursos</a>
-                        <a href="#educacion-continuada" class="mega-link">Certificaciones</a>
-                        <a href="#educacion-continuada" class="mega-link">Formación empresarial</a>
+                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link">Diplomados</a>
+                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link">Cursos</a>
+                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link">Certificaciones</a>
+                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link">Formación empresarial</a>
                         </div>
                     </div>
 
@@ -160,12 +176,28 @@
             </div>
 
             <!-- Nuestra Institución -->
-            <div class="nav-item has-mega">
-                <button type="button" class="nav-link-btn">
+            <div
+              class="nav-item has-mega"
+              (mouseenter)="abrirMega('institucion')"
+              (mouseleave)="programarCierreMega()"
+            >
+                <button
+                  type="button"
+                  class="nav-link-btn"
+                  [class.is-active]="megaAbierto === 'institucion'"
+                  [attr.aria-expanded]="megaAbierto === 'institucion'"
+                  (click)="alternarMega('institucion', $event)"
+                >
                 Nuestra Institución <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
-                <div class="mega-menu mega-small">
+                <div
+                  class="mega-menu mega-small"
+                  [class.is-open]="megaAbierto === 'institucion'"
+                  (mouseenter)="cancelarCierreMega()"
+                  (mouseleave)="programarCierreMega()"
+                  (click)="onMegaPanelClick($event)"
+                >
                 <div class="mega-panel">
                     <div class="mega-title">
                     <span class="mega-icon">
@@ -177,23 +209,39 @@
                     </div>
 
                     <div class="mega-section">
-                    <a href="#institucion" class="mega-link">Quiénes Somos</a>
-                    <a href="#institucion" class="mega-link">Proyección Social y Extensión</a>
-                    <a href="#institucion" class="mega-link">Cultura CIAF</a>
-                    <a href="#institucion" class="mega-link">CRAILAB</a>
-                    <a href="#institucion" class="mega-link">CIAF Virtual</a>
+                    <a routerLink="/conocenos" routerLinkActive="active-link" class="mega-link">Quiénes Somos</a>
+                    <a routerLink="/proyeccion-social" routerLinkActive="active-link" class="mega-link">Proyección Social y Extensión</a>
+                    <a routerLink="/conocenos" routerLinkActive="active-link" class="mega-link">Cultura CIAF</a>
+                    <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer" class="mega-link">CRAILAB</a>
+                    <a href="https://virtual.ciaf.edu.co" target="_blank" rel="noopener noreferrer" class="mega-link">CIAF Virtual</a>
                     </div>
                 </div>
                 </div>
             </div>
 
             <!-- Bienestar -->
-            <div class="nav-item has-mega">
-                <button type="button" class="nav-link-btn">
+            <div
+              class="nav-item has-mega"
+              (mouseenter)="abrirMega('bienestar')"
+              (mouseleave)="programarCierreMega()"
+            >
+                <button
+                  type="button"
+                  class="nav-link-btn"
+                  [class.is-active]="megaAbierto === 'bienestar'"
+                  [attr.aria-expanded]="megaAbierto === 'bienestar'"
+                  (click)="alternarMega('bienestar', $event)"
+                >
                 Bienestar <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
-                <div class="mega-menu mega-small">
+                <div
+                  class="mega-menu mega-small"
+                  [class.is-open]="megaAbierto === 'bienestar'"
+                  (mouseenter)="cancelarCierreMega()"
+                  (mouseleave)="programarCierreMega()"
+                  (click)="onMegaPanelClick($event)"
+                >
                 <div class="mega-panel">
                     <div class="mega-title">
                     <span class="mega-icon lime">
@@ -205,22 +253,38 @@
                     </div>
 
                     <div class="mega-section">
-                    <a href="#bienestar" class="mega-link">Bienestar Institucional</a>
-                    <a href="#bienestar" class="mega-link">Permanencia Estudiantil</a>
-                    <a href="#bienestar" class="mega-link">Experiencia Universitaria</a>
-                    <a href="#bienestar" class="mega-link">Gestión Humana</a>
+                    <a routerLink="/bienestar" routerLinkActive="active-link" class="mega-link">Bienestar Institucional</a>
+                    <a routerLink="/permanencia" routerLinkActive="active-link" class="mega-link">Permanencia Estudiantil</a>
+                    <a routerLink="/bienestar" routerLinkActive="active-link" class="mega-link">Experiencia Universitaria</a>
+                    <a routerLink="/bienestar" routerLinkActive="active-link" class="mega-link">Gestión Humana</a>
                     </div>
                 </div>
                 </div>
             </div>
 
             <!-- Investigación -->
-            <div class="nav-item has-mega">
-                <button type="button" class="nav-link-btn">
+            <div
+              class="nav-item has-mega"
+              (mouseenter)="abrirMega('investigacion')"
+              (mouseleave)="programarCierreMega()"
+            >
+                <button
+                  type="button"
+                  class="nav-link-btn"
+                  [class.is-active]="megaAbierto === 'investigacion'"
+                  [attr.aria-expanded]="megaAbierto === 'investigacion'"
+                  (click)="alternarMega('investigacion', $event)"
+                >
                 Investigación <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
-                <div class="mega-menu mega-small">
+                <div
+                  class="mega-menu mega-small"
+                  [class.is-open]="megaAbierto === 'investigacion'"
+                  (mouseenter)="cancelarCierreMega()"
+                  (mouseleave)="programarCierreMega()"
+                  (click)="onMegaPanelClick($event)"
+                >
                 <div class="mega-panel">
                     <div class="mega-title">
                     <span class="mega-icon">
@@ -232,22 +296,38 @@
                     </div>
 
                     <div class="mega-section">
-                    <a href="#investigaciones" class="mega-link">Ciencia, Creatividad e Innovación</a>
-                    <a href="#investigaciones" class="mega-link">Semilleros</a>
-                    <a href="#investigaciones" class="mega-link">CRAILAB</a>
-                    <a href="#investigaciones" class="mega-link">Proyectos de Innovación</a>
+                    <a routerLink="/investigaciones" routerLinkActive="active-link" class="mega-link">Ciencia, Creatividad e Innovación</a>
+                    <a routerLink="/investigaciones" routerLinkActive="active-link" class="mega-link">Semilleros</a>
+                    <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer" class="mega-link">CRAILAB</a>
+                    <a routerLink="/investigaciones" routerLinkActive="active-link" class="mega-link">Proyectos de Innovación</a>
                     </div>
                 </div>
                 </div>
             </div>
 
             <!-- Egresados -->
-            <div class="nav-item has-mega">
-                <button type="button" class="nav-link-btn">
+            <div
+              class="nav-item has-mega"
+              (mouseenter)="abrirMega('egresados')"
+              (mouseleave)="programarCierreMega()"
+            >
+                <button
+                  type="button"
+                  class="nav-link-btn"
+                  [class.is-active]="megaAbierto === 'egresados'"
+                  [attr.aria-expanded]="megaAbierto === 'egresados'"
+                  (click)="alternarMega('egresados', $event)"
+                >
                 Egresados <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
-                <div class="mega-menu mega-small">
+                <div
+                  class="mega-menu mega-small"
+                  [class.is-open]="megaAbierto === 'egresados'"
+                  (mouseenter)="cancelarCierreMega()"
+                  (mouseleave)="programarCierreMega()"
+                  (click)="onMegaPanelClick($event)"
+                >
                 <div class="mega-panel">
                     <div class="mega-title">
                     <span class="mega-icon lime">
@@ -259,10 +339,10 @@
                     </div>
 
                     <div class="mega-section">
-                    <a href="#egresados" class="mega-link">Comunidad de Egresados</a>
-                    <a href="#egresados" class="mega-link">Convenios y Beneficios</a>
-                    <a href="#egresados" class="mega-link">Historias que Inspiran</a>
-                    <a href="#egresados" class="mega-link">Bolsa de Empleo</a>
+                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link">Comunidad de Egresados</a>
+                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link">Convenios y Beneficios</a>
+                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link">Historias que Inspiran</a>
+                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link">Bolsa de Empleo</a>
                     </div>
                 </div>
                 </div>
@@ -271,12 +351,12 @@
             </nav>
 
             <div class="header-actions d-none d-md-flex">
-            <a href="#pagos" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm">
+            <a routerLink="/pago-online" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm">
                 <i class="fa-regular fa-credit-card"></i>
                 Pagos en línea
             </a>
 
-            <a href="#inscribete" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm">
+            <a routerLink="/iniciar" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm">
                 Inscríbete
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
@@ -311,23 +391,23 @@
           <div id="mOferta" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
             <div class="accordion-body mobile-links">
               <strong>Carreras Universitarias</strong>
-              <a href="/programas/administracion-de-empresas">Administración de Empresas</a>
-              <a href="#carreras-universitarias">Contaduría Pública</a>
-              <a href="#carreras-universitarias">Ingeniería de Software</a>
-              <a href="#carreras-universitarias">Ingeniería Industrial</a>
-              <a href="#carreras-universitarias">Seguridad y Salud en el Trabajo</a>
+              <a routerLink="/administracion" routerLinkActive="active-link">Administración de Empresas</a>
+              <a routerLink="/contaduria" routerLinkActive="active-link">Contaduría Pública</a>
+              <a routerLink="/software" routerLinkActive="active-link">Ingeniería de Software</a>
+              <a routerLink="/industrial" routerLinkActive="active-link">Ingeniería Industrial</a>
+              <a routerLink="/sst" routerLinkActive="active-link">Seguridad y Salud en el Trabajo</a>
   
               <strong>Técnicos Laborales</strong>
-              <a href="#carreras-laborales">Auxiliar de Enfermería</a>
-              <a href="#carreras-laborales">Auxiliar Administrativo en Salud</a>
-              <a href="#carreras-laborales">Atención al Adulto Mayor</a>
-              <a href="#carreras-laborales">Auxiliar de Veterinaria y Cuidado de Mascotas</a>
+              <a routerLink="/enfermeria" routerLinkActive="active-link">Auxiliar de Enfermería</a>
+              <a routerLink="/administrativo" routerLinkActive="active-link">Auxiliar Administrativo en Salud</a>
+              <a routerLink="/adultomayor" routerLinkActive="active-link">Atención al Adulto Mayor</a>
+              <a routerLink="/veterinaria" routerLinkActive="active-link">Auxiliar de Veterinaria y Cuidado de Mascotas</a>
   
               <strong>Educación Continuada</strong>
-              <a href="#educacion-continuada">Diplomados</a>
-              <a href="#educacion-continuada">Cursos</a>
-              <a href="#educacion-continuada">Certificaciones</a>
-              <a href="#educacion-continuada">Formación empresarial</a>
+              <a routerLink="/continuada" routerLinkActive="active-link">Diplomados</a>
+              <a routerLink="/continuada" routerLinkActive="active-link">Cursos</a>
+              <a routerLink="/continuada" routerLinkActive="active-link">Certificaciones</a>
+              <a routerLink="/continuada" routerLinkActive="active-link">Formación empresarial</a>
             </div>
           </div>
         </div>
@@ -339,11 +419,11 @@
   
           <div id="mInstitucion" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
             <div class="accordion-body mobile-links">
-              <a href="#institucion">Quiénes Somos</a>
-              <a href="#institucion">Proyección Social y Extensión</a>
-              <a href="#institucion">Cultura CIAF</a>
-              <a href="#institucion">CRAILAB</a>
-              <a href="#institucion">CIAF Virtual</a>
+              <a routerLink="/conocenos" routerLinkActive="active-link">Quiénes Somos</a>
+              <a routerLink="/proyeccion-social" routerLinkActive="active-link">Proyección Social y Extensión</a>
+              <a routerLink="/conocenos" routerLinkActive="active-link">Cultura CIAF</a>
+              <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
+              <a href="https://virtual.ciaf.edu.co" target="_blank" rel="noopener noreferrer">CIAF Virtual</a>
             </div>
           </div>
         </div>
@@ -355,10 +435,10 @@
   
           <div id="mBienestar" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
             <div class="accordion-body mobile-links">
-              <a href="#bienestar">Bienestar Institucional</a>
-              <a href="#bienestar">Permanencia Estudiantil</a>
-              <a href="#bienestar">Experiencia Universitaria</a>
-              <a href="#bienestar">Gestión Humana</a>
+              <a routerLink="/bienestar" routerLinkActive="active-link">Bienestar Institucional</a>
+              <a routerLink="/permanencia" routerLinkActive="active-link">Permanencia Estudiantil</a>
+              <a routerLink="/bienestar" routerLinkActive="active-link">Experiencia Universitaria</a>
+              <a routerLink="/bienestar" routerLinkActive="active-link">Gestión Humana</a>
             </div>
           </div>
         </div>
@@ -370,10 +450,10 @@
   
           <div id="mInvestigacion" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
             <div class="accordion-body mobile-links">
-              <a href="#investigaciones">Ciencia, Creatividad e Innovación</a>
-              <a href="#investigaciones">Semilleros</a>
-              <a href="#investigaciones">CRAILAB</a>
-              <a href="#investigaciones">Proyectos de Innovación</a>
+              <a routerLink="/investigaciones" routerLinkActive="active-link">Ciencia, Creatividad e Innovación</a>
+              <a routerLink="/investigaciones" routerLinkActive="active-link">Semilleros</a>
+              <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
+              <a routerLink="/investigaciones" routerLinkActive="active-link">Proyectos de Innovación</a>
             </div>
           </div>
         </div>
@@ -385,10 +465,10 @@
   
           <div id="mEgresados" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
             <div class="accordion-body mobile-links">
-              <a href="#egresados">Comunidad de Egresados</a>
-              <a href="#egresados">Convenios y Beneficios</a>
-              <a href="#egresados">Historias que Inspiran</a>
-              <a href="#egresados">Bolsa de Empleo</a>
+              <a routerLink="/egresados" routerLinkActive="active-link">Comunidad de Egresados</a>
+              <a routerLink="/egresados" routerLinkActive="active-link">Convenios y Beneficios</a>
+              <a routerLink="/egresados" routerLinkActive="active-link">Historias que Inspiran</a>
+              <a routerLink="/egresados" routerLinkActive="active-link">Bolsa de Empleo</a>
             </div>
           </div>
         </div>
@@ -396,11 +476,11 @@
       </div>
   
       <div class="mt-4 d-grid gap-2">
-        <a href="#pagos" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm justify-content-center">
+        <a routerLink="/pago-online" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm justify-content-center">
           Pagos en línea
         </a>
   
-        <a href="#inscribete" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm justify-content-center">
+        <a routerLink="/iniciar" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm justify-content-center">
           Inscríbete
         </a>
       </div>

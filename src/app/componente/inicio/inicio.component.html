@@ -1,44 +1,5 @@
+<app-header></app-header>
 <app-slidehome></app-slidehome>
-
-<!-- <app-calidadycrecimiento></app-calidadycrecimiento> -->
-
-<!-- creatividad e innovación -->
-<section class="pt-4 mt-4 pb-4 mb-4 d-none">
-    <div class="row p-0 m-0 justify-content-center">
-        <div class="col-xl-12 mb-4 pb-4">
-            <h2 class="titulo-2 text-center">Creatividad e Innovación</h2>
-        </div>
-        <div class="col-xl-12 p-0">
-
-            <div class="row py-4 my-4 ">
-              
-                <div class="col-xl-3 col-lg-3 col-md-6 col-6 bg-1 text-center card-pos-creatividad" *ngFor="let creatividad of creatividadPic index as i">
-                    <div class="img-pos text-center">
-                       <div *ngIf="creatividad.tipolink==1">
-
-                        <a routerLink="{{creatividad.link}}" class="btn">
-                            <img src="{{creatividad.imagen}}" alt="Vitrina de empredimientos" width="" height="">
-                            <p class="titulo-creatividad">{{creatividad.titulo}}</p>
-                        </a>
-                            
-                       </div>
-                       <div *ngIf="creatividad.tipolink==2">
-                            <a href="{{creatividad.link}}" target="_blank" class="btn">
-                                <img src="{{creatividad.imagen}}" alt="Vitrina de empredimientos" width="" height="">
-                                <p class="titulo-creatividad">{{creatividad.titulo}}</p>
-                            </a>
-                       </div>
-                    </div>
-                    <div *ngIf="i>0" class="border-card"></div>
-                </div>
-
-
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- ******************************** -->
 <app-cifras></app-cifras>
 <app-adnciaf></app-adnciaf>
 <app-ofertaprofesional></app-ofertaprofesional>
@@ -50,40 +11,4 @@
 <app-aliados></app-aliados>
 <app-accesosrapidos></app-accesosrapidos>
 <app-newsletter></app-newsletter>
-
-  <!-- Modalsst-->
-  <div class="modal fade" id="modalcv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Quiero ser</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-0">
-
-          <div class="row justify-content-center">
-            <div class="col-6 text-center">
-                <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="btn btn-info d-block py-4 rounded-0" >
-                    <img src="assets/image/trabaja-nosotros.webp">
-                    <p>Docente</p>
-                </a>
-            </div>
-
-            <div class="col-6 text-center">
-                <a routerLink="/cvadministrativos" class="btn btn-primary py-4 rounded-0 d-block" data-bs-dismiss="modal" aria-label="Close">
-                    <img src="assets/image/funcionarios.webp">
-                    <p>Administrativo</p>
-                </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-
-
-
+<app-footer></app-footer>

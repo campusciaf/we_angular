@@ -61,3 +61,35 @@
 
   <i class="fa-solid fa-arrow-up-right-from-square ciaf-quick-access-card__arrow" aria-hidden="true"></i>
 </ng-template>
+
+  <!-- Modalsst-->
+  <div class="modal fade" id="modalcv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-6" id="exampleModalLabel">Quiero ser</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+
+          <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="btn btn-info d-block py-4 rounded-0" >
+                    <img src="assets/image/trabaja-nosotros.webp">
+                    <p>Docente</p>
+                </a>
+            </div>
+
+            <div class="col-6 text-center">
+                <a routerLink="/cvadministrativos" class="btn btn-primary py-4 rounded-0 d-block" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="assets/image/funcionarios.webp">
+                    <p>Administrativo</p>
+                </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
