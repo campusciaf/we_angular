@@ -1,29 +1,68 @@
-<section class="py-4 my-4">
-  <div class="row justify-content-center">
-    <div class="col-xl-12 mb-4 pb-4">
-      <h2 class="titulo-2 text-center">Aliados Estratégicos</h2>
-    </div>
-    <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-      <ngx-slick-carousel
-        class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
+<section class="ciaf-allies-section">
+  <div class="container-xxl ciaf-allies-container">
+
+    <header class="ciaf-allies-header">
+      <span class="ciaf-pill ciaf-pill--allies">CONVENIOS CIAF</span>
+      <h2 class="ciaf-title-display ciaf-title-display--allies">Aliados Estratégicos</h2>
+      <p class="ciaf-text-lead ciaf-text-lead--muted ciaf-text-lead--center">
+        Convenios, alianzas académicas y financieras que potencian la experiencia y empleabilidad de cada estudiante CIAF.
+      </p>
+    </header>
+
+    <div class="ciaf-allies-slider-wrap" *ngIf="listarAliados?.length && usarCarrusel">
+      <div
+        #viewport
+        class="ciaf-allies-slider"
+        (pointerdown)="onPointerDown($event)"
+        (pointermove)="onPointerMove($event)"
+        (pointerup)="onPointerUp($event)"
+        (pointercancel)="onPointerUp($event)"
+        (pointerleave)="onPointerLeave($event)"
       >
         <div
-          ngxSlickItem
-          *ngFor="let datos of listarAliados; index as i"
-          class="slide"
+          class="ciaf-allies-slider__track"
+          [class.ciaf-allies-slider__track--anim]="animando"
+          [style.transform]="'translate3d(' + desplazamiento + 'px, 0, 0)'"
+          [style.--ciaf-allies-card-width.px]="anchoTarjeta"
         >
-          <img
-            src="https://ciaf.digital/public/web_aliados/{{
-              datos.imagen_aliado
-            }}"
-            width="100%"
-            height="auto"
-            alt="{{ datos.nombre_aliado }}"
-          />
+          <a
+            *ngFor="let aliado of listarAliados"
+            class="ciaf-allies-card"
+            [href]="aliado.url_aliado || '#'"
+            [attr.target]="aliado.url_aliado ? '_blank' : null"
+            [attr.rel]="aliado.url_aliado ? 'noopener noreferrer' : null"
+          >
+            <img
+              *ngIf="getImagenUrl(aliado)"
+              [src]="getImagenUrl(aliado)"
+              [alt]="aliado.nombre_aliado"
+              loading="lazy"
+              draggable="false"
+            />
+            <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name">{{ aliado.nombre_aliado }}</span>
+          </a>
         </div>
-      </ngx-slick-carousel>
+      </div>
     </div>
+
+    <div class="ciaf-allies-grid" *ngIf="listarAliados?.length && !usarCarrusel">
+      <a
+        *ngFor="let aliado of listarAliados"
+        class="ciaf-allies-card"
+        [href]="aliado.url_aliado || '#'"
+        [attr.target]="aliado.url_aliado ? '_blank' : null"
+        [attr.rel]="aliado.url_aliado ? 'noopener noreferrer' : null"
+      >
+        <img
+          *ngIf="getImagenUrl(aliado)"
+          [src]="getImagenUrl(aliado)"
+          [alt]="aliado.nombre_aliado"
+          loading="lazy"
+          draggable="false"
+        />
+        <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name">{{ aliado.nombre_aliado }}</span>
+      </a>
+    </div>
+
   </div>
 </section>

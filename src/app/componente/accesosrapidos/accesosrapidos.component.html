@@ -1,0 +1,63 @@
+<section class="ciaf-quick-access-section">
+  <div class="container-xxl ciaf-quick-access-container">
+
+    <header class="ciaf-quick-access-header">
+      <span class="ciaf-pill ciaf-pill--compact">ACCESOS RÁPIDOS</span>
+      <h2 class="ciaf-title-display ciaf-title-display--quick-access">
+        Todo a un <span class="ciaf-gradient-text ciaf-gradient-text--brand">clic.</span>
+      </h2>
+    </header>
+
+    <div class="ciaf-quick-access-grid">
+      <ng-container *ngFor="let acceso of accesos">
+
+        <a
+          *ngIf="acceso.tipoEnlace === 'externo'"
+          class="ciaf-quick-access-card"
+          [href]="acceso.enlace"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ng-container *ngTemplateOutlet="contenidoTarjeta; context: { $implicit: acceso }"></ng-container>
+        </a>
+
+        <a
+          *ngIf="acceso.tipoEnlace === 'ruta'"
+          class="ciaf-quick-access-card"
+          [routerLink]="acceso.enlace"
+        >
+          <ng-container *ngTemplateOutlet="contenidoTarjeta; context: { $implicit: acceso }"></ng-container>
+        </a>
+
+        <a
+          *ngIf="acceso.tipoEnlace === 'modal'"
+          class="ciaf-quick-access-card"
+          [href]="acceso.enlace"
+          data-bs-toggle="modal"
+        >
+          <ng-container *ngTemplateOutlet="contenidoTarjeta; context: { $implicit: acceso }"></ng-container>
+        </a>
+
+      </ng-container>
+    </div>
+
+  </div>
+</section>
+
+<ng-template #contenidoTarjeta let-acceso>
+  <span
+    class="ciaf-quick-access-card__icon"
+    [class.ciaf-quick-access-card__icon--primary]="acceso.tonoIcono === 'primary'"
+    [class.ciaf-quick-access-card__icon--lime]="acceso.tonoIcono === 'lime'"
+    aria-hidden="true"
+  >
+    <i class="fa-solid" [ngClass]="acceso.icono"></i>
+  </span>
+
+  <div class="ciaf-quick-access-card__content">
+    <h3 class="ciaf-quick-access-card__title">{{ acceso.titulo }}</h3>
+    <p class="ciaf-quick-access-card__subtitle">{{ acceso.subtitulo }}</p>
+  </div>
+
+  <i class="fa-solid fa-arrow-up-right-from-square ciaf-quick-access-card__arrow" aria-hidden="true"></i>
+</ng-template>

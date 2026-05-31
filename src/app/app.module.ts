@@ -84,6 +84,8 @@ import { OfertaprofesionalComponent } from './componente/ofertaprofesional/ofert
 import { OfertalaboralComponent } from './componente/ofertalaboral/ofertalaboral.component';
 import { PorqueciafComponent } from './componente/porqueciaf/porqueciaf.component';
 import { FormularioregistroComponent } from './componente/formularioregistro/formularioregistro.component';
+import { AccesosrapidosComponent } from './componente/accesosrapidos/accesosrapidos.component';
+import { NewsletterComponent } from './componente/newsletter/newsletter.component';
 
 
 
@@ -147,6 +149,8 @@ import { FormularioregistroComponent } from './componente/formularioregistro/for
     OfertalaboralComponent,
     PorqueciafComponent,
     FormularioregistroComponent,
+    AccesosrapidosComponent,
+    NewsletterComponent,
   ],
   imports: [
     BrowserModule,
