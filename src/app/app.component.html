@@ -1,9 +1,9 @@
 
 <div #topScrollAnchor></div><!-- div para que recargue al inicio de la pagina  -->
-<app-header2></app-header2>
-<!-- <app-header *ngIf="this.router.url != '/horarios' && this.router.url != '/expo-u' && this.router.url != '/ondashboard'" ></app-header> -->
+<!-- <app-header2></app-header2> -->
+<app-header *ngIf="this.router.url != '/horarios' && this.router.url != '/expo-u' && this.router.url != '/ondashboard'" ></app-header>
 <router-outlet (deactivate)="onDeactivate()"></router-outlet>
 <app-footer *ngIf="this.router.url != '/horarios' && this.router.url != '/expo-u' && this.router.url != '/ondashboard' "></app-footer>
 
-<app-craia-widget></app-craia-widget>
+<!-- <app-craia-widget></app-craia-widget> -->
 <!-- desactive carga el evento para recargar la pagina desde el scroll top -->

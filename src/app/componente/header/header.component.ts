@@ -9,7 +9,7 @@ declare var $:any;
 })
 export class HeaderComponent implements OnInit {
 
-  public img_logo="assets/image/logo-blanco.webp";
+  public img_logo="assets/image/logo-negro.webp";
   public img_destino="assets/image/ico-destino.webp";
   public img_ubicacion="assets/image/ico-location.webp";
   public img_campus="assets/image/ico-campus.webp";

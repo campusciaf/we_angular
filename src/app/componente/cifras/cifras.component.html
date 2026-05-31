@@ -1,40 +1,71 @@
-<section class="pb-4 bg-1 text-white">
-    <div class="row justify-content-center">
-        <div class="col-xl-12 my-4 py-4">
-            <h2 class="text-center text-white fs-56 py-4 mt-4">Impacto social </h2>
+<section #statsSection class="ciaf-stats-section position-relative overflow-hidden">
+    <div class="container-xxl position-relative ciaf-stats-container">
+  
+      <div class="row">
+        <div class="col-xl-7 col-lg-8">
+  
+          <div class="ciaf-stats-pill">
+            CIAF EN CIFRAS
+          </div>
+  
+          <h2 class="ciaf-stats-title">
+            Impacto <span>social</span>
+          </h2>
+          
+          <p class="ciaf-stats-description">
+            Más que cifras: oportunidades reales para que cada universitario cumpla
+            su sueño profesional con respaldo, becas y financiación.
+          </p>
+  
+          <div class="ciaf-stats-line" aria-hidden="true">
+            <span [style.width.%]="lineProgress"></span>
+          </div>
+  
         </div>
-        <div class="col-xl-11 col-lg-11 col-md-11 col-11 py-4 my-4">
-          <div *ngIf="counters.length > 0">
-              <div class="row text-center">
-
-                  <div class="col-lg-3 col-md-6 col-12 lh-20">
-                      <img [src]="'assets/image/d-egresados.webp'">
-                      <div class="counter fs-32 fw-bold mt-4" #counter [attr.data-target]="counters[0].target"> + {{ counters[0].value | number:'1.0-0' }}<span class="fs-14">(Millones)</span></div>
-                      <div class="mt-3 fs-24">Financiación</div>
-                  </div>
-                  
-                  <div class="col-lg-3 col-md-6 col-12 lh-20">
-                      <img [src]="'assets/image/d-becas.webp'">
-                      <div class="counter fs-32 fw-bold mt-4" #counter [attr.data-target]="counters[1].target"> + {{ counters[1].value | number:'1.0-0' }}<span class="fs-14">(Millones)</span></div>
-                      <div class="mt-3 fs-24">Becas</div>
-                  </div>
-              
-                  <div class="col-lg-3 col-md-6 col-12 lh-20">
-                      <img [src]="'assets/image/d-financiados.webp'">
-                      <div class="counter fs-48 fw-bold mt-4" #counter [attr.data-target]="counters[2].target"> + {{ counters[2].value | number:'1.0-0' }}</div>
-                      <div class="mt-3 fs-36">Créditos</div>
-                  </div>
-              
-                  <div class="col-lg-3 col-md-6 col-12 lh-20">
-                      <img [src]="'assets/image/d-egresados.webp'">
-                      <div class="counter fs-48 fw-bold mt-4" #counter [attr.data-target]="counters[3].target"> + {{ counters[3].value | number:'1.0-0' }}</div>
-                      <div class="mt-3 fs-36">Egresados</div>
-                  </div>
-                </div>
+      </div>
+  
+      <div *ngIf="counters.length > 0" class="row ciaf-stats-grid">
+  
+        <div
+          class="col-xl-3 col-lg-3 col-md-6 col-12"
+          *ngFor="let counter of counters"
+        >
+          <article class="ciaf-stat-card h-100">
+  
+            <div class="ciaf-stat-icon" [ngClass]="counter.iconType">
+              <i [class]="counter.icon"></i>
             </div>
+  
+            <div
+              class="ciaf-stat-number counter"
+              #counterElement
+              [attr.data-target]="counter.target"
+            >
+              <span>{{ counter.prefix }}</span>{{ counter.value | number:'1.0-0' }}<small>{{ counter.suffix }}</small>
+            </div>
+  
+            <h3 class="ciaf-stat-name">
+              {{ counter.title }}
+            </h3>
+  
+            <p class="ciaf-stat-text">
+              {{ counter.description }}
+            </p>
+  
+          </article>
         </div>
+  
+      </div>
     </div>
-</section>
-
-
-
+  
+    <div class="ciaf-stats-bottom-marquee" aria-hidden="true">
+      <div class="ciaf-stats-bottom-track">
+        <span *ngFor="let item of marqueeItems">
+          {{ item }} <i></i>
+        </span>
+        <span *ngFor="let item of marqueeItems">
+          {{ item }} <i></i>
+        </span>
+      </div>
+    </div>
+  </section>

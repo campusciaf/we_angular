@@ -1,38 +1,417 @@
-<header class="header m-0 py-2 poslupa">
-    <div class="row justify-content-center">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-8 icono"> 
-            <a href="https://www.ciaf.digital" target="_blank" class="btn-link-1 vertical-align-center justify-content-center">
-                <img [src]="img_campus" alt="Icono campus virtual" class="mx-2">
-                <span class="ml-2 fs-20 text-1 fw-bolder font-1">CIAF Virtual</span>
-            </a>
+<header>
+    <!-- Barra superior -->
+    <div class="top-announcement">
+      <span class="top-glow"></span>
+  
+      <div class="top-content">
+        <div class="top-status">
+          <span class="pulse-dot">
+            <span></span>
+            <i></i>
+          </span>
+          <span>Inscripciones abiertas 2026</span>
         </div>
-        <!-- <div class="col-xl-6 col-lg-8 col-md-12 col-12">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono"> 
-                    <a class="btn-link-1 vertical-align-center justify-content-center" href="#direccioncrai" data-bs-toggle="modal"> 
-                        <img [src]="img_destino" alt="Ubicación CIAF" class="mx-2">
-                        <span class="ml-2">Calle 20 #4-57 Pereira</span>
-                    </a>
+  
+        <div class="top-actions">
+          <a href="https://virtual.ciaf.edu.co" target="_blank" class="virtual-btn">
+            <i class="fa-solid fa-rocket"></i>
+            <strong>Entra a CIAF Virtual</strong>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+  
+          <a href="#contacto" class="top-link">
+            <i class="fa-regular fa-message"></i>
+            Contacto
+          </a>
+  
+          <a href="#pqrsf" class="top-link hide-md">
+            <i class="fa-regular fa-file-lines"></i>
+            PQRSF
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="main-header">
+        <div class="container-xxl">
+        <div class="header-inner">
+
+            <a href="/" class="brand-logo">
+            <img [src]="img_logo" alt="CIAF">
+            </a>
+
+            <nav class="main-nav d-none d-lg-flex">
+
+            <!-- Oferta Académica -->
+            <div class="nav-item has-mega">
+                <button type="button" class="nav-link-btn">
+                Oferta Académica <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mega-menu">
+                <div class="mega-panel">
+                    <div class="row g-5">
+
+                    <div class="col-lg-4 mega-col">
+                        <div class="mega-title">
+                        <span class="mega-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </span>
+                        <div>
+                            <h6>Carreras Universitarias</h6>
+                            <small>*Por ciclos propedéuticos</small>
+                        </div>
+                        </div>
+
+                        <div class="mega-section">
+                        <p class="mega-section-title">Escuela de Ciencias Administrativas</p>
+
+                        <a href="/programas/administracion-de-empresas" class="mega-link">
+                            Administración de Empresas
+                            <span>Liderazgo, estrategia y gestión.</span>
+                        </a>
+
+                        <a href="#carreras-universitarias" class="mega-link">
+                            Contaduría Pública
+                            <span>Convenio INTEP.</span>
+                        </a>
+                        </div>
+
+                        <div class="mega-section">
+                        <p class="mega-section-title">Escuela de Ingenierías</p>
+
+                        <a href="#carreras-universitarias" class="mega-link">
+                            Ingeniería de Software
+                            <span>Construye productos digitales.</span>
+                        </a>
+
+                        <a href="#carreras-universitarias" class="mega-link">
+                            Ingeniería Industrial
+                            <span>Optimiza procesos del futuro.</span>
+                        </a>
+                        </div>
+
+                        <div class="mega-section">
+                        <p class="mega-section-title">Escuela de Salud</p>
+
+                        <a href="#carreras-universitarias" class="mega-link">
+                            Seguridad y Salud en el Trabajo
+                            <span>Bienestar laboral con propósito.</span>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mega-col">
+                        <div class="mega-title">
+                        <span class="mega-icon lime">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+                        <div>
+                            <h6>Técnicos Laborales</h6>
+                        </div>
+                        </div>
+
+                        <div class="mega-section">
+                        <p class="mega-section-title">Escuela de Salud</p>
+
+                        <a href="#carreras-laborales" class="mega-link">
+                            Auxiliar de Enfermería
+                            <span>Cuidado humano profesional.</span>
+                        </a>
+
+                        <a href="#carreras-laborales" class="mega-link">
+                            Auxiliar Administrativo en Salud
+                            <span>Gestión clínica eficiente.</span>
+                        </a>
+
+                        <a href="#carreras-laborales" class="mega-link">
+                            Atención al Adulto Mayor
+                            <span>Acompañamiento y cuidado integral.</span>
+                        </a>
+
+                        <a href="#carreras-laborales" class="mega-link">
+                            Auxiliar de Veterinaria y Cuidado de Mascotas
+                            <span>Cuidado y bienestar animal.</span>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mega-col">
+                        <div class="mega-title">
+                        <span class="mega-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+                        <div>
+                            <h6>Educación Continuada</h6>
+                        </div>
+                        </div>
+
+                        <div class="mega-section">
+                        <a href="#educacion-continuada" class="mega-link">Diplomados</a>
+                        <a href="#educacion-continuada" class="mega-link">Cursos</a>
+                        <a href="#educacion-continuada" class="mega-link">Certificaciones</a>
+                        <a href="#educacion-continuada" class="mega-link">Formación empresarial</a>
+                        </div>
+                    </div>
+
+                    </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono" href="#direccion" data-bs-toggle="modal"> 
-                    <a class="btn-link-1 vertical-align-center justify-content-center">
-                        <img [src]="img_ubicacion" alt="Ubicación CIAF" class="mx-2">
-                        <span class="ml-2">Cra. 6 No. 24-56 Pereira</span>
-                    </a>
-                </div> 
-                <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono"> 
-                    <a href="https://www.ciaf.digital" target="_blank" class="btn-link-1 vertical-align-center justify-content-center">
-                        <img [src]="img_campus" alt="Icono campus virtual" class="mx-2">
-                        <span class="ml-2">CIAF virtual</span>
-                    </a>
                 </div>
             </div>
-        </div> -->
+
+            <!-- Nuestra Institución -->
+            <div class="nav-item has-mega">
+                <button type="button" class="nav-link-btn">
+                Nuestra Institución <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mega-menu mega-small">
+                <div class="mega-panel">
+                    <div class="mega-title">
+                    <span class="mega-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+                    <div>
+                        <h6>Conócenos</h6>
+                    </div>
+                    </div>
+
+                    <div class="mega-section">
+                    <a href="#institucion" class="mega-link">Quiénes Somos</a>
+                    <a href="#institucion" class="mega-link">Proyección Social y Extensión</a>
+                    <a href="#institucion" class="mega-link">Cultura CIAF</a>
+                    <a href="#institucion" class="mega-link">CRAILAB</a>
+                    <a href="#institucion" class="mega-link">CIAF Virtual</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Bienestar -->
+            <div class="nav-item has-mega">
+                <button type="button" class="nav-link-btn">
+                Bienestar <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mega-menu mega-small">
+                <div class="mega-panel">
+                    <div class="mega-title">
+                    <span class="mega-icon lime">
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
+                    <div>
+                        <h6>Experiencia CIAF</h6>
+                    </div>
+                    </div>
+
+                    <div class="mega-section">
+                    <a href="#bienestar" class="mega-link">Bienestar Institucional</a>
+                    <a href="#bienestar" class="mega-link">Permanencia Estudiantil</a>
+                    <a href="#bienestar" class="mega-link">Experiencia Universitaria</a>
+                    <a href="#bienestar" class="mega-link">Gestión Humana</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Investigación -->
+            <div class="nav-item has-mega">
+                <button type="button" class="nav-link-btn">
+                Investigación <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mega-menu mega-small">
+                <div class="mega-panel">
+                    <div class="mega-title">
+                    <span class="mega-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </span>
+                    <div>
+                        <h6>Ciencia e Innovación</h6>
+                    </div>
+                    </div>
+
+                    <div class="mega-section">
+                    <a href="#investigaciones" class="mega-link">Ciencia, Creatividad e Innovación</a>
+                    <a href="#investigaciones" class="mega-link">Semilleros</a>
+                    <a href="#investigaciones" class="mega-link">CRAILAB</a>
+                    <a href="#investigaciones" class="mega-link">Proyectos de Innovación</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Egresados -->
+            <div class="nav-item has-mega">
+                <button type="button" class="nav-link-btn">
+                Egresados <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mega-menu mega-small">
+                <div class="mega-panel">
+                    <div class="mega-title">
+                    <span class="mega-icon lime">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <div>
+                        <h6>Comunidad CIAF</h6>
+                    </div>
+                    </div>
+
+                    <div class="mega-section">
+                    <a href="#egresados" class="mega-link">Comunidad de Egresados</a>
+                    <a href="#egresados" class="mega-link">Convenios y Beneficios</a>
+                    <a href="#egresados" class="mega-link">Historias que Inspiran</a>
+                    <a href="#egresados" class="mega-link">Bolsa de Empleo</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </nav>
+
+            <div class="header-actions d-none d-md-flex">
+            <a href="#pagos" class="btn-header-outline">
+                <i class="fa-regular fa-credit-card"></i>
+                Pagos en línea
+            </a>
+
+            <a href="#inscribete" class="btn-header-primary">
+                Inscríbete
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            </div>
+
+            <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
+            <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+        </div>
     </div>
+
 </header>
+  
+  <!-- Menú móvil -->
+  <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="menuMobile">
+    <div class="offcanvas-header">
+      <img src="../assets/image/logo-blanco.webp" alt="CIAF" class="mobile-logo">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+  
+    <div class="offcanvas-body">
+  
+      <div class="accordion accordion-flush" id="menuAccordion">
+  
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mOferta">
+            Oferta Académica
+          </button>
+  
+          <div id="mOferta" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div class="accordion-body mobile-links">
+              <strong>Carreras Universitarias</strong>
+              <a href="/programas/administracion-de-empresas">Administración de Empresas</a>
+              <a href="#carreras-universitarias">Contaduría Pública</a>
+              <a href="#carreras-universitarias">Ingeniería de Software</a>
+              <a href="#carreras-universitarias">Ingeniería Industrial</a>
+              <a href="#carreras-universitarias">Seguridad y Salud en el Trabajo</a>
+  
+              <strong>Técnicos Laborales</strong>
+              <a href="#carreras-laborales">Auxiliar de Enfermería</a>
+              <a href="#carreras-laborales">Auxiliar Administrativo en Salud</a>
+              <a href="#carreras-laborales">Atención al Adulto Mayor</a>
+              <a href="#carreras-laborales">Auxiliar de Veterinaria y Cuidado de Mascotas</a>
+  
+              <strong>Educación Continuada</strong>
+              <a href="#educacion-continuada">Diplomados</a>
+              <a href="#educacion-continuada">Cursos</a>
+              <a href="#educacion-continuada">Certificaciones</a>
+              <a href="#educacion-continuada">Formación empresarial</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mInstitucion">
+            Nuestra Institución
+          </button>
+  
+          <div id="mInstitucion" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div class="accordion-body mobile-links">
+              <a href="#institucion">Quiénes Somos</a>
+              <a href="#institucion">Proyección Social y Extensión</a>
+              <a href="#institucion">Cultura CIAF</a>
+              <a href="#institucion">CRAILAB</a>
+              <a href="#institucion">CIAF Virtual</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mBienestar">
+            Bienestar
+          </button>
+  
+          <div id="mBienestar" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div class="accordion-body mobile-links">
+              <a href="#bienestar">Bienestar Institucional</a>
+              <a href="#bienestar">Permanencia Estudiantil</a>
+              <a href="#bienestar">Experiencia Universitaria</a>
+              <a href="#bienestar">Gestión Humana</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mInvestigacion">
+            Investigación
+          </button>
+  
+          <div id="mInvestigacion" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div class="accordion-body mobile-links">
+              <a href="#investigaciones">Ciencia, Creatividad e Innovación</a>
+              <a href="#investigaciones">Semilleros</a>
+              <a href="#investigaciones">CRAILAB</a>
+              <a href="#investigaciones">Proyectos de Innovación</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mEgresados">
+            Egresados
+          </button>
+  
+          <div id="mEgresados" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div class="accordion-body mobile-links">
+              <a href="#egresados">Comunidad de Egresados</a>
+              <a href="#egresados">Convenios y Beneficios</a>
+              <a href="#egresados">Historias que Inspiran</a>
+              <a href="#egresados">Bolsa de Empleo</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="mt-4 d-grid gap-2">
+        <a href="#pagos" class="btn-header-outline justify-content-center">
+          Pagos en línea
+        </a>
+  
+        <a href="#inscribete" class="btn-header-primary justify-content-center">
+          Inscríbete
+        </a>
+      </div>
+  
+    </div>
+  </div>
 
 
-<div class="row menu bg-1 z-3 justify-content-center">
+
+
+<div class="row menu bg-1 z-3 justify-content-center d-none">
 
     <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-7 py-2 menu-container">
     <nav class="nav navbar navbar-expand-lg navbar-dark bg-1 p-0 col-xl-12 col-lg-12 col-md-12 col-12">
@@ -89,12 +468,7 @@
         <li class="navbar-item submenu">
             <a class="navbar-link">Carreras T. Laborales</a>
             <div class="dropdown">
-            <!-- <h3>Escuela de Ingenierías</h3> -->
-            <!-- <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/motocicletas" routerLinkActive="active-link" target="_top">
-                Mecánica y Mantenimiento de Motocicletas
-                </a>
-            </li> -->
+
             <hr class="py-0 my-0">
             <h3>Escuela de Salud</h3>
            <li class="dropdown-item">
@@ -186,133 +560,6 @@
         </div>
     </div>
 
-
-    <!--
-    <div class="col-xxl-8 col-xl-9 col-lg-7 col-md-6 col-12 ">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-1 pt-2" aria-label="Sixth navbar example">
-            <div class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-12">
-                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-
-                    <div class="row container-fluid justify-content-center">
-
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-11 col-12">
-                            <div class="row">
-                                    <div class="col-xl-12 col-lg-12 col-md-6 col-10">
-                                        <span class="logo">
-                                            <a class="navbar-brand" routerLink="/inicio" target="_top"><img [src]="img_logo" alt="Carreras profesionales"></a>
-                                        </span>
-                                    </div>
-                                    <div class="col-xl-12 col-lg-12 col-md-6 col-2 pt-2">
-                                        <button class="navbar-toggler collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
-                                            <span class="navbar-toggler-icon"></span>
-                                        </button>
-                                    </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xxl-7 col-xl-7 col-lg-10 col-md-11 col-12">
-
-                            <div class="navbar-collapse collapse" id="navbarsExample06">
-
-                                <div class="col-xl-9 col-lg-9 col-md-12 col-12 ">
-
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-
-                                        <div class="dropdown">
-                                            <button class="dropbtn" id="uno">Carreras Universitarias</button>
-                                            <div class="dropdown-content">
-                                                <h3>Escuela de Ciencias administrativas</h3>
-                                                <a href="#" class="" routerLink="/administracion"  routerLinkActive="active-link" target="_top">Administración de Empresas</a>
-                                                <a href="#" class="" routerLink="/contaduria"  routerLinkActive="active-link" target="_top">Contaduría Pública</a>
-                                                <hr class="py-0 my-0">
-
-                                                <h3>Escuela de Ingenierías</h3>
-                                                <a href="#" class="" routerLink="/software"  routerLinkActive="active-link" target="_top">Ingeniería de Software</a>
-                                                <a href="#" class="" routerLink="/industrial"  routerLinkActive="active-link" target="_top">Ingeniería Industrial</a>
-                                                <hr class="py-0 my-0">
-
-                                                <h3>Escuela de Salud</h3>
-                                                <a href="#" class="" routerLink="/sst"  routerLinkActive="active-link" target="_top">Seguridad y Salud en el Trabajo (SSTG)</a>
-                                            
-                                                <hr class="py-0 my-0">
-                                            </div>
-                                        </div>
-
-                                        <div class="dropdown" >
-                                            <button class="dropbtn" id="dos">Carreras T. Laborales</button>
-                                            <div class="dropdown-content">
-
-                                                <h3>Escuela de Ingenierías</h3>
-                                                <a href="#" class="" routerLink="/motocicletas"  routerLinkActive="active-link" target="_top">Mecánica y Mantenimiento de Motocicletas</a>
-                                                <hr class="py-0 my-0">
-
-                                                <h3>Escuela de Salud</h3>
-                                                <a href="#" class="" routerLink="/enfermeria"  routerLinkActive="active-link" target="_top">Auxiliar Enfermería</a>
-                                                <a href="#" class="" routerLink="/administrativo"  routerLinkActive="active-link" target="_top">Auxiliar Administrativo en Salud</a>
-                                                <a href="#" class="" routerLink="/adultomayor"  routerLinkActive="active-link" target="_top">Atención al Adulto Mayor</a>
-                                                <a href="#" class="" routerLink="/veterinaria"  routerLinkActive="active-link" target="_top">Auxiliar de Veterinaria</a>
-                                                <hr class="py-0 my-0">
-                                            </div>
-                                        </div>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" routerLink="/continuada"  routerLinkActive="active-link" target="_top">Educación Continuada</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" routerLink="/bienestar"  routerLinkActive="active-link" target="_top">Experiencias de Bienestar</a>
-                                        </li>
-                                    
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" routerLink="/conocenos" target="_top">Conócenos</a>
-                                        </li>
-
-
-                                        
-                                    </ul>
-
-                                </div>
-                                
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="col-xxl-3 col-xl-3 col-lg-5 col-md-5 col-12 pt-xxl-3 pt-xl-3 pt-lg-3 pt-md-3 pt-0">
-        <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-2 col-2 d-md-block d-none pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 pt-3" id="opbuscar">
-                <button class="hamburger"><img [src]="img_lupa" alt="Ubicación CIAF"></button>
-                <button class="cross">&#735;</button>
-            </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-10 pt-xxl-0 pt-xl-0 pt-lg-0 pt-md-0 pt-1">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
-                        <a href="https://ciaf.digital/inscribete/" target="_blank" class="btn btn-financiacion btn-sm py-xxl-2 py-xl-2 py-lg-2 py-md-2 py-1 col-12">Financiación Directa</a>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-4">
-                        <a href="https://ciaf.digital/inscripciones/" target="_blank" class="btn btn-1 col-12 py-xxl-2 py-lg-2 py-md-2 py-1 rounded-xl-2 rounded-0">Inscríbete <br>Aquí</a>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-4 pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 text-end">
-                        <a href="https://ciaf.digital/pagos_pse/" target="_blank" class="col-12 py-xxl-2 py-lg-2 py-md-2 py-1">
-                            <img [src]="pagos" width="100px" height="32px" title="Pagos en linea">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-2 col-2 d-md-none d-block pt-xxl-1 pt-xl-1 pt-lg-1 pt-md-1 pt-1 text-center" id="opbuscar">
-                <button class="hamburger"><img [src]="img_lupa" alt="Ubicación CIAF"></button>
-                <button class="cross">&#735;</button>
-            </div>
-        </div>
-    </div>
--->
-    <!-- buscador -->
     <div class="buscador py-3">
         <form>
         <div class="row justify-content-center">
@@ -338,7 +585,7 @@
 
 
 <!-- Modal mapa-->
-<div class="modal fade" id="direccioncrai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade d-none" id="direccioncrai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -346,17 +593,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-
-
-            <!-- <iframe
-                width="100%"
-                height="560"
-                frameborder="0" style="border:0"
-                referrerpolicy="no-referrer-when-downgrade" 
-                languaje="esp"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.4830240552871!2d-75.69470332376287!3d4.816631960949031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e388769aa3b4fa5%3A0xa2068b31da086152!2sCRAI%20-%20CIAF!5e0!3m2!1ses!2sco!4v1717863482049!5m2!1ses!2sco"
-                allowfullscreen>
-            </iframe> -->
 
         </div>
         <div class="modal-footer">
@@ -367,7 +603,7 @@
 </div>
 
 <!-- Modal mapa-->
-<div class="modal fade" id="direccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade d-none" id="direccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -397,7 +633,7 @@
 </div>
 
 
-<div class="redes-header">
+<div class="redes-header d-none">
 
     <li><a href="https://web.facebook.com/ComunidadCIAF?_rdc=1&_rdr" target="_blank"><img [src]="img_apfacebook" alt="facebook"></a></li>
     <li><a href="https://www.instagram.com/comunidadciaf/" target="_blank"><img [src]="img_apinstagram" alt="Instagram"></a></li>
@@ -407,13 +643,13 @@
 
 </div>
 
-<div class="api-whatsapp">
+<div class="api-whatsapp d-none">
     <a href="https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20la%20web" title="Chat"  target="_blank">
         <img src="assets/image/icono-whatsapp.svg" alt="Mi SVG feliz"/>
     </a>
 </div>
 
-<div class="row m-menu bg-1" *ngIf="false">
+<div class="row m-menu bg-1 d-none" *ngIf="false">
 
     <div class="col-xl-3 col-lg-3 col-md-3 col-3">
         <div class="dropup pt-2">
