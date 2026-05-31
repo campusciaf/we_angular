@@ -1,0 +1,102 @@
+/* Por qué CIAF — layout exclusivo; UI en styles.css */
+
+.ciaf-why-section {
+  padding: 4.5rem 0 5rem;
+}
+
+.ciaf-why-container {
+  max-width: var(--container-offer);
+}
+
+.ciaf-why-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-7);
+  margin-bottom: 3.25rem;
+}
+
+.ciaf-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--ciaf-border-card);
+}
+
+.ciaf-why-item {
+  padding: 2rem 1.75rem 0;
+  border-left: 1px solid var(--ciaf-border-card);
+}
+
+.ciaf-why-item:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.ciaf-why-item__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: 1.35rem;
+}
+
+.ciaf-why-item .ciaf-card-index {
+  padding-top: 1.1rem;
+}
+
+.ciaf-why-item .ciaf-card-title--lg {
+  margin-bottom: .75rem;
+}
+
+@media (max-width: 1199.98px) {
+  .ciaf-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ciaf-why-item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .ciaf-why-item:nth-child(3) {
+    border-top: 1px solid var(--ciaf-border-card);
+    padding-top: 2rem;
+  }
+
+  .ciaf-why-item:nth-child(4) {
+    border-top: 1px solid var(--ciaf-border-card);
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ciaf-why-section {
+    padding: 4rem 0;
+  }
+
+  .ciaf-why-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ciaf-why-section {
+    padding: 3.5rem 0;
+  }
+
+  .ciaf-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ciaf-why-item {
+    padding: 1.75rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--ciaf-border-card);
+  }
+
+  .ciaf-why-item:first-child {
+    padding-top: 1.75rem;
+    border-top: 0;
+  }
+}

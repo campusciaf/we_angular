@@ -1,0 +1,144 @@
+<section class="ciaf-register-section" id="inscribete">
+  <div class="container-xxl">
+    <div class="ciaf-register-card">
+
+      <div class="ciaf-register-grid">
+
+        <div class="ciaf-register-intro">
+          <span class="ciaf-pill ciaf-pill--compact">INSCRIPCIONES ABIERTAS</span>
+
+          <h2 class="ciaf-title-display ciaf-title-display--register">
+            Tu próximo capítulo empieza
+            <span class="ciaf-gradient-text ciaf-gradient-text--brand">hoy.</span>
+          </h2>
+
+          <p class="ciaf-register-lead">
+            Inscripción 100% en línea. Financiación directa al 0% de interés y acompañamiento
+            desde el primer clic.
+          </p>
+
+          <div class="ciaf-register-actions">
+            <a
+              href="https://ciaf.digital/inscripciones/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm"
+            >
+              Inscríbete Aquí
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+            <a
+              href="https://ciaf.digital/pagos_pse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm"
+            >
+              Pagos en Línea
+            </a>
+
+            <a href="#financiacion" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm">
+              Financiación Directa
+            </a>
+          </div>
+        </div>
+
+        <div class="ciaf-register-form-box">
+          <h3 class="ciaf-register-form-box__title">Pide información</h3>
+          <p class="ciaf-register-form-box__subtitle">Te contactamos en menos de 24h.</p>
+
+          <form [formGroup]="myForm" (ngSubmit)="agregar()" novalidate>
+            <input
+              type="text"
+              class="ciaf-field"
+              placeholder="Nombre completo"
+              formControlName="nombre"
+              autocomplete="name"
+            />
+            <ng-container *ngFor="let validation of account_validation_messages.nombre">
+              <div
+                class="ciaf-field-error"
+                *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+
+            <input
+              type="email"
+              class="ciaf-field"
+              placeholder="Correo electrónico"
+              formControlName="correo"
+              autocomplete="email"
+            />
+            <ng-container *ngFor="let validation of account_validation_messages.correo">
+              <div
+                class="ciaf-field-error"
+                *ngIf="myForm.get('correo')?.hasError(validation.type) && (myForm.get('correo')?.dirty || myForm.get('correo')?.touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+
+            <input
+              type="tel"
+              class="ciaf-field"
+              placeholder="Teléfono"
+              formControlName="celular"
+              autocomplete="tel"
+            />
+            <ng-container *ngFor="let validation of account_validation_messages.celular">
+              <div
+                class="ciaf-field-error"
+                *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+
+            <select class="ciaf-field ciaf-field--select" formControlName="fo_programa" required>
+              <option value="">Programa de interés</option>
+              <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas</option>
+              <option value="Técnica Profesional en Gestión Financiera">Contaduría Pública</option>
+              <option value="Nivel 1 - Técnica profesional en programación de software">Ingeniería de Software</option>
+              <option value="Nivel 1 - Técnico Profesional en Procesos de Seguridad y Salud en el Trabajo">Seguridad y salud en el Trabajo</option>
+              <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Ingeniería Industrial</option>
+              <option value="Técnico laboral por competencias en mecánica de motocicletas">Técnico Laboral en Mecanica de motocicletas</option>
+              <option value="Técnico laboral por competencias en auxiliar en enfermería">Técnico Laboral en Auxiliar en Enfermería</option>
+              <option value="Técnico Laboral por Competencias en Administrativo en Salud">Técnico Laboral en Administrativo en Salud</option>
+            </select>
+
+            <select class="ciaf-field ciaf-field--select" formControlName="jornada_e" required>
+              <option value="">Jornada de interés</option>
+              <option value="Diurna">Diurna</option>
+              <option value="Nocturna">Nocturna</option>
+              <option value="Fds">Fin de semana</option>
+              <option value="Sabados">Sabados</option>
+            </select>
+
+            <div class="ciaf-register-check">
+              <input type="checkbox" id="registroAcepto" formControlName="acepto" />
+              <label for="registroAcepto">
+                Acepto el envío de información a mi correo electrónico. He revisado la política de
+                protección de datos y la política de devoluciones y acumulados.
+              </label>
+            </div>
+            <ng-container *ngFor="let validation of account_validation_messages.acepto">
+              <div
+                class="ciaf-field-error"
+                *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+
+            <button type="submit" class="ciaf-btn ciaf-btn--primary ciaf-btn--submit" [disabled]="!myForm.valid">
+              Quiero más información
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

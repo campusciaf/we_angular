@@ -1,50 +1,64 @@
-<section class="py-4 bg-19">
+<section class="ciaf-events-section" id="agenda-ciaf">
+  <div class="ciaf-events-section__grid" aria-hidden="true"></div>
 
-       <div class="row justify-content-center">
+  <div class="container-xxl ciaf-events-container">
+    <div class="ciaf-events-header">
+      <div>
+        <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events">AGENDA CIAF</span>
 
-         <div class="col-xl-10 col-lg-10 col-md-10 col-11 pt-4">
+        <h2 class="ciaf-title-display ciaf-title-display--events">
+          Próximos <span class="ciaf-gradient-text ciaf-gradient-text--accent">eventos</span>
+        </h2>
+      </div>
 
-            <div class="row justify-content-center">
-               <div class="col-xl-2 col-lg-3 col-md-10 col-12 vertical-align-center">
-                  <div class="row ">
-                     <div class="col-12 text-center px-2">
-                        <h2 class="titulo-2 text-1 fs-48">Próximos eventos</h2>
-                        <p class="text-1">Entérate y participa de los eventos que transforman.</p>
-                     </div>
-                  </div>
-               </div>
-      
-               <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
-                  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                     <div ngxSlickItem *ngFor="let datos of listarEventos; index as i" class="slide">
-      
-                        <div class="evento text-white rounded-4">
-                           <div class="bolder-1 fs-3 ">{{datos.fecha_inicio | date:"d MMM" }}</div>
-                           <div class="small py-2 evento-titulo">{{datos.evento}}</div>
-                           <div class="py-2 evento-hora">
-                              <img src="{{time}}" alt="Hora del evento"> {{ datos.horaDate | date: 'h:mm a' }}
-                           </div>
-                           <!-- <div><a class="btn bg-3 btn-sm">Ver evento</a></div> -->
-                        </div>
-      
-                     </div>
-                 </ngx-slick-carousel>
-               </div>
-      
-               <div class="col-xl-12 text-right pt-4">
-                  <a  class="btn text-white"> 
-                      Ver todos los eventos 
-                      <img src="{{next}}" alt="boton siguiente">
-                  </a>
-               </div>
-            </div>
+      <a href="#" class="ciaf-btn ciaf-btn--events-all">
+        Ver todos los eventos
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
 
+    <ngx-slick-carousel
+      *ngIf="listarEventos?.length"
+      class="ciaf-events-carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <article ngxSlickItem *ngFor="let datos of listarEventos" class="ciaf-event-card">
+        <div class="ciaf-event-card__head">
+          <div class="ciaf-event-date">
+            <span class="ciaf-event-date__day">{{ datos.fecha_inicio | date:'d' }}</span>
+            <span class="ciaf-event-date__month">{{ datos.fecha_inicio | date:'MMM' }}</span>
+          </div>
 
-         </div>
+          <div>
+            <span class="ciaf-event-tag">{{ getEventTag(datos) }}</span>
+            <h3 class="ciaf-event-card__title">{{ datos.evento }}</h3>
+            <p class="ciaf-event-card__meta">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              {{ getEventLocation(datos) }}
+            </p>
+          </div>
+        </div>
 
+        <p class="ciaf-event-card__text">{{ getEventDescription(datos) }}</p>
 
-       </div>
+        <div class="ciaf-event-card__footer">
+          <a href="#" class="ciaf-event-link--muted">
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+            Agendar
+          </a>
 
- </section>
-
-
+          <a
+            [href]="getEventLink(datos)"
+            class="ciaf-event-link--cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Registrarme
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </ngx-slick-carousel>
+  </div>
+</section>

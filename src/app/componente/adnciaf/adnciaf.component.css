@@ -1,0 +1,47 @@
+/* ADN CIAF — layout exclusivo; UI compartida en styles.css */
+
+.ciaf-adn-section {
+  position: relative;
+  padding: 4.8rem 0 5.6rem;
+  overflow: hidden;
+}
+
+.ciaf-adn-container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-content);
+}
+
+.ciaf-adn-header {
+  max-width: 840px;
+  margin: 0 auto 3.6rem;
+}
+
+.ciaf-adn-grid {
+  --bs-gutter-x: 1.1rem;
+  --bs-gutter-y: 1.1rem;
+  justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  .ciaf-adn-grid > .col-xl {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ciaf-adn-section {
+    padding: 4rem 0;
+  }
+
+  .ciaf-adn-header {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ciaf-adn-section {
+    padding: 3.5rem 0;
+  }
+}

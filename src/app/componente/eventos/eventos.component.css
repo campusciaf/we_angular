@@ -1,17 +1,58 @@
-.evento{
-	text-align: center;
-	background-color: #001550;
-	margin:2px;
-	padding: 25px 5px 5px 5px;
-	height: 200px;
+/* Eventos — slick y ajustes locales; cards en styles.css */
+
+.ciaf-events-carousel {
+  margin: 0 -.55rem;
 }
-.evento img{
-	float: left;
+
+.ciaf-events-carousel ::ng-deep .slick-list {
+  overflow: visible;
 }
-.evento-titulo{
-	height: 50px;
+
+.ciaf-events-carousel ::ng-deep .slick-dots {
+  bottom: -2.2rem;
 }
-.evento-hora{
-	width: 100px;
-	margin: auto;
+
+.ciaf-events-carousel ::ng-deep .slick-dots li button:before {
+  color: rgba(255, 255, 255, .45);
+  opacity: 1;
+}
+
+.ciaf-events-carousel ::ng-deep .slick-dots li.slick-active button:before {
+  color: var(--ciaf-lime);
+}
+
+.ciaf-events-carousel ::ng-deep .slick-prev,
+.ciaf-events-carousel ::ng-deep .slick-next {
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+}
+
+.ciaf-events-carousel ::ng-deep .slick-prev {
+  left: -12px;
+}
+
+.ciaf-events-carousel ::ng-deep .slick-next {
+  right: -12px;
+}
+
+.ciaf-events-carousel ::ng-deep .slick-prev:before,
+.ciaf-events-carousel ::ng-deep .slick-next:before {
+  color: var(--ciaf-white);
+  opacity: .85;
+  font-size: 28px;
+}
+
+@media (max-width: 767.98px) {
+  .ciaf-events-section {
+    padding-bottom: 5.5rem;
+  }
+
+  .ciaf-event-card {
+    margin: 0;
+  }
+
+  .ciaf-events-carousel {
+    margin: 0;
+  }
 }

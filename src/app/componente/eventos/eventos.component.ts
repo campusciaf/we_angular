@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 
-
-
-declare var jQuery:any;
-declare var $:any;
-
 interface Evento {
-  hora: string; // Ejemplo: "14:00:00"
-  fecha_inicio: string; // Fecha del evento
-  evento: string; // Nombre del evento
-  horaDate?: Date; // Nueva propiedad para la conversión
+  hora: string;
+  fecha_inicio: string;
+  evento: string;
+  horaDate?: Date;
+  tipo?: string;
+  categoria?: string;
+  lugar?: string;
+  ubicacion?: string;
+  descripcion?: string;
+  enlace?: string;
+  link?: string;
 }
-
 
 @Component({
   selector: 'app-eventos',
@@ -20,57 +21,72 @@ interface Evento {
   styleUrls: ['./eventos.component.css']
 })
 export class EventosComponent implements OnInit {
-  public next="assets/image/btn-next-2.webp";
-  public time="assets/image/time.webp";
 
-  listarEventos:any;
-  hora:any=new Date();
+  listarEventos: Evento[] = [];
 
   slideConfig = {
-    "dots":"true", "slidesToShow": 5, "slidesToScroll": 1, "infinite": true, "autoplay": true,
+    dots: true,
+    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 1048,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 480,
+        breakpoint: 1199,
         settings: {
           slidesToShow: 2
         }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          arrows: false
+        }
       }
     ]
-
   };
 
-  constructor( private conectarApiService:ConectarApiService) { 
-
-  }
-
+  constructor(private conectarApiService: ConectarApiService) {}
 
   ngOnInit(): void {
     this.conectarApiService.obtenerEventos().subscribe((respuesta: Evento[]) => {
       this.listarEventos = respuesta.map((evento: Evento) => {
         const [hours, minutes, seconds] = evento.hora.split(':');
+        const fechaBase = evento.fecha_inicio ? new Date(evento.fecha_inicio) : new Date();
 
-        // Crear una fecha usando la fecha del evento (si está disponible) o la fecha actual
-        let fechaBase = evento.fecha_inicio ? new Date(evento.fecha_inicio) : new Date();
-
-        // Establecer la hora en la fecha base
         fechaBase.setHours(+hours, +minutes, +seconds || 0, 0);
 
-        return { ...evento, horaDate: fechaBase }; // Asignar la nueva fecha/hora
+        return { ...evento, horaDate: fechaBase };
       });
     });
   }
-  
 
+  getEventTag(evento: Evento): string {
+    return evento.tipo || evento.categoria || 'EVENTO';
+  }
+
+  getEventLocation(evento: Evento): string {
+    return evento.lugar || evento.ubicacion || 'Campus CIAF · Pereira';
+  }
+
+  getEventDescription(evento: Evento): string {
+    if (evento.descripcion) {
+      return evento.descripcion;
+    }
+
+    const hora = evento.horaDate
+      ? new Intl.DateTimeFormat('es-CO', { hour: 'numeric', minute: '2-digit', hour12: true }).format(evento.horaDate)
+      : '';
+
+    return hora
+      ? `Inicia a las ${hora}. Participa y vive la experiencia CIAF.`
+      : 'Participa y vive la experiencia CIAF.';
+  }
+
+  getEventLink(evento: Evento): string {
+    return evento.enlace || evento.link || '#';
+  }
 }

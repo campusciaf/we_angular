@@ -1,94 +1,92 @@
-<section class="pt-4 mostrar bg-1">
-    <div class="row justify-content-center">
+<section class="ciaf-news-section ciaf-section-white">
+  <div class="container-xxl ciaf-news-container">
 
-        <div class="col-xl-12 col-lg-12 col-mb-12 col-12 mb-4 pb-4">
-            <h2 class="titulo-2 text-center text-white fs-56 pt-4">Noticias que inspiran </h2>
-        </div>
-        
+    <div class="ciaf-news-header">
+      <div>
+        <span class="ciaf-pill ciaf-pill--compact">NOTICIAS</span>
+        <h2 class="ciaf-title-display ciaf-title-display--news">
+          Noticias que <span class="ciaf-gradient-text ciaf-gradient-text--brand">inspiran</span>
+        </h2>
+      </div>
 
-        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-            <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button>
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                <div ngxSlickItem *ngFor="let noticias of listarNoticias index as i" class="slide">
-                    
-                    <div class="row cards justify-content-center">
-                        <div class="col-xl-12 col-lg-12 col-md-10 col-11">
-                            <div class="column m-4">
-                                <div [className]="'post-module'" (mouseover)="animarnoticia(i)" (mouseout)="noanimarnoticia(i)">
-                                    <div class="thumbnail">
-                                        <!-- <div class="date">
-                                            <div class="day">27</div>
-                                            <div class="month">Mar</div>
-                                        </div> -->
-                                        <div *ngIf="noticias.material=='2'">
-                                            <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}" width="100%" height="auto">
-                                        </div>
-                                        <div *ngIf="noticias.material=='1'">
-
-                                            <a (click)="open(content);videoYoutube(noticias.url_video,noticias.titulo_noticias)" style="cursor:pointer">
-                                                <div class="link-video"><img src="assets/image/video.webp"></div>
-                                                <img src="https://ciaf.digital/public/web_noticias/{{noticias.img_noticias}}" alt="{{noticias.titulo_noticias}}" width="100%" height="auto">
-                                            </a>
-
-                                        </div>
-                                      
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="category" [ngStyle]="{'background-color': noticias.color}" >{{noticias.nombre_categoria}}</div>
-                                        <h1 class="title">{{noticias.titulo_noticias}}</h1>
-                                        <h2 class="sub_title">{{noticias.subtitulo_noticias}}</h2>
-                                        <p [className]="'description accion'+i" [innerHTML]="noticias.contenido_noticias"></p>
-                                        <div class="post-meta">
-                                            <div class="row">
-                                                <div class="col-xl-6 col-lg-6 col-md-6 col-8 pt-1">
-                                                    <span class="timestamp">
-                                                        <img src="{{calendario}}" alt="Publicado"> Pub. {{noticias.fecha_noticias | date:"d MMM"}}
-                                                    </span>
-                                                </div>
-                                                <div class="col-xl-2 col-lg-2 col-md-2 col-4 pt-1 mb-2"> 
-                                                    <span class="comments">39 
-                                                        <img src="{{vistas}}" alt="Publicado"> 
-                                                    </span>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center"> 
-                                                    <a [routerLink]="['/noticias',noticias.link_noticia]" class="btn btn-light btn-sm text-black">Leer más</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </ngx-slick-carousel>
-            <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button>
-        </div>
-        <div class="col-xl-10 text-right pr-4 mr-4">
-            <a routerLink="/noticias" class="btn">
-                Ver todas las noticias <img [src]="btn_next">
-            </a>
-        </div>
+      <a routerLink="/noticias" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm">
+        Ver todas las noticias
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
     </div>
+
+    <!-- Mismo diseño de cuadrícula (3 columnas); solo se desplaza el contenido -->
+    <div
+      #viewport
+      class="ciaf-news-slider"
+      *ngIf="listarNoticias.length && usarCarrusel"
+      (pointerdown)="onPointerDown($event)"
+      (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp($event)"
+      (pointercancel)="onPointerUp($event)"
+      (pointerleave)="onPointerLeave($event)"
+    >
+      <div
+        class="ciaf-news-slider__track"
+        [class.ciaf-news-slider__track--anim]="animando"
+        [style.transform]="'translate3d(' + desplazamiento + 'px, 0, 0)'"
+        [style.--ciaf-news-card-width.px]="anchoTarjeta"
+      >
+        <article class="ciaf-news-card" *ngFor="let noticia of listarNoticias">
+          <ng-container *ngTemplateOutlet="tarjetaNoticia; context: { $implicit: noticia }"></ng-container>
+        </article>
+      </div>
+    </div>
+
+    <div class="ciaf-news-grid" *ngIf="listarNoticias.length && !usarCarrusel">
+      <article class="ciaf-news-card" *ngFor="let noticia of listarNoticias">
+        <ng-container *ngTemplateOutlet="tarjetaNoticia; context: { $implicit: noticia }"></ng-container>
+      </article>
+    </div>
+
+  </div>
 </section>
 
-<ng-template #content let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title" id="modal-basic-title">{{titulo}}</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-		<iframe [src]="total" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen
-      allowfullscreen ></iframe>
-	</div>
-	<div class="modal-footer">
-		
-	</div>
+<ng-template #tarjetaNoticia let-noticia>
+  <div class="ciaf-news-card__media">
+    <img
+      *ngIf="getImagenUrl(noticia)"
+      [src]="getImagenUrl(noticia)"
+      [alt]="noticia.titulo_noticias"
+      loading="lazy"
+      draggable="false"
+    />
+
+    <button
+      *ngIf="esVideo(noticia)"
+      type="button"
+      class="ciaf-news-card__play"
+      (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
+      aria-label="Reproducir video"
+    >
+      <i class="fa-solid fa-circle-play"></i>
+    </button>
+
+    <span class="ciaf-news-card__badge" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
+  </div>
+
+  <div class="ciaf-news-card__body">
+    <p class="ciaf-news-card__date">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+    <h3 class="ciaf-news-card__title">{{ noticia.titulo_noticias }}</h3>
+    <p class="ciaf-news-card__text" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
+    <a [routerLink]="['/noticias', noticia.link_noticia]" class="ciaf-news-card__link">
+      Leer más
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
 </ng-template>
 
-
-
-
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{ titulo }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <iframe [src]="total" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+  </div>
+</ng-template>

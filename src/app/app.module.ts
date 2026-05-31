@@ -79,6 +79,11 @@ import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyec
 import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.component';
 import { Slidehome2Component } from './componente/slidehome2/slidehome2.component';
 import { Header2Component } from './componente/header2/header2.component';
+import { AdnciafComponent } from './componente/adnciaf/adnciaf.component';
+import { OfertaprofesionalComponent } from './componente/ofertaprofesional/ofertaprofesional.component';
+import { OfertalaboralComponent } from './componente/ofertalaboral/ofertalaboral.component';
+import { PorqueciafComponent } from './componente/porqueciaf/porqueciaf.component';
+import { FormularioregistroComponent } from './componente/formularioregistro/formularioregistro.component';
 
 
 
@@ -137,6 +142,11 @@ import { Header2Component } from './componente/header2/header2.component';
     CraiaWidgetComponent,
     Slidehome2Component,
     Header2Component,
+    AdnciafComponent,
+    OfertaprofesionalComponent,
+    OfertalaboralComponent,
+    PorqueciafComponent,
+    FormularioregistroComponent,
   ],
   imports: [
     BrowserModule,
