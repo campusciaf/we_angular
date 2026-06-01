@@ -51,7 +51,8 @@
                 <button
                   type="button"
                   class="nav-link-btn"
-                  [class.is-active]="megaAbierto === 'oferta'"
+                  [class.is-active]="navActivo('oferta')"
+                  [attr.aria-current]="seccionActiva === 'oferta' ? 'page' : null"
                   [attr.aria-expanded]="megaAbierto === 'oferta'"
                   (click)="alternarMega('oferta', $event)"
                 >
@@ -184,7 +185,8 @@
                 <button
                   type="button"
                   class="nav-link-btn"
-                  [class.is-active]="megaAbierto === 'institucion'"
+                  [class.is-active]="navActivo('institucion')"
+                  [attr.aria-current]="seccionActiva === 'institucion' ? 'page' : null"
                   [attr.aria-expanded]="megaAbierto === 'institucion'"
                   (click)="alternarMega('institucion', $event)"
                 >
@@ -228,7 +230,8 @@
                 <button
                   type="button"
                   class="nav-link-btn"
-                  [class.is-active]="megaAbierto === 'bienestar'"
+                  [class.is-active]="navActivo('bienestar')"
+                  [attr.aria-current]="seccionActiva === 'bienestar' ? 'page' : null"
                   [attr.aria-expanded]="megaAbierto === 'bienestar'"
                   (click)="alternarMega('bienestar', $event)"
                 >
@@ -271,7 +274,8 @@
                 <button
                   type="button"
                   class="nav-link-btn"
-                  [class.is-active]="megaAbierto === 'investigacion'"
+                  [class.is-active]="navActivo('investigacion')"
+                  [attr.aria-current]="seccionActiva === 'investigacion' ? 'page' : null"
                   [attr.aria-expanded]="megaAbierto === 'investigacion'"
                   (click)="alternarMega('investigacion', $event)"
                 >
@@ -314,7 +318,8 @@
                 <button
                   type="button"
                   class="nav-link-btn"
-                  [class.is-active]="megaAbierto === 'egresados'"
+                  [class.is-active]="navActivo('egresados')"
+                  [attr.aria-current]="seccionActiva === 'egresados' ? 'page' : null"
                   [attr.aria-expanded]="megaAbierto === 'egresados'"
                   (click)="alternarMega('egresados', $event)"
                 >

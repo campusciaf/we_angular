@@ -177,6 +177,10 @@
   background: rgba(31, 35, 80, .05);
 }
 
+.nav-link-btn.is-active {
+  font-weight: var(--font-bold);
+}
+
 .nav-link-btn i {
   font-size: .7rem;
 }

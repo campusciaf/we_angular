@@ -165,89 +165,83 @@ activo:any;
 
 
 isValid1:boolean = true;
-isValid2:boolean = false;
-isValid3:boolean = false;
-isValid4:boolean = false;
+isValid2:boolean = true;
+isValid3:boolean = true;
+isValid4:boolean = true;
 
   listarPrograma: any;
   listarProgramaVideo: any;
-  listarDesempenate: any;
+  listarDesempenate: any[] = [];
 
-  paginas(pagina:string){
-    if(pagina == "0"){
-      window.scroll(0,0);
+  /** IDs de sección del programa (scroll, no páginas ocultas) */
+  readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
+    { id: 'conoce-el-programa', nav: '1', label: 'Conoce el programa' },
+    { id: 'campo-de-accion', nav: '2', label: 'Campo de acción' },
+    { id: 'experiencias-reales', nav: '3', label: 'Experiencias reales' },
+    { id: 'ruta-crecimiento', nav: '4', label: 'Ruta de crecimiento' },
+    { id: 'plan-estudios', nav: '5', label: 'Plan de estudios' },
+    { id: 'transformacion', nav: '6', label: 'Transformación' },
+    { id: 'por-que-estudiarlo', nav: '7', label: '¿Por qué estudiarlo?' },
+    { id: 'valores-financiacion', nav: '8', label: 'Valores y financiación' },
+    { id: 'proceso-paso-a-paso', nav: '9', label: 'Tu proceso paso a paso' },
+    { id: 'simulador', nav: '10', label: 'Simulador' },
+    { id: 'tu-futuro', nav: '11', label: 'Tu futuro' },
+  ];
+
+  scrollToSeccion(sectionId: string, navId?: string): void {
+    if (sectionId === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (navId) {
+        this.activo = navId;
+      }
+      return;
     }
 
-    if(pagina == "1"){
-
-      this.isValid1= true;
-      this.isValid2= false;
-      this.isValid3= false;
-      this.isValid4= false;
-      window.scroll(0,280);
-      $("#btn-1").addClass("active");
-      $("#btn-2").removeClass("active");
-      $("#btn-3").removeClass("active");
-      $("#btn-4").removeClass("active");
-
-      $("#btn-1-1").addClass("active-m");
-      $("#btn-2-1").removeClass("active-m");
-      $("#btn-3-1").removeClass("active-m");
-      $("#btn-4-1").removeClass("active-m");
-    }
-    
-    if(pagina == "2"){
-      this.isValid1= false;
-      this.isValid2= true;
-      this.isValid3= false;
-      this.isValid4= false;
-      window.scroll(0,280);
-      $("#btn-1").removeClass("active");
-      $("#btn-2").addClass("active");
-      $("#btn-3").removeClass("active");
-      $("#btn-4").removeClass("active");
-
-      $("#btn-1-1").removeClass("active-m");
-      $("#btn-2-1").addClass("active-m");
-      $("#btn-3-1").removeClass("active-m");
-      $("#btn-4-1").removeClass("active-m");
-      
-    }
-    
-    if(pagina == "3"){
-      this.isValid1= false;
-      this.isValid2= false;
-      this.isValid3= true;
-      this.isValid4= false;
-      window.scroll(0,280);
-      $("#btn-1").removeClass("active");
-      $("#btn-2").removeClass("active");
-      $("#btn-3").addClass("active");
-      $("#btn-4").removeClass("active");
-
-      $("#btn-1-1").removeClass("active-m");
-      $("#btn-2-1").removeClass("active-m");
-      $("#btn-3-1").addClass("active-m");
-      $("#btn-4-1").removeClass("active-m");
-    }
-    
-    if(pagina == "4"){
-      this.isValid1= false;
-      this.isValid2= false;
-      this.isValid3= false;
-      this.isValid4= true;
-      window.scroll(0,280);
-      $("#btn-1").removeClass("active");
-      $("#btn-2").removeClass("active");
-      $("#btn-3").removeClass("active");
-      $("#btn-4").addClass("active");
-
-      $("#btn-1-1").removeClass("active-m");
-      $("#btn-2-1").removeClass("active-m");
-      $("#btn-3-1").removeClass("active-m");
-      $("#btn-4-1").addClass("active-m");
+    const el = document.getElementById(sectionId);
+    if (!el) {
+      return;
     }
 
+    const stickyNav = document.querySelector('.ciaf-program-nav');
+    const stickyH = stickyNav ? stickyNav.getBoundingClientRect().height : 48;
+    const offset = 38 + 78 + stickyH + 12;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+
+    if (navId) {
+      this.activo = navId;
+      $('.ciaf-program-nav__tabs a').removeClass('active');
+      $('#btn-' + navId).addClass('active');
+      $('[id^="btn-"][id$="-1"]').removeClass('active-m');
+      $('#btn-' + navId + '-1').addClass('active-m');
+    }
+  }
+
+  paginas(pagina: string): void {
+    if (pagina === '0') {
+      this.scrollToSeccion('top', '1');
+      return;
+    }
+
+    const mapa: Record<string, string> = {
+      '1': 'conoce-el-programa',
+      '2': 'plan-estudios',
+      '3': 'valores-financiacion',
+      '4': 'proceso-paso-a-paso',
+      '5': 'plan-estudios',
+      '6': 'transformacion',
+      '7': 'por-que-estudiarlo',
+      '8': 'valores-financiacion',
+      '9': 'proceso-paso-a-paso',
+      '10': 'simulador',
+      '11': 'tu-futuro',
+    };
+
+    const destino = mapa[pagina];
+    if (destino) {
+      this.scrollToSeccion(destino, pagina);
+    }
   }
 
   listarContacto =[
@@ -291,7 +285,7 @@ isValid4:boolean = false;
     });
 
     this.conectarApiService.obtenerDesempenateId(id).subscribe(respuesta3=>{
-      this.listarDesempenate=respuesta3
+      this.listarDesempenate = Array.isArray(respuesta3) ? respuesta3 : [];
     }); 
 
     
