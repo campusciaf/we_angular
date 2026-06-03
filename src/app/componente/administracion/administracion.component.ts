@@ -133,7 +133,40 @@ listarMaterias =[
   {semestre:10,materia:'Opción de grado'},
 ];
 
+  get semestresPlan(): { semestre: number }[] {
+    return [...this.listarSemestres1, ...this.listarSemestres2, ...this.listarSemestres3];
+  }
 
+  materiasDelSemestre(semestre: number): { semestre: number; materia: string }[] {
+    return this.listarMaterias.filter(m => m.semestre === semestre);
+  }
+
+  etiquetaTituloSemestre(semestre: number): string | null {
+    if (semestre === 4) {
+      return 'Técnico Profesional';
+    }
+    if (semestre === 7) {
+      return 'Tecnólogo';
+    }
+    if (semestre === 10) {
+      return 'Profesional Universitario';
+    }
+    return null;
+  }
+
+  esSemestreHito(semestre: number): boolean {
+    return semestre === 4 || semestre === 7 || semestre === 10;
+  }
+
+  planSemestreAbierto: number | null = null;
+
+  togglePlanSemestre(semestre: number): void {
+    this.planSemestreAbierto = this.planSemestreAbierto === semestre ? null : semestre;
+  }
+
+  planSemestreEstaAbierto(semestre: number): boolean {
+    return this.planSemestreAbierto === semestre;
+  }
 
 slideConfig = {
   "slidesToShow": 4, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
