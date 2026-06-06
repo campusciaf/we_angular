@@ -751,7 +751,7 @@ body {
   align-items: center;
   gap: var(--space-8);
   white-space: nowrap;
-  animation: ciaf-marquee-slide 35s linear infinite;
+  animation: ciaf-marquee-slide 48s linear infinite;
 }
 
 .ciaf-marquee-strip__track span {
@@ -789,8 +789,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
-  color: rgba(15, 23, 42, .14);
-  font-weight: var(--font-extrablack);
+  color: rgb(221, 226, 240);
+  font-weight: var(--font-black);
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: -.04em;
