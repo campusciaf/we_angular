@@ -1,10 +1,15 @@
-<section class="hero-slider" *ngIf="listarSlider?.length">
+<section
+	  class="hero-slider"
+	  *ngIf="listarSlider?.length"
+	  (mouseenter)="pauseSlider()"
+	  (mouseleave)="resumeSlider()"
+	>
 
 	<ngb-carousel
 	  #carousel
 	  [interval]="7000"
-	  [pauseOnHover]="false"
-	  [pauseOnFocus]="false"
+	  [pauseOnHover]="true"
+	  [pauseOnFocus]="true"
 	  [showNavigationArrows]="false"
 	  [showNavigationIndicators]="false"
 	  (slide)="onSlide($event)"
@@ -60,24 +65,44 @@
 			<div class="container-xxl">
 			  <div class="hero-content">
   
-				<span class="ciaf-pill ciaf-pill--hero" *ngIf="slides.subtitulo">
+				<span class="ciaf-pill ciaf-pill--hero fs-12" *ngIf="slides.subtitulo">
+					<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="#84cc16"
+					stroke="#84cc16"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="icon-craia"
+				  >
+					<path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+					<path d="M20 2v4"></path>
+					<path d="M22 4h-4"></path>
+					<circle cx="4" cy="20" r="2"></circle>
+				</svg> 
 				  {{ slides.subtitulo }}
 				</span>
   
-				<h1 class="ciaf-title-display ciaf-title-display--hero" *ngIf="slides.titulo">
-					<ng-container *ngFor="let palabra of getTituloPartes(slides.titulo)">
-					  <span [class.ciaf-gradient-text]="palabra.resaltada" [class.ciaf-gradient-text--accent]="palabra.resaltada">
-						{{ palabra.texto }}
-					  </span>
+				<h1 class="ciaf-title-display ciaf-title-display--hero fs-80" *ngIf="slides.titulo">
+					<ng-container *ngFor="let parte of getTituloPartes(slides.titulo)">
+					  <span
+						class="hero-title-part"
+						[class.ciaf-gradient-text]="parte.resaltada"
+						[class.ciaf-gradient-text--hero]="parte.resaltada"
+					  >{{ parte.texto }}</span>
 					</ng-container>
 				  </h1>
   
-				<p class="ciaf-text-lead ciaf-text-lead--inverse" *ngIf="slides.descripcion">
+				<p class="ciaf-text-lead ciaf-text-lead--inverse fs-20" *ngIf="slides.descripcion">
 				  {{ slides.descripcion }}
 				</p>
   
 				<div class="hero-buttons" *ngIf="slides.ruta_url">
-				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--lime">
+				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--lime fs-14">
 					Ver información
 					<i class="fa-solid fa-arrow-up-right-from-square"></i>
 				  </a>
@@ -105,7 +130,7 @@
 		  (click)="carousel.select('slide-' + i)"
 		></button>
   
-		<span class="hero-count">
+		<span class="hero-count fs-12">
 		  {{ activeSlide + 1 | number:'2.0' }} / {{ listarSlider.length | number:'2.0' }}
 		</span>
 	  </div>
@@ -144,23 +169,23 @@
 	<div class="ciaf-marquee-big">
 	  <div class="ciaf-marquee-big__track ciaf-marquee-big__track--ink-dots">
   
-		<span>Financiación <i></i></span>
-		<span>Becas <i></i></span>
-		<span>Créditos <i></i></span>
-		<span>Egresados <i></i></span>
-		<span>Oportunidades <i></i></span>
-		<span>Futuro <i></i></span>
-		<span>Transformación <i></i></span>
-		<span>Propósito <i></i></span>
+		<span class="fs-64">Financiación <i></i></span>
+		<span class="fs-64">Becas <i></i></span>
+		<span class="fs-64">Créditos <i></i></span>
+		<span class="fs-64">Egresados <i></i></span>
+		<span class="fs-64">Oportunidades <i></i></span>
+		<span class="fs-64">Futuro <i></i></span>
+		<span class="fs-64">Transformación <i></i></span>
+		<span class="fs-64">Propósito <i></i></span>
   
-		<span>Financiación <i></i></span>
-		<span>Becas <i></i></span>
-		<span>Créditos <i></i></span>
-		<span>Egresados <i></i></span>
-		<span>Oportunidades <i></i></span>
-		<span>Futuro <i></i></span>
-		<span>Transformación <i></i></span>
-		<span>Propósito <i></i></span>
+		<span class="fs-64">Financiación <i></i></span>
+		<span class="fs-64">Becas <i></i></span>
+		<span class="fs-64">Créditos <i></i></span>
+		<span class="fs-64">Egresados <i></i></span>
+		<span class="fs-64">Oportunidades <i></i></span>
+		<span class="fs-64">Futuro <i></i></span>
+		<span class="fs-64">Transformación <i></i></span>
+		<span class="fs-64">Propósito <i></i></span>
   
 	  </div>
 	</div>

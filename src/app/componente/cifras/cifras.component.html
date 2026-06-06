@@ -1,75 +1,75 @@
-<section #statsSection class="ciaf-stats-section ciaf-section-light position-relative overflow-hidden">
-    <div class="container-xxl position-relative ciaf-stats-container">
-  
-      <div class="row">
-        <div class="col-xl-7 col-lg-8">
-  
-          <div class="ciaf-pill ciaf-pill--section">
-            CIAF EN CIFRAS
-          </div>
-  
-          <h2 class="ciaf-title-display ciaf-title-display--section">
-            Impacto <span class="ciaf-gradient-text ciaf-gradient-text--brand">social</span>
-          </h2>
-          
-          <p class="ciaf-text-lead ciaf-text-lead--muted">
-            Más que cifras: oportunidades reales para que cada universitario cumpla
-            su sueño profesional con respaldo, becas y financiación.
-          </p>
-  
-          <div class="ciaf-progress-line" aria-hidden="true">
-            <span [style.width.%]="lineProgress"></span>
-          </div>
-  
-        </div>
-      </div>
-  
-      <div *ngIf="counters.length > 0" class="row ciaf-row-cards ciaf-stats-grid">
-  
-        <div
-          class="col-xl-3 col-lg-3 col-md-6 col-12"
-          *ngFor="let counter of counters"
-        >
-          <article class="ciaf-card ciaf-stat-card h-100">
-  
-            <div
-              class="ciaf-icon-badge"
-              [class.ciaf-icon-badge--primary]="counter.iconType === 'icon-blue'"
-              [class.ciaf-icon-badge--lime]="counter.iconType === 'icon-green'"
-            >
-              <i [class]="counter.icon"></i>
-            </div>
-  
-            <div
-              class="ciaf-stat-value counter"
-              #counterElement
-              [attr.data-target]="counter.target"
-            >
-              <span>{{ counter.prefix }}</span>{{ counter.value | number:'1.0-0' }}<small>{{ counter.suffix }}</small>
-            </div>
-  
-            <h3 class="ciaf-card-title">
-              {{ counter.title }}
-            </h3>
-  
-            <p class="ciaf-card-text">
-              {{ counter.description }}
-            </p>
-  
-          </article>
-        </div>
-  
-      </div>
-    </div>
-  
-    <div class="ciaf-stats-bottom-marquee ciaf-marquee-big" aria-hidden="true">
-      <div class="ciaf-marquee-big__track ciaf-marquee-big__track--slow-reverse">
-        <span *ngFor="let item of marqueeItems">
-          {{ item }} <i></i>
-        </span>
-        <span *ngFor="let item of marqueeItems">
-          {{ item }} <i></i>
-        </span>
-      </div>
-    </div>
-  </section>
+<section #statsSection class="ciaf-stats-section ciaf-section-light position-relative overflow-hidden">
+    <div class="container-xxl position-relative ciaf-stats-container">
+  
+      <div class="row">
+        <div class="col-xl-7 col-lg-8">
+  
+          <div class="ciaf-pill ciaf-pill--section fs-12">
+            CIAF EN CIFRAS
+          </div>
+  
+          <h2 class="ciaf-title-display ciaf-title-display--section fs-80">
+            Impacto <span class="ciaf-gradient-text ciaf-gradient-text--brand">social</span>
+          </h2>
+          
+          <p class="ciaf-text-lead ciaf-text-lead--muted fs-16">
+            Más que cifras: oportunidades reales para que cada universitario cumpla
+            su sueño profesional con respaldo, becas y financiación.
+          </p>
+  
+          <div class="ciaf-progress-line" aria-hidden="true">
+            <span [style.width.%]="lineProgress"></span>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div *ngIf="counters.length > 0" class="row ciaf-row-cards ciaf-stats-grid">
+  
+        <div
+          class="col-xl-3 col-lg-3 col-md-6 col-12"
+          *ngFor="let counter of counters"
+        >
+          <article class="ciaf-card ciaf-stat-card h-100">
+  
+            <div
+              class="ciaf-icon-badge fs-18"
+              [class.ciaf-icon-badge--primary]="counter.iconType === 'icon-blue'"
+              [class.ciaf-icon-badge--lime]="counter.iconType === 'icon-green'"
+            >
+              <i [class]="counter.icon"></i>
+            </div>
+  
+            <div
+              class="ciaf-stat-value counter fs-48"
+              #counterElement
+              [attr.data-target]="counter.target"
+            >
+              <span>{{ counter.prefix }}</span>{{ counter.value | number:'1.0-0' }}<small class="fs-14">{{ counter.suffix }}</small>
+            </div>
+  
+            <h3 class="ciaf-card-title fs-16">
+              {{ counter.title }}
+            </h3>
+  
+            <p class="ciaf-card-text fs-14">
+              {{ counter.description }}
+            </p>
+  
+          </article>
+        </div>
+  
+      </div>
+    </div>
+  
+    <div class="ciaf-stats-bottom-marquee ciaf-marquee-big" aria-hidden="true">
+      <div class="ciaf-marquee-big__track ciaf-marquee-big__track--slow-reverse">
+        <span *ngFor="let item of marqueeItems">
+          {{ item }} <i></i>
+        </span>
+        <span *ngFor="let item of marqueeItems">
+          {{ item }} <i></i>
+        </span>
+      </div>
+    </div>
+  </section>

@@ -1,7 +1,7 @@
 /* Eventos — slick y ajustes locales; cards en styles.css */
 
 .ciaf-events-carousel {
-  margin: 0 -.55rem;
+  margin: 0 -9px;
 }
 
 .ciaf-events-carousel ::ng-deep .slick-list {
@@ -9,7 +9,7 @@
 }
 
 .ciaf-events-carousel ::ng-deep .slick-dots {
-  bottom: -2.2rem;
+  bottom: -35px;
 }
 
 .ciaf-events-carousel ::ng-deep .slick-dots li button:before {
@@ -40,12 +40,11 @@
 .ciaf-events-carousel ::ng-deep .slick-next:before {
   color: var(--ciaf-white);
   opacity: .85;
-  font-size: 28px;
 }
 
 @media (max-width: 767.98px) {
   .ciaf-events-section {
-    padding-bottom: 5.5rem;
+    padding-bottom: 88px;
   }
 
   .ciaf-event-card {

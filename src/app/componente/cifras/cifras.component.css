@@ -3,7 +3,7 @@
 .ciaf-stats-section {
   position: relative;
   min-height: 720px;
-  padding: 3.2rem 0 0;
+  padding: 51px 0 0;
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .ciaf-stats-grid {
-  margin-top: 6rem;
+  margin-top: 96px;
 }
 
 .ciaf-stat-card {
@@ -25,29 +25,29 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  margin-top: 5rem;
-  padding-bottom: 1.75rem;
+  margin-top: 80px;
+  padding-bottom: 28px;
   pointer-events: none;
 }
 
 @media (max-width: 991.98px) {
   .ciaf-stats-section {
     min-height: auto;
-    padding: 3rem 0 0;
+    padding: 48px 0 0;
   }
 
   .ciaf-stats-grid {
-    margin-top: 3.5rem;
+    margin-top: 56px;
   }
 
   .ciaf-stats-bottom-marquee {
-    margin-top: 4rem;
+    margin-top: 64px;
   }
 }
 
 @media (max-width: 767.98px) {
   .ciaf-stats-section {
-    padding: 2.8rem 0 0;
+    padding: 45px 0 0;
   }
 
   .ciaf-text-lead--muted {
@@ -61,18 +61,15 @@
 
 @media (max-width: 575.98px) {
   .ciaf-stats-section {
-    padding: 2.5rem 0 0;
+    padding: 40px 0 0;
   }
 
   .ciaf-stats-grid {
-    margin-top: 3rem;
+    margin-top: 48px;
   }
 
   .ciaf-stat-card {
     min-height: auto;
   }
 
-  .ciaf-marquee-big__track span {
-    font-size: clamp(2.7rem, 15vw, 4rem);
-  }
 }

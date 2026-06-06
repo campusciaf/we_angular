@@ -2,8 +2,8 @@
   <div class="container-xxl ciaf-quick-access-container">
 
     <header class="ciaf-quick-access-header">
-      <span class="ciaf-pill ciaf-pill--compact">ACCESOS RÁPIDOS</span>
-      <h2 class="ciaf-title-display ciaf-title-display--quick-access">
+      <span class="ciaf-pill ciaf-pill--compact fs-10">ACCESOS RÁPIDOS</span>
+      <h2 class="ciaf-title-display ciaf-title-display--quick-access fs-48">
         Todo a un <span class="ciaf-gradient-text ciaf-gradient-text--brand">clic.</span>
       </h2>
     </header>
@@ -46,7 +46,7 @@
 
 <ng-template #contenidoTarjeta let-acceso>
   <span
-    class="ciaf-quick-access-card__icon"
+    class="ciaf-quick-access-card__icon fs-18"
     [class.ciaf-quick-access-card__icon--primary]="acceso.tonoIcono === 'primary'"
     [class.ciaf-quick-access-card__icon--lime]="acceso.tonoIcono === 'lime'"
     aria-hidden="true"
@@ -55,11 +55,11 @@
   </span>
 
   <div class="ciaf-quick-access-card__content">
-    <h3 class="ciaf-quick-access-card__title">{{ acceso.titulo }}</h3>
-    <p class="ciaf-quick-access-card__subtitle">{{ acceso.subtitulo }}</p>
+    <h3 class="ciaf-quick-access-card__title fs-16">{{ acceso.titulo }}</h3>
+    <p class="ciaf-quick-access-card__subtitle fs-12">{{ acceso.subtitulo }}</p>
   </div>
 
-  <i class="fa-solid fa-arrow-up-right-from-square ciaf-quick-access-card__arrow" aria-hidden="true"></i>
+  <i class="fa-solid fa-arrow-up-right-from-square ciaf-quick-access-card__arrow fs-14" aria-hidden="true"></i>
 </ng-template>
 
   <!-- Modalsst-->

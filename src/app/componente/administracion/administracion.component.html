@@ -19,18 +19,18 @@
 
   <div class="container-xxl ciaf-program-hero__container">
     <div class="ciaf-program-hero__content">
-      <span class="ciaf-program-hero__snies" *ngIf="datos.snies">SNIES {{ datos.snies }}</span>
+      <span class="ciaf-program-hero__snies fs-12" *ngIf="datos.snies">SNIES {{ datos.snies }}</span>
 
-      <h1 class="ciaf-program-hero__title">
+      <h1 class="ciaf-program-hero__title fs-72">
         {{ datos.nombre_programa || 'Administración de Empresas' }}
       </h1>
 
-      <p class="ciaf-program-hero__lema" *ngIf="datos.frase_programa">
+      <p class="ciaf-program-hero__lema fs-24" *ngIf="datos.frase_programa">
         {{ datos.frase_programa }}
       </p>
 
       <p
-        class="ciaf-program-hero__desc"
+        class="ciaf-program-hero__desc fs-16"
         *ngIf="datos.descripcion_programa"
         [innerHTML]="datos.descripcion_programa"
       ></p>
@@ -55,11 +55,11 @@
       </ul>
 
       <div class="ciaf-program-hero__actions">
-        <button type="button" class="ciaf-btn ciaf-btn--lime" (click)="scrollToSeccion('conoce-el-programa', '1')">
+        <button type="button" class="ciaf-btn ciaf-btn--lime fs-14" (click)="scrollToSeccion('conoce-el-programa', '1')">
           Conoce el programa
           <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
         </button>
-        <button type="button" class="ciaf-btn ciaf-btn--hero-light" (click)="scrollToSeccion('proceso-paso-a-paso', '9')">
+        <button type="button" class="ciaf-btn ciaf-btn--hero-light fs-14" (click)="scrollToSeccion('proceso-paso-a-paso', '9')">
           Inicia tu matrícula
           <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </button>
@@ -67,7 +67,7 @@
     </div>
   </div>
 
-  <div class="ciaf-program-hero__scroll" aria-hidden="true">
+  <div class="ciaf-program-hero__scroll fs-20" aria-hidden="true">
     <i class="fa-solid fa-computer-mouse"></i>
   </div>
 </section>
@@ -98,14 +98,14 @@
 
             <div class="container-xxl ciaf-conoce__container">
               <header class="ciaf-conoce__header">
-                <span class="ciaf-pill ciaf-pill--section">Conoce el programa</span>
+                <span class="ciaf-pill ciaf-pill--section fs-12">Conoce el programa</span>
 
-                <h2 class="ciaf-conoce__title">
+                <h2 class="ciaf-conoce__title fs-40">
                   Formación para liderar, emprender y
-                  <span class="ciaf-conoce__title-accent">transformar organizaciones</span>
+                  <span class="ciaf-conoce__title-accent fs-40">transformar organizaciones</span>
                 </h2>
 
-                <p class="ciaf-conoce__subtitle">
+                <p class="ciaf-conoce__subtitle fs-16">
                   Descubre el perfil profesional y los campos donde podrás generar impacto como
                   Administrador de Empresas CIAF.
                 </p>
@@ -127,10 +127,10 @@
                 />
 
                 <div class="ciaf-conoce__tab-labels" role="tablist" aria-label="Tipo de perfil">
-                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro" for="ciaf-tab-perfil-pro">
+                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro fs-14" for="ciaf-tab-perfil-pro">
                     Perfil profesional
                   </label>
-                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu" for="ciaf-tab-perfil-ocu">
+                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14" for="ciaf-tab-perfil-ocu">
                     Perfil ocupacional
                   </label>
                 </div>
@@ -143,19 +143,19 @@
                 >
                   <div class="ciaf-conoce__grid">
                     <article class="ciaf-conoce__main-card" *ngFor="let datos2 of listarPrograma">
-                      <span class="ciaf-conoce__card-badge">
+                      <span class="ciaf-conoce__card-badge fs-10">
                         <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
                         Perfil profesional
                       </span>
 
                       <div
-                        class="ciaf-conoce__main-body"
+                        class="ciaf-conoce__main-body fs-14"
                         *ngIf="datos2.descripcion_programa; else conoceProFallback"
                         [innerHTML]="datos2.descripcion_programa"
                       ></div>
 
                       <ng-template #conoceProFallback>
-                        <div class="ciaf-conoce__main-body">
+                        <div class="ciaf-conoce__main-body fs-14">
                           <p>
                             Profesional con capacidad de liderazgo, trabajo en equipo, negociación y
                             tolerancia, capaz de asumir retos y adaptarse a los cambios del entorno
@@ -176,7 +176,7 @@
 
                     <div class="ciaf-conoce__side-cards">
                       <article class="ciaf-conoce__mini-card">
-                        <span class="ciaf-conoce__mini-icon" aria-hidden="true">
+                        <span class="ciaf-conoce__mini-icon fs-16" aria-hidden="true">
                           <i class="fa-solid fa-user-group"></i>
                         </span>
                         <h3>Liderazgo y trabajo en equipo</h3>
@@ -187,7 +187,7 @@
                       </article>
 
                       <article class="ciaf-conoce__mini-card">
-                        <span class="ciaf-conoce__mini-icon" aria-hidden="true">
+                        <span class="ciaf-conoce__mini-icon fs-16" aria-hidden="true">
                           <i class="fa-solid fa-rocket"></i>
                         </span>
                         <h3>Emprendimiento y desarrollo empresarial</h3>
@@ -198,7 +198,7 @@
                       </article>
 
                       <article class="ciaf-conoce__mini-card">
-                        <span class="ciaf-conoce__mini-icon" aria-hidden="true">
+                        <span class="ciaf-conoce__mini-icon fs-16" aria-hidden="true">
                           <i class="fa-solid fa-display"></i>
                         </span>
                         <h3>Herramientas tecnológicas para la gestión</h3>
@@ -223,7 +223,7 @@
                         class="ciaf-conoce__ocu-card"
                         *ngFor="let datos4 of listarDesempenate; let i = index"
                       >
-                        <span class="ciaf-conoce__ocu-card-icon" aria-hidden="true">
+                        <span class="ciaf-conoce__ocu-card-icon fs-16" aria-hidden="true">
                           <i class="fa-solid" [ngClass]="{
                             'fa-building': i % 6 === 0,
                             'fa-briefcase': i % 6 === 1,
@@ -233,34 +233,34 @@
                             'fa-crown': i % 6 === 5
                           }"></i>
                         </span>
-                        <p class="ciaf-conoce__ocu-card-text">{{ datos4.nombre_desempenate }}</p>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">{{ datos4.nombre_desempenate }}</p>
                       </article>
                     </ng-container>
 
                     <ng-template #ocuFallback>
                       <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon"><i class="fa-solid fa-building"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text">Administrador de su propia empresa</p>
+                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-building"></i></span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">Administrador de su propia empresa</p>
                       </article>
                       <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon"><i class="fa-solid fa-briefcase"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text">Gerente y/o administrador de organizaciones privadas y/o mixtas</p>
+                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-briefcase"></i></span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">Gerente y/o administrador de organizaciones privadas y/o mixtas</p>
                       </article>
                       <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon"><i class="fa-solid fa-lightbulb"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text">Gerente de proyectos</p>
+                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-lightbulb"></i></span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">Gerente de proyectos</p>
                       </article>
                       <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon"><i class="fa-solid fa-user-gear"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text">Asesor y consultor organizacional</p>
+                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-user-gear"></i></span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">Asesor y consultor organizacional</p>
                       </article>
                       <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon"><i class="fa-solid fa-chart-line"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text">Gerente de área o división de grandes empresas</p>
+                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-chart-line"></i></span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">Gerente de área o división de grandes empresas</p>
                       </article>
                       <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon"><i class="fa-solid fa-crown"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text">Gerente general y presidente de Junta Directiva</p>
+                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-crown"></i></span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14">Gerente general y presidente de Junta Directiva</p>
                       </article>
                     </ng-template>
                   </div>
@@ -273,9 +273,9 @@
           <section class="ciaf-campo ciaf-program-section" id="campo-de-accion">
             <div class="container-xxl">
               <header class="ciaf-campo__header">
-                <span class="ciaf-pill ciaf-pill--section">Campo de acción</span>
-                <h2 class="ciaf-campo__title">
-                  ¿Dónde podrás generar <span class="ciaf-campo__title-accent">impacto</span>?
+                <span class="ciaf-pill ciaf-pill--section fs-12">Campo de acción</span>
+                <h2 class="ciaf-campo__title fs-40">
+                  ¿Dónde podrás generar <span class="ciaf-campo__title-accent fs-40">impacto</span>?
                 </h2>
               </header>
 
@@ -284,10 +284,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-1" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-1">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Gerente de organizaciones privadas y públicas</span>
+                      <span class="ciaf-campo__item-title fs-16">Gerente de organizaciones privadas y públicas</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Dirige la estrategia y operación de empresas de cualquier sector.</span>
+                    <span class="ciaf-campo__body fs-14">Dirige la estrategia y operación de empresas de cualquier sector.</span>
                   </label>
                 </div>
 
@@ -295,10 +295,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-2" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-2">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Director de áreas empresariales</span>
+                      <span class="ciaf-campo__item-title fs-16">Director de áreas empresariales</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Lidera departamentos de mercadeo, talento humano, finanzas u operaciones.</span>
+                    <span class="ciaf-campo__body fs-14">Lidera departamentos de mercadeo, talento humano, finanzas u operaciones.</span>
                   </label>
                 </div>
 
@@ -306,10 +306,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-3" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-3">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Gerente de proyectos</span>
+                      <span class="ciaf-campo__item-title fs-16">Gerente de proyectos</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Planifica, ejecuta y entrega proyectos cumpliendo objetivos y presupuestos.</span>
+                    <span class="ciaf-campo__body fs-14">Planifica, ejecuta y entrega proyectos cumpliendo objetivos y presupuestos.</span>
                   </label>
                 </div>
 
@@ -317,10 +317,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-4" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-4">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Consultor organizacional</span>
+                      <span class="ciaf-campo__item-title fs-16">Consultor organizacional</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Asesora a empresas para mejorar su productividad y competitividad.</span>
+                    <span class="ciaf-campo__body fs-14">Asesora a empresas para mejorar su productividad y competitividad.</span>
                   </label>
                 </div>
 
@@ -328,10 +328,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-5" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-5">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Director de planeación estratégica</span>
+                      <span class="ciaf-campo__item-title fs-16">Director de planeación estratégica</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Define el rumbo y las metas de largo plazo de la organización.</span>
+                    <span class="ciaf-campo__body fs-14">Define el rumbo y las metas de largo plazo de la organización.</span>
                   </label>
                 </div>
 
@@ -339,10 +339,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-6" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-6">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Evaluador de proyectos de inversión</span>
+                      <span class="ciaf-campo__item-title fs-16">Evaluador de proyectos de inversión</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Analiza la viabilidad financiera de nuevas iniciativas.</span>
+                    <span class="ciaf-campo__body fs-14">Analiza la viabilidad financiera de nuevas iniciativas.</span>
                   </label>
                 </div>
 
@@ -350,10 +350,10 @@
                   <input type="radio" name="campo-accion" id="campo-item-7" class="ciaf-campo__input" />
                   <label class="ciaf-campo__card" for="campo-item-7">
                     <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title">Emprendedor y creador de empresas</span>
+                      <span class="ciaf-campo__item-title fs-16">Emprendedor y creador de empresas</span>
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </span>
-                    <span class="ciaf-campo__body">Funda y hace crecer tu propio negocio con bases sólidas.</span>
+                    <span class="ciaf-campo__body fs-14">Funda y hace crecer tu propio negocio con bases sólidas.</span>
                   </label>
                 </div>
               </div>
@@ -364,8 +364,8 @@
           <section class="ciaf-experiencias ciaf-program-section" id="experiencias-reales">
             <div class="container-xxl">
               <header class="ciaf-experiencias__header">
-                <span class="ciaf-pill ciaf-pill--on-dark">Experiencias reales</span>
-                <h2 class="ciaf-experiencias__title">
+                <span class="ciaf-pill ciaf-pill--on-dark fs-10">Experiencias reales</span>
+                <h2 class="ciaf-experiencias__title fs-40">
                   Conoce cómo se vive Administración de Empresas en CIAF
                 </h2>
               </header>
@@ -381,8 +381,8 @@
                     class="ciaf-experiencias__thumb"
                     style="background-image: url('https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg')"
                   ></span>
-                  <span class="ciaf-experiencias__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-                  <span class="ciaf-experiencias__label">Vive la experiencia CIAF</span>
+                  <span class="ciaf-experiencias__play fs-16" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                  <span class="ciaf-experiencias__label fs-14">Vive la experiencia CIAF</span>
                 </a>
 
                 <a
@@ -395,8 +395,8 @@
                     class="ciaf-experiencias__thumb"
                     style="background-image: url('https://img.youtube.com/vi/Ye8mB69B23A/hqdefault.jpg')"
                   ></span>
-                  <span class="ciaf-experiencias__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-                  <span class="ciaf-experiencias__label">Historias de nuestros estudiantes</span>
+                  <span class="ciaf-experiencias__play fs-16" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                  <span class="ciaf-experiencias__label fs-14">Historias de nuestros estudiantes</span>
                 </a>
 
                 <a
@@ -409,8 +409,8 @@
                     class="ciaf-experiencias__thumb"
                     style="background-image: url('https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg')"
                   ></span>
-                  <span class="ciaf-experiencias__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-                  <span class="ciaf-experiencias__label">Emprendimiento y liderazgo</span>
+                  <span class="ciaf-experiencias__play fs-16" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                  <span class="ciaf-experiencias__label fs-14">Emprendimiento y liderazgo</span>
                 </a>
               </div>
             </div>
@@ -420,11 +420,11 @@
           <section class="ciaf-ruta ciaf-program-section" id="ruta-crecimiento">
             <div class="container-xxl">
               <header class="ciaf-ruta__header">
-                <span class="ciaf-pill ciaf-pill--section">Ruta de crecimiento profesional</span>
-                <h2 class="ciaf-ruta__title">
-                  Gradúate con <span class="ciaf-ruta__title-gradient">tres títulos</span> y crece paso a paso
+                <span class="ciaf-pill ciaf-pill--section fs-12">Ruta de crecimiento profesional</span>
+                <h2 class="ciaf-ruta__title fs-48">
+                  Gradúate con <span class="ciaf-ruta__title-gradient fs-48">tres títulos</span> y crece paso a paso
                 </h2>
-                <p class="ciaf-ruta__intro">
+                <p class="ciaf-ruta__intro fs-16">
                   En CIAF avanzas por ciclos propedéuticos. Cada etapa te permite obtener un título y seguir
                   creciendo profesionalmente.
                 </p>
@@ -436,74 +436,74 @@
                 <input type="radio" name="ruta-ciclo" id="ruta-ciclo-3" class="ciaf-ruta__input" />
 
                 <nav class="ciaf-ruta__path" aria-label="Etapas del programa">
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student">Estudiante</span>
-                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron" aria-hidden="true"></i>
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2">Técnico Profesional</span>
-                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron" aria-hidden="true"></i>
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3">Tecnólogo</span>
-                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron" aria-hidden="true"></i>
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4">Profesional Universitario</span>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student fs-12">Estudiante</span>
+                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2 fs-12">Técnico Profesional</span>
+                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3 fs-12">Tecnólogo</span>
+                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4 fs-12">Profesional Universitario</span>
                 </nav>
 
                 <div class="ciaf-ruta__pickers">
                   <label class="ciaf-ruta__picker ciaf-ruta__picker--1" for="ruta-ciclo-1">
                     <span class="ciaf-ruta__picker-top">
-                      <span class="ciaf-ruta__picker-badge">Ciclo 1</span>
-                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--1" aria-hidden="true">
+                      <span class="ciaf-ruta__picker-badge fs-10">Ciclo 1</span>
+                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--1 fs-14" aria-hidden="true">
                         <i class="fa-solid fa-graduation-cap"></i>
                       </span>
                     </span>
-                    <span class="ciaf-ruta__picker-title">Técnica Profesional en Procesos Empresariales</span>
+                    <span class="ciaf-ruta__picker-title fs-16">Técnica Profesional en Procesos Empresariales</span>
                     <span class="ciaf-ruta__sem-track">
-                      <span class="ciaf-ruta__sem-node is-on">1</span>
+                      <span class="ciaf-ruta__sem-node is-on fs-12">1</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node is-on">2</span>
+                      <span class="ciaf-ruta__sem-node is-on fs-12">2</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node is-on">3</span>
+                      <span class="ciaf-ruta__sem-node is-on fs-12">3</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node is-on">4</span>
+                      <span class="ciaf-ruta__sem-node is-on fs-12">4</span>
                     </span>
-                    <span class="ciaf-ruta__picker-foot">
+                    <span class="ciaf-ruta__picker-foot fs-12">
                       <i class="fa-solid fa-user" aria-hidden="true"></i> Técnico Profesional
                     </span>
                   </label>
 
                   <label class="ciaf-ruta__picker ciaf-ruta__picker--2" for="ruta-ciclo-2">
                     <span class="ciaf-ruta__picker-top">
-                      <span class="ciaf-ruta__picker-badge">Ciclo 2</span>
-                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--2" aria-hidden="true">
+                      <span class="ciaf-ruta__picker-badge fs-10">Ciclo 2</span>
+                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--2 fs-14" aria-hidden="true">
                         <i class="fa-solid fa-graduation-cap"></i>
                       </span>
                     </span>
-                    <span class="ciaf-ruta__picker-title">Tecnología en Gestión y Auditoría Administrativa</span>
+                    <span class="ciaf-ruta__picker-title fs-16">Tecnología en Gestión y Auditoría Administrativa</span>
                     <span class="ciaf-ruta__sem-track">
-                      <span class="ciaf-ruta__sem-node">5</span>
+                      <span class="ciaf-ruta__sem-node fs-12">5</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node">6</span>
+                      <span class="ciaf-ruta__sem-node fs-12">6</span>
                     </span>
-                    <span class="ciaf-ruta__picker-foot">
+                    <span class="ciaf-ruta__picker-foot fs-12">
                       <i class="fa-solid fa-user" aria-hidden="true"></i> Tecnólogo
                     </span>
                   </label>
 
                   <label class="ciaf-ruta__picker ciaf-ruta__picker--3" for="ruta-ciclo-3">
                     <span class="ciaf-ruta__picker-top">
-                      <span class="ciaf-ruta__picker-badge">Ciclo 3</span>
-                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--3" aria-hidden="true">
+                      <span class="ciaf-ruta__picker-badge fs-10">Ciclo 3</span>
+                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--3 fs-14" aria-hidden="true">
                         <i class="fa-solid fa-graduation-cap"></i>
                       </span>
                     </span>
-                    <span class="ciaf-ruta__picker-title">Profesional Universitario en Administración de Empresas</span>
+                    <span class="ciaf-ruta__picker-title fs-16">Profesional Universitario en Administración de Empresas</span>
                     <span class="ciaf-ruta__sem-track">
-                      <span class="ciaf-ruta__sem-node">7</span>
+                      <span class="ciaf-ruta__sem-node fs-12">7</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node">8</span>
+                      <span class="ciaf-ruta__sem-node fs-12">8</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node">9</span>
+                      <span class="ciaf-ruta__sem-node fs-12">9</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node">10</span>
+                      <span class="ciaf-ruta__sem-node fs-12">10</span>
                     </span>
-                    <span class="ciaf-ruta__picker-foot">
+                    <span class="ciaf-ruta__picker-foot fs-12">
                       <i class="fa-solid fa-user" aria-hidden="true"></i> Profesional Universitario
                     </span>
                   </label>
@@ -511,12 +511,12 @@
 
                 <article class="ciaf-ruta__panel ciaf-ruta__panel--1">
                   <div class="ciaf-ruta__panel-meta">
-                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary">Ciclo 1</span>
-                    <span class="ciaf-ruta__meta-pill">Nivel Técnico Profesional</span>
-                    <span class="ciaf-ruta__meta-text">SNIES 109022</span>
-                    <span class="ciaf-ruta__meta-text">Resolución 14400</span>
+                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary fs-10">Ciclo 1</span>
+                    <span class="ciaf-ruta__meta-pill fs-10">Nivel Técnico Profesional</span>
+                    <span class="ciaf-ruta__meta-text fs-12">SNIES 109022</span>
+                    <span class="ciaf-ruta__meta-text fs-12">Resolución 14400</span>
                   </div>
-                  <h3 class="ciaf-ruta__panel-title">Técnica Profesional en Procesos Empresariales</h3>
+                  <h3 class="ciaf-ruta__panel-title fs-24">Técnica Profesional en Procesos Empresariales</h3>
                   <div class="ciaf-ruta__detail-grid">
                     <div class="ciaf-ruta__detail-block">
                       <h4><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
@@ -543,19 +543,19 @@
                     </div>
                   </div>
                   <div class="ciaf-ruta__award">
-                    <span class="ciaf-ruta__award-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <span class="ciaf-ruta__award-icon fs-16" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
                     <p>Al finalizar obtienes el título de <strong>Técnico Profesional en Procesos Empresariales</strong>.</p>
                   </div>
                 </article>
 
                 <article class="ciaf-ruta__panel ciaf-ruta__panel--2">
                   <div class="ciaf-ruta__panel-meta">
-                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary">Ciclo 2</span>
-                    <span class="ciaf-ruta__meta-pill">Nivel Tecnólogo</span>
-                    <span class="ciaf-ruta__meta-text">SNIES 109021</span>
-                    <span class="ciaf-ruta__meta-text">Resolución 14399</span>
+                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary fs-10">Ciclo 2</span>
+                    <span class="ciaf-ruta__meta-pill fs-10">Nivel Tecnólogo</span>
+                    <span class="ciaf-ruta__meta-text fs-12">SNIES 109021</span>
+                    <span class="ciaf-ruta__meta-text fs-12">Resolución 14399</span>
                   </div>
-                  <h3 class="ciaf-ruta__panel-title">Tecnología en Gestión y Auditoría Administrativa</h3>
+                  <h3 class="ciaf-ruta__panel-title fs-24">Tecnología en Gestión y Auditoría Administrativa</h3>
                   <div class="ciaf-ruta__detail-grid">
                     <div class="ciaf-ruta__detail-block">
                       <h4><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
@@ -582,19 +582,19 @@
                     </div>
                   </div>
                   <div class="ciaf-ruta__award">
-                    <span class="ciaf-ruta__award-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <span class="ciaf-ruta__award-icon fs-16" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
                     <p>Al finalizar obtienes el título de <strong>Tecnólogo en Gestión y Auditoría Administrativa</strong>.</p>
                   </div>
                 </article>
 
                 <article class="ciaf-ruta__panel ciaf-ruta__panel--3">
                   <div class="ciaf-ruta__panel-meta">
-                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary">Ciclo 3</span>
-                    <span class="ciaf-ruta__meta-pill">Nivel Profesional Universitario</span>
-                    <span class="ciaf-ruta__meta-text">SNIES 108591</span>
-                    <span class="ciaf-ruta__meta-text">Resolución 14398</span>
+                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary fs-10">Ciclo 3</span>
+                    <span class="ciaf-ruta__meta-pill fs-10">Nivel Profesional Universitario</span>
+                    <span class="ciaf-ruta__meta-text fs-12">SNIES 108591</span>
+                    <span class="ciaf-ruta__meta-text fs-12">Resolución 14398</span>
                   </div>
-                  <h3 class="ciaf-ruta__panel-title">Profesional Universitario en Administración de Empresas</h3>
+                  <h3 class="ciaf-ruta__panel-title fs-24">Profesional Universitario en Administración de Empresas</h3>
                   <div class="ciaf-ruta__detail-grid">
                     <div class="ciaf-ruta__detail-block">
                       <h4><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
@@ -621,7 +621,7 @@
                     </div>
                   </div>
                   <div class="ciaf-ruta__award">
-                    <span class="ciaf-ruta__award-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <span class="ciaf-ruta__award-icon fs-16" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
                     <p>Al finalizar obtienes el título de <strong>Profesional Universitario en Administración de Empresas</strong>.</p>
                   </div>
                 </article>
@@ -640,13 +640,13 @@
           <section class="ciaf-plan ciaf-program-section" id="plan-estudios">
             <div class="container-xxl">
               <header class="ciaf-plan__header">
-                <span class="ciaf-pill ciaf-pill--section">Plan de estudios</span>
-                <h2 class="ciaf-plan__title">Tu camino semestre a semestre</h2>
+                <span class="ciaf-pill ciaf-pill--section fs-12">Plan de estudios</span>
+                <h2 class="ciaf-plan__title fs-40">Tu camino semestre a semestre</h2>
               </header>
 
               <div class="ciaf-plan__download">
                 <a href="assets/planes/malla_administracion.pdf" target="_blank" rel="noopener noreferrer" class="ciaf-plan__download-link">
-                  <span class="ciaf-plan__download-credits">150 créditos</span>
+                  <span class="ciaf-plan__download-credits fs-12">150 créditos</span>
                   <img src="{{ descargar }}" alt="Descargar malla curricular" />
                 </a>
               </div>
@@ -666,15 +666,15 @@
                       [attr.aria-expanded]="planSemestreEstaAbierto(datos.semestre)"
                       [attr.aria-controls]="'plan-panel-' + datos.semestre"
                     >
-                      <span class="ciaf-plan__num">{{ datos.semestre }}</span>
+                      <span class="ciaf-plan__num fs-16">{{ datos.semestre }}</span>
                       <span class="ciaf-plan__head-main">
-                        <span class="ciaf-plan__name">Semestre {{ datos.semestre }}</span>
-                        <span class="ciaf-plan__badge" *ngIf="etiquetaTituloSemestre(datos.semestre) as titulo">
+                        <span class="ciaf-plan__name fs-16">Semestre {{ datos.semestre }}</span>
+                        <span class="ciaf-plan__badge fs-10" *ngIf="etiquetaTituloSemestre(datos.semestre) as titulo">
                           <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                           {{ titulo }}
                         </span>
                       </span>
-                      <i class="fa-solid fa-chevron-down ciaf-plan__chevron" aria-hidden="true"></i>
+                      <i class="fa-solid fa-chevron-down ciaf-plan__chevron fs-14" aria-hidden="true"></i>
                     </button>
 
                     <div class="ciaf-plan__panel" [id]="'plan-panel-' + datos.semestre" *ngIf="planSemestreEstaAbierto(datos.semestre)">
@@ -696,11 +696,11 @@
             <div class="container-xxl ciaf-transform-container">
           
               <div class="ciaf-transform-header text-center">
-                <span class="ciaf-transform-pill">
+                <span class="ciaf-transform-pill fs-10">
                   AQUÍ NO SOLO OBTIENES UN TÍTULO
                 </span>
           
-                <h2 class="ciaf-transform-title">
+                <h2 class="ciaf-transform-title fs-40">
                   Vives una <span>transformación completa</span>
                 </h2>
               </div>
@@ -711,7 +711,7 @@
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
-                    <div class="ciaf-transform-icon">
+                    <div class="ciaf-transform-icon fs-36">
                       <i class="fa-regular fa-heart"></i>
                     </div>
           
@@ -727,7 +727,7 @@
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
-                    <div class="ciaf-transform-icon">
+                    <div class="ciaf-transform-icon fs-36">
                       <i class="fa-solid fa-brain"></i>
                     </div>
           
@@ -743,7 +743,7 @@
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
-                    <div class="ciaf-transform-icon">
+                    <div class="ciaf-transform-icon fs-36">
                       <i class="fa-solid fa-gear"></i>
                     </div>
           
@@ -759,7 +759,7 @@
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
-                    <div class="ciaf-transform-icon">
+                    <div class="ciaf-transform-icon fs-36">
                       <i class="fa-solid fa-earth-americas"></i>
                     </div>
           
@@ -775,7 +775,7 @@
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
-                    <div class="ciaf-transform-icon">
+                    <div class="ciaf-transform-icon fs-36">
                       <i class="fa-regular fa-lightbulb"></i>
                     </div>
           
@@ -796,11 +796,11 @@
             <div class="container-xxl ciaf-why-container">
           
               <div class="ciaf-why-header">
-                <span class="ciaf-why-pill">
+                <span class="ciaf-why-pill fs-10">
                   ¿POR QUÉ ESTUDIARLO?
                 </span>
           
-                <h2 class="ciaf-why-title">
+                <h2 class="ciaf-why-title fs-48">
                   Las empresas necesitan líderes capaces de
                   adaptarse, innovar y <span>tomar decisiones.</span>
                 </h2>
@@ -810,7 +810,7 @@
           
                 <div class="col-lg-4 col-md-6 col-12">
                   <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-blue-soft">
+                    <div class="ciaf-why-icon icon-blue-soft fs-16">
                       <i class="fa-solid fa-arrow-trend-up"></i>
                     </div>
           
@@ -824,7 +824,7 @@
           
                 <div class="col-lg-4 col-md-6 col-12">
                   <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-green-soft">
+                    <div class="ciaf-why-icon icon-green-soft fs-16">
                       <i class="fa-regular fa-lightbulb"></i>
                     </div>
           
@@ -838,7 +838,7 @@
           
                 <div class="col-lg-4 col-md-6 col-12">
                   <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-sky-soft">
+                    <div class="ciaf-why-icon icon-sky-soft fs-16">
                       <i class="fa-solid fa-users"></i>
                     </div>
           
@@ -852,7 +852,7 @@
           
                 <div class="col-lg-4 col-md-6 col-12">
                   <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-blue-soft">
+                    <div class="ciaf-why-icon icon-blue-soft fs-16">
                       <i class="fa-solid fa-earth-americas"></i>
                     </div>
           
@@ -866,7 +866,7 @@
           
                 <div class="col-lg-4 col-md-6 col-12">
                   <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-green-soft">
+                    <div class="ciaf-why-icon icon-green-soft fs-16">
                       <i class="fa-solid fa-chart-column"></i>
                     </div>
           
@@ -880,7 +880,7 @@
           
                 <div class="col-lg-4 col-md-6 col-12">
                   <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-sky-soft">
+                    <div class="ciaf-why-icon icon-sky-soft fs-16">
                       <i class="fa-solid fa-rocket"></i>
                     </div>
           
@@ -908,22 +908,22 @@
               </div>
           
               <div class="container ciaf-finance-hero-content text-center text-white">
-                <span class="ciaf-finance-pill pill-white">VALORES Y FINANCIACIÓN</span>
+                <span class="ciaf-finance-pill pill-white fs-12">VALORES Y FINANCIACIÓN</span>
           
                 <h2>
                   Financiación <span>0% interés</span>
                 </h2>
           
-                <p class="ciaf-finance-subtitle">
+                <p class="ciaf-finance-subtitle fs-28">
                   Invierte en tu futuro sin que el dinero detenga tus metas.
                 </p>
           
-                <p class="ciaf-finance-text">
+                <p class="ciaf-finance-text fs-16">
                   En CIAF encuentras financiación directa, descuentos y beneficios pensados
                   para acompañarte durante toda tu carrera.
                 </p>
           
-                <p class="ciaf-finance-slogan">
+                <p class="ciaf-finance-slogan fs-14">
                   Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
                 </p>
               </div>
@@ -960,7 +960,7 @@
             <div class="ciaf-steps-section">
               <div class="container ciaf-inner-container text-center">
           
-                <span class="ciaf-finance-pill">TU PROCESO PASO A PASO</span>
+                <span class="ciaf-finance-pill fs-12">TU PROCESO PASO A PASO</span>
           
                 <h3>
                   Matricularte es más fácil de lo que crees
@@ -972,10 +972,10 @@
           
                   <div class="col-md-4">
                     <article class="ciaf-step-card">
-                      <div class="ciaf-step-icon">
+                      <div class="ciaf-step-icon fs-24">
                         <i class="fa-solid fa-receipt"></i>
                       </div>
-                      <span class="ciaf-step-label">Paso 1</span>
+                      <span class="ciaf-step-label fs-12">Paso 1</span>
                       <h4>Valor de inscripción</h4>
                       <p>Un único pago para reservar tu cupo. Incluye seguro estudiantil.</p>
                     </article>
@@ -983,10 +983,10 @@
           
                   <div class="col-md-4">
                     <article class="ciaf-step-card">
-                      <div class="ciaf-step-icon">
+                      <div class="ciaf-step-icon fs-24">
                         <i class="fa-regular fa-file-lines"></i>
                       </div>
-                      <span class="ciaf-step-label">Paso 2</span>
+                      <span class="ciaf-step-label fs-12">Paso 2</span>
                       <h4>Matrícula</h4>
                       <p>Financiación directa, sin fiadores y sin revisar centrales de riesgo.</p>
                     </article>
@@ -994,10 +994,10 @@
           
                   <div class="col-md-4">
                     <article class="ciaf-step-card">
-                      <div class="ciaf-step-icon">
+                      <div class="ciaf-step-icon fs-24">
                         <i class="fa-solid fa-rocket"></i>
                       </div>
-                      <span class="ciaf-step-label">Paso 3</span>
+                      <span class="ciaf-step-label fs-12">Paso 3</span>
                       <h4>Inicio de clases</h4>
                       <p>Empieza tu camino profesional en la jornada que mejor se adapte a ti.</p>
                     </article>
@@ -1060,7 +1060,7 @@
             <div class="ciaf-options-section">
               <div class="container ciaf-inner-container text-center">
           
-                <span class="ciaf-finance-pill">ALTERNATIVAS PENSADAS PARA TI</span>
+                <span class="ciaf-finance-pill fs-12">ALTERNATIVAS PENSADAS PARA TI</span>
           
                 <h3>
                   Un sistema de financiación <span>a tu medida</span>
@@ -1070,7 +1070,7 @@
           
                   <div class="col-md-4">
                     <article class="ciaf-option-card">
-                      <div class="ciaf-option-icon">
+                      <div class="ciaf-option-icon fs-20">
                         <i class="fa-solid fa-money-bill-wave"></i>
                       </div>
                       <h4>Financiación Directa CIAF</h4>
@@ -1086,7 +1086,7 @@
           
                   <div class="col-md-4">
                     <article class="ciaf-option-card">
-                      <div class="ciaf-option-icon">
+                      <div class="ciaf-option-icon fs-20">
                         <i class="fa-solid fa-percent"></i>
                       </div>
                       <h4>Descuentos Institucionales</h4>
@@ -1101,7 +1101,7 @@
           
                   <div class="col-md-4">
                     <article class="ciaf-option-card">
-                      <div class="ciaf-option-icon">
+                      <div class="ciaf-option-icon fs-20">
                         <i class="fa-solid fa-wallet"></i>
                       </div>
                       <h4>Opciones de Pago</h4>
@@ -1125,12 +1125,12 @@
           
                   <div class="text-center">
           
-                      <span class="ciaf-simulator-pill">
+                      <span class="ciaf-simulator-pill fs-12">
                           <i class="fa-regular fa-calculator"></i>
                           SIMULADOR
                       </span>
           
-                      <h2 class="ciaf-simulator-title">
+                      <h2 class="ciaf-simulator-title fs-64">
                           Calcula tu camino hacia tu título
                       </h2>
           
@@ -1297,7 +1297,7 @@
                     Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
                   </a>
           
-                  <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn-white">
+                  <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn-white fs-14">
                     Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 </div>

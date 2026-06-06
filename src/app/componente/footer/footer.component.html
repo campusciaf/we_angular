@@ -8,16 +8,16 @@
         <a routerLink="/inicio" class="ciaf-footer-logo" aria-label="CIAF inicio">
           <img [src]="logo" alt="CIAF" width="120" height="auto" />
         </a>
-        <p class="ciaf-footer-tagline">
+        <p class="ciaf-footer-tagline fs-12">
           CIAF — Universitarios sin Límites. Humanos · Innovadores · Originales. Vigilada Mineducación.
         </p>
 
-        <h3 class="ciaf-footer-heading">Síguenos</h3>
+        <h3 class="ciaf-footer-heading fs-12">Síguenos</h3>
         <div class="ciaf-footer-social">
           <a
             *ngFor="let red of redes"
             [href]="red.href"
-            class="ciaf-footer-social__link"
+            class="ciaf-footer-social__link fs-14"
             [attr.aria-label]="red.nombre"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,50 +29,50 @@
 
       <!-- Contacto -->
       <div class="ciaf-footer-contact">
-        <h3 class="ciaf-footer-heading">Contáctanos</h3>
+        <h3 class="ciaf-footer-heading fs-12">Contáctanos</h3>
 
         <div class="ciaf-footer-contact-grid">
           <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon" aria-hidden="true">
+            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
               <i class="fa-solid fa-location-dot"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label">Sedes</p>
-              <p class="ciaf-footer-contact-item__text">Cra. 6 # 24-56, Pereira</p>
-              <p class="ciaf-footer-contact-item__text">CRAI - Calle 20 # 4-57, Pereira</p>
+              <p class="ciaf-footer-contact-item__label fs-12">Sedes</p>
+              <p class="ciaf-footer-contact-item__text fs-14">Cra. 6 # 24-56, Pereira</p>
+              <p class="ciaf-footer-contact-item__text fs-14">CRAI - Calle 20 # 4-57, Pereira</p>
             </div>
           </div>
 
           <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon" aria-hidden="true">
+            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
               <i class="fa-solid fa-clock"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label">Horario</p>
-              <p class="ciaf-footer-contact-item__text">Lun – Vie · 8:00 am – 7:00 pm</p>
-              <p class="ciaf-footer-contact-item__text">Sábados · 8:00 am – 4:00 pm</p>
+              <p class="ciaf-footer-contact-item__label fs-12">Horario</p>
+              <p class="ciaf-footer-contact-item__text fs-14">Lun – Vie · 8:00 am – 7:00 pm</p>
+              <p class="ciaf-footer-contact-item__text fs-14">Sábados · 8:00 am – 4:00 pm</p>
             </div>
           </div>
 
           <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon" aria-hidden="true">
+            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
               <i class="fa-solid fa-phone"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label">Llamadas</p>
-              <a href="tel:+573143400100" class="ciaf-footer-contact-item__text ciaf-footer-link">314 340 0100</a>
+              <p class="ciaf-footer-contact-item__label fs-12">Llamadas</p>
+              <a href="tel:+573143400100" class="ciaf-footer-contact-item__text ciaf-footer-link fs-14">314 340 0100</a>
             </div>
           </div>
 
           <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon ciaf-footer-contact-item__icon--whatsapp" aria-hidden="true">
+            <span class="ciaf-footer-contact-item__icon ciaf-footer-contact-item__icon--whatsapp fs-14" aria-hidden="true">
               <i class="fa-brands fa-whatsapp"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label">WhatsApp</p>
+              <p class="ciaf-footer-contact-item__label fs-12">WhatsApp</p>
               <a
                 href="https://api.whatsapp.com/send?phone=573126814341&text=Mensaje%20desde%20la%20web"
-                class="ciaf-footer-contact-item__text ciaf-footer-link"
+                class="ciaf-footer-contact-item__text ciaf-footer-link fs-14"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -82,22 +82,22 @@
           </div>
 
           <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon" aria-hidden="true">
+            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
               <i class="fa-solid fa-envelope"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label">Correo</p>
-              <a href="mailto:{{ correociaf }}" class="ciaf-footer-contact-item__text ciaf-footer-link">{{ correociaf }}</a>
+              <p class="ciaf-footer-contact-item__label fs-12">Correo</p>
+              <a href="mailto:{{ correociaf }}" class="ciaf-footer-contact-item__text ciaf-footer-link fs-14">{{ correociaf }}</a>
             </div>
           </div>
 
           <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon" aria-hidden="true">
+            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
               <i class="fa-solid fa-file-lines"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label">PQRSDF</p>
-              <a routerLink="/pqrsdf" class="ciaf-footer-contact-item__text ciaf-footer-link">Radicar petición</a>
+              <p class="ciaf-footer-contact-item__label fs-12">PQRSDF</p>
+              <a routerLink="/pqrsdf" class="ciaf-footer-contact-item__text ciaf-footer-link fs-14">Radicar petición</a>
             </div>
           </div>
         </div>
@@ -106,18 +106,18 @@
       <!-- Enlaces -->
       <div class="ciaf-footer-nav">
         <div class="ciaf-footer-nav-group">
-          <h3 class="ciaf-footer-heading">Académico</h3>
+          <h3 class="ciaf-footer-heading fs-12">Académico</h3>
           <ul class="ciaf-footer-nav-list">
             <li *ngFor="let link of linksAcademico">
               <a
                 *ngIf="link.routerLink"
                 [routerLink]="link.routerLink"
-                class="ciaf-footer-nav-link"
+                class="ciaf-footer-nav-link fs-14"
               >{{ link.label }}</a>
               <a
                 *ngIf="link.href"
                 [href]="link.href"
-                class="ciaf-footer-nav-link"
+                class="ciaf-footer-nav-link fs-14"
                 [attr.target]="link.external ? '_blank' : null"
                 [attr.rel]="link.external ? 'noopener noreferrer' : null"
               >{{ link.label }}</a>
@@ -126,18 +126,18 @@
         </div>
 
         <div class="ciaf-footer-nav-group">
-          <h3 class="ciaf-footer-heading">Institución</h3>
+          <h3 class="ciaf-footer-heading fs-12">Institución</h3>
           <ul class="ciaf-footer-nav-list">
             <li *ngFor="let link of linksInstitucion">
               <a
                 *ngIf="link.routerLink"
                 [routerLink]="link.routerLink"
-                class="ciaf-footer-nav-link"
+                class="ciaf-footer-nav-link fs-14"
               >{{ link.label }}</a>
               <a
                 *ngIf="link.href"
                 [href]="link.href"
-                class="ciaf-footer-nav-link"
+                class="ciaf-footer-nav-link fs-14"
                 target="_blank"
                 rel="noopener noreferrer"
               >{{ link.label }}</a>
@@ -146,18 +146,18 @@
         </div>
 
         <div class="ciaf-footer-nav-group">
-          <h3 class="ciaf-footer-heading">Aspectos legales</h3>
+          <h3 class="ciaf-footer-heading fs-12">Aspectos legales</h3>
           <ul class="ciaf-footer-nav-list">
             <li *ngFor="let link of linksLegales">
               <a
                 *ngIf="link.routerLink"
                 [routerLink]="link.routerLink"
-                class="ciaf-footer-nav-link"
+                class="ciaf-footer-nav-link fs-14"
               >{{ link.label }}</a>
               <a
                 *ngIf="link.href"
                 [href]="link.href"
-                class="ciaf-footer-nav-link"
+                class="ciaf-footer-nav-link fs-14"
                 [attr.target]="link.external ? '_blank' : null"
                 [attr.rel]="link.external ? 'noopener noreferrer' : null"
               >{{ link.label }}</a>
@@ -169,7 +169,7 @@
     </div>
 
     <div class="ciaf-footer-bottom">
-      <p class="ciaf-footer-copy">
+      <p class="ciaf-footer-copy fs-12">
         © {{ anioActual }} CIAF — Corporación Instituto de Administración y Finanzas.
       </p>
       <img [src]="vigilada" alt="Vigilada Mineducación" class="ciaf-footer-vigilada" width="120" height="auto" />

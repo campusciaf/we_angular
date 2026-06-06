@@ -4,20 +4,20 @@
     <div class="ciaf-newsletter-banner">
 
       <div class="ciaf-newsletter-banner__content">
-        <div class="ciaf-newsletter-badge" aria-label="Newsletter CIAF">
+        <div class="ciaf-newsletter-badge fs-10" aria-label="Newsletter CIAF">
           <span class="ciaf-newsletter-badge__part ciaf-newsletter-badge__part--lime">NEWSLETTER</span>
           <span class="ciaf-newsletter-badge__part ciaf-newsletter-badge__part--white">CIAF</span>
         </div>
 
-        <h2 class="ciaf-newsletter-title">
+        <h2 class="ciaf-newsletter-title fs-56">
           Sigue construyendo un<br />
           <span class="ciaf-newsletter-title__accent">futuro sin límites</span>
         </h2>
 
-        <p class="ciaf-newsletter-text">
+        <p class="ciaf-newsletter-text fs-16">
           Recibe convocatorias, experiencias, becas, eventos y novedades de CIAF directamente en tu correo.
         </p>
-        <p class="ciaf-newsletter-text">
+        <p class="ciaf-newsletter-text fs-16">
           Contenido pensado para universitarios que quieren crecer, aprender y vivir un presente extraordinario.
         </p>
       </div>
@@ -25,24 +25,24 @@
       <div class="ciaf-newsletter-banner__form-wrap">
         <div class="ciaf-newsletter-panel">
           <form class="ciaf-newsletter-form" (submit)="$event.preventDefault()" novalidate>
-            <label class="ciaf-newsletter-label" for="newsletter-email">Tu correo</label>
+            <label class="ciaf-newsletter-label fs-10" for="newsletter-email">Tu correo</label>
 
             <div class="ciaf-newsletter-combo">
               <input
                 id="newsletter-email"
                 type="email"
-                class="ciaf-newsletter-input"
+                class="ciaf-newsletter-input fs-14"
                 placeholder="nombre@correo.com"
                 autocomplete="email"
                 aria-describedby="newsletter-legal"
               />
-              <button type="button" class="ciaf-newsletter-submit" aria-label="Suscribirme al newsletter">
+              <button type="button" class="ciaf-newsletter-submit fs-14" aria-label="Suscribirme al newsletter">
                 Suscribirme
                 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
               </button>
             </div>
 
-            <p class="ciaf-newsletter-legal" id="newsletter-legal">
+            <p class="ciaf-newsletter-legal fs-12" id="newsletter-legal">
               Al suscribirte aceptas la
               <a routerLink="/tratamientodatos">política de tratamiento de datos CIAF</a>.
             </p>

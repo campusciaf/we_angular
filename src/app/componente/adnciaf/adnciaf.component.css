@@ -2,7 +2,7 @@
 
 .ciaf-adn-section {
   position: relative;
-  padding: 4.8rem 0 5.6rem;
+  padding: 77px 0 90px;
   overflow: hidden;
 }
 
@@ -14,12 +14,12 @@
 
 .ciaf-adn-header {
   max-width: 840px;
-  margin: 0 auto 3.6rem;
+  margin: 0 auto 58px;
 }
 
 .ciaf-adn-grid {
-  --bs-gutter-x: 1.1rem;
-  --bs-gutter-y: 1.1rem;
+  --bs-gutter-x: 18px;
+  --bs-gutter-y: 18px;
   justify-content: center;
 }
 
@@ -32,16 +32,16 @@
 
 @media (max-width: 991.98px) {
   .ciaf-adn-section {
-    padding: 4rem 0;
+    padding: 64px 0;
   }
 
   .ciaf-adn-header {
-    margin-bottom: 3rem;
+    margin-bottom: 48px;
   }
 }
 
 @media (max-width: 575.98px) {
   .ciaf-adn-section {
-    padding: 3.5rem 0;
+    padding: 56px 0;
   }
 }
