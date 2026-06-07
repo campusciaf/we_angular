@@ -5,14 +5,14 @@
       <div class="ciaf-register-grid">
 
         <div class="ciaf-register-intro">
-          <span class="ciaf-pill ciaf-pill--compact fs-10">INSCRIPCIONES ABIERTAS</span>
+          <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold">INSCRIPCIONES ABIERTAS</span>
 
-          <h2 class="ciaf-title-display ciaf-title-display--register fs-56">
+          <h2 class="ciaf-title-display ciaf-title-display--register fs-56 fw-black">
             Tu próximo capítulo empieza
             <span class="ciaf-gradient-text ciaf-gradient-text--brand">hoy.</span>
           </h2>
 
-          <p class="ciaf-register-lead fs-16">
+          <p class="ciaf-register-lead fs-16 fw-regular">
             Inscripción 100% en línea. Financiación directa al 0% de interés y acompañamiento
             desde el primer clic.
           </p>
@@ -22,7 +22,7 @@
               href="https://ciaf.digital/inscripciones/"
               target="_blank"
               rel="noopener noreferrer"
-              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14"
+              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold"
             >
               Inscríbete Aquí
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -32,19 +32,19 @@
               href="https://ciaf.digital/pagos_pse/"
               target="_blank"
               rel="noopener noreferrer"
-              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14"
+              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold"
             >
               Pagos en Línea
             </a>
 
-            <a href="#financiacion" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14">
+            <a href="#financiacion" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold">
               Financiación Directa
             </a>
           </div>
         </div>
 
         <div class="ciaf-register-form-box">
-          <h3 class="ciaf-register-form-box__title fs-20">Pide información</h3>
+          <h3 class="ciaf-register-form-box__title fs-20 fw-extrablack">Pide información</h3>
           <p class="ciaf-register-form-box__subtitle fs-14">Te contactamos en menos de 24h.</p>
 
           <form [formGroup]="myForm" (ngSubmit)="agregar()" novalidate>
@@ -132,7 +132,7 @@
               </div>
             </ng-container>
 
-            <button type="submit" class="ciaf-btn ciaf-btn--primary ciaf-btn--submit fs-14" [disabled]="!myForm.valid">
+            <button type="submit" class="ciaf-btn ciaf-btn--primary ciaf-btn--submit fs-14 fw-bold" [disabled]="!myForm.valid">
               Quiero más información
             </button>
           </form>

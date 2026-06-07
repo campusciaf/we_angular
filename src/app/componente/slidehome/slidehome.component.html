@@ -65,7 +65,7 @@
 			<div class="container-xxl">
 			  <div class="hero-content">
   
-				<span class="ciaf-pill ciaf-pill--hero fs-12" *ngIf="slides.subtitulo">
+				<span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold" *ngIf="slides.subtitulo">
 					<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="20"
@@ -87,7 +87,7 @@
 				  {{ slides.subtitulo }}
 				</span>
   
-				<h1 class="ciaf-title-display ciaf-title-display--hero fs-80" *ngIf="slides.titulo">
+				<h1 class="ciaf-title-display ciaf-title-display--hero fs-80 fw-black" *ngIf="slides.titulo">
 					<ng-container *ngFor="let parte of getTituloPartes(slides.titulo)">
 					  <span
 						class="hero-title-part"
@@ -97,12 +97,12 @@
 					</ng-container>
 				  </h1>
   
-				<p class="ciaf-text-lead ciaf-text-lead--inverse fs-20" *ngIf="slides.descripcion">
+				<p class="ciaf-text-lead ciaf-text-lead--inverse fs-20 fw-medium" *ngIf="slides.descripcion">
 				  {{ slides.descripcion }}
 				</p>
   
 				<div class="hero-buttons" *ngIf="slides.ruta_url">
-				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14">
+				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold">
 					Ver información
 					<i class="fa-solid fa-arrow-up-right-from-square"></i>
 				  </a>
@@ -130,7 +130,7 @@
 		  (click)="carousel.select('slide-' + i)"
 		></button>
   
-		<span class="hero-count fs-12">
+		<span class="hero-count fs-12 fw-bold">
 		  {{ activeSlide + 1 | number:'2.0' }} / {{ listarSlider.length | number:'2.0' }}
 		</span>
 	  </div>
@@ -150,7 +150,7 @@
   </section>
   
   <section class="ciaf-marquee-strip">
-	<div class="ciaf-marquee-strip__track fs-14">
+	<div class="ciaf-marquee-strip__track fs-14 fw-bold">
 	  <span>Vigilada Mineducación <b>✦</b></span>
 	  <span>Universitarios sin Límites <b>✦</b></span>
 	  <span>Humanos · Innovadores · Originales <b>✦</b></span>
@@ -169,23 +169,23 @@
 	<div class="ciaf-marquee-big">
 	  <div class="ciaf-marquee-big__track ciaf-marquee-big__track--ink-dots">
   
-		<span class="fs-64">Financiación <i></i></span>
-		<span class="fs-64">Becas <i></i></span>
-		<span class="fs-64">Créditos <i></i></span>
-		<span class="fs-64">Egresados <i></i></span>
-		<span class="fs-64">Oportunidades <i></i></span>
-		<span class="fs-64">Futuro <i></i></span>
-		<span class="fs-64">Transformación <i></i></span>
-		<span class="fs-64">Propósito <i></i></span>
+		<span class="fs-64 fw-black">Financiación <i></i></span>
+		<span class="fs-64 fw-black">Becas <i></i></span>
+		<span class="fs-64 fw-black">Créditos <i></i></span>
+		<span class="fs-64 fw-black">Egresados <i></i></span>
+		<span class="fs-64 fw-black">Oportunidades <i></i></span>
+		<span class="fs-64 fw-black">Futuro <i></i></span>
+		<span class="fs-64 fw-black">Transformación <i></i></span>
+		<span class="fs-64 fw-black">Propósito <i></i></span>
   
-		<span class="fs-64">Financiación <i></i></span>
-		<span class="fs-64">Becas <i></i></span>
-		<span class="fs-64">Créditos <i></i></span>
-		<span class="fs-64">Egresados <i></i></span>
-		<span class="fs-64">Oportunidades <i></i></span>
-		<span class="fs-64">Futuro <i></i></span>
-		<span class="fs-64">Transformación <i></i></span>
-		<span class="fs-64">Propósito <i></i></span>
+		<span class="fs-64 fw-black">Financiación <i></i></span>
+		<span class="fs-64 fw-black">Becas <i></i></span>
+		<span class="fs-64 fw-black">Créditos <i></i></span>
+		<span class="fs-64 fw-black">Egresados <i></i></span>
+		<span class="fs-64 fw-black">Oportunidades <i></i></span>
+		<span class="fs-64 fw-black">Futuro <i></i></span>
+		<span class="fs-64 fw-black">Transformación <i></i></span>
+		<span class="fs-64 fw-black">Propósito <i></i></span>
   
 	  </div>
 	</div>

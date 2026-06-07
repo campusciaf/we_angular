@@ -109,7 +109,6 @@
 }
 .datosegresados label {
   color: #607d8b;
-  font-weight: 200;
   font-size: 12px;
 }
 
@@ -304,7 +303,6 @@
   -moz-border-radius: 100%;
   border-radius: 100%;
   color: #ffffff;
-  font-weight: 700;
   text-align: center;
   -webkti-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -355,7 +353,6 @@
   padding: 10px 15px;
   color: #ffffff;
   font-size: 14px;
-  font-weight: 600;
   text-transform: uppercase;
 }
 .post-module .post-content .category-2 {
@@ -366,7 +363,6 @@
   padding: 10px 15px;
   color: #ffffff;
   font-size: 14px;
-  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -375,7 +371,6 @@
   padding: 0 0 10px;
   color: #333333;
   font-size: 26px;
-  font-weight: 700;
 }
 
 .post-module .post-content .sub_title {
@@ -383,7 +378,6 @@
   padding: 0 0 20px;
   color: #e74c3c;
   font-size: 20px;
-  font-weight: 400;
 }
 
 .post-module .post-content .description {
@@ -465,20 +459,17 @@
 .titulo-2 {
   color: #001550;
   font-size: 2.2rem;
-  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .lead {
   color: #00308a;
-  font-weight: 600;
 }
 
 .btn-primary {
   background: #001550;
   border: none;
   padding: 12px 30px;
-  font-weight: 600;
   transition: all 0.3s ease;
 }
 
@@ -598,7 +589,6 @@
 
 .title {
   color: #2c3e50;
-  font-weight: 600;
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   line-height: 1.4;
@@ -610,7 +600,6 @@
   border: none;
   border-radius: 50px;
   padding: 0.75rem 2rem;
-  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;

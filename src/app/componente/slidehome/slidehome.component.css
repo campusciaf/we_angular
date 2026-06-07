@@ -177,7 +177,6 @@
 .hero-count {
   margin-left: var(--space-4);
   color: var(--ciaf-white-70);
-  font-weight: var(--font-bold);
   letter-spacing: .25em;
 }
 

@@ -130,7 +130,6 @@
     gap: 7px;
     color: #fff;
     font-size: 14px;
-    font-weight: 900;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -180,7 +179,6 @@
     margin-bottom: 20px;
     color: #080d1b;
     font-size: 16px;
-    font-weight: 900;
   }
   
   .ciaf-mega-column h4 i {
@@ -192,7 +190,6 @@
     padding: 10px 0;
     color: #5f6678;
     font-size: 14px;
-    font-weight: 700;
     text-decoration: none;
     transition: all .25s ease;
     border-bottom: 1px solid #eef1f6;
@@ -227,7 +224,6 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-weight: 900;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -337,7 +333,6 @@
     align-items: center;
     justify-content: space-between;
     font-size: 15px;
-    font-weight: 800;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -361,7 +356,6 @@
     margin: 14px 0 8px;
     color: #3f66f2;
     font-size: 13px;
-    font-weight: 900;
     text-transform: uppercase;
   }
   
@@ -370,7 +364,6 @@
     padding: 8px 0;
     color: #5f6678;
     font-size: 14px;
-    font-weight: 600;
     text-decoration: none;
   }
   

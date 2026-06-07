@@ -245,7 +245,6 @@
   thead {
     background-color: #1f3d7a; /* azul oscuro */
     color: #fff;
-    font-weight: 700;
     font-size: 16px;
 
     th {
@@ -274,7 +273,6 @@
       text-align: left;
       border-right: 1px solid #0c2d6b;
       color: #001f54;
-      font-weight: 500;
 
       &:last-child {
         border-right: none;
@@ -283,7 +281,6 @@
 
     td[rowspan] {
       vertical-align: middle;
-      font-weight: 700;
       color: #0c2d6b;
     }
   }

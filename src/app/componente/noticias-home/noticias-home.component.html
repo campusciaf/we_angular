@@ -3,13 +3,13 @@
 
     <div class="ciaf-news-header">
       <div>
-        <span class="ciaf-pill ciaf-pill--compact fs-10">NOTICIAS</span>
-        <h2 class="ciaf-title-display ciaf-title-display--news fs-56">
+        <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold">NOTICIAS</span>
+        <h2 class="ciaf-title-display ciaf-title-display--news fs-56 fw-black">
           Noticias que <span class="ciaf-gradient-text ciaf-gradient-text--brand">inspiran</span>
         </h2>
       </div>
 
-      <a routerLink="/noticias" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14">
+      <a routerLink="/noticias" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold">
         Ver todas las noticias
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
@@ -71,10 +71,10 @@
   </div>
 
   <div class="ciaf-news-card__body">
-    <p class="ciaf-news-card__date fs-10">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
-    <h3 class="ciaf-news-card__title fs-16">{{ noticia.titulo_noticias }}</h3>
+    <p class="ciaf-news-card__date fs-10 fw-black">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+    <h3 class="ciaf-news-card__title fs-16 fw-extrablack">{{ noticia.titulo_noticias }}</h3>
     <p class="ciaf-news-card__text fs-14" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
-    <a [routerLink]="['/noticias', noticia.link_noticia]" class="ciaf-news-card__link fs-14">
+    <a [routerLink]="['/noticias', noticia.link_noticia]" class="ciaf-news-card__link fs-14 fw-black">
       Leer más
       <i class="fa-solid fa-arrow-up-right-from-square"></i>
     </a>

@@ -40,15 +40,15 @@
 
       <div>
 
-        <span class="ciaf-pill ciaf-pill--compact">NOTICIAS</span>
+        <span class="ciaf-pill ciaf-pill--compact fw-bold">NOTICIAS</span>
 
-        <h2 class="ciaf-title-display ciaf-title-display--news">
+        <h2 class="ciaf-title-display ciaf-title-display--news fw-black">
 
           Noticias que <span class="ciaf-gradient-text ciaf-gradient-text--brand">inspiran</span>
 
         </h2>
 
-        <p class="ciaf-text-lead ciaf-text-lead--muted" *ngIf="listarNoticias.length">
+        <p class="ciaf-text-lead ciaf-text-lead--muted fw-regular" *ngIf="listarNoticias.length">
 
           {{ listarNoticias.length }} noticias disponibles
 
@@ -58,7 +58,7 @@
 
 
 
-      <a routerLink="/blog" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm">
+      <a routerLink="/blog" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fw-bold">
 
         Ir al blog
 
@@ -118,9 +118,9 @@
 
         <div class="ciaf-news-card__body">
 
-          <p class="ciaf-news-card__date">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+          <p class="ciaf-news-card__date fw-black">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
 
-          <h3 class="ciaf-news-card__title">{{ noticia.titulo_noticias }}</h3>
+          <h3 class="ciaf-news-card__title fw-extrablack">{{ noticia.titulo_noticias }}</h3>
 
           <p class="ciaf-news-card__text" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
 
@@ -128,7 +128,7 @@
 
             [routerLink]="['/noticias', noticia.link_noticia]"
 
-            class="ciaf-news-card__link"
+            class="ciaf-news-card__link fw-black"
 
           >
 
@@ -160,17 +160,17 @@
 
     <article class="ciaf-news-detail" *ngFor="let noticia of detalleNoticia">
 
-      <p class="ciaf-news-card__date">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+      <p class="ciaf-news-card__date fw-black">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
 
       <span class="ciaf-news-card__badge d-inline-flex mb-3" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
 
 
 
-      <h1 class="ciaf-title-display ciaf-title-display--news mb-3">{{ noticia.titulo_noticias }}</h1>
+      <h1 class="ciaf-title-display ciaf-title-display--news mb-3 fw-black">{{ noticia.titulo_noticias }}</h1>
 
 
 
-      <p class="ciaf-text-lead ciaf-text-lead--muted mb-4" *ngIf="noticia.subtitulo_noticias">
+      <p class="ciaf-text-lead ciaf-text-lead--muted mb-4 fw-regular" *ngIf="noticia.subtitulo_noticias">
 
         {{ noticia.subtitulo_noticias }}
 
@@ -200,7 +200,7 @@
 
 
 
-      <div class="ciaf-text-lead ciaf-text-lead--muted" [innerHTML]="noticia.contenido_noticias"></div>
+      <div class="ciaf-text-lead ciaf-text-lead--muted fw-regular" [innerHTML]="noticia.contenido_noticias"></div>
 
     </article>
 

@@ -2,9 +2,9 @@
   <div class="container-xxl ciaf-allies-container">
 
     <header class="ciaf-allies-header">
-      <span class="ciaf-pill ciaf-pill--allies fs-10">CONVENIOS CIAF</span>
-      <h2 class="ciaf-title-display ciaf-title-display--allies fs-48">Aliados Estratégicos</h2>
-      <p class="ciaf-text-lead ciaf-text-lead--muted ciaf-text-lead--center fs-16">
+      <span class="ciaf-pill ciaf-pill--allies fs-10 fw-bold">CONVENIOS CIAF</span>
+      <h2 class="ciaf-title-display ciaf-title-display--allies fs-48 fw-black">Aliados Estratégicos</h2>
+      <p class="ciaf-text-lead ciaf-text-lead--muted ciaf-text-lead--center fs-16 fw-regular">
         Convenios, alianzas académicas y financieras que potencian la experiencia y empleabilidad de cada estudiante CIAF.
       </p>
     </header>
@@ -39,7 +39,7 @@
               loading="lazy"
               draggable="false"
             />
-            <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name fs-14">{{ aliado.nombre_aliado }}</span>
+            <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name fs-14 fw-black">{{ aliado.nombre_aliado }}</span>
           </a>
         </div>
       </div>
@@ -60,7 +60,7 @@
           loading="lazy"
           draggable="false"
         />
-        <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name fs-14">{{ aliado.nombre_aliado }}</span>
+        <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name fs-14 fw-black">{{ aliado.nombre_aliado }}</span>
       </a>
     </div>
 

@@ -4,15 +4,15 @@
       <div class="row">
         <div class="col-xl-7 col-lg-8">
   
-          <div class="ciaf-pill ciaf-pill--section fs-12">
+          <div class="ciaf-pill ciaf-pill--section fs-12 fw-bold">
             CIAF EN CIFRAS
           </div>
   
-          <h2 class="ciaf-title-display ciaf-title-display--section fs-80">
+          <h2 class="ciaf-title-display ciaf-title-display--section fs-48 fw-black">
             Impacto <span class="ciaf-gradient-text ciaf-gradient-text--brand">social</span>
           </h2>
           
-          <p class="ciaf-text-lead ciaf-text-lead--muted fs-16">
+          <p class="fs-18 fw-medium text-color-1">
             Más que cifras: oportunidades reales para que cada universitario cumpla
             su sueño profesional con respaldo, becas y financiación.
           </p>
@@ -30,10 +30,10 @@
           class="col-xl-3 col-lg-3 col-md-6 col-12"
           *ngFor="let counter of counters"
         >
-          <article class="ciaf-card ciaf-stat-card h-100">
+          <article class="ciaf-card ciaf-stat-card h-100 p-4">
   
             <div
-              class="ciaf-icon-badge fs-18"
+              class="ciaf-icon-badge fs-18 mb-3"
               [class.ciaf-icon-badge--primary]="counter.iconType === 'icon-blue'"
               [class.ciaf-icon-badge--lime]="counter.iconType === 'icon-green'"
             >
@@ -41,18 +41,18 @@
             </div>
   
             <div
-              class="ciaf-stat-value counter fs-48"
+              class="fs-48 fw-black text-color-2"
               #counterElement
               [attr.data-target]="counter.target"
             >
-              <span>{{ counter.prefix }}</span>{{ counter.value | number:'1.0-0' }}<small class="fs-14">{{ counter.suffix }}</small>
+              <span>{{ counter.prefix }}</span>{{ counter.value | number:'1.0-0' }}<small class="fs-14 fw-extrablack">{{ counter.suffix }}</small>
             </div>
   
-            <h3 class="ciaf-card-title fs-16">
+            <h3 class="fs-16 fw-black text-color-2">
               {{ counter.title }}
             </h3>
   
-            <p class="ciaf-card-text fs-14">
+            <p class="ciaf-card-text fs-14 text-color-1">
               {{ counter.description }}
             </p>
   
@@ -64,10 +64,10 @@
   
     <div class="ciaf-stats-bottom-marquee ciaf-marquee-big" aria-hidden="true">
       <div class="ciaf-marquee-big__track ciaf-marquee-big__track--slow-reverse">
-        <span *ngFor="let item of marqueeItems">
+        <span class="fs-64 fw-black" *ngFor="let item of marqueeItems">
           {{ item }} <i></i>
         </span>
-        <span *ngFor="let item of marqueeItems">
+        <span class="fs-64 fw-black" *ngFor="let item of marqueeItems">
           {{ item }} <i></i>
         </span>
       </div>

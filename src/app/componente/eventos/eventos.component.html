@@ -4,14 +4,14 @@
   <div class="container-xxl ciaf-events-container">
     <div class="ciaf-events-header">
       <div>
-        <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-10">AGENDA CIAF</span>
+        <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-10 fw-bold">AGENDA CIAF</span>
 
-        <h2 class="ciaf-title-display ciaf-title-display--events fs-64">
+        <h2 class="ciaf-title-display ciaf-title-display--events fs-64 fw-black">
           Próximos <span class="ciaf-gradient-text ciaf-gradient-text--accent">eventos</span>
         </h2>
       </div>
 
-      <a href="#" class="ciaf-btn ciaf-btn--events-all fs-14">
+      <a href="#" class="ciaf-btn ciaf-btn--events-all fs-14 fw-bold">
         Ver todos los eventos
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
@@ -26,13 +26,13 @@
       <article ngxSlickItem *ngFor="let datos of listarEventos" class="ciaf-event-card">
         <div class="ciaf-event-card__head">
           <div class="ciaf-event-date">
-            <span class="ciaf-event-date__day fs-20">{{ datos.fecha_inicio | date:'d' }}</span>
-            <span class="ciaf-event-date__month fs-10">{{ datos.fecha_inicio | date:'MMM' }}</span>
+            <span class="ciaf-event-date__day fs-20 fw-extrablack">{{ datos.fecha_inicio | date:'d' }}</span>
+            <span class="ciaf-event-date__month fs-10 fw-black">{{ datos.fecha_inicio | date:'MMM' }}</span>
           </div>
 
           <div>
-            <span class="ciaf-event-tag fs-10">{{ getEventTag(datos) }}</span>
-            <h3 class="ciaf-event-card__title fs-16">{{ datos.evento }}</h3>
+            <span class="ciaf-event-tag fs-10 fw-black">{{ getEventTag(datos) }}</span>
+            <h3 class="ciaf-event-card__title fs-16 fw-extrablack">{{ datos.evento }}</h3>
             <p class="ciaf-event-card__meta fs-12">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               {{ getEventLocation(datos) }}
@@ -42,7 +42,7 @@
 
         <p class="ciaf-event-card__text fs-12">{{ getEventDescription(datos) }}</p>
 
-        <div class="ciaf-event-card__footer">
+        <div class="ciaf-event-card__footer fw-black">
           <a href="#" class="ciaf-event-link--muted">
             <i class="fa-regular fa-calendar" aria-hidden="true"></i>
             Agendar
