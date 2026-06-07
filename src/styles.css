@@ -193,6 +193,7 @@
 .fs-40 { font-size: 40px; }
 .fs-48 { font-size: 48px; }
 .fs-56 { font-size: 56px; }
+.fs-60 { font-size: 60px; }
 .fs-64 { font-size: 64px; }
 .fs-72 { font-size: 72px; }
 .fs-80 { font-size: 80px; }
@@ -228,7 +229,7 @@ html {
 
 body {
   font-family: var(--font-family-base);
-  color: var(--ciaf-ink);
+  color: #65708A;
   background: #fff;
   overflow-x: hidden;
 }
@@ -456,7 +457,6 @@ body {
 }
 
 .ciaf-card--feature {
-  min-height: 385px;
   background: rgba(255, 255, 255, .92);
 }
 
