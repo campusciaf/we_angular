@@ -1,23 +1,23 @@
 <footer class="ciaf-footer">
   <div class="container-xxl ciaf-footer-container">
 
-    <div class="ciaf-footer-main">
+    <div class="ciaf-footer-main g-4">
 
       <!-- Marca y redes -->
       <div class="ciaf-footer-brand">
-        <a routerLink="/inicio" class="ciaf-footer-logo" aria-label="CIAF inicio">
+        <a routerLink="/inicio" class="ciaf-footer-logo mb-4" aria-label="CIAF inicio">
           <img [src]="logo" alt="CIAF" width="120" height="auto" />
         </a>
         <p class="ciaf-footer-tagline fs-12">
           CIAF — Universitarios sin Límites. Humanos · Innovadores · Originales. Vigilada Mineducación.
         </p>
 
-        <h3 class="ciaf-footer-heading fs-12 fw-extrablack">Síguenos</h3>
-        <div class="ciaf-footer-social">
+        <h3 class="ciaf-footer-heading fs-12 fw-extrablack mb-4">Síguenos</h3>
+        <div class="ciaf-footer-social gap-2 d-flex">
           <a
             *ngFor="let red of redes"
             [href]="red.href"
-            class="ciaf-footer-social__link fs-14"
+            class="ciaf-footer-social__link fs-14 rounded-circle"
             [attr.aria-label]="red.nombre"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,47 +29,47 @@
 
       <!-- Contacto -->
       <div class="ciaf-footer-contact">
-        <h3 class="ciaf-footer-heading fs-12 fw-extrablack">Contáctanos</h3>
+        <h3 class="ciaf-footer-heading fs-12 fw-extrablack mb-4">Contáctanos</h3>
 
-        <div class="ciaf-footer-contact-grid">
-          <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
+        <div class="ciaf-footer-contact-grid g-3 g-md-4">
+          <div class="ciaf-footer-contact-item gap-3 d-flex">
+            <span class="ciaf-footer-contact-item__icon fs-14 rounded-circle" aria-hidden="true">
               <i class="fa-solid fa-location-dot"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label fs-12 fw-black">Sedes</p>
+              <p class="ciaf-footer-contact-item__label fs-12 fw-black mb-1">Sedes</p>
               <p class="ciaf-footer-contact-item__text fs-14">Cra. 6 # 24-56, Pereira</p>
               <p class="ciaf-footer-contact-item__text fs-14">CRAI - Calle 20 # 4-57, Pereira</p>
             </div>
           </div>
 
-          <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
+          <div class="ciaf-footer-contact-item gap-3 d-flex">
+            <span class="ciaf-footer-contact-item__icon fs-14 rounded-circle" aria-hidden="true">
               <i class="fa-solid fa-clock"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label fs-12 fw-black">Horario</p>
+              <p class="ciaf-footer-contact-item__label fs-12 fw-black mb-1">Horario</p>
               <p class="ciaf-footer-contact-item__text fs-14">Lun – Vie · 8:00 am – 7:00 pm</p>
               <p class="ciaf-footer-contact-item__text fs-14">Sábados · 8:00 am – 4:00 pm</p>
             </div>
           </div>
 
-          <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
+          <div class="ciaf-footer-contact-item gap-3 d-flex">
+            <span class="ciaf-footer-contact-item__icon fs-14 rounded-circle" aria-hidden="true">
               <i class="fa-solid fa-phone"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label fs-12 fw-black">Llamadas</p>
+              <p class="ciaf-footer-contact-item__label fs-12 fw-black mb-1">Llamadas</p>
               <a href="tel:+573143400100" class="ciaf-footer-contact-item__text ciaf-footer-link fs-14">314 340 0100</a>
             </div>
           </div>
 
-          <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon ciaf-footer-contact-item__icon--whatsapp fs-14" aria-hidden="true">
+          <div class="ciaf-footer-contact-item gap-3 d-flex">
+            <span class="ciaf-footer-contact-item__icon ciaf-footer-contact-item__icon--whatsapp fs-14 rounded-circle" aria-hidden="true">
               <i class="fa-brands fa-whatsapp"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label fs-12 fw-black">WhatsApp</p>
+              <p class="ciaf-footer-contact-item__label fs-12 fw-black mb-1">WhatsApp</p>
               <a
                 href="https://api.whatsapp.com/send?phone=573126814341&text=Mensaje%20desde%20la%20web"
                 class="ciaf-footer-contact-item__text ciaf-footer-link fs-14"
@@ -81,22 +81,22 @@
             </div>
           </div>
 
-          <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
+          <div class="ciaf-footer-contact-item gap-3 d-flex">
+            <span class="ciaf-footer-contact-item__icon fs-14 rounded-circle" aria-hidden="true">
               <i class="fa-solid fa-envelope"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label fs-12 fw-black">Correo</p>
+              <p class="ciaf-footer-contact-item__label fs-12 fw-black mb-1">Correo</p>
               <a href="mailto:{{ correociaf }}" class="ciaf-footer-contact-item__text ciaf-footer-link fs-14">{{ correociaf }}</a>
             </div>
           </div>
 
-          <div class="ciaf-footer-contact-item">
-            <span class="ciaf-footer-contact-item__icon fs-14" aria-hidden="true">
+          <div class="ciaf-footer-contact-item gap-3 d-flex">
+            <span class="ciaf-footer-contact-item__icon fs-14 rounded-circle" aria-hidden="true">
               <i class="fa-solid fa-file-lines"></i>
             </span>
             <div>
-              <p class="ciaf-footer-contact-item__label fs-12 fw-black">PQRSDF</p>
+              <p class="ciaf-footer-contact-item__label fs-12 fw-black mb-1">PQRSDF</p>
               <a routerLink="/pqrsdf" class="ciaf-footer-contact-item__text ciaf-footer-link fs-14">Radicar petición</a>
             </div>
           </div>
@@ -104,9 +104,9 @@
       </div>
 
       <!-- Enlaces -->
-      <div class="ciaf-footer-nav">
+      <div class="ciaf-footer-nav g-4">
         <div class="ciaf-footer-nav-group">
-          <h3 class="ciaf-footer-heading fs-12 fw-extrablack">Académico</h3>
+          <h3 class="ciaf-footer-heading fs-12 fw-extrablack mb-4">Académico</h3>
           <ul class="ciaf-footer-nav-list">
             <li *ngFor="let link of linksAcademico">
               <a
@@ -126,7 +126,7 @@
         </div>
 
         <div class="ciaf-footer-nav-group">
-          <h3 class="ciaf-footer-heading fs-12 fw-extrablack">Institución</h3>
+          <h3 class="ciaf-footer-heading fs-12 fw-extrablack mb-4">Institución</h3>
           <ul class="ciaf-footer-nav-list">
             <li *ngFor="let link of linksInstitucion">
               <a
@@ -146,7 +146,7 @@
         </div>
 
         <div class="ciaf-footer-nav-group">
-          <h3 class="ciaf-footer-heading fs-12 fw-extrablack">Aspectos legales</h3>
+          <h3 class="ciaf-footer-heading fs-12 fw-extrablack mb-4">Aspectos legales</h3>
           <ul class="ciaf-footer-nav-list">
             <li *ngFor="let link of linksLegales">
               <a
@@ -168,7 +168,7 @@
 
     </div>
 
-    <div class="ciaf-footer-bottom">
+    <div class="ciaf-footer-bottom gap-4 d-flex flex-wrap">
       <p class="ciaf-footer-copy fs-12">
         © {{ anioActual }} CIAF — Corporación Instituto de Administración y Finanzas.
       </p>

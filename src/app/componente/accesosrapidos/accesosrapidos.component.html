@@ -2,18 +2,18 @@
   <div class="container-xxl ciaf-quick-access-container">
 
     <header class="ciaf-quick-access-header">
-      <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold">ACCESOS RÁPIDOS</span>
-      <h2 class="ciaf-title-display ciaf-title-display--quick-access fs-48 fw-black">
+      <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3">ACCESOS RÁPIDOS</span>
+      <h2 class="ciaf-title-display ciaf-title-display--quick-access fs-48 fw-black m-0 mt-3">
         Todo a un <span class="ciaf-gradient-text ciaf-gradient-text--brand">clic.</span>
       </h2>
     </header>
 
-    <div class="ciaf-quick-access-grid">
+    <div class="ciaf-quick-access-grid g-3">
       <ng-container *ngFor="let acceso of accesos">
 
         <a
           *ngIf="acceso.tipoEnlace === 'externo'"
-          class="ciaf-quick-access-card"
+          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center"
           [href]="acceso.enlace"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@
 
         <a
           *ngIf="acceso.tipoEnlace === 'ruta'"
-          class="ciaf-quick-access-card"
+          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center"
           [routerLink]="acceso.enlace"
         >
           <ng-container *ngTemplateOutlet="contenidoTarjeta; context: { $implicit: acceso }"></ng-container>
@@ -31,7 +31,7 @@
 
         <a
           *ngIf="acceso.tipoEnlace === 'modal'"
-          class="ciaf-quick-access-card"
+          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center"
           [href]="acceso.enlace"
           data-bs-toggle="modal"
         >
@@ -46,7 +46,7 @@
 
 <ng-template #contenidoTarjeta let-acceso>
   <span
-    class="ciaf-quick-access-card__icon fs-18"
+    class="ciaf-quick-access-card__icon fs-18 rounded-circle"
     [class.ciaf-quick-access-card__icon--primary]="acceso.tonoIcono === 'primary'"
     [class.ciaf-quick-access-card__icon--lime]="acceso.tonoIcono === 'lime'"
     aria-hidden="true"
@@ -55,7 +55,7 @@
   </span>
 
   <div class="ciaf-quick-access-card__content">
-    <h3 class="ciaf-quick-access-card__title fs-16 fw-extrablack">{{ acceso.titulo }}</h3>
+    <h3 class="ciaf-quick-access-card__title fs-16 fw-extrablack mb-1">{{ acceso.titulo }}</h3>
     <p class="ciaf-quick-access-card__subtitle fs-12">{{ acceso.subtitulo }}</p>
   </div>
 

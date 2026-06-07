@@ -202,7 +202,7 @@
 .impact-pre-marquee {
   overflow: hidden;
   background: rgba(248, 250, 252, 0.6);
-  padding: 106px 0 32px;
+  padding: 110px 0 32px;
 }
 
 ::ng-deep .carousel,

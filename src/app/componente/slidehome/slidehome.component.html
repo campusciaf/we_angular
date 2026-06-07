@@ -65,7 +65,7 @@
 			<div class="container-xxl">
 			  <div class="hero-content">
   
-				<span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold" *ngIf="slides.subtitulo">
+				<span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold rounded-pill mb-4 px-3 py-1" *ngIf="slides.subtitulo">
 					<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="20"
@@ -87,7 +87,7 @@
 				  {{ slides.subtitulo }}
 				</span>
   
-				<h1 class="ciaf-title-display ciaf-title-display--hero fs-80 fw-black" *ngIf="slides.titulo">
+				<h1 class="ciaf-title-display ciaf-title-display--hero fs-80 fw-black m-0" *ngIf="slides.titulo">
 					<ng-container *ngFor="let parte of getTituloPartes(slides.titulo)">
 					  <span
 						class="hero-title-part"
@@ -97,12 +97,12 @@
 					</ng-container>
 				  </h1>
   
-				<p class="ciaf-text-lead ciaf-text-lead--inverse fs-20 fw-medium" *ngIf="slides.descripcion">
+				<p class="ciaf-text-lead ciaf-text-lead--inverse fs-20 fw-medium m-0 mt-4" *ngIf="slides.descripcion">
 				  {{ slides.descripcion }}
 				</p>
   
 				<div class="hero-buttons" *ngIf="slides.ruta_url">
-				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold">
+				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
 					Ver información
 					<i class="fa-solid fa-arrow-up-right-from-square"></i>
 				  </a>
@@ -150,7 +150,7 @@
   </section>
   
   <section class="ciaf-marquee-strip">
-	<div class="ciaf-marquee-strip__track fs-14 fw-bold">
+	<div class="ciaf-marquee-strip__track fs-14 fw-bold gap-5 d-flex">
 	  <span>Vigilada Mineducación <b>✦</b></span>
 	  <span>Universitarios sin Límites <b>✦</b></span>
 	  <span>Humanos · Innovadores · Originales <b>✦</b></span>
@@ -167,7 +167,7 @@
 
   <section class="impact-pre-marquee">
 	<div class="ciaf-marquee-big">
-	  <div class="ciaf-marquee-big__track ciaf-marquee-big__track--ink-dots">
+	  <div class="ciaf-marquee-big__track ciaf-marquee-big__track--ink-dots gap-5 d-flex">
   
 		<span class="fs-64 fw-black">Financiación <i></i></span>
 		<span class="fs-64 fw-black">Becas <i></i></span>

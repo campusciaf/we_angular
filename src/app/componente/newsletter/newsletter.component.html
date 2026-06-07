@@ -1,48 +1,48 @@
 <section class="ciaf-newsletter-section">
   <div class="container-xxl ciaf-newsletter-container">
 
-    <div class="ciaf-newsletter-banner">
+    <div class="ciaf-newsletter-banner gap-4 p-4 p-lg-5 rounded-5 d-flex flex-column flex-lg-row">
 
       <div class="ciaf-newsletter-banner__content">
-        <div class="ciaf-newsletter-badge fs-10 fw-black" aria-label="Newsletter CIAF">
-          <span class="ciaf-newsletter-badge__part ciaf-newsletter-badge__part--lime">NEWSLETTER</span>
-          <span class="ciaf-newsletter-badge__part ciaf-newsletter-badge__part--white">CIAF</span>
+        <div class="ciaf-newsletter-badge fs-10 fw-black mb-3 rounded-pill" aria-label="Newsletter CIAF">
+          <span class="ciaf-newsletter-badge__part ciaf-newsletter-badge__part--lime py-2 px-3">NEWSLETTER</span>
+          <span class="ciaf-newsletter-badge__part ciaf-newsletter-badge__part--white py-2 px-3">CIAF</span>
         </div>
 
-        <h2 class="ciaf-newsletter-title fs-56 fw-extrablack">
+        <h2 class="ciaf-newsletter-title fs-56 fw-extrablack mb-3">
           Sigue construyendo un<br />
           <span class="ciaf-newsletter-title__accent">futuro sin límites</span>
         </h2>
 
-        <p class="ciaf-newsletter-text fs-16">
+        <p class="ciaf-newsletter-text fs-16 mb-3">
           Recibe convocatorias, experiencias, becas, eventos y novedades de CIAF directamente en tu correo.
         </p>
-        <p class="ciaf-newsletter-text fs-16">
+        <p class="ciaf-newsletter-text fs-16 mb-3">
           Contenido pensado para universitarios que quieren crecer, aprender y vivir un presente extraordinario.
         </p>
       </div>
 
       <div class="ciaf-newsletter-banner__form-wrap">
-        <div class="ciaf-newsletter-panel">
+        <div class="ciaf-newsletter-panel p-4 rounded-4">
           <form class="ciaf-newsletter-form" (submit)="$event.preventDefault()" novalidate>
-            <label class="ciaf-newsletter-label fs-10 fw-black" for="newsletter-email">Tu correo</label>
+            <label class="ciaf-newsletter-label fs-10 fw-black mb-2" for="newsletter-email">Tu correo</label>
 
-            <div class="ciaf-newsletter-combo">
+            <div class="ciaf-newsletter-combo gap-1 p-1 rounded-pill d-flex">
               <input
                 id="newsletter-email"
                 type="email"
-                class="ciaf-newsletter-input fs-14"
+                class="ciaf-newsletter-input fs-14 py-2 px-3 ps-4 rounded-pill"
                 placeholder="nombre@correo.com"
                 autocomplete="email"
                 aria-describedby="newsletter-legal"
               />
-              <button type="button" class="ciaf-newsletter-submit fs-14 fw-black" aria-label="Suscribirme al newsletter">
+              <button type="button" class="ciaf-newsletter-submit fs-14 fw-black gap-1 px-4 rounded-pill" aria-label="Suscribirme al newsletter">
                 Suscribirme
                 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
               </button>
             </div>
 
-            <p class="ciaf-newsletter-legal fs-12" id="newsletter-legal">
+            <p class="ciaf-newsletter-legal fs-12 mt-3" id="newsletter-legal">
               Al suscribirte aceptas la
               <a routerLink="/tratamientodatos">política de tratamiento de datos CIAF</a>.
             </p>

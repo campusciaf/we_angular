@@ -1,28 +1,28 @@
 <section class="ciaf-register-section" id="inscribete">
   <div class="container-xxl">
-    <div class="ciaf-register-card">
+    <div class="ciaf-register-card rounded-5">
 
-      <div class="ciaf-register-grid">
+      <div class="ciaf-register-grid g-4 g-lg-5">
 
         <div class="ciaf-register-intro">
-          <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold">INSCRIPCIONES ABIERTAS</span>
+          <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3">INSCRIPCIONES ABIERTAS</span>
 
-          <h2 class="ciaf-title-display ciaf-title-display--register fs-56 fw-black">
+          <h2 class="ciaf-title-display ciaf-title-display--register fs-56 fw-black m-0 mt-3 mb-4">
             Tu próximo capítulo empieza
             <span class="ciaf-gradient-text ciaf-gradient-text--brand">hoy.</span>
           </h2>
 
-          <p class="ciaf-register-lead fs-16 fw-regular">
+          <p class="ciaf-register-lead fs-16 fw-regular mb-4">
             Inscripción 100% en línea. Financiación directa al 0% de interés y acompañamiento
             desde el primer clic.
           </p>
 
-          <div class="ciaf-register-actions">
+          <div class="ciaf-register-actions d-flex flex-wrap gap-3">
             <a
               href="https://ciaf.digital/inscripciones/"
               target="_blank"
               rel="noopener noreferrer"
-              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold"
+              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-4"
             >
               Inscríbete Aquí
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -32,25 +32,25 @@
               href="https://ciaf.digital/pagos_pse/"
               target="_blank"
               rel="noopener noreferrer"
-              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold"
+              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill px-4"
             >
               Pagos en Línea
             </a>
 
-            <a href="#financiacion" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold">
+            <a href="#financiacion" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
               Financiación Directa
             </a>
           </div>
         </div>
 
-        <div class="ciaf-register-form-box">
-          <h3 class="ciaf-register-form-box__title fs-20 fw-extrablack">Pide información</h3>
-          <p class="ciaf-register-form-box__subtitle fs-14">Te contactamos en menos de 24h.</p>
+        <div class="ciaf-register-form-box p-4 rounded-5">
+          <h3 class="ciaf-register-form-box__title fs-20 fw-extrablack mb-1">Pide información</h3>
+          <p class="ciaf-register-form-box__subtitle fs-14 mb-3">Te contactamos en menos de 24h.</p>
 
           <form [formGroup]="myForm" (ngSubmit)="agregar()" novalidate>
             <input
               type="text"
-              class="ciaf-field fs-14"
+              class="ciaf-field fs-14 mb-3 px-4 rounded-pill"
               placeholder="Nombre completo"
               formControlName="nombre"
               autocomplete="name"
@@ -66,7 +66,7 @@
 
             <input
               type="email"
-              class="ciaf-field fs-14"
+              class="ciaf-field fs-14 mb-3 px-4 rounded-pill"
               placeholder="Correo electrónico"
               formControlName="correo"
               autocomplete="email"
@@ -82,7 +82,7 @@
 
             <input
               type="tel"
-              class="ciaf-field fs-14"
+              class="ciaf-field fs-14 mb-3 px-4 rounded-pill"
               placeholder="Teléfono"
               formControlName="celular"
               autocomplete="tel"
@@ -96,7 +96,7 @@
               </div>
             </ng-container>
 
-            <select class="ciaf-field ciaf-field--select fs-14" formControlName="fo_programa" required>
+            <select class="ciaf-field ciaf-field--select fs-14 mb-3 px-4 rounded-pill pe-5" formControlName="fo_programa" required>
               <option value="">Programa de interés</option>
               <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas</option>
               <option value="Técnica Profesional en Gestión Financiera">Contaduría Pública</option>
@@ -108,7 +108,7 @@
               <option value="Técnico Laboral por Competencias en Administrativo en Salud">Técnico Laboral en Administrativo en Salud</option>
             </select>
 
-            <select class="ciaf-field ciaf-field--select fs-14" formControlName="jornada_e" required>
+            <select class="ciaf-field ciaf-field--select fs-14 mb-3 px-4 rounded-pill pe-5" formControlName="jornada_e" required>
               <option value="">Jornada de interés</option>
               <option value="Diurna">Diurna</option>
               <option value="Nocturna">Nocturna</option>
@@ -116,7 +116,7 @@
               <option value="Sabados">Sabados</option>
             </select>
 
-            <div class="ciaf-register-check">
+            <div class="ciaf-register-check d-flex gap-2 my-1 mb-4">
               <input type="checkbox" id="registroAcepto" formControlName="acepto" />
               <label for="registroAcepto">
                 Acepto el envío de información a mi correo electrónico. He revisado la política de
@@ -132,7 +132,7 @@
               </div>
             </ng-container>
 
-            <button type="submit" class="ciaf-btn ciaf-btn--primary ciaf-btn--submit fs-14 fw-bold" [disabled]="!myForm.valid">
+            <button type="submit" class="ciaf-btn ciaf-btn--primary ciaf-btn--submit fs-14 fw-bold gap-2 rounded-pill py-2 px-4 mt-1 py-3" [disabled]="!myForm.valid">
               Quiero más información
             </button>
           </form>
