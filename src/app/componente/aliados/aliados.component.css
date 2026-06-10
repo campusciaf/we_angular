@@ -1,1 +1,30 @@
-/* Estilos principales en styles.css (.ciaf-allies-*) */
+/* Marquee continuo — estilos de layout en styles.css (.ciaf-allies-*) */
+
+.ciaf-allies-slider {
+  cursor: default;
+}
+
+.aliados-marquee-track {
+  width: max-content;
+  animation: aliados-marquee-scroll linear infinite;
+}
+
+.ciaf-allies-slider:hover .aliados-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes aliados-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aliados-marquee-track {
+    animation: none;
+  }
+}

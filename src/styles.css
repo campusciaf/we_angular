@@ -181,8 +181,10 @@
 ========================================== */
 
 .fs-10 { font-size: 10px; }
+.fs-11 { font-size: 11px; }
 .fs-12 { font-size: 12px; }
 .fs-14 { font-size: 14px; }
+.fs-15 { font-size: 15px; }
 .fs-16 { font-size: 16px; }
 .fs-18 { font-size: 18px; }
 .fs-20 { font-size: 20px; }
@@ -220,9 +222,37 @@
 .text-color-1{
   color: #65708A !important;
 }
+
 .text-color-2{
   color: #011e8c !important;
 }
+.text-color-3{
+  color: #84cc16 !important;
+}
+
+.text-color-4{
+  color: #919ecd !important;
+}
+
+/* ==========================================
+   LETTER SPACING UTILITIES
+========================================== */
+.ls-1 {
+  letter-spacing: 0.05em;
+}
+
+.ls-2 {
+  letter-spacing: 0.10em;
+}
+
+.ls-3 {
+  letter-spacing: 0.15em;
+}
+
+.ls-4 {
+  letter-spacing: 0.20em;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -252,6 +282,19 @@ body {
   ::-moz-selection {
     background-color: color-mix(in srgb, var(--ciaf-lime-bright) 70%, transparent);
   }
+}
+.ciaf-divider{
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(216,224,235,.25) 15%,
+      rgba(216,224,235,1) 50%,
+      rgba(216,224,235,.25) 85%,
+      transparent 100%
+  );
 }
 
 /* ==========================================
@@ -302,28 +345,6 @@ body {
    TÍTULOS DISPLAY (H1 / H2)
 ========================================== */
 
-.ciaf-title-display {
-  font-family: var(--font-family-display);
-  letter-spacing: -1px;
-}
-
-.ciaf-title-display--section {
-  max-width: 720px;
-  line-height: .92;
-  color: var(--ciaf-primary);
-}
-
-.ciaf-title-display--hero {
-  max-width: 840px;
-  color: var(--ciaf-white);
-  line-height: .98;
-  overflow: visible;
-}
-
-.ciaf-title-display--xl {
-  line-height: .88;
-  color: var(--ciaf-primary);
-}
 
 .ciaf-gradient-text {
   display: inline-block;
@@ -1064,37 +1085,7 @@ body {
   background: rgba(15, 23, 42, .42);
 }
 
-.ciaf-news-card__play i {
-}
 
-.ciaf-news-card__body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.ciaf-news-card__date {
-  color: #94a3b8;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.ciaf-news-card__title {
-  color: var(--ciaf-primary);
-  font-family: var(--font-family-display);
-  line-height: 1.25;
-  letter-spacing: -.02em;
-}
-
-.ciaf-news-card__text {
-  color: var(--ciaf-muted);
-  line-height: 1.55;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  flex: 1;
-}
 
 .ciaf-news-card__link {
   display: inline-flex;
@@ -1808,28 +1799,12 @@ body {
   line-height: 1;
 }
 
-.ciaf-event-date__day {
-  letter-spacing: -.04em;
-}
-
-.ciaf-event-date__month {
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
 .ciaf-event-tag {
   display: inline-flex;
   background: rgba(255, 255, 255, .1);
-  color: rgba(255, 255, 255, .82);
+  color: var(--ciaf-lime);
   letter-spacing: .14em;
   text-transform: uppercase;
-}
-
-.ciaf-event-card__title {
-  color: var(--ciaf-white);
-  font-family: var(--font-family-display);
-  line-height: 1.2;
-  letter-spacing: -.02em;
 }
 
 .ciaf-event-card__meta {
@@ -1861,7 +1836,6 @@ body {
   align-items: center;
   letter-spacing: .08em;
   text-decoration: none;
-  text-transform: uppercase;
   transition: color var(--transition-base);
 }
 
@@ -1884,58 +1858,6 @@ body {
 /* ==========================================
    REGISTRO / FORMULARIO
 ========================================== */
-
-.ciaf-register-section {
-  padding: 72px 0 80px;
-  background: var(--ciaf-bg-light);
-}
-
-.ciaf-register-card {
-  padding: clamp(32px, 4vw, 48px);
-  border: 1px solid var(--ciaf-border-card);
-  background: var(--ciaf-white);
-  box-shadow: var(--shadow-elegant);
-}
-
-.ciaf-register-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-  align-items: start;
-}
-
-.ciaf-title-display--register {
-  max-width: 520px;
-  line-height: .98;
-  letter-spacing: -.07em;
-  color: var(--ciaf-primary);
-}
-
-.ciaf-register-lead {
-  max-width: 480px;
-  color: var(--ciaf-muted);
-  line-height: 1.65;
-}
-
-.ciaf-register-actions {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.ciaf-register-form-box {
-  border: 1px solid var(--ciaf-border-card);
-  background: var(--ciaf-white);
-}
-
-.ciaf-register-form-box__title {
-  color: var(--ciaf-primary);
-  font-family: var(--font-family-display);
-  letter-spacing: -.03em;
-}
-
-.ciaf-register-form-box__subtitle {
-  color: var(--ciaf-muted);
-  line-height: 1.5;
-}
 
 .ciaf-field {
   display: block;

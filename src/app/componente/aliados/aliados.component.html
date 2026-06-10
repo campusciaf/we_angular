@@ -2,31 +2,22 @@
   <div class="container-xxl ciaf-allies-container">
 
     <header class="ciaf-allies-header mx-auto mb-5">
-      <span class="ciaf-pill ciaf-pill--allies fs-10 fw-bold rounded-pill px-3">CONVENIOS CIAF</span>
-      <h2 class="ciaf-title-display ciaf-title-display--allies fs-48 fw-black m-0 mt-3 mb-3">Aliados Estratégicos</h2>
-      <p class="ciaf-text-lead ciaf-text-lead--muted ciaf-text-lead--center fs-16 fw-regular m-0 mx-auto">
+      <span class="ciaf-pill ciaf-pill--allies fs-12 fw-bold rounded-pill px-3">CONVENIOS CIAF</span>
+      <div><h2 class="fs-36 fw-black m-0 mt-3 mb-3 ciaf-gradient-text ciaf-gradient-text--brand">Aliados Estratégicos</h2></div>
+      <p class="fs-16 fw-regular m-0 mx-auto">
         Convenios, alianzas académicas y financieras que potencian la experiencia y empleabilidad de cada estudiante CIAF.
       </p>
     </header>
 
     <div class="ciaf-allies-slider-wrap" *ngIf="listarAliados?.length && usarCarrusel">
-      <div
-        #viewport
-        class="ciaf-allies-slider"
-        (pointerdown)="onPointerDown($event)"
-        (pointermove)="onPointerMove($event)"
-        (pointerup)="onPointerUp($event)"
-        (pointercancel)="onPointerUp($event)"
-        (pointerleave)="onPointerLeave($event)"
-      >
+      <div #viewport class="ciaf-allies-slider">
         <div
-          class="ciaf-allies-slider__track gap-3 d-flex"
-          [class.ciaf-allies-slider__track--anim]="animando"
-          [style.transform]="'translate3d(' + desplazamiento + 'px, 0, 0)'"
+          class="ciaf-allies-slider__track gap-3 d-flex aliados-marquee-track"
           [style.--ciaf-allies-card-width.px]="anchoTarjeta"
+          [style.animationDuration.s]="duracionAnimacion"
         >
           <a
-            *ngFor="let aliado of listarAliados"
+            *ngFor="let aliado of listarAliadosLoop; trackBy: trackByIndice"
             class="ciaf-allies-card p-4 rounded-4"
             [href]="aliado.url_aliado || '#'"
             [attr.target]="aliado.url_aliado ? '_blank' : null"

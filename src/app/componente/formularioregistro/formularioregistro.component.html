@@ -1,18 +1,18 @@
-<section class="ciaf-register-section" id="inscribete">
-  <div class="container-xxl">
-    <div class="ciaf-register-card rounded-5">
+<section class="my-4 py-4" id="inscribete">
+  <div class="container-xxl pt-4 mt-4">
+    <div class="border p-5 rounded-5 shadow">
 
-      <div class="ciaf-register-grid g-4 g-lg-5">
+      <div class="row justify-content-center align-items-center">
 
-        <div class="ciaf-register-intro">
-          <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3">INSCRIPCIONES ABIERTAS</span>
+        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-12">
+          <span class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3">INSCRIPCIONES ABIERTAS</span>
 
-          <h2 class="ciaf-title-display ciaf-title-display--register fs-56 fw-black m-0 mt-3 mb-4">
+          <h2 class="fs-56 fw-black m-0 mt-3 mb-4 text-color-2">
             Tu próximo capítulo empieza
             <span class="ciaf-gradient-text ciaf-gradient-text--brand">hoy.</span>
           </h2>
 
-          <p class="ciaf-register-lead fs-16 fw-regular mb-4">
+          <p class="fs-18 fw-regular mb-4">
             Inscripción 100% en línea. Financiación directa al 0% de interés y acompañamiento
             desde el primer clic.
           </p>
@@ -43,9 +43,9 @@
           </div>
         </div>
 
-        <div class="ciaf-register-form-box p-4 rounded-5">
-          <h3 class="ciaf-register-form-box__title fs-20 fw-extrablack mb-1">Pide información</h3>
-          <p class="ciaf-register-form-box__subtitle fs-14 mb-3">Te contactamos en menos de 24h.</p>
+        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-12 p-4 rounded-5 border">
+          <h3 class="fs-20 fw-black mb-1 text-color-2">Pide información</h3>
+          <p class="fs-14 mb-3">Te contactamos en menos de 24h.</p>
 
           <form [formGroup]="myForm" (ngSubmit)="agregar()" novalidate>
             <input
@@ -116,7 +116,7 @@
               <option value="Sabados">Sabados</option>
             </select>
 
-            <div class="ciaf-register-check d-flex gap-2 my-1 mb-4">
+            <div class="ciaf-register-check d-flex gap-2 my-1 mb-4 fs-10">
               <input type="checkbox" id="registroAcepto" formControlName="acepto" />
               <label for="registroAcepto">
                 Acepto el envío de información a mi correo electrónico. He revisado la política de

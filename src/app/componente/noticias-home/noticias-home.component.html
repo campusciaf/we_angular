@@ -3,8 +3,8 @@
 
     <div class="ciaf-news-header d-flex align-items-end justify-content-between gap-4 mb-5">
       <div>
-        <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3">NOTICIAS</span>
-        <h2 class="ciaf-title-display ciaf-title-display--news fs-56 fw-black m-0 mt-3">
+        <span class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3">NOTICIAS</span>
+        <h2 class="fs-48 fw-black m-0 mt-3 text-color-2">
           Noticias que <span class="ciaf-gradient-text ciaf-gradient-text--brand">inspiran</span>
         </h2>
       </div>
@@ -67,14 +67,14 @@
       <i class="fa-solid fa-circle-play"></i>
     </button>
 
-    <span class="ciaf-news-card__badge fs-10 py-1 px-2 rounded-pill" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
+    <span class="ciaf-news-card__badge fs-11 fw-bold py-1 px-2 rounded-pill text-color-2" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
   </div>
 
   <div class="ciaf-news-card__body p-4 d-flex flex-column">
-    <p class="ciaf-news-card__date fs-10 fw-black mb-2">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
-    <h3 class="ciaf-news-card__title fs-16 fw-extrablack mb-2">{{ noticia.titulo_noticias }}</h3>
-    <p class="ciaf-news-card__text fs-14 mb-4" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
-    <a [routerLink]="['/noticias', noticia.link_noticia]" class="ciaf-news-card__link fs-14 fw-black gap-1 d-inline-flex align-items-center">
+    <p class="fs-12 fw-bold mb-2 text-uppercase ls-4">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+    <h3 class="fs-18 fw-bold mb-2 text-color-2">{{ noticia.titulo_noticias }}</h3>
+    <p class="fs-14 mb-4" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
+    <a [routerLink]="['/noticias', noticia.link_noticia]" class="ciaf-news-card__link fs-14 fw-bold gap-1 d-inline-flex align-items-center">
       Leer más
       <i class="fa-solid fa-arrow-up-right-from-square"></i>
     </a>

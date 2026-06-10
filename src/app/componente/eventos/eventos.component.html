@@ -4,9 +4,9 @@
   <div class="container-xxl ciaf-events-container">
     <div class="ciaf-events-header d-flex align-items-end justify-content-between gap-4 mb-5">
       <div>
-        <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-10 fw-bold rounded-pill px-3">AGENDA CIAF</span>
+        <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3">AGENDA CIAF</span>
 
-        <h2 class="ciaf-title-display ciaf-title-display--events fs-64 fw-black m-0 mt-3">
+        <h2 class=" fs-48 fw-black m-0 mt-3 text-white">
           Próximos <span class="ciaf-gradient-text ciaf-gradient-text--accent">eventos</span>
         </h2>
       </div>
@@ -32,30 +32,30 @@
 
           <div>
             <span class="ciaf-event-tag fs-10 fw-black mb-1 py-1 px-2 rounded-pill">{{ getEventTag(datos) }}</span>
-            <h3 class="ciaf-event-card__title fs-16 fw-extrablack">{{ datos.evento }}</h3>
-            <p class="ciaf-event-card__meta fs-12 d-flex gap-1 mt-1">
+            <h3 class="fs-18 ">{{ datos.evento }}</h3>
+            <p class="fs-12 text-color-4 d-flex gap-1 mt-1 fw-bold">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               {{ getEventLocation(datos) }}
             </p>
           </div>
         </div>
 
-        <p class="ciaf-event-card__text fs-12 mb-4 pt-1">{{ getEventDescription(datos) }}</p>
+        <p class="fs-14 mb-4 pt-1 text-color-4 fw-semibold">{{ getEventDescription(datos) }}</p>
 
         <div class="ciaf-event-card__footer fw-black d-flex gap-3 pt-4">
-          <a href="#" class="ciaf-event-link--muted">
-            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-            Agendar
+          <a href="#" class="text-color-4 fs-12">
+            <i class="fa-regular fa-calendar m-1" aria-hidden="true"></i>
+            AGENDAR
           </a>
 
           <a
             [href]="getEventLink(datos)"
-            class="ciaf-event-link--cta"
+            class="ciaf-event-link--cta fs-14"
             target="_blank"
             rel="noopener noreferrer"
           >
             Registrarme
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square m-1" aria-hidden="true"></i>
           </a>
         </div>
       </article>
