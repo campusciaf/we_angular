@@ -2,8 +2,8 @@
   <div class="container-xxl ciaf-quick-access-container">
 
     <header class="ciaf-quick-access-header">
-      <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3">ACCESOS RÁPIDOS</span>
-      <h2 class="ciaf-title-display ciaf-title-display--quick-access fs-48 fw-black m-0 mt-3">
+      <span class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3">ACCESOS RÁPIDOS</span>
+      <h2 class="fs-48 fw-black m-0 mt-3 text-color-2">
         Todo a un <span class="ciaf-gradient-text ciaf-gradient-text--brand">clic.</span>
       </h2>
     </header>
@@ -13,7 +13,7 @@
 
         <a
           *ngIf="acceso.tipoEnlace === 'externo'"
-          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center"
+          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center m-2"
           [href]="acceso.enlace"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@
 
         <a
           *ngIf="acceso.tipoEnlace === 'ruta'"
-          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center"
+          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center m-2"
           [routerLink]="acceso.enlace"
         >
           <ng-container *ngTemplateOutlet="contenidoTarjeta; context: { $implicit: acceso }"></ng-container>
@@ -31,7 +31,7 @@
 
         <a
           *ngIf="acceso.tipoEnlace === 'modal'"
-          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center"
+          class="ciaf-quick-access-card gap-3 p-4 rounded-4 d-flex align-items-center m-2"
           [href]="acceso.enlace"
           data-bs-toggle="modal"
         >
@@ -55,8 +55,8 @@
   </span>
 
   <div class="ciaf-quick-access-card__content">
-    <h3 class="ciaf-quick-access-card__title fs-16 fw-extrablack mb-1">{{ acceso.titulo }}</h3>
-    <p class="ciaf-quick-access-card__subtitle fs-12">{{ acceso.subtitulo }}</p>
+    <h3 class="fs-16 fw-bold mb-1 text-color-2">{{ acceso.titulo }}</h3>
+    <p class="fs-12 text-color-1">{{ acceso.subtitulo }}</p>
   </div>
 
   <i class="fa-solid fa-arrow-up-right-from-square ciaf-quick-access-card__arrow fs-14" aria-hidden="true"></i>

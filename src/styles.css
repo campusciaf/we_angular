@@ -233,6 +233,9 @@
 .text-color-4{
   color: #919ecd !important;
 }
+.text-color-5{
+  color: #b7bed7 !important;
+}
 
 /* ==========================================
    LETTER SPACING UTILITIES
@@ -251,6 +254,16 @@
 
 .ls-4 {
   letter-spacing: 0.20em;
+}
+
+/* ==========================================
+   BACKGROUND COLOR UTILITIES
+========================================== */
+.bg-color-1{
+  background-color: #dfe3ee !important;
+}
+.bg-color-2{
+  background-color: #e2f1d8 !important;
 }
 
 html {
@@ -932,19 +945,6 @@ body {
   text-transform: uppercase;
 }
 
-.ciaf-offer-card__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--ciaf-border-card);
-  color: var(--ciaf-primary);
-}
-
-.ciaf-offer-card__footer a {
-  color: var(--ciaf-primary);
-  text-decoration: none;
-}
-
 .ciaf-offer-arrow {
   width: 36px;
   height: 36px;
@@ -1373,52 +1373,6 @@ body {
    FOOTER
 ========================================== */
 
-.ciaf-footer {
-  background: #f4f7fb;
-  color: var(--ciaf-muted);
-  padding: 56px 0 0;
-}
-
-.ciaf-footer-container {
-  max-width: var(--container-offer);
-}
-
-.ciaf-footer-main {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr) minmax(0, 1fr);
-  padding-bottom: 40px;
-}
-
-.ciaf-footer-logo {
-  display: inline-block;
-}
-
-.ciaf-footer-logo img {
-  display: block;
-  width: auto;
-  max-width: 128px;
-  height: auto;
-}
-
-.ciaf-footer-tagline {
-  margin: 0 0 28px;
-  max-width: 280px;
-  line-height: 1.55;
-  color: var(--ciaf-muted-soft);
-}
-
-.ciaf-footer-heading {
-  color: var(--ciaf-primary);
-  font-family: var(--font-family-display);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.ciaf-footer-social {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .ciaf-footer-social__link {
   display: grid;
   place-items: center;
@@ -1440,92 +1394,8 @@ body {
   transform: translateY(-2px);
 }
 
-.ciaf-footer-contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 
-.ciaf-footer-contact-item {
-  display: flex;
-  align-items: flex-start;
-}
 
-.ciaf-footer-contact-item__icon {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  background: rgba(56, 189, 248, .12);
-  color: var(--ciaf-primary);
-}
-
-.ciaf-footer-contact-item__icon--whatsapp {
-  background: rgba(132, 204, 22, .18);
-  color: #15803d;
-}
-
-.ciaf-footer-contact-item__label {
-  color: var(--ciaf-primary);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.ciaf-footer-contact-item__text {
-  line-height: 1.45;
-  color: var(--ciaf-muted);
-}
-
-.ciaf-footer-link {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.ciaf-footer-link:hover {
-  color: var(--ciaf-primary);
-}
-
-.ciaf-footer-nav {
-  display: flex;
-  flex-direction: column;
-}
-
-.ciaf-footer-nav-list {
-  list-style: none;
-}
-
-.ciaf-footer-nav-list li + li {
-}
-
-.ciaf-footer-nav-link {
-  color: var(--ciaf-muted);
-  line-height: 1.4;
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.ciaf-footer-nav-link:hover {
-  color: var(--ciaf-primary);
-}
-
-.ciaf-footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0 28px;
-  border-top: 1px solid var(--ciaf-border-card);
-}
-
-.ciaf-footer-copy {
-  color: var(--ciaf-muted-soft);
-}
-
-.ciaf-footer-vigilada {
-  display: block;
-  width: auto;
-  max-height: 42px;
-}
 
 /* ==========================================
    NEWSLETTER
@@ -1824,37 +1694,6 @@ body {
   min-height: 62px;
 }
 
-.ciaf-event-card__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, .12);
-}
-
-.ciaf-event-card__footer a {
-  display: inline-flex;
-  align-items: center;
-  letter-spacing: .08em;
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.ciaf-event-link--muted {
-  color: rgba(255, 255, 255, .82);
-}
-
-.ciaf-event-link--muted:hover {
-  color: var(--ciaf-white);
-}
-
-.ciaf-event-link--cta {
-  color: var(--ciaf-lime);
-}
-
-.ciaf-event-link--cta:hover {
-  color: #d9f99d;
-}
-
 /* ==========================================
    REGISTRO / FORMULARIO
 ========================================== */
@@ -2112,36 +1951,8 @@ body {
   }
 }
 
-@media (max-width: 1199.98px) {
-  .ciaf-footer-main {
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .ciaf-footer-nav {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
 
-@media (max-width: 767.98px) {
-  .ciaf-footer-main {
-    grid-template-columns: 1fr;
-  }
-
-  .ciaf-footer-contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ciaf-footer-nav {
-    flex-direction: column;
-  }
-
-  .ciaf-footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
 
 @media (max-width: 991.98px) {
   .ciaf-newsletter-banner {

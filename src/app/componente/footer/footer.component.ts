@@ -20,7 +20,7 @@ interface RedSocial {
 })
 export class FooterComponent {
 
-  logo = 'assets/image/logo-azul.webp';
+  logo = 'assets/image/logo-negro.webp';
   vigilada = 'assets/image/vigilada-2.webp';
   correociaf = 'contacto@ciaf.edu.co';
 
