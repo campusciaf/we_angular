@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
@@ -10,7 +10,7 @@ declare var $:any;
   templateUrl: './administracion.component.html',
   styleUrls: ['./administracion.component.css']
 })
-export class AdministracionComponent implements OnInit {
+export class AdministracionComponent implements OnInit, OnDestroy {
 
 
 public sotfware_pic="assets/image/software-pic.webp";
@@ -196,6 +196,16 @@ slideConfig = {
 pagina:any;
 activo:any;
 
+  private scrollSpyIgnorar = false;
+  private scrollSpyTick = false;
+  private scrollSpyTimer?: ReturnType<typeof setTimeout>;
+
+  campoAccionActivo: string | null = null;
+
+  toggleCampoAccion(id: string): void {
+    this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
+  }
+
 
 isValid1:boolean = true;
 isValid2:boolean = true;
@@ -223,10 +233,13 @@ isValid4:boolean = true;
 
   scrollToSeccion(sectionId: string, navId?: string): void {
     if (sectionId === 'top') {
+      this.scrollSpyIgnorar = true;
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (navId) {
         this.activo = navId;
+        this.centrarTabNav(navId);
       }
+      this.reanudarScrollSpy(900);
       return;
     }
 
@@ -235,20 +248,84 @@ isValid4:boolean = true;
       return;
     }
 
-    const stickyNav = document.querySelector('.ciaf-program-nav');
-    const stickyH = stickyNav ? stickyNav.getBoundingClientRect().height : 48;
-    const offset = 38 + 78 + stickyH + 12;
-    const top = el.getBoundingClientRect().top + window.scrollY - offset;
-
-    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
 
     if (navId) {
       this.activo = navId;
-      $('.ciaf-program-nav__tabs a').removeClass('active');
-      $('#btn-' + navId).addClass('active');
-      $('[id^="btn-"][id$="-1"]').removeClass('active-m');
-      $('#btn-' + navId + '-1').addClass('active-m');
+      this.centrarTabNav(navId);
     }
+
+    this.scrollSpyIgnorar = true;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    this.reanudarScrollSpy(900);
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    if (this.scrollSpyIgnorar || this.scrollSpyTick) {
+      return;
+    }
+
+    this.scrollSpyTick = true;
+    requestAnimationFrame(() => {
+      this.actualizarSeccionPorScroll();
+      this.scrollSpyTick = false;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.scrollSpyTimer) {
+      clearTimeout(this.scrollSpyTimer);
+    }
+  }
+
+  private getNavOffset(): number {
+    const stickyNav = document.querySelector('.ciaf-program-nav');
+    const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
+    return 38 + 78 + stickyH + 12;
+  }
+
+  private actualizarSeccionPorScroll(): void {
+    const offset = this.getNavOffset();
+    let seccionActual = this.seccionesPrograma[0];
+
+    for (const seccion of this.seccionesPrograma) {
+      const el = document.getElementById(seccion.id);
+
+      if (!el) {
+        continue;
+      }
+
+      if (el.getBoundingClientRect().top - offset <= 8) {
+        seccionActual = seccion;
+      } else {
+        break;
+      }
+    }
+
+    if (this.activo !== seccionActual.nav) {
+      this.activo = seccionActual.nav;
+      this.centrarTabNav(seccionActual.nav);
+    }
+  }
+
+  private centrarTabNav(navId: string): void {
+    document.getElementById('btn-' + navId)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest'
+    });
+  }
+
+  private reanudarScrollSpy(delayMs: number): void {
+    if (this.scrollSpyTimer) {
+      clearTimeout(this.scrollSpyTimer);
+    }
+
+    this.scrollSpyTimer = setTimeout(() => {
+      this.scrollSpyIgnorar = false;
+      this.actualizarSeccionPorScroll();
+    }, delayMs);
   }
 
   paginas(pagina: string): void {

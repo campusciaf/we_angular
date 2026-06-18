@@ -1,65 +1,81 @@
 <app-header></app-header>
 
 <!-- Sección 1: Hero del programa (imágenes y textos desde API) -->
-<section class="ciaf-program-hero" *ngFor="let datos of listarPrograma">
-  <div class="ciaf-program-hero__media" aria-hidden="true">
+<section
+  class="ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4"
+  *ngFor="let datos of listarPrograma"
+>
+  <div class="ciaf-program-hero__media position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
     <img
-      class="ciaf-program-hero__img ciaf-program-hero__img--desktop"
+      class="ciaf-program-hero__img w-100 h-100 object-fit-cover d-none d-lg-block"
       [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programas"
       [alt]="datos.nombre_programa || 'Programa CIAF'"
     />
     <img
-      class="ciaf-program-hero__img ciaf-program-hero__img--mobile"
+      class="ciaf-program-hero__img w-100 h-100 object-fit-cover d-lg-none"
       [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programas_movil"
       [alt]="datos.nombre_programa || 'Programa CIAF'"
     />
   </div>
 
-  <div class="ciaf-program-hero__overlay" aria-hidden="true"></div>
+  <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="container-xxl ciaf-program-hero__container">
-    <div class="ciaf-program-hero__content">
-      <span class="ciaf-program-hero__snies fs-12 fw-bold" *ngIf="datos.snies">SNIES {{ datos.snies }}</span>
+  <div class="row z-2 py-5 mt-5">
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 mt-5 p-4">
+      <span
+        class="badge rounded-pill bg-white text-color-1 fs-12 fw-bold px-3 py-2 my-3 ls-4"
+        *ngIf="datos.snies"
+      >
+        SNIES {{ datos.snies }}
+      </span>
 
-      <h1 class="ciaf-program-hero__title fs-72 fw-extrablack">
+      <h1 class="fs-60 fw-extrablack mb-3 lh-1">
         {{ datos.nombre_programa || 'Administración de Empresas' }}
       </h1>
 
-      <p class="ciaf-program-hero__lema fs-24 fw-bold" *ngIf="datos.frase_programa">
+      <p class="fs-24 fw-bold mb-3 text-color-3" *ngIf="datos.frase_programa">
         {{ datos.frase_programa }}
       </p>
 
-      <p
-        class="ciaf-program-hero__desc fs-16"
+      <div
+        class="text-color-5 fs-18  mb-4 lh-base"
         *ngIf="datos.descripcion_programa"
         [innerHTML]="datos.descripcion_programa"
-      ></p>
+      ></div>
 
-      <ul class="ciaf-program-hero__chips">
-        <li class="fw-semibold">
-          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+      <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
           Programa Profesional Universitario
         </li>
-        <li class="fw-semibold">
-          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-clock text-color-3" aria-hidden="true"></i>
           Duración: 10 semestres
         </li>
-        <li class="fw-semibold">
-          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-calendar-days text-color-3" aria-hidden="true"></i>
           Jornada nocturna y fines de semana
         </li>
-        <li class="fw-semibold">
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-location-dot text-color-3" aria-hidden="true"></i>
           Modalidad Presencial (PAT)
         </li>
       </ul>
 
-      <div class="ciaf-program-hero__actions">
-        <button type="button" class="ciaf-btn ciaf-btn--lime fs-14 fw-bold gap-2 rounded-pill py-3 px-4" (click)="scrollToSeccion('conoce-el-programa', '1')">
+      <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+        <button
+          type="button"
+          class="ciaf-btn ciaf-btn--lime fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
+          (click)="scrollToSeccion('conoce-el-programa', '1')"
+        >
           Conoce el programa
           <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
         </button>
-        <button type="button" class="ciaf-btn ciaf-btn--hero-light fs-14 fw-bold gap-2 rounded-pill" (click)="scrollToSeccion('proceso-paso-a-paso', '9')">
+        <button
+          type="button"
+          class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
+          (click)="scrollToSeccion('proceso-paso-a-paso', '9')"
+        >
           Inicia tu matrícula
           <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </button>
@@ -67,7 +83,7 @@
     </div>
   </div>
 
-  <div class="ciaf-program-hero__scroll fs-20" aria-hidden="true">
+  <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
     <i class="fa-solid fa-computer-mouse"></i>
   </div>
 </section>
@@ -75,16 +91,20 @@
 <!-- Navegación por secciones (scroll) -->
 <section class="ciaf-program-nav">
   <div class="container-xxl">
-    <div class="ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll">
+    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
       <a
         *ngFor="let seccion of seccionesPrograma"
+        role="button"
         (click)="scrollToSeccion(seccion.id, seccion.nav)"
-        class="fw-semibold"
-        [class.active]="activo == seccion.nav"
-        [class.fw-bold]="activo == seccion.nav"
+        class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
+        [class.active]="activo === seccion.nav"
+        [class.text-white]="activo === seccion.nav"
+        [class.fw-bold]="activo === seccion.nav"
+        [class.fw-semibold]="activo !== seccion.nav"
         [attr.id]="'btn-' + seccion.nav"
+        [attr.aria-current]="activo === seccion.nav ? 'true' : null"
       >{{ seccion.label }}</a>
-    </div>
+    </nav>
   </div>
 </section>
 
@@ -95,19 +115,17 @@
         <div id="programa-administracion">
 
           <!-- Sección 1: Conoce el programa -->
-          <section class="ciaf-conoce ciaf-program-section" id="conoce-el-programa">
-            <div class="ciaf-conoce__bg" aria-hidden="true"></div>
-
-            <div class="container-xxl ciaf-conoce__container">
-              <header class="ciaf-conoce__header">
+          <section class="py-5 bg-img-2" id="conoce-el-programa">
+            <div class="row justify-content-center py-5">
+              <header class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 text-center">
                 <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Conoce el programa</span>
 
-                <h2 class="ciaf-conoce__title fs-40 fw-extrablack">
-                  Formación para liderar, emprender y
-                  <span class="ciaf-conoce__title-accent fs-40">transformar organizaciones</span>
+                <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+                  Formación para liderar, emprender y <br>transformar 
+                  <span class="ciaf-gradient-text ciaf-gradient-text--brand"> organizaciones</span>
                 </h2>
 
-                <p class="ciaf-conoce__subtitle fs-16">
+                <p class="fs-16 text-color-1">
                   Descubre el perfil profesional y los campos donde podrás generar impacto como
                   Administrador de Empresas CIAF.
                 </p>
@@ -128,11 +146,11 @@
                   class="ciaf-conoce__tab-input"
                 />
 
-                <div class="ciaf-conoce__tab-labels" role="tablist" aria-label="Tipo de perfil">
+                <div class="shadow-sm p-2 rounded-pill" role="tablist" aria-label="Tipo de perfil">
                   <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro fs-14 fw-semibold" for="ciaf-tab-perfil-pro">
                     Perfil profesional
                   </label>
-                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14 fw-semibold" for="ciaf-tab-perfil-ocu">
+                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14 fw-bold" for="ciaf-tab-perfil-ocu">
                     Perfil ocupacional
                   </label>
                 </div>
@@ -143,21 +161,22 @@
                   role="tabpanel"
                   aria-labelledby="ciaf-tab-perfil-pro"
                 >
-                  <div class="ciaf-conoce__grid">
-                    <article class="ciaf-conoce__main-card" *ngFor="let datos2 of listarPrograma">
-                      <span class="ciaf-conoce__card-badge fs-10 fw-bold">
+                  <div class="row p-4">
+
+                    <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 bg-white" *ngFor="let datos2 of listarPrograma">
+                      <span class="ciaf-conoce__card-badge fs-12 fw-bold">
                         <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
                         Perfil profesional
                       </span>
 
                       <div
-                        class="ciaf-conoce__main-body fs-14"
+                        class=" fs-16"
                         *ngIf="datos2.descripcion_programa; else conoceProFallback"
                         [innerHTML]="datos2.descripcion_programa"
                       ></div>
 
                       <ng-template #conoceProFallback>
-                        <div class="ciaf-conoce__main-body fs-14">
+                        <div class="fs-14">
                           <p>
                             Profesional con capacidad de liderazgo, trabajo en equipo, negociación y
                             tolerancia, capaz de asumir retos y adaptarse a los cambios del entorno
@@ -176,46 +195,68 @@
                       </ng-template>
                     </article>
 
-                    <div class="ciaf-conoce__side-cards">
-                      <article class="ciaf-conoce__mini-card">
-                        <span class="ciaf-conoce__mini-icon fs-16" aria-hidden="true">
-                          <i class="fa-solid fa-user-group"></i>
-                        </span>
-                        <h3 class="fs-16 fw-bold">Liderazgo y trabajo en equipo</h3>
-                        <p>
-                          Fortalece habilidades para liderar equipos, negociar y trabajar de forma
-                          colaborativa en entornos organizacionales dinámicos.
-                        </p>
-                      </article>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                      <div class="row g-3">
 
-                      <article class="ciaf-conoce__mini-card">
-                        <span class="ciaf-conoce__mini-icon fs-16" aria-hidden="true">
-                          <i class="fa-solid fa-rocket"></i>
-                        </span>
-                        <h3 class="fs-16 fw-bold">Emprendimiento y desarrollo empresarial</h3>
-                        <p>
-                          Crea ideas de negocio y gestiona PYMEs productivas que impulsen el crecimiento
-                          económico y la generación de empleo.
-                        </p>
-                      </article>
-
-                      <article class="ciaf-conoce__mini-card">
-                        <span class="ciaf-conoce__mini-icon fs-16" aria-hidden="true">
-                          <i class="fa-solid fa-display"></i>
-                        </span>
-                        <h3 class="fs-16 fw-bold">Herramientas tecnológicas para la gestión</h3>
-                        <p>
-                          Aplica tecnología según las necesidades reales de la empresa para optimizar
-                          procesos y decisiones.
-                        </p>
-                      </article>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                            <article class="card h-100 border shadow-sm p-4">
+                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3 "
+                                      style="width:56px;height:56px;">
+                                    <i class="fa-solid fa-user-group text-color-2"></i>
+                                </span>
+                                <h3 class="fs-16 fw-bold text-color-2">
+                                    Liderazgo y trabajo en equipo
+                                </h3>
+                                <p class="fs-14 text-color-1 mb-0">
+                                    Fortalece habilidades para liderar equipos, negociar y trabajar
+                                    de forma colaborativa en entornos organizacionales dinámicos.
+                                </p>
+                            </article>
+                        </div>
+                    
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                            <article class="card h-100 border shadow-sm p-4">
+                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                                      style="width:56px;height:56px;">
+                                    <i class="fa-solid fa-rocket text-color-2"></i>
+                                </span>
+                                <h3 class="fs-16 fw-bold text-color-2">
+                                    Emprendimiento y desarrollo empresarial
+                                </h3>
+                                <p class="fs-14 text-color-1 mb-0">
+                                    Crea ideas de negocio y gestiona PYMEs productivas que impulsen
+                                    el crecimiento económico y la generación de empleo.
+                                </p>
+                    
+                            </article>
+                        </div>
+                    
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                            <article class="card h-100 border shadow-sm p-4">
+                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                                      style="width:56px;height:56px;">
+                                      <i class="fa-solid fa-laptop-code text-color-2"></i>
+                                </span>
+                                <h3 class="fs-16 fw-bold text-color-2">
+                                    Herramientas tecnológicas para la gestión
+                                </h3>
+                                <p class="fs-14 text-color-1 mb-0">
+                                    Aplica tecnología según las necesidades reales de la empresa
+                                    para optimizar procesos y apoyar la toma de decisiones.
+                                </p>
+                    
+                            </article>
+                        </div>
+                    
+                      </div>
                     </div>
+
                   </div>
                 </div>
 
                 <!-- Panel: Perfil ocupacional -->
                 <div
-                  class="ciaf-conoce__panel ciaf-conoce__panel--ocu"
+                  class="ciaf-conoce__panel ciaf-conoce__panel--ocu mt-5"
                   role="tabpanel"
                   aria-labelledby="ciaf-tab-perfil-ocu"
                 >
@@ -240,30 +281,93 @@
                     </ng-container>
 
                     <ng-template #ocuFallback>
-                      <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-building"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">Administrador de su propia empresa</p>
-                      </article>
-                      <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-briefcase"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">Gerente y/o administrador de organizaciones privadas y/o mixtas</p>
-                      </article>
-                      <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-lightbulb"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">Gerente de proyectos</p>
-                      </article>
-                      <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-user-gear"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">Asesor y consultor organizacional</p>
-                      </article>
-                      <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-chart-line"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">Gerente de área o división de grandes empresas</p>
-                      </article>
-                      <article class="ciaf-conoce__ocu-card">
-                        <span class="ciaf-conoce__ocu-card-icon fs-16"><i class="fa-solid fa-crown"></i></span>
-                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">Gerente general y presidente de Junta Directiva</p>
-                      </article>
+                      <div class="row g-3 px-4">
+
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-building text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Administrador de su propia empresa
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-briefcase text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente y/o administrador de organizaciones privadas y/o mixtas
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-lightbulb text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente de proyectos
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-user-gear text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Asesor y consultor organizacional
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-chart-line text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente de área o división de grandes empresas
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-crown text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente general y presidente de Junta Directiva
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                      </div>
                     </ng-template>
                   </div>
                 </div>
@@ -272,202 +376,298 @@
           </section>
 
           <!-- Sección 2: Campo de acción -->
-          <section class="ciaf-campo ciaf-program-section" id="campo-de-accion">
-            <div class="container-xxl">
-              <header class="ciaf-campo__header">
+          <section class="ciaf-section-light mt-5 pt-5" id="campo-de-accion" [class.ciaf-section-light]="campoAccionActivo !== null">
+            <div class="row p-4">
+              <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
                 <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Campo de acción</span>
-                <h2 class="ciaf-campo__title fs-40 fw-extrablack">
-                  ¿Dónde podrás generar <span class="ciaf-campo__title-accent fs-40">impacto</span>?
+                <h2 class="fs-36 fw-extrablack text-color-2">
+                  ¿Dónde podrás generar <span class="ciaf-gradient-text ciaf-gradient-text--brand fs-40">impacto</span>?
                 </h2>
               </header>
 
-              <div class="ciaf-campo__board">
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-1" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-1">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Gerente de organizaciones privadas y públicas</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Dirige la estrategia y operación de empresas de cualquier sector.</span>
-                  </label>
-                </div>
-
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-2" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-2">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Director de áreas empresariales</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Lidera departamentos de mercadeo, talento humano, finanzas u operaciones.</span>
-                  </label>
-                </div>
-
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-3" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-3">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Gerente de proyectos</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Planifica, ejecuta y entrega proyectos cumpliendo objetivos y presupuestos.</span>
-                  </label>
-                </div>
-
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-4" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-4">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Consultor organizacional</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Asesora a empresas para mejorar su productividad y competitividad.</span>
-                  </label>
-                </div>
-
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-5" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-5">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Director de planeación estratégica</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Define el rumbo y las metas de largo plazo de la organización.</span>
-                  </label>
-                </div>
-
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-6" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-6">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Evaluador de proyectos de inversión</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Analiza la viabilidad financiera de nuevas iniciativas.</span>
-                  </label>
-                </div>
-
-                <div class="ciaf-campo__item">
-                  <input type="radio" name="campo-accion" id="campo-item-7" class="ciaf-campo__input" />
-                  <label class="ciaf-campo__card" for="campo-item-7">
-                    <span class="ciaf-campo__head">
-                      <span class="ciaf-campo__item-title fs-16 fw-bold">Emprendedor y creador de empresas</span>
-                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="ciaf-campo__body fs-14">Funda y hace crecer tu propio negocio con bases sólidas.</span>
-                  </label>
-                </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '1'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('1')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
+                          <span class="fs-16 fw-bold text-color-2">
+                            Gerente de organizaciones privadas y públicas
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
+                        Dirige la estrategia y operación de empresas de cualquier sector.
+                      </div>
+              
+                  </button>
               </div>
+
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '2'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('2')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Director de áreas empresariales
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
+                          Lidera departamentos de mercadeo, talento humano, finanzas u operaciones.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '3'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('3')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Gerente de proyectos
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Planifica, ejecuta y entrega proyectos cumpliendo objetivos y presupuestos.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '4'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('4')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Consultor organizacional
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Asesora a empresas para mejorar su productividad y competitividad.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '5'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('5')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Director de planeación estratégica
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Define el rumbo y las metas de largo plazo de la organización.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '6'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('6')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Evaluador de proyectos de inversión
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Analiza la viabilidad financiera de nuevas iniciativas.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '7'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('7')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Emprendedor y creador de empresas
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Funda y hace crecer tu propio negocio con bases sólidas.
+                      </div>
+              
+                  </button>
+              </div>    
             </div>
           </section>
 
           <!-- Sección 3: Experiencias reales -->
-          <section class="ciaf-experiencias ciaf-program-section" id="experiencias-reales">
-            <div class="container-xxl">
-              <header class="ciaf-experiencias__header">
-                <span class="ciaf-pill ciaf-pill--on-dark fs-10 fw-bold rounded-pill">Experiencias reales</span>
-                <h2 class="ciaf-experiencias__title fs-40 fw-extrablack">
+          <section class="bg-color-4 py-5" id="experiencias-reales">
+            <div class="row p-4">
+              <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mb-2 text-white">Experiencias reales</span>
+                <h2 class=" fs-36 fw-extrablack text-white">
                   Conoce cómo se vive Administración de Empresas en CIAF
                 </h2>
               </header>
 
-              <div class="ciaf-experiencias__grid">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
                 <a
-                  class="ciaf-experiencias__card"
+                  class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
                   href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span
-                    class="ciaf-experiencias__thumb"
-                    style="background-image: url('https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg')"
-                  ></span>
-                  <span class="ciaf-experiencias__play fs-16" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-                  <span class="ciaf-experiencias__label fs-14 fw-semibold">Vive la experiencia CIAF</span>
+                  <div class="position-absolute top-0 start-0 w-100 h-100">
+                    <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                      <video
+                        class="w-100 h-100 object-fit-cover"
+                        poster="https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg"
+                        muted
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                      ></video>
+                    </div>
+                    <span
+                      class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                      aria-hidden="true"
+                    >
+                      <i class="fa-solid fa-play text-dark ms-1"></i>
+                    </span>
+                    <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                      Vive la experiencia CIAF
+                    </span>
+                  </div>
                 </a>
-
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
                 <a
-                  class="ciaf-experiencias__card"
+                  class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
                   href="https://www.youtube.com/watch?v=Ye8mB69B23A"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span
-                    class="ciaf-experiencias__thumb"
-                    style="background-image: url('https://img.youtube.com/vi/Ye8mB69B23A/hqdefault.jpg')"
-                  ></span>
-                  <span class="ciaf-experiencias__play fs-16" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-                  <span class="ciaf-experiencias__label fs-14 fw-semibold">Historias de nuestros estudiantes</span>
+                  <div class="position-absolute top-0 start-0 w-100 h-100">
+                    <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                      <video
+                        class="w-100 h-100 object-fit-cover"
+                        poster="https://img.youtube.com/vi/Ye8mB69B23A/hqdefault.jpg"
+                        muted
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                      ></video>
+                    </div>
+                    <span
+                      class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                      aria-hidden="true"
+                    >
+                      <i class="fa-solid fa-play text-dark ms-1"></i>
+                    </span>
+                    <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                      Historias de nuestros estudiantes
+                    </span>
+                  </div>
                 </a>
-
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
                 <a
-                  class="ciaf-experiencias__card"
+                  class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
                   href="https://www.youtube.com/watch?v=aqz-KE-bpKQ"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span
-                    class="ciaf-experiencias__thumb"
-                    style="background-image: url('https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg')"
-                  ></span>
-                  <span class="ciaf-experiencias__play fs-16" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-                  <span class="ciaf-experiencias__label fs-14 fw-semibold">Emprendimiento y liderazgo</span>
+                  <div class="position-absolute top-0 start-0 w-100 h-100">
+                    <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                      <video
+                        class="w-100 h-100 object-fit-cover"
+                        poster="https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
+                        muted
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                      ></video>
+                    </div>
+                    <span
+                      class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                      aria-hidden="true"
+                    >
+                      <i class="fa-solid fa-play text-dark ms-1"></i>
+                    </span>
+                    <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                      Emprendimiento y liderazgo
+                    </span>
+                  </div>
                 </a>
               </div>
+            
             </div>
           </section>
 
           <!-- Sección 4: Ruta de crecimiento profesional -->
-          <section class="ciaf-ruta ciaf-program-section" id="ruta-crecimiento">
-            <div class="container-xxl">
-              <header class="ciaf-ruta__header">
-                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Ruta de crecimiento profesional</span>
-                <h2 class="ciaf-ruta__title fs-48 fw-extrablack">
-                  Gradúate con <span class="ciaf-ruta__title-gradient fs-48">tres títulos</span> y crece paso a paso
+          <section class="my-5 py-5 ciaf-section-white py-5" id="ruta-crecimiento">
+            <div class="row p-4 justify-content-center">
+              <header class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 my-5 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-black rounded-pill px-4">Ruta de crecimiento profesional</span>
+                <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+                  Gradúate con <span class="ciaf-gradient-text ciaf-gradient-text--brand">tres títulos</span> y crece paso a paso
                 </h2>
-                <p class="ciaf-ruta__intro fs-16">
+                <p class="fs-16">
                   En CIAF avanzas por ciclos propedéuticos. Cada etapa te permite obtener un título y seguir
                   creciendo profesionalmente.
                 </p>
               </header>
 
-              <div class="ciaf-ruta__shell">
+              <div class="ciaf-ruta__shell col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
                 <input type="radio" name="ruta-ciclo" id="ruta-ciclo-1" class="ciaf-ruta__input" checked />
                 <input type="radio" name="ruta-ciclo" id="ruta-ciclo-2" class="ciaf-ruta__input" />
                 <input type="radio" name="ruta-ciclo" id="ruta-ciclo-3" class="ciaf-ruta__input" />
 
                 <nav class="ciaf-ruta__path" aria-label="Etapas del programa">
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student fs-12">Estudiante</span>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student fs-14 fw-bold">Estudiante</span>
                   <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2 fs-12">Técnico Profesional</span>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2 fs-14 fw-bold">Técnico Profesional</span>
                   <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3 fs-12">Tecnólogo</span>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3 fs-14 fw-bold">Tecnólogo</span>
                   <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
-                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4 fs-12">Profesional Universitario</span>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4 fs-14 fw-bold">Profesional Universitario</span>
                 </nav>
 
                 <div class="ciaf-ruta__pickers">
                   <label class="ciaf-ruta__picker ciaf-ruta__picker--1" for="ruta-ciclo-1">
                     <span class="ciaf-ruta__picker-top">
                       <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 1</span>
-                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--1 fs-14" aria-hidden="true">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                      <span class="bg-color-4 p-2 fs-14 rounded-circle" aria-hidden="true">
+                        <i class="fa-solid fa-graduation-cap text-white"></i>
                       </span>
                     </span>
                     <span class="ciaf-ruta__picker-title fs-16 fw-bold">Técnica Profesional en Procesos Empresariales</span>
                     <span class="ciaf-ruta__sem-track">
-                      <span class="ciaf-ruta__sem-node is-on fs-12">1</span>
+                      <span class="ciaf-ruta__sem-node fs-12">1</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node is-on fs-12">2</span>
+                      <span class="ciaf-ruta__sem-node  fs-12">2</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node is-on fs-12">3</span>
+                      <span class="ciaf-ruta__sem-node  fs-12">3</span>
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                      <span class="ciaf-ruta__sem-node is-on fs-12">4</span>
+                      <span class="ciaf-ruta__sem-node  fs-12">4</span>
                     </span>
-                    <span class="ciaf-ruta__picker-foot fs-12">
-                      <i class="fa-solid fa-user" aria-hidden="true"></i> Técnico Profesional
-                    </span>
+                    <div class="row fs-12 text-color-2 fw-bold">
+                      <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div> 
+                      <div class="col-auto mx-0 px-0">Técnico Profesional</div>
+                    </div>
                   </label>
 
                   <label class="ciaf-ruta__picker ciaf-ruta__picker--2" for="ruta-ciclo-2">
@@ -483,16 +683,17 @@
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                       <span class="ciaf-ruta__sem-node fs-12">6</span>
                     </span>
-                    <span class="ciaf-ruta__picker-foot fs-12">
-                      <i class="fa-solid fa-user" aria-hidden="true"></i> Tecnólogo
-                    </span>
+                    <div class="row fs-12 text-color-6 fw-bold">
+                      <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div> 
+                      <div class="col-auto mx-0 px-0">Tecnólogo</div>
+                    </div>
                   </label>
 
                   <label class="ciaf-ruta__picker ciaf-ruta__picker--3" for="ruta-ciclo-3">
                     <span class="ciaf-ruta__picker-top">
                       <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 3</span>
-                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--3 fs-14" aria-hidden="true">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                      <span class="bg-color-5 p-2 fs-14 rounded-circle" aria-hidden="true">
+                        <i class="fa-solid fa-graduation-cap text-white"></i>
                       </span>
                     </span>
                     <span class="ciaf-ruta__picker-title fs-16 fw-bold">Profesional Universitario en Administración de Empresas</span>
@@ -505,155 +706,270 @@
                       <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                       <span class="ciaf-ruta__sem-node fs-12">10</span>
                     </span>
-                    <span class="ciaf-ruta__picker-foot fs-12">
-                      <i class="fa-solid fa-user" aria-hidden="true"></i> Profesional Universitario
-                    </span>
+                    <div class="row fs-12 text-color-3 fw-bold">
+                      <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div> 
+                      <div class="col-auto mx-0 px-0">Profesional Universitario</div>
+                    </div>
                   </label>
                 </div>
 
                 <article class="ciaf-ruta__panel ciaf-ruta__panel--1">
                   <div class="ciaf-ruta__panel-meta">
-                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary fs-10 fw-semibold">Ciclo 1</span>
-                    <span class="ciaf-ruta__meta-pill fs-10 fw-semibold">Nivel Técnico Profesional</span>
-                    <span class="ciaf-ruta__meta-text fs-12 fw-semibold">SNIES 109022</span>
-                    <span class="ciaf-ruta__meta-text fs-12 fw-semibold">Resolución 14400</span>
+                    <span class="ciaf-ruta__meta-pill bg-color-4 text-white fs-12 fw-semibold">Ciclo 1</span>
+                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Técnico Profesional</span>
+                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109022</span>
+                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14400</span>
                   </div>
-                  <h3 class="ciaf-ruta__panel-title fs-24 fw-bold">Técnica Profesional en Procesos Empresariales</h3>
-                  <div class="ciaf-ruta__detail-grid">
-                    <div class="ciaf-ruta__detail-block">
-                      <h4><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
-                      <p>Fundamentos de administración, procesos empresariales, contabilidad básica y servicio al cliente.</p>
+                  <h3 class="fs-24 fw-black text-color-2">Técnica Profesional en Procesos Empresariales</h3>
+                  <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
+                      <p class="fs-14">Fundamentos de administración, procesos empresariales, contabilidad básica y servicio al cliente.</p>
                     </div>
-                    <div class="ciaf-ruta__detail-stack">
-                      <div class="ciaf-ruta__detail-block">
-                        <h4><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado</h4>
-                        <p>Técnico Profesional</p>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                      <div class="">
+                        <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                          <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado
+                        </h4>
+                        <p class="fs-14">Técnico Profesional</p>
                       </div>
-                      <div class="ciaf-ruta__detail-block">
-                        <h4><i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales</h4>
-                        <p>Te puedes emplear desde el primer ciclo en áreas de apoyo administrativo y procesos.</p>
+                      <div class="">
+                        <h4 class="fs-14 fw-bold text-color-2 ">
+                          <i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales
+                        </h4>
+                        <p class="fs-14">Te puedes emplear desde el primer ciclo en áreas de apoyo administrativo y procesos.</p>
                       </div>
                     </div>
                   </div>
-                  <div class="ciaf-ruta__areas">
-                    <h4><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte</h4>
-                    <div class="ciaf-ruta__tags">
-                      <span>Apoyo administrativo</span>
-                      <span>Gestión de procesos</span>
-                      <span>Servicio al cliente</span>
-                      <span>Contabilidad básica</span>
+                  <div class="row">
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte
+                      </h4>
+                    </div>
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 mt-3">
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Apoyo administrativo</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Gestión de procesos</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Servicio al cliente</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Contabilidad básica</span>
                     </div>
                   </div>
-                  <div class="ciaf-ruta__award">
-                    <span class="ciaf-ruta__award-icon fs-16" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
-                    <p>Al finalizar obtienes el título de <strong>Técnico Profesional en Procesos Empresariales</strong>.</p>
+                  <div class="col-12 mt-3">
+                    <div class="d-flex align-items-center rounded-pill p-3 bg-color-7">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-4"
+                                 style="width:48px;height:48px;">
+                                <i class="fa-solid fa-graduation-cap text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-color-2 fs-14">
+                                Al finalizar obtienes el título de
+                                <strong>Técnico Profesional en Procesos Empresariales</strong>
+                            </p>
+                        </div>
+                    </div>
                   </div>
                 </article>
 
                 <article class="ciaf-ruta__panel ciaf-ruta__panel--2">
+
                   <div class="ciaf-ruta__panel-meta">
-                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary fs-10 fw-semibold">Ciclo 2</span>
-                    <span class="ciaf-ruta__meta-pill fs-10 fw-semibold">Nivel Tecnólogo</span>
-                    <span class="ciaf-ruta__meta-text fs-12 fw-semibold">SNIES 109021</span>
-                    <span class="ciaf-ruta__meta-text fs-12 fw-semibold">Resolución 14399</span>
+                      <span class="ciaf-ruta__meta-pill bg-color-6 text-white fs-12 fw-semibold">Ciclo 2</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Tecnológico</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109021</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14399</span>
                   </div>
-                  <h3 class="ciaf-ruta__panel-title fs-24 fw-bold">Tecnología en Gestión y Auditoría Administrativa</h3>
-                  <div class="ciaf-ruta__detail-grid">
-                    <div class="ciaf-ruta__detail-block">
-                      <h4><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
-                      <p>Auditoría administrativa, finanzas, investigación de mercados, control interno y gestión de proyectos.</p>
-                    </div>
-                    <div class="ciaf-ruta__detail-stack">
-                      <div class="ciaf-ruta__detail-block">
-                        <h4><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado</h4>
-                        <p>Tecnólogo</p>
+              
+                  <h3 class="fs-24 fw-black text-color-2">
+                      Tecnología en Gestión y Auditoría Administrativa
+                  </h3>
+              
+                  <div class="row">
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-lightbulb text-color-6"></i> Qué aprenderás
+                          </h4>
+              
+                          <p class="fs-14">
+                              Gestión administrativa, auditoría, control interno, finanzas y gestión del talento humano.
+                          </p>
                       </div>
-                      <div class="ciaf-ruta__detail-block">
-                        <h4><i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales</h4>
-                        <p>Amplía tu perfil para roles de coordinación, supervisión y mejora de procesos administrativos.</p>
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                                  <i class="fa-solid fa-chart-line text-color-6"></i> Nivel alcanzado
+                              </h4>
+              
+                              <p class="fs-14">Tecnólogo</p>
+                          </div>
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2">
+                                  <i class="fa-solid fa-user-check text-color-6"></i> Beneficios laborales
+                              </h4>
+              
+                              <p class="fs-14">
+                                Accede a cargos de coordinación, supervisión y auditoría con mayor remuneración.
+                              </p>
+                          </div>
+              
                       </div>
-                    </div>
+              
                   </div>
-                  <div class="ciaf-ruta__areas">
-                    <h4><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte</h4>
-                    <div class="ciaf-ruta__tags">
-                      <span>Auditoría administrativa</span>
-                      <span>Finanzas</span>
-                      <span>Control interno</span>
-                      <span>Gestión de proyectos</span>
-                    </div>
+              
+                  <div class="row">
+              
+                      <div class="col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-briefcase text-color-6"></i> Áreas donde puedes desempeñarte
+                          </h4>
+                      </div>
+              
+                      <div class="col-12 mt-3">
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Coordinación administrativa</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Auditoría y control interno</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Análisis financiero</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Supervisión de equipos</span>
+                      </div>
+              
                   </div>
-                  <div class="ciaf-ruta__award">
-                    <span class="ciaf-ruta__award-icon fs-16" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
-                    <p>Al finalizar obtienes el título de <strong>Tecnólogo en Gestión y Auditoría Administrativa</strong>.</p>
+              
+                  <div class="col-12 mt-3">
+                      <div class="d-flex align-items-center rounded-pill p-3 bg-color-8">
+              
+                          <div class="flex-shrink-0 me-3">
+                              <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-6"
+                                   style="width:48px;height:48px;">
+                                  <i class="fa-solid fa-graduation-cap text-white"></i>
+                              </div>
+                          </div>
+              
+                          <div>
+                              <p class="mb-0 text-color-2 fs-14">
+                                  Al finalizar obtienes el título de
+                                  <strong class="text-color-6">Tecnólogo en Gestión y Auditoría Administrativa</strong>
+                              </p>
+                          </div>
+              
+                      </div>
                   </div>
+              
                 </article>
 
                 <article class="ciaf-ruta__panel ciaf-ruta__panel--3">
+
                   <div class="ciaf-ruta__panel-meta">
-                    <span class="ciaf-ruta__meta-pill ciaf-ruta__meta-pill--primary fs-10 fw-semibold">Ciclo 3</span>
-                    <span class="ciaf-ruta__meta-pill fs-10 fw-semibold">Nivel Profesional Universitario</span>
-                    <span class="ciaf-ruta__meta-text fs-12 fw-semibold">SNIES 108591</span>
-                    <span class="ciaf-ruta__meta-text fs-12 fw-semibold">Resolución 14398</span>
+                      <span class="ciaf-ruta__meta-pill bg-color-5 text-white fs-12 fw-semibold">Ciclo 3</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Profesional Universitario</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 108591</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14398</span>
                   </div>
-                  <h3 class="ciaf-ruta__panel-title fs-24 fw-bold">Profesional Universitario en Administración de Empresas</h3>
-                  <div class="ciaf-ruta__detail-grid">
-                    <div class="ciaf-ruta__detail-block">
-                      <h4><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
-                      <p>Dirección estratégica, gerencia financiera, operaciones, negocios internacionales y liderazgo organizacional.</p>
-                    </div>
-                    <div class="ciaf-ruta__detail-stack">
-                      <div class="ciaf-ruta__detail-block">
-                        <h4><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado</h4>
-                        <p>Profesional Universitario</p>
+              
+                  <h3 class="fs-24 fw-black text-color-2">
+                      Profesional Universitario en Administración de Empresas
+                  </h3>
+              
+                  <div class="row">
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-lightbulb text-color-3"></i> Qué aprenderás
+                          </h4>
+              
+                          <p class="fs-14">
+                              Dirección estratégica, gerencia financiera, operaciones, negocios internacionales y liderazgo organizacional.
+                          </p>
                       </div>
-                      <div class="ciaf-ruta__detail-block">
-                        <h4><i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales</h4>
-                        <p>Accede a cargos de gerencia, consultoría, planeación estratégica y dirección en organizaciones de todos los sectores.</p>
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                                  <i class="fa-solid fa-chart-line text-color-3"></i> Nivel alcanzado
+                              </h4>
+              
+                              <p class="fs-14">Profesional Universitario</p>
+                          </div>
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2">
+                                  <i class="fa-solid fa-user-check text-color-3"></i> Beneficios laborales
+                              </h4>
+              
+                              <p class="fs-14">
+                                  Accede a cargos de gerencia, consultoría, planeación estratégica y dirección en organizaciones de todos los sectores.
+                              </p>
+                          </div>
+              
                       </div>
-                    </div>
+              
                   </div>
-                  <div class="ciaf-ruta__areas">
-                    <h4><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte</h4>
-                    <div class="ciaf-ruta__tags">
-                      <span>Gerencia general</span>
-                      <span>Planeación estratégica</span>
-                      <span>Negocios internacionales</span>
-                      <span>Liderazgo organizacional</span>
-                    </div>
+              
+                  <div class="row">
+              
+                      <div class="col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-briefcase text-color-3"></i> Áreas donde puedes desempeñarte
+                          </h4>
+                      </div>
+              
+                      <div class="col-12 mt-3">
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Gerencia general</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Dirección de áreas</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Consultoría organizacional</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Creación de empresa</span>
+                      </div>
+              
                   </div>
-                  <div class="ciaf-ruta__award">
-                    <span class="ciaf-ruta__award-icon fs-16" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
-                    <p>Al finalizar obtienes el título de <strong>Profesional Universitario en Administración de Empresas</strong>.</p>
+              
+                  <div class="col-12 mt-3">
+                      <div class="d-flex align-items-center rounded-pill p-3 bg-color-2">
+              
+                          <div class="flex-shrink-0 me-3">
+                              <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-5"
+                                   style="width:48px;height:48px;">
+                                  <i class="fa-solid fa-graduation-cap text-white"></i>
+                              </div>
+                          </div>
+              
+                          <div>
+                              <p class="mb-0 text-color-2 fs-14">
+                                  Al finalizar obtienes el título de
+                                  <strong class="text-color-3">Profesional Universitario en Administración de Empresas</strong>
+                              </p>
+                          </div>
+              
+                      </div>
                   </div>
+              
                 </article>
+
               </div>
 
 
             </div>
           </section>
 
-          <section class="ciaf-program-anchor" id="transformacion" aria-hidden="true"></section>
-          <section class="ciaf-program-anchor" id="por-que-estudiarlo" aria-hidden="true"></section>
-          <section class="ciaf-program-anchor" id="simulador" aria-hidden="true"></section>
-          <section class="ciaf-program-anchor" id="tu-futuro" aria-hidden="true"></section>
-
           <!-- Sección 5: Plan de estudios -->
-          <section class="ciaf-plan ciaf-program-section" id="plan-estudios">
-            <div class="container-xxl">
-              <header class="ciaf-plan__header">
+          <section class="ciaf-section-light py-5" id="plan-estudios">
+            <div class="row pt-5">
+              <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
                 <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Plan de estudios</span>
-                <h2 class="ciaf-plan__title fs-40 fw-extrablack">Tu camino semestre a semestre</h2>
+                <h2 class=" fs-36 fw-extrablack text-color-2">Tu camino semestre a semestre</h2>
               </header>
 
-              <div class="ciaf-plan__download">
-                <a href="assets/planes/malla_administracion.pdf" target="_blank" rel="noopener noreferrer" class="ciaf-plan__download-link">
-                  <span class="ciaf-plan__download-credits fs-12 fw-semibold">150 créditos</span>
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <a href="assets/planes/malla_administracion.pdf" target="_blank" rel="noopener noreferrer" class="btn">
+                  <div class="ciaf-plan__download-credits fs-12 fw-semibold">150 créditos</div>
                   <img src="{{ descargar }}" alt="Descargar malla curricular" />
                 </a>
               </div>
 
-              <div class="ciaf-plan__accordion">
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 ciaf-plan__accordion">
                 <div
                   class="ciaf-plan__item"
                   *ngFor="let datos of semestresPlan"
@@ -694,22 +1010,22 @@
             </div>
           </section>
 
-          <section class="ciaf-transform-section">
-            <div class="container-xxl ciaf-transform-container">
+          <section class=" ciaf-section-white py-5" id="transformacion">
+            <div class="row py-5">
           
-              <div class="ciaf-transform-header text-center">
-                <span class="ciaf-transform-pill fs-10">
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
                   AQUÍ NO SOLO OBTIENES UN TÍTULO
                 </span>
           
-                <h2 class="ciaf-transform-title fs-40 fw-extrablack">
-                  Vives una <span>transformación completa</span>
+                <h2 class="text-color-2 fs-36 fw-extrablack my-3">
+                  Vives una <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformación completa</span>
                 </h2>
               </div>
           
-              <div class="row ciaf-transform-grid">
+              <div class="row ciaf-transform-grid mt-5 px-4 justify-content-center">
           
-                <div class="col-lg col-md-6 col-12">
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
@@ -717,15 +1033,15 @@
                       <i class="fa-regular fa-heart"></i>
                     </div>
           
-                    <h3>Transformación Humana</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Transformación Humana</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Despertamos tu pasión y potencial más allá del aula.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg col-md-6 col-12">
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
@@ -733,15 +1049,15 @@
                       <i class="fa-solid fa-brain"></i>
                     </div>
           
-                    <h3>Mentalidad Digital</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Mentalidad Digital</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Te preparamos para el mundo laboral 4.0 con IA y tecnología.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg col-md-6 col-12">
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
@@ -749,15 +1065,15 @@
                       <i class="fa-solid fa-gear"></i>
                     </div>
           
-                    <h3>Técnico con Propósito</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Técnico con Propósito</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Formación orientada a crear valor real en las organizaciones.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg col-md-6 col-12">
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
@@ -765,15 +1081,15 @@
                       <i class="fa-solid fa-earth-americas"></i>
                     </div>
           
-                    <h3>Experiencias Nacionales e Internacionales</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Experiencias Nacionales e Internacionales</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Convenios, movilidad y conexiones nacionales e internacionales que abren nuevas puertas.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg col-md-6 col-12">
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
                   <article class="ciaf-transform-card h-100">
                     <div class="ciaf-transform-glow"></div>
           
@@ -781,9 +1097,9 @@
                       <i class="fa-regular fa-lightbulb"></i>
                     </div>
           
-                    <h3>Título +</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Título +</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Desde el primer nivel ya puedes emplearte y seguir creciendo.
                     </p>
                   </article>
@@ -794,101 +1110,102 @@
             </div>
           </section>
 
-          <section class="ciaf-why-section">
-            <div class="container-xxl ciaf-why-container">
+          <section class="ciaf-section-light py-5" id="por-que-estudiarlo">
+            <div class="row py-5 px-4">
           
-              <div class="ciaf-why-header">
-                <span class="ciaf-why-pill fs-10">
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
                   ¿POR QUÉ ESTUDIARLO?
                 </span>
-          
-                <h2 class="ciaf-why-title fs-48 fw-extrablack">
+              </div>
+              <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-12 my-3">
+                <h2 class="text-color-2 fs-36 fw-extrablack">
                   Las empresas necesitan líderes capaces de
-                  adaptarse, innovar y <span>tomar decisiones.</span>
+                  adaptarse, innovar y <span class="ciaf-gradient-text ciaf-gradient-text--brand">tomar decisiones.</span>
                 </h2>
               </div>
           
-              <div class="row ciaf-why-grid">
+              <div class="row">
           
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <article class="ciaf-why-card">
                     <div class="ciaf-why-icon icon-blue-soft fs-16">
                       <i class="fa-solid fa-arrow-trend-up"></i>
                     </div>
           
-                    <h3>Estrategia empresarial</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Estrategia empresarial</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Diseña planes que llevan a las organizaciones al siguiente nivel.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <article class="ciaf-why-card">
                     <div class="ciaf-why-icon icon-green-soft fs-16">
                       <i class="fa-regular fa-lightbulb"></i>
                     </div>
           
-                    <h3>Innovación y emprendimiento</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Innovación y emprendimiento</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Convierte ideas en soluciones, proyectos y oportunidades reales.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <article class="ciaf-why-card">
                     <div class="ciaf-why-icon icon-sky-soft fs-16">
                       <i class="fa-solid fa-users"></i>
                     </div>
           
-                    <h3>Liderazgo y gestión de equipos</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Liderazgo y gestión de equipos</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Desarrolla habilidades para dirigir personas, procesos y resultados.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <article class="ciaf-why-card">
                     <div class="ciaf-why-icon icon-blue-soft fs-16">
                       <i class="fa-solid fa-earth-americas"></i>
                     </div>
           
-                    <h3>Negocios y transformación digital</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Negocios y transformación digital</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Entiende los nuevos modelos de negocio impulsados por la tecnología.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <article class="ciaf-why-card">
                     <div class="ciaf-why-icon icon-green-soft fs-16">
                       <i class="fa-solid fa-chart-column"></i>
                     </div>
           
-                    <h3>Análisis financiero</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Análisis financiero</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Toma decisiones con datos, indicadores y visión estratégica.
                     </p>
                   </article>
                 </div>
           
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
                   <article class="ciaf-why-card">
                     <div class="ciaf-why-icon icon-sky-soft fs-16">
                       <i class="fa-solid fa-rocket"></i>
                     </div>
           
-                    <h3>Creación de nuevos proyectos</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Creación de nuevos proyectos</h3>
           
-                    <p>
+                    <p class="text-color-1 fs-14">
                       Aprende a estructurar iniciativas sostenibles, viables y escalables.
                     </p>
                   </article>
@@ -899,33 +1216,28 @@
             </div>
           </section>
 
-          <section class="ciaf-finance-section" id="matricula">
+          <section class="pt-5" id="valores-financiacion">
 
             <!-- HERO FINANCIACIÓN -->
-            <div class="ciaf-finance-hero">
-              <div class="ciaf-finance-bg">
-                <img src="assets/image/students-collab.jpg" alt="Estudiantes CIAF">
-                <div class="ciaf-finance-overlay"></div>
-                <div class="ciaf-finance-glow"></div>
-              </div>
+            <div class="row justify-content-center bg-img-1 py-5">
           
-              <div class="container ciaf-finance-hero-content text-center text-white">
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
                 <span class="ciaf-finance-pill pill-white fs-12">VALORES Y FINANCIACIÓN</span>
           
-                <h2>
-                  Financiación <span>0% interés</span>
+                <h2 class="fs-60 fw-extrablack my-3">
+                  Financiación <span class="text-color-3">0% interés</span>
                 </h2>
           
-                <p class="ciaf-finance-subtitle fs-28">
+                <p class="fs-24 fw-bold">
                   Invierte en tu futuro sin que el dinero detenga tus metas.
                 </p>
           
-                <p class="ciaf-finance-text fs-16">
+                <p class="fs-18 text-color-5">
                   En CIAF encuentras financiación directa, descuentos y beneficios pensados
                   para acompañarte durante toda tu carrera.
                 </p>
           
-                <p class="ciaf-finance-slogan fs-14">
+                <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
                   Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
                 </p>
               </div>
@@ -947,7 +1259,7 @@
                       'Modalidad presencial',
                       'Acompañamiento permanente'
                     ]">
-                      <div class="ciaf-benefit-item">
+                      <div class="ciaf-benefit-item text-color-2 fs-14">
                         <span><i class="fa-solid fa-check"></i></span>
                         <strong>{{ item }}</strong>
                       </div>
@@ -959,98 +1271,108 @@
             </div>
           
             <!-- PASO A PASO -->
-            <div class="ciaf-steps-section">
-              <div class="container ciaf-inner-container text-center">
-          
-                <span class="ciaf-finance-pill fs-12">TU PROCESO PASO A PASO</span>
-          
-                <h3>
+            <div class="row justify-content-center my-5 py-5" id="proceso-paso-a-paso">
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5">TU PROCESO PASO A PASO</span>
+              </div>
+
+              <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-12 col-12 text-center">
+                <h3 class="text-color-2 fs-36 fw-black my-3">
                   Matricularte es más fácil de lo que crees
                 </h3>
-          
-                <div class="ciaf-steps-line"></div>
-          
-                <div class="row g-4 ciaf-steps-grid">
-          
-                  <div class="col-md-4">
-                    <article class="ciaf-step-card">
-                      <div class="ciaf-step-icon fs-24">
-                        <i class="fa-solid fa-receipt"></i>
-                      </div>
-                      <span class="ciaf-step-label fs-12">Paso 1</span>
-                      <h4>Valor de inscripción</h4>
-                      <p>Un único pago para reservar tu cupo. Incluye seguro estudiantil.</p>
-                    </article>
-                  </div>
-          
-                  <div class="col-md-4">
-                    <article class="ciaf-step-card">
-                      <div class="ciaf-step-icon fs-24">
-                        <i class="fa-regular fa-file-lines"></i>
-                      </div>
-                      <span class="ciaf-step-label fs-12">Paso 2</span>
-                      <h4>Matrícula</h4>
-                      <p>Financiación directa, sin fiadores y sin revisar centrales de riesgo.</p>
-                    </article>
-                  </div>
-          
-                  <div class="col-md-4">
-                    <article class="ciaf-step-card">
-                      <div class="ciaf-step-icon fs-24">
-                        <i class="fa-solid fa-rocket"></i>
-                      </div>
-                      <span class="ciaf-step-label fs-12">Paso 3</span>
-                      <h4>Inicio de clases</h4>
-                      <p>Empieza tu camino profesional en la jornada que mejor se adapte a ti.</p>
-                    </article>
-                  </div>
-          
-                </div>
               </div>
+          
+              <div class="row g-4 ciaf-steps-grid px-4">
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-step-card text-center">
+                    <div class="fs-24">
+                      <i class="fa-solid fa-receipt bg-color-3 text-white rounded-pill p-4"></i>
+                    </div>
+                    <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 1</span> </div>
+                    <h4 class="text-color-2 fs-20 fw-bold">Valor de inscripción</h4>
+                    <p class="text-color-1 fs-14 fw-medium">Un único pago para reservar tu cupo. Incluye seguro estudiantil.</p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                  <article class="ciaf-step-card">
+                    <div class="fs-24">
+                      <i class="fa-regular fa-file-lines bg-color-3 text-white rounded-pill p-4"></i>
+                    </div>
+                    <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 2</span> </div>
+                    <h4 class="text-color-2 fs-20 fw-bold">Matrícula</h4>
+                    <p class="text-color-1 fs-14 fw-medium">Financiación directa, sin fiadores y sin revisar centrales de riesgo.</p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                  <article class="ciaf-step-card">
+                    <div class="fs-24">
+                      <i class="fa-solid fa-rocket bg-color-3 text-white rounded-pill p-4"></i>
+                    </div>
+                    <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 3</span> </div>
+                    <h4 class="text-color-2 fs-20 fw-bold">Inicio de clases</h4>
+                    <p class="text-color-1 fs-14 fw-medium">Empieza tu camino profesional en la jornada que mejor se adapte a ti.</p>
+                  </article>
+                </div>
+        
+              </div>
+
             </div>
           
             <!-- COSTOS -->
-            <div class="ciaf-costs-section">
-              <div class="container ciaf-inner-container">
+            <div class="row justify-content-center my-5 py-5" id="costos">
+              <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11">
                 <div class="row g-4 align-items-stretch">
           
-                  <div class="col-lg-4">
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 border-end p-4">
                     <div class="ciaf-cost-info">
-                      <h3>Financiación directa</h3>
-          
-                      <ul>
-                        <li><i class="fa-solid fa-check"></i> Fácil</li>
-                        <li><i class="fa-solid fa-check"></i> Sin fiadores</li>
-                        <li><i class="fa-solid fa-check"></i> Sin revisar centrales de riesgo</li>
-                        <li><i class="fa-solid fa-check"></i> Y con solo 2 clicks</li>
+                      <h3 class="text-color-2 fs-36 fw-extrablack">Financiación directa</h3>
+                      <ul class="text-color-2 list-unstyled">
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Fácil</li>
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Sin fiadores</li>
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Sin revisar centrales de riesgo</li>
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Y con solo 2 clicks</li>
                       </ul>
                     </div>
                   </div>
           
-                  <div class="col-lg-4">
-                    <article class="ciaf-price-card">
-                      <span>1</span>
-                      <div>
-                        <p>Valor inscripción</p>
-                        <h4>$144.847</h4>
-                        <small>Incluye seguro</small>
-                        <small>(Ins. $129.987 + $14.860)</small>
-                        <small>(Pago único)</small>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 px-4">
+                    <article class="row p-4 align-items-center h-100 bg-color-4 rounded-4">
+                      <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-12">
+                        <span class="text-color-3 fs-60 fw-extrablack">1</span>
                       </div>
+                      <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-10 ps-4">
+                        <h3 class="text-white fs-14 fw-bold text-uppercase">Valor inscripción</h3>
+                        <h4 class="text-white fs-36 fw-extrablack">$144.847</h4>
+                        <div class="text-center fs-12 fw-medium">
+                          <div class="text-color-5">Incluye seguro</div>
+                          <div class="text-color-5">(Ins. $129.987 + $14.860)</div>
+                          <div class="text-color-5">(Pago único)</div>
+                        </div>
+                      </div>
+                      <div class="bg-color-5 pt-1 rounded-pill"></div>
                     </article>
+                    
                   </div>
           
-                  <div class="col-lg-4">
-                    <article class="ciaf-price-card">
-                      <span>2</span>
-                      <div>
-                        <p>Matrícula ordinaria</p>
-                        <del>$3.220.000</del>
-                        <h4>$2.512.000</h4>
-                        <small>Estos valores incrementarán de acuerdo al nivel de formación.</small>
-                        <strong>Jornadas</strong>
-                        <small>Diurna, Nocturna y fines de semana</small>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                    <article class="row bg-color-4 rounded-4 p-4 align-items-center h-100">
+                      <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-12">
+                        <span class="text-color-3 fs-60 fw-extrablack">2</span>
                       </div>
+                      <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 ps-4">
+                        <h3 class="text-white fs-14 fw-bold text-uppercase">Matrícula ordinaria</h3>
+                        <h4 class="text-color-5 fs-16 fw-bold text-decoration-line-through">$3.220.000</h4>
+                        <h4 class="text-white fs-36 fw-extrablack">$3.220.000</h4>
+                        <div class="text-center fs-12 fw-medium">
+                          <div class="text-color-5">Estos valores incrementarán de acuerdo al nivel de formación.</div>
+                          <div class="text-color-3 fw-bold fs-20">Jornadas</div>
+                          <div class="text-color-5">Diurna, Nocturna y fines de semana</div>
+                        </div>
+                      </div>
+                      <div class="bg-color-5 pt-1 rounded-pill mt-2"></div>
                     </article>
                   </div>
           
@@ -1059,30 +1381,30 @@
             </div>
           
             <!-- OPCIONES -->
-            <div class="ciaf-options-section">
+            <div class="ciaf-options-section py-5">
               <div class="container ciaf-inner-container text-center">
           
-                <span class="ciaf-finance-pill fs-12">ALTERNATIVAS PENSADAS PARA TI</span>
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">ALTERNATIVAS PENSADAS PARA TI</span>
           
-                <h3>
-                  Un sistema de financiación <span>a tu medida</span>
+                <h3 class="text-color-2 fs-36 fw-extrablack mt-3">
+                  Un sistema de financiación <span class="ciaf-gradient-text ciaf-gradient-text--brand">a tu medida</span>
                 </h3>
           
-                <div class="row g-4 mt-5 text-start">
+                <div class="row g-4 mt-4 text-start">
           
                   <div class="col-md-4">
                     <article class="ciaf-option-card">
                       <div class="ciaf-option-icon fs-20">
                         <i class="fa-solid fa-money-bill-wave"></i>
                       </div>
-                      <h4>Financiación Directa CIAF</h4>
-                      <ul>
+                      <h4 class="text-color-2 fs-20 fw-bold">Financiación Directa CIAF</h4>
+                      <ul class="fs-14 list-unstyled fw-medium">
                         <li><i class="fa-solid fa-check"></i> Sin intermediarios bancarios</li>
                         <li><i class="fa-solid fa-check"></i> Proceso ágil</li>
                         <li><i class="fa-solid fa-check"></i> Respuesta rápida</li>
                         <li><i class="fa-solid fa-check"></i> 0% interés</li>
                       </ul>
-                      <p>Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                      <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
                     </article>
                   </div>
           
@@ -1091,13 +1413,13 @@
                       <div class="ciaf-option-icon fs-20">
                         <i class="fa-solid fa-percent"></i>
                       </div>
-                      <h4>Descuentos Institucionales</h4>
-                      <ul>
+                      <h4 class="text-color-2 fs-20 fw-bold">Descuentos Institucionales</h4>
+                      <ul class="fs-14 list-unstyled fw-medium">
                         <li><i class="fa-solid fa-check"></i> Convenios</li>
                         <li><i class="fa-solid fa-check"></i> Beneficios especiales</li>
-                        <li><i class="fa-solid fa-check"></i> Apoyos institucionales</li>
+                        <li class="mb-2"><i class="fa-solid fa-check"></i> Apoyos institucionales</li>
                       </ul>
-                      <p>Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                      <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
                     </article>
                   </div>
           
@@ -1106,13 +1428,13 @@
                       <div class="ciaf-option-icon fs-20">
                         <i class="fa-solid fa-wallet"></i>
                       </div>
-                      <h4>Opciones de Pago</h4>
-                      <ul>
+                      <h4 class="text-color-2 fs-20 fw-bold">Opciones de Pago</h4>
+                      <ul class="fs-14 list-unstyled fw-medium">
                         <li><i class="fa-solid fa-check"></i> Pagos flexibles</li>
                         <li><i class="fa-solid fa-check"></i> Acompañamiento personalizado</li>
                         <li><i class="fa-solid fa-check"></i> Diferentes alternativas</li>
                       </ul>
-                      <p>Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                      <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
                     </article>
                   </div>
           
@@ -1121,38 +1443,35 @@
             </div>
 
             <!-- SIMULADOR -->
-            <div class="ciaf-simulator-section">
+            <div class="ciaf-simulator-section ciaf-program-section" id="simulador">
 
               <div class="container-xl">
           
                   <div class="text-center">
           
-                      <span class="ciaf-simulator-pill fs-12">
-                          <i class="fa-regular fa-calculator"></i>
+                      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                        <i class="fa-solid fa-calculator"></i>
                           SIMULADOR
                       </span>
           
-                      <h2 class="ciaf-simulator-title fs-64 fw-extrablack">
+                      <h2 class="text-color-2 fs-36 fw-extrablack mt-3">
                           Calcula tu camino hacia tu título
                       </h2>
           
                   </div>
           
                   <div class="ciaf-simulator-card">
-          
                       <div class="row g-0 align-items-stretch">
-          
                           <!-- IZQUIERDA -->
-          
-                          <div class="col-lg-6">
+                          <div class="col-lg-6 p-5">
           
                               <div class="ciaf-simulator-form">
           
-                                  <label>
+                                  <label class="text-color-1 fs-14 fw-bold">
                                       PROGRAMA
                                   </label>
           
-                                  <select class="form-select ciaf-select">
+                                  <select class="form-select ciaf-select text-color-2 fs-14 fw-bold">
           
                                       <option>
                                           Administración de Empresas
@@ -1172,43 +1491,34 @@
           
                                   </select>
           
-                                  <label>
+                                  <label class="text-color-1 fs-14 fw-bold">
                                       JORNADA
                                   </label>
           
                                   <div class="ciaf-jornada">
-          
-                                      <button class="active">
+                                      <button class="active fw-bold">
                                           Nocturna
                                       </button>
-          
-                                      <button>
+                                      <button class="fw-bold">
                                           Fin de semana
                                       </button>
-          
                                   </div>
           
-                                  <a href="#" class="ciaf-simulator-btn">
-          
-                                      Quiero recibir asesoría
-          
-                                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          
+                                  <a href="#" class="ciaf-simulator-btn text-white fs-14 fw-bold">
+                                      Quiero recibir asesoría <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                   </a>
           
                               </div>
           
                           </div>
-          
                           <!-- DERECHA -->
-          
                           <div class="col-lg-6">
           
                               <div class="ciaf-route-panel">
           
-                                  <small>
+                                  <div class="text-color-5 fs-12 fw-bold mb-3">
                                       TU CAMINO EN CIAF
-                                  </small>
+                                  </div>
           
                                   <div class="ciaf-route-box">
           
@@ -1218,9 +1528,9 @@
           
                                       <div>
           
-                                          <h3>10 semestres</h3>
+                                          <h3 class="fs-24 fw-bold">10 semestres</h3>
           
-                                          <p>
+                                          <p class="fs-14 fw-medium">
                                               Duración total · Nocturna
                                           </p>
           
@@ -1236,9 +1546,9 @@
           
                                       <div>
           
-                                          <h3>3 títulos</h3>
+                                          <h3 class="fs-24 fw-bold">3 títulos</h3>
           
-                                          <p>
+                                          <p class="fs-14 fw-medium">
                                               Técnico · Tecnólogo · Profesional
                                           </p>
           
@@ -1248,19 +1558,19 @@
           
                                   <div class="ciaf-benefits">
           
-                                      <h4>
-                                          Beneficios disponibles
+                                      <h4 class="text-white fs-14 fw-bold">
+                                        <i class="fa-solid fa-graduation-cap text-color-3"></i> Beneficios disponibles
                                       </h4>
           
-                                      <div class="ciaf-tags">
+                                      <div class="col-12">
           
-                                          <span>0% interés</span>
+                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">0% interés</span>
           
-                                          <span>Sin fiadores</span>
+                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1 ">Sin fiadores</span>
           
-                                          <span>Descuentos</span>
+                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Descuentos</span>
           
-                                          <span>Acompañamiento</span>
+                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Acompañamiento</span>
           
                                       </div>
           
@@ -1269,44 +1579,41 @@
                               </div>
           
                           </div>
-          
                       </div>
-          
                   </div>
-          
               </div>
-          
             </div>
 
-
             <!-- CTA FINAL -->
-            <div class="ciaf-final-cta">
-              <div class="ciaf-finance-bg">
-                <img src="assets/image/students-collab.jpg" alt="">
-                <div class="ciaf-finance-overlay"></div>
-              </div>
+            <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section" id="tu-futuro">
+         
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white position-relative py-5">
+                <h3 class="text-white fs-48 fw-extrablack">Tu futuro está más cerca de lo que imaginas.</h3>
           
-              <div class="container text-center text-white position-relative">
-                <h3>Tu futuro está más cerca de lo que imaginas.</h3>
-          
-                <p>
+                <p class="text-color-5 fs-18 fw-medium">
                   Miles de estudiantes han comenzado su camino profesional gracias a las
                   alternativas de financiación y acompañamiento de CIAF.
-                </p>
+                </p>  
           
-                <div class="ciaf-cta-actions">
-                  <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn-lime">
-                    Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-          
-                  <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn-white fs-14">
-                    Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
+                <div class="col-12">
+
+                  <div class="row justify-content-center text-center">
+                    <div class="col-auto">
+                      <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                        Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                        Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
           
                 <div class="ciaf-craia-card">
                   <img src="assets/image/craia-avatar.webp" alt="CRAIA">
-                  <p>
+                  <p class="fs-14 fw-medium">
                     <strong>Hola, soy CRAIA.</strong> Te ayudo a encontrar la mejor opción
                     de financiación para estudiar en CIAF.
                   </p>
@@ -1317,7 +1624,9 @@
           </section>
 
       </div><!-- programa-administracion -->
+
     </div><!-- content-programa -->
+
 </section>
 
 <app-footer></app-footer>

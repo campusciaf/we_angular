@@ -236,6 +236,9 @@
 .text-color-5{
   color: #b7bed7 !important;
 }
+.text-color-6{
+  color: #4f9fdb !important;
+}
 
 /* ==========================================
    LETTER SPACING UTILITIES
@@ -265,6 +268,78 @@
 .bg-color-2{
   background-color: #e2f1d8 !important;
 }
+
+.bg-color-3{
+  background-color: #001985 !important;
+}
+
+.bg-color-4{
+  background-color: #00136b !important;
+}
+.bg-color-5{
+  background-color: #8bce46 !important;
+}
+
+.bg-color-6{
+  background-color: #4f9fdb !important;
+}
+
+.bg-color-7{
+  background-color: #eff1f7 !important;
+}
+.bg-color-8{
+  background-color: #f3f8fc !important;
+}
+
+
+.bg-img-1{
+  background:
+      linear-gradient(
+          to bottom right,
+          rgba(16, 34, 140, .95) 0%,
+          rgba(10, 35, 120, .92) 55%,
+          rgba(0, 80, 90, .85) 80%,
+          rgba(90, 180, 60, .55) 100%
+      ),
+      url('../../../assets/image/estudiantes-valores.webp');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-img-2{
+  position: relative;
+  overflow: hidden;
+
+  background:
+      radial-gradient(circle at 85% 35%, rgba(139, 195, 74, .18) 0%, transparent 35%),
+      radial-gradient(circle at 10% 20%, rgba(13, 40, 150, .08) 0%, transparent 32%),
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.bg-img-2::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+      radial-gradient(rgba(13, 40, 150, .14) 1px, transparent 1px);
+
+  background-size: 22px 22px;
+  opacity: .45;
+  pointer-events: none;
+}
+
+.bg-img-2 > .container{
+  position: relative;
+  z-index: 2;
+}
+
+.check-input-none{
+  display:none;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -578,16 +653,46 @@ body {
 }
 
 .ciaf-btn--lime {
+  isolation: isolate;
+  position: relative;
   justify-content: center;
-  min-height: 48px;
+  min-height: 52px;
+  border: none;
   color: var(--ciaf-lime-cta-text);
   background: var(--ciaf-lime);
-  box-shadow: var(--shadow-lime);
+  box-shadow: var(--ciaf-shadow-elegant);
+  transition: transform .15s ease;
+}
+
+.ciaf-btn--lime::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--ciaf-gradient-primary);
+  filter: blur(14px);
+  opacity: 0;
+  transition: opacity .5s ease;
 }
 
 .ciaf-btn--lime:hover {
   color: var(--ciaf-lime-cta-text);
   transform: translateY(-2px);
+}
+
+.ciaf-btn--lime:hover::before {
+  opacity: .55;
+}
+
+.ciaf-btn--lime i {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform var(--transition-base);
+}
+
+.ciaf-btn--lime:hover i {
+  transform: translate(2px, -2px);
 }
 
 .ciaf-btn--glass {

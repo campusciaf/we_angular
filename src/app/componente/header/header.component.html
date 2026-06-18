@@ -13,7 +13,7 @@
         </div>
   
         <div class="top-actions">
-          <a href="https://virtual.ciaf.edu.co" target="_blank" class="ciaf-btn ciaf-btn--glass fs-12 fw-semibold gap-2 rounded-pill py-1 px-3">
+          <a href="https://virtual.ciaf.edu.co" target="_blank" class="ciaf-btn ciaf-btn--glass fs-12 fw-medium gap-2 rounded-pill py-1 px-3">
             <i class="fa-solid fa-rocket"></i>
             <strong>Entra a CIAF Virtual</strong>
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -75,22 +75,22 @@
                             <i class="fa-solid fa-graduation-cap"></i>
                         </span>
                         <div>
-                            <h6>Carreras Universitarias</h6>
-                            <small>*Por ciclos propedéuticos</small>
+                            <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Carreras Universitarias</h6>
+                            <small class="fs-10">*Por ciclos propedéuticos</small>
                         </div>
                         </div>
 
                         <div class="mega-section">
-                        <p class="mega-section-title fs-10 fw-bold">Escuela de Ciencias Administrativas</p>
+                        <p class="fs-12 fw-bold ls-4 text-color-2">Escuela de Ciencias Administrativas</p>
 
-                        <a routerLink="/administracion" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
+                        <a routerLink="/administracion" routerLinkActive="active-link" class="mega-link fs-14 fw-bold ">
                             Administración de Empresas
                             <span class="fw-medium">Liderazgo, estrategia y gestión.</span>
                         </a>
 
                         <a routerLink="/contaduria" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
                             Contaduría Pública
-                            <span class="fw-medium">Convenio INTEP.</span>
+                            <span class="fw-semibold">Convenio INTEP.</span>
                         </a>
                         </div>
 
@@ -109,7 +109,7 @@
                         </div>
 
                         <div class="mega-section">
-                        <p class="mega-section-title fs-10 fw-bold">Escuela de Salud</p>
+                        <p class="fs-12 fw-bold ls-4 text-color-2">Escuela de Salud</p>
 
                         <a routerLink="/sst" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
                             Seguridad y Salud en el Trabajo
@@ -124,12 +124,12 @@
                             <i class="fa-solid fa-briefcase"></i>
                         </span>
                         <div>
-                            <h6>Técnicos Laborales</h6>
+                            <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Técnicos Laborales</h6>
                         </div>
                         </div>
 
                         <div class="mega-section">
-                        <p class="mega-section-title fs-10 fw-bold">Escuela de Salud</p>
+                        <p class="fs-12 fw-bold ls-4 text-color-2">Escuela de Salud</p>
 
                         <a routerLink="/enfermeria" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
                             Auxiliar de Enfermería
@@ -159,7 +159,7 @@
                             <i class="fa-solid fa-book-open"></i>
                         </span>
                         <div>
-                            <h6>Educación Continuada</h6>
+                            <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Educación Continuada</h6>
                         </div>
                         </div>
 
@@ -206,7 +206,7 @@
                         <i class="fa-solid fa-building"></i>
                     </span>
                     <div>
-                        <h6>Conócenos</h6>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Conócenos</h6>
                     </div>
                     </div>
 
@@ -251,7 +251,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </span>
                     <div>
-                        <h6>Experiencia CIAF</h6>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Experiencia CIAF</h6>
                     </div>
                     </div>
 
@@ -295,7 +295,7 @@
                         <i class="fa-solid fa-flask"></i>
                     </span>
                     <div>
-                        <h6>Ciencia e Innovación</h6>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Ciencia e Innovación</h6>
                     </div>
                     </div>
 
@@ -339,7 +339,7 @@
                         <i class="fa-solid fa-users"></i>
                     </span>
                     <div>
-                        <h6>Comunidad CIAF</h6>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Comunidad CIAF</h6>
                     </div>
                     </div>
 
@@ -367,8 +367,16 @@
             </a>
             </div>
 
-            <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
-            <i class="fa-solid fa-bars"></i>
+            <button
+              class="btn-menu d-lg-none rounded-circle mt-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#menuMobile"
+              aria-controls="menuMobile"
+              [attr.aria-expanded]="menuMovilAbierto"
+            >
+              <i class="fa-solid fa-bars" [class.d-none]="menuMovilAbierto" aria-hidden="true"></i>
+              <i class="fa-solid fa-xmark" [class.d-none]="!menuMovilAbierto" aria-hidden="true"></i>
             </button>
 
         </div>
@@ -377,292 +385,117 @@
 
 </header>
   
-  <!-- Menú móvil -->
-  <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="menuMobile">
-    <div class="offcanvas-header">
-      <img src="../assets/image/logo-blanco.webp" alt="CIAF" class="mobile-logo">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-  
-    <div class="offcanvas-body">
-  
-      <div class="accordion accordion-flush" id="menuAccordion">
-  
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mOferta">
-            Oferta Académica
-          </button>
-  
-          <div id="mOferta" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
-            <div class="accordion-body mobile-links">
-              <strong>Carreras Universitarias</strong>
-              <a routerLink="/administracion" routerLinkActive="active-link">Administración de Empresas</a>
-              <a routerLink="/contaduria" routerLinkActive="active-link">Contaduría Pública</a>
-              <a routerLink="/software" routerLinkActive="active-link">Ingeniería de Software</a>
-              <a routerLink="/industrial" routerLinkActive="active-link">Ingeniería Industrial</a>
-              <a routerLink="/sst" routerLinkActive="active-link">Seguridad y Salud en el Trabajo</a>
-  
-              <strong>Técnicos Laborales</strong>
-              <a routerLink="/enfermeria" routerLinkActive="active-link">Auxiliar de Enfermería</a>
-              <a routerLink="/administrativo" routerLinkActive="active-link">Auxiliar Administrativo en Salud</a>
-              <a routerLink="/adultomayor" routerLinkActive="active-link">Atención al Adulto Mayor</a>
-              <a routerLink="/veterinaria" routerLinkActive="active-link">Auxiliar de Veterinaria y Cuidado de Mascotas</a>
-  
-              <strong>Educación Continuada</strong>
-              <a routerLink="/continuada" routerLinkActive="active-link">Diplomados</a>
-              <a routerLink="/continuada" routerLinkActive="active-link">Cursos</a>
-              <a routerLink="/continuada" routerLinkActive="active-link">Certificaciones</a>
-              <a routerLink="/continuada" routerLinkActive="active-link">Formación empresarial</a>
-            </div>
+<!-- Menú móvil -->
+<div class="offcanvas mobile-menu" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel">
+  <div class="offcanvas-body mobile-menu__body">
+
+    <div class="accordion accordion-flush" id="menuAccordion">
+
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mOferta')">
+          Oferta Académica
+        </button>
+
+        <div id="mOferta" class="accordion-collapse collapse">
+          <div class="accordion-body mobile-links">
+            <strong>Carreras Universitarias</strong>
+            <a routerLink="/administracion" routerLinkActive="active-link">Administración de Empresas</a>
+            <a routerLink="/contaduria" routerLinkActive="active-link">Contaduría Pública</a>
+            <a routerLink="/software" routerLinkActive="active-link">Ingeniería de Software</a>
+            <a routerLink="/industrial" routerLinkActive="active-link">Ingeniería Industrial</a>
+            <a routerLink="/sst" routerLinkActive="active-link">Seguridad y Salud en el Trabajo</a>
+
+            <strong>Técnicos Laborales</strong>
+            <a routerLink="/enfermeria" routerLinkActive="active-link">Auxiliar de Enfermería</a>
+            <a routerLink="/administrativo" routerLinkActive="active-link">Auxiliar Administrativo en Salud</a>
+            <a routerLink="/adultomayor" routerLinkActive="active-link">Atención al Adulto Mayor</a>
+            <a routerLink="/veterinaria" routerLinkActive="active-link">Auxiliar de Veterinaria y Cuidado de Mascotas</a>
+
+            <strong>Educación Continuada</strong>
+            <a routerLink="/continuada" routerLinkActive="active-link">Diplomados</a>
+            <a routerLink="/continuada" routerLinkActive="active-link">Cursos</a>
+            <a routerLink="/continuada" routerLinkActive="active-link">Certificaciones</a>
+            <a routerLink="/continuada" routerLinkActive="active-link">Formación empresarial</a>
           </div>
         </div>
-  
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mInstitucion">
-            Nuestra Institución
-          </button>
-  
-          <div id="mInstitucion" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
-            <div class="accordion-body mobile-links">
-              <a routerLink="/conocenos" routerLinkActive="active-link">Quiénes Somos</a>
-              <a routerLink="/proyeccion-social" routerLinkActive="active-link">Proyección Social y Extensión</a>
-              <a routerLink="/conocenos" routerLinkActive="active-link">Cultura CIAF</a>
-              <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
-              <a href="https://virtual.ciaf.edu.co" target="_blank" rel="noopener noreferrer">CIAF Virtual</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mBienestar">
-            Bienestar
-          </button>
-  
-          <div id="mBienestar" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
-            <div class="accordion-body mobile-links">
-              <a routerLink="/bienestar" routerLinkActive="active-link">Bienestar Institucional</a>
-              <a routerLink="/permanencia" routerLinkActive="active-link">Permanencia Estudiantil</a>
-              <a routerLink="/bienestar" routerLinkActive="active-link">Experiencia Universitaria</a>
-              <a routerLink="/bienestar" routerLinkActive="active-link">Gestión Humana</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mInvestigacion">
-            Investigación
-          </button>
-  
-          <div id="mInvestigacion" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
-            <div class="accordion-body mobile-links">
-              <a routerLink="/investigaciones" routerLinkActive="active-link">Ciencia, Creatividad e Innovación</a>
-              <a routerLink="/investigaciones" routerLinkActive="active-link">Semilleros</a>
-              <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
-              <a routerLink="/investigaciones" routerLinkActive="active-link">Proyectos de Innovación</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mEgresados">
-            Egresados
-          </button>
-  
-          <div id="mEgresados" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
-            <div class="accordion-body mobile-links">
-              <a routerLink="/egresados" routerLinkActive="active-link">Comunidad de Egresados</a>
-              <a routerLink="/egresados" routerLinkActive="active-link">Convenios y Beneficios</a>
-              <a routerLink="/egresados" routerLinkActive="active-link">Historias que Inspiran</a>
-              <a routerLink="/egresados" routerLinkActive="active-link">Bolsa de Empleo</a>
-            </div>
-          </div>
-        </div>
-  
       </div>
-  
-      <div class="mt-4 d-grid gap-2">
-        <a routerLink="/pago-online" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-3">
-          Pagos en línea
-        </a>
-  
-        <a routerLink="/iniciar" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-4">
-          Inscríbete
-        </a>
+
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mInstitucion')">
+          Nuestra Institución
+        </button>
+
+        <div id="mInstitucion" class="accordion-collapse collapse">
+          <div class="accordion-body mobile-links">
+            <a routerLink="/conocenos" routerLinkActive="active-link">Quiénes Somos</a>
+            <a routerLink="/proyeccion-social" routerLinkActive="active-link">Proyección Social y Extensión</a>
+            <a routerLink="/conocenos" routerLinkActive="active-link">Cultura CIAF</a>
+            <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
+            <a href="https://virtual.ciaf.edu.co" target="_blank" rel="noopener noreferrer">CIAF Virtual</a>
+          </div>
+        </div>
       </div>
-  
+
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mBienestar')">
+          Bienestar
+        </button>
+
+        <div id="mBienestar" class="accordion-collapse collapse">
+          <div class="accordion-body mobile-links">
+            <a routerLink="/bienestar" routerLinkActive="active-link">Bienestar Institucional</a>
+            <a routerLink="/permanencia" routerLinkActive="active-link">Permanencia Estudiantil</a>
+            <a routerLink="/bienestar" routerLinkActive="active-link">Experiencia Universitaria</a>
+            <a routerLink="/bienestar" routerLinkActive="active-link">Gestión Humana</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mInvestigacion')">
+          Investigación
+        </button>
+
+        <div id="mInvestigacion" class="accordion-collapse collapse">
+          <div class="accordion-body mobile-links">
+            <a routerLink="/investigaciones" routerLinkActive="active-link">Ciencia, Creatividad e Innovación</a>
+            <a routerLink="/investigaciones" routerLinkActive="active-link">Semilleros</a>
+            <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
+            <a routerLink="/investigaciones" routerLinkActive="active-link">Proyectos de Innovación</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mEgresados')">
+          Egresados
+        </button>
+
+        <div id="mEgresados" class="accordion-collapse collapse">
+          <div class="accordion-body mobile-links">
+            <a routerLink="/egresados" routerLinkActive="active-link">Comunidad de Egresados</a>
+            <a routerLink="/egresados" routerLinkActive="active-link">Convenios y Beneficios</a>
+            <a routerLink="/egresados" routerLinkActive="active-link">Historias que Inspiran</a>
+            <a routerLink="/egresados" routerLinkActive="active-link">Bolsa de Empleo</a>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <div class="mt-4 d-grid gap-2">
+      <a routerLink="/pago-online" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-3">
+        Pagos en línea
+      </a>
+
+      <a routerLink="/iniciar" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-4">
+        Inscríbete
+      </a>
+    </div>
+
   </div>
-
-
-
-
-<div class="row menu bg-1 z-3 justify-content-center d-none">
-
-    <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-7 py-2 menu-container">
-    <nav class="nav navbar navbar-expand-lg navbar-dark bg-1 p-0 col-xl-12 col-lg-12 col-md-12 col-12">
-        <div class="navbar-brand p-0 m-0">
-        <span class="logo">
-            <a routerLink="/inicio" target="_top">
-            <img [src]="img_logo" alt="Carreras profesionales">
-            </a>
-        </span>
-        </div>
-
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label mt-2">
-        <span></span>
-        </label>
-
-        <ul class="navbar-menu m-auto dropdown-responsive fs-16">
-        <li class="navbar-item submenu">
-            <a class="navbar-link">Carreras Universitarias</a>
-            <div class="dropdown">
-            <h3>Escuela de Ciencias administrativas</h3>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/administracion" routerLinkActive="active-link" target="_top">
-                Administración de Empresas
-                </a>
-            </li>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/contaduria" routerLinkActive="active-link" target="_top">
-                Contaduría Pública
-                </a>
-            </li>
-            <hr class="py-0 my-0">
-            <h3>Escuela de Ingenierías</h3>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/software" routerLinkActive="active-link" target="_top">
-                Ingeniería de Software
-                </a>
-            </li>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/industrial" routerLinkActive="active-link" target="_top">
-                Ingeniería Industrial
-                </a>
-            </li>
-            <hr class="py-0 my-0">
-            <h3>Escuela de Salud</h3>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/sst" routerLinkActive="active-link" target="_top">
-                Seguridad y Salud en el Trabajo (SSTG)
-                </a>
-            </li>
-            </div>
-        </li>
-
-        <li class="navbar-item submenu">
-            <a class="navbar-link">Carreras T. Laborales</a>
-            <div class="dropdown">
-
-            <hr class="py-0 my-0">
-            <h3>Escuela de Salud</h3>
-           <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/enfermeria"  routerLinkActive="active-link" target="_top">
-                    Auxiliar Enfermería
-                </a>
-           </li> 
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/administrativo"  routerLinkActive="active-link" target="_top">
-                    Auxiliar Administrativo en Salud
-                </a>
-            </li>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/adultomayor" routerLinkActive="active-link" target="_top">
-                Atención al Adulto Mayor
-                </a>
-            </li>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/veterinaria" routerLinkActive="active-link" target="_top">
-                Auxiliar de Veterinaria
-                </a>
-            </li>
-            </div>
-        </li>
-
-        <li class="navbar-item">
-            <a routerLink="/continuada" routerLinkActive="active-link" target="_top" class="navbar-link">Educación Continuada</a>
-        </li>
-
-        <li class="navbar-item submenu">
-            <a class="navbar-link">Nuestra institución</a>
-            <div class="dropdown">
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/conocenos" routerLinkActive="active-link" target="_top">
-                    Quienes Somos
-                </a>
-            </li>
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/proyeccion-social" routerLinkActive="active-link" target="_top">
-                    Proyección social y Extensión
-                </a>
-            </li>
-            </div>
-        </li>
-
-        <li class="navbar-item pt-2">
-            <a routerLink="/bienestar" routerLinkActive="active-link" target="_top" class="navbar-link">Bienestar</a>
-        </li>
-
-        <li class="navbar-item submenu">
-            <a class="navbar-link investigaciones">Investigaciones</a>
-            <div class="dropdown">
-            <li class="dropdown-item">
-                <a class="dropdown-link" routerLink="/investigaciones" routerLinkActive="active-link" target="_top">
-                    Ciencia, creatividad e innovación
-                </a>
-            </li>
-            <li class="dropdown-item">
-                <a class="dropdown-link" href="https://crailab.com/" target="_blank">
-                    CRAILAB
-                </a>
-            </li>
-            </div>
-        </li>
-
-        <li class="navbar-item pt-2">
-            <a routerLink="/egresados" routerLinkActive="active-link" target="_top" class="navbar-link">Egresados</a>
-        </li>
-        </ul>
-    </nav>
-    </div>
-
-    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-5 pt-xl-2 pt-lg-3 pt-md-1 pe-5 pe-lg-3 pe-xl-2 pe-xxl-2">
-        <div class="d-flex justify-content-between align-items-stretch gap-0 flex-nowrap text-center">
-            <a routerLink="/pago-online" class="btn btn-financiacion btn-sm flex-fill py-2 text-center sm:p-0 m-0">
-                Pagos <br class="d-none d-sm-block">En Línea
-            </a>
-            <a href="https://ciaf.digital/inscribete/" target="_blank" class="btn btn-financiacion btn-sm flex-fill py-2 text-center ml-0">
-                Financiación <br class="d-none d-sm-block">Directa
-            </a>
-            <a routerLink="/iniciar" target="_top" class="btn btn-1 btn-sm flex-fill py-2 rounded-2 text-center">
-                Inscríbete <br class="d-none d-sm-block">Aquí
-            </a>
-            <div class="d-none col-xl-4 col-lg-4 col-md-4 col-auto pt-xxl-0 pt-xl-1 pt-lg-1 pt-md-1 pt-2">
-                <a href="https://ciaf.digital/pagos_pse/" target="_blank" class="col-12 py-xxl-2 py-lg-2 py-md-2 py-1 px-1">
-                    <img [src]="pagos" width="auto" title="Pagos en linea" class="rounded-2 pagos">
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="buscador py-3">
-        <form>
-        <div class="row justify-content-center">
-            <div class="col-xl-10">
-                <div class="row pt-4 pb-2">
-    
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-warning" type="button" id="button-addon2"><img [src]="img_lupa_2" alt="Buscar" ></button>
-                    </div>
-    
-                </div>
-            </div>
-        </div>
-        </form>
-    </div>
-
 </div>
+
 
 <!-- hasta aqui llega el buscador    -->
 <div class="wrapper" *ngIf="false">aqui funciona el scroll</div>
@@ -717,16 +550,6 @@
     </div>
 </div>
 
-
-<div class="redes-header d-none">
-
-    <li><a href="https://web.facebook.com/ComunidadCIAF?_rdc=1&_rdr" target="_blank"><img [src]="img_apfacebook" alt="facebook"></a></li>
-    <li><a href="https://www.instagram.com/comunidadciaf/" target="_blank"><img [src]="img_apinstagram" alt="Instagram"></a></li>
-    <li><a href="https://www.youtube.com/channel/UCf6j5NaZbDKkdNpAtzbs9zA" target="_blank"><img [src]="img_apyoutube" alt="Youtube"></a></li>
-    <li><a href="https://www.tiktok.com/@comunidadciaf?lang=es" target="_blank"><img [src]="img_aptiktok" alt="Tik Tok"></a></li>
-
-
-</div>
 
 <div class="api-whatsapp d-none">
     <a href="https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20la%20web" title="Chat"  target="_blank">

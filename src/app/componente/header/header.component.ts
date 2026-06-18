@@ -1,4 +1,4 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -8,12 +8,32 @@ declare const $: any;
 
 type SeccionMega = 'oferta' | 'institucion' | 'bienestar' | 'investigacion' | 'egresados';
 
+interface CollapseInstance {
+  show: () => void;
+  hide: () => void;
+}
+
+interface CollapseApi {
+  getInstance: (el: Element) => CollapseInstance | null;
+  getOrCreateInstance: (el: Element, options?: { toggle?: boolean }) => CollapseInstance;
+}
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  menuMovilAbierto = false;
+
+  private readonly submenusMobile = [
+    'mOferta',
+    'mInstitucion',
+    'mBienestar',
+    'mInvestigacion',
+    'mEgresados'
+  ];
 
   public img_logo = 'assets/image/logo-negro.webp';
   public img_destino = 'assets/image/ico-destino.webp';
@@ -60,7 +80,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     egresados: ['egresados', 'egresadosdata']
   };
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.actualizarSeccionActiva();
@@ -70,6 +93,85 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe(() => this.actualizarSeccionActiva());
 
     this.inicializarMenuLegacy();
+  }
+
+  ngAfterViewInit(): void {
+    const menu = document.getElementById('menuMobile');
+
+    if (!menu) {
+      return;
+    }
+
+    menu.addEventListener('shown.bs.offcanvas', () => {
+      this.menuMovilAbierto = true;
+      this.cdr.markForCheck();
+    });
+
+    menu.addEventListener('hidden.bs.offcanvas', () => {
+      this.menuMovilAbierto = false;
+      this.cdr.markForCheck();
+    });
+
+    this.inicializarAcordeonMobile();
+  }
+
+  /** Abre un submenú (cierra los demás) o cierra el mismo si ya está abierto */
+  alternarSubmenuMobile(event: Event, collapseId: string): void {
+    event.preventDefault();
+
+    const bootstrap = (window as { bootstrap?: { Collapse: CollapseApi } }).bootstrap;
+    const collapseEl = document.getElementById(collapseId);
+
+    if (!bootstrap?.Collapse || !collapseEl) {
+      return;
+    }
+
+    const instance = bootstrap.Collapse.getInstance(collapseEl);
+
+    if (!instance) {
+      return;
+    }
+
+    if (collapseEl.classList.contains('show')) {
+      instance.hide();
+      return;
+    }
+
+    document.querySelectorAll('#menuAccordion .accordion-collapse.show').forEach((abierto) => {
+      bootstrap.Collapse.getInstance(abierto)?.hide();
+    });
+
+    instance.show();
+  }
+
+  private inicializarAcordeonMobile(): void {
+    const bootstrap = (window as { bootstrap?: { Collapse: CollapseApi } }).bootstrap;
+
+    if (!bootstrap?.Collapse) {
+      return;
+    }
+
+    this.submenusMobile.forEach((id) => {
+      const collapseEl = document.getElementById(id);
+
+      if (!collapseEl) {
+        return;
+      }
+
+      const btn = collapseEl.previousElementSibling as HTMLButtonElement | null;
+
+      bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false });
+
+      collapseEl.addEventListener('shown.bs.collapse', () => {
+        btn?.classList.remove('collapsed');
+        btn?.setAttribute('aria-expanded', 'true');
+      });
+
+      collapseEl.addEventListener('hidden.bs.collapse', () => {
+        btn?.classList.add('collapsed');
+        btn?.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 
   ngOnDestroy(): void {
