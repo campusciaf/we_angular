@@ -291,7 +291,6 @@
   background-color: #f3f8fc !important;
 }
 
-
 .bg-img-1{
   background:
       linear-gradient(
@@ -301,7 +300,7 @@
           rgba(0, 80, 90, .85) 80%,
           rgba(90, 180, 60, .55) 100%
       ),
-      url('../../../assets/image/estudiantes-valores.webp');
+      url('assets/image/estudiantes-valores.webp');
 
   background-size: cover;
   background-position: center;
@@ -1880,18 +1879,10 @@ body {
 ========================================== */
 
 @media (max-width: 1199.98px) {
-  .ciaf-stat-value {
-  }
-
-  .ciaf-card:not(.ciaf-card--feature) {
-  }
-
   .ciaf-card--feature {
     min-height: 360px;
   }
 
-  .ciaf-title-display--xl {
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -1912,14 +1903,8 @@ body {
     align-items: flex-start;
   }
 
-  .ciaf-events-header .ciaf-btn--events-all {
-  }
-
   .ciaf-register-grid {
     grid-template-columns: 1fr;
-  }
-
-  .ciaf-register-actions {
   }
 
   .ciaf-text-lead--aside {
@@ -1936,16 +1921,11 @@ body {
     display: block;
   }
 
-  .ciaf-offer-header .ciaf-btn--ghost {
-  }
 }
 
 @media (max-width: 767.98px) {
   .ciaf-pill--hero {
     letter-spacing: .16em;
-  }
-
-  .ciaf-title-display--hero {
   }
 
   .ciaf-text-lead--inverse {
@@ -1960,24 +1940,10 @@ body {
     padding: var(--space-4) 0;
   }
 
-  .ciaf-marquee-strip__track span {
-  }
 
-  .ciaf-marquee-big__track span {
-  }
 }
 
 @media (max-width: 575.98px) {
-  .ciaf-title-display--section,
-  .ciaf-title-display--xl {
-  }
-
-  .ciaf-text-lead--muted,
-  .ciaf-text-lead--center {
-  }
-
-  .ciaf-card:not(.ciaf-card--feature) {
-  }
 
   .ciaf-card--feature {
     min-height: auto;
@@ -1988,23 +1954,12 @@ body {
     height: 54px;
   }
 
-  .ciaf-stat-value {
-  }
 
   .ciaf-offer-section--light,
   .ciaf-offer-section--white {
     padding: 56px 0;
   }
 
-  .ciaf-title-display--offer,
-  .ciaf-title-display--why {
-  }
-
-  .ciaf-text-lead--offer {
-  }
-
-  .ciaf-offer-card {
-  }
 
   .ciaf-offer-card--icon {
     min-height: auto;
@@ -2032,22 +1987,16 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .ciaf-title-display--news {
-  }
-
   .ciaf-allies-section {
     padding: 56px 0;
   }
 
-  .ciaf-title-display--allies {
-  }
+
 
   .ciaf-quick-access-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .ciaf-title-display--quick-access {
-  }
 }
 
 @media (max-width: 575.98px) {
