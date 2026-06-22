@@ -841,10 +841,6 @@ body {
   transform: translate(2px, -2px);
 }
 
-@media (min-width: 576px) {
-  .ciaf-btn--blanco {
-  }
-}
 
 /* ==========================================
    MARQUEES
@@ -1097,8 +1093,6 @@ body {
   pointer-events: none;
 }
 
-.ciaf-offer-card__body {
-}
 
 .ciaf-offer-card__title {
   color: var(--ciaf-primary);
@@ -1666,8 +1660,6 @@ body {
   line-height: 1.65;
 }
 
-.ciaf-newsletter-text:last-of-type {
-}
 
 .ciaf-newsletter-panel {
   background: rgba(148, 163, 184, .18);
@@ -1675,8 +1667,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.ciaf-newsletter-form {
-}
 
 .ciaf-newsletter-label {
   display: block;
@@ -1731,8 +1721,6 @@ body {
   transform: translateY(-1px);
 }
 
-.ciaf-newsletter-submit i {
-}
 
 .ciaf-newsletter-legal {
   color: var(--ciaf-white-70);
@@ -1967,9 +1955,6 @@ body {
   .ciaf-news-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .ciaf-news-header .ciaf-btn--ghost {
   }
 
   .ciaf-news-grid {

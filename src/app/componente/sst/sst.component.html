@@ -1,672 +1,1621 @@
-<section>
-    <div class="row banner-interno" *ngFor="let datos of listarPrograma">
-     
-        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pc">
-            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas}}" alt="Administración de empresas">
-        </div>
-        <div class="col-xx-l12 col-xl-12 col-lg-12 col-md-12 col-12 movil">
-            <img src="https://ciaf.digital/public/web_programas/{{datos.img_programas_movil}}" alt="Administración de empresas">
-        </div>
-        
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
-            <div class="row justify-content-center vertical-align-center">
+<app-header></app-header>
 
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding ">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
-                            <h1 class="text-center">Seguridad y Salud <br>en el Trabajo</h1>
-                            <p class="snies text-right">SNIES {{datos.snies}}</p>
-                            <p class="lema text-center"> {{datos.frase_programa}} </p>
-                        </div>
-                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
-                    </div>
-                </div>
+<!-- Sección 1: Hero del programa (imágenes y textos desde API) -->
+<section class="ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4" *ngFor="let datos of listarPrograma">
+  <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
+    <img
+      class=" w-100 h-100 object-fit-cover d-none d-lg-block"
+      [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programas"
+      [alt]="datos.nombre_programa || 'Programa CIAF'"
+    />
+    <img
+      class=" w-100 h-100 object-fit-cover d-lg-none"
+      [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programas_movil"
+      [alt]="datos.nombre_programa || 'Programa CIAF'"
+    />
+  </div>
 
-                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
+  <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
-                
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
-                                <div class="row text-center small text-white">    
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-hourglass"></i><b> Programa</b> profesional *</b></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-water"></i> Duración</b> 10 semestres</div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-bookmark-heart"></i> Diferentes</b> Jornadas</div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><i class="bi bi-code"></i> Modalidad</b> Presencial (PAT)</div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
-                                <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
-                                        Conoce el programa
-                                    </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
-                                        Plan de estudios
-                                    </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
-                                        Valores y financiación directa
-                                    </a>
-                                    <a (click)="paginas('4')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active'  :  ''" id="btn-4">
-                                        Inicia tu proceso de matrícula
-                                    </a>
-                                </div>
-                            </div>
-                
-                        </div>
-                    </div>
+  <div class="row z-2 py-5 mt-5">
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 mt-5 p-4">
+      <span
+        class="badge rounded-pill bg-white text-color-1 fs-12 fw-bold px-3 py-2 my-3 ls-4"
+        *ngIf="datos.snies"
+      >
+        SNIES {{ datos.snies }}
+      </span>
 
-                </div>
+      <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+        {{ datos.nombre_programa || 'Seguridad y Salud en el Trabajo' }}
+      </h1>
 
-            </div>
-        </div>
-    
+      <p class="fs-24 fw-bold mb-3 text-color-3" *ngIf="datos.frase_programa">
+        {{ datos.frase_programa }}
+      </p>
+
+      <div
+        class="text-color-5 fs-18  mb-4 lh-base"
+        *ngIf="datos.descripcion_programa"
+        [innerHTML]="datos.descripcion_programa"
+      ></div>
+
+      <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+          Programa Profesional Universitario
+        </li>
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-clock text-color-3" aria-hidden="true"></i>
+          Duración: 10 semestres
+        </li>
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-calendar-days text-color-3" aria-hidden="true"></i>
+          Jornada nocturna y fines de semana
+        </li>
+        <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-location-dot text-color-3" aria-hidden="true"></i>
+          Modalidad Presencial (PAT)
+        </li>
+      </ul>
+
+      <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+        <button
+          type="button"
+          class="ciaf-btn ciaf-btn--lime fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
+          (click)="scrollToSeccion('conoce-el-programa', '1')"
+        >
+          Conoce el programa
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <button
+          type="button"
+          class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
+          (click)="scrollToSeccion('proceso-paso-a-paso', '9')"
+        >
+          Inicia tu matrícula
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
+    <i class="fa-solid fa-computer-mouse"></i>
+  </div>
+</section>
+
+<!-- Navegación por secciones (scroll) -->
+<section class="row ciaf-program-nav">
+    <div class="col-12">
+      <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
+        <a
+          *ngFor="let seccion of seccionesPrograma"
+          role="button"
+          (click)="scrollToSeccion(seccion.id, seccion.nav)"
+          class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
+          [class.active]="activo === seccion.nav"
+          [class.text-white]="activo === seccion.nav"
+          [class.fw-bold]="activo === seccion.nav"
+          [class.fw-semibold]="activo !== seccion.nav"
+          [attr.id]="'btn-' + seccion.nav"
+          [attr.aria-current]="activo === seccion.nav ? 'true' : null"
+        >{{ seccion.label }}</a>
+      </nav>
     </div>
 </section>
+
 
 <section class="p-0 m-0">
-
     <div id="content-programa">
 
-        <div id="pag-one" *ngIf="isValid1">
+        <!-- Sección 1: Conoce el programa -->
+        <section class="py-5 bg-img-2" id="conoce-el-programa">
+            <div class="row justify-content-center py-5">
 
-            <div class="row d-flex justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4 d-xl-block d-lg-block d-md-none d-none"></div>
+              <header class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Conoce el programa</span>
 
-                <div class="col-xl-4 col-lg-5 col-md-10 col-12" *ngFor="let datos2 of listarPrograma">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
-                            <h2 class="titulo-2 pb-4">{{datos2.titulo_descripcion}}</h2>
-                        </div>
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-                            <p class="text-justify">
-                                {{datos2.descripcion_programa}}
-                                
+                <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+                  Formación para liderar, emprender y <br>transformar 
+                  <span class="ciaf-gradient-text ciaf-gradient-text--brand"> organizaciones</span>
+                </h2>
 
-                            </p>
-                        </div>
-                    </div>
+                <p class="fs-16 text-color-1">
+                  Descubre el perfil profesional y los campos donde podrás generar impacto como
+                  Administrador de Empresas CIAF.
+                </p>
+              </header>
+
+              <div class="ciaf-conoce__tabs-wrap">
+                <input
+                  type="radio"
+                  name="ciaf-perfil-tab"
+                  id="ciaf-tab-perfil-pro"
+                  class="ciaf-conoce__tab-input"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="ciaf-perfil-tab"
+                  id="ciaf-tab-perfil-ocu"
+                  class="ciaf-conoce__tab-input"
+                />
+
+                <div class="shadow-sm p-2 rounded-pill" role="tablist" aria-label="Tipo de perfil">
+                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro fs-14 fw-semibold" for="ciaf-tab-perfil-pro">
+                    Perfil profesional
+                  </label>
+                  <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14 fw-bold" for="ciaf-tab-perfil-ocu">
+                    Perfil ocupacional
+                  </label>
                 </div>
 
-                <div class="col-xl-4 col-lg-5 col-md-10 col-10 text-center">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
-                            <iframe [src]="total" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
-                
+                <!-- Panel: Perfil profesional -->
+                <div
+                  class="ciaf-conoce__panel ciaf-conoce__panel--pro"
+                  role="tabpanel"
+                  aria-labelledby="ciaf-tab-perfil-pro"
+                >
+                  <div class="row p-4">
+
+                    <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 bg-white" *ngFor="let datos2 of listarPrograma">
+                      <span class="ciaf-conoce__card-badge fs-12 fw-bold">
+                        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                        Perfil profesional
+                      </span>
+
+                      <div
+                        class=" fs-16"
+                        *ngIf="datos2.descripcion_programa; else conoceProFallback"
+                        [innerHTML]="datos2.descripcion_programa"
+                      ></div>
+
+                      <ng-template #conoceProFallback>
+                        <div class="fs-14">
+                          <p>
+                            Profesional con capacidad de liderazgo, trabajo en equipo, negociación y
+                            tolerancia, capaz de asumir retos y adaptarse a los cambios del entorno
+                            empresarial.
+                          </p>
+                          <p>
+                            Capaz de proponer alternativas organizacionales, generar ideas de negocio y
+                            gestionar pequeñas y medianas empresas productivas que aporten al desarrollo
+                            económico y social.
+                          </p>
+                          <p>
+                            Utiliza herramientas tecnológicas de acuerdo con las necesidades de la empresa,
+                            optimizando procesos y fortaleciendo la competitividad organizacional.
+                          </p>
                         </div>
-                    </div>
-                </div>
+                      </ng-template>
+                    </article>
 
-                <div class="col-12"></div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                      <div class="row g-3">
 
-                <div class="col-xl-4 col-lg-5 col-md-10 col-10" *ngFor="let datos3 of listarPrograma">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
-                            <img src="https://www.ciaf.digital/public/web_programa_descripcion/{{datos3.imagen_descripcion}}" alt="{{datos3.nombre_programa}}" width="100%" height="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-5 col-md-10 col-12">
-                    <div class="row justify-content-center">
-
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-12 pt-4">
-                            <h2 class="titulo-2">Campo Profesional:</h2>
-                        </div>
-                        <div class="col-xl-10 col-lg-10 col-10 desempenate" *ngFor="let datos4 of listarDesempenate">
-                            <li> <img src="{{img_li}}" alt="desempeñate"> {{datos4.nombre_desempenate}}</li>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-xl-8 col-lg-8 col-md-8 col-10 py-4 my-4"><hr></div>
-
-                <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center mt-4 pt-4 bg-6 rounded-4">
-                    <div class="row justify-content-center">
-
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4">
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12 col-lg-12 col-mb-12 col-12 text-center">
-                                    <h2 class="tamano-2 text-1">Gradúate con Tres Títulos</h2>
-                                </div>
-                                <div class="col-xl-6 col-lg-9 col-md-7 col-8">
-                                    <div class="titulo-copy text-2 text-right">*por ciclos</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-11 py-4">
-                            <div class="row">
-                                <div class="col-12 text-center pb-xl-0 pb-lg-0 pb-md-2 pb-3">
-                                <h3>Técnica profesional en 
-                                    <span class="text-7">Procesos de Seguridad y Salud en el Trabajo</span>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                            <article class="card h-100 border shadow-sm p-4">
+                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3 "
+                                      style="width:56px;height:56px;">
+                                    <i class="fa-solid fa-user-group text-color-2"></i>
+                                </span>
+                                <h3 class="fs-16 fw-bold text-color-2">
+                                    Liderazgo y trabajo en equipo
                                 </h3>
-                                <div class="info-academica">
-                                    <i class="bi bi-file-earmark-text me-1"></i>
-                                    SNIES: <strong>108806</strong> &nbsp; | &nbsp;
-                                    Resolución: <strong>15749</strong>
-                                </div>
-                                </div>
-
-                                <!-- Semestres Técnico -->
-                                <div class="col-3 bg-8 text-white"><div class="triangulo-equilatero-bottom-left d-none d-md-block"></div><div class="py-2">Semestre 1</div></div>
-                                <div class="col-3 bg-9 py-2 text-white">Semestre 2</div>
-                                <div class="col-3 bg-10 py-2 text-white">Semestre 3</div>
-                                <div class="col-3 bg-11 py-2 text-white">Semestre 4</div>
-
-                                <!-- Título 2 -->
-                                <div class="col-12">
-                                    <div class="row vertical-align-center">
-                                        <div class="col-11">
-                                            <div class="py-xl-0 py-lg-0 py-md-2 py-3">
-                                                <h3>Tecnología en 
-                                                    <span class="text-4">Gestión de Seguridad y Salud en el Trabajo</span>
-                                                </h3>
-                                                <div class="info-academica">
-                                                    <i class="bi bi-file-earmark-text me-1"></i>
-                                                    SNIES: <strong>108479</strong> &nbsp; | &nbsp;
-                                                    Resolución: <strong>11970</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-1 d-none d-md-block">
-                                            <div class="row">
-                                                <div class="col-12"><div class="titulo-cuadro bg-11"></div></div>
-                                                <div class="col-12"><div class="titulo-cuadro bg-12"></div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Semestres Tecnología -->
-                                <div class="col-6 bg-14 py-3 text-white">Semestre 5</div>
-                                <div class="col-6 bg-12 py-3 text-white">Semestre 6</div>
-
-                                <!-- Título 3 -->
-                                <div class="col-12">
-                                    <div class="row vertical-align-center">
-                                        <div class="col-1 d-none d-md-block">
-                                            <div class="row">
-                                                <div class="col-12"><div class="titulo-cuadro-2 bg-14"></div></div>
-                                                <div class="col-12"><div class="titulo-cuadro-2 bg-15"></div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-11">
-                                        <div class="py-xl-0 py-lg-0 py-md-2 py-3">
-                                            <h3>Profesional Universitario en 
-                                                <span class="text-5">Seguridad y Salud en el Trabajo</span>
-                                            </h3>
-                                            <div class="info-academica">
-                                                <i class="bi bi-file-earmark-text me-1"></i>
-                                                SNIES: <strong>108623</strong> &nbsp; | &nbsp;
-                                                Resolución: <strong>14532</strong>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Semestres Profesional -->
-                                <div class="col-3 bg-15 py-4 text-white">Semestre 7</div>
-                                <div class="col-3 bg-16 py-4 text-white">Semestre 8</div>
-                                <div class="col-3 bg-16 py-4 text-white">Semestre 9</div>
-                                <div class="col-3 bg-17 text-white">
-                                    <div class="triangulo-equilatero-bottom-right d-none d-md-block"></div>
-                                    <div class="pt-4 pb-4">Semestre 10</div>
-                                </div>
-                            </div>
+                                <p class="fs-14 text-color-1 mb-0">
+                                    Fortalece habilidades para liderar equipos, negociar y trabajar
+                                    de forma colaborativa en entornos organizacionales dinámicos.
+                                </p>
+                            </article>
                         </div>
+                    
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                            <article class="card h-100 border shadow-sm p-4">
+                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                                      style="width:56px;height:56px;">
+                                    <i class="fa-solid fa-rocket text-color-2"></i>
+                                </span>
+                                <h3 class="fs-16 fw-bold text-color-2">
+                                    Emprendimiento y desarrollo empresarial
+                                </h3>
+                                <p class="fs-14 text-color-1 mb-0">
+                                    Crea ideas de negocio y gestiona PYMEs productivas que impulsen
+                                    el crecimiento económico y la generación de empleo.
+                                </p>
+                    
+                            </article>
+                        </div>
+                    
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                            <article class="card h-100 border shadow-sm p-4">
+                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                                      style="width:56px;height:56px;">
+                                      <i class="fa-solid fa-laptop-code text-color-2"></i>
+                                </span>
+                                <h3 class="fs-16 fw-bold text-color-2">
+                                    Herramientas tecnológicas para la gestión
+                                </h3>
+                                <p class="fs-14 text-color-1 mb-0">
+                                    Aplica tecnología según las necesidades reales de la empresa
+                                    para optimizar procesos y apoyar la toma de decisiones.
+                                </p>
+                    
+                            </article>
+                        </div>
+                    
+                      </div>
                     </div>
+
+                  </div>
                 </div>
 
-                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-right py-4">
-                    <a (click)="paginas('2')" class="btn" (click)="activo='2'">
-                        Ve al plan de estudios
-                        <img src="{{next}}" alt="boton siguiente">
-                    </a>
+                <!-- Panel: Perfil ocupacional -->
+                <div
+                  class="ciaf-conoce__panel ciaf-conoce__panel--ocu mt-5"
+                  role="tabpanel"
+                  aria-labelledby="ciaf-tab-perfil-ocu"
+                >
+                  <div class="ciaf-conoce__ocu-grid">
+                    <ng-container *ngIf="listarDesempenate?.length; else ocuFallback">
+                      <article
+                        class="ciaf-conoce__ocu-card"
+                        *ngFor="let datos4 of listarDesempenate; let i = index"
+                      >
+                        <span class="ciaf-conoce__ocu-card-icon fs-16" aria-hidden="true">
+                          <i class="fa-solid" [ngClass]="{
+                            'fa-building': i % 6 === 0,
+                            'fa-briefcase': i % 6 === 1,
+                            'fa-lightbulb': i % 6 === 2,
+                            'fa-user-gear': i % 6 === 3,
+                            'fa-chart-line': i % 6 === 4,
+                            'fa-crown': i % 6 === 5
+                          }"></i>
+                        </span>
+                        <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">{{ datos4.nombre_desempenate }}</p>
+                      </article>
+                    </ng-container>
+
+                    <ng-template #ocuFallback>
+                      <div class="row g-3 px-4">
+
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-building text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Administrador de su propia empresa
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-briefcase text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente y/o administrador de organizaciones privadas y/o mixtas
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-lightbulb text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente de proyectos
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-user-gear text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Asesor y consultor organizacional
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-chart-line text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente de área o división de grandes empresas
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                              <article class="card rounded-4 border p-3 h-100">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 52px; height: 52px;">
+                                          <i class="fa-solid fa-crown text-white fs-5"></i>
+                                      </span>
+                                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                                          Gerente general y presidente de Junta Directiva
+                                      </p>
+                                  </div>
+                              </article>
+                          </div>
+                      
+                      </div>
+                    </ng-template>
+                  </div>
                 </div>
+              </div>
 
-            </div> 
-
-        </div><!-- cierra pagina uno -->
-
-        <div id="pag-two" *ngIf="isValid2">
-            <div class="row d-flex justify-content-center">
-                <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4 d-xl-block d-lg-block d-md-block d-none"></div>
-                        
-                        <div class="col-xl-10 py-4">
-                            <div class="row">
-                                <div class="col-xl-7 col-lg-9 col-md-8 col-12">
-                                    <h2 class="text-left">Ahora... descubre el plan de estudios</h2>
-                                </div>
-                                <div class="col-xl-4 col-lg-3 col-md-4 col-12">
-                                    <a href="assets/planes/malla_seguridad_salud_trabajo.pdf" target="_blank" class="btn">
-                                        <span class="asterisco">150 créditos</span><br>
-                                        <img src="{{descargar}}" alt="boton siguiente">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-6 rounded-3 py-4 my-4 conoceplan">
-
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4">Nivel 1: Técnico profesional en Procesos de Seguridad y Salud en el Trabajo</h2>
-                                    <p>Tiene la capacidad para identificar, evaluar y mitigar riesgos laborales, implementar medidas preventivas y fomentar una cultura de seguridad y autocuidado en el entorno laboral.</p>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-
-
-                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
-                                   <div class="row">
-                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                                            <div ngxSlickItem *ngFor="let datos of listarSemestres1; index as i" class="slide">
-                                                <ng-container>
-                                                    <div class="semestre m-4 bg-sem{{i+1}}">
-                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
-                                                        <div class="desplegar">
-                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
-                                                        </div>
-                                                        <div *ngFor="let mate of listarMaterias">
-                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
-                                                        </div>
-                                                    </div>
-                                                </ng-container>
-                                            </div>
-                                        </ngx-slick-carousel>
-                                   </div>
-                                 </div>
-
-
-
-                            </div>
-
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-
-                                <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4 text-4">Nivel 2: Tecnología en Gestión de Seguridad y Salud en el Trabajo</h2>
-                                    <p>Tiene la capacidad para desarrollar e implementar estrategias efectivas de prevención de riesgos laborales, promover el bienestar integral de los trabajadores y asegurar el cumplimiento de normativas de seguridad y salud ocupacional.</p>
-                                </div>
-                            <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-
-                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
-                                    <div class="row">
-                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                                            <div ngxSlickItem *ngFor="let datos of listarSemestres2; index as i" class="slide">
-                                                <ng-container>
-                                                    <div class="semestre m-4 bg-sem{{i+5}}">
-                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
-                                                        <div class="desplegar">
-                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
-                                                        </div>
-                                                        <div *ngFor="let mate of listarMaterias">
-                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
-                                                        </div>
-                                                    </div>
-                                                </ng-container>
-                                            </div>
-                                        </ngx-slick-carousel>
-                                    </div>
-                                </div>
-        
-                            </div>
-
-                            <div class="row justify-content-center">
-                                <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-
-                                <div class="col-xl-12 text-center">
-                                    <h2 class="titulo-2 pt-4 text-5">Nivel 3: Profesional Universitario en Seguridad y Salud en el Trabajo</h2>
-                                    <p>Tiene la capacidad para liderar la creación y gestión de programas de prevención y bienestar laboral, promoviendo una cultura de seguridad y autocuidado, y mejorando la productividad y salud de los empleados en diversas organizaciones.</p>
-                                </div>
-                            <div class="col-xl-12  col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-
-                                <div class="col-xl-10 col-lg-9 col-md-12 col-10 ">
-                                    <div class="row">
-                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                                            <div ngxSlickItem *ngFor="let datos of listarSemestres3; index as i" class="slide">
-                                                <ng-container>
-                                                    <div class="semestre m-4 bg-sem{{i+7}}">
-                                                        <div class="py-3 bg-white text-1">Semestre {{datos.semestre}}</div>
-                                                        <div class="desplegar">
-                                                            <img src="{{desplegar}}" alt="desplegar" width="auto" height="auto">
-                                                        </div>
-                                                        <div *ngFor="let mate of listarMaterias">
-                                                            <div *ngIf="datos.semestre==mate.semestre" class="materia">{{mate.materia}}</div>
-                                                        </div>
-                                                    </div>
-                                                </ng-container>
-                                            </div>
-                                        </ngx-slick-carousel>
-                                    </div>
-                                </div>
-        
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-6 col-lg-6 col-mb-6 col-6  py-4">
-                            <a (click)="paginas('1')" class="btn" (click)="activo='1'">
-                                <img src="{{prev}}" alt="boton siguiente"> 
-                                Regresar
-                                
-                            </a>
-                        </div>
-
-                        <div class="col-xl-6 col-lg-6 col-mb-6 col-6 text-right py-4">
-                            <a (click)="paginas('3')" class="btn" (click)="activo='3'">
-                                Conoce nuestra financiación
-                                <img src="{{next}}" alt="boton siguiente">
-                            </a>
-                        </div>
-
-
-
-                    </div>
-                </div>
             </div>
+          </section>
+
+          <!-- Sección 2: Campo de acción -->
+          <section class="ciaf-section-light mt-5 pt-5" id="campo-de-accion" [class.ciaf-section-light]="campoAccionActivo !== null">
+            <div class="row p-4">
+              <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Campo de acción</span>
+                <h2 class="fs-36 fw-extrablack text-color-2">
+                  ¿Dónde podrás generar <span class="ciaf-gradient-text ciaf-gradient-text--brand fs-40">impacto</span>?
+                </h2>
+              </header>
+
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '1'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('1')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
+                          <span class="fs-16 fw-bold text-color-2">
+                            Gerente de organizaciones privadas y públicas
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
+                        Dirige la estrategia y operación de empresas de cualquier sector.
+                      </div>
+              
+                  </button>
+              </div>
+
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '2'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('2')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Director de áreas empresariales
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
+                          Lidera departamentos de mercadeo, talento humano, finanzas u operaciones.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '3'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('3')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Gerente de proyectos
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Planifica, ejecuta y entrega proyectos cumpliendo objetivos y presupuestos.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '4'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('4')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Consultor organizacional
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Asesora a empresas para mejorar su productividad y competitividad.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '5'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('5')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Director de planeación estratégica
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Define el rumbo y las metas de largo plazo de la organización.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '6'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('6')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Evaluador de proyectos de inversión
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Analiza la viabilidad financiera de nuevas iniciativas.
+                      </div>
+              
+                  </button>
+              </div>
+              
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '7'">
+                  <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('7')">
+              
+                      <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                          <span class="fs-16 fw-bold text-color-2">
+                              Emprendedor y creador de empresas
+                          </span>
+              
+                          <i class="fa-solid fa-chevron-right text-color-2"></i>
+                      </div>
+              
+                      <div class="ciaf-campo__body fs-14">
+                          Funda y hace crecer tu propio negocio con bases sólidas.
+                      </div>
+              
+                  </button>
+              </div>    
+            </div>
+          </section>
+
+          <!-- Sección 3: Experiencias reales -->
+          <section class="bg-color-4 py-5" id="experiencias-reales">
+            <div class="row p-4">
+              <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mb-2 text-white">Experiencias reales</span>
+                <h2 class=" fs-36 fw-extrablack text-white">
+                  Conoce cómo se vive Administración de Empresas en CIAF
+                </h2>
+              </header>
+
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
+                <a
+                  class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
+                  href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="position-absolute top-0 start-0 w-100 h-100">
+                    <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                      <video
+                        class="w-100 h-100 object-fit-cover"
+                        poster="https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg"
+                        muted
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                      ></video>
+                    </div>
+                    <span
+                      class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                      aria-hidden="true"
+                    >
+                      <i class="fa-solid fa-play text-dark ms-1"></i>
+                    </span>
+                    <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                      Vive la experiencia CIAF
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
+                <a
+                  class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
+                  href="https://www.youtube.com/watch?v=Ye8mB69B23A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="position-absolute top-0 start-0 w-100 h-100">
+                    <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                      <video
+                        class="w-100 h-100 object-fit-cover"
+                        poster="https://img.youtube.com/vi/Ye8mB69B23A/hqdefault.jpg"
+                        muted
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                      ></video>
+                    </div>
+                    <span
+                      class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                      aria-hidden="true"
+                    >
+                      <i class="fa-solid fa-play text-dark ms-1"></i>
+                    </span>
+                    <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                      Historias de nuestros estudiantes
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
+                <a
+                  class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
+                  href="https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="position-absolute top-0 start-0 w-100 h-100">
+                    <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                      <video
+                        class="w-100 h-100 object-fit-cover"
+                        poster="https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
+                        muted
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                      ></video>
+                    </div>
+                    <span
+                      class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                      aria-hidden="true"
+                    >
+                      <i class="fa-solid fa-play text-dark ms-1"></i>
+                    </span>
+                    <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                      Emprendimiento y liderazgo
+                    </span>
+                  </div>
+                </a>
+              </div>
             
-       
+            </div>
+          </section>
 
-        </div><!-- cierra pagina dos -->
+          <!-- Sección 4: Ruta de crecimiento profesional -->
+          <section class="my-5 py-5 ciaf-section-white py-5" id="ruta-crecimiento">
+            <div class="row p-4 justify-content-center">
+              <header class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 my-5 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-black rounded-pill px-4">Ruta de crecimiento profesional</span>
+                <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+                  Gradúate con <span class="ciaf-gradient-text ciaf-gradient-text--brand">tres títulos</span> y crece paso a paso
+                </h2>
+                <p class="fs-16">
+                  En CIAF avanzas por ciclos propedéuticos. Cada etapa te permite obtener un título y seguir
+                  creciendo profesionalmente.
+                </p>
+              </header>
 
-        <div id="pag-three" *ngIf="isValid3">
+              <div class="ciaf-ruta__shell col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                <input type="radio" name="ruta-ciclo" id="ruta-ciclo-1" class="ciaf-ruta__input" checked />
+                <input type="radio" name="ruta-ciclo" id="ruta-ciclo-2" class="ciaf-ruta__input" />
+                <input type="radio" name="ruta-ciclo" id="ruta-ciclo-3" class="ciaf-ruta__input" />
 
-            <div class="row">
-                
-                    <div class="col-xl-12 col-lg-12 colmd-12 col-12">
-                        <div class="row financiacion-interno">
-                            <img src="{{banner_financiacion}}" alt="Financiación 0% interes">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 financiacion-contenido ">
-                               <div class="row justify-content-center vertical-align-center h-100 text-center">
-                                    <div class="col-xl-8 col-lg-8 col-md-9 col-10">
-                                        <h2 class="text-white tamano-1"> FINANCIACIÓN 0% INTERÉS </h2>
-                                        <p class="text-1">Garantizamos descuentos durante TODA tu carrera</p>
-                                    </div>
-                                </div>
-                                
+                <nav class="ciaf-ruta__path" aria-label="Etapas del programa">
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student fs-14 fw-bold">Estudiante</span>
+                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2 fs-14 fw-bold">Técnico Profesional</span>
+                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3 fs-14 fw-bold">Tecnólogo</span>
+                  <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4 fs-14 fw-bold">Profesional Universitario</span>
+                </nav>
+
+                <div class="ciaf-ruta__pickers">
+                  <label class="ciaf-ruta__picker ciaf-ruta__picker--1" for="ruta-ciclo-1">
+                    <span class="ciaf-ruta__picker-top">
+                      <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 1</span>
+                      <span class="bg-color-4 p-2 fs-14 rounded-circle" aria-hidden="true">
+                        <i class="fa-solid fa-graduation-cap text-white"></i>
+                      </span>
+                    </span>
+                    <span class="ciaf-ruta__picker-title fs-16 fw-bold">Técnica profesional en Operaciones contables y financieras</span>
+                    <span class="ciaf-ruta__sem-track">
+                      <span class="ciaf-ruta__sem-node fs-12">1</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node  fs-12">2</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node  fs-12">3</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node  fs-12">4</span>
+                    </span>
+                    <div class="row fs-12 text-color-2 fw-bold">
+                      <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div> 
+                      <div class="col-auto mx-0 px-0">Técnico Profesional</div>
+                    </div>
+                  </label>
+
+                  <label class="ciaf-ruta__picker ciaf-ruta__picker--2" for="ruta-ciclo-2">
+                    <span class="ciaf-ruta__picker-top">
+                      <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 2</span>
+                      <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--2 fs-14" aria-hidden="true">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                      </span>
+                    </span>
+                    <span class="ciaf-ruta__picker-title fs-16 fw-bold">Tecnología en Gestión Contable <small class="text-muted fs-10">*convenio INTEP</small></span>
+                    <span class="ciaf-ruta__sem-track">
+                      <span class="ciaf-ruta__sem-node fs-12">5</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node fs-12">6</span>
+                    </span>
+                    <div class="row fs-12 text-color-6 fw-bold">
+                      <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div> 
+                      <div class="col-auto mx-0 px-0">Tecnólogo</div>
+                    </div>
+                  </label>
+
+                  <label class="ciaf-ruta__picker ciaf-ruta__picker--3" for="ruta-ciclo-3">
+                    <span class="ciaf-ruta__picker-top">
+                      <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 3</span>
+                      <span class="bg-color-5 p-2 fs-14 rounded-circle" aria-hidden="true">
+                        <i class="fa-solid fa-graduation-cap text-white"></i>
+                      </span>
+                    </span>
+                    <span class="ciaf-ruta__picker-title fs-16 fw-bold">Profesional Universitario en Contaduría Publíca <small class="text-muted fs-10">*convenio INTEP</small></span>
+                    <span class="ciaf-ruta__sem-track">
+                      <span class="ciaf-ruta__sem-node fs-12">7</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node fs-12">8</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node fs-12">9</span>
+                      <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                      <span class="ciaf-ruta__sem-node fs-12">10</span>
+                    </span>
+                    <div class="row fs-12 text-color-3 fw-bold">
+                      <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div> 
+                      <div class="col-auto mx-0 px-0">Profesional Universitario</div>
+                    </div>
+                  </label>
+                </div>
+
+                <article class="ciaf-ruta__panel ciaf-ruta__panel--1">
+                  <div class="ciaf-ruta__panel-meta">
+                    <span class="ciaf-ruta__meta-pill bg-color-4 text-white fs-12 fw-semibold">Ciclo 1</span>
+                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Técnico Profesional</span>
+                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109022</span>
+                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14400</span>
+                  </div>
+                  <h3 class="fs-24 fw-black text-color-2">Técnica profesional en Operaciones contables y financieras</h3>
+                  <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Qué aprenderás</h4>
+                      <p class="fs-14">Fundamentos de administración, procesos empresariales, contabilidad básica y servicio al cliente.</p>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                      <div class="">
+                        <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                          <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado
+                        </h4>
+                        <p class="fs-14">Técnico Profesional</p>
+                      </div>
+                      <div class="">
+                        <h4 class="fs-14 fw-bold text-color-2 ">
+                          <i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales
+                        </h4>
+                        <p class="fs-14">Te puedes emplear desde el primer ciclo en áreas de apoyo administrativo y procesos.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte
+                      </h4>
+                    </div>
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 mt-3">
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Apoyo administrativo</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Gestión de procesos</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Servicio al cliente</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Contabilidad básica</span>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <div class="d-flex align-items-center rounded-pill p-3 bg-color-7">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-4"
+                                 style="width:48px;height:48px;">
+                                <i class="fa-solid fa-graduation-cap text-white"></i>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-            </div> 
-
-            <div class="row justify-content-center valoresyfinanciacion">
-                <div class="col-xl-3 col-lg-3 col-md-10 col-8 border-right-1">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-8 col-lg-12 col-md-5 col-10">
-                            <h2 class="titulo-2 text-3 pt-4">Financiación directa:</h2>
-                        </div>
-                        <div class="col-xl-8 col-lg-10 col-md-5 col-10 pt-4">
-                            <p class="text-right text-1">
-                                Fácil<br>
-                                Sin fiadores<br>
-                                Sin revisar centrales de riesgo<br>
-                                Y con solo 2 clicks
+                        <div>
+                            <p class="mb-0 text-color-2 fs-14">
+                                Al finalizar obtienes el título de
+                                <strong>Técnico Profesional en Procesos Empresariales</strong>
                             </p>
                         </div>
                     </div>
-                </div>
-               
+                  </div>
+                </article>
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-10">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-1 col-lg-1 col-md-1 col-1 numero-financiacion text-3 hv-100 vertical-align-center">1</div>
-                        <div class="col-xl-8 col-md-8 col-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
-                            <div class="row">
-                                <span class="col-12 fs-5 pt-4">Valor inscripción</span>
-                                <span class="col-12 fs-1">$144.847</span><br>
-                                <span class="small">Incluye seguro</span> 
-                                <span class="small">(Ins. $129.987 + $14.860)</span>
-                                <span class="small">(Pago único)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <article class="ciaf-ruta__panel ciaf-ruta__panel--2">
 
+                  <div class="ciaf-ruta__panel-meta">
+                      <span class="ciaf-ruta__meta-pill bg-color-6 text-white fs-12 fw-semibold">Ciclo 2</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Tecnológico</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109021</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14399</span>
+                  </div>
+              
+                  <h3 class="fs-24 fw-black text-color-2">
+                    Tecnología en Gestión Contable <small class="text-muted fs-10">*convenio INTEP</small>
+                  </h3>
+              
+                  <div class="row">
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-lightbulb text-color-6"></i> Qué aprenderás
+                          </h4>
+              
+                          <p class="fs-14">
+                              Gestión administrativa, auditoría, control interno, finanzas y gestión del talento humano.
+                          </p>
+                      </div>
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                                  <i class="fa-solid fa-chart-line text-color-6"></i> Nivel alcanzado
+                              </h4>
+              
+                              <p class="fs-14">Tecnólogo</p>
+                          </div>
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2">
+                                  <i class="fa-solid fa-user-check text-color-6"></i> Beneficios laborales
+                              </h4>
+              
+                              <p class="fs-14">
+                                Accede a cargos de coordinación, supervisión y auditoría con mayor remuneración.
+                              </p>
+                          </div>
+              
+                      </div>
+              
+                  </div>
+              
+                  <div class="row">
+              
+                      <div class="col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-briefcase text-color-6"></i> Áreas donde puedes desempeñarte
+                          </h4>
+                      </div>
+              
+                      <div class="col-12 mt-3">
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Coordinación administrativa</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Auditoría y control interno</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Análisis financiero</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Supervisión de equipos</span>
+                      </div>
+              
+                  </div>
+              
+                  <div class="col-12 mt-3">
+                      <div class="d-flex align-items-center rounded-pill p-3 bg-color-8">
+              
+                          <div class="flex-shrink-0 me-3">
+                              <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-6"
+                                   style="width:48px;height:48px;">
+                                  <i class="fa-solid fa-graduation-cap text-white"></i>
+                              </div>
+                          </div>
+              
+                          <div>
+                              <p class="mb-0 text-color-2 fs-14">
+                                  Al finalizar obtienes el título de
+                                  <strong class="text-color-6">Tecnólogo en Gestión y Auditoría Administrativa</strong>
+                              </p>
+                          </div>
+              
+                      </div>
+                  </div>
+              
+                </article>
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-10">
-                    <div class="row d-flex justify-content-center vertical-align-center">
+                <article class="ciaf-ruta__panel ciaf-ruta__panel--3">
 
-                        <div class="col-xl-1 col-lg-1 col-md-1 col-1 numero-financiacion text-3 hv-100">2</div>
-                        <div class="col-xl-8 col-md-8 col-8 text-center bg-1 text-white p-4 alto-card-financiacion border-bottom-1">
-                            <div class="row">
-                              
-                                <span class="col-12 fs-5">Matrícula Ordinaria</span>
-                                <span class="fs-6 text-decoration-line-through">$3.220.000 </span>
-                                <span class="col-12 fs-1">$2.640.000 </span>
-                                <span class="small">Estos valores incrementarán de acuerdo al nivel de formación. (conoce más)</span> 
-                                <span class="col-12 fs-2">Jornada</span>
-                                <span class="small">Diurna, Nocturna y Fines de semana</span>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  <div class="ciaf-ruta__panel-meta">
+                      <span class="ciaf-ruta__meta-pill bg-color-5 text-white fs-12 fw-semibold">Ciclo 3</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Profesional Universitario</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 108591</span>
+                      <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14398</span>
+                  </div>
+              
+                  <h3 class="fs-24 fw-black text-color-2">
+                    Profesional Universitario en Contaduría Publíca <small class="text-muted fs-10">*convenio INTEP</small>
+                  </h3>
+              
+                  <div class="row">
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-lightbulb text-color-3"></i> Qué aprenderás
+                          </h4>
+              
+                          <p class="fs-14">
+                              Dirección estratégica, gerencia financiera, operaciones, negocios internacionales y liderazgo organizacional.
+                          </p>
+                      </div>
+              
+                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                                  <i class="fa-solid fa-chart-line text-color-3"></i> Nivel alcanzado
+                              </h4>
+              
+                              <p class="fs-14">Profesional Universitario</p>
+                          </div>
+              
+                          <div>
+                              <h4 class="fs-14 fw-bold text-color-2">
+                                  <i class="fa-solid fa-user-check text-color-3"></i> Beneficios laborales
+                              </h4>
+              
+                              <p class="fs-14">
+                                  Accede a cargos de gerencia, consultoría, planeación estratégica y dirección en organizaciones de todos los sectores.
+                              </p>
+                          </div>
+              
+                      </div>
+              
+                  </div>
+              
+                  <div class="row">
+              
+                      <div class="col-12">
+                          <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                              <i class="fa-solid fa-briefcase text-color-3"></i> Áreas donde puedes desempeñarte
+                          </h4>
+                      </div>
+              
+                      <div class="col-12 mt-3">
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Gerencia general</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Dirección de áreas</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Consultoría organizacional</span>
+                          <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Creación de empresa</span>
+                      </div>
+              
+                  </div>
+              
+                  <div class="col-12 mt-3">
+                      <div class="d-flex align-items-center rounded-pill p-3 bg-color-2">
+              
+                          <div class="flex-shrink-0 me-3">
+                              <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-5"
+                                   style="width:48px;height:48px;">
+                                  <i class="fa-solid fa-graduation-cap text-white"></i>
+                              </div>
+                          </div>
+              
+                          <div>
+                              <p class="mb-0 text-color-2 fs-14">
+                                  Al finalizar obtienes el título de
+                                  <strong class="text-color-3">Profesional Universitario en Administración de Empresas</strong>
+                              </p>
+                          </div>
+              
+                      </div>
+                  </div>
+              
+                </article>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
+              </div>
 
-                <div class="col-xl-12 col-lg-12 colmd-12 col-12">
-                    <div class="row beneficios-interno">
-                        <img src="{{beneficios}}" alt="Beneficios">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-12 beneficios-contenido ">
-                           <div class="row justify-content-center vertical-align-center h-100 text-center">
-
-                                <div class="col-xl-2 col-lg-2 col-md-12 col-10 text-white bolder-1 py-xl-1 py-lg-1 py-md-1 py-4">
-                                    <span class="fs-3">BENEFICIOS</span>
-                                </div>
-                                
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
-                                    Metodologías de <br>Aprendizaje Creativo
-                                </div>
-                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
-                                    Jornada <br>Nocturna
-                                </div>
-                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
-                                    Descuentos en <br>tu matrícula
-                                </div>
-                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
-                                    Financiación <br>Directa y sin <br>Intereses
-                                </div>
-                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block"><hr></div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-10 text-white">
-                                    Recibe <br>3 Títulos
-                                </div>
-                                <div class="col-8 d-xl-none d-lg-none d-md-none d-block py-2"></div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 py-4 my-4"></div>
-
-                
-                <div class="col-xl-5 col-lg-5 col-mb-5 col-5 py-4">
-                    <a (click)="paginas('2')" class="btn" (click)="activo='2'">
-                        <img src="{{prev}}" alt="boton siguiente"> 
-                        Regresar
-                        
-                    </a>
-                </div>
-
-                <div class="col-xl-5 col-lg-5 col-mb-5 col-5 text-right py-4">
-                    <a (click)="paginas('4')" class="btn" (click)="activo='4'">
-                        Ahora sí, vive la experiencia. ¡INSCRÍBETE! 
-                        <img src="{{next}}" alt="boton siguiente">
-                    </a>
-                </div>
 
             </div>
+          </section>
 
-            
+          <!-- Sección 5: Plan de estudios -->
+          <section class="ciaf-section-light py-5" id="plan-estudios">
+            <div class="row pt-5 justify-content-center">
+              <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Plan de estudios</span>
+                <h2 class=" fs-36 fw-extrablack text-color-2">Tu camino semestre a semestre</h2>
+              </header>
 
-        </div><!-- cierra el tres -->
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <a href="assets/planes/malla_administracion.pdf" target="_blank" rel="noopener noreferrer" class="btn">
+                  <div class="ciaf-plan__download-credits fs-12 fw-semibold">150 créditos</div>
+                  <img src="{{ descargar }}" alt="Descargar malla curricular" />
+                </a>
+              </div>
 
-        <div id="pag-four" *ngIf="isValid4">
+              <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-12">
+                <div
+                  class="ciaf-plan__item mb-3"
+                  *ngFor="let datos of semestresPlan"
+                  [class.ciaf-plan__item--milestone]="esSemestreHito(datos.semestre)"
+                  [class.ciaf-plan__item--open]="planSemestreEstaAbierto(datos.semestre)"
+                >
+                  <div class="ciaf-plan__card">
+                    <button
+                      type="button"
+                      class="ciaf-plan__trigger"
+                      (click)="togglePlanSemestre(datos.semestre)"
+                      [attr.aria-expanded]="planSemestreEstaAbierto(datos.semestre)"
+                      [attr.aria-controls]="'plan-panel-' + datos.semestre"
+                    >
+                      <span class="ciaf-plan__num fs-16 fw-bold">{{ datos.semestre }}</span>
+                      <span class="ciaf-plan__head-main">
+                        <span class="ciaf-plan__name fs-16 fw-bold">Semestre {{ datos.semestre }}</span>
+                        <span class="ciaf-plan__badge fs-10" *ngIf="etiquetaTituloSemestre(datos.semestre) as titulo">
+                          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                          {{ titulo }}
+                        </span>
+                      </span>
+                      <i class="fa-solid fa-chevron-down ciaf-plan__chevron fs-14" aria-hidden="true"></i>
+                    </button>
 
-            <div class="row d-flex justify-content-center">
-        
-                <div class="col-xl-12 col-lg-10 col-md-10 col-10 text-center py-4 my-4">
-                    <h2 class="titulo-2 tamano-1 py-4">Inscripción, asesoría y matrícula</h2>
+                    <div class="ciaf-plan__panel" [id]="'plan-panel-' + datos.semestre" *ngIf="planSemestreEstaAbierto(datos.semestre)">
+                      <ul class="ciaf-plan__materias">
+                        <li *ngFor="let mate of materiasDelSemestre(datos.semestre)">
+                          <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+                          <span>{{ mate.materia }}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-center pb-4 my-4"><hr></div>
-                <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-center pb-4 my-4">
-                   <h3 class="titulo-3 tamano-2"> La experiencia inicia aquí</h3>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Sección 6: Transformación -->
+          <section class=" ciaf-section-white py-5" id="transformacion">
+            <div class="row py-5">
+          
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                  AQUÍ NO SOLO OBTIENES UN TÍTULO
+                </span>
+          
+                <h2 class="text-color-2 fs-36 fw-extrablack my-3">
+                  Vives una <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformación completa</span>
+                </h2>
+              </div>
+          
+              <div class="row ciaf-transform-grid mt-5 px-4 justify-content-center">
+          
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+          
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Transformación Humana</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Despertamos tu pasión y potencial más allá del aula.
+                    </p>
+                  </article>
                 </div>
+          
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+          
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-solid fa-brain"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Mentalidad Digital</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Te preparamos para el mundo laboral 4.0 con IA y tecnología.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+          
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-solid fa-gear"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Técnico con Propósito</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Formación orientada a crear valor real en las organizaciones.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+          
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Experiencias Nacionales e Internacionales</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Convenios, movilidad y conexiones nacionales e internacionales que abren nuevas puertas.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+          
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Título +</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Desde el primer nivel ya puedes emplearte y seguir creciendo.
+                    </p>
+                  </article>
+                </div>
+          
+              </div>
+          
+            </div>
+          </section>
 
-                <div class="col-xl-10 col-lg-10 col-md-10 col-10 ">
-                    <div class="row">
+          <!-- Sección 7: Por qué estudiarlo -->
+          <section class="ciaf-section-light py-5" id="por-que-estudiarlo">
+            <div class="row py-5 px-4">
+          
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                  ¿POR QUÉ ESTUDIARLO?
+                </span>
+              </div>
+              <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-12 my-3">
+                <h2 class="text-color-2 fs-36 fw-extrablack">
+                  Las empresas necesitan líderes capaces de
+                  adaptarse, innovar y <span class="ciaf-gradient-text ciaf-gradient-text--brand">tomar decisiones.</span>
+                </h2>
+              </div>
+          
+              <div class="row">
+          
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-1 fs-16 mb-2">
+                      <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold">Estrategia empresarial</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Diseña planes que llevan a las organizaciones al siguiente nivel.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-2 fs-16 mb-2">
+                      <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold">Innovación y emprendimiento</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Convierte ideas en soluciones, proyectos y oportunidades reales.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                      <i class="fa-solid fa-users text-color-6"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold">Liderazgo y gestión de equipos</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Desarrolla habilidades para dirigir personas, procesos y resultados.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-1 fs-16 mb-2">
+                      <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold">Negocios y transformación digital</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Entiende los nuevos modelos de negocio impulsados por la tecnología.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-2 fs-16 mb-2">
+                      <i class="fa-solid fa-chart-column"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold">Análisis financiero</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Toma decisiones con datos, indicadores y visión estratégica.
+                    </p>
+                  </article>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                      <i class="fa-solid fa-rocket text-color-6"></i>
+                    </div>
+          
+                    <h3 class="text-color-2 fs-18 fw-bold">Creación de nuevos proyectos</h3>
+          
+                    <p class="text-color-1 fs-14">
+                      Aprende a estructurar iniciativas sostenibles, viables y escalables.
+                    </p>
+                  </article>
+                </div>
+          
+              </div>
+          
+            </div>
+          </section>
 
-                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                            <div ngxSlickItem *ngFor="let datos of listarContacto; index as i" class="slide">
-                                <ng-container>
-                                  
-                                       
-                                        <div class=" bg-1 text-white border-bottom-1 text-center m-4">
-                                            <div class="inicia-titulo"><h4 class="p-4">{{datos.titulo}}</h4></div>
-                                            <img src="{{datos.pic}}" alt="{{datos.pic}}" width="auto" height="auto" class="mx-auto">
-                                            <div class="inicia-detalle"><span class="small">{{datos.detalle}}</span></div>
-                                            <div class="text-center p-4" *ngIf="datos.tipo_link=='1'">
-                                                <a href="{{datos.link}}" target="_blank" class="btn btn-light">{{datos.boton}}</a>
-                                            </div>
-                                            <div class="text-center p-4" *ngIf="datos.tipo_link=='2'">
-                                                <a data-bs-toggle="modal" href="{{datos.link}}" class="btn btn-light">{{datos.boton}}</a>
-                                            </div>
-                                        </div>
-                           
-                                    
-                                </ng-container>
-                            </div>
-                        </ngx-slick-carousel>
-
+          <!-- Sección 8: Valores y financiación -->
+          <section class="pt-5" id="valores-financiacion">
+                <div class="row justify-content-center bg-img-1 py-5">
   
-                    </div>
+                  <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
+                    <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white">VALORES Y FINANCIACIÓN</span>
+              
+                    <h2 class="fs-60 fw-extrablack my-3">
+                      Financiación <span class="text-color-3">0% interés</span>
+                    </h2>
+              
+                    <p class="fs-24 fw-bold">
+                      Invierte en tu futuro sin que el dinero detenga tus metas.
+                    </p>
+              
+                    <p class="fs-18 text-color-5">
+                      En CIAF encuentras financiación directa, descuentos y beneficios pensados
+                      para acompañarte durante toda tu carrera.
+                    </p>
+              
+                    <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
+                      Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
+                    </p>
+                  </div>
 
-                </div>
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center py-4 my-4"></div>
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12 bg-3 py-4 my-4">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-10 text-white">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0 fs-4">Conoce</div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0 inicia-nuestro">Nuestro</div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 fs-4 p-0 m-0">ADN</div>
-                        </div> 
-                        <div class="col-xl-5 col-lg-6 col-md-6 col-10 text-white fs-5">
-
-                            <ol>
-                                <li> Metodologías de aprendizaje<span class="bolder-1"> creativas</span> </li>
-                                <li> Modelo presencial <span class="bolder-1">asistido por tecnologías.</span></li>
-                                <li> Financiación <span class="bolder-1">directa, sin intereses, sin fiadores y sin revisar centrales de riesgo. </span></li>
-                                <li> Formación por <span class="bolder-1">ciclos.</span></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-10 col-lg-10 col-mb-10 col-10  py-4">
-                    <a (click)="paginas('3')" class="btn" (click)="activo='3'">
-                        <img src="{{prev}}" alt="boton siguiente"> 
-                        Regresar
+                </div>  
+                
+                <!-- BANDA GLASS -->
+                <div class="ciaf-benefits-wrap">
+                  <div class="container">
+                    <div class="ciaf-benefits-glass">
+                      <div class="row g-3">
+              
+                        <div class="col-lg-3 col-md-4 col-6" *ngFor="let item of [
+                          'Jornadas flexibles',
+                          'Financiación directa',
+                          'Sin intermediarios bancarios',
+                          'Descuentos institucionales',
+                          'Ciclos propedéuticos',
+                          'Tres títulos profesionales',
+                          'Modalidad presencial',
+                          'Acompañamiento permanente'
+                        ]">
+                          <div class="ciaf-card p-2 rounded-4 text-color-2 d-flex align-items-center gap-2 h-100">
+                            
+                            <span class="icono-rounded bg-color-2 fs-14 flex-shrink-0">
+                              <i class="fa-solid fa-check"></i>
+                            </span>
                         
-                    </a>
+                            <strong class="mb-0 lh-sm fs-14">
+                              {{ item }}
+                            </strong>
+                        
+                          </div>
+                        </div>
+              
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
 
+          </section>
+
+          <!-- Sección 9: Proceso paso a paso -->
+          <section class="row justify-content-center my-4" id="proceso-paso-a-paso">
+            <!-- PASO A PASO -->
+            <div class="row justify-content-center my-5 py-5" id="proceso-paso-a-paso">
+              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5">TU PROCESO PASO A PASO</span>
+              </div>
+
+              <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-12 col-12 text-center">
+                <h3 class="text-color-2 fs-36 fw-black my-3">
+                  Matricularte es más fácil de lo que crees
+                </h3>
+              </div>
+          
+              <div class="row g-4  px-4">
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card p-4 rounded-4 text-center">
+                    <div class="fs-24">
+                      <i class="fa-solid fa-receipt bg-color-3 text-white rounded-pill p-4"></i>
+                    </div>
+                    <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 1</span> </div>
+                    <h4 class="text-color-2 fs-20 fw-bold">Valor de inscripción</h4>
+                    <p class="text-color-1 fs-14 fw-medium">Un único pago para reservar tu cupo. Incluye seguro estudiantil.</p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                  <article class="ciaf-card p-4 rounded-4 text-center">
+                    <div class="fs-24">
+                      <i class="fa-regular fa-file-lines bg-color-3 text-white rounded-pill p-4"></i>
+                    </div>
+                    <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 2</span> </div>
+                    <h4 class="text-color-2 fs-20 fw-bold">Matrícula</h4>
+                    <p class="text-color-1 fs-14 fw-medium">Financiación directa, sin fiadores y sin revisar centrales de riesgo.</p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                  <article class="ciaf-card p-4 rounded-4 text-center">
+                    <div class="fs-24">
+                      <i class="fa-solid fa-rocket bg-color-3 text-white rounded-pill p-4"></i>
+                    </div>
+                    <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 3</span> </div>
+                    <h4 class="text-color-2 fs-20 fw-bold">Inicio de clases</h4>
+                    <p class="text-color-1 fs-14 fw-medium">Empieza tu camino profesional en la jornada que mejor se adapte a ti.</p>
+                  </article>
+                </div>
+        
+              </div>
 
             </div>
+          </section>
 
-        </div><!-- cierra pagina cuatro -->
+          <!-- Sección 10: Costos -->
+          <section class="row justify-content-center my-4" id="costos">
+              
+              <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11">
+                <div class="row g-4 align-items-stretch">
+          
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 border-end p-4">
+                    <div class="ciaf-cost-info">
+                      <h3 class="text-color-2 fs-36 fw-extrablack">Financiación directa</h3>
+                      <ul class="text-color-2 list-unstyled">
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Fácil</li>
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Sin fiadores</li>
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Sin revisar centrales de riesgo</li>
+                        <li class="mb-2"><i class="fa-solid fa-check me-2"></i> Y con solo 2 clicks</li>
+                      </ul>
+                    </div>
+                  </div>
+          
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 px-4">
+                    <article class="row p-4 align-items-center h-100 bg-color-4 rounded-4">
+                      <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-12">
+                        <span class="text-color-3 fs-60 fw-extrablack">1</span>
+                      </div>
+                      <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-10 ps-4">
+                        <h3 class="text-white fs-14 fw-bold text-uppercase">Valor inscripción</h3>
+                        <h4 class="text-white fs-36 fw-extrablack">$144.847</h4>
+                        <div class="text-center fs-12 fw-medium">
+                          <div class="text-color-5">Incluye seguro</div>
+                          <div class="text-color-5">(Ins. $129.987 + $14.860)</div>
+                          <div class="text-color-5">(Pago único)</div>
+                        </div>
+                      </div>
+                      <div class="bg-color-5 pt-1 rounded-pill"></div>
+                    </article>
+                    
+                  </div>
+          
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                    <article class="row bg-color-4 rounded-4 p-4 align-items-center h-100">
+                      <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-12">
+                        <span class="text-color-3 fs-60 fw-extrablack">2</span>
+                      </div>
+                      <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 ps-4">
+                        <h3 class="text-white fs-14 fw-bold text-uppercase">Matrícula ordinaria</h3>
+                        <h4 class="text-color-5 fs-16 fw-bold text-decoration-line-through">$3.220.000</h4>
+                        <h4 class="text-white fs-36 fw-extrablack">$3.220.000</h4>
+                        <div class="text-center fs-12 fw-medium">
+                          <div class="text-color-5">Estos valores incrementarán de acuerdo al nivel de formación.</div>
+                          <div class="text-color-3 fw-bold fs-20">Jornadas</div>
+                          <div class="text-color-5">Diurna, Nocturna y fines de semana</div>
+                        </div>
+                      </div>
+                      <div class="bg-color-5 pt-1 rounded-pill mt-2"></div>
+                    </article>
+                  </div>
+          
+                </div>
+              </div>
+             
+          </section>
+
+          <!-- sección 11: OPCIONES -->
+          <div class="row justify-content-center my-4" id="opciones">
+
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 text-center pt-5">
+        
+              <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">ALTERNATIVAS PENSADAS PARA TI</span>
+        
+              <h3 class="text-color-2 fs-36 fw-extrablack mt-3">
+                Un sistema de financiación <span class="ciaf-gradient-text ciaf-gradient-text--brand">a tu medida</span>
+              </h3>
+            </div>
+        
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 text-center ">
+              <div class="row g-4 mt-4 text-start">
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card rounded-4 p-4 ciaf-option-card ">
+                    <div class="icono-rectangle fs-20">
+                      <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h4 class="text-color-2 fs-20 fw-bold mt-3">Financiación Directa CIAF</h4>
+                    <ul class="fs-14 list-unstyled fw-medium">
+                      <li><i class="fa-solid fa-check"></i> Sin intermediarios bancarios</li>
+                      <li><i class="fa-solid fa-check"></i> Proceso ágil</li>
+                      <li><i class="fa-solid fa-check"></i> Respuesta rápida</li>
+                      <li><i class="fa-solid fa-check"></i> 0% interés</li>
+                    </ul>
+                    <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card rounded-4 p-4 ciaf-option-card">
+                    <div class="icono-rectangle fs-20">
+                      <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <h4 class="text-color-2 fs-20 fw-bold mt-3">Descuentos Institucionales</h4>
+                    <ul class="fs-14 list-unstyled fw-medium">
+                      <li><i class="fa-solid fa-check"></i> Convenios</li>
+                      <li><i class="fa-solid fa-check"></i> Beneficios especiales</li>
+                      <li class="mb-2"><i class="fa-solid fa-check"></i> Apoyos institucionales</li>
+                    </ul>
+                    <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card rounded-4 p-4 ciaf-option-card">
+                    <div class="icono-rectangle fs-20">
+                      <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h4 class="text-color-2 fs-20 fw-bold mt-3">Opciones de Pago</h4>
+                    <ul class="fs-14 list-unstyled fw-medium">
+                      <li><i class="fa-solid fa-check"></i> Pagos flexibles</li>
+                      <li><i class="fa-solid fa-check"></i> Acompañamiento personalizado</li>
+                      <li><i class="fa-solid fa-check"></i> Diferentes alternativas</li>
+                    </ul>
+                    <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                  </article>
+                </div>
+        
+              </div>
+            </div>
+
+          </div>
+
+          <!-- sección 12: SIMULADOR -->
+          <div class="row justify-content-center bg-section-degradado py-5" id="simulador">
+
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 mt-4">
+              <div class="text-center">
+                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                    <i class="fa-solid fa-calculator"></i>
+                      SIMULADOR
+                  </span>
+                  <h2 class="text-color-2 fs-36 fw-extrablack mt-3">
+                      Calcula tu camino hacia tu título
+                  </h2>
+              </div>
+            </div>
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 mt-5">
+              <div class="ciaf-simulator-card">
+                  <div class="row g-0 align-items-stretch">
+                      <!-- IZQUIERDA -->
+                      <div class="col-lg-6 p-5 bg-white p-4 rounded-start-4 border">
+                          <label class="text-color-1 fs-14 fw-bold mb-3 ls-3">
+                              PROGRAMA
+                          </label>
+                          <select class="form-select ciaf-select text-color-2 fs-14 fw-bold py-3">
+                              <option>
+                                  Administración de Empresas
+                              </option>
+                              <option>
+                                  Contaduría Pública
+                              </option>
+                              <option>
+                                  Ingeniería Industrial
+                              </option>
+                              <option>
+                                  Ingeniería de Software
+                              </option>
+                          </select>
+  
+                          <label class="text-color-1 fs-14 fw-bold mt-4 mb-2 ls-3">
+                              JORNADA
+                          </label>
+  
+                          <div class="ciaf-jornada">
+                              <button class="active fw-bold">
+                                  Nocturna
+                              </button>
+                              <button class="fw-bold">
+                                  Fin de semana
+                              </button>
+                          </div>
+  
+                          <div class="text-center mt-4 col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 d-grid gap-2">
+                            <a href="#" class="ciaf-btn ciaf-btn--primary fs-14 fw-bold rounded-pill py-4 px-4 d-flex align-items-center justify-content-center">
+                              Quiero recibir asesoría <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                          </div>
+      
+                      </div>
+                      <!-- DERECHA -->
+                      <div class="col-lg-6">
+                          <div class="bg-section2-degradado rounded-end-4">
+                              <div class="text-color-5 fs-12 fw-bold mb-3">
+                                  TU CAMINO EN CIAF
+                              </div>
+                              <div class="bg-transparente p-3 mb-3 rounded-4">
+                                  <div class="icon px-3">
+                                      <i class="fa-regular fa-clock text-color-3"></i>
+                                  </div>
+                                  <div>
+                                      <h3 class="fs-24 fw-bold m-0 p-0">10 semestres</h3>
+                                      <p class="fs-14 fw-medium p-0 m-0">
+                                          Duración total · Nocturna
+                                      </p>
+                                  </div>
+                              </div>
+      
+                              <div class="bg-transparente p-3 mb-3 rounded-4">
+                                  <div class="icon px-3">
+                                      <i class="fa-solid fa-graduation-cap text-color-3"></i>
+                                  </div>
+                                  <div>
+                                      <h3 class="fs-24 fw-bold m-0 p-0">3 títulos</h3>
+                                      <p class="fs-14 fw-medium p-0 m-0">
+                                          Técnico · Tecnólogo · Profesional
+                                      </p>
+                                  </div>
+                              </div>
+      
+                              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pt-3">
+      
+                                  <h4 class="text-white fs-14 fw-bold pb-1">
+                                    <i class="fa-solid fa-graduation-cap text-color-3"></i> Beneficios disponibles
+                                  </h4>
+      
+                                  <div class="col-12">
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">0% interés</span>
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1 ">Sin fiadores</span>
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Descuentos</span>
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Acompañamiento</span>
+      
+                                  </div>
+      
+                              </div>
+      
+                          </div>
+      
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- sección 13: CTA FINAL -->
+          <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section" id="tu-futuro">
+         
+            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white position-relative py-5">
+              <h3 class="text-white fs-48 fw-extrablack">Tu futuro está más cerca de lo que imaginas.</h3>
+        
+              <p class="text-color-5 fs-18 fw-medium">
+                Miles de estudiantes han comenzado su camino profesional gracias a las
+                alternativas de financiación y acompañamiento de CIAF.
+              </p>  
+        
+              <div class="col-12">
+
+                <div class="row justify-content-center text-center">
+                  <div class="col-auto">
+                    <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                      Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                      Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-12 bg-transparente p-4 border-transparente rounded-4">
+              <img src="assets/image/craia-avatar.webp" alt="CRAIA" class="rounded-circle border-lime" style="width: 56px; height: 56px;">
+              <p class="fs-14 fw-medium text-white">
+                <strong>Hola, soy CRAIA.</strong> Te ayudo a encontrar la mejor opción
+                de financiación para estudiar en CIAF.
+              </p>
+            </div>
+            
+          </div>
 
 
     </div>
 </section>
 
-<div class="row m-menu bg-2">
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-1-1">
-            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Conoce <br>el programa</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-2-1">
-            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Plan de <br>estudios</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-3-1">
-            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Valores y <br>Financiación</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-4-1">
-            <a class="text-center" (click)="paginas('4')" (click)="activo='4'" [ngClass] = "activo=='4'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                </div>
-                <div class="col-12">
-                    <p>Iniciar proceso <br>de matricula</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3" *ngIf="false">
-        <div class="dropup">
-                <a class="dropdown-toggle text-center " data-bs-toggle="dropdown">
-                    <div class="col-12">
-                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                    </div>
-                    <div class="col-12">
-                        <p>Inicia tu <br>proceso de matricula</p>
-                    </div>
-                </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Link 1</a></li>
-                <li><a class="dropdown-item" href="#">Link 2</a></li>
-                <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-            </div>
-    </div>
-
-
-
-
-
-</div>
+<app-footer></app-footer>
