@@ -3,14 +3,6 @@
   min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
 }
 
-.ciaf-program-hero__media {
-  z-index: 0;
-}
-
-.ciaf-program-hero__img {
-  object-position: center right;
-}
-
 .ciaf-program-hero__overlay {
   z-index: 1;
     pointer-events: none;
@@ -22,18 +14,6 @@
     animation: ciaf-hero-scroll 2s ease-in-out infinite;
 }
 
-@keyframes ciaf-hero-scroll {
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-    opacity: .55;
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(6px);
-    opacity: 1;
-  }
-}
 
 /* Tabs debajo del hero */
 .ciaf-program-nav {
@@ -42,14 +22,6 @@
     z-index: 40;
     background: var(--ciaf-primary);
     box-shadow: var(--shadow-sm);
-}
-
-.ciaf-program-section {
-  scroll-margin-top: calc(var(--topbar-height) + var(--header-height) + 52px);
-}
-
-.ciaf-experiencias__card:hover .ciaf-offer-media video {
-  transform: scale(1.055);
 }
 
 .ciaf-program-nav__tabs--scroll {
@@ -74,17 +46,9 @@
     color: var(--ciaf-white);
 }
 
-@media (max-width: 991.98px) {
-  .ciaf-program-hero__overlay {
-    background: color-mix(in srgb, var(--ciaf-primary-deep) 84%, transparent);
-  }
-
-}
-
 /* ==========================================
-   Conoce el programa
+ Conoce el programa
 ========================================== */
-
 .ciaf-conoce__tab-input {
   position: absolute;
     width: 1px;
@@ -137,39 +101,9 @@
   display: block;
 }
 
-.ciaf-conoce__card-badge {
-  display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding: 7px 15px;
-    border: 0;
-    border-radius: var(--radius-pill);
-    background: #e8ecff;
-    color: var(--ciaf-primary);
-    letter-spacing: .14em;
-    text-transform: uppercase;
-}
-
-.ciaf-conoce__card-badge i {
-  opacity: .85;
-}
-
-/* Perfil ocupacional: grid 3 × 2 */
-@media (max-width: 575.98px) {
-  .ciaf-conoce__tab-label {
-    min-width: 0;
-        width: 100%;
-  }
-
-  .ciaf-conoce__ocu-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
 
 /* ==========================================
-   Sección 2: Campo de acción
+ Sección 2: Campo de acción
 ========================================== */
 .ciaf-campo__head i {
   flex-shrink: 0;
@@ -200,7 +134,7 @@
 }
 
 /* ==========================================
-   Sección 4: Ruta de crecimiento
+ Sección 4: Ruta de crecimiento
 ========================================== */
 .ciaf-ruta__input {
   position: absolute;
@@ -385,19 +319,10 @@
 }
 
 /* ==========================================
-   Sección 5: Plan de estudios
+ Sección 5: Plan de estudios
 ========================================== */
-.ciaf-plan__accordion {
-  display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 920px;
-    margin: 0 auto;
-}
 
-.ciaf-plan__item {
-  position: relative;
-}
+
 
 .ciaf-plan__card {
   overflow: hidden;
@@ -412,7 +337,6 @@
 .ciaf-plan__item--milestone .ciaf-plan__trigger {
   background: #eef4fc;
 }
-
 .ciaf-plan__trigger {
   display: flex;
     align-items: center;
@@ -426,18 +350,6 @@
     cursor: pointer;
 }
 
-.ciaf-plan__num {
-  flex-shrink: 0;
-    min-width: 24px;
-    color: var(--plan-blue);
-    text-align: center;
-    transition:
-      background var(--transition-base),
-      color var(--transition-base),
-      width var(--transition-base),
-      height var(--transition-base);
-}
-
 .ciaf-plan__head-main {
   display: flex;
     flex: 1;
@@ -445,11 +357,6 @@
     align-items: center;
     gap: 8px 12px;
     min-width: 0;
-}
-
-.ciaf-plan__name {
-  color: var(--plan-blue);
-    font-family: var(--font-family-display);
 }
 
 .ciaf-plan__badge {
@@ -463,16 +370,11 @@
     box-shadow: 0 0 0 3px rgba(34, 197, 94, .12);
     color: var(--plan-blue);
 }
-
 .ciaf-plan__badge i {
   color: #16a34a;
 }
 
-.ciaf-plan__chevron {
-  flex-shrink: 0;
-    color: var(--plan-blue);
-    transition: transform var(--transition-base);
-}
+
 
 .ciaf-plan__panel {
   padding: 0 20px 20px;
@@ -506,33 +408,13 @@
   border: 2px solid var(--plan-blue);
     box-shadow: var(--shadow-elegant);
 }
-
-.ciaf-plan__item--open .ciaf-plan__trigger {
-  background: var(--ciaf-white);
-}
-
-.ciaf-plan__item--open .ciaf-plan__num {
-  display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--plan-blue);
-    color: var(--ciaf-white);
-}
-
 .ciaf-plan__item--open .ciaf-plan__chevron {
   transform: rotate(180deg);
 }
 
-@media (min-width: 640px) {
-  .ciaf-plan__materias {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-}
-
+/* ==========================================
+ Sección 6: Transformación
+========================================== */
 .ciaf-transform-card {
   position: relative;
     min-height: 325px;
@@ -599,503 +481,88 @@
     background: color-mix(in srgb, var(--ciaf-primary) 8%, var(--ciaf-white));
 }
 
-.ciaf-transform-card h3 {
-  position: relative;
-    z-index: 2;
-    max-width: 210px;
-    margin: 23px auto 0;
-    color: var(--ciaf-primary);
-    font-family: var(--font-family-display);
-    line-height: 1.25;
-    letter-spacing: -.025em;
-}
-
-.ciaf-transform-card p {
-  position: relative;
-    z-index: 2;
-    max-width: 210px;
-    margin: 12px auto 0;
-    color: #53627a;
-    line-height: 1.6;
-}
-
-@media (max-width: 991.98px) {
-  .ciaf-transform-card {
-    min-height: 285px;
-  }
-
-}
-
-@media (max-width: 575.98px) {
-  .ciaf-transform-grid {
-    margin-top: 40px;
-  }
-
-  .ciaf-transform-card {
-    min-height: auto;
-        padding: 26px;
-        border-radius: var(--radius-2xl);
-  }
-
-}
-
-.ciaf-why-card {
-  min-height: 190px;
-    padding: 26px 25px;
-    border: 1px solid #dce3ed;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, .84);
-    transition:
-      transform var(--transition-slow),
-      box-shadow var(--transition-slow),
-      border-color var(--transition-slow),
-      background var(--transition-slow);
-}
-
-.ciaf-why-card:hover {
-  transform: translateY(-6px);
-    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, #dce3ed);
-    background: var(--ciaf-white);
-    box-shadow: var(--shadow-elegant);
-}
-
-.ciaf-why-icon {
-  width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    margin-bottom: 20px;
-    border-radius: var(--radius-pill);
-}
-
-.icon-blue-soft {
-  color: var(--ciaf-primary);
-    background: rgba(15, 23, 42, .08);
-}
-
-.icon-green-soft {
-  color: #3b7a18;
-    background: rgba(132, 204, 22, .16);
-}
-
-.icon-sky-soft {
-  color: #0284c7;
-    background: rgba(56, 189, 248, .16);
-}
-
-.ciaf-why-card h3 {
-  margin: 0 0 12px;
-    color: var(--ciaf-primary);
-    font-family: var(--font-family-display);
-    line-height: 1.25;
-    letter-spacing: -.025em;
-}
-
-.ciaf-why-card p {
-  max-width: 340px;
-    margin: 0;
-    color: #53627a;
-    line-height: 1.55;
-}
-
-@media (max-width: 575.98px) {
-  .ciaf-why-card {
-    min-height: auto;
-        border-radius: var(--radius-xl);
-  }
-
-}
-
-.ciaf-finance-pill {
-  display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 30px;
-    padding: 0 16px;
-    border: 1px solid #d8e0eb;
-    border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, .72);
-    color: #52627a;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-}
-
-.pill-white {
-  border-color: rgba(255,255,255,.3);
-    background: rgba(255,255,255,.1);
-    color: rgba(255,255,255,.9);
-    backdrop-filter: blur(12px);
-}
+/* ==========================================
+ Sección 8: Valores y financiación
+========================================== */
 
 /* Benefits glass */
 .ciaf-benefits-wrap {
-  position: relative;
-    z-index: 5;
-    margin-top: -64px;
-    padding: 0 16px;
+position: relative;
+z-index: 5;
+margin-top: -64px;
+padding: 0 16px;
 }
 
 .ciaf-benefits-glass {
-  max-width: 1120px;
-    margin: 0 auto;
-    padding: 24px;
-    border: 1px solid rgba(255,255,255,.55);
-    border-radius: 32px;
-    background: rgba(255,255,255,.78);
-    box-shadow: var(--shadow-elegant);
-    backdrop-filter: blur(18px);
+max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 32px;
+  background: rgba(255,255,255,.78);
+  box-shadow: var(--shadow-elegant);
+  backdrop-filter: blur(18px);
 }
 
-.ciaf-benefit-item {
-  display: flex;
-    align-items: center;
-    gap: 13px;
-    min-height: 64px;
-    padding: 14px;
-    border: 1px solid rgba(226,232,240,.8);
-    border-radius: 16px;
-    background: rgba(255,255,255,.58);
-    transition: var(--transition-base);
-}
-
-.ciaf-benefit-item:hover {
-  transform: translateY(-4px);
-    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, #dce3ed);
-}
-
-.ciaf-benefit-item span {
-  width: 36px;
-    height: 36px;
-    display: grid;
-    place-items: center;
-    flex: none;
-    border-radius: 13px;
-    background: rgba(132,204,22,.22);
-}
-
-/* Steps */
-.ciaf-step-card {
-  position: relative;
-    height: 100%;
-    padding: 29px;
-    border: 1px solid #dce3ed;
-    border-radius: 32px;
-    background: var(--ciaf-white);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-slow);
-}
-
-.ciaf-step-card:hover {
-  transform: translateY(-8px);
-    box-shadow: var(--shadow-elegant);
-}
-
-/* Costs */
-/* Options */
-.ciaf-options-section {
-  background: var(--ciaf-bg-light);
-}
-
-.ciaf-option-card {
-  position: relative;
-    height: 100%;
-    min-height: 250px;
-    padding: 29px;
-    border: 1px solid #dce3ed;
-    border-radius: 32px;
-    background: var(--ciaf-white);
-    overflow: hidden;
-    transition: var(--transition-slow);
-}
-
-.ciaf-option-card:hover {
-  transform: translateY(-8px);
-    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, #dce3ed);
-    box-shadow: var(--shadow-elegant);
-}
-
-.ciaf-option-icon {
-  width: 56px;
-    height: 56px;
-    display: grid;
-    place-items: center;
-    border: 1px solid color-mix(in srgb, var(--ciaf-primary) 18%, transparent);
-    border-radius: 16px;
-    background: color-mix(in srgb, var(--ciaf-primary) 5%, var(--ciaf-white));
-    color: var(--ciaf-primary);
-}
-
-.ciaf-option-card h4 {
-  margin: 19px 0 0;
-    color: var(--ciaf-ink);
-}
-
+/* ==========================================
+ Sección 11: OPCIONES
+========================================== */
 .ciaf-option-card ul {
-  display: grid;
-    gap: 8px;
-    max-height: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    opacity: 0;
-    transition: var(--transition-slow);
+display: grid;
+  gap: 8px;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: var(--transition-slow);
 }
 
 .ciaf-option-card:hover ul {
-  max-height: 240px;
-    margin-top: 16px;
-    opacity: 1;
+max-height: 240px;
+  margin-top: 16px;
+  opacity: 1;
 }
 
 .ciaf-option-card li {
-  color: var(--ciaf-ink-soft);
+color: var(--ciaf-ink-soft);
 }
 
 .ciaf-option-card li i {
-  color: #45913f;
-    margin-right: 6px;
+color: #45913f;
+  margin-right: 6px;
 }
 
 .ciaf-option-card p {
-  margin: 16px 0 0;
-    color: var(--ciaf-primary);
-    transition: var(--transition-base);
+margin: 16px 0 0;
+  color: var(--ciaf-primary);
+  transition: var(--transition-base);
 }
 
 .ciaf-option-card:hover p {
-  opacity: 0;
+opacity: 0;
 }
 
-/* Final CTA */
-.ciaf-craia-card {
-  max-width: 460px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 40px auto 0;
-    padding: 16px;
-    border: 1px solid rgba(255,255,255,.2);
-    border-radius: 24px;
-    background: rgba(255,255,255,.1);
-    backdrop-filter: blur(14px);
-    text-align: left;
-}
-
-.ciaf-craia-card img {
-  width: 56px;
-    height: 56px;
-    flex: none;
-    border-radius: 50%;
-    border: 2px solid var(--ciaf-lime);
-    object-fit: cover;
-}
-
-.ciaf-craia-card p {
-  margin: 0;
-}
-
-@media (max-width: 991.98px) {
-  .ciaf-cost-info {
-    border-right: 0;
-        padding-right: 0;
-  }
-
-}
-
-@media (max-width: 575.98px) {
-  .ciaf-benefits-glass {
-    padding: 16px;
-  }
-
-  .ciaf-craia-card {
-    flex-direction: column;
-        text-align: center;
-  }
-
-}
-
-.ciaf-simulator-section {
-  padding:100px 0;
-  
-    background:
-    radial-gradient(circle at top right,
-    rgba(132,204,22,.08),
-    transparent 30%),
-    var(--ciaf-bg-light);
-}
-
-.ciaf-simulator-card {
-  margin-top:48px;
-  
-    background:#fff;
-  
-    border:1px solid #e2e8f0;
-  
-    border-radius:40px;
-  
-    overflow:hidden;
-  
-    box-shadow:
-    0 25px 60px rgba(15,23,42,.08);
-}
-
-.ciaf-simulator-form label {
-  display:block;
-  
-    margin-bottom:13px;
-  
-    margin-top:24px;
-  
-  
-  
-    letter-spacing:.18em;
-  
-    color:#64748b;
-}
-
-.ciaf-select {
-  height:58px;
-  
-    border-radius:18px;
-  
-    border:1px solid #d9e2ec;
-}
-
+/* ==========================================
+ Sección 12: SIMULADOR
+========================================== */
 .ciaf-jornada {
-  display:flex;
-  
-    gap:13px;
-  
-    margin-top:13px;
+display:flex;
+gap:13px;
+margin-top:13px;
 }
 
 .ciaf-jornada button {
-  border:none;
-  
-    height:46px;
-  
-    padding:0 24px;
-  
-    border-radius:999px;
-  
-    background:#f1f5f9;
-  
-    color:#64748b;
+border:none;
+height:46px;
+padding:0 24px;
+border-radius:999px;
+background:#f1f5f9;
+color:#64748b;
 }
 
 .ciaf-jornada .active {
-  background:var(--ciaf-primary);
-  
-    color:white;
-}
-
-.ciaf-simulator-btn {
-  margin-top:32px;
-  
-    display:flex;
-  
-    align-items:center;
-  
-    justify-content:center;
-  
-    gap:11px;
-  
-    width:100%;
-  
-    height:58px;
-  
-    border-radius:999px;
-  
-    text-decoration:none;
-  
-    background:var(--ciaf-primary);
-  
-    color:white;
-}
-
-.ciaf-route-panel {
-  height:100%;
-  
-    padding:30px;
-  
-    background:
-    linear-gradient(
-    135deg,
-    #032a7a,
-    #005b57,
-    #006a14);
-  
-    color:white;
-}
-
-.ciaf-route-panel small {
-  display:block;
-  
-    margin-bottom:24px;
-  
-    letter-spacing:.18em;
-}
-
-.ciaf-route-box {
-  display:flex;
-  
-    gap:16px;
-  
-    align-items:center;
-  
-    padding:16px;
-  
-    margin-bottom:16px;
-  
-    border-radius:24px;
-  
-    background:
-    rgba(255,255,255,.12);
-  
-    backdrop-filter:blur(8px);
-}
-
-.ciaf-route-box .icon {
-  width:48px;
-    height:48px;
-  
-    display:flex;
-  
-    align-items:center;
-    justify-content:center;
-  
-    color:#9FE870;
-}
-
-.ciaf-route-box h3 {
-  margin:0;
-}
-
-.ciaf-route-box p {
-  margin:0;
-  
-    color:rgba(255,255,255,.8);
-}
-
-.ciaf-benefits {
-  margin-top:32px;
-  
-    padding:24px;
-  
-    border-radius:28px;
-  
-    background:
-    rgba(255,255,255,.08);
-}
-
-.ciaf-benefits h4 {
-  margin-bottom:16px;
-}
-
-@media(max-width:991px){
-  .ciaf-route-panel {
-    border-radius:0;
-  }
-
+background:var(--ciaf-primary);
+color:white;
 }

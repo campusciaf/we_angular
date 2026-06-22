@@ -291,6 +291,10 @@
   background-color: #f3f8fc !important;
 }
 
+.bg-color-9{
+  background-color: #def3fe !important;
+}
+
 .bg-img-1{
   background:
       linear-gradient(
@@ -335,6 +339,45 @@
   z-index: 2;
 }
 
+.bg-section-degradado {
+  padding:100px 0;
+  
+    background:
+    radial-gradient(circle at top right,
+    rgba(132,204,22,.08),
+    transparent 30%),
+    var(--ciaf-bg-light);
+}
+
+.bg-section2-degradado {
+  height:100%;
+  
+    padding:30px;
+  
+    background:
+    linear-gradient(
+    135deg,
+    #032a7a,
+    #005b57,
+    #006a14);
+  
+    color:white;
+}
+
+.bg-transparente {
+  display:flex;
+  gap:16px;
+  align-items:center;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+}
+
+.border-transparente{
+  border: 1px solid rgba(255,255,255,.2);
+}
+.border-lime{
+  border: 2px solid #84cc16;
+}
 .check-input-none{
   display:none;
 }
@@ -517,6 +560,23 @@ body {
   flex-shrink: 0;
 }
 
+.ciaf-conoce__card-badge {
+  display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 7px 15px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: #e8ecff;
+    color: var(--ciaf-primary);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.ciaf-conoce__card-badge i {
+  opacity: .85;
+}
 /* ==========================================
    BARRA DE PROGRESO
 ========================================== */
@@ -615,6 +675,24 @@ body {
 }
 
 
+.icono-rounded {
+  width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-pill);
+}
+
+.icono-rectangle {
+  width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--ciaf-primary) 18%, transparent);
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--ciaf-primary) 5%, var(--ciaf-white));
+    color: var(--ciaf-primary);
+}
 
 /* ==========================================
    BOTONES

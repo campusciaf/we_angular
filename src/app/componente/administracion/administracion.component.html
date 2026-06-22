@@ -956,7 +956,7 @@
 
           <!-- Sección 5: Plan de estudios -->
           <section class="ciaf-section-light py-5" id="plan-estudios">
-            <div class="row pt-5">
+            <div class="row pt-5 justify-content-center">
               <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
                 <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Plan de estudios</span>
                 <h2 class=" fs-36 fw-extrablack text-color-2">Tu camino semestre a semestre</h2>
@@ -969,9 +969,9 @@
                 </a>
               </div>
 
-              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 ciaf-plan__accordion">
+              <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-12">
                 <div
-                  class="ciaf-plan__item"
+                  class="ciaf-plan__item mb-3"
                   *ngFor="let datos of semestresPlan"
                   [class.ciaf-plan__item--milestone]="esSemestreHito(datos.semestre)"
                   [class.ciaf-plan__item--open]="planSemestreEstaAbierto(datos.semestre)"
@@ -1010,6 +1010,7 @@
             </div>
           </section>
 
+          <!-- Sección 6: Transformación -->
           <section class=" ciaf-section-white py-5" id="transformacion">
             <div class="row py-5">
           
@@ -1033,7 +1034,7 @@
                       <i class="fa-regular fa-heart"></i>
                     </div>
           
-                    <h3 class="text-color-2 fs-18 fw-bold">Transformación Humana</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Transformación Humana</h3>
           
                     <p class="text-color-1 fs-14">
                       Despertamos tu pasión y potencial más allá del aula.
@@ -1049,7 +1050,7 @@
                       <i class="fa-solid fa-brain"></i>
                     </div>
           
-                    <h3 class="text-color-2 fs-18 fw-bold">Mentalidad Digital</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Mentalidad Digital</h3>
           
                     <p class="text-color-1 fs-14">
                       Te preparamos para el mundo laboral 4.0 con IA y tecnología.
@@ -1065,7 +1066,7 @@
                       <i class="fa-solid fa-gear"></i>
                     </div>
           
-                    <h3 class="text-color-2 fs-18 fw-bold">Técnico con Propósito</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Técnico con Propósito</h3>
           
                     <p class="text-color-1 fs-14">
                       Formación orientada a crear valor real en las organizaciones.
@@ -1081,7 +1082,7 @@
                       <i class="fa-solid fa-earth-americas"></i>
                     </div>
           
-                    <h3 class="text-color-2 fs-18 fw-bold">Experiencias Nacionales e Internacionales</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Experiencias Nacionales e Internacionales</h3>
           
                     <p class="text-color-1 fs-14">
                       Convenios, movilidad y conexiones nacionales e internacionales que abren nuevas puertas.
@@ -1097,7 +1098,7 @@
                       <i class="fa-regular fa-lightbulb"></i>
                     </div>
           
-                    <h3 class="text-color-2 fs-18 fw-bold">Título +</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Título +</h3>
           
                     <p class="text-color-1 fs-14">
                       Desde el primer nivel ya puedes emplearte y seguir creciendo.
@@ -1109,7 +1110,8 @@
           
             </div>
           </section>
-
+          
+          <!-- Sección 7: Por qué estudiarlo -->
           <section class="ciaf-section-light py-5" id="por-que-estudiarlo">
             <div class="row py-5 px-4">
           
@@ -1128,8 +1130,8 @@
               <div class="row">
           
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-blue-soft fs-16">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-1 fs-16 mb-2">
                       <i class="fa-solid fa-arrow-trend-up"></i>
                     </div>
           
@@ -1142,8 +1144,8 @@
                 </div>
           
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-green-soft fs-16">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-2 fs-16 mb-2">
                       <i class="fa-regular fa-lightbulb"></i>
                     </div>
           
@@ -1156,9 +1158,9 @@
                 </div>
           
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-sky-soft fs-16">
-                      <i class="fa-solid fa-users"></i>
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                      <i class="fa-solid fa-users text-color-6"></i>
                     </div>
           
                     <h3 class="text-color-2 fs-18 fw-bold">Liderazgo y gestión de equipos</h3>
@@ -1170,8 +1172,8 @@
                 </div>
           
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-blue-soft fs-16">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-1 fs-16 mb-2">
                       <i class="fa-solid fa-earth-americas"></i>
                     </div>
           
@@ -1184,8 +1186,8 @@
                 </div>
           
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-green-soft fs-16">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-2 fs-16 mb-2">
                       <i class="fa-solid fa-chart-column"></i>
                     </div>
           
@@ -1198,9 +1200,9 @@
                 </div>
           
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                  <article class="ciaf-why-card">
-                    <div class="ciaf-why-icon icon-sky-soft fs-16">
-                      <i class="fa-solid fa-rocket"></i>
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                      <i class="fa-solid fa-rocket text-color-6"></i>
                     </div>
           
                     <h3 class="text-color-2 fs-18 fw-bold">Creación de nuevos proyectos</h3>
@@ -1215,61 +1217,73 @@
           
             </div>
           </section>
-
+          
+          <!-- Sección 8: Valores y financiación -->
           <section class="pt-5" id="valores-financiacion">
+                <div class="row justify-content-center bg-img-1 py-5">
 
-            <!-- HERO FINANCIACIÓN -->
-            <div class="row justify-content-center bg-img-1 py-5">
-          
-              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
-                <span class="ciaf-finance-pill pill-white fs-12">VALORES Y FINANCIACIÓN</span>
-          
-                <h2 class="fs-60 fw-extrablack my-3">
-                  Financiación <span class="text-color-3">0% interés</span>
-                </h2>
-          
-                <p class="fs-24 fw-bold">
-                  Invierte en tu futuro sin que el dinero detenga tus metas.
-                </p>
-          
-                <p class="fs-18 text-color-5">
-                  En CIAF encuentras financiación directa, descuentos y beneficios pensados
-                  para acompañarte durante toda tu carrera.
-                </p>
-          
-                <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
-                  Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
-                </p>
-              </div>
-            </div>
-          
-            <!-- BANDA GLASS -->
-            <div class="ciaf-benefits-wrap">
-              <div class="container">
-                <div class="ciaf-benefits-glass">
-                  <div class="row g-3">
-          
-                    <div class="col-lg-3 col-md-4 col-6" *ngFor="let item of [
-                      'Jornadas flexibles',
-                      'Financiación directa',
-                      'Sin intermediarios bancarios',
-                      'Descuentos institucionales',
-                      'Ciclos propedéuticos',
-                      'Tres títulos profesionales',
-                      'Modalidad presencial',
-                      'Acompañamiento permanente'
-                    ]">
-                      <div class="ciaf-benefit-item text-color-2 fs-14">
-                        <span><i class="fa-solid fa-check"></i></span>
-                        <strong>{{ item }}</strong>
+                  <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
+                    <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white">VALORES Y FINANCIACIÓN</span>
+              
+                    <h2 class="fs-60 fw-extrablack my-3">
+                      Financiación <span class="text-color-3">0% interés</span>
+                    </h2>
+              
+                    <p class="fs-24 fw-bold">
+                      Invierte en tu futuro sin que el dinero detenga tus metas.
+                    </p>
+              
+                    <p class="fs-18 text-color-5">
+                      En CIAF encuentras financiación directa, descuentos y beneficios pensados
+                      para acompañarte durante toda tu carrera.
+                    </p>
+              
+                    <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
+                      Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
+                    </p>
+                  </div>
+
+                </div>  
+                
+                <!-- BANDA GLASS -->
+                <div class="ciaf-benefits-wrap">
+                  <div class="container">
+                    <div class="ciaf-benefits-glass">
+                      <div class="row g-3">
+              
+                        <div class="col-lg-3 col-md-4 col-6" *ngFor="let item of [
+                          'Jornadas flexibles',
+                          'Financiación directa',
+                          'Sin intermediarios bancarios',
+                          'Descuentos institucionales',
+                          'Ciclos propedéuticos',
+                          'Tres títulos profesionales',
+                          'Modalidad presencial',
+                          'Acompañamiento permanente'
+                        ]">
+                          <div class="ciaf-card p-2 rounded-4 text-color-2 d-flex align-items-center gap-2 h-100">
+                            
+                            <span class="icono-rounded bg-color-2 fs-14 flex-shrink-0">
+                              <i class="fa-solid fa-check"></i>
+                            </span>
+                        
+                            <strong class="mb-0 lh-sm fs-14">
+                              {{ item }}
+                            </strong>
+                        
+                          </div>
+                        </div>
+              
                       </div>
                     </div>
-          
                   </div>
                 </div>
-              </div>
-            </div>
-          
+
+
+          </section>
+
+          <!-- Sección 9: Proceso paso a paso -->
+          <section class="row justify-content-center my-4" id="proceso-paso-a-paso">
             <!-- PASO A PASO -->
             <div class="row justify-content-center my-5 py-5" id="proceso-paso-a-paso">
               <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
@@ -1282,10 +1296,10 @@
                 </h3>
               </div>
           
-              <div class="row g-4 ciaf-steps-grid px-4">
+              <div class="row g-4  px-4">
         
                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
-                  <article class="ciaf-step-card text-center">
+                  <article class="ciaf-card p-4 rounded-4 text-center">
                     <div class="fs-24">
                       <i class="fa-solid fa-receipt bg-color-3 text-white rounded-pill p-4"></i>
                     </div>
@@ -1296,7 +1310,7 @@
                 </div>
         
                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
-                  <article class="ciaf-step-card">
+                  <article class="ciaf-card p-4 rounded-4 text-center">
                     <div class="fs-24">
                       <i class="fa-regular fa-file-lines bg-color-3 text-white rounded-pill p-4"></i>
                     </div>
@@ -1307,7 +1321,7 @@
                 </div>
         
                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
-                  <article class="ciaf-step-card">
+                  <article class="ciaf-card p-4 rounded-4 text-center">
                     <div class="fs-24">
                       <i class="fa-solid fa-rocket bg-color-3 text-white rounded-pill p-4"></i>
                     </div>
@@ -1320,9 +1334,11 @@
               </div>
 
             </div>
-          
-            <!-- COSTOS -->
-            <div class="row justify-content-center my-5 py-5" id="costos">
+          </section>
+
+          <!-- Sección 10: Costos -->
+          <section class="row justify-content-center my-4" id="costos">
+              
               <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11">
                 <div class="row g-4 align-items-stretch">
           
@@ -1378,250 +1394,229 @@
           
                 </div>
               </div>
-            </div>
-          
-            <!-- OPCIONES -->
-            <div class="ciaf-options-section py-5">
-              <div class="container ciaf-inner-container text-center">
-          
-                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">ALTERNATIVAS PENSADAS PARA TI</span>
-          
-                <h3 class="text-color-2 fs-36 fw-extrablack mt-3">
-                  Un sistema de financiación <span class="ciaf-gradient-text ciaf-gradient-text--brand">a tu medida</span>
-                </h3>
-          
-                <div class="row g-4 mt-4 text-start">
-          
-                  <div class="col-md-4">
-                    <article class="ciaf-option-card">
-                      <div class="ciaf-option-icon fs-20">
-                        <i class="fa-solid fa-money-bill-wave"></i>
-                      </div>
-                      <h4 class="text-color-2 fs-20 fw-bold">Financiación Directa CIAF</h4>
-                      <ul class="fs-14 list-unstyled fw-medium">
-                        <li><i class="fa-solid fa-check"></i> Sin intermediarios bancarios</li>
-                        <li><i class="fa-solid fa-check"></i> Proceso ágil</li>
-                        <li><i class="fa-solid fa-check"></i> Respuesta rápida</li>
-                        <li><i class="fa-solid fa-check"></i> 0% interés</li>
-                      </ul>
-                      <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
-                    </article>
-                  </div>
-          
-                  <div class="col-md-4">
-                    <article class="ciaf-option-card">
-                      <div class="ciaf-option-icon fs-20">
-                        <i class="fa-solid fa-percent"></i>
-                      </div>
-                      <h4 class="text-color-2 fs-20 fw-bold">Descuentos Institucionales</h4>
-                      <ul class="fs-14 list-unstyled fw-medium">
-                        <li><i class="fa-solid fa-check"></i> Convenios</li>
-                        <li><i class="fa-solid fa-check"></i> Beneficios especiales</li>
-                        <li class="mb-2"><i class="fa-solid fa-check"></i> Apoyos institucionales</li>
-                      </ul>
-                      <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
-                    </article>
-                  </div>
-          
-                  <div class="col-md-4">
-                    <article class="ciaf-option-card">
-                      <div class="ciaf-option-icon fs-20">
-                        <i class="fa-solid fa-wallet"></i>
-                      </div>
-                      <h4 class="text-color-2 fs-20 fw-bold">Opciones de Pago</h4>
-                      <ul class="fs-14 list-unstyled fw-medium">
-                        <li><i class="fa-solid fa-check"></i> Pagos flexibles</li>
-                        <li><i class="fa-solid fa-check"></i> Acompañamiento personalizado</li>
-                        <li><i class="fa-solid fa-check"></i> Diferentes alternativas</li>
-                      </ul>
-                      <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
-                    </article>
-                  </div>
-          
-                </div>
-              </div>
-            </div>
-
-            <!-- SIMULADOR -->
-            <div class="ciaf-simulator-section ciaf-program-section" id="simulador">
-
-              <div class="container-xl">
-          
-                  <div class="text-center">
-          
-                      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
-                        <i class="fa-solid fa-calculator"></i>
-                          SIMULADOR
-                      </span>
-          
-                      <h2 class="text-color-2 fs-36 fw-extrablack mt-3">
-                          Calcula tu camino hacia tu título
-                      </h2>
-          
-                  </div>
-          
-                  <div class="ciaf-simulator-card">
-                      <div class="row g-0 align-items-stretch">
-                          <!-- IZQUIERDA -->
-                          <div class="col-lg-6 p-5">
-          
-                              <div class="ciaf-simulator-form">
-          
-                                  <label class="text-color-1 fs-14 fw-bold">
-                                      PROGRAMA
-                                  </label>
-          
-                                  <select class="form-select ciaf-select text-color-2 fs-14 fw-bold">
-          
-                                      <option>
-                                          Administración de Empresas
-                                      </option>
-          
-                                      <option>
-                                          Contaduría Pública
-                                      </option>
-          
-                                      <option>
-                                          Ingeniería Industrial
-                                      </option>
-          
-                                      <option>
-                                          Ingeniería de Software
-                                      </option>
-          
-                                  </select>
-          
-                                  <label class="text-color-1 fs-14 fw-bold">
-                                      JORNADA
-                                  </label>
-          
-                                  <div class="ciaf-jornada">
-                                      <button class="active fw-bold">
-                                          Nocturna
-                                      </button>
-                                      <button class="fw-bold">
-                                          Fin de semana
-                                      </button>
-                                  </div>
-          
-                                  <a href="#" class="ciaf-simulator-btn text-white fs-14 fw-bold">
-                                      Quiero recibir asesoría <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                  </a>
-          
-                              </div>
-          
-                          </div>
-                          <!-- DERECHA -->
-                          <div class="col-lg-6">
-          
-                              <div class="ciaf-route-panel">
-          
-                                  <div class="text-color-5 fs-12 fw-bold mb-3">
-                                      TU CAMINO EN CIAF
-                                  </div>
-          
-                                  <div class="ciaf-route-box">
-          
-                                      <div class="icon">
-                                          <i class="fa-regular fa-clock"></i>
-                                      </div>
-          
-                                      <div>
-          
-                                          <h3 class="fs-24 fw-bold">10 semestres</h3>
-          
-                                          <p class="fs-14 fw-medium">
-                                              Duración total · Nocturna
-                                          </p>
-          
-                                      </div>
-          
-                                  </div>
-          
-                                  <div class="ciaf-route-box">
-          
-                                      <div class="icon">
-                                          <i class="fa-solid fa-graduation-cap"></i>
-                                      </div>
-          
-                                      <div>
-          
-                                          <h3 class="fs-24 fw-bold">3 títulos</h3>
-          
-                                          <p class="fs-14 fw-medium">
-                                              Técnico · Tecnólogo · Profesional
-                                          </p>
-          
-                                      </div>
-          
-                                  </div>
-          
-                                  <div class="ciaf-benefits">
-          
-                                      <h4 class="text-white fs-14 fw-bold">
-                                        <i class="fa-solid fa-graduation-cap text-color-3"></i> Beneficios disponibles
-                                      </h4>
-          
-                                      <div class="col-12">
-          
-                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">0% interés</span>
-          
-                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1 ">Sin fiadores</span>
-          
-                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Descuentos</span>
-          
-                                          <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Acompañamiento</span>
-          
-                                      </div>
-          
-                                  </div>
-          
-                              </div>
-          
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-
-            <!-- CTA FINAL -->
-            <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section" id="tu-futuro">
-         
-              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white position-relative py-5">
-                <h3 class="text-white fs-48 fw-extrablack">Tu futuro está más cerca de lo que imaginas.</h3>
-          
-                <p class="text-color-5 fs-18 fw-medium">
-                  Miles de estudiantes han comenzado su camino profesional gracias a las
-                  alternativas de financiación y acompañamiento de CIAF.
-                </p>  
-          
-                <div class="col-12">
-
-                  <div class="row justify-content-center text-center">
-                    <div class="col-auto">
-                      <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
-                        Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
-                      </a>
-                    </div>
-                    <div class="col-auto">
-                      <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
-                        Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-          
-                <div class="ciaf-craia-card">
-                  <img src="assets/image/craia-avatar.webp" alt="CRAIA">
-                  <p class="fs-14 fw-medium">
-                    <strong>Hola, soy CRAIA.</strong> Te ayudo a encontrar la mejor opción
-                    de financiación para estudiar en CIAF.
-                  </p>
-                </div>
-              </div>
-            </div>
-          
+            
           </section>
+
+          <!-- sección 11: OPCIONES -->
+          <div class="row justify-content-center my-4" id="opciones">
+
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 text-center pt-5">
+        
+              <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">ALTERNATIVAS PENSADAS PARA TI</span>
+        
+              <h3 class="text-color-2 fs-36 fw-extrablack mt-3">
+                Un sistema de financiación <span class="ciaf-gradient-text ciaf-gradient-text--brand">a tu medida</span>
+              </h3>
+            </div>
+        
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 text-center ">
+              <div class="row g-4 mt-4 text-start">
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card rounded-4 p-4 ciaf-option-card ">
+                    <div class="icono-rectangle fs-20">
+                      <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h4 class="text-color-2 fs-20 fw-bold mt-3">Financiación Directa CIAF</h4>
+                    <ul class="fs-14 list-unstyled fw-medium">
+                      <li><i class="fa-solid fa-check"></i> Sin intermediarios bancarios</li>
+                      <li><i class="fa-solid fa-check"></i> Proceso ágil</li>
+                      <li><i class="fa-solid fa-check"></i> Respuesta rápida</li>
+                      <li><i class="fa-solid fa-check"></i> 0% interés</li>
+                    </ul>
+                    <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card rounded-4 p-4 ciaf-option-card">
+                    <div class="icono-rectangle fs-20">
+                      <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <h4 class="text-color-2 fs-20 fw-bold mt-3">Descuentos Institucionales</h4>
+                    <ul class="fs-14 list-unstyled fw-medium">
+                      <li><i class="fa-solid fa-check"></i> Convenios</li>
+                      <li><i class="fa-solid fa-check"></i> Beneficios especiales</li>
+                      <li class="mb-2"><i class="fa-solid fa-check"></i> Apoyos institucionales</li>
+                    </ul>
+                    <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                  </article>
+                </div>
+        
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                  <article class="ciaf-card rounded-4 p-4 ciaf-option-card">
+                    <div class="icono-rectangle fs-20">
+                      <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h4 class="text-color-2 fs-20 fw-bold mt-3">Opciones de Pago</h4>
+                    <ul class="fs-14 list-unstyled fw-medium">
+                      <li><i class="fa-solid fa-check"></i> Pagos flexibles</li>
+                      <li><i class="fa-solid fa-check"></i> Acompañamiento personalizado</li>
+                      <li><i class="fa-solid fa-check"></i> Diferentes alternativas</li>
+                    </ul>
+                    <p class="text-color-2 fs-14 fw-bold">Pasa el cursor para ver más <i class="fa-solid fa-arrow-right"></i></p>
+                  </article>
+                </div>
+        
+              </div>
+            </div>
+
+          </div>
+
+          <!-- sección 12: SIMULADOR -->
+          <div class="row justify-content-center bg-section-degradado py-5" id="simulador">
+
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 mt-4">
+              <div class="text-center">
+                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                    <i class="fa-solid fa-calculator"></i>
+                      SIMULADOR
+                  </span>
+                  <h2 class="text-color-2 fs-36 fw-extrablack mt-3">
+                      Calcula tu camino hacia tu título
+                  </h2>
+              </div>
+            </div>
+            <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 mt-5">
+              <div class="ciaf-simulator-card">
+                  <div class="row g-0 align-items-stretch">
+                      <!-- IZQUIERDA -->
+                      <div class="col-lg-6 p-5 bg-white p-4 rounded-start-4 border">
+                          <label class="text-color-1 fs-14 fw-bold mb-3 ls-3">
+                              PROGRAMA
+                          </label>
+                          <select class="form-select ciaf-select text-color-2 fs-14 fw-bold py-3">
+                              <option>
+                                  Administración de Empresas
+                              </option>
+                              <option>
+                                  Contaduría Pública
+                              </option>
+                              <option>
+                                  Ingeniería Industrial
+                              </option>
+                              <option>
+                                  Ingeniería de Software
+                              </option>
+                          </select>
+
+                          <label class="text-color-1 fs-14 fw-bold mt-4 mb-2 ls-3">
+                              JORNADA
+                          </label>
+
+                          <div class="ciaf-jornada">
+                              <button class="active fw-bold">
+                                  Nocturna
+                              </button>
+                              <button class="fw-bold">
+                                  Fin de semana
+                              </button>
+                          </div>
+
+                          <div class="text-center mt-4 col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 d-grid gap-2">
+                            <a href="#" class="ciaf-btn ciaf-btn--primary fs-14 fw-bold rounded-pill py-4 px-4 d-flex align-items-center justify-content-center">
+                              Quiero recibir asesoría <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                          </div>
+      
+                      </div>
+                      <!-- DERECHA -->
+                      <div class="col-lg-6">
+                          <div class="bg-section2-degradado rounded-end-4">
+                              <div class="text-color-5 fs-12 fw-bold mb-3">
+                                  TU CAMINO EN CIAF
+                              </div>
+                              <div class="bg-transparente p-3 mb-3 rounded-4">
+                                  <div class="icon px-3">
+                                      <i class="fa-regular fa-clock text-color-3"></i>
+                                  </div>
+                                  <div>
+                                      <h3 class="fs-24 fw-bold m-0 p-0">10 semestres</h3>
+                                      <p class="fs-14 fw-medium p-0 m-0">
+                                          Duración total · Nocturna
+                                      </p>
+                                  </div>
+                              </div>
+      
+                              <div class="bg-transparente p-3 mb-3 rounded-4">
+                                  <div class="icon px-3">
+                                      <i class="fa-solid fa-graduation-cap text-color-3"></i>
+                                  </div>
+                                  <div>
+                                      <h3 class="fs-24 fw-bold m-0 p-0">3 títulos</h3>
+                                      <p class="fs-14 fw-medium p-0 m-0">
+                                          Técnico · Tecnólogo · Profesional
+                                      </p>
+                                  </div>
+                              </div>
+      
+                              <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pt-3">
+      
+                                  <h4 class="text-white fs-14 fw-bold pb-1">
+                                    <i class="fa-solid fa-graduation-cap text-color-3"></i> Beneficios disponibles
+                                  </h4>
+      
+                                  <div class="col-12">
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">0% interés</span>
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1 ">Sin fiadores</span>
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Descuentos</span>
+      
+                                      <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 m-1">Acompañamiento</span>
+      
+                                  </div>
+      
+                              </div>
+      
+                          </div>
+      
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- sección 13: CTA FINAL -->
+          <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section" id="tu-futuro">
+        
+            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white position-relative py-5">
+              <h3 class="text-white fs-48 fw-extrablack">Tu futuro está más cerca de lo que imaginas.</h3>
+        
+              <p class="text-color-5 fs-18 fw-medium">
+                Miles de estudiantes han comenzado su camino profesional gracias a las
+                alternativas de financiación y acompañamiento de CIAF.
+              </p>  
+        
+              <div class="col-12">
+
+                <div class="row justify-content-center text-center">
+                  <div class="col-auto">
+                    <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                      Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                      Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-12 bg-transparente p-4 border-transparente rounded-4">
+              <img src="assets/image/craia-avatar.webp" alt="CRAIA" class="rounded-circle border-lime" style="width: 56px; height: 56px;">
+              <p class="fs-14 fw-medium text-white">
+                <strong>Hola, soy CRAIA.</strong> Te ayudo a encontrar la mejor opción
+                de financiación para estudiar en CIAF.
+              </p>
+            </div>
+            
+          </div>
+
 
       </div><!-- programa-administracion -->
 
