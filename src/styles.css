@@ -393,6 +393,9 @@ body {
   background: #fff;
   overflow-x: hidden;
 }
+.cursor-pointer{
+  cursor:pointer;
+}
 
 ::selection {
   background-color: rgba(139, 206, 70, 0.7);

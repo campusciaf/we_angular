@@ -1,4 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 
@@ -9,13 +19,31 @@ declare var $:any;
   templateUrl: './bienestar.component.html',
   styleUrls: ['./bienestar.component.css']
 })
-export class BienestarComponent implements OnInit {
+export class BienestarComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  readonly conveniosVisibles = 3;
+  readonly conveniosGapPx = 24;
+  readonly conveniosAutoplayMs = 5500;
+
+  @ViewChild('conveniosViewport') conveniosViewport?: ElementRef<HTMLElement>;
+
+  conveniosIndice = 0;
+  conveniosDesplazamiento = 0;
+  conveniosAnchoTarjeta = 0;
+  conveniosAnimando = true;
+  conveniosArrastrando = false;
+  private conveniosAutoplayId?: ReturnType<typeof setInterval>;
+  private conveniosResizeObserver?: ResizeObserver;
+  private conveniosInicioX = 0;
+  private conveniosInicioDesplazamiento = 0;
 
   public pic1="assets/image/cultura.webp";
   public pic2="assets/image/desarrollo-humano.webp";
   public pic3="assets/image/salud.webp";
   public pic4="assets/image/promocion.webp";
   public pic5="assets/image/deportes.webp";
+
+  
 
 
   imagenesExperiencias:Array<any> =[
@@ -62,6 +90,9 @@ public icono_fotografia="assets/image/icono-fotografia.webp";
 
 listarInstagram:any;
 listarConvenios:any;
+
+
+
 
 slideConfig = {
   "slidesToShow": 4, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
@@ -149,6 +180,17 @@ nextImgConv(){
 pagina:any;
 activo:any;
 
+private scrollSpyIgnorar = false;
+private scrollSpyTick = false;
+private scrollSpyTimer?: ReturnType<typeof setTimeout>;
+
+campoAccionActivo: string | null = null;
+
+toggleCampoAccion(id: string): void {
+  this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
+}
+
+
   isValid0:boolean = false;
   isValid1:boolean = false;
   isValid2:boolean = false;
@@ -157,176 +199,149 @@ activo:any;
   isValid5:boolean = false;
   isValid6:boolean = false;
   
-    paginas(pagina:string){
 
-      if(pagina == "0"){
-        this.isValid0= true;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,0);
 
-        
+    /** IDs de sección del programa (scroll, no páginas ocultas) */
+    readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
+      { id: 'transformacion-humana', nav: '1', label: 'Transformacion Humana' },
+      { id: 'programa-de-permanencia', nav: '2', label: 'Programas de permanencia' },
+      { id: 'salud-y-vida', nav: '3', label: 'salud y vida' },
+      { id: 'deporte-y-recreacion', nav: '4', label: 'Deporte y recreacion' },
+      { id: 'arte-y-cultura', nav: '5', label: 'Arte y cultura' },
+      { id: 'desarrollo-humano', nav: '6', label: 'Desarrollo Humano' },
+      { id: 'promocion-socioeconomica', nav: '7', label: 'Promocion Socioeconomica' },
+      { id: 'bienestar-en-video', nav: '8', label: 'Bienestar en video' },
+      { id: 'orientacion', nav: '9', label: 'Orientacion psicosocial' },
+      { id: 'convenios-y-beneficios', nav: '10', label: 'Convenios y beneficios' },
+      { id: 'formula', nav: '11', label: 'Formula 4x5' },
+    ];
+          
+    scrollToSeccion(sectionId: string, navId?: string): void {
+      if (sectionId === 'top') {
+        this.scrollSpyIgnorar = true;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (navId) {
+          this.activo = navId;
+          this.centrarTabNav(navId);
+        }
+        this.reanudarScrollSpy(900);
+        return;
       }
   
-      if(pagina == "1"){
-        this.isValid0= false;
-        this.isValid1= true;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").addClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").addClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-
-      }
-      
-      if(pagina == "2"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= true;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        
-        $("#btn-1").removeClass("active");
-        $("#btn-2").addClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").addClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-
-
-      }
-      
-      if(pagina == "3"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= true;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").addClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").addClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-      }
-      
-      if(pagina == "4"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= true;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").addClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").addClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-      }
-      if(pagina == "5"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= true;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").addClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").addClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-      }
-      if(pagina == "6"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= true;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").addClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").addClass("active-m");
+      const el = document.getElementById(sectionId);
+      if (!el) {
+        return;
       }
   
+      const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
+  
+      if (navId) {
+        this.activo = navId;
+        this.centrarTabNav(navId);
+      }
+  
+      this.scrollSpyIgnorar = true;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      this.reanudarScrollSpy(900);
     }
   
 
+    @HostListener('window:scroll')
+    onWindowScroll(): void {
+      if (this.scrollSpyIgnorar || this.scrollSpyTick) {
+        return;
+      }
+  
+      this.scrollSpyTick = true;
+      requestAnimationFrame(() => {
+        this.actualizarSeccionPorScroll();
+        this.scrollSpyTick = false;
+      });
+    }
+  
+  ngOnDestroy(): void {
+    if (this.scrollSpyTimer) {
+      clearTimeout(this.scrollSpyTimer);
+    }
+    this.detenerAutoplayConvenios();
+    this.conveniosResizeObserver?.disconnect();
+  }
+  
+    private getNavOffset(): number {
+      const stickyNav = document.querySelector('.ciaf-program-nav');
+      const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
+      return 38 + 78 + stickyH + 12;
+    }
+  
+    private actualizarSeccionPorScroll(): void {
+      const offset = this.getNavOffset();
+      let seccionActual = this.seccionesPrograma[0];
+  
+      for (const seccion of this.seccionesPrograma) {
+        const el = document.getElementById(seccion.id);
+  
+        if (!el) {
+          continue;
+        }
+  
+        if (el.getBoundingClientRect().top - offset <= 8) {
+          seccionActual = seccion;
+        } else {
+          break;
+        }
+      }
+  
+      if (this.activo !== seccionActual.nav) {
+        this.activo = seccionActual.nav;
+        this.centrarTabNav(seccionActual.nav);
+      }
+    }
+  
+    private centrarTabNav(navId: string): void {
+      document.getElementById('btn-' + navId)?.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest'
+      });
+    }
+  
+    private reanudarScrollSpy(delayMs: number): void {
+      if (this.scrollSpyTimer) {
+        clearTimeout(this.scrollSpyTimer);
+      }
+  
+      this.scrollSpyTimer = setTimeout(() => {
+        this.scrollSpyIgnorar = false;
+        this.actualizarSeccionPorScroll();
+      }, delayMs);
+    }
+
+
+    paginas(pagina: string): void {
+      if (pagina === '0') {
+        this.scrollToSeccion('top', '1');
+        return;
+      }
+  
+      const mapa: Record<string, string> = {
+        '1': 'conoce-el-programa',
+        '2': 'plan-estudios',
+        '3': 'valores-financiacion',
+        '4': 'proceso-paso-a-paso',
+        '5': 'plan-estudios',
+        '6': 'transformacion',
+        '7': 'por-que-estudiarlo',
+        '8': 'valores-financiacion',
+        '9': 'proceso-paso-a-paso',
+        '10': 'simulador',
+        '11': 'tu-futuro',
+      };
+  
+      const destino = mapa[pagina];
+      if (destino) {
+        this.scrollToSeccion(destino, pagina);
+      }
+    }
     animarnoticia(id:any){
       $(".accion"+id).css("top","-40px");
     }
@@ -339,9 +354,12 @@ activo:any;
       $("#dos").removeClass("active-link-dropdow");
     }
 
-  constructor(private conectarApiService:ConectarApiService) { 
-
-  }
+  videoUrl: SafeResourceUrl | null = null;
+  constructor(
+    private conectarApiService: ConectarApiService,
+    private sanitizer: DomSanitizer,
+    private ngZone: NgZone
+  ) {}
 
   ngOnInit(): void {
     this.activo="0";
@@ -353,17 +371,173 @@ activo:any;
     //   console.log(respuesta.business_discovery.media.data);
     // });
 
-    this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2=>{
-      this.listarConvenios=respuesta2
-
+    this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2 => {
+      this.listarConvenios = respuesta2;
+      this.reiniciarConveniosCarrusel();
     });
 
     
     this.activarLinkMenu();
- 
   }
 
+  ngAfterViewInit(): void {
+    this.observarViewportConvenios();
+  }
 
+  private observarViewportConvenios(): void {
+    this.conveniosResizeObserver?.disconnect();
+
+    if (typeof ResizeObserver === 'undefined' || !this.conveniosViewport?.nativeElement) {
+      return;
+    }
+
+    this.medirAnchoConvenios();
+    this.conveniosResizeObserver = new ResizeObserver(() => this.medirAnchoConvenios());
+    this.conveniosResizeObserver.observe(this.conveniosViewport.nativeElement);
+  }
+
+  get usarCarruselConvenios(): boolean {
+    return Array.isArray(this.listarConvenios) && this.listarConvenios.length > this.conveniosVisibles;
+  }
+
+  get maxIndiceConvenios(): number {
+    const total = Array.isArray(this.listarConvenios) ? this.listarConvenios.length : 0;
+    return Math.max(0, total - this.conveniosVisibles);
+  }
+
+  private reiniciarConveniosCarrusel(): void {
+    this.conveniosIndice = 0;
+    this.actualizarDesplazamientoConvenios(false);
+    this.detenerAutoplayConvenios();
+
+    if (this.usarCarruselConvenios) {
+      setTimeout(() => {
+        this.observarViewportConvenios();
+        this.iniciarAutoplayConvenios();
+      }, 0);
+    }
+  }
+
+  private medirAnchoConvenios(): void {
+    const anchoViewport = this.conveniosViewport?.nativeElement?.clientWidth ?? 0;
+
+    if (!anchoViewport) {
+      return;
+    }
+
+    const gapsVisibles = this.conveniosGapPx * (this.conveniosVisibles - 1);
+    this.conveniosAnchoTarjeta = (anchoViewport - gapsVisibles) / this.conveniosVisibles;
+    this.actualizarDesplazamientoConvenios(false);
+  }
+
+  private pasoConvenios(): number {
+    return this.conveniosAnchoTarjeta + this.conveniosGapPx;
+  }
+
+  private actualizarDesplazamientoConvenios(animar: boolean): void {
+    this.conveniosAnimando = animar;
+    this.conveniosDesplazamiento = -(this.conveniosIndice * this.pasoConvenios());
+  }
+
+  private iniciarAutoplayConvenios(): void {
+    this.ngZone.runOutsideAngular(() => {
+      this.conveniosAutoplayId = setInterval(() => {
+        this.ngZone.run(() => this.siguienteConvenio(true));
+      }, this.conveniosAutoplayMs);
+    });
+  }
+
+  private detenerAutoplayConvenios(): void {
+    if (this.conveniosAutoplayId) {
+      clearInterval(this.conveniosAutoplayId);
+      this.conveniosAutoplayId = undefined;
+    }
+  }
+
+  private reanudarAutoplayConvenios(): void {
+    this.detenerAutoplayConvenios();
+    if (this.usarCarruselConvenios) {
+      this.iniciarAutoplayConvenios();
+    }
+  }
+
+  private siguienteConvenio(animar = true): void {
+    if (!this.usarCarruselConvenios) {
+      return;
+    }
+
+    this.conveniosIndice = this.conveniosIndice >= this.maxIndiceConvenios ? 0 : this.conveniosIndice + 1;
+    this.actualizarDesplazamientoConvenios(animar);
+  }
+
+  onConveniosPointerDown(event: PointerEvent): void {
+    if (!this.usarCarruselConvenios) {
+      return;
+    }
+
+    this.detenerAutoplayConvenios();
+    this.conveniosArrastrando = true;
+    this.conveniosInicioX = event.clientX;
+    this.conveniosInicioDesplazamiento = this.conveniosDesplazamiento;
+    this.conveniosAnimando = false;
+    (event.currentTarget as HTMLElement)?.setPointerCapture?.(event.pointerId);
+  }
+
+  onConveniosPointerMove(event: PointerEvent): void {
+    if (!this.conveniosArrastrando) {
+      return;
+    }
+
+    const delta = event.clientX - this.conveniosInicioX;
+    let nuevo = this.conveniosInicioDesplazamiento + delta;
+    const min = -(this.maxIndiceConvenios * this.pasoConvenios());
+    const max = 0;
+
+    this.conveniosDesplazamiento = Math.min(max, Math.max(min, nuevo));
+  }
+
+  onConveniosPointerUp(event: PointerEvent): void {
+    if (!this.conveniosArrastrando) {
+      return;
+    }
+
+    this.conveniosArrastrando = false;
+    (event.currentTarget as HTMLElement)?.releasePointerCapture?.(event.pointerId);
+
+    const movido = this.conveniosDesplazamiento - this.conveniosInicioDesplazamiento;
+    const umbral = this.pasoConvenios() * 0.18;
+
+    if (movido < -umbral && this.conveniosIndice < this.maxIndiceConvenios) {
+      this.conveniosIndice += 1;
+    } else if (movido > umbral && this.conveniosIndice > 0) {
+      this.conveniosIndice -= 1;
+    }
+
+    this.actualizarDesplazamientoConvenios(true);
+    this.reanudarAutoplayConvenios();
+  }
+
+  onConveniosPointerLeave(event: PointerEvent): void {
+    if (this.conveniosArrastrando) {
+      this.onConveniosPointerUp(event);
+    }
+  }
+
+  abrirVideo(videoId: string): void {
+
+    this.videoUrl =
+      this.sanitizer.bypassSecurityTrustResourceUrl(
+        `https://www.youtube.com/embed/${videoId}?rel=0`
+      );
+  
+  }
+  
+  cerrarVideo(): void {
+  
+    this.videoUrl =
+      this.sanitizer.bypassSecurityTrustResourceUrl('');
+  
+  }
   
 
 
