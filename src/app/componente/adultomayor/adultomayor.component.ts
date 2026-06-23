@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
@@ -33,8 +33,6 @@ export class AdultomayorComponent {
 
   ];
   
-
-  
   listarMaterias =[
     {semestre:1,materia:'Atención primaria del adulto mayor'},
     {semestre:1,materia:'Anatomía I'},
@@ -59,7 +57,35 @@ export class AdultomayorComponent {
 
   ];
   
+  get semestresPlan(): { semestre: number }[] {
+    return [...this.listarSemestres1];
+  }
   
+  materiasDelSemestre(semestre: number): { semestre: number; materia: string }[] {
+    return this.listarMaterias.filter(m => m.semestre === semestre);
+  }
+  
+  etiquetaTituloSemestre(semestre: number): string | null {
+    if (semestre === 3) {
+      return 'Técnico Laboral';
+    }
+
+    return null;
+  }
+  
+  esSemestreHito(semestre: number): boolean {
+    return semestre === 4 || semestre === 7 || semestre === 10;
+  }
+  
+  planSemestreAbierto: number | null = null;
+  
+  togglePlanSemestre(semestre: number): void {
+    this.planSemestreAbierto = this.planSemestreAbierto === semestre ? null : semestre;
+  }
+  
+  planSemestreEstaAbierto(semestre: number): boolean {
+    return this.planSemestreAbierto === semestre;
+  }
   
   slideConfig = {
     "slidesToShow": 4, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
@@ -88,92 +114,165 @@ export class AdultomayorComponent {
   
   pagina:any;
   activo:any;
+
+  private scrollSpyIgnorar = false;
+  private scrollSpyTick = false;
+  private scrollSpyTimer?: ReturnType<typeof setTimeout>;
+
+  campoAccionActivo: string | null = null;
+
+  toggleCampoAccion(id: string): void {
+    this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
+  }
+  
   
   isValid1:boolean = true;
   isValid2:boolean = false;
   isValid3:boolean = false;
   isValid4:boolean = false;
   
-    listarPrograma: any;
-    listarProgramaVideo: any;
-    listarDesempenate: any;
-  
-    paginas(pagina:string){
-      if(pagina == "0"){
-        window.scroll(0,0);
-      }
-      if(pagina == "1"){
-  
-        this.isValid1= true;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        window.scroll(0,280);
-        $("#btn-1").addClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-  
-        $("#btn-1-1").addClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-      }
-      
-      if(pagina == "2"){
-        this.isValid1= false;
-        this.isValid2= true;
-        this.isValid3= false;
-        this.isValid4= false;
-        window.scroll(0,280);
-        $("#btn-1").removeClass("active");
-        $("#btn-2").addClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").addClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
+  listarPrograma: any;
+  listarProgramaVideo: any;
+  listarDesempenate: any;
+
+          /** IDs de sección del programa (scroll, no páginas ocultas) */
+          readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
+            { id: 'conoce-el-programa', nav: '1', label: 'Conoce el programa' },
+            { id: 'campo-de-accion', nav: '2', label: 'Campo de acción' },
+            { id: 'experiencias-reales', nav: '3', label: 'Experiencias reales' },
+            { id: 'plan-estudios', nav: '5', label: 'Plan de estudios' },
+            { id: 'transformacion', nav: '6', label: 'Transformación' },
+            { id: 'por-que-estudiarlo', nav: '7', label: '¿Por qué estudiarlo?' },
+            { id: 'valores-financiacion', nav: '8', label: 'Valores y financiación' },
+            { id: 'proceso-paso-a-paso', nav: '9', label: 'Tu proceso paso a paso' },
+            { id: 'simulador', nav: '10', label: 'Simulador' },
+            { id: 'tu-futuro', nav: '11', label: 'Tu futuro' },
+          ];
         
-      }
+          scrollToSeccion(sectionId: string, navId?: string): void {
+            if (sectionId === 'top') {
+              this.scrollSpyIgnorar = true;
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              if (navId) {
+                this.activo = navId;
+                this.centrarTabNav(navId);
+              }
+              this.reanudarScrollSpy(900);
+              return;
+            }
+        
+            const el = document.getElementById(sectionId);
+            if (!el) {
+              return;
+            }
+        
+            const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
+        
+            if (navId) {
+              this.activo = navId;
+              this.centrarTabNav(navId);
+            }
+        
+            this.scrollSpyIgnorar = true;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+            this.reanudarScrollSpy(900);
+          }
+        
+          @HostListener('window:scroll')
+          onWindowScroll(): void {
+            if (this.scrollSpyIgnorar || this.scrollSpyTick) {
+              return;
+            }
+        
+            this.scrollSpyTick = true;
+            requestAnimationFrame(() => {
+              this.actualizarSeccionPorScroll();
+              this.scrollSpyTick = false;
+            });
+          }
+        
+          ngOnDestroy(): void {
+            if (this.scrollSpyTimer) {
+              clearTimeout(this.scrollSpyTimer);
+            }
+          }
+        
+          private getNavOffset(): number {
+            const stickyNav = document.querySelector('.ciaf-program-nav');
+            const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
+            return 38 + 78 + stickyH + 12;
+          }
+        
+          private actualizarSeccionPorScroll(): void {
+            const offset = this.getNavOffset();
+            let seccionActual = this.seccionesPrograma[0];
+        
+            for (const seccion of this.seccionesPrograma) {
+              const el = document.getElementById(seccion.id);
+        
+              if (!el) {
+                continue;
+              }
+        
+              if (el.getBoundingClientRect().top - offset <= 8) {
+                seccionActual = seccion;
+              } else {
+                break;
+              }
+            }
+        
+            if (this.activo !== seccionActual.nav) {
+              this.activo = seccionActual.nav;
+              this.centrarTabNav(seccionActual.nav);
+            }
+          }
+        
+          private centrarTabNav(navId: string): void {
+            document.getElementById('btn-' + navId)?.scrollIntoView({
+              behavior: 'smooth',
+              inline: 'center',
+              block: 'nearest'
+            });
+          }
+        
+          private reanudarScrollSpy(delayMs: number): void {
+            if (this.scrollSpyTimer) {
+              clearTimeout(this.scrollSpyTimer);
+            }
+        
+            this.scrollSpyTimer = setTimeout(() => {
+              this.scrollSpyIgnorar = false;
+              this.actualizarSeccionPorScroll();
+            }, delayMs);
+          }
       
-      if(pagina == "3"){
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= true;
-        this.isValid4= false;
-        window.scroll(0,280);
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").addClass("active");
-        $("#btn-4").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").addClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-      }
       
-      if(pagina == "4"){
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= true;
-        window.scroll(0,280);
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").addClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").addClass("active-m");
-      }
-  
-    }
-  
+          paginas(pagina: string): void {
+            if (pagina === '0') {
+              this.scrollToSeccion('top', '1');
+              return;
+            }
+        
+            const mapa: Record<string, string> = {
+              '1': 'conoce-el-programa',
+              '2': 'plan-estudios',
+              '3': 'valores-financiacion',
+              '4': 'proceso-paso-a-paso',
+              '5': 'plan-estudios',
+              '6': 'transformacion',
+              '7': 'por-que-estudiarlo',
+              '8': 'valores-financiacion',
+              '9': 'proceso-paso-a-paso',
+              '10': 'simulador',
+              '11': 'tu-futuro',
+            };
+        
+            const destino = mapa[pagina];
+            if (destino) {
+              this.scrollToSeccion(destino, pagina);
+            }
+          }
+
     listarContacto =[
       {tipo_link:'1',titulo:'¡Inscríbete en línea!', pic:this.inscribete_en_linea, link:'https://ciaf.digital/inscripciones/', detalle:'',boton:'Inscipción'},
       {tipo_link:'1',titulo:'¡Escríbeme y te asesoro!', pic:this.te_asesoro, link:'https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20motocicletas%20web', detalle:'',boton:'Escribeme'},

@@ -1,98 +1,568 @@
-.bg-software{
-	background-color: rgba(0,97,168,0.8);
-}
+/* Hero programa — solo overlay azul, altura y animación (layout en Bootstrap) */
+.ciaf-program-hero {
+    min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
+  }
 
-.bg-sem1{
-	background: linear-gradient(180deg, #001550 9.07%, #1E22BC 80.95%);
-}
+  .ciaf-program-hero__overlay {
+    z-index: 1;
+      pointer-events: none;
+      background: color-mix(in srgb, var(--ciaf-primary-deep) 78%, transparent);
+  }
 
-.bg-sem2{
-	background: linear-gradient(180deg, #1E22BC 11.32%, #1E22BC 34.07%, #1E22BC 52.75%, #79AB3A 69.94%, #79AB3A 80.41%);
-}
-.bg-sem3{
-	background: linear-gradient(180deg, #79AB3A 2.93%, #79AB3A 23.62%, #79AB3A 43.59%, #638C2F 63.22%, #638C2F 82.07%);
-}
-.bg-sem4{
-	background: linear-gradient(180deg, #024CA0 7.53%, #054DA0 20.52%, #0F50A2 31.2%, #2155A4 41.05%, #395CA7 50.42%, #5865AB 59.44%, #7E71AF 68.19%, #AB7EB5 76.58%, #C686B8 81.07%);
-}
+  .ciaf-program-hero__scroll {
+    z-index: 2;
+      animation: ciaf-hero-scroll 2s ease-in-out infinite;
+  }
 
-.bg-sem5{
-	background: linear-gradient(180deg, #C686B8 3.34%, #C583B7 28.99%, #C279B2 50.06%, #BD67AB 69.43%, #BB61A8 75.05%);
-}
-.bg-sem6{
-	background: linear-gradient(180deg, #BB61A8 27.05%, #B95DA6 48.06%, #B4519F 69.11%, #B24B9B 76.34%);
-}
-.bg-sem7{
-	background: linear-gradient(180deg, #B24B9B 42.81%, #B44B9A 56.8%, #BD4A98 64.83%, #CB4995 71.35%, #DE4890 77.07%, #F8468A 82.21%, #FF4688 83.4%);
-}
 
-.bg-sem8{
-	background: linear-gradient(180deg, #FF4688 57.95%, #FB3A7F 61.9%, #F52B74 69%, #F2236E 77.46%, #F1206C 90.62%);
-}
-.bg-sem9{
-	background: linear-gradient(180deg, #F1206C 23.49%, #C00B53 81.82%);
-}
-.bg-sem10{
-	background-color: #C00B53;
-}
+  /* Tabs debajo del hero */
+.ciaf-program-nav {
+    position: sticky;
+      top: calc(var(--topbar-height) + var(--header-height));
+      z-index: 40;
+      background: var(--ciaf-primary);
+      box-shadow: var(--shadow-sm);
+  }
 
-.titulo-motos{
-    font-size: 70px !important;
-    line-height: 60px;
-}
-
-.bg-image-1{
-    background-image: url("https://ciaf.edu.co/assets/image/bg-motocicletas.webp");
-    height: 450px;
-
-   
-}
-
-.m-menu {
+  .ciaf-program-nav__tabs--scroll {
+    -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+  }
+  
+  .ciaf-program-nav__tabs--scroll::-webkit-scrollbar {
     display: none;
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 4;
-}
+  }
+  
+  .ciaf-program-nav__tabs .nav-link {
+    white-space: nowrap;
+      cursor: pointer;
+      transition: background var(--transition-base), color var(--transition-base);
+  }
+  
+  .ciaf-program-nav__tabs .nav-link:hover,
+  .ciaf-program-nav__tabs .nav-link.active {
+    background: rgba(255, 255, 255, .12);
+      color: var(--ciaf-white);
+  }
 
-.m-menu a {
-    text-decoration: none !important;
-}
-.m-menu a p{
-    color: #fff;
-    font-size: 10px !important;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none !important;
-	line-height: 10px;
-}
+  /* ==========================================
+   Conoce el programa
+========================================== */
+  .ciaf-conoce__tab-input {
+    position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+  }
 
-.m-menu img {
-	width: 26px;
-}
-.active-m{
-	background-color: #5a802d !important;
-	height: 100%;
-}
-@media(max-width:768px){
-	.bg-software{
-		background-color: rgba(0,97,168,1);
-	}
-    .m-menu {
-        display: block;
-        display: flex;
+  .ciaf-conoce__tabs-wrap {
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .ciaf-conoce__tab-label {
+    display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 168px;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--ciaf-muted-soft);
+      cursor: pointer;
+      transition:
+        background var(--transition-base),
+        color var(--transition-base);
+  }
+  
+  .ciaf-conoce__tabs-wrap:has(#ciaf-tab-perfil-pro:checked) .ciaf-conoce__tab-label--pro,
+  .ciaf-conoce__tabs-wrap:has(#ciaf-tab-perfil-ocu:checked) .ciaf-conoce__tab-label--ocu {
+    background: var(--ciaf-primary);
+      color: var(--ciaf-white);
+      box-shadow: none;
+  }
+
+  .ciaf-conoce__panel {
+    display: none;
+  }
+  
+  .ciaf-conoce__tabs-wrap:has(#ciaf-tab-perfil-pro:checked) .ciaf-conoce__panel--pro {
+    display: block;
+  }
+  
+  .ciaf-conoce__tabs-wrap:has(#ciaf-tab-perfil-ocu:checked) .ciaf-conoce__panel--ocu {
+    display: block;
+  }
+  
+
+  /* ==========================================
+   Sección 2: Campo de acción
+========================================== */
+.ciaf-campo__head i {
+    flex-shrink: 0;
+      transition: transform var(--transition-base);
+  }
+  
+  .ciaf-campo__body {
+    display: block;
+      max-height: 0;
+      margin: 0;
+      overflow: hidden;
+      opacity: 0;
+      line-height: 1.55;
+      transition:
+        max-height .45s ease,
+        opacity .45s ease,
+        margin .45s ease;
+  }
+  
+  .ciaf-campo__item--active .ciaf-campo__body {
+    max-height: 96px;
+      margin-top: 12px;
+      opacity: 1;
+  }
+  
+  .ciaf-campo__item--active .ciaf-campo__head i {
+    transform: rotate(90deg);
+  }
+  
+/* ==========================================
+   Sección 4: Ruta de crecimiento
+========================================== */
+.ciaf-ruta__input {
+    position: absolute;
+      opacity: 0;
+      pointer-events: none;
+  }
+  
+  .ciaf-ruta__path {
+    display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 7px 10px;
+      margin-bottom: 32px;
+  }
+  
+  .ciaf-ruta__path-pill {
+    padding: 9px 18px;
+      border: 1px solid var(--ciaf-border-card);
+      border-radius: var(--radius-pill);
+      background: var(--ciaf-white);
+      color: var(--ciaf-muted-soft);
+      white-space: nowrap;
+  }
+  
+  .ciaf-ruta__path-chevron {
+    color: var(--ciaf-muted);
+  }
+  
+  .ciaf-ruta__pickers {
+    display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+  }
+  
+  .ciaf-ruta__picker {
+    display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 100%;
+      padding: 22px 20px 18px;
+      border: 1px solid var(--ciaf-border-card);
+      border-radius: 24px;
+      background: var(--ciaf-white);
+      opacity: .72;
+      cursor: pointer;
+      transition:
+        opacity var(--transition-base),
+        border-color var(--transition-base),
+        border-width var(--transition-base),
+        box-shadow var(--transition-base);
+  }
+  
+  .ciaf-ruta__picker-top {
+    display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+  }
+  
+  .ciaf-ruta__picker-badge {
+    color: var(--ciaf-muted-soft);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+  }
+  
+  .ciaf-ruta__picker-icon {
+    display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: var(--ciaf-white);
+  }
+  
+  .ciaf-ruta__picker-icon--2 {
+    background: #4a7ec4;
+  }
+  
+  .ciaf-ruta__picker-title {
+    color: var(--ruta-blue);
+      font-family: var(--font-family-display);
+      line-height: 1.35;
+  }
+  
+  .ciaf-ruta__sem-track {
+    display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+  }
+  
+  .ciaf-ruta__sem-track i {
+    color: #b8c5d9;
+  }
+  
+  .ciaf-ruta__sem-node {
+    display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #d8e2ef;
+      color: #6b7f99;
+  }
+  
+  .ciaf-ruta__panel {
+    display: none;
+      padding: 28px 24px 24px;
+      border: 1px solid var(--ciaf-border-card);
+      border-radius: 26px;
+      background: var(--ciaf-white);
+      box-shadow: var(--shadow-md);
+  }
+  
+  .ciaf-ruta__panel-meta {
+    display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 10px;
+      margin-bottom: 18px;
+  }
+  
+  .ciaf-ruta__meta-pill {
+    padding: 6px 13px;
+      border-radius: var(--radius-pill);
+      background: var(--ciaf-bg-section);
+      color: var(--ciaf-muted-soft);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+  }
+  
+  /* Estado activo: tarjeta ciclo */
+  .ciaf-ruta__shell:has(#ruta-ciclo-1:checked) .ciaf-ruta__picker--1,
+  .ciaf-ruta__shell:has(#ruta-ciclo-2:checked) .ciaf-ruta__picker--2,
+  .ciaf-ruta__shell:has(#ruta-ciclo-3:checked) .ciaf-ruta__picker--3 {
+    border: 2px solid var(--ruta-blue);
+      opacity: 1;
+      box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Barra de progreso según ciclo */
+  .ciaf-ruta__shell:has(#ruta-ciclo-2:checked) .ciaf-ruta__path-pill--s2,
+  .ciaf-ruta__shell:has(#ruta-ciclo-2:checked) .ciaf-ruta__path-pill--s3 {
+    border-color: #b8d4f5;
+      background: #eef4fc;
+      color: var(--ruta-blue);
+  }
+  
+  .ciaf-ruta__shell:has(#ruta-ciclo-2:checked) .ciaf-ruta__path-pill--s3 {
+    border: 0;
+      background: linear-gradient(90deg, #4a7ec4 0%, #6ba3e8 100%);
+      color: var(--ciaf-white);
+  }
+  
+  .ciaf-ruta__shell:has(#ruta-ciclo-1:checked) .ciaf-ruta__panel--1,
+  .ciaf-ruta__shell:has(#ruta-ciclo-2:checked) .ciaf-ruta__panel--2,
+  .ciaf-ruta__shell:has(#ruta-ciclo-3:checked) .ciaf-ruta__panel--3 {
+    display: block;
+  }
+  
+  @media (min-width: 768px) {
+    .ciaf-ruta__pickers {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+          align-items: stretch;
     }
+  
+  }
+  
+  @media (max-width: 767.98px) {
+    .ciaf-ruta__path-chevron {
+      display: none;
+    }
+  
+    .ciaf-ruta__path {
+      gap: 8px;
+    }
+  
+  }
 
+  /* ==========================================
+   Sección 5: Plan de estudios
+========================================== */
+
+
+  
+  .ciaf-plan__card {
+    overflow: hidden;
+      border: 1px solid var(--ciaf-border-card);
+      border-radius: 26px;
+      background: var(--ciaf-white);
+      transition:
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+  }
+  
+  .ciaf-plan__item--milestone .ciaf-plan__trigger {
+    background: #eef4fc;
+  }
+  .ciaf-plan__trigger {
+    display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      margin: 0;
+      padding: 18px 20px;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+  }
+
+  .ciaf-plan__head-main {
+    display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      min-width: 0;
+  }
+
+  .ciaf-plan__badge {
+    display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border: 1px solid #b8e6c3;
+      border-radius: var(--radius-pill);
+      background: #edfdf3;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, .12);
+      color: var(--plan-blue);
+  }
+  .ciaf-plan__badge i {
+    color: #16a34a;
+  }
+
+  
+
+  .ciaf-plan__panel {
+    padding: 0 20px 20px;
+      border-top: 1px solid var(--ciaf-border-card);
+  }
+
+  .ciaf-plan__materias {
+    display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px 14px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+  }
+  
+  .ciaf-plan__materias li {
+    display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--ciaf-ink-soft);
+      line-height: 1.45;
+  }
+  
+  .ciaf-plan__materias i {
+    flex-shrink: 0;
+      margin-top: 2px;
+      color: #4a7ec4;
+  }
+
+  .ciaf-plan__item--open .ciaf-plan__card {
+    border: 2px solid var(--plan-blue);
+      box-shadow: var(--shadow-elegant);
+  }
+  .ciaf-plan__item--open .ciaf-plan__chevron {
+    transform: rotate(180deg);
+  }
+  
+  /* ==========================================
+   Sección 6: Transformación
+========================================== */
+  .ciaf-transform-card {
+    position: relative;
+      min-height: 325px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 22px;
+      border: 1px solid #dce3ed;
+      border-radius: 28px;
+      background: var(--ciaf-white);
+      text-align: center;
+      overflow: hidden;
+      transition:
+        transform var(--transition-slow),
+        border-color var(--transition-slow),
+        box-shadow var(--transition-slow);
+  }
+  
+  .ciaf-transform-card:hover {
+    transform: translateY(-8px);
+      border-color: color-mix(in srgb, var(--ciaf-primary) 35%, #dce3ed);
+      box-shadow: var(--shadow-elegant);
+  }
+
+  .ciaf-transform-glow {
+    position: absolute;
+      top: -48px;
+      right: -48px;
+      width: 128px;
+      height: 128px;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      pointer-events: none;
+      transition:
+        background var(--transition-slow),
+        filter var(--transition-slow);
+  }
+  
+  .ciaf-transform-card:hover .ciaf-transform-glow {
+    background: color-mix(in srgb, var(--ciaf-primary) 10%, transparent);
+      filter: blur(24px);
+  }
+  
+  .ciaf-transform-icon {
+    position: relative;
+      z-index: 2;
+      width: 80px;
+      height: 80px;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--ciaf-primary) 18%, transparent);
+      border-radius: 24px;
+      background: color-mix(in srgb, var(--ciaf-primary) 5%, var(--ciaf-white));
+      color: var(--ciaf-primary);
+      transition:
+        transform var(--transition-slow),
+        border-color var(--transition-slow),
+        background var(--transition-slow);
+  }
+  
+  .ciaf-transform-card:hover .ciaf-transform-icon {
+    transform: scale(1.1) rotate(3deg);
+      border-color: color-mix(in srgb, var(--ciaf-primary) 35%, transparent);
+      background: color-mix(in srgb, var(--ciaf-primary) 8%, var(--ciaf-white));
+  }
+
+  /* ==========================================
+   Sección 8: Valores y financiación
+========================================== */
+
+/* Benefits glass */
+.ciaf-benefits-wrap {
+  position: relative;
+  z-index: 5;
+  margin-top: -64px;
+  padding: 0 16px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+.ciaf-benefits-glass {
+  max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 32px;
+    background: rgba(255,255,255,.78);
+    box-shadow: var(--shadow-elegant);
+    backdrop-filter: blur(18px);
+}
 
-    .m-menu {
-        display: block;
-        display: flex;
-        height: 55px;
-        overflow: hidden;
-    }
+  /* ==========================================
+   Sección 11: OPCIONES
+========================================== */
+.ciaf-option-card ul {
+  display: grid;
+    gap: 8px;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: var(--transition-slow);
+}
+
+.ciaf-option-card:hover ul {
+  max-height: 240px;
+    margin-top: 16px;
+    opacity: 1;
+}
+ 
+.ciaf-option-card li {
+  color: var(--ciaf-ink-soft);
+}
+
+.ciaf-option-card li i {
+  color: #45913f;
+    margin-right: 6px;
+}
+
+.ciaf-option-card p {
+  margin: 16px 0 0;
+    color: var(--ciaf-primary);
+    transition: var(--transition-base);
+}
+
+.ciaf-option-card:hover p {
+  opacity: 0;
+}
+
+/* ==========================================
+   Sección 12: SIMULADOR
+========================================== */
+.ciaf-jornada {
+  display:flex;
+  gap:13px;
+  margin-top:13px;
+}
+
+.ciaf-jornada button {
+  border:none;
+  height:46px;
+  padding:0 24px;
+  border-radius:999px;
+  background:#f1f5f9;
+  color:#64748b;
+}
+
+.ciaf-jornada .active {
+  background:var(--ciaf-primary);
+  color:white;
 }
