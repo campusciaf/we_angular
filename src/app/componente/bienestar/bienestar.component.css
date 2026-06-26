@@ -129,9 +129,6 @@
   border: 0;
 }
 
-.modal-content{
-  background: transparent !important;
-}
 
 @media (max-width: 576px){
 

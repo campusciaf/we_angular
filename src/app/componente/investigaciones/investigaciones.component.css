@@ -1,301 +1,116 @@
-  /* ******************************************* */
-  .bg-opciones{
-    background-color: rgba(0,97,168,0.8);
+/* Hero programa — solo overlay azul, altura y animación (layout en Bootstrap) */
+.ciaf-program-hero {
+  min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
 }
-.padding-banner{
-    padding-top: 150px;
+
+.ciaf-program-hero__overlay {
+  z-index: 1;
+    pointer-events: none;
+    background: color-mix(in srgb, var(--ciaf-primary-deep) 78%, transparent);
 }
-.bg-software{
-	background-color: rgba(0,97,168,0.8);
+
+.ciaf-program-hero__scroll {
+  z-index: 2;
+    animation: ciaf-hero-scroll 2s ease-in-out infinite;
+}
+
+  /* Tabs debajo del hero */
+.ciaf-program-nav {
+  position: sticky;
+    top: calc(var(--topbar-height) + var(--header-height));
+    z-index: 40;
+    background: var(--ciaf-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.ciaf-program-nav__tabs--scroll {
+  -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ciaf-program-nav__tabs--scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ciaf-program-nav__tabs .nav-link {
+  white-space: nowrap;
+    cursor: pointer;
+    transition: background var(--transition-base), color var(--transition-base);
+}
+
+.ciaf-program-nav__tabs .nav-link:hover,
+.ciaf-program-nav__tabs .nav-link.active {
+  background: rgba(255, 255, 255, .12);
+    color: var(--ciaf-white);
 }
 
 
-.slick-slide {
-    display: block;
-    margin:0px 5px;
-    position:relative;
-
-  }
-  .instagram{
-    border: 1px solid #f9f9f9;
-    margin: 10px;
-}
-.nombre-calidad{
-    background-color:rgba(0, 21, 80, 0.5);
-    color: #fff;
-    position: absolute;
-    width:100%;
-    height: 100%;
-    top:0px;
-    float:left;
+/* ==========================================
+ Sección 6: Transformación
+========================================== */
+.ciaf-transform-card {
+  position: relative;
+    min-height: 325px;
     display: flex;
-    align-items:flex-end;
-    justify-content: center!important;
-   
-}
-
-.nombre-calidad span{
-    padding: 0px 90px 50px 90px;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 22px;
+    border: 1px solid #dce3ed;
+    border-radius: 28px;
+    background: var(--ciaf-white);
     text-align: center;
-    font-size: 20px;
-    font-family: "fuente2" !important;
-    line-height: 20px;
+    overflow: hidden;
+    transition:
+      transform var(--transition-slow),
+      border-color var(--transition-slow),
+      box-shadow var(--transition-slow);
 }
 
-.boton-prev{
-    left: 5%;
-    margin-top:10%;
-    z-index: 2!important;
-    transition: all .5s;
-    position: absolute;
-    background-color: rgba(0, 21, 80, 0.0);
-    border: none;
-}
-.boton-next {
-    right:5%;
-    margin-top: 10%;
-    z-index: 2!important;
-    transition: all .5s;
-    position: absolute;
-    background-color: rgba(0, 21, 80, 0.0);
-    border: none;
+.ciaf-transform-card:hover {
+  transform: translateY(-8px);
+    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, #dce3ed);
+    box-shadow: var(--shadow-elegant);
 }
 
-.pages-media {
-    width: 100%;
+.ciaf-transform-glow {
+  position: absolute;
+    top: -48px;
+    right: -48px;
+    width: 128px;
+    height: 128px;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    pointer-events: none;
+    transition:
+      background var(--transition-slow),
+      filter var(--transition-slow);
 }
 
-.b-interno{
-    position: relative;
-    display: inline-block;
-	margin: 0px;
-}
-.b-interno img{
-    width:100%
-}
-.b-interno .b-contenido{
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    top:0px;
-	/* background-color: rgba(121, 171, 58, 0.8); */
-	display: block;
+.ciaf-transform-card:hover .ciaf-transform-glow {
+  background: color-mix(in srgb, var(--ciaf-primary) 10%, transparent);
+    filter: blur(24px);
 }
 
-.b-interno .b-contenido p{
- 	font-size: 40px;
- 	line-height: 40px;
+.ciaf-transform-icon {
+  position: relative;
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--ciaf-primary) 18%, transparent);
+    border-radius: 24px;
+    background: color-mix(in srgb, var(--ciaf-primary) 5%, var(--ciaf-white));
+    color: var(--ciaf-primary);
+    transition:
+      transform var(--transition-slow),
+      border-color var(--transition-slow),
+      background var(--transition-slow);
 }
 
-
-.slide .descripcion {
-	overflow: hidden;
-	color: #666666;
-	font-size: 14px;
-	line-height: 20px;
-    height: 80px; 
-    opacity: 1;
-	transition: all 1s;
-}
-
-.conte_instagram{
-    position: relative;
-    top: 0px;
-    background-color: #fff;
-    transition: all 1s;
-}
-
-.pic-eventos img{
-    width: 300px;
-
-}
-
-@media (max-width:1024px){
-    .padding-banner{
-        padding-top: 60px;
-    }
-}
-
-@media (max-width:768px){
-    .padding-banner{
-        padding-top: 40px;
-    }
-
-    .b-interno .b-contenido p{
-        font-size: 26px;
-        line-height: 22px;
-   }
-
-   .pic-eventos img{
-    width: 250px;
-    padding-top: 40px;
-
-    }
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-    .padding-banner{
-        padding-top: 70px;
-    }
-    .b-interno .b-contenido p{
-        font-size: 20px !important;
-        line-height: 22px;
-        
-   }
-	.boton-prev {
-		left: 10%;
-		margin-top: 320px;
-	}
-	.boton-next {
-		right:10%;
-		margin-top: -60px;
-
-	}
-
-    .b-interno img{
-        width:100%;
-        height: 220px;
-    }
-}
-
-
-
-
-.parche{
-    position: relative;
-    display: inline-block;
-	margin: 0px;
-	
-}
-
-
-.parche .parche-contenido{
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    top:0px;
-	background-color: rgba(63, 109, 243, 0.3);
-	display: block;
-}
-
-.parche{
-    font-size: 18px;
-    line-height: 18px;
-}
-
-
-.m-menu {
-    display: none;
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 4;
-}
-
-.m-menu a {
-    text-decoration: none !important;
-}
-.m-menu a p{
-    color: #fff;
-    font-size: 10px !important;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none !important;
-	line-height: 10px;
-}
-
-.m-menu img {
-	width: 26px;
-}
-.active-m{
-	background-color: #5a802d !important;
-	height: 100%;
-}
-@media(max-width:768px){
-	.bg-software{
-		background-color: rgba(0,97,168,1);
-	}
-    .m-menu {
-        display: block;
-        display: flex;
-    }
-
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
-  .m-menu {
-      display: block;
-      display: flex;
-      height: 55px;
-      overflow: hidden;
-  }
-}
-
-.custom-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #0c2d6b;
-  border-radius: 12px;
-  overflow: hidden;
-  font-size: 15px;
-  color: #001f54;
-
-  thead {
-    background-color: #1f3d7a; /* azul oscuro */
-    color: #fff;
-    font-size: 16px;
-
-    th {
-      padding: 1rem;
-      text-align: center;
-      vertical-align: middle;
-    }
-  }
-
-  tbody {
-    tr {
-      border-bottom: 1px solid #0c2d6b;
-      transition: background-color 0.3s;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      &:hover {
-        background-color: #f0f4ff;
-      }
-    }
-
-    td {
-      padding: 0.9rem;
-      text-align: left;
-      border-right: 1px solid #0c2d6b;
-      color: #001f54;
-
-      &:last-child {
-        border-right: none;
-      }
-    }
-
-    td[rowspan] {
-      vertical-align: middle;
-      color: #0c2d6b;
-    }
-  }
-}
-
-/* Bordes redondeados globales */
-.custom-table th:first-child {
-  border-top-left-radius: 12px;
-}
-.custom-table th:last-child {
-  border-top-right-radius: 12px;
-}
-.custom-table tr:last-child td:first-child {
-  border-bottom-left-radius: 12px;
-}
-.custom-table tr:last-child td:last-child {
-  border-bottom-right-radius: 12px;
+.ciaf-transform-card:hover .ciaf-transform-icon {
+  transform: scale(1.1) rotate(3deg);
+    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, transparent);
+    background: color-mix(in srgb, var(--ciaf-primary) 8%, var(--ciaf-white));
 }

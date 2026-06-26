@@ -244,19 +244,19 @@
    LETTER SPACING UTILITIES
 ========================================== */
 .ls-1 {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05em !important;
 }
 
 .ls-2 {
-  letter-spacing: 0.10em;
+  letter-spacing: 0.10em !important;
 }
 
 .ls-3 {
-  letter-spacing: 0.15em;
+  letter-spacing: 0.15em !important;
 }
 
 .ls-4 {
-  letter-spacing: 0.20em;
+  letter-spacing: 0.20em !important
 }
 
 /* ==========================================
@@ -365,18 +365,15 @@
 }
 
 .bg-transparente {
-  display:flex;
-  gap:16px;
-  align-items:center;
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04) !important;
   backdrop-filter:blur(8px);
 }
 
 .border-transparente{
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.2) !important;
 }
 .border-lime{
-  border: 2px solid #84cc16;
+  border: 2px solid #84cc16 !important;
 }
 .check-input-none{
   display:none;
@@ -450,8 +447,6 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: .22em;
 }
 
 .ciaf-pill--section {
@@ -736,7 +731,6 @@ body {
   isolation: isolate;
   position: relative;
   justify-content: center;
-  min-height: 52px;
   border: none;
   color: var(--ciaf-lime-cta-text);
   background: var(--ciaf-lime);
