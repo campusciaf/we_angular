@@ -1,788 +1,758 @@
-<section>
-    <div class="row banner-interno">
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
-            <img src="{{bg_pc}}" alt="Administración de empresas">
-       </div>
-       <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
-        <img src="{{bg_m}}" alt="Administración de empresas">
-   </div>
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
-            <div class="row justify-content-center vertical-align-center">
-            
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-titulo">
-                    <div class="row justify-content-center vertical-align-center">
-                        <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
-                            <h1 class="text-center bolder-1">Conoce tu Institución</h1>
-                            
-                            <p class="lema text-center"> Te damos la bienvenida a la <span class="bolder-1">comunidad CIAF</span> </p>
+<app-header></app-header>
+
+<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4" >
+        
+    <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
+        <img src="{{bg_pc}}" alt="Conocenos">
+    </div>
+
+    <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+
+    <div class="row z-2 py-5 mt-5 col-12">
+        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 p-4">
+            <span class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
+                Vigilada Mineducación
+            </span>
+            <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+                Conoce CIAF
+            </h1>
+    
+            <p class="fs-24 fw-bold mb-3 text-color-3" >
+                Ciencia, Creatividad e Innovación
+            </p>
+            <p class="fs-18 fw-semibold mb-3 text-color-4" >
+                Te damos la bienvenida a la comunidad CIAF. Una institución con mentalidad digital, innovación y un propósito profundamente humano: crear oportunidades para seres humanos que vibran por un espacio en la sociedad.
+            </p>
+    
+            <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+                <li data-bs-toggle="modal" data-bs-target="#modalreglamento" class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                    <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+                    Reglamentos
+                </li>
+                <li role="button" (click)="scrollToSeccion('normatividad', '4')" class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                    <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
+                    Normatividad
+                </li>
+
+            </ul>
+    
+            <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+                <a routerLink="/iniciar"  class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+                    Inscribete
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4" >
+                    Habla con nosotros
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
+        <i class="fa-solid fa-computer-mouse"></i>
+    </div>
+</section>
+
+<!-- Navegación por secciones (scroll) -->
+<section class="row ciaf-program-nav">
+    <div class="col-12">
+    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
+        <a
+        *ngFor="let seccion of seccionesPrograma"
+        role="button"
+        (click)="scrollToSeccion(seccion.id, seccion.nav)"
+        class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
+        [class.active]="activo === seccion.nav"
+        [class.text-white]="activo === seccion.nav"
+        [class.fw-bold]="activo === seccion.nav"
+        [class.fw-semibold]="activo !== seccion.nav"
+        [attr.id]="'btn-' + seccion.nav"
+        [attr.aria-current]="activo === seccion.nav ? 'true' : null"
+        >{{ seccion.label }}</a>
+    </nav>
+    </div>
+</section>
+
+<!-- Quiénes somos -->
+<section class="container py-5" id="quienes-somos">
+
+    <div class="row justify-content-center">
+
+        <div class="col-xl-9 col-lg-10 col-md-11 col-12">
+
+            <h2 class="fs-48 fw-extrablack text-color-2 mb-5">
+                Quiénes
+                <span class="ciaf-gradient-text ciaf-gradient-text--brand">Somos</span>
+            </h2>
+
+            <p class="fs-18">
+                CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, redefinida por ciclos propedéuticos, reconocida como tal a través de la Resolución No. 17652 del 8 de noviembre de 2018, cuyo lugar de desarrollo es Pereira (Risaralda).
+            </p>
+
+            <p class="fs-18 mt-4">
+                CIAF para responder a las demandas del mundo 4.0, formando profesionales altamente calificados. Por lo tanto, inicia un proceso de implementación de creatividad e innovación en sus procesos a través de los programas institucionales, compilados en nuestras memorias institucionales.
+            </p>
+
+            <p class="fs-18 mt-4">
+                Nuestra Institución, cuyo centro de su misión son los estudiantes o seres originales, tiene como Propósito Superior: “Despertar pasión en los seres humano para transformar sus vidas”, convirtiendo los procesos académicos y administrativos en Experiencias, que se construyen día a día con los inspiradores, influencers, empresas amigas, programas institucionales que se describen a continuación, desde la perspectiva del cumplimiento de la normatividad vigente.
+            </p>
+
+            <div class="row g-4 mt-5">
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div class="ciaf-card rounded-5 p-4 h-100">
+                        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                            <i class="fa-regular fa-compass text-white"></i>
                         </div>
-                        <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
+                        <h3 class="fs-20 fw-black text-color-2 mb-3">Propósito Superior</h3>
+                        <p class="fs-16 mb-0">Crear oportunidades para seres humanos que vibran por un espacio en la sociedad.</p>
                     </div>
                 </div>
 
-                <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
-
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
-                
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior">
-                                <div class="row text-center small text-white">    
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="blank" class="btn btn-sm text-white"> Nuestro Proyecto Educativo</a></b></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a data-bs-toggle="modal" data-bs-target="#modalreglamento" target="blank" class="btn btn-sm text-white"> Reglamentos</a></b></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a data-bs-toggle="modal" data-bs-target="#modalrendicion" target="blank" class="btn btn-sm text-white"> Rendición de Cuentas</a></b></div>
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-12"><b><a href="https://heyzine.com/flip-book/1d8f8e3e05.html" target="blank" class="btn btn-sm text-white">Memorias Institucionales</a></b></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none">
-                                <div class="row tabs" ng-init="inicioAlgo()">
-                                    <a (click)="paginas('1')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active'  :  ''" id="btn-1">
-                                        Quienes Somos
-                                    </a>
-                                    <a (click)="paginas('2')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active'  :  ''" id="btn-2">
-                                        Direcionamiento Estratégico
-                                    </a>
-                                    <a (click)="paginas('3')" class="col-xl-3 col-lg-3 col-md-3 col-3" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active'  :  ''" id="btn-3">
-                                        Consejo Superior y Funcionarios
-                                    </a>
-                                    <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="col-xl-3 col-lg-3 col-md-3 col-3">
-                                        Trabaja con Nosotros
-                                    </a>
-
-                                </div>
-                            </div>
-                
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div class="ciaf-card rounded-5 p-4 h-100">
+                        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                            <i class="fa-solid fa-bullseye text-white"></i>
                         </div>
+                        <h3 class="fs-20 fw-black text-color-2 mb-3">Seres Originales</h3>
+                        <p class="fs-16 mb-0">Los estudiantes o seres originales, protagonistas de experiencias que se construyen día a día.</p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div class="ciaf-card rounded-5 p-4 h-100">
+                        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                            <i class="fa-regular fa-eye text-white"></i>
+                        </div>
+                        <h3 class="fs-20 fw-black text-color-2 mb-3">Mundo 4.0</h3>
+                        <p class="fs-16 mb-0">Formamos profesionales altamente calificados con creatividad e innovación en todos nuestros procesos.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Presentación -->
+<section class="container py-5" id="presentacion">
+
+    <div class="row justify-content-center">
+
+        <div class="col-xxl-10 col-xl-11 col-lg-11 col-md-12 col-12">
+
+            <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
+                Video Institucional CIAF
+            </span>
+
+            <h2 class="fs-48 fw-extrablack text-color-2 mt-3 mb-5">
+                Conoce nuestra esencia en movimiento
+            </h2>
+
+            <div class="ratio ratio-16x9 rounded-5 overflow-hidden shadow">
+
+                <iframe
+                    src="https://www.youtube.com/embed/BMzWQWkUiIA?rel=0"
+                    title="Video Institucional CIAF"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Documentos institucionales -->
+<section class="container py-5" id="documentos">
+
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2 class="fs-48 fw-extrablack text-color-2">
+                Documentos institucionales
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+            <a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+
+                <div class="ciaf-card rounded-5 p-4 h-100">
+
+                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+                        <i class="fa-regular fa-file-lines text-color-2"></i>
+                    </div>
+
+                    <h3 class="fs-16 fw-black text-color-2">
+                        Nuestro Proyecto Educativo
+                    </h3>
+
+                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+                        Abrir
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+            <a  data-bs-toggle="modal" data-bs-target="#modalreglamento" target="_blank" rel="noopener noreferrer" class="text-decoration-none cursor-pointer">
+
+                <div class="ciaf-card rounded-5 p-4 h-100">
+
+                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+                        <i class="fa-regular fa-file-lines text-color-2"></i>
+                    </div>
+
+                    <h3 class="fs-16 fw-black text-color-2">
+                        Reglamentos
+                    </h3>
+
+                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+                        Abrir
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+            <a data-bs-toggle="modal" data-bs-target="#modalrendicion" target="_blank" rel="noopener noreferrer" class="cursor-pointer text-decoration-none">
+
+                <div class="ciaf-card rounded-5 p-4 h-100">
+
+                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+                        <i class="fa-regular fa-file-lines text-color-2"></i>
+                    </div>
+
+                    <h3 class="fs-16 fw-black text-color-2">
+                        Rendición de Cuentas
+                    </h3>
+
+                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+                        Abrir
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+            <a href="https://heyzine.com/flip-book/1d8f8e3e05.html" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+
+                <div class="ciaf-card rounded-5 p-4 h-100">
+
+                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+                        <i class="fa-regular fa-file-lines text-color-2"></i>
+                    </div>
+
+                    <h3 class="fs-16 fw-black text-color-2">
+                        Memorias Institucionales
+                    </h3>
+
+                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+                        Abrir
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Normatividad -->
+<section class="container py-5" id="normatividad">
+
+    <div class="row mb-5">
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+            <h2 class="fs-36 fw-extrablack text-color-2 mb-0">Normatividad</h2>
+            <p class="fs-16 text-color-1 mt-3 mb-0">
+                Consulta nuestros documentos normativos y de transparencia institucional.
+            </p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let item of reglamentos">
+            <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                    <i [class]="item.icono + ' text-white'" aria-hidden="true"></i>
+                </div>
+
+                <h3 class="fs-18 fw-extrablack text-color-2 mb-4">{{ item.titulo }}</h3>
+
+                <div class="mt-auto">
+                    <a
+                        *ngIf="item.estado == '1'"
+                        [href]="item.link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="ciaf-btn ciaf-btn--primary rounded-pill py-2 px-4 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14"
+                    >
+                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+                        Ver documento
+                    </a>
+
+                    <a
+                        *ngIf="item.estado == '2'"
+                        [attr.href]="item.modal || item.link"
+                        [attr.data-bs-toggle]="item.modal ? 'modal' : null"
+                        [attr.target]="item.link && !item.modal ? '_blank' : null"
+                        [attr.rel]="item.link && !item.modal ? 'noopener noreferrer' : null"
+                        class="ciaf-btn ciaf-btn--primary rounded-pill py-2 px-4 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14"
+                    >
+                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+                        Ver documento
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</section>
+
+<!-- Direccionamiento estratégico -->
+<section class="container py-5" id="direccionamiento-estrategico">
+
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2 class="fs-48 fw-extrablack text-color-2">
+                Direccionamiento estratégico
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+            <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
+
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
+                    <i class="fa-regular fa-bullseye text-white"></i>
+                </div>
+
+                <h3 class="fs-24 fw-extrablack text-white mb-4">
+                    Misión
+                </h3>
+
+                <p class="fs-16 text-white fw-semibold mb-0">
+                    CIAF es una Institución de Educación Superior que tiene la misión de formar
+                    personas creativas e innovadoras a través de educación permanente,
+                    programas profesionales universitarios por ciclos y especializaciones,
+                    para conectar con las necesidades de las organizaciones y el Estado
+                    generando desarrollo consciente.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+            <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
+
+                <div class="position-relative">
+
+                    <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
+                        <i class="fa-regular fa-eye text-white"></i>
+                    </div>
+
+                    <h3 class="fs-24 fw-extrablack text-white mb-4">
+                        Visión
+                    </h3>
+
+                    <p class="fs-16 text-white fw-semibold mb-0">
+                        Para el 2030 CIAF será una institución de educación superior reconocida
+                        en la sociedad por su creatividad e innovación en todos sus procesos
+                        académicos, administrativos y estratégicos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Principios rectores -->
+<section class="container py-5" id="principios-rectores">
+
+    <div class="row mb-5">
+
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+
+            <h2 class="fs-48 fw-extrablack text-color-2">
+                Principios <span class="ciaf-gradient-text ciaf-gradient-text--brand">Rectores</span>
+            </h2>
+
+            <p class="fs-16 text-color-1 fw-medium mt-4 mb-0">
+                Son 4 los principios que CIAF define como su gran valor: relacionados con el estudiante, los docentes, los empleados y los graduados.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+            <div class="ciaf-card rounded-5 p-4 h-100">
+
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                    <i class="fa-solid fa-graduation-cap text-white"></i>
+                </div>
+
+                <h3 class="fs-18 fw-black text-color-2 mb-3">
+                    El estudiante
+                </h3>
+
+                <p class="fs-14 mb-0">
+                    El estudiante es el centro de la misión, respetar al estudiante es cumplirle la promesa hecha al acceder a la institución.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+            <div class="ciaf-card rounded-5 p-4 h-100">
+
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                    <i class="fa-solid fa-chalkboard-user text-white"></i>
+                </div>
+
+                <h3 class="fs-18 fw-black text-color-2 mb-3">
+                    El docente
+                </h3>
+
+                <p class="fs-14 mb-0">
+                    El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante. CIAF seleccionará y cualificará a sus docentes para que tengan las herramientas para conectar con el estudiante, para que sean creativos e innovadores.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+            <div class="ciaf-card rounded-5 p-4 h-100">
+
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                    <i class="fa-solid fa-users text-white"></i>
+                </div>
+
+                <h3 class="fs-18 fw-black text-color-2 mb-3">
+                    Los colaboradores
+                </h3>
+
+                <p class="fs-14 mb-0">
+                    Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes para brindarles bienestar y lograr una educación integral y de calidad.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+            <div class="ciaf-card rounded-5 p-4 h-100">
+
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                    <i class="fa-regular fa-award text-white"></i>
+                </div>
+
+                <h3 class="fs-18 fw-black text-color-2 mb-3">
+                    Los graduados
+                </h3>
+
+                <p class="fs-14 mb-0">
+                    Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte que hace la institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Organigrama -->
+<section class="container py-5" id="organigrama">
+    <div class="row mb-5">
+        <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+            <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
+                Estructura Organizacional
+            </span>
+            <h2 class="fs-30 fw-black text-color-2 mt-2">
+                Organigrama CIAF
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <img [src]="organigrama" alt="Aqeuipo que inspira" width="80%" height="auto">
+        </div>
+    </div>
+</section>
+
+
+<!-- Consejo Superior -->
+<section class="container py-5" id="consejo-superior">
+
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2 class="fs-48 fw-extrablack text-color-2">
+                Consejo Superior y Funcionarios
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-12">
+
+            <div class=" bg-color-3 rounded-5 p-5 text-white">
+
+                <div class="d-flex align-items-center gap-4 mb-5">
+
+                    <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                        <i class="fa-regular fa-crown text-white"></i>
+                    </div>
+
+                    <h3 class="fs-24 fw-extrablack mb-0">
+                        Consejo Superior
+                    </h3>
+
+                </div>
+
+                <p class="fs-16 mb-5 text-white">
+                    Máximo órgano de gobierno de CIAF, integrado por miembros activos, miembros honorarios e invitados especialmente. Encargados principalmente de:
+                </p>
+
+                <div class="row g-5">
+
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+
+                        <div class="d-flex mb-4">
+                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+                            <p class="fs-14 mb-0 text-white">
+                                Fijar y velar por el cumplimiento de las normas de carácter general para el funcionamiento de la Institución.
+                            </p>
+                        </div>
+
+                        <div class="d-flex">
+                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+                            <p class="fs-14 mb-0 text-white">
+                                Aprobar la creación, suspensión o supresión de programas académicos.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+
+                        <div class="d-flex mb-4">
+                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+                            <p class="fs-14 mb-0 text-white">
+                                Aprobar el presupuesto anual y vigilar que los recursos sean empleados correctamente.
+                            </p>
+                        </div>
+
+                        <div class="d-flex">
+                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+                            <p class="fs-14 mb-0 text-white">
+                                Autorizar y ratificar la celebración de contratos o convenios con otras instituciones.
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
 
             </div>
+
         </div>
-    
+
     </div>
+
 </section>
 
-
-<section class="p-0 m-0">
-    <div id="content-programa">
-
-        <div id="pag-one" *ngIf="isValid1">
-
-
-            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
-                <div class="row justify-content-center">
-                    <div class="col-xl-12 mb-4 pb-4">
-                        <h2 class="titulo-2 text-center">Quienes Somos </h2>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-10 col-10 p-4">
-                        <p class="text-justify">
-                            CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, 
-                            redefinida por ciclos propedéuticos, reconocida como tal a través de la 
-                            Resolución No. 17652 del 8 de noviembre de 2018, cuyo lugar de desarrollo es Pereira (Risaralda).
-                        </p>
-                        <p class="text-justify">
-                            CIAF para responder a las demandas del mundo 4,0, formando profesionales altamente calificados. 
-                            Por lo tanto, inicia un proceso de implementación de creatividad e innovación en sus procesos 
-                            a través de los programas institucionales, compilados en nuestras 
-                            <a href="https://heyzine.com/flip-book/97549097a8.html" target="_blank" class="btn btn-link">
-                                memorias institucionales. 
-                            </a>
-                        </p>
-                        <p class="text-justify">
-                            Nuestra Institución, cuyo centro de su misión son los estudiantes o seres originales, 
-                            tiene como Propósito Superior: “Despertar pasión en los seres humano para transformar sus vidas”, 
-                            convirtiendo los procesos académicos y administrativos en Experiencias, 
-                            que se construyen día a día con los inspiradores, influencers, empresas amigas, 
-                            programas institucionales que se describen a continuación, desde la perspectiva del 
-                            cumplimiento de la normatividad vigente.
-                        </p>
-                        
-                    </div>
-                    <div class="col-xl-4 col-lg-5 col-md-10 col-10 p-4 text-center">
-                        <iframe [src]="total" width="100%" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
-                    </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-10 text-right py-4">
-                        <a (click)="paginas('2')" class="btn" (click)="activo='2'">
-                            Direccionamiento Estratégico
-                            <img src="{{next}}" alt="boton siguiente">
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-
-        <div id="pag-two" *ngIf="isValid2">
-
-
-            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
-                <div class="row justify-content-center">
-                    <div class="col-xl-12 mb-4 pb-4">
-                        <h2 class="titulo-2 text-center">Direccionamiento Estratégico </h2>
-                    </div>
-                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4">
-                        <h3 class="text-1">MISIÓN:</h3>
-                        <p class="text-justify">
-                            CIAF es una Institución de Educación Superior que tiene la misión de formar personas 
-                            creativas e innovadoras a través de educación permanente, programas profesionales 
-                            universitarios por ciclos y especializaciones, para conectar con las necesidades de las 
-                            organizaciones y el Estado generando desarrollo consciente.
-                        </p>
-                        <h3 class="text-1">VISIÓN:</h3>
-                        <p class="text-justify">
-                            Para el 2030 CIAF será una institución de educación superior reconocida en la sociedad por su 
-                            creatividad e innovación en todos sus procesos académicos, administrativos y estratégicos.
-                        </p>
-                        <h3 class="text-1">PRINCIPIOS RECTORES:</h3>
-                        <p class="text-justify">
-                            Son 4 los principios que CIAF define como su gran valor: 
-                            relacionados con el estudiante, los docentes, los empleados y los graduados.
-                        </p>
-                        <ol type="a">
-                            <li>
-                                El estudiante: El estudiante es el centro de la misión, respetar al estudiante es cumplirle 
-                                la promesa hecha al acceder a la institución.
-                            </li>
-                            <li>
-                                El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante, 
-                                Ciaf seleccionará y cualificará a sus docentes para que tengan las herramientas para conectar 
-                                con el estudiante, para que sean creativos e innovadores.
-                            </li>
-                            <li>
-                                Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes 
-                                para brindarles bienestar y lograr brindar una educación integral y de calidad.
-                            </li>
-                            <li>
-                                Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte 
-                                que hace la institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
-                            </li>
-                        </ol>
-                        
-                    </div>
-                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4 text-center">
-                        <img [src]="organigrama" alt="Aqeuipo que inspira" width="90%" height="auto">
-                    </div>
-
-                    <div class="col-xl-5 col-lg-5 col-mb-5 col-5  py-4">
-                        <a (click)="paginas('1')" class="btn" (click)="activo='1'">
-                            <img src="{{prev}}" alt="boton siguiente"> 
-                            Quienes Somos
-                        </a>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-5 col-5 text-right py-4">
-                        <a (click)="paginas('3')" class="btn" (click)="activo='3'">
-                            Consejo Superior y Funcionarios
-                            <img src="{{next}}" alt="boton siguiente">
-                        </a>
-                    </div>
-
-
-                    
-                </div>
-            </section>
-
-        </div>
-
-        <div id="pag-three" *ngIf="isValid3">
-
-
-            <section class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0">
-                <div class="row justify-content-center">
-                    <div class="col-xl-12 mb-4 pb-4">
-                        <h2 class="titulo-2 text-center bolder-1">Consejo Superior y Funcionarios </h2>
-                    </div>
-                    <div class="col-xl-4 col-lg-10 col-md-10 col-10 p-4">
-                        <h3 class="text-1">CONSEJO SUPERIOR</h3>
-                        <p class="text-justify">
-                            Máximo órgano de gobierno de CIAF, integrado por miembros activos, 
-                            miembros honorarios e invitados especialmente. Encargados principalmente de:
-                        </p>
-                            <ol>
-                                <li>Fijar y velar por el cumplimiento de las normas de carácter general para el funcionamiento de la Institución.</li>
-                                <li>Aprobar el presupuesto anual y vigilar que los recursos sean empleados correctamente.</li>
-                                <li>Aprobar la creación, suspensión o supresión de programas académicos.</li>
-                                <li>Autorizar y ratificar la celebración de contratos o convenios con otras instituciones</li>
-                            </ol>
-
-                    </div>
-                    <div class="col-xl-5 col-lg-10 col-md-10 col-10 p-4 text-center">
-                        <img [src]="colaboradores" alt="Equipo que inspira" width="90%" height="auto">
-                    </div>
-                    
-                    <div class="col-10 text-center">
-                        <p class="titulo-2 pb-4 bolder-1">Equipo que Inspira</p>
-                    </div>
-
-                    <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
-                        <div class="row ani-1">
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Presidente Consejo Superior</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Gina Marcela Barreto Moreno<br>
-                                    gina.barreto@ciaf.edu.co
-                                </div>
-                            </div>
-
-                             <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Rectora</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Gina Marcela Barreto Moreno<br>
-                                    gina.barreto@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Secretario General</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Jairo Rodríguez Valderrama<br>
-                                    secretariagnral@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Vicerrector Administrativo y Financiero</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Adrián Fernando Ríos Quintero<br>
-                                    adrian.rios@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Vicerrector de Aprendizaje</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Héctor Andrés Bucheli López<br>
-                                    andres.bucheli@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director de Ciencia, Tecnología e Innovación</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Alejandro Arango Carrea<br>
-                                    alejandro.arango@ciaf.edu.co
-                                </div>
-                            </div>
-
-                                                      
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Directora SAC (Sistema de aseguramiento de calidad)</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Jhenifer Andrea Pulgarín Moreno<br>
-                                    sac@ciaf.edu.co
-                                </div>
-                            </div>
-
-                             <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Revisora Fiscal</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Andrea Forero<br>
-                                    andrea.forero@ciaf.edu.co
-                                </div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director Sistemas de Información</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Julián Arlig Jiménez López<br>
-                                    sistemasdeinformacion@ciaf.edu.co
-                                </div>
-                            </div>
-
-                             <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Director de Creatividad y Comunicaciones</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Yoiver Andrey Giraldo Quintero<br>
-                                    yoiver.giraldo@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Directora de extensión </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Leidy Johana López Márquez <br>
-                                    sistemasdeinformacion@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinadoras Académicas</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Paula Andrea Rengifo Briñez<br>
-                                    paula.rengifo@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
-                                    Rosalba Loaiza<br>
-                                    rosa.loaiza@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
-                                    Yenny Alejandra Restrepo Uribe<br>
-                                    yenny.restrepo@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
-                                    Juan David Machado Mosquera<br>
-                                    juan.machado@ciaf.edu.co
-                                </div>
-
-                            </div>
-
-                            
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistente Académica </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Juliana Arenas Ospina <br>
-                                    juliana.arenas@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Psicólogo </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                   Jhon Alejandro Arévalo Giraldo<br>
-                                   psicologiabienestar@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistente de Bienestar  </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                   Stephany Meza Quiceno<br>
-                                   asistentebienestar@ciaf.edu.co
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar de Bienestar   </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Juliana Giraldo Guerra<br>
-                                    aux.bienestar@ciaf.edu.co
-                                </div>
-                            </div>
-
-
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Líder de Comunicaciones</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Luisa María Ramírez Tangarife<br>
-                                    comunicaciones@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Líder Audiovisual</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Juan Felipe Montoya García<br>
-                                    juan.montoya@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Diseñadora Grafica </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Isabella Zuluaga Ramírez<br>
-                                    comunicaciones@ciaf.edu.co
-                                </div>
-                            </div>
-
-                        
-
-                        </div>
-                    </div>
-
-                    <div class="col-xxl-5 mb-4 pb-4 p-4 "> 
-                        <div class="row ani-1">
-                            
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Líder de Riesgo y Cartera</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Juan Pablo Lenis Espinal<br>
-                                    juan.lenis@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar de cartera</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4 pb-2">
-                                    Cindy Dahyana Pérez Ríos<br>
-                                    cartera2@ciaf.edu.co<br>
-                                </div>
-                                <div class="ps-4 ms-4 pb-2">
-                                    Elena Cabrera Cardona<br>
-                                    pagos@ciaf.edu.co<br>
-                                </div>
-                                <div class="ps-4 ms-4 pb-2">
-                                    Juliana Mejía García<br>
-                                    pagos@ciaf.edu.co<br>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Contadora</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Sandra Milena Bejarano Diaz<br>
-                                    contador2@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar Contable</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Luz Piedad Colorado Jaramillo<br>
-                                    auxiliarcontable2@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Líder de Financiera y de Tesorería</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Denys Yaneth Niño Mahecha<br>
-                                    denys.nino@ciaf.edu.co
-                                </div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinador de Registro y Control</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Wilbert René Ramírez Delgado<br>
-                                    registroycontrol@ciaf.edu.co
-                                </div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinador Técnico de Sistemas</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Ferney Benitez<br>
-                                    sistemas@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Coordinador Sistemas de Información</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    David González Manrique<br>
-                                    david.gonzalez@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar Sistemas de Información</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4 pt-3">
-                                    Jaime Andrés Pérez Londoño<br>
-                                    ja.perez30@ciaf.edu.co
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistente de Sistemas de Información</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    camila Londoño<br>
-                                    camila.londono@ciaf.edu.co
-                                </div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Asistente Talento Humano</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Olga Yuliet Restrepo Uribe<br>
-                                    asistente.talento@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Analista Jurídica</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Manuela Rendon Miranda<br>
-                                    manuela.rendon@ciaf.edu.co
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Dinamizador </span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Albeiro Cruz Morales<br>
-                                    albeiro.cruz@ciaf.edu.co
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar Educativo</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4">
-                                    Carolina Ochoa González<br>
-                                    carolina.ochoa@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
-                                    Anyi Dahiana Arias Arenas<br>
-                                    anyi.arias@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
-                                    Luisa María Correa Tamayo<br>
-                                    luisa.correa@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pt-3">
-                                    María Camila Vargas Salazar<br>
-                                    camila.vargas@ciaf.edu.co
-                                </div>
-                            </div>
-
-                            
-
-                            
-
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Servicios Generales</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                 <div class="ps-4 ms-4 pb-2">
-                                    Blanca Doris Jaramillo Ortiz<br>
-                                    serviciosgenerales@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pb-2">
-                                    Dorise Holguín Mejía<br>
-                                    serviciosgenerales@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pb-2">
-                                    Gladys Ramírez Marín<br>
-                                    serviciosgenerales@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pb-2">
-                                    María Yulie García Ramírez <br>
-                                    serviciosgenerales@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4 pb-2">
-                                    María Yulie García Ramírez <br>
-                                    Patricia Isaza Cardona
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <img [src]="img_li_ok" alt="icono" class="pe-3" > <span class="text-1 bolder-1 fs-5">Auxiliar de Mantenimiento</span>
-                            </div>
-                            <div class="col-12 text-1">
-                                <div class="ps-4 ms-4 pb-2">
-                                    Fernando Agudelo Velásquez <br>
-                                    serviciosgenerales@ciaf.edu.co
-                                </div>
-                                <div class="ps-4 ms-4">
-                                    Edwin García Murillo <br>
-                                    serviciosgenerales@ciaf.edu.co
-                                </div>
-
-                            </div>
-
-                        
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-xl-10 col-lg-10 col-mb-10 col-11  py-4">
-                        <a (click)="paginas('2')" class="btn" (click)="activo='2'">
-                            <img src="{{prev}}" alt="boton siguiente"> 
-                            Direcionamiento Estratégico
-                        </a>
-                    </div>
-
-
-
-                    
-                </div>
-            </section>
-
+<!-- Equipo que inspira -->
+<section class="container py-5" id="equipo-inspira">
+
+    <div class="row mb-5">
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+            <h2 class="fs-48 fw-extrablack text-color-2 mb-0">
+                Equipo que
+                <span class="ciaf-gradient-text ciaf-gradient-text--brand">Inspira</span>
+            </h2>
         </div>
     </div>
+
+    <div class="row g-4">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let grupo of equipoInspira">
+            <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+                    <i class="fa-solid fa-user-group text-white" aria-hidden="true"></i>
+                </div>
+
+                <p class="fs-12 fw-bold text-uppercase text-color-2 mb-4">{{ grupo.cargo }}</p>
+
+                <div class="d-flex flex-column gap-4">
+                    <div *ngFor="let miembro of grupo.miembros">
+                        <h3 class="fs-18 fw-extrablack text-color-2 mb-2">{{ miembro.nombre }}</h3>
+                        <a
+                            [href]="'mailto:' + miembro.email"
+                            class="fs-14 text-color-1 text-decoration-none d-inline-flex align-items-center gap-2"
+                        >
+                            <i class="fa-regular fa-envelope text-color-2" aria-hidden="true"></i>
+                            {{ miembro.email }}
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
 </section>
 
+<!-- Trabaja con nosotros -->
+<section class="container py-5" id="trabaja-nosotros">
 
-
-<!-- Normatividad -->
-
-<section class="pt-4 mt-4 mostrar">
     <div class="row justify-content-center">
 
-        <div class="col-xl-12 col-lg-12 col-mb-12 col-12 mb-4 pb-4">
-            <h2 class="titulo-2 text-center">Normatividad</h2>
-        </div>
-        
+        <div class="col-xl-10 col-lg-11 col-12">
 
-        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+            <div class="bg-color-3 rounded-5 p-5">
 
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-                <div ngxSlickItem *ngFor="let listareglamento of reglamentos index as i" class="slide">
-                    <div class="col-xl-12 bg-1 card-pos-creatividad">
-                    
-                       <div class="row img-pos">
-                            <div class="col-12 text-center ">
-                                <img src="{{listareglamento.imagen}}" alt="Vitrina de empredimientos" width="90px" height="90px" class="text-center">
-                                
-                            </div>
-                            <div *ngIf="listareglamento.estado==1" class=" text-center">
-                                <a href="{{listareglamento.link}}" target="_blank" class="btn btn-xs">
-                                    
-                                    <p class="titulo-creatividad">{{listareglamento.titulo}}</p>
-                                </a>
-                            </div>
-                            <div *ngIf="listareglamento.estado==2" class=" text-center">
-                                <a  data-bs-toggle="modal" href="{{listareglamento.modal}}" class="btn btn-xs">
-                                    
-                                    <p class="titulo-creatividad">{{listareglamento.titulo}}</p>
-                                </a>
-                            </div>
-                       </div>
+                <div class="row align-items-center g-4">
 
-                        <div *ngIf="i>0" class="border-card"></div>
+                    <div class="col-xl-8 col-lg-8 col-md-12">
+
+                        <div class="d-flex align-items-center gap-4">
+
+                            <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                                <i class="fa-regular fa-briefcase text-white"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 class="fs-24 fw-extrablack text-white mb-2">
+                                    Trabaja con Nosotros
+                                </h3>
+
+                                <p class="fs-16 text-white mb-0">
+                                    Únete al equipo que inspira y transforma vidas.
+                                    Postúlate y haz parte de CIAF.
+                                </p>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
+                    <div class="col-xl-4 col-lg-4 col-md-12 text-xl-end text-lg-end text-center">
+
+                        <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                            Postúlate
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
 
                 </div>
-            </ngx-slick-carousel>
-           
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
-<div class="row">
-    <div class="col-12 p-4"></div>
-</div>
+<!-- Contacto -->
+<section class="container-fluid bg-color-3 py-5" id="contacto">
 
+    <div class="container">
 
+        <div class="row justify-content-center text-center">
 
+            <div class="col-xl-8 col-lg-9 col-md-10 col-12">
 
-<div class="row m-menu bg-2">
+                <h2 class="fs-48 fw-black text-white mb-5">
+                    Aquí no solo estudias. Te transformas.
+                </h2>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-1-1">
-            <a class="text-center" (click)="paginas('1')" (click)="activo='1'" [ngClass] = "activo=='1'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img [src]="quienes_somos" alt="Quienes somos">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+
+                    <a routerLink="/inicio" class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                        Inscríbete
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank" class="ciaf-btn border border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                        Habla con nosotros
+                    </a>
+
                 </div>
-                <div class="col-12">
-                    <p>Quienes <br>el Somos</p>
-                </div>
-            </a>
+
+            </div>
+
         </div>
+
     </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-2-1">
-            <a class="text-center" (click)="paginas('2')" (click)="activo='2'" [ngClass] = "activo=='2'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img [src]="estrategico" alt="Direccionamiento Estrategico">
-                </div>
-                <div class="col-12">
-                    <p>Direccionamiento <br>eEstratégico</p>
-                </div>
-            </a>
-        </div>
-    </div>
+</section>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-3-1">
-            <a class="text-center" (click)="paginas('3')" (click)="activo='3'" [ngClass] = "activo=='3'  ?  'active-m'  :  ''" >
-                <div class="col-12">
-                    <img [src]="funcionarios" alt="Consejo superior y funcionarios">
-                </div>
-                <div class="col-12">
-                    <p>Consejo Superior <br>y Funcionarios</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="pt-1" id="btn-4-1">
-            <a class="text-center" href="https://ciaf.digital/cv/vistas/login.html" target="_blank">
-                <div class="col-12">
-                    <img [src]="trabaja_nosotros" alt="Trabaja con Nosotros">
-                </div>
-                <div class="col-12">
-                    <p>Trabaja <br>con Nosotros</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-</div>
+<app-footer></app-footer>
 
 
 <!-- Modal plan estratégico-->

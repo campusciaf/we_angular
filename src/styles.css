@@ -346,7 +346,7 @@
     radial-gradient(circle at top right,
     rgba(132,204,22,.08),
     transparent 30%),
-    var(--ciaf-bg-light);
+    var(--ciaf-bg-light) !important;
 }
 
 .bg-section2-degradado {
@@ -378,7 +378,6 @@
 .check-input-none{
   display:none;
 }
-
 
 html {
   scroll-behavior: smooth;

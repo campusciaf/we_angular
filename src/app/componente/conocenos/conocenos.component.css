@@ -1,115 +1,47 @@
-.padding-titulo{
-    padding-top: 80px;
-}
-.bg-opciones{
-    background-color: rgba(0,97,168,0.8);
-}
-
-.bg-software{
-	background-color: rgba(0,97,168,0.8);
-}
-
-.m-menu {
+/* Hero programa — solo overlay azul, altura y animación (layout en Bootstrap) */
+.ciaf-program-hero {
+    min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
+  }
+  
+  .ciaf-program-hero__overlay {
+    z-index: 1;
+      pointer-events: none;
+      background: color-mix(in srgb, var(--ciaf-primary-deep) 78%, transparent);
+  }
+  
+  .ciaf-program-hero__scroll {
+    z-index: 2;
+      animation: ciaf-hero-scroll 2s ease-in-out infinite;
+  }
+  
+    /* Tabs debajo del hero */
+  .ciaf-program-nav {
+    position: sticky;
+      top: calc(var(--topbar-height) + var(--header-height));
+      z-index: 40;
+      background: var(--ciaf-primary);
+      box-shadow: var(--shadow-sm);
+  }
+  
+  .ciaf-program-nav__tabs--scroll {
+    -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+  }
+  
+  .ciaf-program-nav__tabs--scroll::-webkit-scrollbar {
     display: none;
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 4;
-}
-
-.m-menu a {
-    text-decoration: none !important;
-}
-.m-menu a p{
-    color: #fff;
-    font-size: 10px !important;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none !important;
-	line-height: 10px;
-}
-
-.m-menu img {
-	width: 26px;
-}
-.active-m{
-	background-color: #5a802d !important;
-	height: 100%;
-}
-@media(max-width:768px){
-	.bg-software{
-		background-color: rgba(0,97,168,1);
-	}
-    .m-menu {
-        display: block;
-        display: flex;
-    }
-
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
-    .m-menu {
-        display: block;
-        display: flex;
-        height: 55px;
-        overflow: hidden;
-    }
-    .slick-slide{
-        height: 250px !important;
-    }
-
-}
-
-/* *********************** cratividad e innovacion *************************/
-
-.card-pos-creatividad{
-    margin-top: 100px !important;
-    padding-bottom: 40px;
-}
-
-.border-card{
-    border-left: 1px solid rgb(255, 255, 255);
-    height: 100px;
-    float: left;
-    margin-top: -80px;
-}
-
-
-.img-pos img{
-    text-align: center !important;
-    margin-bottom: 30px;
-    margin: -40px auto 0px auto ;
-    
-
-    
-}
-
-.img-pos p{
-    font-style: normal;
-    font-size: 14px !important;
-    line-height: 18px;
-    text-align: center;
-    color: #FFF;
-    width: 150px;
-    margin: auto;
-    padding-top: 10px;
-}
-
-.titulo-creatividad{
-    height: 40px;
-}
-.titulo-modelo{
-    height: 50px;
-}
-/* *********************** cratividad e innovacion *************************/
-
-
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-    .card-pos-creatividad{
-        margin-bottom: 150px;
-    }
-}
-
+  }
+  
+  .ciaf-program-nav__tabs .nav-link {
+    white-space: nowrap;
+      cursor: pointer;
+      transition: background var(--transition-base), color var(--transition-base);
+  }
+  
+  .ciaf-program-nav__tabs .nav-link:hover,
+  .ciaf-program-nav__tabs .nav-link.active {
+    background: rgba(255, 255, 255, .12);
+      color: var(--ciaf-white);
+  }
+  
