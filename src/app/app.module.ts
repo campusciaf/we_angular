@@ -86,6 +86,7 @@ import { PorqueciafComponent } from './componente/porqueciaf/porqueciaf.componen
 import { FormularioregistroComponent } from './componente/formularioregistro/formularioregistro.component';
 import { AccesosrapidosComponent } from './componente/accesosrapidos/accesosrapidos.component';
 import { NewsletterComponent } from './componente/newsletter/newsletter.component';
+import { ConveniosComponent } from './componente/convenios/convenios.component';
 
 
 
@@ -151,6 +152,7 @@ import { NewsletterComponent } from './componente/newsletter/newsletter.componen
     FormularioregistroComponent,
     AccesosrapidosComponent,
     NewsletterComponent,
+    ConveniosComponent,
   ],
   imports: [
     BrowserModule,

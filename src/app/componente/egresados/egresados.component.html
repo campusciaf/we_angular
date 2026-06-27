@@ -1,1320 +1,938 @@
-<section>
-  <div class="row banner-interno">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-12 pc">
-      <img src="{{ logo_pc }}" alt="Egresados" />
-    </div>
-    <div class="col-xl-12 col-lg-12 col-md-12 col-12 movil">
-      <img src="{{ logo_m }}" alt="Egresados" />
-    </div>
-    <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
-      <div class="row justify-content-center vertical-align-center">
-        <div
-          class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 padding-bienestar"
-        >
-          <div class="row justify-content-center vertical-align-center">
-            <div class="col-xl-6 col-lg-8 col-md-9 col-9 text-white">
-              <h1 class="text-center bolder-1">EGRESADOS</h1>
+<app-header></app-header>
 
-              <p class="lema text-center">Un carnet sin fecha de vencimiento</p>
-            </div>
-            <div class="col-xl-6 col-lg-4 col-md-3 col-2 text-white"></div>
-          </div>
-        </div>
+<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4" >
+        
+  <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
+      <img src="{{logo_pc}}" alt="Egresados">
+  </div>
 
-        <div class="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-12 pt-4">
-          <div class="row d-flex justify-content-center">
-            <div class="col-xl-11 col-lg-11 col-md-11 col-10 wrap-programas">
-              <div
-                class="col-xl-12 col-lg-12 col-md-12 col-10 bg-software superior"
-              >
-                <div class="row text-center small text-white">
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-10">
-                    <a
-                      href="https://ciaf.digital/public/web_reglamentos/Acuerdo%20No%2009%20de%202022%20Por%20medio%20del%20cual%20se%20expide%20la%20Pol%C3%ADtica%20de%20Egresados%20de%20CIAF%20.pdf"
-                      target="_blank"
-                      class="btn btn-sm text-white"
-                      >Politica de Egresados</a
-                    >
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-10">
-                    <a
-                      (click)="mostrarModalInfo()"
-                      class="btn btn-sm text-white"
-                      >Actualización de datos</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-xl-12 col-lg-12 col-md-12 col-12 p-0 d-xl-block d-lg-block d-md-none d-none"
-              >
-                <div class="row tabs" ng-init="inicioAlgo()">
-                  <a
-                    (click)="paginas('1')"
-                    class="col-xl-3 col-lg-3 col-md-2 col-4"
-                    (click)="activo = '1'"
-                    [ngClass]="activo == '1' ? 'active' : ''"
-                    id="btn-1"
-                  >
-                    Club de egresados
-                  </a>
-                  <a
-                    (click)="paginas('2')"
-                    class="col-xl-3 col-lg-3 col-md-2 col-4"
-                    (click)="activo = '2'"
-                    [ngClass]="activo == '2' ? 'active' : ''"
-                    id="btn-2"
-                  >
-                    Educación continuada
-                  </a>
-                  <a
-                    (click)="paginas('3')"
-                    class="col-xl-3 col-lg-3 col-md-2 col-4"
-                    (click)="activo = '3'"
-                    [ngClass]="activo == '3' ? 'active' : ''"
-                    id="btn-3"
-                  >
-                    Egresados destacados
-                  </a>
-                  <a
-                    (click)="paginas('4')"
-                    class="col-xl-3 col-lg-3 col-md-2 col-4"
-                    (click)="activo = '4'"
-                    [ngClass]="activo == '4' ? 'active' : ''"
-                    id="btn-6"
-                  >
-                    Bolsa de empleo
-                  </a>
-                </div>
-              </div>
-            </div>
+  <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+
+  <div class="row z-2 py-5 mt-5 col-12">
+      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 p-4">
+          <span class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente text-uppercase">
+            Comunidad de Egresados
+          </span>
+          <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+            Egresados
+          </h1>
+  
+          <p class="fs-24 fw-bold mb-3 text-color-3" >
+            Un carnet sin fecha de vencimiento
+          </p>
+
+          <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+                <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                    <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+                    Politica de egresados
+                </li>
+
+          </ul>
+  
+          <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+              <button type="button" class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4"  (click)="mostrarModalInfo()">
+                  Actualizar mis datos
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4" >
+                  Conocer beneficios
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
           </div>
-        </div>
       </div>
-    </div>
+  </div>
+
+  <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
+      <i class="fa-solid fa-computer-mouse"></i>
   </div>
 </section>
 
-<section class="p-0 m-0" *ngIf="isValid1">
-  <div id="content-programa">
-    <div id="pag-ini">
-      <section
-        class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0"
-      >
-        <div class="row justify-content-center">
-          <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-            <div class="row justify-content-center">
-              <div
-                class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center"
-              >
-                <div class="row">
-                  <h3 class="titulo-2 pb-4">
-                    Estar cerca de ti nos permite<br />
-                    seguir creciendo contigo.
-                  </h3>
-                  <p>
-                    Como egresado CIAF sigues siendo parte de nuestra historia.
-                    Por eso, hemos diseñado programas que te acompañan en cada
-                    etapa de tu desarrollo profesional, personal y social.
-                    <br /><br />
-                    ¿Qué tenemos para ti?
-                  </p>
-                </div>
-              </div>
-              <div class="col-xxl-5 mb-4 pb-4 text-center">
-                <img
-                  [src]="seguimiento_egresados"
-                  alt="Club de egresados"
-                  width="90%"
-                />
-              </div>
-              <div
-                class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center"
-              >
-                <div class="row">
-                  <h3 class="titulo-2 pb-4">
-                    Un lazo que nos conecta<br />
-                    para toda la vida.
-                  </h3>
-                  <p>
-                    En CIAF estrechamos lazos con nuestros egresados para seguir
-                    construyendo juntos. Promovemos el intercambio de
-                    experiencias académicas, profesionales, emprendedoras y
-                    sociales, generando una colaboración constante con la
-                    comunidad y la sociedad. Porque ser egresado CIAF es seguir
-                    transformando realidades con creatividad, innovación y
-                    propósito.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+<!-- Navegación por secciones (scroll) -->
+<section class="row ciaf-program-nav">
+  <div class="col-12">
+  <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
+      <a
+      *ngFor="let seccion of seccionesPrograma"
+      role="button"
+      (click)="scrollToSeccion(seccion.id, seccion.nav)"
+      class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
+      [class.active]="activo === seccion.nav"
+      [class.text-white]="activo === seccion.nav"
+      [class.fw-bold]="activo === seccion.nav"
+      [class.fw-semibold]="activo !== seccion.nav"
+      [attr.id]="'btn-' + seccion.nav"
+      [attr.aria-current]="activo === seccion.nav ? 'true' : null"
+      >{{ seccion.label }}</a>
+  </nav>
   </div>
 </section>
 
-<section class="p-0 m-0" *ngIf="isValid2">
-  <div id="content-programa">
-    <div id="pag-ini">
-      <section
-        class="pt-xl-4 pt-lg-4 pt-md-0 pt-0 mt-xl-4 mt-lg-4 mt-md-0 mt-0"
-      >
-        <div class="row justify-content-center">
-          <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-            <div class="row justify-content-center">
-              <div
-                class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center"
-              >
-                <div class="row">
-                  <h3 class="titulo-2 pb-4">
-                    Tu crecimiento profesional<br />
-                    no se detiene.
-                  </h3>
-                  <p>
-                    Seguir apostándole a tu desarrollo es nuestro compromiso.
-                    <br /><br />
-                    Por eso, como egresado CIAF, obtienes un 10 % de descuento
-                    en los programas de Educación Continua que te ayudarán a
-                    fortalecer tus habilidades, actualizar tus conocimientos y
-                    ampliar tus oportunidades laborales.
-                  </p>
-                </div>
-              </div>
-              <div class="mb-4 pb-4 text-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                  <div class="row">
-                    <div
-                      class="cards col-xl-4"
-                      *ngFor="let cursos of listarCursos; index as i"
-                    >
-                      <div class="column m-4">
-                        <div [className]="'post-module'">
-                          <div class="thumbnail">
-                            <img
-                              src="https://ciaf.digital/public/img_educacion/{{
-                                cursos.imagen_curso
-                              }}"
-                              alt="{{ cursos.nombre_curso }}"
-                              style="width: 100%"
-                            />
-                          </div>
-                          <div class="post-content">
-                            <div
-                              class="category"
-                              [ngStyle]="{ 'background-color': cursos.color }"
-                            >
-                              {{ cursos.modalidad_curso }}
-                            </div>
-                            <h1 class="title">{{ cursos.nombre_curso }}</h1>
-                            <div class="post-meta">
-                              <div class="row">
-                                <div class="col-xl-7 pt-1">
-                                  <span class="timestamp"
-                                    ><img
-                                      src="{{ calendario }}"
-                                      alt="Publicado"
-                                    />
-                                    Publicado
-                                    {{
-                                      cursos.create_dt | date : "d MMM"
-                                    }}</span
-                                  >
-                                </div>
-                                <div class="col-xl-2 pt-1">
-                                  <span class="comments"
-                                    >39
-                                    <img src="{{ vistas }}" alt="Publicado" />
-                                  </span>
-                                </div>
-                                <div class="col-xl-3">
-                                  <a
-                                    [routerLink]="[
-                                      '/continuadadetalle',
-                                      cursos.id_curso
-                                    ]"
-                                    class="btn btn-light btn-sm text-black"
-                                    >Leer más
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+<!-- Comunidad CIAF -->
+<section class="container py-5" id="comunidad">
+
+  <div class="row align-items-stretch g-5">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+              <i class="fa-regular fa-user-group me-2"></i>
+              Comunidad CIAF
+          </span>
+
+          <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
+              Estar cerca de ti nos
+              <br>
+              permite seguir
+              <span class="ciaf-gradient-text ciaf-gradient-text--brand">
+                  creciendo contigo.
+              </span>
+          </h2>
+
+          <p class="fs-18 mt-4">
+              Como egresado CIAF sigues siendo parte de nuestra historia. Por eso,
+              hemos diseñado programas que te acompañan en cada etapa de tu desarrollo
+              profesional, personal y social.
+          </p>
+
+          <h3 class="fs-24 fw-extrablack text-color-2 mt-4 mb-4">
+              ¿Qué tenemos para ti?
+          </h3>
+
+          <div class="row g-3">
+
+              <div class="col-md-6 col-12">
+                  <button
+                      type="button"
+                      class="ciaf-card rounded-5 p-4 h-100 w-100 text-start border-transparent"
+                      (click)="abrirModalClubEgresados()"
+                  >
+                      <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                          <i class="fa-regular fa-users text-white"></i>
                       </div>
-                    </div>
+                      <h4 class="fs-16 fw-extrablack text-color-2 mb-2">
+                          Club de Egresados
+                          <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i>
+                      </h4>
+                      <p class="fs-14 mb-0">
+                          Sigue conectado con la comunidad CIAF, participa en encuentros y fortalece tu red de contactos.
+                      </p>
+                  </button>
+              </div>
 
-                    <div class="cards col-xl-4">
-                      <div class="column m-4">
-                        <div class="post-content">
-                          <h3 class="title">
-                            Descubre más programas y mantén activa tu membresía
-                            CIAF
-                          </h3>
-                          <div class="post-meta">
-                            <div class="row">
-                              <div class="col-xl-12 text-center">
-                                <a
-                                  href="https://www.ciaf.edu.co/continuada"
-                                  class="btn btn-custom"
-                                  target="_blank"
-                                >
-                                  Más programas
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+              <div class="col-md-6 col-12">
+                  <div class="ciaf-card rounded-5 p-4 h-100">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                          <i class="fa-solid fa-graduation-cap text-white"></i>
                       </div>
-                    </div>
+                      <h4 class="fs-16 fw-extrablack text-color-2">Educación Continuada <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i></h4>
+                      <p class="fs-14 mb-0">Cursos, diplomados y actualización profesional para que sigas creciendo después de graduarte.</p>
                   </div>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</section>
 
-<section class="pt-4 mt-4 mostrar" *ngIf="isValid3">
-  <div class="row justify-content-center">
-    <div class="col-xxl-5 mb-4 pb-4 text-center vertical-align-center">
-      <div class="row">
-        <h3 class="titulo-2 pb-4">
-          Historias que inspiran, transforman<br />
-          y nos llenan de orgullo.
-        </h3>
-        <p>
-          Reconocemos la trayectoria, el impacto y la transformación de quienes
-          con su talento y compromiso siguen dejando huella en la sociedad.
-          <br /><br />
-          Ellos son algunos de los egresados CIAF que nos inspiran a seguir
-          transformando vidas.
-        </p>
-      </div>
-    </div>
-    <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-9 col-9">
-      <div class="row">
-        <!-- Columna izquierda: 4 testimonios en grid 2x2 -->
-        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12">
-          <div class="row">
-            <!-- Fila 1 -->
-            <div
-              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
-            >
-              <p class="fs-4 bolder-1 text-1">Esteban Ganan</p>
-              <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-              <img [src]="testimonio_egresado_1" alt="testimonio" width="70%" />
-              <p class="fst-italic p-3 fs-6">
-                Fue el concejal más joven de Pereira, comprometido con la
-                defensa de los intereses de los pereiranos y la generación de
-                nuevas oportunidades para la ciudad.
-              </p>
-            </div>
-            <div
-              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
-            >
-              <p class="fs-4 bolder-1 text-1">Ana Carolina Mas</p>
-              <p class="fst-italic lh-1 fs-5">Administración de Empresas</p>
-              <img [src]="testimonio_egresado_2" alt="testimonio" width="70%" />
-              <p class="fst-italic p-3 fs-6">
-                Destacada como una de las mejores directoras comerciales de la
-                marca Toyota, combina su liderazgo empresarial con una profunda
-                vocación por las labores sociales.
-              </p>
-            </div>
-
-            <!-- Fila 2 -->
-            <div
-              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
-            >
-              <p class="fs-4 bolder-1 text-1">Daniel Mora</p>
-              <p class="fst-italic lh-1 fs-5">Ingeniería de software</p>
-              <img [src]="testimonio_egresado_3" alt="testimonio" width="70%" />
-              <p class="fst-italic p-3 fs-6">
-                Su historia refleja coraje, superación y propósito. Lidera con
-                el ejemplo, transforma con su voz e inspira con su camino.
-                <br />
-                Lleva en sí el sello CIAF: compromiso, resiliencia y
-                transformación de vida.
-              </p>
-            </div>
-            <div
-              class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 p-3 text-center"
-            >
-              <!-- Aquí va el cuarto testimonio que necesitas agregar -->
-              <p class="fs-4 bolder-1 text-1">John Jairo Celis</p>
-              <p class="fst-italic lh-1 fs-5">
-                Seguridad y salud en el trabajo
-              </p>
-              <img [src]="testimonio_egresado_4" alt="testimonio" width="70%" />
-              <p class="fst-italic p-3 fs-6">
-                Lídera procesos clave en distintas empresas del sector, siendo
-                un ejemplo de compromiso, liderazgo y superación.
-                <br />
-                Su trayectoria demuestra que cuando se quiere, se puede, sin
-                importar la edad ni los desafíos del camino.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Columna derecha: Video -->
-        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-12">
-          <div class="p-3 text-center">
-            <h4 class="mb-3">Conoce más historias</h4>
-            <!-- Reemplaza 'tu_url_de_video' con tu URL interna -->
-            <video width="100%" controls poster="ruta/a/tu/miniatura.jpg">
-              <source [src]="testimonio_egresado_video" type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
-            <p class="mt-3 fst-italic">
-              Nuestros egresados son el reflejo de la educación con propósito
-              que nos inspira cada día.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pt-4 mt-4 mostrar" *ngIf="isValid4">
-  <div class="row justify-content-center">
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
-      <div class="row">
-        <div class="col-xxl-12 mb-4 pb-4 text-center">
-          <h2 class="titulo-2 text-3">Conéctate con nuevas oportunidades laborales.</h2>
-          <h3 class="text-1">
-            En CIAF le apostamos a tu empleabilidad y crecimiento profesional.
-            Por eso, te compartimos plataformas donde podrás registrarte,
-            postularte y conectar con empresas que valoran tu talento.
-          </h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4">
-        <div class="row">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-10">
-            <ngx-slick-carousel
-              class="carousel"
-              #slickModal="slick-carousel"
-              [config]="slideConfig"
-            >
-              <div ngxSlickItem class="slide">
-                <a
-                  href="https://personas.serviciodeempleo.gov.co/Registrocuenta.aspx"
-                  target="_blank"
-                >
-                  <div class="logo-container">
-                    <img
-                      src="{{ aliado_egresados_1 }}"
-                      alt="Servicio de empleo"
-                      class="logo-img logo-large"
-                    />
+              <div class="col-md-6 col-12">
+                  <div class="ciaf-card rounded-5 p-4 h-100">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                          <i class="fa-regular fa-star text-white"></i>
+                      </div>
+                      <h4 class="fs-16 fw-extrablack text-color-2">Egresados Destacados <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i></h4>
+                      <p class="fs-14 mb-0">Reconocemos las historias de quienes transforman realidades con creatividad, innovación y propósito.</p>
                   </div>
-                </a>
               </div>
-              <div ngxSlickItem class="slide">
-                <a
-                  href="https://empleo.adecco.com.co/account/register"
-                  target="_blank"
-                >
-                  <div class="logo-container">
-                    <img
-                      src="{{ aliado_egresados_2 }}"
-                      alt="adecco"
-                      class="logo-img logo-color"
-                    />
-                  </div>
-                </a>
+
+              <div class="col-md-6 col-12">
+                  <button
+                      type="button"
+                      class="ciaf-card rounded-5 p-4 h-100 w-100 text-start border-transparent"
+                      (click)="abrirModalBolsaEmpleo()"
+                  >
+                      <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                          <i class="fa-regular fa-briefcase text-white"></i>
+                      </div>
+                      <h4 class="fs-16 fw-extrablack text-color-2 mb-2">
+                          Bolsa de Empleo
+                          <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i>
+                      </h4>
+                      <p class="fs-14 mb-0">
+                          Accede a oportunidades laborales y alianzas que impulsan tu desarrollo profesional.
+                      </p>
+                  </button>
               </div>
-              <div ngxSlickItem class="slide">
-                <a
-                  href="https://sites.google.com/camarapereira.org.co/RisaraldaEmplea2025"
-                  target="_blank"
-                >
-                  <div class="logo-container">
-                    <img
-                      src="{{ aliado_egresados_3 }}"
-                      alt="RisaraldaEmplea2025"
-                      class="logo-img"
-                    />
-                  </div>
-                </a>
-              </div>
-            </ngx-slick-carousel>
+
           </div>
-        </div>
+
       </div>
-    </div>
 
-    <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-10 pb-4 nt-4">
-      <div class="row">
-        <div class="col-xxl-12 mb-4 pb-4 text-center mt-4">
-          <h2 class="titulo-2 text-3">Red Colaborativa de Egresados CIAF</h2>
-          <h3 class="text-1">
-           Porque ser egresado CIAF es seguir dejando huella.
-          </h3>
-        </div>
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
 
-        <div class="col-12 text-center mb-4">
-          <p class="fs-5">
-            Desde CIAF fortalecemos una red que une talento, propósito y
-            transformación.<br />
-            Nuestros egresados participan activamente en proyectos que
-            fortalecen la comunidad educativa y<br />
-            generan impacto social, académico y empresarial.
-          </p>
-        </div>
-
-        <!-- CÓMO PARTICIPAR - TRES ICONOS -->
-        <div class="col-12 mb-5">
-          <h3 class="text-1 bolder-1 text-center mb-4">
-            ¿Cómo puedes participar?
-          </h3>
-
-          <div class="row justify-content-center">
-            <!-- VOLUNTARIADO -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
-              <div class="participacion-card text-center">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-hands-helping fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Voluntariado CIAF</h4>
-                <p class="text-justify">
-                  Comparte tu tiempo y talento apoyando actividades sociales,
-                  académicas o institucionales. Tu experiencia puede transformar
-                  realidades y motivar a nuevas generaciones.
-                </p>
-              </div>
-            </div>
-
-            <!-- APADRINAR -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
-              <div class="participacion-card text-center">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-user-graduate fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Apadrina un estudiante</h4>
-                <p class="text-justify">
-                  Acompaña el crecimiento de un estudiante CIAF brindando
-                  orientación, mentoría o apoyo económico. Ser padrino CIAF es
-                  creer en el poder de la educación para cambiar vidas.
-                </p>
-              </div>
-            </div>
-
-            <!-- COMPARTIR EXPERIENCIA -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
-              <div class="participacion-card text-center">
-                <div class="icono-azul mb-3">
-                  <i class="fas fa-comments fa-3x"></i>
-                </div>
-                <h4 class="text-1 bolder-1 mb-3">Comparte la Experiencia</h4>
-                <p class="text-justify">
-                  Sé parte de nuestros conversatorios, charlas o clases abiertas
-                  donde los egresados inspiran con su historia profesional. Tu
-                  trayectoria puede convertirse en ejemplo y guía para quienes
-                  hoy inician su camino.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CONTACTO EGRESADOS -->
-        <div class="col-12 text-center bg-light py-4 rounded">
-          <h4 class="text-1 bolder-1 mb-3">
-            ¿Quieres hacer parte de esta red?
-          </h4>
-          <p class="fs-5 mb-3">
-            Déjanos tus datos o escríbenos a
-            <a href="mailto:egresados@ciaf.edu.co" class="text-1 bolder-1"
-              >egresados@ciaf.edu.co</a
-            ><br />
-            para integrarte a las iniciativas del Programa de Egresados CIAF.
-          </p>
-          <button class="btn btn-primary btn-lg">Únete a la Red</button>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="col-xl-10 col-lg-10 col-md-12 col-12 mb-4 pb-4 mt-10 pt-10"
-      style="margin-top: 10px; padding-top: 10px;"
-    >
-      <div class="row">
-        <div class="col-xxl-12 mb-4 pb-4 text-center mt-4">
-          <h2 class="titulo-2 text-3">Modelo de Bienestar</h2>
-          <h3 class="text-1">
-            Porque el bienestar CIAF también crece contigo.
-          </h3>
-        </div>
-
-        <div class="col-12 text-center mb-4">
-          <p class="fs-5">
-            Ser egresado CIAF es seguir disfrutando de un entorno que promueve
-            la salud, el arte, el deporte y<br />
-            el desarrollo humano. El Modelo de Bienestar Institucional se
-            mantiene activo para ti, acompañando<br />
-            tu vida profesional y personal en seis ejes que fortalecen tu
-            conexión con la comunidad CIAF.
-          </p>
-        </div>
-
-        <!-- EJES DE BIENESTAR -->
-        <div class="col-12">
-          <div class="row justify-content-center">
-            <div class="col-xxl-5 mb-4 pb-4 text-center">
+          <div class="h-100 overflow-hidden rounded-5">
               <img
-                [src]="modelo_bienestar_egresados"
-                alt="Club de egresados"
-                width="90%"
-              />
-            </div>
+                  src="assets/egresados/comunidad.webp"
+                  class="w-100 h-100 object-fit-cover d-block"
+                  alt="Comunidad CIAF"
+              >
           </div>
-        </div>
+
       </div>
+
+  </div>
+
+  <div class="row mt-5">
+
+    <div class="col-12">
+
+        <div class="ciaf-card rounded-5 p-5">
+
+            <div class="row">
+
+                <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-10 col-12">
+
+                    <h2 class="fs-42 fw-extrablack text-color-2 mb-4">
+                        Un lazo que nos conecta para <span class="ciaf-gradient-text ciaf-gradient-text--brand">toda la vida.</span>
+                    </h2>
+
+                    <p class="fs-18 mb-5">
+                        En CIAF estrechamos lazos con nuestros egresados para seguir construyendo juntos.
+                        Promovemos el intercambio de experiencias académicas, profesionales,
+                        emprendedoras y sociales, generando una colaboración constante con la
+                        comunidad y la sociedad. Porque ser egresado CIAF es seguir transformando
+                        realidades con creatividad, innovación y propósito.
+                    </p>
+
+                    <a (click)="abrirModalClubEgresados()" class="cursor-pointer ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                        Conocer el Club de Egresados
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <section>
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-          <button (click)="prevImgConv()" class="boton-prev">
-            <img src="{{ prev }}" alt="Anterior" />
-          </button>
-          <button (click)="nextImgConv()" class="boton-next">
-            <img src="{{ next }}" alt="Siguiente" />
-          </button>
-          <ngx-slick-carousel
-            class="carousel"
-            #slickModalConv="slick-carousel"
-            [config]="slideConfigConvenios"
-            responsive="breakpoints"
-          >
-            <div
-              ngxSlickItem
-              *ngFor="let datos of listarConvenios; index as i"
-              class="slide p-4"
+  </div>
+
+</section>
+
+<!-- Beneficios para egresados -->
+<section class="container py-5" id="beneficios">
+
+  <div class="row mb-5">
+
+      <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-12">
+
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+              Beneficios para Egresados
+          </span>
+
+          <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
+              Beneficios que te
+              <span class="ciaf-gradient-text ciaf-gradient-text--brand">acompañan</span>
+          </h2>
+
+          <p class="fs-22 mt-4 mb-0">
+              Oportunidades, convenios y acompañamiento pensados para que tu vínculo con CIAF nunca termine.
+          </p>
+
+      </div>
+
+  </div>
+
+  <div class="row g-4">
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+          <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+
+              <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
+                  <i class="fa-regular fa-gift text-color-2"></i>
+              </div>
+
+              <h3 class="fs-20 fw-extrablack text-color-2">
+                  Convenios y descuentos
+              </h3>
+
+              <p class="fs-14 mt-3 mb-4 flex-grow-1">
+                  Beneficios exclusivos con aliados de salud, tecnología y servicios para tu día a día.
+              </p>
+
+              <a href="#" class="ciaf-btn ciaf-btn--primary rounded-pill py-3 fw-bold text-decoration-none d-flex justify-content-center align-items-center gap-3 fs-14">
+                  Ver convenios
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+          </div>
+
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+          <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+
+              <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
+                  <i class="fa-solid fa-graduation-cap text-color-2"></i>
+              </div>
+
+              <h3 class="fs-20 fw-extrablack text-color-2">
+                  Educación continuada
+              </h3>
+
+              <p class="fs-14 mt-3 mb-4 flex-grow-1">
+                  Descuentos preferenciales en cursos, diplomados y programas de actualización profesional.
+              </p>
+
+              <a href="#" class="ciaf-btn ciaf-btn--primary rounded-pill py-3 fw-bold text-decoration-none d-flex justify-content-center align-items-center gap-3 fs-14">
+                  Conocer más
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+          </div>
+
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+          <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+
+              <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
+                  <i class="fa-regular fa-briefcase text-color-2"></i>
+              </div>
+
+              <h3 class="fs-20 fw-extrablack text-color-2">
+                  Bolsa de empleo
+              </h3>
+
+              <p class="fs-14 mt-3 mb-4 flex-grow-1">
+                  Conéctate con oportunidades laborales y alianzas empresariales de la comunidad CIAF.
+              </p>
+
+              <a href="#" class="ciaf-btn ciaf-btn--primary rounded-pill py-3 fw-bold text-decoration-none d-flex justify-content-center align-items-center gap-3 fs-14">
+                  Ver oportunidades
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</section>
+
+<!-- Empleabilidad -->
+<section class="container py-5" id="empleabilidad">
+
+  <div class="row align-items-stretch g-5">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+              Empleabilidad
+          </span>
+
+          <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
+              Empleabilidad y desarrollo
+              <span class="ciaf-gradient-text ciaf-gradient-text--brand">profesional</span>
+          </h2>
+
+          <p class="fs-22 mt-4 mb-5">
+              Conectamos a nuestros egresados con oportunidades laborales, alianzas empresariales y rutas de crecimiento profesional para que sigan transformando su realidad.
+          </p>
+
+          <div class="d-grid gap-3">
+
+              <div class="ciaf-card rounded-5 p-4">
+                  <div class="d-flex align-items-center gap-4">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                          <i class="fa-solid fa-graduation-cap text-white"></i>
+                      </div>
+                      <div>
+                          <h3 class="fs-16 fw-extrablack text-color-2 mb-1">Te gradúas</h3>
+                          <p class="fs-14 mb-0">Empieza una nueva etapa como egresado CIAF.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="ciaf-card rounded-5 p-4">
+                  <div class="d-flex align-items-center gap-4">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                          <i class="fa-regular fa-briefcase text-white"></i>
+                      </div>
+                      <div>
+                          <h3 class="fs-16 fw-extrablack text-color-2 mb-1">Bolsa de empleo</h3>
+                          <p class="fs-14 mb-0">Accede a oportunidades laborales y alianzas.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="ciaf-card rounded-5 p-4">
+                  <div class="d-flex align-items-center gap-4">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                          <i class="fa-solid fa-network-wired text-white"></i>
+                      </div>
+                      <div>
+                          <h3 class="fs-16 fw-extrablack text-color-2 mb-1">Networking</h3>
+                          <p class="fs-14 mb-0">Conecta con la red de egresados y aliados.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="ciaf-card rounded-5 p-4">
+                  <div class="d-flex align-items-center gap-4">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                          <i class="fa-solid fa-arrow-trend-up text-white"></i>
+                      </div>
+                      <div>
+                          <h3 class="fs-16 fw-extrablack text-color-2 mb-1">Crecimiento profesional</h3>
+                          <p class="fs-14 mb-0">Sigue creciendo con educación continuada.</p>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="mt-5">
+              <a (click)="abrirModalBolsaEmpleo()" class="cursor-pointer ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                  Ver la bolsa de empleo
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+          </div>
+
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+        <div class="h-100 overflow-hidden rounded-5">
+            <img
+                src="assets/egresados/empleabilidad.webp"
+                class="w-100 h-100 object-fit-cover d-block"
+                alt="Empleabilidad CIAF"
             >
-              <div class="row">
-                <div class="col-xl-6 vertical-align-center">
-                  <a href="{{ datos.url_convenio }}" target="_blank"
-                    ><img
-                      src="https://ciaf.digital/public/web_convenios/{{
-                        datos.imagen_convenio
-                      }}"
-                      alt="{{ datos.nombre_convenio }}"
-                      width="90%"
-                      class="shadow-sm"
-                  /></a>
-                </div>
-                <div class="col-xl-6">
-                  <h3 class="bolder-1 lh-1 fs-4 mt-3">
-                    {{ datos.nombre_convenio }}
-                  </h3>
-                  <p class="lh-1">{{ datos.descripcion_convenio }}</p>
-                  <p>
-                    <a
-                      class="btn bg-3 btn-sm"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSfWtSMEueIVsH0pPp4WCIMj8ePgj8DQUlMG3GtiBv9RC5JO7g/viewform?usp=sf_link"
-                      target="_blank"
-                    >
-                      Acceder al convenio
-                    </a>
-                  </p>
-                </div>
+        </div>
+
+      </div>
+
+  </div>
+
+</section>
+
+<!-- educacion-continuada -->
+<section class="container py-5" id="educacion-continuada">
+
+  <div class="row  mb-5">
+
+    
+    <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+        Educación continuada
+      </span>
+      <h2 class="fs-48 fw-extrablack text-color-2 mb-3">
+        Sigue aprendiendo, sigue <span class="ciaf-gradient-text ciaf-gradient-text--brand">creciendo</span>
+      </h2>
+      <p class="fs-18 text-color-1 mb-0">
+        Graduarte no es el final. Continúa tu formación con nuestra oferta de cursos y
+        diplomados pensada para egresados.
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center" *ngIf="listarCursos?.length">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModalContinuada="slick-carousel"
+        [config]="slideConfigContinuada"
+      >
+        <div ngxSlickItem class="slide px-2 continuada-slide" *ngFor="let cursos of listarCursos">
+          <article class="ciaf-card continuada-card border rounded-4 overflow-hidden d-flex flex-column bg-white">
+            <div class="ratio ratio-4x3 overflow-hidden flex-shrink-0">
+              <img
+                src="https://ciaf.digital/public/img_educacion/{{ cursos.imagen_curso }}"
+                [alt]="cursos.nombre_curso"
+                class="object-fit-cover"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="p-4 continuada-card__body d-flex flex-column flex-grow-1">
+              <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase">
+                  {{ cursos.categoria || 'Curso' }}
+                </span>
+                <span class="ciaf-pill ciaf-pill--compact bg-color-3 text-white fs-10 fw-bold rounded-pill px-3 py-1 border-0">
+                  {{ cursos.modalidad_curso }}
+                </span>
+              </div>
+
+              <h4 class="fs-16 fw-extrablack text-color-2 mb-3 continuada-card__title flex-grow-1">
+                {{ cursos.nombre_curso }}
+              </h4>
+
+              <div class="d-flex flex-wrap gap-3 fs-12 text-color-1 mb-4">
+                <span>
+                  <i class="fa-regular fa-clock me-1" aria-hidden="true"></i>
+                  {{ cursos.duracion_educacion }} horas
+                </span>
+                <span *ngIf="cursos.precio_curso">
+                  <i class="fa-solid fa-chart-line me-1" aria-hidden="true"></i>
+                  {{ formatearPrecioCurso(cursos.precio_curso) }}
+                </span>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <span class="fs-14 fw-bold text-color-2">Conoce más</span>
+                <a
+                  [routerLink]="['/continuadadetalle', cursos.id_curso]"
+                  class="btn bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0 text-white text-decoration-none"
+                  style="width: 44px; height: 44px;"
+                  [attr.aria-label]="'Conocer más sobre ' + cursos.nombre_curso"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
               </div>
             </div>
-          </ngx-slick-carousel>
+          </article>
         </div>
-      </div>
-    </section>
+      </ngx-slick-carousel>
+    </div>
+  </div>
 
-    <app-eventos></app-eventos>
+  <div class="mt-5">
+    <a
+      href="https://www.ciaf.edu.co/continuada"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3"
+    >
+      Ver toda la oferta de educación continuada
+      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+    </a>
+  </div>
+
+</section>
+
+<!-- Egresados destacados -->
+<section class="container py-5" id="egresados-destacados">
+
+  <div class="row mb-5">
+      <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Egresados Destacados</span>
+          <h2 class="fs-48 fw-extrablack text-color-2 mt-4">Historias que inspiran y <span class="ciaf-gradient-text ciaf-gradient-text--brand">transforman</span></h2>
+          <p class="fs-18 mt-4 mb-0">Reconocemos la trayectoria, el impacto y la transformación de quienes con su talento y compromiso siguen dejando huella en la sociedad.</p>
+      </div>
+  </div>
+
+  <div class="row g-4">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 p-4 text-center">
+              <img [src]="testimonio_egresado_1" alt="Esteban Ganan" class="rounded-circle object-fit-cover mb-4" style="width:96px;height:96px;">
+              <h3 class="fs-20 fw-extrablack text-color-2 mb-2">Esteban Ganan</h3>
+              <p class="fs-14 fw-bold fst-italic text-color-2 mb-4">Administración de Empresas</p>
+              <p class="fs-16 mb-0">Fue el concejal más joven de Pereira, comprometido con la defensa de los intereses de los pereiranos y la generación de nuevas oportunidades para la ciudad.</p>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 p-4 text-center">
+              <img [src]="testimonio_egresado_2" alt="Ana Carolina Mas" class="rounded-circle object-fit-cover mb-4" style="width:96px;height:96px;">
+              <h3 class="fs-20 fw-extrablack text-color-2 mb-2">Ana Carolina Mas</h3>
+              <p class="fs-14 fw-bold fst-italic text-color-2 mb-4">Administración de Empresas</p>
+              <p class="fs-16 mb-0">Destacada como una de las mejores directoras comerciales de la marca Toyota, combina su liderazgo empresarial con una profunda vocación por las labores sociales.</p>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 p-4 text-center">
+              <img [src]="testimonio_egresado_3" alt="Daniel Mora" class="rounded-circle object-fit-cover mb-4" style="width:96px;height:96px;">
+              <h3 class="fs-20 fw-extrablack text-color-2 mb-2">Daniel Mora</h3>
+              <p class="fs-14 fw-bold fst-italic text-color-2 mb-4">Ingeniería de software</p>
+              <p class="fs-16 mb-0">Su historia refleja coraje, superación y propósito. Lidera con el ejemplo, transforma con su voz e inspira con su camino. Lleva en sí el sello CIAF: compromiso, resiliencia y transformación de vida.</p>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 p-4 text-center">
+              <img [src]="testimonio_egresado_4" alt="John Jairo Celis" class="rounded-circle object-fit-cover mb-4" style="width:96px;height:96px;">
+              <h3 class="fs-20 fw-extrablack text-color-2 mb-2">John Jairo Celis</h3>
+              <p class="fs-14 fw-bold fst-italic text-color-2 mb-4">Seguridad y salud en el trabajo</p>
+              <p class="fs-16 mb-0">Lidera procesos clave en distintas empresas del sector, siendo un ejemplo de compromiso, liderazgo y superación. Su trayectoria demuestra que cuando se quiere, se puede, sin importar la edad ni los desafíos del camino.</p>
+          </div>
+      </div>
+
+  </div>
+
+</section>
+
+<!-- historia -->
+<section class="container py-5" id="historias">
+
+  <div class="row mb-5">
+    <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Historias que inspiran</span>
+        <h2 class="fs-48 fw-extrablack text-color-2 mt-4">Conoce más <span class="ciaf-gradient-text ciaf-gradient-text--brand">historias</span></h2>
+        <p class="fs-18 mt-4 mb-0">Testimonios en video de egresados que siguen dejando huella.</p>
+    </div>
+  </div>
+
+
+  <div class="row g-4 ">
+
+      <!-- Video 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+          <button
+              type="button"
+              class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+              data-bs-toggle="modal"
+              data-bs-target="#modalVideoArte1">
+
+              <img
+                  src="assets/bienestar/video-1.webp"
+                  class="w-100 object-fit-cover bienestar-video-img"
+                  alt="Video arte y cultura">
+
+              <div class="bienestar-video-resource-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+              <div class="bienestar-play-btn position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="fa-solid fa-play"></i>
+              </div>
+          </button>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+          <button
+              type="button"
+              class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+              data-bs-toggle="modal"
+              data-bs-target="#modalVideoArte2">
+
+              <img
+                  src="assets/bienestar/video-1.webp"
+                  class="w-100 object-fit-cover bienestar-video-img"
+                  alt="Video arte y cultura">
+
+              <div class="bienestar-video-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+              <div class="bienestar-play-btn position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="fa-solid fa-play"></i>
+              </div>
+          </button>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+          <button
+              type="button"
+              class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+              data-bs-toggle="modal"
+              data-bs-target="#modalVideoArte3">
+
+              <img
+                  src="assets/bienestar/video-1.webp"
+                  class="w-100 object-fit-cover bienestar-video-img"
+                  alt="Video arte y cultura">
+
+              <div class="bienestar-video-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+              <div class="bienestar-play-btn position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="fa-solid fa-play"></i>
+              </div>
+          </button>
+      </div>
+
+  </div>
+
+
+  <!-- Modal Video 1 -->
+  <div class="modal fade" id="modalVideoArte1" tabindex="-1" aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered modal-short">
+
+          <div class="modal-content border-0 bg-transparent shadow-none">
+
+              <button
+                  type="button"
+                  class="btn-close btn-close-white position-absolute top-0 end-0 mt-2 me-2 z-3"
+                  data-bs-dismiss="modal">
+              </button>
+
+              <div class="short-container">
+
+                  <iframe
+                      src="https://www.youtube.com/embed/y32i14pjYWY?rel=0"
+                      title="Video Bienestar"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                  </iframe>
+
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+
+  <!-- Modal Video 2 -->
+  <div class="modal fade" id="modalVideoArte2" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-short">
+          <div class="modal-content border-0 bg-transparent shadow-none">
+
+              <button
+                  type="button"
+                  class="btn-close btn-close-white position-absolute top-0 end-0 mt-2 me-2 z-3"
+                  data-bs-dismiss="modal">
+              </button>
+
+              <div class="short-container">
+
+                  <iframe
+                      src="https://www.youtube.com/embed/y32i14pjYWY"
+                      title="Video Bienestar"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                  </iframe>
+
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Modal Video 3 -->
+  <div class="modal fade" id="modalVideoArte3" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-short">
+          <div class="modal-content border-0 bg-transparent shadow-none">
+
+              <button
+                  type="button"
+                  class="btn-close btn-close-white position-absolute top-0 end-0 mt-2 me-2 z-3"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar">
+              </button>
+
+              <div class="short-container">
+                  <iframe
+                      src="https://www.youtube.com/embed/y32i14pjYWY"
+                      title="Video Bienestar"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                  </iframe>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+</section>
+
+<!-- Galería de egresados -->
+<section class="container py-5" id="galeria-egresados">
+
+  <div class="row mb-5">
+      <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Comunidad CIAF</span>
+          <h2 class="fs-48 fw-extrablack text-color-2 mt-4">Siempre serás parte de la <span class="ciaf-gradient-text ciaf-gradient-text--brand">comunidad CIAF</span></h2>
+          <p class="fs-16 mt-4 mb-0">Encuentros, eventos, historias y networking que mantienen vivo el vínculo con tu institución.</p>
+      </div>
+  </div>
+
+  <div class="row g-3 align-items-start">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="d-grid gap-3">
+              <img src="assets/egresados/pic-1.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:420px;">
+              <img src="assets/egresados/pic-7.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:300px;">
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="d-grid gap-3">
+              <img src="assets/egresados/pic-2.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:220px;">
+              <img src="assets/egresados/pic-5.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:220px;">
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="d-grid gap-3">
+              <img src="assets/egresados/pic-3.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:220px;">
+              <img src="assets/egresados/pic-6.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:420px;">
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="d-grid gap-3">
+              <img src="assets/egresados/pic-4.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:220px;">
+              <img src="assets/egresados/pic-8.webp" alt="Galería egresados CIAF" class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height:220px;">
+          </div>
+      </div>
+
+  </div>
+
+  <div class="row mt-4">
+      <div class="col-12">
+          <span class="ciaf-pill ciaf-pill--compact fs-11 fw-bold rounded-pill px-3 py-2">
+              <i class="fa-regular fa-images me-2"></i>
+              Galería de egresados
+          </span>
+      </div>
+  </div>
+
+</section>
+
+<!-- Contacto -->
+<section class="container py-5 ciaf-section-light" id="contacto">
+
+  <div class="row align-items-center g-5">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+              Contacto
+          </span>
+
+          <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
+              Seguimos conectados
+              <span class="ciaf-gradient-text ciaf-gradient-text--brand">contigo</span>
+          </h2>
+
+          <p class="fs-22 mt-4">
+              Mantén tus datos actualizados para acceder a oportunidades,
+              beneficios, eventos y comunicaciones exclusivas para egresados CIAF.
+          </p>
+
+          <div class="mt-5">
+              <a (click)="mostrarModalInfo()" class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                  <i class="fa-regular fa-user-pen"></i>
+                  Actualizar mis datos
+              </a>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+
+              <a href="#" class="ciaf-pill ciaf-pill--compact rounded-pill px-4 py-2 text-decoration-none fw-bold">
+                  Facebook
+              </a>
+
+              <a href="#" class="ciaf-pill ciaf-pill--compact rounded-pill px-4 py-2 text-decoration-none fw-bold">
+                  Instagram
+              </a>
+
+              <a href="#" class="ciaf-pill ciaf-pill--compact rounded-pill px-4 py-2 text-decoration-none fw-bold">
+                  YouTube
+              </a>
+
+              <a href="#" class="ciaf-pill ciaf-pill--compact rounded-pill px-4 py-2 text-decoration-none fw-bold">
+                  TikTok
+              </a>
+
+          </div>
+
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+          <div class="d-grid gap-3">
+
+              <div class="ciaf-card rounded-5 p-4">
+                  <div class="d-flex align-items-center gap-4">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                          <i class="fa-regular fa-envelope text-white"></i>
+                      </div>
+                      <div>
+                          <h3 class="fs-16 fw-extrablack text-color-2 mb-1">Correo</h3>
+                          <p class="fs-14 mb-0">egresados@ciaf.edu.co</p>
+                      </div>
+                  </div>
+              </div>
+
+
+              <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20soy%20egresado%20CIAF%20y%20necesito%20informaci%C3%B3n"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-decoration-none">
+
+                  <div class="ciaf-card rounded-5 p-4">
+                      <div class="d-flex align-items-center gap-4">
+                          <div class="ciaf-icon-badge bg-color-5 rounded-circle">
+                              <i class="fa-brands fa-whatsapp text-color-2"></i>
+                          </div>
+                          <div>
+                              <h3 class="fs-16 fw-extrablack text-color-2 mb-1">WhatsApp</h3>
+                              <p class="fs-14 mb-0 text-color-2">Escríbenos directamente</p>
+                          </div>
+                      </div>
+                  </div>
+
+              </a>
+
+              <div class="ciaf-card rounded-5 p-4">
+                  <div class="d-flex align-items-center gap-4">
+                      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                          <i class="fa-regular fa-phone text-white"></i>
+                      </div>
+                      <div>
+                          <h3 class="fs-16 fw-extrablack text-color-2 mb-1">Línea de atención</h3>
+                          <p class="fs-14 mb-0">+57 314 340 0100</p>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</section>
+
+<!-- eventos -->
+<app-eventos id="eventos"></app-eventos>
+
+<!-- convenios -->
+<app-convenios id="convenios"></app-convenios>
+
+
+<!-- Pertenencia y acompañamiento -->
+<section class="container-fluid p-0 overflow-hidden" id="pertenencia">
+  <div class="row justify-content-center egresados-pertenencia-banner py-5">
+    <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-12 text-center text-white py-5 my-5">
+
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white text-uppercase ls-4">
+        <i class="fa-regular fa-heart me-2"></i>
+        Pertenencia y acompañamiento
+      </span>
+
+      <h2 class="fs-48 fw-extrablack mt-4">
+        Siempre serás parte de la comunidad CIAF
+      </h2>
+
+      <p class="fs-18 mt-5 mb-0">
+        Como egresado CIAF sigues siendo parte de nuestra historia.
+        Te acompañamos en cada etapa de tu desarrollo profesional,
+        personal y social.
+        Graduarte no es el final, es el comienzo de una nueva etapa.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+        <a (click)="mostrarModalInfo()" class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+          Actualizar mis datos
+          <i class="fa-regular fa-user-pen"></i>
+        </a>
+
+        <a href="#contacto" class="ciaf-btn btn border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+          Contactar a Egresados
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<div class="row m-menu bg-2">
-  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-    <div class="pt-1" id="btn-1-1">
-      <a
-        class="text-center"
-        (click)="paginas('1')"
-        (click)="activo = '1'"
-        [ngClass]="activo == '1' ? 'active-m' : ''"
-      >
-        <div class="col-12">
-          <img
-            src="assets/image/programas-m.webp"
-            alt="carreras profesionales"
-          />
-        </div>
-        <div class="col-12">
-          <p>Club <br />de Egresados</p>
-        </div>
-      </a>
-    </div>
-  </div>
 
-  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-    <div class="pt-1" id="btn-2-1">
-      <a
-        class="text-center"
-        (click)="paginas('2')"
-        (click)="activo = '2'"
-        [ngClass]="activo == '2' ? 'active-m' : ''"
-      >
-        <div class="col-12">
-          <img
-            src="assets/image/programas-m.webp"
-            alt="carreras profesionales"
-          />
-        </div>
-        <div class="col-12">
-          <p>Educación <br />Continuada</p>
-        </div>
-      </a>
-    </div>
-  </div>
 
-  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-    <div class="pt-1" id="btn-3-1">
-      <a
-        class="text-center"
-        (click)="paginas('3')"
-        (click)="activo = '3'"
-        [ngClass]="activo == '3' ? 'active-m' : ''"
-      >
-        <div class="col-12">
-          <img
-            src="assets/image/programas-m.webp"
-            alt="carreras profesionales"
-          />
-        </div>
-        <div class="col-12">
-          <p>Egresados <br />destacados</p>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-    <div class="pt-1" id="btn-4-1">
-      <a
-        class="text-center"
-        (click)="paginas('4')"
-        (click)="activo = '4'"
-        [ngClass]="activo == '4' ? 'active-m' : ''"
-      >
-        <div class="col-12">
-          <img
-            src="assets/image/programas-m.webp"
-            alt="carreras profesionales"
-          />
-        </div>
-        <div class="col-12">
-          <p>Bolsa <br />de Empleo</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<ng-template #myModalInfo let-modal>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-6" id="exampleModalLabel">
-        Actualización de datos
-      </h1>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="modal"
-        aria-label="Close"
-        (click)="modal.close()"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <h3 class="fs-6"></h3>
-      <div class="row">
-        <div class="row mt-4">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-            <div class="row justify-content-center">
-              <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                <div class="row justify-content-center">
-                  <div class="col-xl-12">
-                    <div class="datosegresados">
-                      <div
-                        class="col-12"
-                        id="validacion"
-                        *ngIf="element1 == true"
-                      >
-                        <label>Número de identificación</label>
-                        <input
-                          type="number"
-                          id="numberField"
-                          [(ngModel)]="numericValue"
-                          class="micampo"
-                          placeholder="Numero de identificación"
-                        />
-                        <button
-                          (click)="captureValue()"
-                          class="btn bg-3 btn-lg col-12"
-                        >
-                          Verificar documento
-                        </button>
-                      </div>
-
-                      <form
-                        [formGroup]="myForm"
-                        (ngSubmit)="actualizar()"
-                        *ngIf="element == true"
-                        class="row"
-                      >
-                        <div class="col-xl-12 d-none">
-                          <label>Credencial estudiante</label>
-                          <div class="input-group mb-3 input-group-lg">
-                            <input
-                              matInput
-                              type="number"
-                              class="micampo"
-                              placeholder="Credencial"
-                              name="id_credencial"
-                              formControlName="id_credencial"
-                            />
-                          </div>
-
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.id_credencial
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('id_credencial')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('id_credencial')?.dirty ||
-                                  myForm.get('id_credencial')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-6">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>Tienes hijos (si/no)</label>
-                            <select
-                              class="micampo"
-                              name="egresados_tiene_hijos"
-                              formControlName="egresados_tiene_hijos"
-                              (ngModelChange)="mostrarcampo(1)"
-                            >
-                              <option value="no">No</option>
-                              <option value="si">Si</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_tiene_hijos
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_tiene_hijos')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_tiene_hijos')?.dirty ||
-                                  myForm.get('egresados_tiene_hijos')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-6" *ngIf="element2 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>¿Cuántos hijos tienes?</label>
-                            <select
-                              class="micampo"
-                              name="egresados_num_hijos"
-                              formControlName="egresados_num_hijos"
-                            >
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3 o más</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>¿Trabajas actualmente?</label>
-                            <select
-                              class="micampo"
-                              name="egresados_trabaja"
-                              formControlName="egresados_trabaja"
-                              (ngModelChange)="mostrarcampo(3)"
-                              required
-                            >
-                              <option value="no">No</option>
-                              <option value="si">Si</option>
-                            </select>
-                            <div
-                              *ngFor="
-                                let validation of account_validation_messages.egresados_trabaja
-                              "
-                            >
-                              <div
-                                class="error-message"
-                                *ngIf="
-                                  myForm
-                                    .get('egresados_trabaja')
-                                    ?.hasError(validation.type) &&
-                                  (myForm.get('egresados_trabaja')?.dirty ||
-                                    myForm.get('egresados_trabaja')?.touched)
-                                "
-                              >
-                                {{ validation.message }}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element4 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>¿Qué tipo de trabajador eres?</label>
-                            <select
-                              class="micampo"
-                              name="egresados_tipo_trabajador"
-                              formControlName="egresados_tipo_trabajador"
-                            >
-                              <option value="No aplica">No aplica</option>
-                              <option value="Empleado">Empleado</option>
-                              <option value="Independiente">
-                                Independiente
-                              </option>
-                              <option value="Emprendedor">Emprendedor</option>
-                              <option value="Empresario">Empresario</option>
-                              <option value="Freelance">Freelance</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element5 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>Nombre de la empresa en que laboras</label>
-                            <input
-                              matInput
-                              type="text"
-                              class="micampo"
-                              name="egresados_empresa"
-                              formControlName="egresados_empresa"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element6 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>Sector de la empresa en que laboras</label>
-                            <select
-                              class="micampo"
-                              name="egresados_sector_empresa"
-                              formControlName="egresados_sector_empresa"
-                            >
-                              <option value="No aplica">No aplica</option>
-                              <option value="Público">Público</option>
-                              <option value="Servicios">Servicios</option>
-                              <option value="Industrial">Industrial</option>
-                              <option value="Comercio">Comercio</option>
-                              <option value="Agropecuario">Agropecuario</option>
-                              <option value="Transporte y/o distribución">
-                                Transporte y/o distribución
-                              </option>
-                              <option value="Turismo">Turismo</option>
-                              <option value="Tecnología">Tecnología</option>
-                              <option value="Cultura y entretenimiento">
-                                Cultura y entretenimiento
-                              </option>
-                              <option value="Educación">Educación</option>
-                              <option value="Financiero">Financiero</option>
-                              <option value="Salud">Salud</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element7 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>¿Qué cargo desempeñas?</label>
-                            <input
-                              matInput
-                              type="text"
-                              class="micampo"
-                              name="egresados_cargo"
-                              formControlName="egresados_cargo"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element8 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>¿Laboras en el campo de tu profesión?</label>
-                            <select
-                              class="micampo"
-                              name="egresados_profesion"
-                              formControlName="egresados_profesion"
-                            >
-                              <option value="no">No</option>
-                              <option value="si">Si</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element9 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label>¿Qué salario mensual devengas?</label>
-                            <select
-                              class="micampo"
-                              name="egresados_salario"
-                              formControlName="egresados_salario"
-                            >
-                              <option value="Ninguno">Ninguno</option>
-                              <option value="Entre 0 a 1 SMLV">
-                                Entre 0 a 1 SMLV
-                              </option>
-                              <option value="De 1 SMLV A 3SMLV">
-                                De 1 SMLV A 3SMLV
-                              </option>
-                              <option value="4 o más SMLC">4 o más SMLC</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >¿Qué estudios adicionales requieres para
-                              complementar tu perfil profesional?</label
-                            >
-                            <textarea
-                              class="micampo"
-                              name="egresados_estudio_adicional"
-                              formControlName="egresados_estudio_adicional"
-                              required
-                            ></textarea>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_estudio_adicional
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_estudio_adicional')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_estudio_adicional')
-                                  ?.dirty ||
-                                  myForm.get('egresados_estudio_adicional')
-                                    ?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >¿Tiene necesidades de formación profesional en
-                              este momento?</label
-                            >
-                            <select
-                              class="micampo"
-                              name="egresados_formacion"
-                              formControlName="egresados_formacion"
-                              (ngModelChange)="mostrarcampo(11)"
-                              required
-                            >
-                              <option value="no">No</option>
-                              <option value="si">Si</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_formacion
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_formacion')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_formacion')?.dirty ||
-                                  myForm.get('egresados_formacion')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12" *ngIf="element12 == false">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >Si su respuesta es sí, por favor especifique las
-                              necesidades de formación</label
-                            >
-                            <input
-                              matInput
-                              type="text"
-                              class="micampo"
-                              name="egresados_tipo_formacion"
-                              formControlName="egresados_tipo_formacion"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >¿Por cuál medio recibes la información
-                              institucional de CIAF?</label
-                            >
-                            <select
-                              class="micampo"
-                              name="egresados_informacion"
-                              formControlName="egresados_informacion"
-                              required
-                            >
-                              <option value="Correo">Correo</option>
-                              <option value="Campus virtual">
-                                Campus virtual
-                              </option>
-                              <option value="Redes sociales">
-                                Redes sociales
-                              </option>
-                              <option value="Llamada telefónica">
-                                Llamada telefónica
-                              </option>
-                              <option value="WhatsApp">WhatsApp</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_informacion
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_informacion')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_informacion')?.dirty ||
-                                  myForm.get('egresados_informacion')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >¿En la actualidad se encuentra realizando algún
-                              tipo de posgrado?</label
-                            >
-                            <select
-                              class="micampo"
-                              name="egresados_posgrado"
-                              formControlName="egresados_posgrado"
-                              required
-                            >
-                              <option value="Ninguno">Ninguno</option>
-                              <option value="Diplomado">Diplomado</option>
-                              <option value="Especialización">
-                                Especialización
-                              </option>
-                              <option value="Maestría">Maestría</option>
-                              <option value="Doctorado">Doctorado</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_posgrado
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_posgrado')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_posgrado')?.dirty ||
-                                  myForm.get('egresados_posgrado')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >¿Le gustaría participar en alguno de los
-                              siguientes programas para fomentar la red
-                              colaborativa de egresados CIAF?</label
-                            >
-                            <select
-                              class="micampo"
-                              name="egresados_colaborativa"
-                              formControlName="egresados_colaborativa"
-                              required=""
-                            >
-                              <option value="Voluntariado">Voluntariado</option>
-                              <option value="Apadrinamiento estudiantil">
-                                Apadrinamiento estudiantil
-                              </option>
-                              <option value="Comparte la Experiencia">
-                                Comparte la Experiencia
-                              </option>
-                              <option value="En ninguno">En ninguno</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_colaborativa
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_colaborativa')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_colaborativa')?.dirty ||
-                                  myForm.get('egresados_colaborativa')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >¿Conoces las últimas actualizaciones de
-                              CIAF?</label
-                            >
-                            <select
-                              class="micampo"
-                              name="egresados_actualizacion"
-                              formControlName="egresados_actualizacion"
-                              required
-                            >
-                              <option value="no">No</option>
-                              <option value="si">Si</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_actualizacion
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_actualizacion')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_actualizacion')?.dirty ||
-                                  myForm.get('egresados_actualizacion')
-                                    ?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12">
-                          <div class="input-group mb-3 input-group-lg">
-                            <label
-                              >De 1 a 5, ¿qué tan probable es que recomiendes a
-                              CIAF con otra persona?</label
-                            >
-                            <select
-                              class="micampo"
-                              name="egresados_recomendar"
-                              formControlName="egresados_recomendar"
-                              required
-                            >
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                            </select>
-                          </div>
-                          <div
-                            *ngFor="
-                              let validation of account_validation_messages.egresados_recomendar
-                            "
-                          >
-                            <div
-                              class="error-message"
-                              *ngIf="
-                                myForm
-                                  .get('egresados_recomendar')
-                                  ?.hasError(validation.type) &&
-                                (myForm.get('egresados_recomendar')?.dirty ||
-                                  myForm.get('egresados_recomendar')?.touched)
-                              "
-                            >
-                              {{ validation.message }}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-xl-12 text-center">
-                          <button
-                            type="submit"
-                            class="btn bg-3 btn-lg"
-                            [disabled]="!myForm.valid"
-                          >
-                            Enviar
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</ng-template>
+<app-footer></app-footer>

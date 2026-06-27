@@ -141,37 +141,3 @@
   }
 
 }
-
-/* Convenios — misma altura y logo uniforme */
-.convenio-card {
-  min-height: 430px;
-}
-
-.convenio-card__logo {
-  min-height: 148px;
-  padding: 1.5rem;
-  background:
-    linear-gradient(135deg, rgba(0, 25, 133, .08), rgba(132, 204, 22, .12)),
-    var(--ciaf-bg-light);
-}
-
-.convenio-card__logo-frame {
-  width: min(100%, 220px);
-  height: 96px;
-  padding: .75rem 1rem;
-}
-
-.convenio-card__logo-img {
-  max-width: 100%;
-  max-height: 72px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.convenio-card__desc {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}

@@ -1,9 +1,6 @@
 import {
-  AfterViewInit,
   Component,
-  ElementRef,
   HostListener,
-  NgZone,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -19,23 +16,7 @@ declare var $:any;
   templateUrl: './bienestar.component.html',
   styleUrls: ['./bienestar.component.css']
 })
-export class BienestarComponent implements OnInit, AfterViewInit, OnDestroy {
-
-  readonly conveniosVisibles = 3;
-  readonly conveniosGapPx = 24;
-  readonly conveniosAutoplayMs = 5500;
-
-  @ViewChild('conveniosViewport') conveniosViewport?: ElementRef<HTMLElement>;
-
-  conveniosIndice = 0;
-  conveniosDesplazamiento = 0;
-  conveniosAnchoTarjeta = 0;
-  conveniosAnimando = true;
-  conveniosArrastrando = false;
-  private conveniosAutoplayId?: ReturnType<typeof setInterval>;
-  private conveniosResizeObserver?: ResizeObserver;
-  private conveniosInicioX = 0;
-  private conveniosInicioDesplazamiento = 0;
+export class BienestarComponent implements OnInit, OnDestroy {
 
   public pic1="assets/image/cultura.webp";
   public pic2="assets/image/desarrollo-humano.webp";
@@ -89,38 +70,12 @@ public icono_baile="assets/image/icono-baile.webp";
 public icono_fotografia="assets/image/icono-fotografia.webp";
 
 listarInstagram:any;
-listarConvenios:any;
 
 
 
 
 slideConfig = {
   "slidesToShow": 4, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
-  responsive: [
-    {
-      breakpoint: 1048,
-      settings: {
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 778,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
-
-};
-
-slideConfigConvenios = {
-  "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
   responsive: [
     {
       breakpoint: 1048,
@@ -164,16 +119,6 @@ prevImgIns(){
 }
 nextImgIns(){
   this.slickModalInst.slickNext();
-}
-
-@ViewChild('slickModalConv')
-slickModalConv!: SlickCarouselComponent;
-
-prevImgConv(){
-  this.slickModalConv.slickPrev();
-}
-nextImgConv(){
-  this.slickModalConv.slickNext();
 }
 
 
@@ -263,8 +208,6 @@ toggleCampoAccion(id: string): void {
     if (this.scrollSpyTimer) {
       clearTimeout(this.scrollSpyTimer);
     }
-    this.detenerAutoplayConvenios();
-    this.conveniosResizeObserver?.disconnect();
   }
   
     private getNavOffset(): number {
@@ -357,8 +300,7 @@ toggleCampoAccion(id: string): void {
   videoUrl: SafeResourceUrl | null = null;
   constructor(
     private conectarApiService: ConectarApiService,
-    private sanitizer: DomSanitizer,
-    private ngZone: NgZone
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -366,161 +308,7 @@ toggleCampoAccion(id: string): void {
     this.pagina="0";
     this.paginas(this.pagina);
 
-    // this.conectarApiService.obtenerInstagram().subscribe(respuesta=>{
-    //   this.listarInstagram=respuesta.business_discovery.media.data
-    //   console.log(respuesta.business_discovery.media.data);
-    // });
-
-    this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2 => {
-      this.listarConvenios = respuesta2;
-      this.reiniciarConveniosCarrusel();
-    });
-
-    
     this.activarLinkMenu();
-  }
-
-  ngAfterViewInit(): void {
-    this.observarViewportConvenios();
-  }
-
-  private observarViewportConvenios(): void {
-    this.conveniosResizeObserver?.disconnect();
-
-    if (typeof ResizeObserver === 'undefined' || !this.conveniosViewport?.nativeElement) {
-      return;
-    }
-
-    this.medirAnchoConvenios();
-    this.conveniosResizeObserver = new ResizeObserver(() => this.medirAnchoConvenios());
-    this.conveniosResizeObserver.observe(this.conveniosViewport.nativeElement);
-  }
-
-  get usarCarruselConvenios(): boolean {
-    return Array.isArray(this.listarConvenios) && this.listarConvenios.length > this.conveniosVisibles;
-  }
-
-  get maxIndiceConvenios(): number {
-    const total = Array.isArray(this.listarConvenios) ? this.listarConvenios.length : 0;
-    return Math.max(0, total - this.conveniosVisibles);
-  }
-
-  private reiniciarConveniosCarrusel(): void {
-    this.conveniosIndice = 0;
-    this.actualizarDesplazamientoConvenios(false);
-    this.detenerAutoplayConvenios();
-
-    if (this.usarCarruselConvenios) {
-      setTimeout(() => {
-        this.observarViewportConvenios();
-        this.iniciarAutoplayConvenios();
-      }, 0);
-    }
-  }
-
-  private medirAnchoConvenios(): void {
-    const anchoViewport = this.conveniosViewport?.nativeElement?.clientWidth ?? 0;
-
-    if (!anchoViewport) {
-      return;
-    }
-
-    const gapsVisibles = this.conveniosGapPx * (this.conveniosVisibles - 1);
-    this.conveniosAnchoTarjeta = (anchoViewport - gapsVisibles) / this.conveniosVisibles;
-    this.actualizarDesplazamientoConvenios(false);
-  }
-
-  private pasoConvenios(): number {
-    return this.conveniosAnchoTarjeta + this.conveniosGapPx;
-  }
-
-  private actualizarDesplazamientoConvenios(animar: boolean): void {
-    this.conveniosAnimando = animar;
-    this.conveniosDesplazamiento = -(this.conveniosIndice * this.pasoConvenios());
-  }
-
-  private iniciarAutoplayConvenios(): void {
-    this.ngZone.runOutsideAngular(() => {
-      this.conveniosAutoplayId = setInterval(() => {
-        this.ngZone.run(() => this.siguienteConvenio(true));
-      }, this.conveniosAutoplayMs);
-    });
-  }
-
-  private detenerAutoplayConvenios(): void {
-    if (this.conveniosAutoplayId) {
-      clearInterval(this.conveniosAutoplayId);
-      this.conveniosAutoplayId = undefined;
-    }
-  }
-
-  private reanudarAutoplayConvenios(): void {
-    this.detenerAutoplayConvenios();
-    if (this.usarCarruselConvenios) {
-      this.iniciarAutoplayConvenios();
-    }
-  }
-
-  private siguienteConvenio(animar = true): void {
-    if (!this.usarCarruselConvenios) {
-      return;
-    }
-
-    this.conveniosIndice = this.conveniosIndice >= this.maxIndiceConvenios ? 0 : this.conveniosIndice + 1;
-    this.actualizarDesplazamientoConvenios(animar);
-  }
-
-  onConveniosPointerDown(event: PointerEvent): void {
-    if (!this.usarCarruselConvenios) {
-      return;
-    }
-
-    this.detenerAutoplayConvenios();
-    this.conveniosArrastrando = true;
-    this.conveniosInicioX = event.clientX;
-    this.conveniosInicioDesplazamiento = this.conveniosDesplazamiento;
-    this.conveniosAnimando = false;
-    (event.currentTarget as HTMLElement)?.setPointerCapture?.(event.pointerId);
-  }
-
-  onConveniosPointerMove(event: PointerEvent): void {
-    if (!this.conveniosArrastrando) {
-      return;
-    }
-
-    const delta = event.clientX - this.conveniosInicioX;
-    let nuevo = this.conveniosInicioDesplazamiento + delta;
-    const min = -(this.maxIndiceConvenios * this.pasoConvenios());
-    const max = 0;
-
-    this.conveniosDesplazamiento = Math.min(max, Math.max(min, nuevo));
-  }
-
-  onConveniosPointerUp(event: PointerEvent): void {
-    if (!this.conveniosArrastrando) {
-      return;
-    }
-
-    this.conveniosArrastrando = false;
-    (event.currentTarget as HTMLElement)?.releasePointerCapture?.(event.pointerId);
-
-    const movido = this.conveniosDesplazamiento - this.conveniosInicioDesplazamiento;
-    const umbral = this.pasoConvenios() * 0.18;
-
-    if (movido < -umbral && this.conveniosIndice < this.maxIndiceConvenios) {
-      this.conveniosIndice += 1;
-    } else if (movido > umbral && this.conveniosIndice > 0) {
-      this.conveniosIndice -= 1;
-    }
-
-    this.actualizarDesplazamientoConvenios(true);
-    this.reanudarAutoplayConvenios();
-  }
-
-  onConveniosPointerLeave(event: PointerEvent): void {
-    if (this.conveniosArrastrando) {
-      this.onConveniosPointerUp(event);
-    }
   }
 
   abrirVideo(videoId: string): void {

@@ -4,6 +4,7 @@ import {
   OnInit,
   TemplateRef,
   ViewChild,
+  HostListener,
 } from '@angular/core';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
 import {
@@ -33,6 +34,14 @@ export class EgresadosComponent {
     | TemplateRef<any>
     | undefined;
 
+  @ViewChild('modalClubEgresados', { static: false }) modalClubEgresados:
+    | TemplateRef<any>
+    | undefined;
+
+  @ViewChild('modalBolsaEmpleo', { static: false }) modalBolsaEmpleo:
+    | TemplateRef<any>
+    | undefined;
+
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -56,7 +65,33 @@ export class EgresadosComponent {
     ]
   };
 
-  public logo_pc = 'assets/image/egresados_pc.webp';
+  slideConfigContinuada = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 4500,
+    adaptiveHeight: false,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+  public logo_pc = 'assets/egresados/egresado-pc.webp';
   public logo_m = 'assets/image/egresados_m.webp';
 
   public seguimiento_egresados = 'assets/image/seguimiento_egresados.webp';
@@ -83,6 +118,20 @@ export class EgresadosComponent {
   activo: any;
   listarCursos: any;
 
+  
+private scrollSpyIgnorar = false;
+private scrollSpyTick = false;
+private scrollSpyTimer?: ReturnType<typeof setTimeout>;
+
+  campoAccionActivo: string | null = null;
+
+  toggleCampoAccion(id: string): void {
+    this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
+  }
+
+
+
+
   isValid0: boolean = false;
   isValid1: boolean = false;
   isValid2: boolean = false;
@@ -90,6 +139,115 @@ export class EgresadosComponent {
   isValid4: boolean = false;
   isValid5: boolean = false;
   isValid6: boolean = false;
+
+      /** IDs de sección del programa (scroll, no páginas ocultas) */
+      readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
+        { id: 'comunidad', nav: '1', label: 'Comunidad' },
+        { id: 'beneficios', nav: '2', label: 'Beneficios' },
+        { id: 'empleabilidad', nav: '3', label: 'Empleabilidad' },
+        { id: 'comunidad', nav: '4', label: 'Comunidad' },
+        { id: 'educacion-continuada', nav: '5', label: 'Educación Continuada' },
+        { id: 'egresados-destacados', nav: '6', label: 'Egresados destacados' },
+        { id: 'historias', nav: '7', label: 'Historias' },
+        { id: 'galeria-egresados', nav: '8', label: 'Galería de egresados' },
+        { id: 'contacto', nav: '9', label: 'Contacto' },
+        { id: 'eventos', nav: '10', label: 'Eventos' },
+        { id: 'convenios', nav: '11', label: 'Convenios' },
+        { id: 'pertenencia', nav: '12', label: 'Pertenencia y acompañamiento' },
+      ];
+            
+      scrollToSeccion(sectionId: string, navId?: string): void {
+        if (sectionId === 'top') {
+          this.scrollSpyIgnorar = true;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (navId) {
+            this.activo = navId;
+            this.centrarTabNav(navId);
+          }
+          this.reanudarScrollSpy(900);
+          return;
+        }
+    
+        const el = document.getElementById(sectionId);
+        if (!el) {
+          return;
+        }
+    
+        const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
+    
+        if (navId) {
+          this.activo = navId;
+          this.centrarTabNav(navId);
+        }
+    
+        this.scrollSpyIgnorar = true;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        this.reanudarScrollSpy(900);
+      }
+    
+      @HostListener('window:scroll')
+      onWindowScroll(): void {
+        if (this.scrollSpyIgnorar || this.scrollSpyTick) {
+          return;
+        }
+    
+        this.scrollSpyTick = true;
+        requestAnimationFrame(() => {
+          this.actualizarSeccionPorScroll();
+          this.scrollSpyTick = false;
+        });
+      }
+    
+  
+      private actualizarSeccionPorScroll(): void {
+        const offset = this.getNavOffset();
+        let seccionActual = this.seccionesPrograma[0];
+    
+        for (const seccion of this.seccionesPrograma) {
+          const el = document.getElementById(seccion.id);
+    
+          if (!el) {
+            continue;
+          }
+    
+          if (el.getBoundingClientRect().top - offset <= 8) {
+            seccionActual = seccion;
+          } else {
+            break;
+          }
+        }
+    
+        if (this.activo !== seccionActual.nav) {
+          this.activo = seccionActual.nav;
+          this.centrarTabNav(seccionActual.nav);
+        }
+      }
+  
+      private getNavOffset(): number {
+        const stickyNav = document.querySelector('.ciaf-program-nav');
+        const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
+        return 38 + 78 + stickyH + 12;
+      }
+  
+      private centrarTabNav(navId: string): void {
+        document.getElementById('btn-' + navId)?.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    
+      private reanudarScrollSpy(delayMs: number): void {
+        if (this.scrollSpyTimer) {
+          clearTimeout(this.scrollSpyTimer);
+        }
+    
+        this.scrollSpyTimer = setTimeout(() => {
+          this.scrollSpyIgnorar = false;
+          this.actualizarSeccionPorScroll();
+        }, delayMs);
+      }
+  
 
   paginas(pagina: string) {
     if (pagina == '0') {
@@ -270,10 +428,6 @@ export class EgresadosComponent {
     
     this.conectarApiService.obtenerContinuada().subscribe(respuesta=>{
       this.listarCursos=respuesta
-    });
-    
-    this.conectarApiService.obtenerBienestarConvenios().subscribe(respuesta2=>{
-      this.listarConvenios=respuesta2
     });
   }
 
@@ -594,43 +748,138 @@ export class EgresadosComponent {
     this.numericValue = '';
   }
 
-  @ViewChild('slickModalConv')
-  slickModalConv!: SlickCarouselComponent;
+  readonly programasClubEgresados = [
+    {
+      id: 'aprendizaje',
+      titulo: 'Aprendizaje a lo largo de la vida',
+      descripcion:
+        'Oportunidades de formación permanente para que sigas creciendo después de graduarte.',
+      icono: 'fa-solid fa-book-open',
+    },
+    {
+      id: 'bienestar',
+      titulo: 'Bienestar y estilo de vida',
+      descripcion:
+        'Programas de bienestar, salud y cultura que acompañan tu calidad de vida como egresado.',
+      icono: 'fa-solid fa-heart',
+    },
+    {
+      id: 'descuentos',
+      titulo: 'Descuentos en programas de formación',
+      descripcion:
+        'Beneficios y tarifas preferenciales en cursos, diplomados y programas de actualización profesional.',
+      icono: 'fa-solid fa-gift',
+    },
+    {
+      id: 'hub-venture',
+      titulo: 'HUB Venture',
+      descripcion: 'Acompañamiento al emprendimiento y a las ideas de negocio de nuestros egresados.',
+      icono: 'fa-solid fa-lightbulb',
+    },
+    {
+      id: 'consulta',
+      titulo: 'Fuente de consulta',
+      descripcion: 'Acceso a recursos, información y asesoría institucional cuando lo necesites.',
+      icono: 'fa-solid fa-magnifying-glass',
+    },
+    {
+      id: 'modelo-bienestar',
+      titulo: 'Modelo de Bienestar Institucional',
+      descripcion: 'Estrategias de bienestar que mantienen vivo tu vínculo con la institución.',
+      icono: 'fa-solid fa-hand-holding-heart',
+    },
+    {
+      id: 'encuentro-anual',
+      titulo: 'Encuentro anual de egresados',
+      descripcion: 'Un espacio para reencontrarnos, compartir y fortalecer la comunidad CIAF.',
+      icono: 'fa-regular fa-calendar-days',
+    },
+    {
+      id: 'egresado-destacado',
+      titulo: 'Reconocimiento Egresado Destacado',
+      descripcion: 'Reconocemos las historias de egresados que transforman realidades.',
+      icono: 'fa-solid fa-award',
+    },
+  ];
 
-  slideConfigConvenios = {
-    "slidesToShow": 3, "slidesToScroll": 1, "dots": true, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
-    responsive: [
-      {
-        breakpoint: 1048,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 778,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+  programasClubAbiertos: Record<string, boolean> = {};
 
-  };
-
-  listarConvenios:any;
-
-  public next="assets/image/btn-next.webp";
-  public prev="assets/image/btn-prev.webp";
-
-  prevImgConv(){
-    this.slickModalConv.slickPrev();
+  abrirModalClubEgresados(): void {
+    this.programasClubAbiertos = {};
+    this.modalService.open(this.modalClubEgresados, {
+      centered: true,
+      size: 'xl',
+      scrollable: true,
+    });
   }
-  nextImgConv(){
-    this.slickModalConv.slickNext();
+
+  toggleProgramaClub(id: string): void {
+    this.programasClubAbiertos[id] = !this.programasClubAbiertos[id];
+  }
+
+  isProgramaClubAbierto(id: string): boolean {
+    return !!this.programasClubAbiertos[id];
+  }
+
+  unirseClubEgresados(modal: { close: () => void }): void {
+    modal.close();
+    this.mostrarModalInfo();
+  }
+
+  readonly formasParticipacionRed = [
+    {
+      titulo: 'Voluntariado CIAF',
+      descripcion:
+        'Comparte tu tiempo y talento apoyando actividades sociales, académicas o institucionales. Tu experiencia puede transformar realidades y motivar a nuevas generaciones.',
+      icono: 'fa-solid fa-hand-holding-heart',
+    },
+    {
+      titulo: 'Apadrina un estudiante',
+      descripcion:
+        'Acompaña el crecimiento de un estudiante CIAF brindando orientación, mentoría o apoyo económico. Ser padrino CIAF es creer en el poder de la educación para cambiar vidas.',
+      icono: 'fa-solid fa-user-group',
+    },
+    {
+      titulo: 'Comparte la Experiencia',
+      descripcion:
+        'Sé parte de nuestros conversatorios, charlas o clases abiertas donde los egresados inspiran con su historia profesional. Tu trayectoria puede convertirse en ejemplo y guía para quienes hoy inician su camino.',
+      icono: 'fa-solid fa-wand-magic-sparkles',
+    },
+  ];
+
+  readonly aliadosBolsaEmpleo = [
+    {
+      titulo: 'Servicio Público de Empleo',
+      enlace: 'https://personas.serviciodeempleo.gov.co/Registrocuenta.aspx',
+    },
+    {
+      titulo: 'Adecco',
+      enlace: 'https://empleo.adecco.com.co/account/register',
+    },
+    {
+      titulo: 'Enlace Laboral · Risaralda Emplea',
+      enlace: 'https://sites.google.com/camarapereira.org.co/RisaraldaEmplea2025',
+    },
+  ];
+
+  abrirModalBolsaEmpleo(): void {
+    this.modalService.open(this.modalBolsaEmpleo, {
+      centered: true,
+      size: 'xl',
+      scrollable: true,
+    });
+  }
+
+  dejarDatosRedEgresados(modal: { close: () => void }): void {
+    modal.close();
+    this.mostrarModalInfo();
+  }
+
+  formatearPrecioCurso(precio: number | string | null | undefined): string {
+    if (precio == null || precio === '') {
+      return '';
+    }
+
+    return '$ ' + Number(precio).toLocaleString('es-CO');
   }
 }

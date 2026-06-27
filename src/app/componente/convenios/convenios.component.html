@@ -1,0 +1,119 @@
+<section class="container py-5" [id]="sectionId">
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+
+            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
+                {{ pillLabel }}
+            </span>
+
+            <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+                {{ tituloPrincipal }}
+                <span class="ciaf-gradient-text ciaf-gradient-text--brand">{{ tituloDestacado }}</span>
+            </h2>
+
+            <p class="fs-18 py-3">
+                {{ descripcion }}
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-xl-11 col-lg-11 col-md-10 col-12">
+
+            <div
+                #conveniosViewport
+                class="overflow-hidden user-select-none"
+                style="touch-action: pan-y;"
+                [style.cursor]="conveniosArrastrando ? 'grabbing' : 'grab'"
+                *ngIf="listarConvenios?.length && usarCarruselConvenios"
+                (pointerdown)="onConveniosPointerDown($event)"
+                (pointermove)="onConveniosPointerMove($event)"
+                (pointerup)="onConveniosPointerUp($event)"
+                (pointercancel)="onConveniosPointerUp($event)"
+                (pointerleave)="onConveniosPointerLeave($event)"
+            >
+                <div
+                    class="d-flex gap-4 align-items-stretch"
+                    [style.transform]="'translate3d(' + conveniosDesplazamiento + 'px, 0, 0)'"
+                    [style.transition]="conveniosAnimando ? 'transform 0.65s ease-in-out' : 'none'"
+                    [style.will-change]="'transform'"
+                >
+                    <ng-container *ngFor="let datos of listarConvenios">
+                        <ng-container *ngTemplateOutlet="tarjetaConvenio; context: { $implicit: datos, carrusel: true }"></ng-container>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch" *ngIf="listarConvenios?.length && !usarCarruselConvenios">
+                <div class="col-lg-4 col-md-6 d-flex" *ngFor="let datos of listarConvenios">
+                    <ng-container *ngTemplateOutlet="tarjetaConvenio; context: { $implicit: datos, carrusel: false }"></ng-container>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <ng-template #tarjetaConvenio let-datos let-carrusel="carrusel">
+        <div
+            class="ciaf-card convenio-card rounded-5 overflow-hidden d-flex flex-column h-100 w-100 min-w-0"
+            [style.flex]="carrusel ? '0 0 ' + conveniosAnchoTarjeta + 'px' : null"
+            [style.width.px]="carrusel ? conveniosAnchoTarjeta : null"
+        >
+            <a
+                [href]="datos.url_convenio"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="convenio-card__logo d-flex align-items-center justify-content-center text-decoration-none"
+            >
+                <span class="convenio-card__logo-frame d-inline-flex align-items-center justify-content-center rounded-4 bg-white shadow-sm">
+                    <img
+                        src="https://ciaf.digital/public/web_convenios/{{ datos.imagen_convenio }}"
+                        [alt]="datos.nombre_convenio"
+                        class="convenio-card__logo-img"
+                        loading="lazy"
+                        draggable="false"
+                    />
+                </span>
+            </a>
+
+            <div class="p-4 pt-3 d-flex flex-column flex-grow-1">
+                <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 mb-3 align-self-start text-uppercase">
+                    Aliado CIAF
+                </span>
+
+                <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
+                    {{ datos.nombre_convenio }}
+                </h3>
+
+                <p class="fs-14 text-color-1 convenio-card__desc flex-grow-1 mb-0">
+                    {{ datos.descripcion_convenio }}
+                </p>
+
+                <a
+                    [href]="datos.url_convenio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="ciaf-btn ciaf-btn--lime rounded-pill py-3 fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2 fs-14 mt-4"
+                >
+                    Acceder al convenio
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </ng-template>
+
+    <div class="text-center mt-5">
+        <a
+            [href]="verTodosUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ciaf-btn ciaf-btn--primary rounded-pill py-3 px-5 fw-bold text-decoration-none d-inline-flex align-items-center justify-content-center gap-2"
+        >
+            {{ verTodosTexto }}
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+
+</section>

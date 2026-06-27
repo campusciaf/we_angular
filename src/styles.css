@@ -427,6 +427,16 @@ body {
   );
 }
 
+/* efectos */
+
+.ef-zoom {
+  transform: scale(1);
+  transition: transform .45s ease;
+}
+.ef-zoom:hover {
+  transform: scale(1.06);
+}
+
 /* ==========================================
    SECCIONES
 ========================================== */
