@@ -828,24 +828,29 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
 
   readonly formasParticipacionRed = [
     {
+      id: 'voluntariado',
       titulo: 'Voluntariado CIAF',
       descripcion:
         'Comparte tu tiempo y talento apoyando actividades sociales, académicas o institucionales. Tu experiencia puede transformar realidades y motivar a nuevas generaciones.',
       icono: 'fa-solid fa-hand-holding-heart',
     },
     {
+      id: 'apadrina',
       titulo: 'Apadrina un estudiante',
       descripcion:
         'Acompaña el crecimiento de un estudiante CIAF brindando orientación, mentoría o apoyo económico. Ser padrino CIAF es creer en el poder de la educación para cambiar vidas.',
       icono: 'fa-solid fa-user-group',
     },
     {
+      id: 'experiencia',
       titulo: 'Comparte la Experiencia',
       descripcion:
         'Sé parte de nuestros conversatorios, charlas o clases abiertas donde los egresados inspiran con su historia profesional. Tu trayectoria puede convertirse en ejemplo y guía para quienes hoy inician su camino.',
       icono: 'fa-solid fa-wand-magic-sparkles',
     },
   ];
+
+  participacionRedAbiertos: Record<string, boolean> = {};
 
   readonly aliadosBolsaEmpleo = [
     {
@@ -863,11 +868,20 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
   ];
 
   abrirModalBolsaEmpleo(): void {
+    this.participacionRedAbiertos = {};
     this.modalService.open(this.modalBolsaEmpleo, {
       centered: true,
       size: 'xl',
       scrollable: true,
     });
+  }
+
+  toggleParticipacionRed(id: string): void {
+    this.participacionRedAbiertos[id] = !this.participacionRedAbiertos[id];
+  }
+
+  isParticipacionRedAbierta(id: string): boolean {
+    return !!this.participacionRedAbiertos[id];
   }
 
   dejarDatosRedEgresados(modal: { close: () => void }): void {
