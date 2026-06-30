@@ -1,754 +1,769 @@
 <app-header></app-header>
 
-<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4" >
-        
-    <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
-        <img src="{{bg_pc}}" alt="Conocenos">
+<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4">
+
+  <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
+    <img src="{{bg_pc}}" alt="Conocenos">
+  </div>
+
+  <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+
+  <div class="row z-2 py-5 mt-5 col-12">
+    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 p-4">
+      <span
+        class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
+        Vigilada Mineducación
+      </span>
+      <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+        Conoce CIAF
+      </h1>
+
+      <p class="fs-24 fw-bold mb-3 text-color-3">
+        Ciencia, Creatividad e Innovación
+      </p>
+      <p class="fs-16 fw-semibold mb-3 text-color-5">
+        Te damos la bienvenida a la comunidad CIAF. Una institución con mentalidad digital, innovación y un propósito
+        profundamente humano: crear oportunidades para seres humanos que vibran por un espacio en la sociedad.
+      </p>
+
+      <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+        <li data-bs-toggle="modal" data-bs-target="#modalreglamento"
+          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+          Reglamentos
+        </li>
+        <li role="button" (click)="scrollToSeccion('normatividad', '4')"
+          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
+          Normatividad
+        </li>
+
+      </ul>
+
+      <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+        <a routerLink="/iniciar" target="_blank" rel="noopener noreferrer"
+          class="cursor-pointer ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+          Inscribete
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
+          class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+          Habla con nosotros
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
+  </div>
 
-    <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
-
-    <div class="row z-2 py-5 mt-5 col-12">
-        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 p-4">
-            <span class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
-                Vigilada Mineducación
-            </span>
-            <h1 class="fs-60 fw-extrablack mb-3 lh-1">
-                Conoce CIAF
-            </h1>
-    
-            <p class="fs-24 fw-bold mb-3 text-color-3" >
-                Ciencia, Creatividad e Innovación
-            </p>
-            <p class="fs-18 fw-semibold mb-3 text-color-4" >
-                Te damos la bienvenida a la comunidad CIAF. Una institución con mentalidad digital, innovación y un propósito profundamente humano: crear oportunidades para seres humanos que vibran por un espacio en la sociedad.
-            </p>
-    
-            <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-                <li data-bs-toggle="modal" data-bs-target="#modalreglamento" class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                    <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-                    Reglamentos
-                </li>
-                <li role="button" (click)="scrollToSeccion('normatividad', '4')" class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                    <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
-                    Normatividad
-                </li>
-
-            </ul>
-    
-            <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
-                <a routerLink="/iniciar"  class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
-                    Inscribete
-                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4" >
-                    Habla con nosotros
-                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
-        <i class="fa-solid fa-computer-mouse"></i>
-    </div>
+  <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20"
+    aria-hidden="true">
+    <i class="fa-solid fa-computer-mouse"></i>
+  </div>
 </section>
 
 <!-- Navegación por secciones (scroll) -->
 <section class="row ciaf-program-nav">
-    <div class="col-12">
-    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
-        <a
-        *ngFor="let seccion of seccionesPrograma"
-        role="button"
-        (click)="scrollToSeccion(seccion.id, seccion.nav)"
+  <div class="col-12">
+    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
+      aria-label="Secciones del programa">
+      <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
         class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
-        [class.active]="activo === seccion.nav"
-        [class.text-white]="activo === seccion.nav"
-        [class.fw-bold]="activo === seccion.nav"
-        [class.fw-semibold]="activo !== seccion.nav"
+        [class.active]="activo === seccion.nav" [class.text-white]="activo === seccion.nav"
+        [class.fw-bold]="activo === seccion.nav" [class.fw-semibold]="activo !== seccion.nav"
         [attr.id]="'btn-' + seccion.nav"
-        [attr.aria-current]="activo === seccion.nav ? 'true' : null"
-        >{{ seccion.label }}</a>
+        [attr.aria-current]="activo === seccion.nav ? 'true' : null">{{ seccion.label }}</a>
     </nav>
-    </div>
+  </div>
 </section>
 
 <!-- Quiénes somos -->
 <section class="container py-5" id="quienes-somos">
 
-    <div class="row justify-content-center">
+  <div class="row justify-content-center">
 
-        <div class="col-xl-9 col-lg-10 col-md-11 col-12">
+    <div class="col-xl-9 col-lg-10 col-md-11 col-12">
 
-            <h2 class="fs-48 fw-extrablack text-color-2 mb-5">
-                Quiénes
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">Somos</span>
-            </h2>
+      <h2 class="fs-48 fw-extrablack text-color-2 mb-5">
+        Quiénes
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">Somos</span>
+      </h2>
 
-            <p class="fs-18">
-                CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, redefinida por ciclos propedéuticos, reconocida como tal a través de la Resolución No. 17652 del 8 de noviembre de 2018, cuyo lugar de desarrollo es Pereira (Risaralda).
-            </p>
+      <p class="fs-18">
+        CIAF es una Institución de Educación Superior privada, de carácter técnica profesional, redefinida por ciclos
+        propedéuticos, reconocida como tal a través de la Resolución No. 17652 del 8 de noviembre de 2018, cuyo lugar de
+        desarrollo es Pereira (Risaralda).
+      </p>
 
-            <p class="fs-18 mt-4">
-                CIAF para responder a las demandas del mundo 4.0, formando profesionales altamente calificados. Por lo tanto, inicia un proceso de implementación de creatividad e innovación en sus procesos a través de los programas institucionales, compilados en nuestras memorias institucionales.
-            </p>
+      <p class="fs-18 mt-4">
+        CIAF para responder a las demandas del mundo 4.0, formando profesionales altamente calificados. Por lo tanto,
+        inicia un proceso de implementación de creatividad e innovación en sus procesos a través de los programas
+        institucionales, compilados en nuestras memorias institucionales.
+      </p>
 
-            <p class="fs-18 mt-4">
-                Nuestra Institución, cuyo centro de su misión son los estudiantes o seres originales, tiene como Propósito Superior: “Despertar pasión en los seres humano para transformar sus vidas”, convirtiendo los procesos académicos y administrativos en Experiencias, que se construyen día a día con los inspiradores, influencers, empresas amigas, programas institucionales que se describen a continuación, desde la perspectiva del cumplimiento de la normatividad vigente.
-            </p>
+      <p class="fs-18 mt-4">
+        Nuestra Institución, cuyo centro de su misión son los estudiantes o seres originales, tiene como Propósito
+        Superior: “Despertar pasión en los seres humano para transformar sus vidas”, convirtiendo los procesos
+        académicos y administrativos en Experiencias, que se construyen día a día con los inspiradores, influencers,
+        empresas amigas, programas institucionales que se describen a continuación, desde la perspectiva del
+        cumplimiento de la normatividad vigente.
+      </p>
 
-            <div class="row g-4 mt-5">
+      <div class="row g-4 mt-5">
 
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-4 h-100">
-                        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                            <i class="fa-regular fa-compass text-white"></i>
-                        </div>
-                        <h3 class="fs-20 fw-black text-color-2 mb-3">Propósito Superior</h3>
-                        <p class="fs-16 mb-0">Crear oportunidades para seres humanos que vibran por un espacio en la sociedad.</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-4 h-100">
-                        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                            <i class="fa-solid fa-bullseye text-white"></i>
-                        </div>
-                        <h3 class="fs-20 fw-black text-color-2 mb-3">Seres Originales</h3>
-                        <p class="fs-16 mb-0">Los estudiantes o seres originales, protagonistas de experiencias que se construyen día a día.</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-4 h-100">
-                        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                            <i class="fa-regular fa-eye text-white"></i>
-                        </div>
-                        <h3 class="fs-20 fw-black text-color-2 mb-3">Mundo 4.0</h3>
-                        <p class="fs-16 mb-0">Formamos profesionales altamente calificados con creatividad e innovación en todos nuestros procesos.</p>
-                    </div>
-                </div>
-
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+            <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+              <i class="fa-regular fa-compass text-white"></i>
             </div>
-
+            <h3 class="fs-20 fw-black text-color-2 mb-3">Propósito Superior</h3>
+            <p class="fs-16 mb-0">Crear oportunidades para seres humanos que vibran por un espacio en la sociedad.</p>
+          </div>
         </div>
 
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+            <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+              <i class="fa-solid fa-bullseye text-white"></i>
+            </div>
+            <h3 class="fs-20 fw-black text-color-2 mb-3">Seres Originales</h3>
+            <p class="fs-16 mb-0">Los estudiantes o seres originales, protagonistas de experiencias que se construyen
+              día a día.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+            <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+              <i class="fa-regular fa-eye text-white"></i>
+            </div>
+            <h3 class="fs-20 fw-black text-color-2 mb-3">Mundo 4.0</h3>
+            <p class="fs-16 mb-0">Formamos profesionales altamente calificados con creatividad e innovación en todos
+              nuestros procesos.</p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
 <!-- Presentación -->
 <section class="container py-5" id="presentacion">
 
-    <div class="row justify-content-center">
+  <div class="row justify-content-center">
 
-        <div class="col-xxl-10 col-xl-11 col-lg-11 col-md-12 col-12">
+    <div class="col-xxl-10 col-xl-11 col-lg-11 col-md-12 col-12">
 
-            <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
-                Video Institucional CIAF
-            </span>
+      <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
+        Video Institucional CIAF
+      </span>
 
-            <h2 class="fs-48 fw-extrablack text-color-2 mt-3 mb-5">
-                Conoce nuestra esencia en movimiento
-            </h2>
+      <h2 class="fs-48 fw-extrablack text-color-2 mt-3 mb-5">
+        Conoce nuestra esencia en movimiento
+      </h2>
 
-            <div class="ratio ratio-16x9 rounded-5 overflow-hidden shadow">
+      <div class="ratio ratio-16x9 rounded-5 overflow-hidden shadow">
 
-                <iframe
-                    src="https://www.youtube.com/embed/BMzWQWkUiIA?rel=0"
-                    title="Video Institucional CIAF"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+        <iframe src="https://www.youtube.com/embed/BMzWQWkUiIA?rel=0" title="Video Institucional CIAF"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
 
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
 <!-- Documentos institucionales -->
 <section class="container py-5" id="documentos">
 
-    <div class="row mb-5">
+  <div class="row mb-5">
 
-        <div class="col-12">
+    <div class="col-12">
 
-            <h2 class="fs-48 fw-extrablack text-color-2">
-                Documentos institucionales
-            </h2>
-
-        </div>
+      <h2 class="fs-48 fw-extrablack text-color-2">
+        Documentos institucionales
+      </h2>
 
     </div>
 
-    <div class="row g-4">
+  </div>
 
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+  <div class="row g-4">
 
-            <a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
 
-                <div class="ciaf-card rounded-5 p-4 h-100">
+      <a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="_blank"
+        rel="noopener noreferrer" class="text-decoration-none">
 
-                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
-                        <i class="fa-regular fa-file-lines text-color-2"></i>
-                    </div>
+        <div class="ciaf-card rounded-5 p-4 h-100">
 
-                    <h3 class="fs-16 fw-black text-color-2">
-                        Nuestro Proyecto Educativo
-                    </h3>
+          <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+            <i class="fa-regular fa-file-lines text-color-2"></i>
+          </div>
 
-                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
-                        Abrir
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
+          <h3 class="fs-16 fw-black text-color-2">
+            Nuestro Proyecto Educativo
+          </h3>
 
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-
-            <a  data-bs-toggle="modal" data-bs-target="#modalreglamento" target="_blank" rel="noopener noreferrer" class="text-decoration-none cursor-pointer">
-
-                <div class="ciaf-card rounded-5 p-4 h-100">
-
-                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
-                        <i class="fa-regular fa-file-lines text-color-2"></i>
-                    </div>
-
-                    <h3 class="fs-16 fw-black text-color-2">
-                        Reglamentos
-                    </h3>
-
-                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
-                        Abrir
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
-
-                </div>
-
-            </a>
+          <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+            Abrir
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
 
         </div>
 
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-
-            <a data-bs-toggle="modal" data-bs-target="#modalrendicion" target="_blank" rel="noopener noreferrer" class="cursor-pointer text-decoration-none">
-
-                <div class="ciaf-card rounded-5 p-4 h-100">
-
-                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
-                        <i class="fa-regular fa-file-lines text-color-2"></i>
-                    </div>
-
-                    <h3 class="fs-16 fw-black text-color-2">
-                        Rendición de Cuentas
-                    </h3>
-
-                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
-                        Abrir
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
-
-                </div>
-
-            </a>
-
-        </div>
-
-        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-
-            <a href="https://heyzine.com/flip-book/1d8f8e3e05.html" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-
-                <div class="ciaf-card rounded-5 p-4 h-100">
-
-                    <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
-                        <i class="fa-regular fa-file-lines text-color-2"></i>
-                    </div>
-
-                    <h3 class="fs-16 fw-black text-color-2">
-                        Memorias Institucionales
-                    </h3>
-
-                    <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
-                        Abrir
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
-
-                </div>
-
-            </a>
-
-        </div>
+      </a>
 
     </div>
+
+
+    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+      <a data-bs-toggle="modal" data-bs-target="#modalreglamento" target="_blank" rel="noopener noreferrer"
+        class="text-decoration-none cursor-pointer">
+
+        <div class="ciaf-card rounded-5 p-4 h-100">
+
+          <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+            <i class="fa-regular fa-file-lines text-color-2"></i>
+          </div>
+
+          <h3 class="fs-16 fw-black text-color-2">
+            Reglamentos
+          </h3>
+
+          <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+            Abrir
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+      <a data-bs-toggle="modal" data-bs-target="#modalrendicion" target="_blank" rel="noopener noreferrer"
+        class="cursor-pointer text-decoration-none">
+
+        <div class="ciaf-card rounded-5 p-4 h-100">
+
+          <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+            <i class="fa-regular fa-file-lines text-color-2"></i>
+          </div>
+
+          <h3 class="fs-16 fw-black text-color-2">
+            Rendición de Cuentas
+          </h3>
+
+          <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+            Abrir
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+
+      <a href="https://heyzine.com/flip-book/1d8f8e3e05.html" target="_blank" rel="noopener noreferrer"
+        class="text-decoration-none">
+
+        <div class="ciaf-card rounded-5 p-4 h-100">
+
+          <div class="ciaf-icon-badge bg-color-7 rounded-circle mb-4">
+            <i class="fa-regular fa-file-lines text-color-2"></i>
+          </div>
+
+          <h3 class="fs-16 fw-black text-color-2">
+            Memorias Institucionales
+          </h3>
+
+          <span class="d-inline-flex align-items-center gap-2 fw-semibold mt-2 text-color-2">
+            Abrir
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- Normatividad -->
 <section class="container py-5" id="normatividad">
 
-    <div class="row mb-5">
-        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
-            <h2 class="fs-36 fw-extrablack text-color-2 mb-0">Normatividad</h2>
-            <p class="fs-16 text-color-1 mt-3 mb-0">
-                Consulta nuestros documentos normativos y de transparencia institucional.
-            </p>
-        </div>
+  <div class="row mb-5">
+    <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+      <h2 class="fs-36 fw-extrablack text-color-2 mb-0">Normatividad</h2>
+      <p class="fs-16 text-color-1 mt-3 mb-0">
+        Consulta nuestros documentos normativos y de transparencia institucional.
+      </p>
     </div>
+  </div>
 
-    <div class="row g-4">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let item of reglamentos">
-            <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                    <i [class]="item.icono + ' text-white'" aria-hidden="true"></i>
-                </div>
-
-                <h3 class="fs-18 fw-extrablack text-color-2 mb-4">{{ item.titulo }}</h3>
-
-                <div class="mt-auto">
-                    <a
-                        *ngIf="item.estado == '1'"
-                        [href]="item.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="ciaf-btn ciaf-btn--primary rounded-pill py-2 px-4 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14"
-                    >
-                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
-                        Ver documento
-                    </a>
-
-                    <a
-                        *ngIf="item.estado == '2'"
-                        [attr.href]="item.modal || item.link"
-                        [attr.data-bs-toggle]="item.modal ? 'modal' : null"
-                        [attr.target]="item.link && !item.modal ? '_blank' : null"
-                        [attr.rel]="item.link && !item.modal ? 'noopener noreferrer' : null"
-                        class="ciaf-btn ciaf-btn--primary rounded-pill py-2 px-4 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14"
-                    >
-                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
-                        Ver documento
-                    </a>
-                </div>
-            </article>
+  <div class="row g-4">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let item of reglamentos">
+      <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i [class]="item.icono + ' text-white'" aria-hidden="true"></i>
         </div>
+
+        <h3 class="fs-18 fw-extrablack text-color-2 mb-4">{{ item.titulo }}</h3>
+
+        <div class="mt-auto">
+          <a *ngIf="item.estado == '1'" [href]="item.link" target="_blank" rel="noopener noreferrer"
+            class="ciaf-btn ciaf-btn--primary rounded-pill py-2 px-4 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14">
+            <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+            Ver documento
+          </a>
+
+          <a *ngIf="item.estado == '2'" [attr.href]="item.modal || item.link"
+            [attr.data-bs-toggle]="item.modal ? 'modal' : null"
+            [attr.target]="item.link && !item.modal ? '_blank' : null"
+            [attr.rel]="item.link && !item.modal ? 'noopener noreferrer' : null"
+            class="ciaf-btn ciaf-btn--primary rounded-pill py-2 px-4 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14">
+            <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+            Ver documento
+          </a>
+        </div>
+      </article>
     </div>
+  </div>
 
 </section>
 
 <!-- Direccionamiento estratégico -->
 <section class="container py-5" id="direccionamiento-estrategico">
 
-    <div class="row mb-5">
+  <div class="row mb-5">
 
-        <div class="col-12">
+    <div class="col-12">
 
-            <h2 class="fs-48 fw-extrablack text-color-2">
-                Direccionamiento estratégico
-            </h2>
-
-        </div>
+      <h2 class="fs-48 fw-extrablack text-color-2">
+        Direccionamiento estratégico
+      </h2>
 
     </div>
 
-    <div class="row g-4">
+  </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+  <div class="row g-4">
 
-            <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
 
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
-                    <i class="fa-regular fa-bullseye text-white"></i>
-                </div>
+      <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
 
-                <h3 class="fs-24 fw-extrablack text-white mb-4">
-                    Misión
-                </h3>
-
-                <p class="fs-16 text-white fw-semibold mb-0">
-                    CIAF es una Institución de Educación Superior que tiene la misión de formar
-                    personas creativas e innovadoras a través de educación permanente,
-                    programas profesionales universitarios por ciclos y especializaciones,
-                    para conectar con las necesidades de las organizaciones y el Estado
-                    generando desarrollo consciente.
-                </p>
-
-            </div>
-
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
+          <i class="fa-regular fa-bullseye text-white"></i>
         </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+        <h3 class="fs-24 fw-extrablack text-white mb-4">
+          Misión
+        </h3>
 
-            <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
+        <p class="fs-16 text-white fw-semibold mb-0">
+          CIAF es una Institución de Educación Superior que tiene la misión de formar
+          personas creativas e innovadoras a través de educación permanente,
+          programas profesionales universitarios por ciclos y especializaciones,
+          para conectar con las necesidades de las organizaciones y el Estado
+          generando desarrollo consciente.
+        </p>
 
-                <div class="position-relative">
-
-                    <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
-                        <i class="fa-regular fa-eye text-white"></i>
-                    </div>
-
-                    <h3 class="fs-24 fw-extrablack text-white mb-4">
-                        Visión
-                    </h3>
-
-                    <p class="fs-16 text-white fw-semibold mb-0">
-                        Para el 2030 CIAF será una institución de educación superior reconocida
-                        en la sociedad por su creatividad e innovación en todos sus procesos
-                        académicos, administrativos y estratégicos.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+      <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
+
+        <div class="position-relative">
+
+          <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
+            <i class="fa-regular fa-eye text-white"></i>
+          </div>
+
+          <h3 class="fs-24 fw-extrablack text-white mb-4">
+            Visión
+          </h3>
+
+          <p class="fs-16 text-white fw-semibold mb-0">
+            Para el 2030 CIAF será una institución de educación superior reconocida
+            en la sociedad por su creatividad e innovación en todos sus procesos
+            académicos, administrativos y estratégicos.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- Principios rectores -->
 <section class="container py-5" id="principios-rectores">
 
-    <div class="row mb-5">
+  <div class="row mb-5">
 
-        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+    <div class="col-xl-7 col-lg-8 col-md-10 col-12">
 
-            <h2 class="fs-48 fw-extrablack text-color-2">
-                Principios <span class="ciaf-gradient-text ciaf-gradient-text--brand">Rectores</span>
-            </h2>
+      <h2 class="fs-48 fw-extrablack text-color-2">
+        Principios <span class="ciaf-gradient-text ciaf-gradient-text--brand">Rectores</span>
+      </h2>
 
-            <p class="fs-16 text-color-1 fw-medium mt-4 mb-0">
-                Son 4 los principios que CIAF define como su gran valor: relacionados con el estudiante, los docentes, los empleados y los graduados.
-            </p>
+      <p class="fs-16 text-color-1 fw-medium mt-4 mb-0">
+        Son 4 los principios que CIAF define como su gran valor: relacionados con el estudiante, los docentes, los
+        empleados y los graduados.
+      </p>
 
+    </div>
+
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-solid fa-graduation-cap text-white"></i>
         </div>
+
+        <h3 class="fs-18 fw-black text-color-2 mb-3">
+          El estudiante
+        </h3>
+
+        <p class="fs-14 mb-0">
+          El estudiante es el centro de la misión, respetar al estudiante es cumplirle la promesa hecha al acceder a la
+          institución.
+        </p>
+
+      </div>
 
     </div>
 
-    <div class="row g-4">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
 
-        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+      <div class="ciaf-card rounded-5 p-4 h-100">
 
-            <div class="ciaf-card rounded-5 p-4 h-100">
-
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                    <i class="fa-solid fa-graduation-cap text-white"></i>
-                </div>
-
-                <h3 class="fs-18 fw-black text-color-2 mb-3">
-                    El estudiante
-                </h3>
-
-                <p class="fs-14 mb-0">
-                    El estudiante es el centro de la misión, respetar al estudiante es cumplirle la promesa hecha al acceder a la institución.
-                </p>
-
-            </div>
-
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-solid fa-chalkboard-user text-white"></i>
         </div>
 
-        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+        <h3 class="fs-18 fw-black text-color-2 mb-3">
+          El docente
+        </h3>
 
-            <div class="ciaf-card rounded-5 p-4 h-100">
+        <p class="fs-14 mb-0">
+          El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante. CIAF seleccionará y
+          cualificará a sus docentes para que tengan las herramientas para conectar con el estudiante, para que sean
+          creativos e innovadores.
+        </p>
 
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                    <i class="fa-solid fa-chalkboard-user text-white"></i>
-                </div>
-
-                <h3 class="fs-18 fw-black text-color-2 mb-3">
-                    El docente
-                </h3>
-
-                <p class="fs-14 mb-0">
-                    El docente es la persona a través de la cual CIAF cumple su promesa con el estudiante. CIAF seleccionará y cualificará a sus docentes para que tengan las herramientas para conectar con el estudiante, para que sean creativos e innovadores.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-
-            <div class="ciaf-card rounded-5 p-4 h-100">
-
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                    <i class="fa-solid fa-users text-white"></i>
-                </div>
-
-                <h3 class="fs-18 fw-black text-color-2 mb-3">
-                    Los colaboradores
-                </h3>
-
-                <p class="fs-14 mb-0">
-                    Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes para brindarles bienestar y lograr una educación integral y de calidad.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-
-            <div class="ciaf-card rounded-5 p-4 h-100">
-
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                    <i class="fa-regular fa-award text-white"></i>
-                </div>
-
-                <h3 class="fs-18 fw-black text-color-2 mb-3">
-                    Los graduados
-                </h3>
-
-                <p class="fs-14 mb-0">
-                    Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte que hace la institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
-                </p>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-solid fa-users text-white"></i>
+        </div>
+
+        <h3 class="fs-18 fw-black text-color-2 mb-3">
+          Los colaboradores
+        </h3>
+
+        <p class="fs-14 mb-0">
+          Los colaboradores son el equipo que complementa la labor docente y que sirve a los estudiantes para brindarles
+          bienestar y lograr una educación integral y de calidad.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-regular fa-award text-white"></i>
+        </div>
+
+        <h3 class="fs-18 fw-black text-color-2 mb-3">
+          Los graduados
+        </h3>
+
+        <p class="fs-14 mb-0">
+          Los graduados son la imagen de la formación impartida por CIAF en nuestra sociedad, es el aporte que hace la
+          institución a la sociedad, a través de profesionales altamente calificados, con ética y sensibilidad social.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- Organigrama -->
 <section class="container py-5" id="organigrama">
-    <div class="row mb-5">
-        <div class="col-xl-8 col-lg-9 col-md-10 col-12">
-            <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
-                Estructura Organizacional
-            </span>
-            <h2 class="fs-30 fw-black text-color-2 mt-2">
-                Organigrama CIAF
-            </h2>
-        </div>
+  <div class="row mb-5">
+    <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+      <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
+        Estructura Organizacional
+      </span>
+      <h2 class="fs-30 fw-black text-color-2 mt-2">
+        Organigrama CIAF
+      </h2>
     </div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <img [src]="organigrama" alt="Aqeuipo que inspira" width="80%" height="auto">
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <img [src]="organigrama" alt="Aqeuipo que inspira" width="80%" height="auto">
     </div>
+  </div>
 </section>
 
 
 <!-- Consejo Superior -->
 <section class="container py-5" id="consejo-superior">
 
-    <div class="row mb-5">
+  <div class="row mb-5">
 
-        <div class="col-12">
+    <div class="col-12">
 
-            <h2 class="fs-48 fw-extrablack text-color-2">
-                Consejo Superior y Funcionarios
-            </h2>
-
-        </div>
+      <h2 class="fs-48 fw-extrablack text-color-2">
+        Consejo Superior y Funcionarios
+      </h2>
 
     </div>
 
-    <div class="row">
+  </div>
 
-        <div class="col-12">
+  <div class="row">
 
-            <div class=" bg-color-3 rounded-5 p-5 text-white">
+    <div class="col-12">
 
-                <div class="d-flex align-items-center gap-4 mb-5">
+      <div class=" bg-color-3 rounded-5 p-5 text-white">
 
-                    <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
-                        <i class="fa-regular fa-crown text-white"></i>
-                    </div>
+        <div class="d-flex align-items-center gap-4 mb-5">
 
-                    <h3 class="fs-24 fw-extrablack mb-0">
-                        Consejo Superior
-                    </h3>
+          <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+            <i class="fa-regular fa-crown text-white"></i>
+          </div>
 
-                </div>
+          <h3 class="fs-24 fw-extrablack mb-0">
+            Consejo Superior
+          </h3>
 
-                <p class="fs-16 mb-5 text-white">
-                    Máximo órgano de gobierno de CIAF, integrado por miembros activos, miembros honorarios e invitados especialmente. Encargados principalmente de:
-                </p>
+        </div>
 
-                <div class="row g-5">
+        <p class="fs-16 mb-5 text-white">
+          Máximo órgano de gobierno de CIAF, integrado por miembros activos, miembros honorarios e invitados
+          especialmente. Encargados principalmente de:
+        </p>
 
-                    <div class="col-xl-6 col-lg-6 col-md-12">
+        <div class="row g-5">
 
-                        <div class="d-flex mb-4">
-                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
-                            <p class="fs-14 mb-0 text-white">
-                                Fijar y velar por el cumplimiento de las normas de carácter general para el funcionamiento de la Institución.
-                            </p>
-                        </div>
+          <div class="col-xl-6 col-lg-6 col-md-12">
 
-                        <div class="d-flex">
-                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
-                            <p class="fs-14 mb-0 text-white">
-                                Aprobar la creación, suspensión o supresión de programas académicos.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-
-                        <div class="d-flex mb-4">
-                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
-                            <p class="fs-14 mb-0 text-white">
-                                Aprobar el presupuesto anual y vigilar que los recursos sean empleados correctamente.
-                            </p>
-                        </div>
-
-                        <div class="d-flex">
-                            <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
-                            <p class="fs-14 mb-0 text-white">
-                                Autorizar y ratificar la celebración de contratos o convenios con otras instituciones.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="d-flex mb-4">
+              <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+              <p class="fs-14 mb-0 text-white">
+                Fijar y velar por el cumplimiento de las normas de carácter general para el funcionamiento de la
+                Institución.
+              </p>
             </div>
 
+            <div class="d-flex">
+              <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+              <p class="fs-14 mb-0 text-white">
+                Aprobar la creación, suspensión o supresión de programas académicos.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="col-xl-6 col-lg-6 col-md-12">
+
+            <div class="d-flex mb-4">
+              <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+              <p class="fs-14 mb-0 text-white">
+                Aprobar el presupuesto anual y vigilar que los recursos sean empleados correctamente.
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <i class="fa-solid fa-gavel me-3 mt-1 text-color-3"></i>
+              <p class="fs-14 mb-0 text-white">
+                Autorizar y ratificar la celebración de contratos o convenios con otras instituciones.
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
 <!-- Equipo que inspira -->
 <section class="container py-5" id="equipo-inspira">
 
-    <div class="row mb-5">
-        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
-            <h2 class="fs-48 fw-extrablack text-color-2 mb-0">
-                Equipo que
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">Inspira</span>
-            </h2>
-        </div>
+  <div class="row mb-5">
+    <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+      <h2 class="fs-48 fw-extrablack text-color-2 mb-0">
+        Equipo que
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">Inspira</span>
+      </h2>
     </div>
+  </div>
 
-    <div class="row g-4">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let grupo of equipoInspira">
-            <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
-                    <i class="fa-solid fa-user-group text-white" aria-hidden="true"></i>
-                </div>
-
-                <p class="fs-12 fw-bold text-uppercase text-color-2 mb-4">{{ grupo.cargo }}</p>
-
-                <div class="d-flex flex-column gap-4">
-                    <div *ngFor="let miembro of grupo.miembros">
-                        <h3 class="fs-18 fw-extrablack text-color-2 mb-2">{{ miembro.nombre }}</h3>
-                        <a
-                            [href]="'mailto:' + miembro.email"
-                            class="fs-14 text-color-1 text-decoration-none d-inline-flex align-items-center gap-2"
-                        >
-                            <i class="fa-regular fa-envelope text-color-2" aria-hidden="true"></i>
-                            {{ miembro.email }}
-                        </a>
-                    </div>
-                </div>
-            </article>
+  <div class="row g-4">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let grupo of equipoInspira">
+      <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-solid fa-user-group text-white" aria-hidden="true"></i>
         </div>
+
+        <p class="fs-12 fw-bold text-uppercase text-color-2 mb-4">{{ grupo.cargo }}</p>
+
+        <div class="d-flex flex-column gap-4">
+          <div *ngFor="let miembro of grupo.miembros">
+            <h3 class="fs-18 fw-extrablack text-color-2 mb-2">{{ miembro.nombre }}</h3>
+            <a [href]="'mailto:' + miembro.email"
+              class="fs-14 text-color-1 text-decoration-none d-inline-flex align-items-center gap-2">
+              <i class="fa-regular fa-envelope text-color-2" aria-hidden="true"></i>
+              {{ miembro.email }}
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
+  </div>
 
 </section>
 
 <!-- Trabaja con nosotros -->
 <section class="container py-5" id="trabaja-nosotros">
 
-    <div class="row justify-content-center">
+  <div class="row justify-content-center">
 
-        <div class="col-xl-10 col-lg-11 col-12">
+    <div class="col-xl-10 col-lg-11 col-12">
 
-            <div class="bg-color-3 rounded-5 p-5">
+      <div class="bg-color-3 rounded-5 p-5">
 
-                <div class="row align-items-center g-4">
+        <div class="row align-items-center g-4">
 
-                    <div class="col-xl-8 col-lg-8 col-md-12">
+          <div class="col-xl-8 col-lg-8 col-md-12">
 
-                        <div class="d-flex align-items-center gap-4">
+            <div class="d-flex align-items-center gap-4">
 
-                            <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
-                                <i class="fa-regular fa-briefcase text-white"></i>
-                            </div>
+              <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                <i class="fa-regular fa-briefcase text-white"></i>
+              </div>
 
-                            <div>
+              <div>
 
-                                <h3 class="fs-24 fw-extrablack text-white mb-2">
-                                    Trabaja con Nosotros
-                                </h3>
+                <h3 class="fs-24 fw-extrablack text-white mb-2">
+                  Trabaja con Nosotros
+                </h3>
 
-                                <p class="fs-16 text-white mb-0">
-                                    Únete al equipo que inspira y transforma vidas.
-                                    Postúlate y haz parte de CIAF.
-                                </p>
+                <p class="fs-16 text-white mb-0">
+                  Únete al equipo que inspira y transforma vidas.
+                  Postúlate y haz parte de CIAF.
+                </p>
 
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-xl-4 col-lg-4 col-md-12 text-xl-end text-lg-end text-center">
-
-                        <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank" class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-                            Postúlate
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
+              </div>
 
             </div>
 
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-12 text-xl-end text-lg-end text-center">
+
+            <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank"
+              class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+              Postúlate
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
 <!-- Contacto -->
 <section class="container-fluid bg-color-3 py-5" id="contacto">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="row justify-content-center text-center">
+    <div class="row justify-content-center text-center">
 
-            <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-12">
 
-                <h2 class="fs-48 fw-black text-white mb-5">
-                    Aquí no solo estudias. Te transformas.
-                </h2>
+        <h2 class="fs-48 fw-black text-white mb-5">
+          Aquí no solo estudias. Te transformas.
+        </h2>
 
-                <div class="d-flex flex-wrap justify-content-center gap-3">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
 
-                    <a routerLink="/inicio" class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-                        Inscríbete
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+          <a routerLink="/inicio" target="_blank" rel="noopener noreferrer"
+            class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+            Inscríbete
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
 
-                    <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank" class="ciaf-btn border border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-                        Habla con nosotros
-                    </a>
-
-                </div>
-
-            </div>
+          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
+            class="ciaf-btn border border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+            Habla con nosotros
+          </a>
 
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
@@ -757,236 +772,268 @@
 
 <!-- Modal plan estratégico-->
 <div class="modal fade" id="modalplanestrategico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Conoce nuestro PLAN ESTRATÉGICO 2022 - 2030.</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3 class="fs-6"></h3>
-          <div class="row">
-            <div class="col-12">
-                
-                <a href="https://ciaf.digital/public/web_normativa/Acuerdo-de-aprobación-del-ajuste-del-plan-estratégico.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Acuerdo de aprobación del ajuste del plan estratégico
-                 </a>
-            </div>
-            <div class="col-12">
-                
-                <a href="https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Ajuste al plan estratégico 2019-2030
-                 </a>
-            </div>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">Conoce nuestro PLAN ESTRATÉGICO 2022 - 2030.</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="fs-6"></h3>
+        <div class="row">
+          <div class="col-12">
+
+            <a href="https://ciaf.digital/public/web_normativa/Acuerdo-de-aprobación-del-ajuste-del-plan-estratégico.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Acuerdo de aprobación del ajuste del
+              plan estratégico
+            </a>
           </div>
-          
+          <div class="col-12">
+
+            <a href="https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Ajuste al plan estratégico 2019-2030
+            </a>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Modal pecuniarios-->
+<!-- Modal pecuniarios-->
 <div class="modal fade" id="modalpecuniarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Derechos Pecuniarios</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3 class="fs-6"></h3>
-          <div class="row">
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuaniarios_2015.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2015
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuniarios_2016.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2016
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdon04de2016.docx" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2017
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuniarios_2018.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2018
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuniarios_2019.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2019
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/Acuerdo17derechospecuniarios2020.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2020
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/Acuerdo17derechospecuniarios2021.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2021
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/Acuerdo17derechospecuniarios20202.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 20202
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-08-derechos-pecuniarios-2022.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Derechos Pecuniarios 2022
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-06-derechos-pecuniarios-2023.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2023
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-06-derechos_pecuniarios_2024.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2024
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-06-derechos_pecuniarios_2025.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2025
-                 </a>
-            </div>
-            <div class="col-12">
-                <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-09-derechos_pecuniarios_2026.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2026
-                 </a>
-            </div>
-
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">Derechos Pecuniarios</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="fs-6"></h3>
+        <div class="row">
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuaniarios_2015.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2015
+            </a>
           </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuniarios_2016.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2016
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdon04de2016.docx" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2017
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuniarios_2018.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2018
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo_derechos_pecuniarios_2019.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2019
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/Acuerdo17derechospecuniarios2020.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2020
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/Acuerdo17derechospecuniarios2021.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2021
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/Acuerdo17derechospecuniarios20202.pdf" target="_blank"
+              class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 20202
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-08-derechos-pecuniarios-2022.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2022
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-06-derechos-pecuniarios-2023.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2023
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-06-derechos_pecuniarios_2024.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2024
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-06-derechos_pecuniarios_2025.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2025
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="https://ciaf.digital/public/web_pecuniarios/acuerdo-09-derechos_pecuniarios_2026.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Derechos Pecuniarios 2026
+            </a>
+          </div>
+
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Modalsst-->
+<!-- Modalsst-->
 <div class="modal fade" id="modalsst" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">SST - SEGURIDAD Y SALUD EN EL TRABAJO - CIAF</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3 class="fs-6"></h3>
-          <div class="row justify-content-center">
-            <div *ngFor="let listarsst of sstnormativa index as i" class="col-xxl-2 col-lg-2 col-md-4 col-4 text-center pb-4">
-                <img src="{{listarsst.imagen}}" width="120px">
-            </div>
-            <div class="ol-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
-                <p>La CORPORACIÓN INSTITUTO DE ADMINISTRACIÓN Y FINANZAS - CIAF, 
-                en su Sistema de Gestión de la Seguridad y Salud en el Trabajo ha definido los siguientes 
-                Objetivos estratégicos los cuales definen las estrategias de intervención en SST de la organización, 
-                buscando la seguridad de sus operaciones:</p>
-                <ul class="small">
-                    <li>Implementar un sistema de gestión integrado “seguridad y salud en el trabajo y ambiental”, cumpliendo con los requisitos legales y normativos aplicables y la gestión de aspectos e impactos ambientales.</li>
-                    <li>Prevenir todo daño para la salud de los trabajadores y partes interesadas, interviniendo los peligros y riesgos que puedan generar enfermedades laborales y accidentes de trabajo.</li>
-                    <li>Contribuir al cumplimiento de los objetivos estratégicos de la Organización.</li>
-                    <li>Mejorar y mantener las condiciones de trabajo garantizando la eficiencia y eficacia de los procesos.</li>
-                    <li>Intervenir e impactar el ausentismo general de la empresa.</li>
-                    <li>Garantizar la identificación, intervención, y recuperación en caso de Emergencias y/o contingencias.</li>
-                    <li>Fortalecer el talento humano para la prevención de riesgos, generando conciencia hacia el autocuidado.</li>
-                    <li>Propiciar espacios de participación activa de los colaboradores, en procura del mejoramiento continuo de las condiciones de seguridad y salud en el trabajo.</li>
-                    <li>Minimizar el riesgo jurídico y financiero de la Empresa velando por la continuidad de la operación en el largo plazo.</li>
-                </ul>
-            </div>
-            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-                
-                <a href="https://ciaf.digital/public/web_normativa/POLITICA-INTEGRADA-DE-SISTEMAS-DE-GESTION.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Politica Integrada del Sistema de Gestión
-                 </a>
-            </div>
-            <div class="ol-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-                
-                <a href="https://ciaf.digital/public/web_normativa/SISTEMA-DE-GESTIÓN-DE-LA-SEGURIDAD-Y-SALUD-EN-EL-TRABAJO.pdf" target="_blank" class="btn btn-sm text-primary">
-                    <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px">  Sistema de gestión de la seguridad y salud en el trabajo
-                 </a>
-            </div>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">SST - SEGURIDAD Y SALUD EN EL TRABAJO - CIAF</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="fs-6"></h3>
+        <div class="row justify-content-center">
+          <div *ngFor="let listarsst of sstnormativa index as i"
+            class="col-xxl-2 col-lg-2 col-md-4 col-4 text-center pb-4">
+            <img src="{{listarsst.imagen}}" width="120px">
           </div>
-          
+          <div class="ol-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
+            <p>La CORPORACIÓN INSTITUTO DE ADMINISTRACIÓN Y FINANZAS - CIAF,
+              en su Sistema de Gestión de la Seguridad y Salud en el Trabajo ha definido los siguientes
+              Objetivos estratégicos los cuales definen las estrategias de intervención en SST de la organización,
+              buscando la seguridad de sus operaciones:</p>
+            <ul class="small">
+              <li>Implementar un sistema de gestión integrado “seguridad y salud en el trabajo y ambiental”, cumpliendo
+                con los requisitos legales y normativos aplicables y la gestión de aspectos e impactos ambientales.</li>
+              <li>Prevenir todo daño para la salud de los trabajadores y partes interesadas, interviniendo los peligros
+                y riesgos que puedan generar enfermedades laborales y accidentes de trabajo.</li>
+              <li>Contribuir al cumplimiento de los objetivos estratégicos de la Organización.</li>
+              <li>Mejorar y mantener las condiciones de trabajo garantizando la eficiencia y eficacia de los procesos.
+              </li>
+              <li>Intervenir e impactar el ausentismo general de la empresa.</li>
+              <li>Garantizar la identificación, intervención, y recuperación en caso de Emergencias y/o contingencias.
+              </li>
+              <li>Fortalecer el talento humano para la prevención de riesgos, generando conciencia hacia el autocuidado.
+              </li>
+              <li>Propiciar espacios de participación activa de los colaboradores, en procura del mejoramiento continuo
+                de las condiciones de seguridad y salud en el trabajo.</li>
+              <li>Minimizar el riesgo jurídico y financiero de la Empresa velando por la continuidad de la operación en
+                el largo plazo.</li>
+            </ul>
+          </div>
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+
+            <a href="https://ciaf.digital/public/web_normativa/POLITICA-INTEGRADA-DE-SISTEMAS-DE-GESTION.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Politica Integrada del Sistema de
+              Gestión
+            </a>
+          </div>
+          <div class="ol-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+
+            <a href="https://ciaf.digital/public/web_normativa/SISTEMA-DE-GESTIÓN-DE-LA-SEGURIDAD-Y-SALUD-EN-EL-TRABAJO.pdf"
+              target="_blank" class="btn btn-sm text-primary">
+              <img [src]="ico_pdf" title="Icono PDF" width="30px" height="24px"> Sistema de gestión de la seguridad y
+              salud en el trabajo
+            </a>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
-
+</div>
 
 <!-- Modal reglamentos-->
 <div class="modal fade" id="modalreglamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Reglamentos</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-            <div *ngFor="let datos_cate of listarCategorias index as i" class="">
-                <h2 class="fs-6">{{datos_cate.categoria_reglamento}}</h2>
-
-                <!-- {{ this.hola(datos_cate.categoria_reglamento) }} -->
-                
-                <div *ngFor="let datos_reg of listarReglamentos index as j" class="" >
-                    <div *ngIf="datos_reg.id_categoria_reglamento==datos_cate.id_categoria_reglamento">
-                        <a href="https://ciaf.digital/public/web_reglamentos/{{datos_reg.url_reglamento}}" target="_blank" class="btn btn-sm">
-                            <img [src]="ico_pdf" width="18px" height="18px" alt="descargar PDF"> {{datos_reg.nombre_reglamento}}
-                        </a>
-                    </div>
-                </div>
-               
-
-            </div>
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">Reglamentos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    </div>
-  </div>
+      <div class="modal-body">
 
+        <div *ngFor="let datos_cate of listarCategorias index as i" class="">
+          <h2 class="fs-6">{{datos_cate.categoria_reglamento}}</h2>
 
-    <!-- Modalsst-->
-<div class="modal fade" id="modalrendicion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Rendición de cuentas</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3 class="fs-6"></h3>
-          <div class="row justify-content-center">
-            <div class="ol-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
-                <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2025.pdf" target="blank" class="btn btn-sm"> 2025</a></li>
-                <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2024.pdf" target="blank" class="btn btn-sm"> 2024</a></li>
-                <li><a href="https://heyzine.com/flip-book/5103846eb8.html" target="blank" class="btn btn-sm"> 2023</a></li>
-                <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2022.pdf" target="blank" class="btn btn-sm"> 2022</a></li>
-                <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2021.pdf" target="blank" class="btn btn-sm"> 2021</a></li>
-                <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2020.pdf" target="blank" class="btn btn-sm">  2020</a></li>
+          <!-- {{ this.hola(datos_cate.categoria_reglamento) }} -->
+
+          <div *ngFor="let datos_reg of listarReglamentos index as j" class="">
+            <div *ngIf="datos_reg.id_categoria_reglamento==datos_cate.id_categoria_reglamento">
+              <a href="https://ciaf.digital/public/web_reglamentos/{{datos_reg.url_reglamento}}" target="_blank"
+                class="btn btn-sm">
+                <img [src]="ico_pdf" width="18px" height="18px" alt="descargar PDF"> {{datos_reg.nombre_reglamento}}
+              </a>
             </div>
           </div>
+
+
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modalsst-->
+<div class="modal fade" id="modalrendicion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">Rendición de cuentas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="fs-6"></h3>
+        <div class="row justify-content-center">
+          <div class="ol-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
+            <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2025.pdf" target="blank"
+                class="btn btn-sm"> 2025</a></li>
+            <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2024.pdf" target="blank"
+                class="btn btn-sm"> 2024</a></li>
+            <li><a href="https://heyzine.com/flip-book/5103846eb8.html" target="blank" class="btn btn-sm"> 2023</a></li>
+            <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2022.pdf" target="blank"
+                class="btn btn-sm"> 2022</a></li>
+            <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2021.pdf" target="blank"
+                class="btn btn-sm"> 2021</a></li>
+            <li><a href="https://www.ciaf.digital/public/web_rendicion/rendicion-2020.pdf" target="blank"
+                class="btn btn-sm"> 2020</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

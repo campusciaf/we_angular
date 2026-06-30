@@ -1,638 +1,915 @@
 <header>
-    <!-- Barra superior -->
-    <div class="top-announcement">
-      <span class="top-glow"></span>
-  
-      <div class="top-content fs-12 fw-semibold">
-        <div class="top-status">
-          <span class="pulse-dot">
-            <span></span>
-            <i></i>
-          </span>
-          <span>Inscripciones abiertas 2026</span>
-        </div>
-  
-        <div class="top-actions">
-          <a href="https://virtual.ciaf.edu.co" target="_blank" class="ciaf-btn ciaf-btn--glass fs-12 fw-medium gap-2 rounded-pill py-1 px-3">
-            <i class="fa-solid fa-rocket"></i>
-            <strong>Entra a CIAF Virtual</strong>
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-  
-          <a href="#contacto" class="top-link">
-            <i class="fa-regular fa-message"></i>
-            Contacto
-          </a>
-  
-          <a routerLink="/pqrsdf" class="top-link hide-md">
-            <i class="fa-regular fa-file-lines"></i>
-            PQRSF
-          </a>
-        </div>
+  <!-- Barra superior -->
+  <div class="top-announcement">
+    <span class="top-glow"></span>
+
+    <div class="top-content fs-12 fw-semibold">
+      <div class="top-status">
+        <span class="pulse-dot">
+          <span></span>
+          <i></i>
+        </span>
+        <span>Inscripciones abiertas 2026</span>
+      </div>
+
+      <div class="top-actions">
+        <a
+          href="https://virtual.ciaf.edu.co"
+          target="_blank"
+          class="ciaf-btn ciaf-btn--glass fs-12 fw-medium gap-2 rounded-pill py-1 px-3"
+        >
+          <i class="fa-solid fa-rocket"></i>
+          <strong>Entra a CIAF Virtual</strong>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="#contacto" class="top-link">
+          <i class="fa-regular fa-message"></i>
+          Contacto
+        </a>
+
+        <a routerLink="/pqrsdf" class="top-link hide-md">
+          <i class="fa-regular fa-file-lines"></i>
+          PQRSF
+        </a>
       </div>
     </div>
-  
-    <div class="main-header">
-        <div class="container-xxl">
-        <div class="header-inner">
+  </div>
 
-            <a routerLink="/inicio" class="brand-logo">
-            <img [src]="img_logo" alt="CIAF">
-            </a>
+  <div class="main-header">
+    <div class="container-xxl">
+      <div class="header-inner">
+        <a routerLink="/inicio" class="brand-logo">
+          <img [src]="img_logo" alt="CIAF" />
+        </a>
 
-            <nav class="main-nav d-none d-lg-flex">
-
-            <!-- Oferta Académica -->
-            <div
-              class="nav-item has-mega"
-              (mouseenter)="abrirMega('oferta')"
-              (mouseleave)="programarCierreMega()"
-            >
-                <button
-                  type="button"
-                  class="nav-link-btn fs-14 fw-semibold"
-                  [class.is-active]="navActivo('oferta')"
-                  [attr.aria-current]="seccionActiva === 'oferta' ? 'page' : null"
-                  [attr.aria-expanded]="megaAbierto === 'oferta'"
-                  (click)="alternarMega('oferta', $event)"
-                >
-                Oferta Académica <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div
-                  class="mega-menu"
-                  [class.is-open]="megaAbierto === 'oferta'"
-                  (mouseenter)="cancelarCierreMega()"
-                  (mouseleave)="programarCierreMega()"
-                  (click)="onMegaPanelClick($event)"
-                >
-                <div class="mega-panel">
-                    <div class="row g-5">
-
-                    <div class="col-lg-4 mega-col">
-                        <div class="mega-title">
-                        <span class="mega-icon">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </span>
-                        <div>
-                            <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Carreras Universitarias</h6>
-                            <small class="fs-10">*Por ciclos propedéuticos</small>
-                        </div>
-                        </div>
-
-                        <div class="mega-section">
-                        <p class="fs-12 fw-bold ls-4 text-color-2">Escuela de Ciencias Administrativas</p>
-
-                        <a routerLink="/administracion" routerLinkActive="active-link" class="mega-link fs-14 fw-bold ">
-                            Administración de Empresas
-                            <span class="fw-medium">Liderazgo, estrategia y gestión.</span>
-                        </a>
-
-                        <a routerLink="/contaduria" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Contaduría Pública
-                            <span class="fw-semibold">Convenio INTEP.</span>
-                        </a>
-                        </div>
-
-                        <div class="mega-section">
-                        <p class="mega-section-title fs-10 fw-bold">Escuela de Ingenierías</p>
-
-                        <a routerLink="/software" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Ingeniería de Software
-                            <span class="fw-medium">Construye productos digitales.</span>
-                        </a>
-
-                        <a routerLink="/industrial" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Ingeniería Industrial
-                            <span class="fw-medium">Optimiza procesos del futuro.</span>
-                        </a>
-                        </div>
-
-                        <div class="mega-section">
-                        <p class="fs-12 fw-bold ls-4 text-color-2">Escuela de Salud</p>
-
-                        <a routerLink="/sst" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Seguridad y Salud en el Trabajo
-                            <span class="fw-medium">Bienestar laboral con propósito.</span>
-                        </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mega-col">
-                        <div class="mega-title">
-                        <span class="mega-icon lime">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </span>
-                        <div>
-                            <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Técnicos Laborales</h6>
-                        </div>
-                        </div>
-
-                        <div class="mega-section">
-                        <p class="fs-12 fw-bold ls-4 text-color-2">Escuela de Salud</p>
-
-                        <a routerLink="/enfermeria" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Auxiliar de Enfermería
-                            <span class="fw-medium">Cuidado humano profesional.</span>
-                        </a>
-
-                        <a routerLink="/administrativo" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Auxiliar Administrativo en Salud
-                            <span class="fw-medium">Gestión clínica eficiente.</span>
-                        </a>
-
-                        <a routerLink="/adultomayor" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Atención al Adulto Mayor
-                            <span class="fw-medium">Acompañamiento y cuidado integral.</span>
-                        </a>
-
-                        <a routerLink="/veterinaria" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">
-                            Auxiliar de Veterinaria y Cuidado de Mascotas
-                            <span class="fw-medium">Cuidado y bienestar animal.</span>
-                        </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mega-col">
-                        <div class="mega-title">
-                        <span class="mega-icon">
-                            <i class="fa-solid fa-book-open"></i>
-                        </span>
-                        <div>
-                            <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Educación Continuada</h6>
-                        </div>
-                        </div>
-
-                        <div class="mega-section">
-                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Diplomados</a>
-                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Cursos</a>
-                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Certificaciones</a>
-                        <a routerLink="/continuada" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Formación empresarial</a>
-                        </div>
-                    </div>
-
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- Nuestra Institución -->
-            <div
-              class="nav-item has-mega"
-              (mouseenter)="abrirMega('institucion')"
-              (mouseleave)="programarCierreMega()"
-            >
-                <button
-                  type="button"
-                  class="nav-link-btn fs-14 fw-semibold"
-                  [class.is-active]="navActivo('institucion')"
-                  [attr.aria-current]="seccionActiva === 'institucion' ? 'page' : null"
-                  [attr.aria-expanded]="megaAbierto === 'institucion'"
-                  (click)="alternarMega('institucion', $event)"
-                >
-                Nuestra Institución <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div
-                  class="mega-menu mega-small"
-                  [class.is-open]="megaAbierto === 'institucion'"
-                  (mouseenter)="cancelarCierreMega()"
-                  (mouseleave)="programarCierreMega()"
-                  (click)="onMegaPanelClick($event)"
-                >
-                <div class="mega-panel">
-                    <div class="mega-title">
-                    <span class="mega-icon">
-                        <i class="fa-solid fa-building"></i>
-                    </span>
-                    <div>
-                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Conócenos</h6>
-                    </div>
-                    </div>
-
-                    <div class="mega-section">
-                    <a routerLink="/conocenos" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Quiénes Somos</a>
-                    <a routerLink="/proyeccion-social" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Proyección Social y Extensión</a>
-                    <a routerLink="/conocenos" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Cultura CIAF</a>
-                    <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer" class="mega-link fs-14 fw-bold">CRAILAB</a>
-                    <a href="https://virtual.ciaf.edu.co" target="_blank" rel="noopener noreferrer" class="mega-link fs-14 fw-bold">CIAF Virtual</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- Bienestar -->
-            <div
-              class="nav-item has-mega"
-              (mouseenter)="abrirMega('bienestar')"
-              (mouseleave)="programarCierreMega()"
-            >
-                <button
-                  type="button"
-                  class="nav-link-btn fs-14 fw-semibold"
-                  [class.is-active]="navActivo('bienestar')"
-                  [attr.aria-current]="seccionActiva === 'bienestar' ? 'page' : null"
-                  [attr.aria-expanded]="megaAbierto === 'bienestar'"
-                  (click)="alternarMega('bienestar', $event)"
-                >
-                Bienestar <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div
-                  class="mega-menu mega-small"
-                  [class.is-open]="megaAbierto === 'bienestar'"
-                  (mouseenter)="cancelarCierreMega()"
-                  (mouseleave)="programarCierreMega()"
-                  (click)="onMegaPanelClick($event)"
-                >
-                <div class="mega-panel">
-                    <div class="mega-title">
-                    <span class="mega-icon lime">
-                        <i class="fa-solid fa-heart"></i>
-                    </span>
-                    <div>
-                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Experiencia CIAF</h6>
-                    </div>
-                    </div>
-
-                    <div class="mega-section">
-                    <a routerLink="/bienestar" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Bienestar Institucional</a>
-                    <a routerLink="/permanencia" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Permanencia Estudiantil</a>
-                    <a routerLink="/bienestar" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Experiencia Universitaria</a>
-                    <a routerLink="/bienestar" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Gestión Humana</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- Investigación -->
-            <div
-              class="nav-item has-mega"
-              (mouseenter)="abrirMega('investigacion')"
-              (mouseleave)="programarCierreMega()"
-            >
-                <button
-                  type="button"
-                  class="nav-link-btn fs-14 fw-semibold"
-                  [class.is-active]="navActivo('investigacion')"
-                  [attr.aria-current]="seccionActiva === 'investigacion' ? 'page' : null"
-                  [attr.aria-expanded]="megaAbierto === 'investigacion'"
-                  (click)="alternarMega('investigacion', $event)"
-                >
-                Investigación <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div
-                  class="mega-menu mega-small"
-                  [class.is-open]="megaAbierto === 'investigacion'"
-                  (mouseenter)="cancelarCierreMega()"
-                  (mouseleave)="programarCierreMega()"
-                  (click)="onMegaPanelClick($event)"
-                >
-                <div class="mega-panel">
-                    <div class="mega-title">
-                    <span class="mega-icon">
-                        <i class="fa-solid fa-flask"></i>
-                    </span>
-                    <div>
-                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Ciencia e Innovación</h6>
-                    </div>
-                    </div>
-
-                    <div class="mega-section">
-                    <a routerLink="/investigaciones" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Ciencia, Creatividad e Innovación</a>
-                    <a routerLink="/investigaciones" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Semilleros</a>
-                    <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer" class="mega-link fs-14 fw-bold">CRAILAB</a>
-                    <a routerLink="/investigaciones" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Proyectos de Innovación</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- Egresados -->
-            <div
-              class="nav-item has-mega"
-              (mouseenter)="abrirMega('egresados')"
-              (mouseleave)="programarCierreMega()"
-            >
-                <button
-                  type="button"
-                  class="nav-link-btn fs-14 fw-semibold"
-                  [class.is-active]="navActivo('egresados')"
-                  [attr.aria-current]="seccionActiva === 'egresados' ? 'page' : null"
-                  [attr.aria-expanded]="megaAbierto === 'egresados'"
-                  (click)="alternarMega('egresados', $event)"
-                >
-                Egresados <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div
-                  class="mega-menu mega-small"
-                  [class.is-open]="megaAbierto === 'egresados'"
-                  (mouseenter)="cancelarCierreMega()"
-                  (mouseleave)="programarCierreMega()"
-                  (click)="onMegaPanelClick($event)"
-                >
-                <div class="mega-panel">
-                    <div class="mega-title">
-                    <span class="mega-icon lime">
-                        <i class="fa-solid fa-users"></i>
-                    </span>
-                    <div>
-                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">Comunidad CIAF</h6>
-                    </div>
-                    </div>
-
-                    <div class="mega-section">
-                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Comunidad de Egresados</a>
-                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Convenios y Beneficios</a>
-                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Historias que Inspiran</a>
-                    <a routerLink="/egresados" routerLinkActive="active-link" class="mega-link fs-14 fw-bold">Bolsa de Empleo</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            </nav>
-
-            <div class="header-actions d-none d-md-flex">
-            <a routerLink="/pago-online" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-3">
-                <i class="fa-regular fa-credit-card"></i>
-                Pagos en línea
-            </a>
-
-            <a routerLink="/iniciar" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-4">
-                Inscríbete
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            </div>
-
+        <nav class="main-nav d-none d-lg-flex">
+          <!-- Oferta Académica -->
+          <div
+            class="nav-item has-mega"
+            (mouseenter)="abrirMega('oferta')"
+            (mouseleave)="programarCierreMega()"
+          >
             <button
-              class="btn-menu d-lg-none rounded-circle mt-3"
               type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#menuMobile"
-              aria-controls="menuMobile"
-              [attr.aria-expanded]="menuMovilAbierto"
+              class="nav-link-btn fs-14 fw-semibold"
+              [class.is-active]="navActivo('oferta')"
+              [attr.aria-current]="seccionActiva === 'oferta' ? 'page' : null"
+              [attr.aria-expanded]="megaAbierto === 'oferta'"
+              (click)="alternarMega('oferta', $event)"
             >
-              <i class="fa-solid fa-bars" [class.d-none]="menuMovilAbierto" aria-hidden="true"></i>
-              <i class="fa-solid fa-xmark" [class.d-none]="!menuMovilAbierto" aria-hidden="true"></i>
+              Oferta Académica <i class="fa-solid fa-chevron-down"></i>
             </button>
 
+            <div
+              class="mega-menu"
+              [class.is-open]="megaAbierto === 'oferta'"
+              (mouseenter)="cancelarCierreMega()"
+              (mouseleave)="programarCierreMega()"
+              (click)="onMegaPanelClick($event)"
+            >
+              <div class="mega-panel">
+                <div class="row g-5">
+                  <div class="col-lg-4 mega-col">
+                    <div class="mega-title">
+                      <span class="mega-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                      </span>
+                      <div>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                          Carreras Universitarias
+                        </h6>
+                        <small class="fs-10">*Por ciclos propedéuticos</small>
+                      </div>
+                    </div>
+
+                    <div class="mega-section">
+                      <p class="fs-12 fw-bold ls-4 text-color-2">
+                        Escuela de Ciencias Administrativas
+                      </p>
+
+                      <a
+                        routerLink="/administracion"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Administración de Empresas
+                        <span class="fw-medium"
+                          >Liderazgo, estrategia y gestión.</span
+                        >
+                      </a>
+
+                      <a
+                        routerLink="/contaduria"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Contaduría Pública
+                        <span class="fw-semibold">Convenio INTEP.</span>
+                      </a>
+                    </div>
+
+                    <div class="mega-section">
+                      <p class="mega-section-title fs-10 fw-bold">
+                        Escuela de Ingenierías
+                      </p>
+
+                      <a
+                        routerLink="/software"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Ingeniería de Software
+                        <span class="fw-medium"
+                          >Construye productos digitales.</span
+                        >
+                      </a>
+
+                      <a
+                        routerLink="/industrial"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Ingeniería Industrial
+                        <span class="fw-medium"
+                          >Optimiza procesos del futuro.</span
+                        >
+                      </a>
+                    </div>
+
+                    <div class="mega-section">
+                      <p class="fs-12 fw-bold ls-4 text-color-2">
+                        Escuela de Salud
+                      </p>
+
+                      <a
+                        routerLink="/sst"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Seguridad y Salud en el Trabajo
+                        <span class="fw-medium"
+                          >Bienestar laboral con propósito.</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 mega-col">
+                    <div class="mega-title">
+                      <span class="mega-icon lime">
+                        <i class="fa-solid fa-briefcase"></i>
+                      </span>
+                      <div>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                          Técnicos Laborales
+                        </h6>
+                      </div>
+                    </div>
+
+                    <div class="mega-section">
+                      <p class="fs-12 fw-bold ls-4 text-color-2">
+                        Escuela de Salud
+                      </p>
+
+                      <a
+                        routerLink="/enfermeria"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Auxiliar de Enfermería
+                        <span class="fw-medium"
+                          >Cuidado humano profesional.</span
+                        >
+                      </a>
+
+                      <a
+                        routerLink="/administrativo"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Auxiliar Administrativo en Salud
+                        <span class="fw-medium"
+                          >Gestión clínica eficiente.</span
+                        >
+                      </a>
+
+                      <a
+                        routerLink="/adultomayor"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Atención al Adulto Mayor
+                        <span class="fw-medium"
+                          >Acompañamiento y cuidado integral.</span
+                        >
+                      </a>
+
+                      <a
+                        routerLink="/veterinaria"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                      >
+                        Auxiliar de Veterinaria y Cuidado de Mascotas
+                        <span class="fw-medium"
+                          >Cuidado y bienestar animal.</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 mega-col">
+                    <div class="mega-title">
+                      <span class="mega-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                      </span>
+                      <div>
+                        <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                          Educación Continuada
+                        </h6>
+                      </div>
+                    </div>
+
+                    <div class="mega-section">
+                      <a
+                        routerLink="/continuada"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                        >Diplomados</a
+                      >
+                      <a
+                        routerLink="/continuada"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                        >Cursos</a
+                      >
+                      <a
+                        routerLink="/continuada"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                        >Certificaciones</a
+                      >
+                      <a
+                        routerLink="/continuada"
+                        routerLinkActive="active-link"
+                        class="mega-link fs-14 fw-bold"
+                        >Formación empresarial</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nuestra Institución -->
+          <div
+            class="nav-item has-mega"
+            (mouseenter)="abrirMega('institucion')"
+            (mouseleave)="programarCierreMega()"
+          >
+            <button
+              type="button"
+              class="nav-link-btn fs-14 fw-semibold"
+              [class.is-active]="navActivo('institucion')"
+              [attr.aria-current]="
+                seccionActiva === 'institucion' ? 'page' : null
+              "
+              [attr.aria-expanded]="megaAbierto === 'institucion'"
+              (click)="alternarMega('institucion', $event)"
+            >
+              Nuestra Institución <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div
+              class="mega-menu mega-small"
+              [class.is-open]="megaAbierto === 'institucion'"
+              (mouseenter)="cancelarCierreMega()"
+              (mouseleave)="programarCierreMega()"
+              (click)="onMegaPanelClick($event)"
+            >
+              <div class="mega-panel">
+                <div class="mega-title">
+                  <span class="mega-icon">
+                    <i class="fa-solid fa-building"></i>
+                  </span>
+                  <div>
+                    <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                      Conócenos
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="mega-section">
+                  <a
+                    routerLink="/conocenos"
+                    routerLinkActive="active-link"
+                    class="mega-link fs-14 fw-bold"
+                    >Quiénes Somos</a
+                  >
+                  <a
+                    routerLink="/proyeccion-social"
+                    routerLinkActive="active-link"
+                    class="mega-link fs-14 fw-bold"
+                    >Proyección Social y Extensión</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bienestar -->
+          <div
+            class="nav-item has-mega"
+            (mouseenter)="abrirMega('bienestar')"
+            (mouseleave)="programarCierreMega()"
+          >
+            <button
+              type="button"
+              class="nav-link-btn fs-14 fw-semibold"
+              [class.is-active]="navActivo('bienestar')"
+              [attr.aria-current]="
+                seccionActiva === 'bienestar' ? 'page' : null
+              "
+              [attr.aria-expanded]="megaAbierto === 'bienestar'"
+              (click)="alternarMega('bienestar', $event)"
+            >
+              Bienestar <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div
+              class="mega-menu mega-small"
+              [class.is-open]="megaAbierto === 'bienestar'"
+              (mouseenter)="cancelarCierreMega()"
+              (mouseleave)="programarCierreMega()"
+              (click)="onMegaPanelClick($event)"
+            >
+              <div class="mega-panel">
+                <div class="mega-title">
+                  <span class="mega-icon lime">
+                    <i class="fa-solid fa-heart"></i>
+                  </span>
+                  <div>
+                    <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                      Experiencia CIAF
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="mega-section">
+                  <a
+                    routerLink="/bienestar"
+                    routerLinkActive="active-link"
+                    class="mega-link fs-14 fw-bold"
+                    >Bienestar Institucional <br><span class="fs-10 fw-regular">Experiencias sin limites, que transforman</span></a
+                  >
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Investigación -->
+          <div
+            class="nav-item has-mega"
+            (mouseenter)="abrirMega('investigacion')"
+            (mouseleave)="programarCierreMega()"
+          >
+            <button
+              type="button"
+              class="nav-link-btn fs-14 fw-semibold"
+              [class.is-active]="navActivo('investigacion')"
+              [attr.aria-current]="
+                seccionActiva === 'investigacion' ? 'page' : null
+              "
+              [attr.aria-expanded]="megaAbierto === 'investigacion'"
+              (click)="alternarMega('investigacion', $event)"
+            >
+              Investigación <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div
+              class="mega-menu mega-small"
+              [class.is-open]="megaAbierto === 'investigacion'"
+              (mouseenter)="cancelarCierreMega()"
+              (mouseleave)="programarCierreMega()"
+              (click)="onMegaPanelClick($event)"
+            >
+              <div class="mega-panel">
+                <div class="mega-title">
+                  <span class="mega-icon">
+                    <i class="fa-solid fa-flask"></i>
+                  </span>
+                  <div>
+                    <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                      Ciencia e Innovación 
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="mega-section">
+                  <a
+                    routerLink="/investigaciones"
+                    routerLinkActive="active-link"
+                    class="mega-link fs-14 fw-bold"
+                    >Ciencia, Creatividad e Innovación <br><span class="fs-10 fw-regular">Centro de Proyección e Innovación (HUB).</span></a
+                  >
+                  <a
+                    href="https://crailab.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mega-link fs-14 fw-bold"
+                    >CRAILAB</a
+                  >
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Egresados -->
+          <div
+            class="nav-item has-mega"
+            (mouseenter)="abrirMega('egresados')"
+            (mouseleave)="programarCierreMega()"
+          >
+            <button
+              type="button"
+              class="nav-link-btn fs-14 fw-semibold"
+              [class.is-active]="navActivo('egresados')"
+              [attr.aria-current]="
+                seccionActiva === 'egresados' ? 'page' : null
+              "
+              [attr.aria-expanded]="megaAbierto === 'egresados'"
+              (click)="alternarMega('egresados', $event)"
+            >
+              Egresados <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div
+              class="mega-menu mega-small"
+              [class.is-open]="megaAbierto === 'egresados'"
+              (mouseenter)="cancelarCierreMega()"
+              (mouseleave)="programarCierreMega()"
+              (click)="onMegaPanelClick($event)"
+            >
+              <div class="mega-panel">
+                <div class="mega-title">
+                  <span class="mega-icon lime">
+                    <i class="fa-solid fa-users"></i>
+                  </span>
+                  <div>
+                    <h6 class="fs-12 text-uppercase fw-bold ls-3 fw-bold">
+                      Comunidad CIAF
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="mega-section">
+                  <a
+                    routerLink="/egresados"
+                    routerLinkActive="active-link"
+                    class="mega-link fs-14 fw-bold"
+                    >Comunidad de Egresados<br><span class="fs-10 fw-regular">Un carnet sin fecha de vencimiento</span></a
+                  >
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-actions d-none d-md-flex">
+          <a
+            routerLink="/pago-online"
+            routerLinkActive="active-link"
+            class="ciaf-btn ciaf-btn--outline ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-3"
+          >
+            <i class="fa-regular fa-credit-card"></i>
+            Pagos en línea
+          </a>
+
+          <a
+            routerLink="/iniciar"
+            routerLinkActive="active-link"
+            class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-4"
+          >
+            Inscríbete
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
         </div>
-        </div>
+
+        <button
+          class="btn-menu d-lg-none rounded-circle mt-3"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuMobile"
+          aria-controls="menuMobile"
+          [attr.aria-expanded]="menuMovilAbierto"
+        >
+          <i
+            class="fa-solid fa-bars"
+            [class.d-none]="menuMovilAbierto"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="fa-solid fa-xmark"
+            [class.d-none]="!menuMovilAbierto"
+            aria-hidden="true"
+          ></i>
+        </button>
+      </div>
     </div>
-
+  </div>
 </header>
-  
+
 <!-- Menú móvil -->
-<div class="offcanvas mobile-menu" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel">
+<div
+  class="offcanvas mobile-menu"
+  tabindex="-1"
+  id="menuMobile"
+  aria-labelledby="menuMobileLabel"
+>
   <div class="offcanvas-body mobile-menu__body">
-
     <div class="accordion accordion-flush" id="menuAccordion">
-
       <div class="accordion-item">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mOferta')">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          aria-expanded="false"
+          (click)="alternarSubmenuMobile($event, 'mOferta')"
+        >
           Oferta Académica
         </button>
 
         <div id="mOferta" class="accordion-collapse collapse">
           <div class="accordion-body mobile-links">
             <strong>Carreras Universitarias</strong>
-            <a routerLink="/administracion" routerLinkActive="active-link">Administración de Empresas</a>
-            <a routerLink="/contaduria" routerLinkActive="active-link">Contaduría Pública</a>
-            <a routerLink="/software" routerLinkActive="active-link">Ingeniería de Software</a>
-            <a routerLink="/industrial" routerLinkActive="active-link">Ingeniería Industrial</a>
-            <a routerLink="/sst" routerLinkActive="active-link">Seguridad y Salud en el Trabajo</a>
+            <a routerLink="/administracion" routerLinkActive="active-link"
+              >Administración de Empresas</a
+            >
+            <a routerLink="/contaduria" routerLinkActive="active-link"
+              >Contaduría Pública</a
+            >
+            <a routerLink="/software" routerLinkActive="active-link"
+              >Ingeniería de Software</a
+            >
+            <a routerLink="/industrial" routerLinkActive="active-link"
+              >Ingeniería Industrial</a
+            >
+            <a routerLink="/sst" routerLinkActive="active-link"
+              >Seguridad y Salud en el Trabajo</a
+            >
 
             <strong>Técnicos Laborales</strong>
-            <a routerLink="/enfermeria" routerLinkActive="active-link">Auxiliar de Enfermería</a>
-            <a routerLink="/administrativo" routerLinkActive="active-link">Auxiliar Administrativo en Salud</a>
-            <a routerLink="/adultomayor" routerLinkActive="active-link">Atención al Adulto Mayor</a>
-            <a routerLink="/veterinaria" routerLinkActive="active-link">Auxiliar de Veterinaria y Cuidado de Mascotas</a>
+            <a routerLink="/enfermeria" routerLinkActive="active-link"
+              >Auxiliar de Enfermería</a
+            >
+            <a routerLink="/administrativo" routerLinkActive="active-link"
+              >Auxiliar Administrativo en Salud</a
+            >
+            <a routerLink="/adultomayor" routerLinkActive="active-link"
+              >Atención al Adulto Mayor</a
+            >
+            <a routerLink="/veterinaria" routerLinkActive="active-link"
+              >Auxiliar de Veterinaria y Cuidado de Mascotas</a
+            >
 
             <strong>Educación Continuada</strong>
-            <a routerLink="/continuada" routerLinkActive="active-link">Diplomados</a>
-            <a routerLink="/continuada" routerLinkActive="active-link">Cursos</a>
-            <a routerLink="/continuada" routerLinkActive="active-link">Certificaciones</a>
-            <a routerLink="/continuada" routerLinkActive="active-link">Formación empresarial</a>
+            <a routerLink="/continuada" routerLinkActive="active-link"
+              >Diplomados</a
+            >
+            <a routerLink="/continuada" routerLinkActive="active-link"
+              >Cursos</a
+            >
+            <a routerLink="/continuada" routerLinkActive="active-link"
+              >Certificaciones</a
+            >
+            <a routerLink="/continuada" routerLinkActive="active-link"
+              >Formación empresarial</a
+            >
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mInstitucion')">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          aria-expanded="false"
+          (click)="alternarSubmenuMobile($event, 'mInstitucion')"
+        >
           Nuestra Institución
         </button>
 
         <div id="mInstitucion" class="accordion-collapse collapse">
           <div class="accordion-body mobile-links">
-            <a routerLink="/conocenos" routerLinkActive="active-link">Quiénes Somos</a>
-            <a routerLink="/proyeccion-social" routerLinkActive="active-link">Proyección Social y Extensión</a>
-            <a routerLink="/conocenos" routerLinkActive="active-link">Cultura CIAF</a>
-            <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
-            <a href="https://virtual.ciaf.edu.co" target="_blank" rel="noopener noreferrer">CIAF Virtual</a>
+            <a routerLink="/conocenos" routerLinkActive="active-link"
+              >Quiénes Somos</a
+            >
+            <a routerLink="/proyeccion-social" routerLinkActive="active-link"
+              >Proyección Social y Extensión</a
+            >
+            <a routerLink="/conocenos" routerLinkActive="active-link"
+              >Cultura CIAF</a
+            >
+            <a
+              href="https://crailab.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CRAILAB</a
+            >
+            <a
+              href="https://virtual.ciaf.edu.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CIAF Virtual</a
+            >
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mBienestar')">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          aria-expanded="false"
+          (click)="alternarSubmenuMobile($event, 'mBienestar')"
+        >
           Bienestar
         </button>
 
         <div id="mBienestar" class="accordion-collapse collapse">
           <div class="accordion-body mobile-links">
-            <a routerLink="/bienestar" routerLinkActive="active-link">Bienestar Institucional</a>
-            <a routerLink="/permanencia" routerLinkActive="active-link">Permanencia Estudiantil</a>
-            <a routerLink="/bienestar" routerLinkActive="active-link">Experiencia Universitaria</a>
-            <a routerLink="/bienestar" routerLinkActive="active-link">Gestión Humana</a>
+            <a routerLink="/bienestar" routerLinkActive="active-link"
+              >Bienestar Institucional</a
+            >
+            <a routerLink="/permanencia" routerLinkActive="active-link"
+              >Permanencia Estudiantil</a
+            >
+            <a routerLink="/bienestar" routerLinkActive="active-link"
+              >Experiencia Universitaria</a
+            >
+            <a routerLink="/bienestar" routerLinkActive="active-link"
+              >Gestión Humana</a
+            >
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mInvestigacion')">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          aria-expanded="false"
+          (click)="alternarSubmenuMobile($event, 'mInvestigacion')"
+        >
           Investigación
         </button>
 
         <div id="mInvestigacion" class="accordion-collapse collapse">
           <div class="accordion-body mobile-links">
-            <a routerLink="/investigaciones" routerLinkActive="active-link">Ciencia, Creatividad e Innovación</a>
-            <a routerLink="/investigaciones" routerLinkActive="active-link">Semilleros</a>
-            <a href="https://crailab.com/" target="_blank" rel="noopener noreferrer">CRAILAB</a>
-            <a routerLink="/investigaciones" routerLinkActive="active-link">Proyectos de Innovación</a>
+            <a routerLink="/investigaciones" routerLinkActive="active-link"
+              >Ciencia, Creatividad e Innovación</a
+            >
+            <a routerLink="/investigaciones" routerLinkActive="active-link"
+              >Semilleros</a
+            >
+            <a
+              href="https://crailab.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CRAILAB</a
+            >
+            <a routerLink="/investigaciones" routerLinkActive="active-link"
+              >Proyectos de Innovación</a
+            >
           </div>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" (click)="alternarSubmenuMobile($event, 'mEgresados')">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          aria-expanded="false"
+          (click)="alternarSubmenuMobile($event, 'mEgresados')"
+        >
           Egresados
         </button>
 
         <div id="mEgresados" class="accordion-collapse collapse">
           <div class="accordion-body mobile-links">
-            <a routerLink="/egresados" routerLinkActive="active-link">Comunidad de Egresados</a>
-            <a routerLink="/egresados" routerLinkActive="active-link">Convenios y Beneficios</a>
-            <a routerLink="/egresados" routerLinkActive="active-link">Historias que Inspiran</a>
-            <a routerLink="/egresados" routerLinkActive="active-link">Bolsa de Empleo</a>
+            <a routerLink="/egresados" routerLinkActive="active-link"
+              >Comunidad de Egresados</a
+            >
+            <a routerLink="/egresados" routerLinkActive="active-link"
+              >Convenios y Beneficios</a
+            >
+            <a routerLink="/egresados" routerLinkActive="active-link"
+              >Historias que Inspiran</a
+            >
+            <a routerLink="/egresados" routerLinkActive="active-link"
+              >Bolsa de Empleo</a
+            >
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="mt-4 d-grid gap-2">
-      <a routerLink="/pago-online" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--outline ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-3">
+      <a
+        routerLink="/pago-online"
+        routerLinkActive="active-link"
+        class="ciaf-btn ciaf-btn--outline ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-3"
+      >
         Pagos en línea
       </a>
 
-      <a routerLink="/iniciar" routerLinkActive="active-link" class="ciaf-btn ciaf-btn--primary ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-4">
+      <a
+        routerLink="/iniciar"
+        routerLinkActive="active-link"
+        class="ciaf-btn ciaf-btn--primary ciaf-btn--sm justify-content-center fs-14 fw-bold gap-2 rounded-pill py-2 px-4"
+      >
         Inscríbete
       </a>
     </div>
-
   </div>
 </div>
-
 
 <!-- hasta aqui llega el buscador    -->
 <div class="wrapper" *ngIf="false">aqui funciona el scroll</div>
 
-
-
 <!-- Modal mapa-->
-<div class="modal fade d-none" id="direccioncrai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">CRAI</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+<div
+  class="modal fade d-none"
+  id="direccioncrai"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">CRAI</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary btn-sm"
+          data-bs-dismiss="modal"
+        >
+          Cerrar
+        </button>
       </div>
     </div>
+  </div>
 </div>
 
 <!-- Modal mapa-->
-<div class="modal fade d-none" id="direccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Nuestra sede</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-
-            <iframe
-                width="100%"
-                height="560"
-                frameborder="0" style="border:0"
-                referrerpolicy="no-referrer-when-downgrade" 
-                languaje="esp"
-                src="https://maps.google.com/maps?q=Cra.+6+No.+24-56+Pereira&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                allowfullscreen>
-            </iframe>
-
-            
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+<div
+  class="modal fade d-none"
+  id="direccion"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-6" id="exampleModalLabel">Nuestra sede</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <iframe
+          width="100%"
+          height="560"
+          frameborder="0"
+          style="border: 0"
+          referrerpolicy="no-referrer-when-downgrade"
+          languaje="esp"
+          src="https://maps.google.com/maps?q=Cra.+6+No.+24-56+Pereira&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary btn-sm"
+          data-bs-dismiss="modal"
+        >
+          Cerrar
+        </button>
       </div>
     </div>
+  </div>
 </div>
-
 
 <div class="api-whatsapp d-none">
-    <a href="https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20la%20web" title="Chat"  target="_blank">
-        <img src="assets/image/icono-whatsapp.svg" alt="Mi SVG feliz"/>
-    </a>
+  <a
+    href="https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20la%20web"
+    title="Chat"
+    target="_blank"
+  >
+    <img src="assets/image/icono-whatsapp.svg" alt="Mi SVG feliz" />
+  </a>
 </div>
 
 <div class="row m-menu bg-1 d-none" *ngIf="false">
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="dropup pt-2">
-                <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
-                    <div class="col-12">
-                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                    </div>
-                    <div class="col-12">
-                        <p>Conoce el programa</p>
-                    </div>
-                </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Link 1</a></li>
-                <li><a class="dropdown-item" href="#">Link 2</a></li>
-                <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-            </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="dropup pt-2">
+      <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
+        </div>
+        <div class="col-12">
+          <p>Conoce el programa</p>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Link 1</a></li>
+        <li><a class="dropdown-item" href="#">Link 2</a></li>
+        <li><a class="dropdown-item" href="#">Link 3</a></li>
+      </ul>
     </div>
+  </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="dropup">
-                <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
-                    <div class="col-12">
-                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                    </div>
-                    <div class="col-12">
-                        <p>carreras</p>
-                    </div>
-                </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Link 1</a></li>
-                <li><a class="dropdown-item" href="#">Link 2</a></li>
-                <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-            </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="dropup">
+      <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
+        </div>
+        <div class="col-12">
+          <p>carreras</p>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Link 1</a></li>
+        <li><a class="dropdown-item" href="#">Link 2</a></li>
+        <li><a class="dropdown-item" href="#">Link 3</a></li>
+      </ul>
     </div>
+  </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="dropup">
-                <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
-                    <div class="col-12">
-                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                    </div>
-                    <div class="col-12">
-                        <p>carreras</p>
-                    </div>
-                </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Link 1</a></li>
-                <li><a class="dropdown-item" href="#">Link 2</a></li>
-                <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-            </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="dropup">
+      <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
+        </div>
+        <div class="col-12">
+          <p>carreras</p>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Link 1</a></li>
+        <li><a class="dropdown-item" href="#">Link 2</a></li>
+        <li><a class="dropdown-item" href="#">Link 3</a></li>
+      </ul>
     </div>
+  </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-3 col-3">
-        <div class="dropup">
-                <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
-                    <div class="col-12">
-                        <img src="assets/image/programas-m.webp" alt="carreras profesionales">
-                    </div>
-                    <div class="col-12">
-                        <p>carreras</p>
-                    </div>
-                </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Link 1</a></li>
-                <li><a class="dropdown-item" href="#">Link 2</a></li>
-                <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-            </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+    <div class="dropup">
+      <a class="dropdown-toggle text-center" data-bs-toggle="dropdown">
+        <div class="col-12">
+          <img
+            src="assets/image/programas-m.webp"
+            alt="carreras profesionales"
+          />
+        </div>
+        <div class="col-12">
+          <p>carreras</p>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Link 1</a></li>
+        <li><a class="dropdown-item" href="#">Link 2</a></li>
+        <li><a class="dropdown-item" href="#">Link 3</a></li>
+      </ul>
     </div>
-
-
-
-
-
+  </div>
 </div>

@@ -1,961 +1,953 @@
 <app-header></app-header>
 
-<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4" >
-        
-    <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
-        <img src="{{banner_pc}}" alt="Investigaciones">
-        <img src="{{banner_pc}}" alt="Investigaciones">
+<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4">
+
+  <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
+    <img src="{{banner_pc}}" alt="Investigaciones">
+    <img src="{{banner_pc}}" alt="Investigaciones">
+  </div>
+
+  <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+
+  <div class="row z-2 py-5 mt-5 col-12">
+    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 p-4">
+      <span
+        class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
+        Centro de Proyección e Innovación (HUB)
+      </span>
+      <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+        BIENESTAR
+      </h1>
+
+      <p class="fs-24 fw-bold mb-3 text-color-3">
+        Ciencia, Creatividad e Innovación
+      </p>
+      <p class="fs-18 fw-semibold mb-3 text-color-4">
+        Un recorrido vivo por el ecosistema investigativo de CIAF, donde la ciencia, la creatividad y la innovación se
+        convierten en motor de transformación social.
+      </p>
+
+      <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+        <li
+          class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+          <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+            class="cursor-pointer text-decoration-none text-white" rel="noopener noreferrer">
+            <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+            Normatividad
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+        <button type="button" class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4"
+          (click)="scrollToSeccion('grupos-de-investigacion', '1')">
+          Conoce nuestros grupos
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4"
+          (click)="scrollToSeccion('convocatorias', '2')">
+          Ver convocatorias
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
-
-    <div class="row z-2 py-5 mt-5 col-12">
-        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 p-4">
-            <span class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
-                Centro de Proyección e Innovación (HUB)
-            </span>
-            <h1 class="fs-60 fw-extrablack mb-3 lh-1">
-                BIENESTAR
-            </h1>
-    
-            <p class="fs-24 fw-bold mb-3 text-color-3" >
-                Ciencia, Creatividad e Innovación
-            </p>
-            <p class="fs-18 fw-semibold mb-3 text-color-4" >
-                Un recorrido vivo por el ecosistema investigativo de CIAF, donde la ciencia, la creatividad y la innovación se convierten en motor de transformación social.
-            </p>
-    
-            <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-                <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                    <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-                    Normatividad
-                </li>
-
-            </ul>
-    
-            <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
-                <button type="button" class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4" (click)="scrollToSeccion('conoce-el-programa', '1')">
-                    Conoce nuestros grupos
-                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4" (click)="scrollToSeccion('proceso-paso-a-paso', '9')">
-                    Ver convocatorias
-                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
-        <i class="fa-solid fa-computer-mouse"></i>
-    </div>
+  <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20"
+    aria-hidden="true">
+    <i class="fa-solid fa-computer-mouse"></i>
+  </div>
 </section>
 
 <!-- Navegación por secciones (scroll) -->
 <section class="row ciaf-program-nav">
-    <div class="col-12">
-    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
-        <a
-        *ngFor="let seccion of seccionesPrograma"
-        role="button"
-        (click)="scrollToSeccion(seccion.id, seccion.nav)"
+  <div class="col-12">
+    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
+      aria-label="Secciones del programa">
+      <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
         class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
-        [class.active]="activo === seccion.nav"
-        [class.text-white]="activo === seccion.nav"
-        [class.fw-bold]="activo === seccion.nav"
-        [class.fw-semibold]="activo !== seccion.nav"
+        [class.active]="activo === seccion.nav" [class.text-white]="activo === seccion.nav"
+        [class.fw-bold]="activo === seccion.nav" [class.fw-semibold]="activo !== seccion.nav"
         [attr.id]="'btn-' + seccion.nav"
-        [attr.aria-current]="activo === seccion.nav ? 'true' : null"
-        >{{ seccion.label }}</a>
+        [attr.aria-current]="activo === seccion.nav ? 'true' : null">{{ seccion.label }}</a>
     </nav>
-    </div>
+  </div>
 </section>
 
 <!-- Investigación CIAF -->
 <section class="py-5" id="investigacion-ciaf">
-    <div class="container">
+  <div class="container">
 
-        <div class="row align-items-center gy-5">
+    <div class="row align-items-center gy-5">
 
-            <!-- Columna izquierda -->
-            <div class="col-lg-6">
+      <!-- Columna izquierda -->
+      <div class="col-lg-6">
 
-                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5 text-uppercase ls-4">
-                    INVESTIGACIÓN CIAF
-                </span>
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5 text-uppercase ls-4">
+          INVESTIGACIÓN CIAF
+        </span>
 
-                <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                    Ciencia, creatividad e <span class="ciaf-gradient-text ciaf-gradient-text--brand">innovación</span>
-                </h2>
+        <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+          Ciencia, creatividad e <span class="ciaf-gradient-text ciaf-gradient-text--brand">innovación</span>
+        </h2>
 
-                <p class="fs-16">
-                    En CIAF tenemos un propósito que nos inspira cada día:
-                    transformar la vida de los ciudadanos en un mundo en constante
-                    evolución. Soñamos y trabajamos para que nuestros docentes,
-                    investigadores y estudiantes sean protagonistas en la creación
-                    y aplicación de la ciencia, la tecnología y la innovación,
-                    construyendo juntos una verdadera sociedad del conocimiento
-                    con impacto real en la región y el país.
-                </p>
+        <p class="fs-16">
+          En CIAF tenemos un propósito que nos inspira cada día:
+          transformar la vida de los ciudadanos en un mundo en constante
+          evolución. Soñamos y trabajamos para que nuestros docentes,
+          investigadores y estudiantes sean protagonistas en la creación
+          y aplicación de la ciencia, la tecnología y la innovación,
+          construyendo juntos una verdadera sociedad del conocimiento
+          con impacto real en la región y el país.
+        </p>
 
-                <p class="fs-16">
-                    Nuestra cultura del conocimiento nace en las aulas y se proyecta
-                    hacia el mundo. Lo hacemos a través de metodologías creativas,
-                    innovadoras y flexibles, diseñadas para elevar la calidad de
-                    nuestros programas profesionales por ciclos. Con ello impulsamos
-                    la transformación curricular, la innovación y la transferencia
-                    de conocimiento, llevando experiencias y soluciones al sector
-                    externo para que la educación se convierta en un auténtico motor
-                    de transformación social y desarrollo sostenible.
-                </p>
+        <p class="fs-16">
+          Nuestra cultura del conocimiento nace en las aulas y se proyecta
+          hacia el mundo. Lo hacemos a través de metodologías creativas,
+          innovadoras y flexibles, diseñadas para elevar la calidad de
+          nuestros programas profesionales por ciclos. Con ello impulsamos
+          la transformación curricular, la innovación y la transferencia
+          de conocimiento, llevando experiencias y soluciones al sector
+          externo para que la educación se convierta en un auténtico motor
+          de transformación social y desarrollo sostenible.
+        </p>
 
-                <p class="fs-16">
-                    Este compromiso se consolidó con el Acuerdo No. 04 del 5 de junio
-                    de 2023, mediante el cual CIAF adoptó el Sistema de Investigación
-                    e Innovación como política institucional. Con él reafirmamos nuestra
-                    misión de fortalecer tres frentes estratégicos que marcan la
-                    diferencia: la investigación en sentido estricto, la investigación
-                    formativa y la apropiación y divulgación del conocimiento. Cada uno
-                    de estos frentes representa una oportunidad para crear, inspirar y
-                    transformar, acercándonos cada vez más al futuro que queremos construir.
-                </p>
+        <p class="fs-16">
+          Este compromiso se consolidó con el Acuerdo No. 04 del 5 de junio
+          de 2023, mediante el cual CIAF adoptó el Sistema de Investigación
+          e Innovación como política institucional. Con él reafirmamos nuestra
+          misión de fortalecer tres frentes estratégicos que marcan la
+          diferencia: la investigación en sentido estricto, la investigación
+          formativa y la apropiación y divulgación del conocimiento. Cada uno
+          de estos frentes representa una oportunidad para crear, inspirar y
+          transformar, acercándonos cada vez más al futuro que queremos construir.
+        </p>
 
-            </div>
+      </div>
 
-            <!-- Columna derecha -->
-            <div class="col-lg-6">
+      <!-- Columna derecha -->
+      <div class="col-lg-6">
 
-                <div class="card shadow-sm border-1 border-color-2 rounded-5">
+        <div class="card shadow-sm border-1 border-color-2 rounded-5">
 
-                    <div class="card-body p-4">
+          <div class="card-body p-4">
 
-                        <!-- Encabezado -->
-                        <div class="row align-items-center mb-4">
+            <!-- Encabezado -->
+            <div class="row align-items-center mb-4">
 
-                            <div class="col-auto">
-                                <div class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill">
-                                    <i class="fa-solid fa-sitemap"></i>
-                                </div>
-                            </div>
-                          
-                            
-                            <div class="col">
-                                <small class="fs-12 text-uppercase fw-black text-color-1 ls-4">
-                                    Sistema de
-                                </small>
-
-                                <h3 class="fs-20 fw-black mb-0 text-color-2">
-                                    Investigación
-                                </h3>
-                            </div>
-
-                        </div>
-
-                        <div
-                            class="mb-3"
-                            *ngFor="let frente of sistemaInvestigacionFrentes; let last = last"
-                            [class.mb-4]="last"
-                        >
-                            <button
-                                type="button"
-                                class="ciaf-btn w-100 px-4 py-3 fw-bold text-decoration-none d-flex align-items-center justify-content-between border-0"
-                                [class.ciaf-btn--primary]="frente.variant === 'primary'"
-                                [class.ciaf-btn--lime]="frente.variant === 'lime'"
-                                [class.bg-color-5]="frente.variant === 'green'"
-                                [class.text-white]="frente.variant === 'green' || frente.variant === 'lime'"
-                                [class.rounded-pill]="!isSistemaInvestigacionAbierto(frente.id)"
-                                [class.rounded-top-5]="isSistemaInvestigacionAbierto(frente.id)"
-                                [class.rounded-bottom-0]="isSistemaInvestigacionAbierto(frente.id)"
-                                (click)="toggleSistemaInvestigacion(frente.id)"
-                                [attr.aria-expanded]="isSistemaInvestigacionAbierto(frente.id)"
-                                [attr.aria-controls]="'panel-sistema-' + frente.id"
-                            >
-                                <span>{{ frente.titulo }}</span>
-                                <i
-                                    class="fa-solid"
-                                    [class.fa-arrow-right]="!isSistemaInvestigacionAbierto(frente.id)"
-                                    [class.fa-chevron-down]="isSistemaInvestigacionAbierto(frente.id)"
-                                    aria-hidden="true"
-                                ></i>
-                            </button>
-
-                            <div
-                                *ngIf="isSistemaInvestigacionAbierto(frente.id)"
-                                class="border border-top-0 rounded-bottom-5 px-3 pb-3 pt-3"
-                                [id]="'panel-sistema-' + frente.id"
-                            >
-                                <div class="d-flex flex-wrap gap-2">
-                                    <ng-container *ngFor="let producto of frente.productos">
-                                        <button
-                                            *ngIf="producto.seccion; else productoEstatico"
-                                            type="button"
-                                            class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3 py-2 text-color-2 border-0"
-                                            (click)="irAProductoInvestigacion(producto)"
-                                        >
-                                            <i class="fa-regular fa-circle-check me-2" aria-hidden="true"></i>
-                                            {{ producto.label }}
-                                        </button>
-
-                                        <ng-template #productoEstatico>
-                                            <span class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3 py-2 text-color-2">
-                                                <i class="fa-regular fa-circle-check me-2" aria-hidden="true"></i>
-                                                {{ producto.label }}
-                                            </span>
-                                        </ng-template>
-                                    </ng-container>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="text-center fs-12 mb-0">
-                            Toca cada frente para descubrir sus productos
-                        </p>
-
-                    </div>
-
+              <div class="col-auto">
+                <div class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill">
+                  <i class="fa-solid fa-sitemap"></i>
                 </div>
+              </div>
+
+
+              <div class="col">
+                <small class="fs-12 text-uppercase fw-black text-color-1 ls-4">
+                  Sistema de
+                </small>
+
+                <h3 class="fs-20 fw-black mb-0 text-color-2">
+                  Investigación
+                </h3>
+              </div>
 
             </div>
+
+            <div class="mb-3" *ngFor="let frente of sistemaInvestigacionFrentes; let last = last" [class.mb-4]="last">
+              <button type="button"
+                class="ciaf-btn w-100 px-4 py-3 fw-bold text-decoration-none d-flex align-items-center justify-content-between border-0"
+                [class.ciaf-btn--primary]="frente.variant === 'primary'"
+                [class.ciaf-btn--lime]="frente.variant === 'lime'" [class.bg-color-5]="frente.variant === 'green'"
+                [class.text-white]="frente.variant === 'green' || frente.variant === 'lime'"
+                [class.rounded-pill]="!isSistemaInvestigacionAbierto(frente.id)"
+                [class.rounded-top-5]="isSistemaInvestigacionAbierto(frente.id)"
+                [class.rounded-bottom-0]="isSistemaInvestigacionAbierto(frente.id)"
+                (click)="toggleSistemaInvestigacion(frente.id)"
+                [attr.aria-expanded]="isSistemaInvestigacionAbierto(frente.id)"
+                [attr.aria-controls]="'panel-sistema-' + frente.id">
+                <span>{{ frente.titulo }}</span>
+                <i class="fa-solid" [class.fa-arrow-right]="!isSistemaInvestigacionAbierto(frente.id)"
+                  [class.fa-chevron-down]="isSistemaInvestigacionAbierto(frente.id)" aria-hidden="true"></i>
+              </button>
+
+              <div *ngIf="isSistemaInvestigacionAbierto(frente.id)"
+                class="border border-top-0 rounded-bottom-5 px-3 pb-3 pt-3" [id]="'panel-sistema-' + frente.id">
+                <div class="d-flex flex-wrap gap-2">
+                  <ng-container *ngFor="let producto of frente.productos">
+                    <button *ngIf="producto.seccion; else productoEstatico" type="button"
+                      class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3 py-2 text-color-2 border-0"
+                      (click)="irAProductoInvestigacion(producto)">
+                      <i class="fa-regular fa-circle-check me-2" aria-hidden="true"></i>
+                      {{ producto.label }}
+                    </button>
+
+                    <ng-template #productoEstatico>
+                      <span class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3 py-2 text-color-2">
+                        <i class="fa-regular fa-circle-check me-2" aria-hidden="true"></i>
+                        {{ producto.label }}
+                      </span>
+                    </ng-template>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-center fs-12 mb-0">
+              Toca cada frente para descubrir sus productos
+            </p>
+
+          </div>
 
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 </section>
 
 
-<section class="py-5 bg-light d-none" >
-    <div class="container-fluid">
+<section class="py-5 bg-light d-none">
+  <div class="container-fluid">
 
-        <div class="row justify-content-center text-center mb-5">
-            <div class="col-xl-7 col-lg-8 col-md-10">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-xl-7 col-lg-8 col-md-10">
 
-                <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5 text-uppercase ls-4">
-                    <i class="fa-solid fa-network-wired me-2"></i>
-                    ECOSISTEMA DE INVESTIGACIÓN
-                </span>
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5 text-uppercase ls-4">
+          <i class="fa-solid fa-network-wired me-2"></i>
+          ECOSISTEMA DE INVESTIGACIÓN
+        </span>
 
-                <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                    Un sistema <span class="ciaf-gradient-text ciaf-gradient-text--brand">conectado</span>
-                </h2>
+        <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+          Un sistema <span class="ciaf-gradient-text ciaf-gradient-text--brand">conectado</span>
+        </h2>
 
-                <p class="fs-16 mb-0">
-                    Así se conectan los elementos que dan vida a la investigación,
-                    la ciencia y la innovación en CIAF.
-                </p>
+        <p class="fs-16 mb-0">
+          Así se conectan los elementos que dan vida a la investigación,
+          la ciencia y la innovación en CIAF.
+        </p>
 
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center px-4">
+
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <article class="ciaf-transform-card h-100 border rounded-4 text-center">
+          <div class="card-body py-4">
+            <div
+              class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
+              <i class="fa-solid fa-atom fs-3"></i>
             </div>
-        </div>
+            <h3 class="fs-14 fw-bold mb-0 text-color-2">
+              Ciencia e Innovación
+            </h3>
+          </div>
+        </article>
+      </div>
 
-        <div class="row g-4 justify-content-center px-4">
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-                <article class="ciaf-transform-card h-100 border rounded-4 text-center">
-                    <div class="card-body py-4">
-                        <div class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
-                            <i class="fa-solid fa-atom fs-3"></i>
-                        </div>
-                        <h3 class="fs-14 fw-bold mb-0 text-color-2">
-                            Ciencia e Innovación
-                        </h3>
-                    </div>
-                </article>
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <article class="ciaf-transform-card h-100 border rounded-4 text-center">
+          <div class="card-body py-4">
+            <div
+              class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
+              <i class="fa-solid fa-user fs-3"></i>
             </div>
+            <h3 class="fs-14 fw-bold mb-0 text-color-2">
+              Grupo de investigación
+            </h3>
+          </div>
+        </article>
+      </div>
 
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-                <article class="ciaf-transform-card h-100 border rounded-4 text-center">
-                    <div class="card-body py-4">
-                        <div class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
-                            <i class="fa-solid fa-user fs-3"></i>
-                        </div>
-                        <h3 class="fs-14 fw-bold mb-0 text-color-2">
-                            Grupo de investigación
-                        </h3>
-                    </div>
-                </article>
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <article class="ciaf-transform-card h-100 border rounded-4 text-center">
+          <div class="card-body py-4">
+            <div
+              class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
+              <i class="fa-solid fa-flask fs-3"></i>
             </div>
+            <h3 class="fs-14 fw-bold mb-0 text-color-2">
+              Semilleros de investigación
+            </h3>
+          </div>
+        </article>
+      </div>
 
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-                <article class="ciaf-transform-card h-100 border rounded-4 text-center">
-                    <div class="card-body py-4">
-                        <div class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
-                            <i class="fa-solid fa-flask fs-3"></i>
-                        </div>
-                        <h3 class="fs-14 fw-bold mb-0 text-color-2">
-                            Semilleros de investigación
-                        </h3>
-                    </div>
-                </article>
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <article class="ciaf-transform-card h-100 border rounded-4 text-center">
+          <div class="card-body py-4">
+            <div
+              class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
+              <i class="fa-solid fa-bullhorn fs-3"></i>
             </div>
+            <h3 class="fs-14 fw-bold mb-0 text-color-2">
+              Convocatorias
+            </h3>
+          </div>
+        </article>
+      </div>
 
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-                <article class="ciaf-transform-card h-100 border rounded-4 text-center">
-                    <div class="card-body py-4">
-                        <div class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
-                            <i class="fa-solid fa-bullhorn fs-3"></i>
-                        </div>
-                        <h3 class="fs-14 fw-bold mb-0 text-color-2">
-                            Convocatorias
-                        </h3>
-                    </div>
-                </article>
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <article class="ciaf-transform-card h-100 border rounded-4 text-center">
+          <div class="card-body py-4">
+            <div
+              class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
+              <i class="fa-regular fa-calendar-days fs-3"></i>
             </div>
+            <h3 class="fs-14 fw-bold mb-0 text-color-2">
+              Eventos
+            </h3>
+          </div>
+        </article>
+      </div>
 
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-                <article class="ciaf-transform-card h-100 border rounded-4 text-center">
-                    <div class="card-body py-4">
-                        <div class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
-                            <i class="fa-regular fa-calendar-days fs-3"></i>
-                        </div>
-                        <h3 class="fs-14 fw-bold mb-0 text-color-2">
-                            Eventos
-                        </h3>
-                    </div>
-                </article>
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <article class="ciaf-transform-card h-100 border rounded-4 text-center">
+          <div class="card-body py-4">
+            <div
+              class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
+              <i class="fa-solid fa-earth-americas fs-3"></i>
             </div>
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-                <article class="ciaf-transform-card h-100 border rounded-4 text-center">
-                    <div class="card-body py-4">
-                        <div class="ciaf-transform-icon rounded-circle d-inline-flex align-items-center justify-content-center mb-3 p-3 bg-light">
-                            <i class="fa-solid fa-earth-americas fs-3"></i>
-                        </div>
-                        <h3 class="fs-14 fw-bold mb-0 text-color-2">
-                            Internacionalización
-                        </h3>
-                    </div>
-                </article>
-            </div>
-
-        </div>
+            <h3 class="fs-14 fw-bold mb-0 text-color-2">
+              Internacionalización
+            </h3>
+          </div>
+        </article>
+      </div>
 
     </div>
+
+  </div>
 </section>
 
 <!-- Grupos de investigación -->
 <section class="container py-5" id="grupos-de-investigacion">
 
-    <div class="row justify-content-center text-center mb-5">
-        <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+  <div class="row justify-content-center text-center mb-5">
+    <div class="col-xl-8 col-lg-9 col-md-10 col-12">
 
-            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
-                <i class="fa-solid fa-users me-2"></i>
-                Grupo de Investigación
-            </span>
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
+        <i class="fa-solid fa-users me-2"></i>
+        Grupo de Investigación
+      </span>
 
-            <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                Súmate a la ciencia, la creatividad y la
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">innovación</span>
-            </h2>
+      <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+        Súmate a la ciencia, la creatividad y la
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">innovación</span>
+      </h2>
 
-            <p class="fs-18 mt-4 mb-0">
-                Un grupo de investigación universitario es una comunidad de académicos,
-                profesores y estudiantes que colaboran de manera sistemática y especializada
-                para generar nuevos conocimientos, promover el avance científico y contribuir
-                al desarrollo de la sociedad.
-            </p>
-
-        </div>
-    </div>
-
-    <div class="row g-4 align-items-stretch">
-
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-            <div class="ciaf-card rounded-5 h-100 p-4">
-
-                <span class="ciaf-pill ciaf-pill--compact fs-14 fw-black text-color-2 rounded-pill px-4 ls-1">
-                    <i class="fa-regular fa-award me-2"></i>
-                    Categorizado en MinCiencias — Categoría C
-                </span>
-
-                <h3 class="fs-20 fw-extrablack text-color-2 mt-4">
-                    Grupo “Organizaciones e Innovación”
-                </h3>
-
-                <p class="fs-14 mt-4">
-                    El grupo de investigación CIAF “Organizaciones e Innovación” está
-                    categorizado en MinCiencias en C y cuenta con cinco líneas de investigación
-                    que fundamentan la investigación formativa y en sentido estricto de nuestros
-                    programas académicos.
-                </p>
-
-                <p class="fs-14 mb-0">
-                    Con 12 años de experiencia investigativa, sus estrategias de formación para
-                    docentes y estudiantes permiten el desarrollo de un pensamiento crítico,
-                    creativo e innovador. Cuenta con investigadores categorizados como Junior y
-                    Asociado, y ha participado con 8 jóvenes investigadores en convocatorias de
-                    MinCiencias.
-                </p>
-
-            </div>
-        </div>
-
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-            <div class="row g-3 h-100">
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-36 fw-extrablack text-color-2 mb-1">12</h3>
-                        <p class="fs-14 fw-bold mb-0">años de experiencia</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">200+</h3>
-                        <p class="fs-12 fw-bold mb-0">tesis de pregrado</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">8</h3>
-                        <p class="fs-12 fw-bold mb-0">tesis de maestría</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">12</h3>
-                        <p class="fs-12 fw-bold mb-0">artículos indexados</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">5</h3>
-                        <p class="fs-12 fw-bold mb-0">libros publicados</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">8</h3>
-                        <p class="fs-12 fw-bold mb-0">capítulos de libro</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">5</h3>
-                        <p class="fs-12 fw-bold mb-0">desarrollos de software</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 h-100 text-center p-4">
-                        <h3 class="fs-30 fw-extrablack text-color-2 mb-1">32</h3>
-                        <p class="fs-12 fw-bold mb-0">congresos nac. e int.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+      <p class="fs-18 mt-4 mb-0">
+        Un grupo de investigación universitario es una comunidad de académicos,
+        profesores y estudiantes que colaboran de manera sistemática y especializada
+        para generar nuevos conocimientos, promover el avance científico y contribuir
+        al desarrollo de la sociedad.
+      </p>
 
     </div>
+  </div>
 
-    <div class="row pt-5">
+  <div class="row g-4 align-items-stretch">
 
-        <div class="row">
-            <div class="col-12">
-    
-                <h2 class="fs-28 fw-extrablack text-color-2 d-flex align-items-center gap-3 mb-0">
-                    <i class="fa-solid fa-code-branch"></i>
-                    Líneas de investigación
-                </h2>
-    
-            </div>
-        </div>
-    
-        <div class="row g-4">
-    
-            <!-- Línea 1 -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-    
-                <div class="ciaf-card rounded-5 h-100 p-4">
-    
-                    <div class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
-    
-                        <span class="fs-18 fw-extrablack">1</span>
-    
-                    </div>
-    
-                    <h3 class="fs-16 fw-extrablack text-color-2">
-                        Desarrollo e implementación de software
-                    </h3>
-    
-                    <p class="fs-14 mb-0">
-                        Creación de soluciones tecnológicas y aplicaciones que responden a
-                        necesidades reales del entorno.
-                    </p>
-    
-                </div>
-    
-            </div>
-    
-            <!-- Línea 2 -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-    
-                <div class="ciaf-card rounded-5 h-100 p-4">
-    
-                    <div class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
-    
-                        <span class="fs-18 fw-extrablack">2</span>
-    
-                    </div>
-    
-                    <h3 class="fs-16 fw-extrablack text-color-2">
-                        Gestión organizacional y desarrollo sostenible
-                    </h3>
-    
-                    <p class="fs-14 mb-0">
-                        Innovación en procesos, organizaciones y modelos sostenibles con
-                        impacto social y económico.
-                    </p>
-    
-                </div>
-    
-            </div>
-    
-            <!-- Línea 3 -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-    
-                <div class="ciaf-card rounded-5 h-100 p-4">
-    
-                    <div class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
-    
-                        <span class="fs-18 fw-extrablack">3</span>
-    
-                    </div>
-    
-                    <h3 class="fs-16 fw-extrablack text-color-2">
-                        Seguridad integral, técnicas de seguridad y prevención de riesgos
-                    </h3>
-    
-                    <p class="fs-14 mb-0">
-                        Investigación aplicada a la seguridad, la salud en el trabajo y la
-                        prevención de riesgos.
-                    </p>
-    
-                </div>
-    
-            </div>
-    
-        </div>
-    
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+      <div class="ciaf-card rounded-5 h-100 p-4">
+
+        <span class="ciaf-pill ciaf-pill--compact fs-14 fw-black text-color-2 rounded-pill px-4 ls-1">
+          <i class="fa-regular fa-award me-2"></i>
+          Categorizado en MinCiencias — Categoría C
+        </span>
+
+        <h3 class="fs-20 fw-extrablack text-color-2 mt-4">
+          Grupo “Organizaciones e Innovación”
+        </h3>
+
+        <p class="fs-14 mt-4">
+          El grupo de investigación CIAF “Organizaciones e Innovación” está
+          categorizado en MinCiencias en C y cuenta con cinco líneas de investigación
+          que fundamentan la investigación formativa y en sentido estricto de nuestros
+          programas académicos.
+        </p>
+
+        <p class="fs-14 mb-0">
+          Con 12 años de experiencia investigativa, sus estrategias de formación para
+          docentes y estudiantes permiten el desarrollo de un pensamiento crítico,
+          creativo e innovador. Cuenta con investigadores categorizados como Junior y
+          Asociado, y ha participado con 8 jóvenes investigadores en convocatorias de
+          MinCiencias.
+        </p>
+
+      </div>
     </div>
 
-    <div class="row my-5">
-        <div class="col-12">
-            <h2 class="fs-20 fw-extrablack text-color-2 d-flex align-items-center gap-3 mb-3"><i class="fa-solid fa-users"></i>Docentes de Investigaciones</h2>
-            <p class="fs-14 mb-0">Conoce a los docentes investigadores de cada programa académico y escríbeles directamente.</p>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+      <div class="row g-3 h-100">
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-36 fw-extrablack text-color-2 mb-1">12</h3>
+            <p class="fs-14 fw-bold mb-0">años de experiencia</p>
+          </div>
         </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">200+</h3>
+            <p class="fs-12 fw-bold mb-0">tesis de pregrado</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">8</h3>
+            <p class="fs-12 fw-bold mb-0">tesis de maestría</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">12</h3>
+            <p class="fs-12 fw-bold mb-0">artículos indexados</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">5</h3>
+            <p class="fs-12 fw-bold mb-0">libros publicados</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">8</h3>
+            <p class="fs-12 fw-bold mb-0">capítulos de libro</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">5</h3>
+            <p class="fs-12 fw-bold mb-0">desarrollos de software</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 h-100 text-center p-4">
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-1">32</h3>
+            <p class="fs-12 fw-bold mb-0">congresos nac. e int.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+  </div>
+
+  <div class="row pt-5">
 
     <div class="row">
-        <div class="col-12">
+      <div class="col-12">
 
-            <div class="ciaf-card rounded-5 overflow-hidden">
+        <h2 class="fs-28 fw-extrablack text-color-2 d-flex align-items-center gap-3 mb-0">
+          <i class="fa-solid fa-code-branch"></i>
+          Líneas de investigación
+        </h2>
 
-                <div class="table-responsive">
+      </div>
+    </div>
 
-                    <table class="table align-middle mb-0">
+    <div class="row g-4">
 
-                        <thead class="text-white ">
-                            <tr class="bg-color-3">
-                                <th class="px-4 py-4 fs-16 bg-color-3 text-white">PROGRAMA ACADÉMICO</th>
-                                <th class="py-4 fs-16 bg-color-3 text-white">DOCENTE</th>
-                                <th class="py-4 fs-16 bg-color-3 text-white">CORREO</th>
-                            </tr>
-                        </thead>
+      <!-- Línea 1 -->
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
 
-                        <tbody>
+        <div class="ciaf-card rounded-5 h-100 p-4">
 
-                            <tr>
-                                <td class="px-4 py-2 fw-bold text-color-2">Ingeniería Industrial</td>
-                                <td>Jose Hernán Álvarez Martínez</td>
-                                <td><a href="mailto:jose.alvarez@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i class="fa-regular fa-envelope me-2"></i>jose.alvarez@ciaf.edu.co</a></td>
-                            </tr>
+          <div
+            class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
 
-                            <tr>
-                                <td class="px-4 py-3 fw-bold text-color-2">Ingeniería de Software</td>
-                                <td>Leidy Johana Quintero</td>
-                                <td><a href="mailto:leidy.quintero@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i class="fa-regular fa-envelope me-2"></i>leidy.quintero@ciaf.edu.co</a></td>
-                            </tr>
+            <span class="fs-18 fw-extrablack">1</span>
 
-                            <tr>
-                                <td class="px-4 py-3 fw-bold text-color-2">Ingeniería de Software</td>
-                                <td>Daniela Sánchez</td>
-                                <td><a href="mailto:daniela.sanchez@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i class="fa-regular fa-envelope me-2"></i>daniela.sanchez@ciaf.edu.co</a></td>
-                            </tr>
+          </div>
 
-                            <tr>
-                                <td class="px-4 py-3 fw-bold text-color-2">Contaduría Pública</td>
-                                <td>Jonathan Flórez Gallego</td>
-                                <td><a href="mailto:jonathan.florez@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i class="fa-regular fa-envelope me-2"></i>jonathan.florez@ciaf.edu.co</a></td>
-                            </tr>
+          <h3 class="fs-16 fw-extrablack text-color-2">
+            Desarrollo e implementación de software
+          </h3>
 
-                            <tr>
-                                <td class="px-4 py-3 fw-bold text-color-2">Administración de Empresas</td>
-                                <td>Diego Hernán Jiménez Ocampo</td>
-                                <td><a href="mailto:diego.jimenez@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i class="fa-regular fa-envelope me-2"></i>diego.jimenez@ciaf.edu.co</a></td>
-                            </tr>
-
-                            <tr>
-                                <td class="px-4 py-3 fw-bold text-color-2">Seguridad y Salud en el Trabajo</td>
-                                <td>María Alejandra Galvis</td>
-                                <td><a href="mailto:maria.galvis@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i class="fa-regular fa-envelope me-2"></i>maria.galvis@ciaf.edu.co</a></td>
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
+          <p class="fs-14 mb-0">
+            Creación de soluciones tecnológicas y aplicaciones que responden a
+            necesidades reales del entorno.
+          </p>
 
         </div>
+
+      </div>
+
+      <!-- Línea 2 -->
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card rounded-5 h-100 p-4">
+
+          <div
+            class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
+
+            <span class="fs-18 fw-extrablack">2</span>
+
+          </div>
+
+          <h3 class="fs-16 fw-extrablack text-color-2">
+            Gestión organizacional y desarrollo sostenible
+          </h3>
+
+          <p class="fs-14 mb-0">
+            Innovación en procesos, organizaciones y modelos sostenibles con
+            impacto social y económico.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Línea 3 -->
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card rounded-5 h-100 p-4">
+
+          <div
+            class="ciaf-icon-badge--gradient ciaf-icon-badge rounded-pill text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
+
+            <span class="fs-18 fw-extrablack">3</span>
+
+          </div>
+
+          <h3 class="fs-16 fw-extrablack text-color-2">
+            Seguridad integral, técnicas de seguridad y prevención de riesgos
+          </h3>
+
+          <p class="fs-14 mb-0">
+            Investigación aplicada a la seguridad, la salud en el trabajo y la
+            prevención de riesgos.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-    
+
+  </div>
+
+  <div class="row my-5">
+    <div class="col-12">
+      <h2 class="fs-20 fw-extrablack text-color-2 d-flex align-items-center gap-3 mb-3"><i
+          class="fa-solid fa-users"></i>Docentes de Investigaciones</h2>
+      <p class="fs-14 mb-0">Conoce a los docentes investigadores de cada programa académico y escríbeles directamente.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+
+      <div class="ciaf-card rounded-5 overflow-hidden">
+
+        <div class="table-responsive">
+
+          <table class="table align-middle mb-0">
+
+            <thead class="text-white ">
+              <tr class="bg-color-3">
+                <th class="px-4 py-4 fs-16 bg-color-3 text-white">PROGRAMA ACADÉMICO</th>
+                <th class="py-4 fs-16 bg-color-3 text-white">DOCENTE</th>
+                <th class="py-4 fs-16 bg-color-3 text-white">CORREO</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td class="px-4 py-2 fw-bold text-color-2">Ingeniería Industrial</td>
+                <td>Jose Hernán Álvarez Martínez</td>
+                <td><a href="mailto:jose.alvarez@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i
+                      class="fa-regular fa-envelope me-2"></i>jose.alvarez@ciaf.edu.co</a></td>
+              </tr>
+
+              <tr>
+                <td class="px-4 py-3 fw-bold text-color-2">Ingeniería de Software</td>
+                <td>Leidy Johana Quintero</td>
+                <td><a href="mailto:leidy.quintero@ciaf.edu.co"
+                    class="text-decoration-none fw-bold text-color-2 fs-14"><i
+                      class="fa-regular fa-envelope me-2"></i>leidy.quintero@ciaf.edu.co</a></td>
+              </tr>
+
+              <tr>
+                <td class="px-4 py-3 fw-bold text-color-2">Ingeniería de Software</td>
+                <td>Daniela Sánchez</td>
+                <td><a href="mailto:daniela.sanchez@ciaf.edu.co"
+                    class="text-decoration-none fw-bold text-color-2 fs-14"><i
+                      class="fa-regular fa-envelope me-2"></i>daniela.sanchez@ciaf.edu.co</a></td>
+              </tr>
+
+              <tr>
+                <td class="px-4 py-3 fw-bold text-color-2">Contaduría Pública</td>
+                <td>Jonathan Flórez Gallego</td>
+                <td><a href="mailto:jonathan.florez@ciaf.edu.co"
+                    class="text-decoration-none fw-bold text-color-2 fs-14"><i
+                      class="fa-regular fa-envelope me-2"></i>jonathan.florez@ciaf.edu.co</a></td>
+              </tr>
+
+              <tr>
+                <td class="px-4 py-3 fw-bold text-color-2">Administración de Empresas</td>
+                <td>Diego Hernán Jiménez Ocampo</td>
+                <td><a href="mailto:diego.jimenez@ciaf.edu.co"
+                    class="text-decoration-none fw-bold text-color-2 fs-14"><i
+                      class="fa-regular fa-envelope me-2"></i>diego.jimenez@ciaf.edu.co</a></td>
+              </tr>
+
+              <tr>
+                <td class="px-4 py-3 fw-bold text-color-2">Seguridad y Salud en el Trabajo</td>
+                <td>María Alejandra Galvis</td>
+                <td><a href="mailto:maria.galvis@ciaf.edu.co" class="text-decoration-none fw-bold text-color-2 fs-14"><i
+                      class="fa-regular fa-envelope me-2"></i>maria.galvis@ciaf.edu.co</a></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- semilleros de investigacion -->
 <section class="container-fluid bg-color-3 py-5" id="semilleros">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="row mb-5">
+    <div class="row mb-5">
 
-            <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-12">
 
-                <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-                    <i class="fa-solid fa-flask me-2"></i>
-                    Semilleros de Investigación
-                </span>
+        <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+          <i class="fa-solid fa-flask me-2"></i>
+          Semilleros de Investigación
+        </span>
 
-                <h2 class="fs-48 fw-extrablack text-white mt-4">
-                    Inscríbete en nuestros
-                    <span class="ciaf-gradient-text ciaf-gradient-text--accent">
-                        Semilleros de Investigación
-                    </span>
-                </h2>
+        <h2 class="fs-48 fw-extrablack text-white mt-4">
+          Inscríbete en nuestros
+          <span class="ciaf-gradient-text ciaf-gradient-text--accent">
+            Semilleros de Investigación
+          </span>
+        </h2>
 
-                <p class="fs-18 text-white-50 mt-4 mb-0">
-                    ¡Conoce por qué la ciencia puede transformar tu vida! La investigación,
-                    la construcción de proyectos y la innovación son puntos altamente valorados
-                    por las empresas, Escuelas de Salud, Ingenierías y Ciencias Administrativas.
-                </p>
+        <p class="fs-18 text-white-50 mt-4 mb-0">
+          ¡Conoce por qué la ciencia puede transformar tu vida! La investigación,
+          la construcción de proyectos y la innovación son puntos altamente valorados
+          por las empresas, Escuelas de Salud, Ingenierías y Ciencias Administrativas.
+        </p>
 
-            </div>
-
-        </div>
-
-        <div class="row g-4 mb-5">
-
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-
-                <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
-
-                    <h3 class="display-3 fw-extrablack ciaf-gradient-text ciaf-gradient-text--brand mb-3 fs-36">
-                        01
-                    </h3>
-
-                    <h4 class="fs-18 fw-extrablack text-white mb-3">
-                        Potencia tu creatividad
-                    </h4>
-
-                    <p class="fs-14 text-white-50 mb-0">
-                        Aprenderás nuevas técnicas.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-
-                <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
-
-                    <h3 class="display-3 fw-extrablack ciaf-gradient-text ciaf-gradient-text--brand mb-3 fs-36">
-                        02
-                    </h3>
-
-                    <h4 class="fs-18 fw-extrablack text-white mb-3">
-                        Te hace más crítico
-                    </h4>
-
-                    <p class="fs-14 text-white-50 mb-0">
-                        Fortalecerás tus habilidades.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-
-                <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
-
-                    <h3 class="display-3 fw-extrablack ciaf-gradient-text ciaf-gradient-text--brand mb-3 fs-36">
-                        03
-                    </h3>
-
-                    <h4 class="fs-18 fw-extrablack text-white mb-3">
-                        Mejora tu oratoria
-                    </h4>
-
-                    <p class="fs-14 text-white-50 mb-0">
-                        Aprenderás a hablar en público.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        
-        <div class="row g-4 align-items-stretch mb-5">
-
-            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
-
-                    <h3 class="fs-18 fw-extrablack text-white mb-4">Habla con tu profesor(a) líder de Semillero</h3>
-
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <button
-                            type="button"
-                            *ngFor="let programa of lideresSemillero; let i = index"
-                            class="rounded-pill px-4 py-1 fw-bold fs-12 border-0"
-                            [class.ciaf-btn]="semilleroProgramaIndice === i"
-                            [class.ciaf-btn--lime]="semilleroProgramaIndice === i"
-                            [class.text-color-2]="semilleroProgramaIndice === i"
-                            [class.ciaf-pill]="semilleroProgramaIndice !== i"
-                            [class.ciaf-pill--compact]="semilleroProgramaIndice !== i"
-                            [class.ciaf-pill--events]="semilleroProgramaIndice !== i"
-                            (click)="seleccionarSemilleroPrograma(i)"
-                            [attr.aria-pressed]="semilleroProgramaIndice === i"
-                        >
-                            {{ programa.programa }}
-                        </button>
-                    </div>
-
-                    <div class="ciaf-card rounded-5 p-4 bg-transparente mb-4 border-0">
-                        <h4 class="fs-12 fw-extrablack text-uppercase text-color-3 mb-3 ls-2">
-                            {{ semilleroProgramaActivo.programa }}
-                        </h4>
-
-                        <div class="d-flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3"
-                                *ngFor="let semillero of semilleroProgramaActivo.semilleros"
-                            >
-                                <i class="fa-solid fa-flask me-2 text-color-3" aria-hidden="true"></i>
-                                {{ semillero }}
-                            </span>
-                        </div>
-
-                        <hr class="text-white-50">
-
-                        <h5 class="fs-14 fw-extrablack text-white mb-2">
-                            {{ semilleroProgramaActivo.lider }}
-                        </h5>
-
-                        <a
-                            [href]="'mailto:' + semilleroProgramaActivo.email"
-                            class="text-white-50 text-decoration-none fs-14"
-                        >
-                            <i class="fa-regular fa-envelope me-2" aria-hidden="true"></i>
-                            {{ semilleroProgramaActivo.email }}
-                        </a>
-                    </div>
-
-                    <h3 class="fs-16 fw-extrablack text-white mb-3">Requisitos para participar</h3>
-
-                    <div class="d-grid gap-1">
-                        <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i><p class="fs-14 text-white-50 mb-0">Ser estudiante o egresado CIAF.</p></div>
-                        <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i><p class="fs-14 text-white-50 mb-0">Participar en los encuentros convocados por los tutores.</p></div>
-                        <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i><p class="fs-14 text-white-50 mb-0">Participar en los eventos internos y externos convocados por la institución.</p></div>
-                        <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i><p class="fs-14 text-white-50 mb-0">Para quienes seleccionan el Semillero como opción de grado, conservar un año de permanencia.</p></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                <div class="h-100 d-flex flex-column justify-content-center gap-4">
-
-                    <a href="https://www.youtube.com/watch?v=NbgVU3Te83s" target="_blank" rel="noopener noreferrer" class="bienestar-video-card d-block border-0 p-0 w-100 rounded-5 overflow-hidden position-relative text-decoration-none">
-                        <img src="https://img.youtube.com/vi/NbgVU3Te83s/maxresdefault.jpg" class="bienestar-video-img w-100 object-fit-cover" alt="Qué es un semillero de investigación">
-                        <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
-                        <div class="bienestar-play-btn position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center bg-white p-4">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                    </a>
-
-                    <div class="ciaf-card rounded-5 p-4 bg-transparente border-transparente">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="rounded-circle border border-2 border-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 42px; height: 42px;">
-                                <i class="fa-regular fa-circle-play text-color-3 fs-24"></i>
-                            </div>
-                            <p class="fs-14 text-white-50 mb-0 text-color-5">Descubre qué es un Semillero de Investigación y por qué deberías participar en él.</p>
-                        </div>
-                    </div>
-
-                    <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20quiero%20inscribirme%20en%20un%20Semillero%20de%20Investigaci%C3%B3n%20de%20CIAF." target="_blank" rel="noopener noreferrer" class="ciaf-btn bg-white text-color-2 rounded-pill py-2 fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-3">
-                        Quiero inscribirme
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-
+      </div>
 
     </div>
+
+    <div class="row g-4 mb-5">
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
+
+          <h3 class="display-3 fw-extrablack ciaf-gradient-text ciaf-gradient-text--brand mb-3 fs-36">
+            01
+          </h3>
+
+          <h4 class="fs-18 fw-extrablack text-white mb-3">
+            Potencia tu creatividad
+          </h4>
+
+          <p class="fs-14 text-white-50 mb-0">
+            Aprenderás nuevas técnicas.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
+
+          <h3 class="display-3 fw-extrablack ciaf-gradient-text ciaf-gradient-text--brand mb-3 fs-36">
+            02
+          </h3>
+
+          <h4 class="fs-18 fw-extrablack text-white mb-3">
+            Te hace más crítico
+          </h4>
+
+          <p class="fs-14 text-white-50 mb-0">
+            Fortalecerás tus habilidades.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
+
+          <h3 class="display-3 fw-extrablack ciaf-gradient-text ciaf-gradient-text--brand mb-3 fs-36">
+            03
+          </h3>
+
+          <h4 class="fs-18 fw-extrablack text-white mb-3">
+            Mejora tu oratoria
+          </h4>
+
+          <p class="fs-14 text-white-50 mb-0">
+            Aprenderás a hablar en público.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-4 align-items-stretch mb-5">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+        <div class="ciaf-card h-100 rounded-5 p-4 bg-transparente border-transparente">
+
+          <h3 class="fs-18 fw-extrablack text-white mb-4">Habla con tu profesor(a) líder de Semillero</h3>
+
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <button type="button" *ngFor="let programa of lideresSemillero; let i = index"
+              class="rounded-pill px-4 py-1 fw-bold fs-12 border-0" [class.ciaf-btn]="semilleroProgramaIndice === i"
+              [class.ciaf-btn--lime]="semilleroProgramaIndice === i"
+              [class.text-color-2]="semilleroProgramaIndice === i" [class.ciaf-pill]="semilleroProgramaIndice !== i"
+              [class.ciaf-pill--compact]="semilleroProgramaIndice !== i"
+              [class.ciaf-pill--events]="semilleroProgramaIndice !== i" (click)="seleccionarSemilleroPrograma(i)"
+              [attr.aria-pressed]="semilleroProgramaIndice === i">
+              {{ programa.programa }}
+            </button>
+          </div>
+
+          <div class="ciaf-card rounded-5 p-4 bg-transparente mb-4 border-0">
+            <h4 class="fs-12 fw-extrablack text-uppercase text-color-3 mb-3 ls-2">
+              {{ semilleroProgramaActivo.programa }}
+            </h4>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3"
+                *ngFor="let semillero of semilleroProgramaActivo.semilleros">
+                <i class="fa-solid fa-flask me-2 text-color-3" aria-hidden="true"></i>
+                {{ semillero }}
+              </span>
+            </div>
+
+            <hr class="text-white-50">
+
+            <h5 class="fs-14 fw-extrablack text-white mb-2">
+              {{ semilleroProgramaActivo.lider }}
+            </h5>
+
+            <a [href]="'mailto:' + semilleroProgramaActivo.email" class="text-white-50 text-decoration-none fs-14">
+              <i class="fa-regular fa-envelope me-2" aria-hidden="true"></i>
+              {{ semilleroProgramaActivo.email }}
+            </a>
+          </div>
+
+          <h3 class="fs-16 fw-extrablack text-white mb-3">Requisitos para participar</h3>
+
+          <div class="d-grid gap-1">
+            <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i>
+              <p class="fs-14 text-white-50 mb-0">Ser estudiante o egresado CIAF.</p>
+            </div>
+            <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i>
+              <p class="fs-14 text-white-50 mb-0">Participar en los encuentros convocados por los tutores.</p>
+            </div>
+            <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i>
+              <p class="fs-14 text-white-50 mb-0">Participar en los eventos internos y externos convocados por la
+                institución.</p>
+            </div>
+            <div class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check mt-1 text-color-3"></i>
+              <p class="fs-14 text-white-50 mb-0">Para quienes seleccionan el Semillero como opción de grado, conservar
+                un año de permanencia.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+        <div class="h-100 d-flex flex-column justify-content-center gap-4">
+
+          <a href="https://www.youtube.com/watch?v=NbgVU3Te83s" target="_blank" rel="noopener noreferrer"
+            class="bienestar-video-card d-block border-0 p-0 w-100 rounded-5 overflow-hidden position-relative text-decoration-none">
+            <img src="https://img.youtube.com/vi/NbgVU3Te83s/maxresdefault.jpg"
+              class="bienestar-video-img w-100 object-fit-cover" alt="Qué es un semillero de investigación">
+            <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+            <div
+              class="bienestar-play-btn position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center bg-white p-4">
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+
+          <div class="ciaf-card rounded-5 p-4 bg-transparente border-transparente">
+            <div class="d-flex align-items-center gap-3">
+              <div
+                class="rounded-circle border border-2 border-success d-flex align-items-center justify-content-center flex-shrink-0"
+                style="width: 42px; height: 42px;">
+                <i class="fa-regular fa-circle-play text-color-3 fs-24"></i>
+              </div>
+              <p class="fs-14 text-white-50 mb-0 text-color-5">Descubre qué es un Semillero de Investigación y por qué
+                deberías participar en él.</p>
+            </div>
+          </div>
+
+          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20quiero%20inscribirme%20en%20un%20Semillero%20de%20Investigaci%C3%B3n%20de%20CIAF."
+            target="_blank" rel="noopener noreferrer"
+            class="ciaf-btn bg-white text-color-2 rounded-pill py-2 fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-3">
+            Quiero inscribirme
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
 
 </section>
 
 <!-- convocatorias -->
 <section class="container py-5" id="convocatorias">
 
-    <div class="row">
+  <div class="row">
 
-        <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+    <div class="col-xl-8 col-lg-9 col-md-10 col-12">
 
-            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
-                <i class="fa-solid fa-bullhorn me-2"></i>
-                Convocatorias
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
+        <i class="fa-solid fa-bullhorn me-2"></i>
+        Convocatorias
+      </span>
+
+      <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
+        Estudiante CIAF,
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">
+          ¡prepárate!
+        </span>
+      </h2>
+
+      <p class="fs-22 mt-4 mb-0">
+        Cada año CIAF realiza convocatorias internas para financiar proyectos
+        generados en los semilleros de investigación o investigaciones que
+        docentes y estudiantes vienen adelantando, relevantes para el país,
+        el departamento, el municipio o a nivel institucional. Además, CIAF
+        promueve la participación de docentes y estudiantes en las convocatorias
+        de organismos nacionales e internacionales.
+      </p>
+
+    </div>
+
+  </div>
+  <div class="row mt-4">
+    <div class="col-12" *ngIf="convocatorias.length">
+
+      <div class="card rounded-5 shadow-sm border overflow-hidden bg-white">
+        <div class="row g-0 align-items-stretch">
+
+          <div class="col-lg-6 position-relative overflow-hidden">
+            <img [src]="convocatoriaActiva.imagen" [alt]="convocatoriaActiva.titulo"
+              class="w-100 h-100 object-fit-cover" style="min-height: 360px;" loading="lazy" />
+
+            <span
+              class="position-absolute top-0 start-0 m-3 d-inline-flex align-items-center gap-2 rounded-pill bg-color-3 text-white fs-12 fw-bold px-3 py-2">
+              <i class="fa-regular fa-calendar"></i>
+              {{ convocatoriaActiva.mes }}
             </span>
+          </div>
 
-            <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
-                Estudiante CIAF,
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">
-                    ¡prepárate!
-                </span>
-            </h2>
+          <div class="col-lg-6 p-4 p-xl-5 d-flex flex-column">
+            <h3 class="fs-24 fw-extrablack text-color-2 mb-3">
+              {{ convocatoriaActiva.titulo }}
+            </h3>
 
-            <p class="fs-22 mt-4 mb-0">
-                Cada año CIAF realiza convocatorias internas para financiar proyectos
-                generados en los semilleros de investigación o investigaciones que
-                docentes y estudiantes vienen adelantando, relevantes para el país,
-                el departamento, el municipio o a nivel institucional. Además, CIAF
-                promueve la participación de docentes y estudiantes en las convocatorias
-                de organismos nacionales e internacionales.
+            <p class="fs-16 text-color-1 mb-4">
+              {{ convocatoriaActiva.descripcion }}
             </p>
 
-        </div>
+            <p class="fs-14 text-color-1 mb-0 fw-black">
+              <i class="fa-regular fa-envelope me-2"></i>
+              investigacion@ciaf.edu.co
+              <span class="mx-2">·</span>
+              Tel 3122371795
+            </p>
 
-    </div>
-    <div class="row mt-4">
-        <div class="col-12" *ngIf="convocatorias.length">
+            <div class="d-flex flex-wrap align-items-center gap-3 my-4">
+              <a routerLink="/iniciar" target="_blank" rel="noopener noreferrer"
+                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14">
+                Inscríbete aquí
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
 
-            <div class="card rounded-5 shadow-sm border overflow-hidden bg-white">
-                <div class="row g-0 align-items-stretch">
-
-                    <div class="col-lg-6 position-relative overflow-hidden">
-                        <img
-                            [src]="convocatoriaActiva.imagen"
-                            [alt]="convocatoriaActiva.titulo"
-                            class="w-100 h-100 object-fit-cover"
-                            style="min-height: 360px;"
-                            loading="lazy"
-                        />
-
-                        <span class="position-absolute top-0 start-0 m-3 d-inline-flex align-items-center gap-2 rounded-pill bg-color-3 text-white fs-12 fw-bold px-3 py-2">
-                            <i class="fa-regular fa-calendar"></i>
-                            {{ convocatoriaActiva.mes }}
-                        </span>
-                    </div>
-
-                    <div class="col-lg-6 p-4 p-xl-5 d-flex flex-column">
-                        <h3 class="fs-24 fw-extrablack text-color-2 mb-3">
-                            {{ convocatoriaActiva.titulo }}
-                        </h3>
-
-                        <p class="fs-16 text-color-1 mb-4">
-                            {{ convocatoriaActiva.descripcion }}
-                        </p>
-
-                        <p class="fs-14 text-color-1 mb-0 fw-black">
-                            <i class="fa-regular fa-envelope me-2"></i>
-                            investigacion@ciaf.edu.co
-                            <span class="mx-2">·</span>
-                            Tel 3122371795
-                        </p>
-
-                        <div class="d-flex flex-wrap align-items-center gap-3 my-4">
-                            <a
-                                routerLink="/iniciar"
-                                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-2 fs-14"
-                            >
-                                Inscríbete aquí
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-
-                            <div class="d-flex align-items-center gap-2 ms-lg-auto">
-                                <button
-                                    type="button"
-                                    class="btn btn-light border rounded-circle d-inline-flex align-items-center justify-content-center"
-                                    style="width: 44px; height: 44px;"
-                                    (click)="convocatoriaAnterior()"
-                                    aria-label="Convocatoria anterior"
-                                >
-                                    <i class="fa-solid fa-chevron-left text-color-2"></i>
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="btn btn-light border rounded-circle d-inline-flex align-items-center justify-content-center"
-                                    style="width: 44px; height: 44px;"
-                                    (click)="convocatoriaSiguiente()"
-                                    aria-label="Siguiente convocatoria"
-                                >
-                                    <i class="fa-solid fa-chevron-right text-color-2"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="border-top mt-4 pt-4 mt-lg-auto ">
-                            <div class="d-flex flex-wrap align-items-center gap-2">
-                                <span class="fs-12 fw-bold text-color-1 text-uppercase me-2">Aliados</span>
-
-                                <span
-                                    class="ciaf-pill ciaf-pill--compact fs-12 fw-semibold rounded-pill px-3 py-1 bg-light text-color-1 border"
-                                    *ngFor="let aliado of aliadosConvocatorias"
-                                >
-                                    {{ aliado }}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-center align-items-center gap-2 mt-4">
-                <button
-                    type="button"
-                    class="border-0 bg-transparente p-0"
-                    *ngFor="let conv of convocatorias; let i = index"
-                    (click)="irAConvocatoria(i)"
-                    [attr.aria-label]="'Ir a convocatoria ' + (i + 1)"
-                    [attr.aria-current]="i === convocatoriaIndice ? 'true' : null"
-                >
-                    <span
-                        class="d-inline-block rounded-pill"
-                        [class.bg-color-3]="i === convocatoriaIndice"
-                        [class.bg-secondary]="i !== convocatoriaIndice"
-                        [class.opacity-50]="i !== convocatoriaIndice"
-                        [style.width.px]="i === convocatoriaIndice ? 28 : 8"
-                        [style.height.px]="8"
-                    ></span>
+              <div class="d-flex align-items-center gap-2 ms-lg-auto">
+                <button type="button"
+                  class="btn btn-light border rounded-circle d-inline-flex align-items-center justify-content-center"
+                  style="width: 44px; height: 44px;" (click)="convocatoriaAnterior()"
+                  aria-label="Convocatoria anterior">
+                  <i class="fa-solid fa-chevron-left text-color-2"></i>
                 </button>
+
+                <button type="button"
+                  class="btn btn-light border rounded-circle d-inline-flex align-items-center justify-content-center"
+                  style="width: 44px; height: 44px;" (click)="convocatoriaSiguiente()"
+                  aria-label="Siguiente convocatoria">
+                  <i class="fa-solid fa-chevron-right text-color-2"></i>
+                </button>
+              </div>
             </div>
 
+            <div class="border-top mt-4 pt-4 mt-lg-auto ">
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <span class="fs-12 fw-bold text-color-1 text-uppercase me-2">Aliados</span>
+
+                <span
+                  class="ciaf-pill ciaf-pill--compact fs-12 fw-semibold rounded-pill px-3 py-1 bg-light text-color-1 border"
+                  *ngFor="let aliado of aliadosConvocatorias">
+                  {{ aliado }}
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center gap-2 mt-4">
+        <button type="button" class="border-0 bg-transparente p-0" *ngFor="let conv of convocatorias; let i = index"
+          (click)="irAConvocatoria(i)" [attr.aria-label]="'Ir a convocatoria ' + (i + 1)"
+          [attr.aria-current]="i === convocatoriaIndice ? 'true' : null">
+          <span class="d-inline-block rounded-pill" [class.bg-color-3]="i === convocatoriaIndice"
+            [class.bg-secondary]="i !== convocatoriaIndice" [class.opacity-50]="i !== convocatoriaIndice"
+            [style.width.px]="i === convocatoriaIndice ? 28 : 8" [style.height.px]="8"></span>
+        </button>
+      </div>
+
     </div>
+  </div>
 
 </section>
 
@@ -963,222 +955,211 @@
 <!-- eventos -->
 <section class="container-fluid bg-color-3 py-5" id="eventos">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="row mb-5">
+    <div class="row mb-5">
 
-            <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-12">
 
-                <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-                    <i class="fa-regular fa-calendar-days me-2"></i>
-                    Eventos de Investigación
-                </span>
+        <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+          <i class="fa-regular fa-calendar-days me-2"></i>
+          Eventos de Investigación
+        </span>
 
-                <h2 class="fs-48 fw-extrablack text-white mt-4">
-                    Donde la
-                    <span class="ciaf-gradient-text ciaf-gradient-text--accent">innovación</span>
-                    sucede
-                </h2>
+        <h2 class="fs-48 fw-extrablack text-white mt-4">
+          Donde la
+          <span class="ciaf-gradient-text ciaf-gradient-text--accent">innovación</span>
+          sucede
+        </h2>
+
+      </div>
+
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente">
+
+          <div class="d-flex align-items-start gap-4">
+
+            <div
+              class="ciaf-icon-badge--gradient rounded-5 d-flex flex-column align-items-center justify-content-center flex-shrink-0"
+              style="width:82px;height:82px;">
+              <span class="fs-36 fw-extrablack text-color-2 lh-1">17</span>
+              <span class="fs-14 fw-bold text-uppercase text-color-2">Jul</span>
+            </div>
+
+            <div>
+
+              <span
+                class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 ">Internacional</span>
+
+              <h3 class="fs-18 fw-extrablack text-white mt-3 mb-3">
+                XI Encuentro Internacional de Pasantías Delfín
+              </h3>
+
+              <p class="fs-12 text-white-50 mb-0 fw-black">
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Manizales · Presencial
+              </p>
 
             </div>
 
+          </div>
+
+          <p class="fs-14 text-white-50 mt-3 mb-0">
+            Participación con 4 ponencias: 3 internacionales (estudiantes de México) y 1 local.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente">
+
+          <div class="d-flex align-items-start gap-4">
+
+            <div
+              class="ciaf-icon-badge--gradient rounded-5 d-flex flex-column align-items-center justify-content-center flex-shrink-0"
+              style="width:82px;height:82px;">
+              <span class="fs-36 fw-extrablack text-color-2 lh-1">29</span>
+              <span class="fs-14 fw-bold text-uppercase text-color-2">Ago</span>
+            </div>
+
+            <div>
+
+              <span
+                class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 text-color-3">Innovación</span>
+
+              <h3 class="fs-18 fw-extrablack text-white mt-3 mb-3">
+                Concurso de Innovación E-Riders
+              </h3>
+
+              <p class="fs-12 text-white-50 mb-0 fw-black">
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Pereira · MET, Meep y Energía
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="fs-14 text-white-50 mt-3 mb-0">
+            Participación del Semillero de Ingeniería Soluciones con IA en el reto de innovación E-Riders.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+
+        <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente">
+
+          <div class="d-flex align-items-start gap-4">
+
+            <div
+              class="ciaf-icon-badge--gradient rounded-5 d-flex flex-column align-items-center justify-content-center flex-shrink-0"
+              style="width:82px;height:82px;">
+              <span class="fs-36 fw-extrablack text-color-2 lh-1">28</span>
+              <span class="fs-14 fw-bold text-uppercase text-color-2">Ago</span>
+            </div>
+
+            <div>
+
+              <span
+                class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 text-color-3">Cultura</span>
+
+              <h3 class="fs-18 fw-extrablack text-white mt-3 mb-3">
+                Festival Luna de Locos — CRAILAB
+              </h3>
+
+              <p class="fs-12 text-white-50 mb-0 fw-black">
+                <i class="fa-solid fa-location-dot me-2"></i>
+                CRAILAB · IE Boyacá
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="fs-14 text-white-50 mt-3 mb-0">
+            Celebración del festival Luna de Locos como parte del compromiso de CIAF con las instituciones educativas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row mt-5 pt-4" *ngIf="boletinSlides.length">
+
+      <div class="col-12">
+
+        <div class="mb-4">
+          <h3 class="fs-20 fw-extrablack text-white d-flex align-items-center gap-3 mb-3">
+            <i class="fa-solid fa-book-open text-color-3" aria-hidden="true"></i>
+            Boletín de Investigación e Innovación
+          </h3>
+          <p class="fs-14 text-white-50 mb-0">
+            Un recorrido por los logros y actividades más recientes del ecosistema investigativo de CIAF.
+          </p>
         </div>
 
         <div class="row g-4">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let item of boletinSlideActivo">
+            <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente d-flex flex-column">
+              <span
+                class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-11 fw-bold rounded-pill px-3 py-2 align-self-start mb-3">
+                <i class="fa-regular fa-calendar me-2" aria-hidden="true"></i>
+                {{ item.fecha }}
+              </span>
 
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+              <h4 class="fs-16 fw-extrablack text-white mb-3">
+                {{ item.titulo }}
+              </h4>
 
-                <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente">
-
-                    <div class="d-flex align-items-start gap-4">
-
-                        <div class="ciaf-icon-badge--gradient rounded-5 d-flex flex-column align-items-center justify-content-center flex-shrink-0" style="width:82px;height:82px;">
-                            <span class="fs-36 fw-extrablack text-color-2 lh-1">17</span>
-                            <span class="fs-14 fw-bold text-uppercase text-color-2">Jul</span>
-                        </div>
-
-                        <div>
-
-                            <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 ">Internacional</span>
-
-                            <h3 class="fs-18 fw-extrablack text-white mt-3 mb-3">
-                                XI Encuentro Internacional de Pasantías Delfín
-                            </h3>
-
-                            <p class="fs-12 text-white-50 mb-0 fw-black">
-                                <i class="fa-solid fa-location-dot me-2"></i>
-                                Manizales · Presencial
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <p class="fs-14 text-white-50 mt-3 mb-0">
-                        Participación con 4 ponencias: 3 internacionales (estudiantes de México) y 1 local.
-                    </p>
-
-                </div>
-
+              <p class="fs-14 text-white-50 mb-0 mt-auto text-color-5 fw-medium">
+                {{ item.descripcion }}
+              </p>
             </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-
-                <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente">
-
-                    <div class="d-flex align-items-start gap-4">
-
-                        <div class="ciaf-icon-badge--gradient rounded-5 d-flex flex-column align-items-center justify-content-center flex-shrink-0" style="width:82px;height:82px;">
-                            <span class="fs-36 fw-extrablack text-color-2 lh-1">29</span>
-                            <span class="fs-14 fw-bold text-uppercase text-color-2">Ago</span>
-                        </div>
-
-                        <div>
-
-                            <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 text-color-3">Innovación</span>
-
-                            <h3 class="fs-18 fw-extrablack text-white mt-3 mb-3">
-                                Concurso de Innovación E-Riders
-                            </h3>
-
-                            <p class="fs-12 text-white-50 mb-0 fw-black">
-                                <i class="fa-solid fa-location-dot me-2"></i>
-                                Pereira · MET, Meep y Energía
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <p class="fs-14 text-white-50 mt-3 mb-0">
-                        Participación del Semillero de Ingeniería Soluciones con IA en el reto de innovación E-Riders.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-
-                <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente">
-
-                    <div class="d-flex align-items-start gap-4">
-
-                        <div class="ciaf-icon-badge--gradient rounded-5 d-flex flex-column align-items-center justify-content-center flex-shrink-0" style="width:82px;height:82px;">
-                            <span class="fs-36 fw-extrablack text-color-2 lh-1">28</span>
-                            <span class="fs-14 fw-bold text-uppercase text-color-2">Ago</span>
-                        </div>
-
-                        <div>
-
-                            <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-12 fw-bold rounded-pill px-3 text-color-3">Cultura</span>
-
-                            <h3 class="fs-18 fw-extrablack text-white mt-3 mb-3">
-                                Festival Luna de Locos — CRAILAB
-                            </h3>
-
-                            <p class="fs-12 text-white-50 mb-0 fw-black">
-                                <i class="fa-solid fa-location-dot me-2"></i>
-                                CRAILAB · IE Boyacá
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <p class="fs-14 text-white-50 mt-3 mb-0">
-                        Celebración del festival Luna de Locos como parte del compromiso de CIAF con las instituciones educativas.
-                    </p>
-
-                </div>
-
-            </div>
-
+          </div>
         </div>
 
-        <div class="row mt-5 pt-4" *ngIf="boletinSlides.length">
+        <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+          <button type="button"
+            class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center border-transparente"
+            style="width: 44px; height: 44px;" (click)="boletinAnterior()" aria-label="Boletín anterior">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
 
-            <div class="col-12">
-
-                <div class="mb-4">
-                    <h3 class="fs-20 fw-extrablack text-white d-flex align-items-center gap-3 mb-3">
-                        <i class="fa-solid fa-book-open text-color-3" aria-hidden="true"></i>
-                        Boletín de Investigación e Innovación
-                    </h3>
-                    <p class="fs-14 text-white-50 mb-0">
-                        Un recorrido por los logros y actividades más recientes del ecosistema investigativo de CIAF.
-                    </p>
-                </div>
-
-                <div class="row g-4">
-                    <div
-                        class="col-xl-4 col-lg-4 col-md-6 col-12"
-                        *ngFor="let item of boletinSlideActivo"
-                    >
-                        <div class="ciaf-card rounded-5 h-100 p-4 bg-transparente border-transparente d-flex flex-column">
-                            <span class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-11 fw-bold rounded-pill px-3 py-2 align-self-start mb-3">
-                                <i class="fa-regular fa-calendar me-2" aria-hidden="true"></i>
-                                {{ item.fecha }}
-                            </span>
-
-                            <h4 class="fs-16 fw-extrablack text-white mb-3">
-                                {{ item.titulo }}
-                            </h4>
-
-                            <p class="fs-14 text-white-50 mb-0 mt-auto text-color-5 fw-medium">
-                                {{ item.descripcion }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
-                    <button
-                        type="button"
-                        class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center border-transparente"
-                        style="width: 44px; height: 44px;"
-                        (click)="boletinAnterior()"
-                        aria-label="Boletín anterior"
-                    >
-                        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center border-transparente"
-                        style="width: 44px; height: 44px;"
-                        (click)="boletinSiguiente()"
-                        aria-label="Siguiente boletín"
-                    >
-                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </div>
-
-                <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
-                    <button
-                        type="button"
-                        class="border-0 bg-transparent p-0"
-                        *ngFor="let slide of boletinSlides; let i = index"
-                        (click)="irABoletin(i)"
-                        [attr.aria-label]="'Ir al boletín ' + (i + 1)"
-                        [attr.aria-current]="i === boletinIndice ? 'true' : null"
-                    >
-                        <span
-                            class="d-inline-block rounded-pill"
-                            [class.bg-white]="i === boletinIndice"
-                            [class.bg-secondary]="i !== boletinIndice"
-                            [class.opacity-50]="i !== boletinIndice"
-                            [style.width.px]="i === boletinIndice ? 28 : 8"
-                            [style.height.px]="8"
-                        ></span>
-                    </button>
-                </div>
-
-            </div>
-
+          <button type="button"
+            class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center border-transparente"
+            style="width: 44px; height: 44px;" (click)="boletinSiguiente()" aria-label="Siguiente boletín">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
         </div>
+
+        <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
+          <button type="button" class="border-0 bg-transparent p-0" *ngFor="let slide of boletinSlides; let i = index"
+            (click)="irABoletin(i)" [attr.aria-label]="'Ir al boletín ' + (i + 1)"
+            [attr.aria-current]="i === boletinIndice ? 'true' : null">
+            <span class="d-inline-block rounded-pill" [class.bg-white]="i === boletinIndice"
+              [class.bg-secondary]="i !== boletinIndice" [class.opacity-50]="i !== boletinIndice"
+              [style.width.px]="i === boletinIndice ? 28 : 8" [style.height.px]="8"></span>
+          </button>
+        </div>
+
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
@@ -1186,352 +1167,364 @@
 <!-- Internacionalización -->
 <section class="container py-5" id="internacionalizacion">
 
-    <div class="row align-items-center g-5">
+  <div class="row align-items-center g-5">
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
 
-            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-                <i class="fa-solid fa-earth-americas me-2"></i>
-                Internacionalización
-            </span>
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+        <i class="fa-solid fa-earth-americas me-2"></i>
+        Internacionalización
+      </span>
 
-            <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                Un profesional global para un
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">mundo en evolución</span>
-            </h2>
+      <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+        Un profesional global para un
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">mundo en evolución</span>
+      </h2>
 
-            <h3 class="fs-20 fw-extrablack text-color-2 mt-4">
-                ¡A viajar se dijo! en un mundo globalizado
-            </h3>
+      <h3 class="fs-20 fw-extrablack text-color-2 mt-4">
+        ¡A viajar se dijo! en un mundo globalizado
+      </h3>
 
-            <p class="fs-16 mt-4">
-                Pensando en “profesionales del mundo”, CIAF tiene estrategias para que estudiantes y docentes vivan experiencias internacionales que fomentan lazos de cooperación e integración, así como el intercambio de conocimientos interculturales e investigativos.
-            </p>
+      <p class="fs-16 mt-4">
+        Pensando en “profesionales del mundo”, CIAF tiene estrategias para que estudiantes y docentes vivan experiencias
+        internacionales que fomentan lazos de cooperación e integración, así como el intercambio de conocimientos
+        interculturales e investigativos.
+      </p>
 
-            <div class="row g-3 mt-2">
+      <div class="row g-3 mt-2">
 
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-3 h-100">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                                <i class="fa-solid fa-earth-americas text-white"></i>
-                            </div>
-                            <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Cooperación e integración</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-3 h-100">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                                <i class="fa-solid fa-users text-white"></i>
-                            </div>
-                            <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Intercambio intercultural</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-3 h-100">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                                <i class="fa-solid fa-flask text-white"></i>
-                            </div>
-                            <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Movilidad investigativa</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="ciaf-card rounded-5 p-3 h-100">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                                <i class="fa-solid fa-route text-white"></i>
-                            </div>
-                            <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Experiencias internacionales</h4>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+                <i class="fa-solid fa-earth-americas text-white"></i>
+              </div>
+              <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Cooperación e integración</h4>
             </div>
-
-            <div class="mt-4">
-                <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3 fs-14">
-                    <i class="fa-regular fa-file-lines"></i>
-                    Política de Internacionalización
-                </a>
-            </div>
-
+          </div>
         </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-
-            <img src="assets/investigaciones/internacionalizacion.webp" alt="Internacionalización CIAF" class="img-fluid rounded-5 w-100 h-100">
-
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+                <i class="fa-solid fa-users text-white"></i>
+              </div>
+              <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Intercambio intercultural</h4>
+            </div>
+          </div>
         </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+                <i class="fa-solid fa-flask text-white"></i>
+              </div>
+              <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Movilidad investigativa</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+                <i class="fa-solid fa-route text-white"></i>
+              </div>
+              <h4 class="fs-14 fw-extrablack text-color-2 mb-0">Experiencias internacionales</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-4">
+        <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+          class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3 fs-14">
+          <i class="fa-regular fa-file-lines"></i>
+          Política de Internacionalización
+        </a>
+      </div>
 
     </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+      <img src="assets/investigaciones/internacionalizacion.webp" alt="Internacionalización CIAF"
+        class="img-fluid rounded-5 w-100 h-100">
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- Normatividad -->
 <section class="container py-5" id="normatividad">
 
-    <div class="row mb-5">
+  <div class="row mb-5">
 
-        <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+    <div class="col-xl-7 col-lg-8 col-md-10 col-12">
 
-            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-                <i class="fa-regular fa-book-open me-2"></i>
-                Normatividad
-            </span>
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+        <i class="fa-regular fa-book-open me-2"></i>
+        Normatividad
+      </span>
 
-            <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                Biblioteca de
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">documentos</span>
-            </h2>
+      <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+        Biblioteca de
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">documentos</span>
+      </h2>
 
-            <p class="fs-16 mt-4 mb-0">
-                Consulta y descarga la normatividad y los documentos que rigen el Sistema de Investigación e Innovación de CIAF.
-            </p>
-
-        </div>
+      <p class="fs-16 mt-4 mb-0">
+        Consulta y descarga la normatividad y los documentos que rigen el Sistema de Investigación e Innovación de CIAF.
+      </p>
 
     </div>
 
-    <div class="row g-4">
+  </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+  <div class="row g-4">
 
-            <div class="ciaf-card rounded-5 p-4 h-100">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
 
-                <div class="d-flex align-items-start justify-content-between">
+      <div class="ciaf-card rounded-5 p-4 h-100">
 
-                    <div class="d-flex align-items-start gap-3">
+        <div class="d-flex align-items-start justify-content-between">
 
-                        <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                            <i class="fa-regular fa-file-lines text-white"></i>
-                        </div>
+          <div class="d-flex align-items-start gap-3">
 
-                        <div>
+            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+              <i class="fa-regular fa-file-lines text-white"></i>
+            </div>
 
-                            <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
-                                Plan Estratégico
-                            </h3>
+            <div>
 
-                            <p class="fs-14 mb-2">
-                                Hoja de ruta del Sistema de Investigación e Innovación.
-                            </p>
+              <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
+                Plan Estratégico
+              </h3>
 
-                            <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="fw-black text-decoration-none text-color-2 fs-14">
-                                <i class="fa-solid fa-download me-2"></i>
-                                Ver documento
-                            </a>
+              <p class="fs-14 mb-2">
+                Hoja de ruta del Sistema de Investigación e Innovación.
+              </p>
 
-                        </div>
-
-                    </div>
-
-                    <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="text-color-1">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
-                </div>
+              <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+                class="fw-black text-decoration-none text-color-2 fs-14">
+                <i class="fa-solid fa-download me-2"></i>
+                Ver documento
+              </a>
 
             </div>
 
-        </div>
+          </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-
-            <div class="ciaf-card rounded-5 p-4 h-100">
-
-                <div class="d-flex align-items-start justify-content-between">
-
-                    <div class="d-flex align-items-start gap-3">
-
-                        <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                            <i class="fa-regular fa-file-lines text-white"></i>
-                        </div>
-
-                        <div>
-
-                            <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
-                                Política de Investigaciones
-                            </h3>
-
-                            <p class="fs-14 mb-2">
-                                Reglamento del Sistema de Investigación e Innovación de CIAF.
-                            </p>
-
-                            <a href="https://ciaf.digital/public/web_reglamentos/Politica-de-Investigaciones.pdf" target="_blank" class="fw-black text-decoration-none text-color-2 fs-14">
-                                <i class="fa-solid fa-download me-2"></i>
-                                Descargar
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <a href="https://ciaf.digital/public/web_reglamentos/Politica-de-Investigaciones.pdf" target="_blank" class="text-color-1">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
-                </div>
-
-            </div>
+          <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+            class="text-color-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
 
         </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-
-            <div class="ciaf-card rounded-5 p-4 h-100">
-
-                <div class="d-flex align-items-start justify-content-between">
-
-                    <div class="d-flex align-items-start gap-3">
-
-                        <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                            <i class="fa-regular fa-file-lines text-white"></i>
-                        </div>
-
-                        <div>
-
-                            <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
-                                Política de Internacionalización
-                            </h3>
-
-                            <p class="fs-14 mb-2">
-                                Lineamientos de internacionalización y proyección.
-                            </p>
-
-                            <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="fw-bold text-decoration-none text-color-2 fs-14">
-                                <i class="fa-solid fa-download me-2"></i>
-                                Descargar
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="text-color-1">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-
-            <div class="ciaf-card rounded-5 p-4 h-100">
-
-                <div class="d-flex align-items-start justify-content-between">
-
-                    <div class="d-flex align-items-start gap-3">
-
-                        <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
-                            <i class="fa-regular fa-file-lines text-white"></i>
-                        </div>
-
-                        <div>
-
-                            <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
-                                Política de propiedad intelectual
-                            </h3>
-
-                            <p class="fs-14 mb-2">
-                                Marco de protección y gestión del conocimiento.
-                            </p>
-
-                            <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="fw-black text-decoration-none text-color-2 fs-14">
-                                <i class="fa-solid fa-download me-2"></i>
-                                Descargar
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank" class="text-color-1">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="d-flex align-items-start justify-content-between">
+
+          <div class="d-flex align-items-start gap-3">
+
+            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+              <i class="fa-regular fa-file-lines text-white"></i>
+            </div>
+
+            <div>
+
+              <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
+                Política de Investigaciones
+              </h3>
+
+              <p class="fs-14 mb-2">
+                Reglamento del Sistema de Investigación e Innovación de CIAF.
+              </p>
+
+              <a href="https://ciaf.digital/public/web_reglamentos/Politica-de-Investigaciones.pdf" target="_blank"
+                class="fw-black text-decoration-none text-color-2 fs-14">
+                <i class="fa-solid fa-download me-2"></i>
+                Descargar
+              </a>
+
+            </div>
+
+          </div>
+
+          <a href="https://ciaf.digital/public/web_reglamentos/Politica-de-Investigaciones.pdf" target="_blank"
+            class="text-color-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="d-flex align-items-start justify-content-between">
+
+          <div class="d-flex align-items-start gap-3">
+
+            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+              <i class="fa-regular fa-file-lines text-white"></i>
+            </div>
+
+            <div>
+
+              <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
+                Política de Internacionalización
+              </h3>
+
+              <p class="fs-14 mb-2">
+                Lineamientos de internacionalización y proyección.
+              </p>
+
+              <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+                class="fw-bold text-decoration-none text-color-2 fs-14">
+                <i class="fa-solid fa-download me-2"></i>
+                Descargar
+              </a>
+
+            </div>
+
+          </div>
+
+          <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+            class="text-color-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="d-flex align-items-start justify-content-between">
+
+          <div class="d-flex align-items-start gap-3">
+
+            <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+              <i class="fa-regular fa-file-lines text-white"></i>
+            </div>
+
+            <div>
+
+              <h3 class="fs-16 fw-extrablack text-color-2 mb-2">
+                Política de propiedad intelectual
+              </h3>
+
+              <p class="fs-14 mb-2">
+                Marco de protección y gestión del conocimiento.
+              </p>
+
+              <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+                class="fw-black text-decoration-none text-color-2 fs-14">
+                <i class="fa-solid fa-download me-2"></i>
+                Descargar
+              </a>
+
+            </div>
+
+          </div>
+
+          <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+            class="text-color-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- Contacto -->
 <section class="container-fluid bg-color-3 py-5" id="contacto">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-            <div class="col-xl-8 col-lg-9 col-md-11 col-12 text-center pt-4">
+      <div class="col-xl-8 col-lg-9 col-md-11 col-12 text-center pt-4">
 
-                <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase">
-                    Contacto
-                </span>
+        <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase">
+          Contacto
+        </span>
 
-                <h2 class="fs-48 fw-extrablack text-white mt-4">
-                    Haz parte de la investigación que
-                    <span class="ciaf-gradient-text ciaf-gradient-text--accent">
-                        transforma
-                    </span>
-                </h2>
+        <h2 class="fs-48 fw-extrablack text-white mt-4">
+          Haz parte de la investigación que
+          <span class="ciaf-gradient-text ciaf-gradient-text--accent">
+            transforma
+          </span>
+        </h2>
 
-                <p class="fs-18 text-white-50 mt-4 mb-0">
-                    Súmate al ecosistema de ciencia, creatividad e innovación de CIAF.
-                    <br>
-                    Escríbenos y construyamos juntos la sociedad del conocimiento.
-                </p>
+        <p class="fs-18 text-white-50 mt-4 mb-0">
+          Súmate al ecosistema de ciencia, creatividad e innovación de CIAF.
+          <br>
+          Escríbenos y construyamos juntos la sociedad del conocimiento.
+        </p>
 
-                <div class="mt-5">
+        <div class="mt-5">
 
-                    <h3 class="fs-18 fw-extrablack text-white mb-2">
-                        <i class="fa-solid fa-quote-left text-color-5 me-2"></i>
-                        Carlos Soto Zambrano · Líder de Investigación
-                    </h3>
+          <h3 class="fs-18 fw-extrablack text-white mb-2">
+            <i class="fa-solid fa-quote-left text-color-5 me-2"></i>
+            Carlos Soto Zambrano · Líder de Investigación
+          </h3>
 
-                    <p class="fs-18 text-white-50 mb-0">
-                        investigacion@ciaf.edu.co · Tel 312 237 1795
-                    </p>
-
-                </div>
-
-                <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-
-                    <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20quiero%20hacer%20parte%20de%20la%20investigaci%C3%B3n%20e%20innovaci%C3%B3n%20de%20CIAF." target="_blank" rel="noopener noreferrer" class="ciaf-btn bg-white text-color-2 rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-                        <i class="fa-regular fa-comment"></i>
-                        Contactar investigación
-                    </a>
-
-                    <button
-                        type="button"
-                        class="ciaf-btn ciaf-btn--outline rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3 bg-transparente border-transparente text-white border-0"
-                        (click)="scrollToSeccion('semilleros', '3')"
-                    >
-                        Conocer semilleros
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </div>
+          <p class="fs-18 text-white-50 mb-0">
+            investigacion@ciaf.edu.co · Tel 312 237 1795
+          </p>
 
         </div>
 
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+
+          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20quiero%20hacer%20parte%20de%20la%20investigaci%C3%B3n%20e%20innovaci%C3%B3n%20de%20CIAF."
+            target="_blank" rel="noopener noreferrer"
+            class="ciaf-btn bg-white text-color-2 rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+            <i class="fa-regular fa-comment"></i>
+            Contactar investigación
+          </a>
+
+          <button type="button"
+            class="ciaf-btn ciaf-btn--outline rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3 bg-transparente border-transparente text-white border-0"
+            (click)="scrollToSeccion('semilleros', '3')">
+            Conocer semilleros
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
