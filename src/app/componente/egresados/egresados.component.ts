@@ -53,16 +53,16 @@ export class EgresadosComponent {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2
-        }
+          slidesToShow: 2,
+        },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   slideConfigContinuada = {
@@ -96,19 +96,18 @@ export class EgresadosComponent {
 
   public seguimiento_egresados = 'assets/image/seguimiento_egresados.webp';
 
-  public calendario="assets/image/calendario-regular.webp";
-  public vistas="assets/image/vistas.webp";
+  public calendario = 'assets/image/calendario-regular.webp';
+  public vistas = 'assets/image/vistas.webp';
 
-  public modelo_bienestar_egresados = 'assets/image/modelo_bienestar_egresados.webp';
+  public modelo_bienestar_egresados =
+    'assets/image/modelo_bienestar_egresados.webp';
 
-  
   public testimonio_egresado_1 = 'assets/image/testimonio-egresado-1.webp';
   public testimonio_egresado_2 = 'assets/image/testimonio-egresado-2.webp';
   public testimonio_egresado_3 = 'assets/image/testimonio-egresado-3.webp';
   public testimonio_egresado_4 = 'assets/image/testimonio-egresado-4.webp';
 
   public testimonio_egresado_video = 'assets/video/egresados.mp4';
-  
 
   public aliado_egresados_1 = 'assets/image/aliado_egresados_1.webp';
   public aliado_egresados_2 = 'assets/image/aliado_egresados_2.webp';
@@ -118,19 +117,15 @@ export class EgresadosComponent {
   activo: any;
   listarCursos: any;
 
-  
-private scrollSpyIgnorar = false;
-private scrollSpyTick = false;
-private scrollSpyTimer?: ReturnType<typeof setTimeout>;
+  private scrollSpyIgnorar = false;
+  private scrollSpyTick = false;
+  private scrollSpyTimer?: ReturnType<typeof setTimeout>;
 
   campoAccionActivo: string | null = null;
 
   toggleCampoAccion(id: string): void {
     this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
   }
-
-
-
 
   isValid0: boolean = false;
   isValid1: boolean = false;
@@ -140,114 +135,113 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
   isValid5: boolean = false;
   isValid6: boolean = false;
 
-      /** IDs de sección del programa (scroll, no páginas ocultas) */
-      readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
-        { id: 'comunidad', nav: '1', label: 'Comunidad' },
-        { id: 'beneficios', nav: '2', label: 'Beneficios' },
-        { id: 'empleabilidad', nav: '3', label: 'Empleabilidad' },
-        { id: 'comunidad', nav: '4', label: 'Comunidad' },
-        { id: 'educacion-continuada', nav: '5', label: 'Educación Continuada' },
-        { id: 'egresados-destacados', nav: '6', label: 'Egresados destacados' },
-        { id: 'historias', nav: '7', label: 'Historias' },
-        { id: 'galeria-egresados', nav: '8', label: 'Galería de egresados' },
-        { id: 'contacto', nav: '9', label: 'Contacto' },
-        { id: 'eventos', nav: '10', label: 'Eventos' },
-        { id: 'convenios', nav: '11', label: 'Convenios' },
-        { id: 'pertenencia', nav: '12', label: 'Pertenencia y acompañamiento' },
-      ];
-            
-      scrollToSeccion(sectionId: string, navId?: string): void {
-        if (sectionId === 'top') {
-          this.scrollSpyIgnorar = true;
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          if (navId) {
-            this.activo = navId;
-            this.centrarTabNav(navId);
-          }
-          this.reanudarScrollSpy(900);
-          return;
-        }
-    
-        const el = document.getElementById(sectionId);
-        if (!el) {
-          return;
-        }
-    
-        const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
-    
-        if (navId) {
-          this.activo = navId;
-          this.centrarTabNav(navId);
-        }
-    
-        this.scrollSpyIgnorar = true;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-        this.reanudarScrollSpy(900);
+  /** IDs de sección del programa (scroll, no páginas ocultas) */
+  readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
+    { id: 'comunidad', nav: '1', label: 'Comunidad' },
+    { id: 'beneficios', nav: '2', label: 'Beneficios' },
+    { id: 'empleabilidad', nav: '3', label: 'Empleabilidad' },
+    { id: 'comunidad', nav: '4', label: 'Comunidad' },
+    { id: 'educacion-continuada', nav: '5', label: 'Educación Continuada' },
+    { id: 'egresados-destacados', nav: '6', label: 'Egresados destacados' },
+    { id: 'historias', nav: '7', label: 'Historias' },
+    { id: 'galeria-egresados', nav: '8', label: 'Galería de egresados' },
+    { id: 'contacto', nav: '9', label: 'Contacto' },
+    { id: 'eventos', nav: '10', label: 'Eventos' },
+    { id: 'convenios', nav: '11', label: 'Convenios' },
+    { id: 'pertenencia', nav: '12', label: 'Pertenencia y acompañamiento' },
+  ];
+
+  scrollToSeccion(sectionId: string, navId?: string): void {
+    if (sectionId === 'top') {
+      this.scrollSpyIgnorar = true;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (navId) {
+        this.activo = navId;
+        this.centrarTabNav(navId);
       }
-    
-      @HostListener('window:scroll')
-      onWindowScroll(): void {
-        if (this.scrollSpyIgnorar || this.scrollSpyTick) {
-          return;
-        }
-    
-        this.scrollSpyTick = true;
-        requestAnimationFrame(() => {
-          this.actualizarSeccionPorScroll();
-          this.scrollSpyTick = false;
-        });
+      this.reanudarScrollSpy(900);
+      return;
+    }
+
+    const el = document.getElementById(sectionId);
+    if (!el) {
+      return;
+    }
+
+    const top =
+      el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
+
+    if (navId) {
+      this.activo = navId;
+      this.centrarTabNav(navId);
+    }
+
+    this.scrollSpyIgnorar = true;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    this.reanudarScrollSpy(900);
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    if (this.scrollSpyIgnorar || this.scrollSpyTick) {
+      return;
+    }
+
+    this.scrollSpyTick = true;
+    requestAnimationFrame(() => {
+      this.actualizarSeccionPorScroll();
+      this.scrollSpyTick = false;
+    });
+  }
+
+  private actualizarSeccionPorScroll(): void {
+    const offset = this.getNavOffset();
+    let seccionActual = this.seccionesPrograma[0];
+
+    for (const seccion of this.seccionesPrograma) {
+      const el = document.getElementById(seccion.id);
+
+      if (!el) {
+        continue;
       }
-    
-  
-      private actualizarSeccionPorScroll(): void {
-        const offset = this.getNavOffset();
-        let seccionActual = this.seccionesPrograma[0];
-    
-        for (const seccion of this.seccionesPrograma) {
-          const el = document.getElementById(seccion.id);
-    
-          if (!el) {
-            continue;
-          }
-    
-          if (el.getBoundingClientRect().top - offset <= 8) {
-            seccionActual = seccion;
-          } else {
-            break;
-          }
-        }
-    
-        if (this.activo !== seccionActual.nav) {
-          this.activo = seccionActual.nav;
-          this.centrarTabNav(seccionActual.nav);
-        }
+
+      if (el.getBoundingClientRect().top - offset <= 8) {
+        seccionActual = seccion;
+      } else {
+        break;
       }
-  
-      private getNavOffset(): number {
-        const stickyNav = document.querySelector('.ciaf-program-nav');
-        const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
-        return 38 + 78 + stickyH + 12;
-      }
-  
-      private centrarTabNav(navId: string): void {
-        document.getElementById('btn-' + navId)?.scrollIntoView({
-          behavior: 'smooth',
-          inline: 'center',
-          block: 'nearest'
-        });
-      }
-    
-      private reanudarScrollSpy(delayMs: number): void {
-        if (this.scrollSpyTimer) {
-          clearTimeout(this.scrollSpyTimer);
-        }
-    
-        this.scrollSpyTimer = setTimeout(() => {
-          this.scrollSpyIgnorar = false;
-          this.actualizarSeccionPorScroll();
-        }, delayMs);
-      }
-  
+    }
+
+    if (this.activo !== seccionActual.nav) {
+      this.activo = seccionActual.nav;
+      this.centrarTabNav(seccionActual.nav);
+    }
+  }
+
+  private getNavOffset(): number {
+    const stickyNav = document.querySelector('.ciaf-program-nav');
+    const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
+    return 38 + 78 + stickyH + 12;
+  }
+
+  private centrarTabNav(navId: string): void {
+    document.getElementById('btn-' + navId)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
+  }
+
+  private reanudarScrollSpy(delayMs: number): void {
+    if (this.scrollSpyTimer) {
+      clearTimeout(this.scrollSpyTimer);
+    }
+
+    this.scrollSpyTimer = setTimeout(() => {
+      this.scrollSpyIgnorar = false;
+      this.actualizarSeccionPorScroll();
+    }, delayMs);
+  }
 
   paginas(pagina: string) {
     if (pagina == '0') {
@@ -414,7 +408,7 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
   constructor(
     private conectarApiService: ConectarApiService,
     private formBuilder: FormBuilder,
-    private modalService: NgbModal
+    private modalService: NgbModal,
   ) {
     this.myForm = this.formBuilder.group({
       id_credencial: ['', [Validators.required, Validators.minLength(8)]],
@@ -425,9 +419,9 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
     this.activo = '0';
     this.pagina = '1';
     this.paginas(this.pagina);
-    
-    this.conectarApiService.obtenerContinuada().subscribe(respuesta=>{
-      this.listarCursos=respuesta
+
+    this.conectarApiService.obtenerContinuada().subscribe((respuesta) => {
+      this.listarCursos = respuesta;
     });
   }
 
@@ -463,55 +457,55 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
                 this.myForm = new FormGroup({
                   id_credencial: new FormControl(this.$id_credencial),
                   egresados_tiene_hijos: new FormControl(
-                    this.datosUsuario[0]['egresados_tiene_hijos']
+                    this.datosUsuario[0]['egresados_tiene_hijos'],
                   ),
                   egresados_num_hijos: new FormControl(
-                    this.datosUsuario[0]['egresados_num_hijos']
+                    this.datosUsuario[0]['egresados_num_hijos'],
                   ),
                   egresados_trabaja: new FormControl(
-                    this.datosUsuario[0]['egresados_trabaja']
+                    this.datosUsuario[0]['egresados_trabaja'],
                   ),
                   egresados_tipo_trabajador: new FormControl(
-                    this.datosUsuario[0]['egresados_tipo_trabajador']
+                    this.datosUsuario[0]['egresados_tipo_trabajador'],
                   ),
                   egresados_empresa: new FormControl(
-                    this.datosUsuario[0]['egresados_empresa']
+                    this.datosUsuario[0]['egresados_empresa'],
                   ),
                   egresados_sector_empresa: new FormControl(
-                    this.datosUsuario[0]['egresados_sector_empresa']
+                    this.datosUsuario[0]['egresados_sector_empresa'],
                   ),
                   egresados_cargo: new FormControl(
-                    this.datosUsuario[0]['egresados_cargo']
+                    this.datosUsuario[0]['egresados_cargo'],
                   ),
                   egresados_profesion: new FormControl(
-                    this.datosUsuario[0]['egresados_profesion']
+                    this.datosUsuario[0]['egresados_profesion'],
                   ),
                   egresados_salario: new FormControl(
-                    this.datosUsuario[0]['egresados_salario']
+                    this.datosUsuario[0]['egresados_salario'],
                   ),
                   egresados_estudio_adicional: new FormControl(
-                    this.datosUsuario[0]['egresados_estudio_adicional']
+                    this.datosUsuario[0]['egresados_estudio_adicional'],
                   ),
                   egresados_formacion: new FormControl(
-                    this.datosUsuario[0]['egresados_formacion']
+                    this.datosUsuario[0]['egresados_formacion'],
                   ),
                   egresados_tipo_formacion: new FormControl(
-                    this.datosUsuario[0]['egresados_tipo_formacion']
+                    this.datosUsuario[0]['egresados_tipo_formacion'],
                   ),
                   egresados_informacion: new FormControl(
-                    this.datosUsuario[0]['egresados_informacion']
+                    this.datosUsuario[0]['egresados_informacion'],
                   ),
                   egresados_posgrado: new FormControl(
-                    this.datosUsuario[0]['egresados_posgrado']
+                    this.datosUsuario[0]['egresados_posgrado'],
                   ),
                   egresados_colaborativa: new FormControl(
-                    this.datosUsuario[0]['egresados_colaborativa']
+                    this.datosUsuario[0]['egresados_colaborativa'],
                   ),
                   egresados_actualizacion: new FormControl(
-                    this.datosUsuario[0]['egresados_actualizacion']
+                    this.datosUsuario[0]['egresados_actualizacion'],
                   ),
                   egresados_recomendar: new FormControl(
-                    this.datosUsuario[0]['egresados_recomendar']
+                    this.datosUsuario[0]['egresados_recomendar'],
                   ),
                 });
                 this.organizarformulario();
@@ -773,31 +767,36 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
     {
       id: 'hub-venture',
       titulo: 'HUB Venture',
-      descripcion: 'Acompañamiento al emprendimiento y a las ideas de negocio de nuestros egresados.',
+      descripcion:
+        'Acompañamiento al emprendimiento y a las ideas de negocio de nuestros egresados.',
       icono: 'fa-solid fa-lightbulb',
     },
     {
       id: 'consulta',
       titulo: 'Fuente de consulta',
-      descripcion: 'Acceso a recursos, información y asesoría institucional cuando lo necesites.',
+      descripcion:
+        'Acceso a recursos, información y asesoría institucional cuando lo necesites.',
       icono: 'fa-solid fa-magnifying-glass',
     },
     {
       id: 'modelo-bienestar',
       titulo: 'Modelo de Bienestar Institucional',
-      descripcion: 'Estrategias de bienestar que mantienen vivo tu vínculo con la institución.',
+      descripcion:
+        'Estrategias de bienestar que mantienen vivo tu vínculo con la institución.',
       icono: 'fa-solid fa-hand-holding-heart',
     },
     {
       id: 'encuentro-anual',
       titulo: 'Encuentro anual de egresados',
-      descripcion: 'Un espacio para reencontrarnos, compartir y fortalecer la comunidad CIAF.',
+      descripcion:
+        'Un espacio para reencontrarnos, compartir y fortalecer la comunidad CIAF.',
       icono: 'fa-regular fa-calendar-days',
     },
     {
       id: 'egresado-destacado',
       titulo: 'Reconocimiento Egresado Destacado',
-      descripcion: 'Reconocemos las historias de egresados que transforman realidades.',
+      descripcion:
+        'Reconocemos las historias de egresados que transforman realidades.',
       icono: 'fa-solid fa-award',
     },
   ];
@@ -863,7 +862,8 @@ private scrollSpyTimer?: ReturnType<typeof setTimeout>;
     },
     {
       titulo: 'Enlace Laboral · Risaralda Emplea',
-      enlace: 'https://sites.google.com/camarapereira.org.co/RisaraldaEmplea2025',
+      enlace:
+        'https://sites.google.com/camarapereira.org.co/RisaraldaEmplea2025',
     },
   ];
 

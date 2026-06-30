@@ -1,22 +1,22 @@
 /* Hero programa — solo overlay azul, altura y animación (layout en Bootstrap) */
 .ciaf-program-hero {
-  min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
+    min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
 }
 
 .ciaf-program-hero__overlay {
-  z-index: 1;
+    z-index: 1;
     pointer-events: none;
     background: color-mix(in srgb, var(--ciaf-primary-deep) 78%, transparent);
 }
 
 .ciaf-program-hero__scroll {
-  z-index: 2;
+    z-index: 2;
     animation: ciaf-hero-scroll 2s ease-in-out infinite;
 }
 
-  /* Tabs debajo del hero */
+/* Tabs debajo del hero */
 .ciaf-program-nav {
-  position: sticky;
+    position: sticky;
     top: calc(var(--topbar-height) + var(--header-height));
     z-index: 40;
     background: var(--ciaf-primary);
@@ -24,154 +24,146 @@
 }
 
 .ciaf-program-nav__tabs--scroll {
-  -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
 .ciaf-program-nav__tabs--scroll::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .ciaf-program-nav__tabs .nav-link {
-  white-space: nowrap;
+    white-space: nowrap;
     cursor: pointer;
     transition: background var(--transition-base), color var(--transition-base);
 }
 
 .ciaf-program-nav__tabs .nav-link:hover,
 .ciaf-program-nav__tabs .nav-link.active {
-  background: rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, 0.12);
     color: var(--ciaf-white);
 }
 
 #educacion-continuada .continuada-slide {
-  width: 100%;
+    width: 100%;
 }
 
 #educacion-continuada .continuada-card {
-  width: 100%;
-  min-height: 29rem;
-  height: 100%;
+    width: 100%;
+    min-height: 29rem;
+    height: 100%;
 }
 
 #educacion-continuada .continuada-card__body {
-  flex: 1 1 auto;
-  min-height: 12.5rem;
+    flex: 1 1 auto;
+    min-height: 12.5rem;
 }
 
 #educacion-continuada .continuada-card__title {
-  min-height: 4.5rem;
+    min-height: 4.5rem;
 }
 
 /* Programa de permanencia */
 .bienestar-video-card {
-  min-height: 560px;
-  box-shadow: 0 24px 60px rgba(0, 18, 89, .18);
+    min-height: 560px;
+    box-shadow: 0 24px 60px rgba(0, 18, 89, 0.18);
 }
 
 .bienestar-video-img {
-  height: 560px;
-  transition: transform .45s ease;
+    height: 560px;
+    transition: transform 0.45s ease;
 }
 
 
 /* Video card */
 .bienestar-play-btn {
-  width: 74px;
-  height: 74px;
-  background: #ffffff;
-  color: #001a78;
-  font-size: 26px;
-  position: relative;
-  z-index: 2;
-  transition: transform .35s ease, box-shadow .35s ease;
+    width: 74px;
+    height: 74px;
+    background: #ffffff;
+    color: #001a78;
+    font-size: 26px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .bienestar-play-btn i {
-  margin-left: 4px;
+    margin-left: 4px;
 }
 
 .bienestar-video-card h3 {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .bienestar-video-card:hover .bienestar-video-img {
-  transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 .bienestar-video-card:hover .bienestar-play-btn {
-  transform: scale(1.12);
-  box-shadow: 0 18px 40px rgba(255, 255, 255, .28);
+    transform: scale(1.12);
+    box-shadow: 0 18px 40px rgba(255, 255, 255, 0.28);
 }
 
-@media (max-width: 991px) {
-  .bienestar-video-card,
-  .bienestar-video-img {
-      min-height: 420px;
-      height: 420px;
-  }
+@media(max-width: 991px) {
+    .bienestar-video-card,
+    .bienestar-video-img {
+        min-height: 420px;
+        height: 420px;
+    }
 }
 
-@media (max-width: 576px) {
-  .bienestar-video-card,
-  .bienestar-video-img {
-      min-height: 340px;
-      height: 340px;
-  }
+@media(max-width: 576px) {
+    .bienestar-video-card,
+    .bienestar-video-img {
+        min-height: 340px;
+        height: 340px;
+    }
 
-  .bienestar-play-btn {
-      width: 62px;
-      height: 62px;
-      font-size: 22px;
-  }
+    .bienestar-play-btn {
+        width: 62px;
+        height: 62px;
+        font-size: 22px;
+    }
 }
 
 /* Modal video */
-.modal-short{
-max-width: 420px;
+.modal-short {
+    max-width: 420px;
 }
 
-.short-container{
-width: 100%;
-height: 720px;
-border-radius: 28px;
-overflow: hidden;
-background: #fff;
+.short-container {
+    width: 100%;
+    height: 720px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #fff;
 }
 
-.short-container iframe{
-width: 100%;
-height: 100%;
-border: 0;
+.short-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 
-@media (max-width: 576px){
+@media(max-width: 576px) {
 
-.modal-short{
-    max-width: 95%;
-}
+    .modal-short {
+        max-width: 95%;
+    }
 
-.short-container{
-    height: 78vh;
-}
+    .short-container {
+        height: 78vh;
+    }
 
 }
 
 /* Pertenencia y acompañamiento — mismo degradado que Valores y financiación */
 .egresados-pertenencia-banner {
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba(16, 34, 140, .95) 0%,
-      rgba(10, 35, 120, .92) 55%,
-      rgba(0, 80, 90, .85) 80%,
-      rgba(90, 180, 60, .55) 100%
-    ),
-    url('../../../assets/egresados/egresados-pertenencia.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background: linear-gradient(to bottom right, rgba(16, 34, 140, 0.95) 0%, rgba(10, 35, 120, 0.92) 55%, rgba(0, 80, 90, 0.85) 80%, rgba(90, 180, 60, 0.55) 100%), url('../../../assets/egresados/egresados-pertenencia.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
