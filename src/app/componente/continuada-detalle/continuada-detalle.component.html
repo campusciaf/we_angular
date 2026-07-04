@@ -1,202 +1,403 @@
+<app-header></app-header>
 
+<section *ngFor="let cursos of detalleCurso index as i">
 
-<section>
-    <div class="row justify-content-center">
-        <div class="col-xl-8 py-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a routerLink="/inicio">Inicio</a></li>
-                  <li class="breadcrumb-item"><a routerLink="/continuada">Educación Continuada</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Curso</li>
-                </ol>
-            </nav>
+  <!-- HERO tipo Netflix / Platzi -->
+  <section class="position-relative overflow-hidden text-white bg-color-4">
+    <div class="position-absolute top-0 end-0 h-100 col-xl-7 col-lg-7 col-12 opacity-75">
+      <img src="https://ciaf.digital/public/img_educacion/{{ cursos.imagen_curso }}" alt="{{ cursos.nombre_curso }}"
+        class="w-100 h-100 object-fit-cover d-block" />
+    </div>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-transparente"></div>
+
+    <div class="container position-relative py-5">
+      <div class="row align-items-center py-5">
+        <div class="col-xl-6 col-lg-7 col-md-10 col-12 py-5">
+
+          <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb fs-14 mb-0">
+              <li class="breadcrumb-item">
+                <a routerLink="/inicio" class="text-white-50 text-decoration-none">Inicio</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a routerLink="/continuada" class="text-white-50 text-decoration-none">Educación Continuada</a>
+              </li>
+              <li class="breadcrumb-item active text-white fw-bold" aria-current="page">
+                Curso
+              </li>
+            </ol>
+          </nav>
+
+          <span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold px-3 py-2 rounded-pill text-uppercase ls-4">
+            {{ cursos.categoria || 'Curso' }}
+          </span>
+
+          <h1 class="fs-60 fw-extrablack mt-4 mb-3 lh-1">
+            {{ cursos.nombre_curso }}
+          </h1>
+
+          <p class="fs-22 text-white-80 mb-4">
+            Aprende a tu ritmo, fortalece tu perfil profesional y lleva tus habilidades al siguiente nivel.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <span class="ciaf-pill ciaf-pill--hero rounded-pill px-3 py-2 fs-14 fw-bold">
+              <i class="fa-solid fa-display text-color-3 me-2"></i>
+              {{ cursos.modalidad_curso }}
+            </span>
+
+            <span class="ciaf-pill ciaf-pill--hero rounded-pill px-3 py-2 fs-14 fw-bold">
+              <i class="fa-regular fa-clock text-color-3 me-2"></i>
+              {{ cursos.duracion_educacion }} horas
+            </span>
+
+            <span class="ciaf-pill ciaf-pill--hero rounded-pill px-3 py-2 fs-14 fw-bold">
+              <i class="fa-regular fa-calendar text-color-3 me-2"></i>
+              Próximamente
+            </span>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <button type="button"
+              class="ciaf-btn ciaf-btn--lime rounded-pill py-3 px-5 fs-16 fw-bold justify-content-center gap-3"
+              (click)="modalverificacion()" data-bs-toggle="modal">
+              Inscribirme ahora
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <button type="button"
+              class="ciaf-btn ciaf-btn--blanco rounded-pill py-3 px-5 fs-16 fw-bold justify-content-center gap-3"
+              (click)="modalverificar()" data-bs-toggle="modal">
+              Pago en línea
+              <i class="fa-solid fa-credit-card"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra tipo plataforma -->
+  <section class="bg-color-3 text-white py-3">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="d-flex flex-wrap gap-3">
+          <span class="fs-14 fw-bold">
+            <i class="fa-solid fa-circle-play text-color-3 me-2"></i>
+            Curso disponible
+          </span>
+
+          <span class="fs-14 fw-bold">
+            <i class="fa-solid fa-certificate text-color-3 me-2"></i>
+            Certificación CIAF
+          </span>
+
+          <span class="fs-14 fw-bold">
+            <i class="fa-solid fa-user-graduate text-color-3 me-2"></i>
+            Formación continuada
+          </span>
         </div>
 
-        <div class="col-xl-8" *ngFor="let cursos of detalleCurso index as i">
-            <div class="titulo-1 text-1 text-center py-4 my-4">{{cursos.nombre_curso}}</div>
+        <div class="fs-20 fw-extrablack text-color-3">
+          $ {{ cursos.precio_curso }}
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="row">
-                <div class="col-xl-8">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10">
-                             <img src="https://ciaf.digital/public/img_educacion/{{cursos.imagen_curso}}" alt="{{cursos.nombre_curso}}" width="100%">
-                        </div>  
-                        <div class="col-xl-10 text-right"> 
-                            <span class="etiqueta">{{cursos.categoria}}</span> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="row">
-                        <div class="col-xl-12 bg-1 p-4 text-white">
-                            <p [innerHTML]="cursos.descripcion_curso"></p>
-                        </div>
-                        <div class="col-xl-12 py-4 text-center">
-                            <a (click)="modalverificacion()" data-bs-toggle="modal" class="btn-pagos "><span class="icono bg-3"> 1 </span> <span class="boton pointer">Inscribirme</span></a>
-                            <a (click)="modalverificar()" data-bs-toggle="modal" class="btn-pagos"><span class="icono bg-3"> 2 </span> <span class="boton pointer">Pago en linea</span></a>
-                        </div>
-                        <div class="col-xl-12 p-2 text-center">
-                            <h3><a href="" class="btn-pagos"><span class="icono bg-3"> Inversión </span> <span class="boton">$ {{cursos.precio_curso}}</span></a></h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- <div class="col-xl-6 bg-7 text-3 px-4 py-1">
-                            Nivel
-                        </div>
-                        <div class="col-xl-6 bg-7 px-4 py-1">
-                            {{cursos.nivel_educacion}}
-                        </div> -->
-                        <div class="col-xl-6 text-3 px-4 py-1">
-                            Modalidad
-                        </div>
-                        <div class="col-xl-6 px-4 py-1">
-                            {{cursos.modalidad_curso}}
-                        </div>
-                        <div class="col-xl-6 bg-7 text-3 px-4 py-1">
-                            Duración
-                        </div>
-                        <div class="col-xl-6 bg-7 px-4 py-1">
-                            {{cursos.duracion_educacion}} horas
-                        </div>
-                        <div class="col-xl-6 text-3 px-4 py-1">
-                            Fecha de inicio
-                        </div>
-                        <div class="col-xl-6 px-4 py-1">
-                            <!-- {{cursos.fecha_inicio}} -->
-                            <!-- {{ cursos.fecha_inicio | date:"d MMMM Y" }}   -->
-                              Próximamente
-                        </div>
+  <!-- Contenido principal -->
+  <section class="container py-5">
+    <div class="row g-5">
 
-                    </div>
-                    
-                </div>
+      <!-- Columna contenido -->
+      <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+
+        <div class="ciaf-card rounded-5 p-5 mb-4">
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+            Sobre el curso
+          </span>
+
+          <h2 class="fs-40 fw-extrablack text-color-2 mt-4 mb-4">
+            Lo que vas a aprender
+          </h2>
+
+          <div class="fs-18 text-color-1" [innerHTML]="cursos.descripcion_curso"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4 col-12">
+            <div class="ciaf-card rounded-5 p-4 h-100">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                <i class="fa-solid fa-route text-white"></i>
+              </div>
+              <h3 class="fs-18 fw-extrablack text-color-2">Ruta clara</h3>
+              <p class="fs-14 mb-0">
+                Aprende con una estructura simple, directa y orientada a resultados.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div class="ciaf-card rounded-5 p-4 h-100">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                <i class="fa-solid fa-laptop-code text-white"></i>
+              </div>
+              <h3 class="fs-18 fw-extrablack text-color-2">Enfoque práctico</h3>
+              <p class="fs-14 mb-0">
+                Contenido pensado para aplicar, no solo para mirar bonito en la pantalla.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div class="ciaf-card rounded-5 p-4 h-100">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle mb-4">
+                <i class="fa-solid fa-trophy text-white"></i>
+              </div>
+              <h3 class="fs-18 fw-extrablack text-color-2">Certifícate</h3>
+              <p class="fs-14 mb-0">
+                Fortalece tu hoja de vida con formación continuada CIAF.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Panel tipo Netflix card -->
+      <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+        <div class="ciaf-card rounded-5 overflow-hidden">
+
+          <div class="ratio ratio-16x9">
+            <img src="https://ciaf.digital/public/img_educacion/{{ cursos.imagen_curso }}"
+              alt="{{ cursos.nombre_curso }}" class="w-100 h-100 object-fit-cover" />
+          </div>
+
+          <div class="p-4">
+            <h3 class="fs-32 fw-extrablack text-color-2 mb-1">
+              $ {{ cursos.precio_curso }}
+            </h3>
+
+            <p class="fs-14 text-color-1 mb-4">
+              Acceso a inscripción y pago en línea.
+            </p>
+
+            <div class="d-grid gap-3">
+              <button type="button"
+                class="ciaf-btn ciaf-btn--lime rounded-pill py-3 px-4 fw-bold justify-content-center gap-3"
+                (click)="modalverificacion()" data-bs-toggle="modal">
+                Inscribirme
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+
+              <button type="button"
+                class="ciaf-btn ciaf-btn--primary rounded-pill py-3 px-4 fw-bold justify-content-center gap-3"
+                (click)="modalverificar()" data-bs-toggle="modal">
+                Ya estoy registrado
+                <i class="fa-solid fa-credit-card"></i>
+              </button>
             </div>
 
-        </div>
+            <div class="ciaf-divider my-4"></div>
 
-        <div class="col-xl-8 col-lg-8 col-mb-8 col-10 py-4">
-            <a routerLink="/continuada" class="btn">
-                <img src="{{prev}}" alt="Volver"> 
-                Regresar
-            </a>
-        </div>
+            <div class="d-grid gap-3">
+              <div class="d-flex justify-content-between gap-3 fs-14">
+                <span class="text-color-1 fw-bold">Modalidad</span>
+                <span class="text-color-2 fw-extrablack text-end">{{ cursos.modalidad_curso }}</span>
+              </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 m-4 p-4"></div>
+              <div class="d-flex justify-content-between gap-3 fs-14">
+                <span class="text-color-1 fw-bold">Duración</span>
+                <span class="text-color-2 fw-extrablack text-end">{{ cursos.duracion_educacion }} horas</span>
+              </div>
+
+              <div class="d-flex justify-content-between gap-3 fs-14">
+                <span class="text-color-1 fw-bold">Inicio</span>
+                <span class="text-color-2 fw-extrablack text-end">Próximamente</span>
+              </div>
+
+              <div class="d-flex justify-content-between gap-3 fs-14">
+                <span class="text-color-1 fw-bold">Categoría</span>
+                <span class="text-color-2 fw-extrablack text-end">{{ cursos.categoria || 'Curso' }}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
-    
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <a routerLink="/continuada" class="ciaf-btn ciaf-btn--outline rounded-pill px-4 py-3 fw-bold gap-3">
+          <i class="fa-solid fa-arrow-left"></i>
+          Regresar a educación continuada
+        </a>
+      </div>
+    </div>
+  </section>
 
 </section>
 
+<!-- Modal registro -->
+<div class="modal fade" id="modalregistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-5 overflow-hidden">
 
-<!-- Modal registro-->
-<div class="modal fade" id="modalregistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Formulario de registro</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header border-0 p-4">
+        <div>
+          <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase">
+            Paso 1
+          </span>
+          <h1 class="modal-title fs-24 fw-extrablack text-color-2 mt-2 mb-0" id="modalRegistroLabel">
+            Formulario de registro
+          </h1>
         </div>
-        <div class="modal-body">
-            <form [formGroup]="myForm" (ngSubmit)="agregar()">
-                <div class="input-group mb-3 input-group-lg" *ngIf="element"> 
-                    <input type="text" class="form-control campo-input" placeholder="" name="id_curso"  formControlName="id_curso"  required>
-                </div>
 
-                <div class="input-group mb-3 input-group-lg">
-                    <span class="input-group-text bg-2 text-white" id="basic-addon1">1</span>
-                    <input matInput type="number" class="form-control campo-input" placeholder="Identificacion" aria-label="identificacion" aria-describedby="basic-addon1" required="" name="identificacion"  formControlName="identificacion">
-                 </div>
-                <div *ngFor="let validation of account_validation_messages.identificacion">
-                    <div class="error-message p-2" *ngIf="myForm.get('identificacion')?.hasError(validation.type) && (myForm.get('identificacion')?.dirty || myForm.get('identificacion')?.touched)">{{validation.message}}
-                    </div>
-                </div>
-
-                <div class="input-group mb-3 input-group-lg">
-                    <span class="input-group-text bg-2 text-white" id="basic-addon1">2</span>
-                      <input matInput type="text" class="form-control campo-input" placeholder="Nombre completo" name="nombre"  formControlName="nombre" required>
-                 </div>
-                <div *ngFor="let validation of account_validation_messages.nombre">
-                    <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
-                    </div>
-                </div>
-
-                <div class="input-group mb-3 input-group-lg">
-                    <span class="input-group-text bg-2 text-white" id="basic-addon1">3</span>
-                    <input matInput type="text" class="form-control campo-input" placeholder="Celular" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular"  pattern="[1-9]\d{6,10}">
-                 </div>
-                <div *ngFor="let validation of account_validation_messages.celular">
-                    <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
-                    </div>
-                </div>
-            
-               <div class="input-group mb-3 input-group-lg">
-                  <span class="input-group-text bg-2 text-white " id="basic-addon1">4</span>
-                  <input matInput type="text" class="form-control campo-input" placeholder="Correo electronico" aria-label="email" aria-describedby="basic-addon1" required="" name="email"  formControlName="email">
-               </div>
-               <div *ngFor="let validation of account_validation_messages.email">
-                    <div class="error-message" *ngIf="myForm.get('email')?.hasError(validation.type) && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">{{validation.message}}
-                    </div>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
-                    <label class="form-check-label" for="flexCheckDefault">
-                       <p class="copy text-left" style="line-height: 10px;">
-                          Acepto el envío de información a mi correo electrónico. He revisado la politica de protección de datos y la politica de devoluciones y acumulados.
-                      </p>
-                    </label>
-                 </div>
-                 <div *ngFor="let validation of account_validation_messages.terms">
-                  <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
-                  </div>
-                  </div>
-                 <div class="col-xl-12 text-center">
-                      <button type="submit" class="btn bg-2 btn-lg" [disabled]="!myForm.valid">Enviar</button>
-                 </div>
-
-
-
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
+
+      <div class="modal-body px-4 pb-4">
+        <form [formGroup]="myForm" (ngSubmit)="agregar()">
+
+          <div class="input-group mb-3" *ngIf="element">
+            <input type="text" class="form-control" name="id_curso" formControlName="id_curso">
+          </div>
+
+          <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text bg-color-3 text-white">
+              <i class="fa-regular fa-id-card"></i>
+            </span>
+            <input matInput type="number" class="form-control" placeholder="Identificación" name="identificacion"
+              formControlName="identificacion">
+          </div>
+
+          <div *ngFor="let validation of account_validation_messages.identificacion">
+            <div class="error-message p-2 fs-12"
+              *ngIf="myForm.get('identificacion')?.hasError(validation.type) && (myForm.get('identificacion')?.dirty || myForm.get('identificacion')?.touched)">
+              {{ validation.message }}
+            </div>
+          </div>
+
+          <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text bg-color-3 text-white">
+              <i class="fa-regular fa-user"></i>
+            </span>
+            <input matInput type="text" class="form-control" placeholder="Nombre completo" name="nombre"
+              formControlName="nombre">
+          </div>
+
+          <div *ngFor="let validation of account_validation_messages.nombre">
+            <div class="error-message p-2 fs-12"
+              *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">
+              {{ validation.message }}
+            </div>
+          </div>
+
+          <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text bg-color-3 text-white">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </span>
+            <input matInput type="text" class="form-control" placeholder="Celular" name="celular"
+              formControlName="celular">
+          </div>
+
+          <div *ngFor="let validation of account_validation_messages.celular">
+            <div class="error-message p-2 fs-12"
+              *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">
+              {{ validation.message }}
+            </div>
+          </div>
+
+          <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text bg-color-3 text-white">
+              <i class="fa-regular fa-envelope"></i>
+            </span>
+            <input matInput type="text" class="form-control" placeholder="Correo electrónico" name="email"
+              formControlName="email">
+          </div>
+
+          <div *ngFor="let validation of account_validation_messages.email">
+            <div class="error-message p-2 fs-12"
+              *ngIf="myForm.get('email')?.hasError(validation.type) && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+              {{ validation.message }}
+            </div>
+          </div>
+
+          <div class="form-check my-4">
+            <input class="form-check-input" type="checkbox" id="flexCheckDefault" formControlName="acepto"
+              name="acepto">
+            <label class="form-check-label fs-12 text-color-1" for="flexCheckDefault">
+              Acepto el envío de información a mi correo electrónico. He revisado la política de protección de datos y
+              la política de devoluciones y acumulados.
+            </label>
+          </div>
+
+          <button type="submit"
+            class="ciaf-btn ciaf-btn--lime rounded-pill py-3 px-5 fw-bold justify-content-center w-100"
+            [disabled]="!myForm.valid">
+            Enviar registro
+          </button>
+
+        </form>
+      </div>
+
     </div>
+  </div>
 </div>
 
-<!-- Modal pago-->
-<div class="modal fade" id="modalverificar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-6" id="exampleModalLabel">Formulario de pago</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form [formGroup]="myFormverificar" (ngSubmit)="verificar()">
-                <div class="input-group mb-3 input-group-lg" *ngIf="element"> 
-                    <input type="text" class="form-control campo-input" placeholder="" name="id_curso_verificar"  formControlName="id_curso_verificar"  required>
-                </div>
+<!-- Modal verificar pago -->
+<div class="modal fade" id="modalverificar" tabindex="-1" aria-labelledby="modalVerificarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-5 overflow-hidden">
 
-                <div class="input-group mb-3 input-group-lg">
-                    <span class="input-group-text bg-2 text-white" id="basic-addon1">1</span>
-                    <input type="number" class="form-control campo-input" placeholder="Número de identificación" aria-label="identificacion_verificar" aria-describedby="basic-addon1" required="" name="identificacion_verificar"  formControlName="identificacion_verificar">
-                 </div>
-                <div *ngFor="let validation of verificar_validation_messages.identificacion_verificar">
-                    <div class="error-message p-2" *ngIf="myFormverificar.get('identificacion_verificar')?.hasError(validation.type) && (myFormverificar.get('identificacion_verificar')?.dirty || myFormverificar.get('identificacion_verificar')?.touched)">{{validation.message}}
-                    </div>
-                </div>
-                <div class="col-xl-12 text-center">
-                    <button type="submit" class="btn bg-2 btn-lg" [disabled]="!myFormverificar.valid">Enviar</button>
-               </div>
-          </form>
+      <div class="modal-header border-0 p-4">
+        <div>
+          <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase">
+            Paso 2
+          </span>
+          <h1 class="modal-title fs-24 fw-extrablack text-color-2 mt-2 mb-0" id="modalVerificarLabel">
+            Validar pago en línea
+          </h1>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-        </div>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-    </div>
-</div>
 
+      <div class="modal-body px-4 pb-4">
+        <form [formGroup]="myFormverificar" (ngSubmit)="verificar()">
+
+          <div class="input-group mb-3" *ngIf="element">
+            <input type="text" class="form-control" name="id_curso_verificar" formControlName="id_curso_verificar">
+          </div>
+
+          <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text bg-color-3 text-white">
+              <i class="fa-regular fa-id-card"></i>
+            </span>
+            <input type="number" class="form-control" placeholder="Número de identificación"
+              name="identificacion_verificar" formControlName="identificacion_verificar">
+          </div>
+
+          <div *ngFor="let validation of verificar_validation_messages.identificacion_verificar">
+            <div class="error-message p-2 fs-12"
+              *ngIf="myFormverificar.get('identificacion_verificar')?.hasError(validation.type) && (myFormverificar.get('identificacion_verificar')?.dirty || myFormverificar.get('identificacion_verificar')?.touched)">
+              {{ validation.message }}
+            </div>
+          </div>
+
+          <button type="submit"
+            class="ciaf-btn ciaf-btn--primary rounded-pill py-3 px-5 fw-bold justify-content-center w-100"
+            [disabled]="!myFormverificar.valid">
+            Validar y continuar
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

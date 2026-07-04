@@ -1,81 +1,501 @@
-<section>
-    <div class="row banner-interno">
+<app-header></app-header>
 
-        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 pc">
-            <img src="{{educacion_continuada}}" alt="Educación Continuada">
+<!-- Hero Educación Continuada Premium -->
+<section class="bg-color-3 p-5 position-relative overflow-hidden mt-5" id="educacion-continuada">
+
+  <div class="container py-5 position-relative">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-xl-7 col-lg-6 col-md-12 col-12">
+
+        <span class="ciaf-pill bg-white fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+          <i class="fa-solid fa-graduation-cap me-2"></i>
+          Educación Continuada CIAF
+        </span>
+
+        <h1 class="fs-48 fw-black text-white mt-4">
+          Entra a un mundo de
+          <span class="ciaf-gradient-text ciaf-gradient-text--accent">oportunidades</span>
+          y posibilidades
+        </h1>
+
+        <p class="fs-22 text-white-50 mt-4">
+          Cursos, diplomados y experiencias que potencian tu talento, impulsan tu carrera y transforman tu futuro.
+        </p>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-md-6 col-12">
+            <div class="d-flex align-items-start gap-3">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+                <i class="fa-solid fa-rocket text-white"></i>
+              </div>
+              <div>
+                <h3 class="fs-16 fw-extrablack text-white mb-1">Aprende a tu ritmo</h3>
+                <p class="fs-13 text-white-50 mb-0">Modalidades flexibles, virtuales y presenciales.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12">
+            <div class="d-flex align-items-start gap-3">
+              <div class="ciaf-icon-badge ciaf-icon-badge--gradient rounded-circle">
+                <i class="fa-regular fa-briefcase text-white"></i>
+              </div>
+              <div>
+                <h3 class="fs-16 fw-extrablack text-white mb-1">Conecta con el mercado</h3>
+                <p class="fs-13 text-white-50 mb-0">Formación alineada a necesidades reales.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="col-xx-12 col-xl-12 col-lg-12 col-md-12 col-12 movil">
-            <img src="{{educacion_continuada_movil}}" alt="Educación Continuada">
+
+        <div class="d-flex flex-wrap gap-3 mt-5">
+          <a href="#oferta-continuada" role="button" (click)="scrollToSeccion('oferta-continuada', $event)"
+            class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+            Explorar cursos
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a href="https://api.whatsapp.com/send?phone=573126814341&text=Hola%20CIAF%2C%20quiero%20informaci%C3%B3n%20de%20Educaci%C3%B3n%20Continuada"
+            target="_blank"
+            class="ciaf-btn border border-white text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+            Conoce más
+            <i class="fa-regular fa-circle-play"></i>
+          </a>
         </div>
 
+      </div>
 
+      <div class="col-xl-5 col-lg-6 col-md-12 col-12">
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-12 banner-contenido">
-            <div class="row justify-content-center ">
+        <div class="row align-items-center g-4">
 
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 padding-continuada">
-                    <div class="row">
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-2 text-left">
-                            <img src="{{logo_continuada}}" alt="Educación Continuada" class="pt-4 mt-4" width="90%">
-                        </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-12">
 
-                       
-                        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-white">
-                            <h1 class=" pt-4 mt-4">Educación <br><span class="bolder-1">Continuada</span></h1>
-                            
-                        </div>
-                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-                            <h2 class="tamano-2 text-6 bolder-1">#vuelveteemprendedor</h2>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-8">
-                            <h3 class="lema text-white"> Los cursos y diplomados producen mayores ingresos </h3>
-                        </div>
-                        
-                    </div>
+            <div
+              class="ciaf-card rounded-5 p-4 bg-transparente border-transparente text-center position-relative overflow-hidden">
+
+              <div class="rounded-5 border border-info p-4 mb-4"
+                style="min-height:420px;background:linear-gradient(180deg,rgba(40,177,229,.18),rgba(132,209,68,.15));">
+
+                <div class="d-flex flex-column justify-content-center h-100 text-start">
+
+                  <p class="fs-26 fw-bold text-color-3 mb-3">Actualízate.</p>
+                  <p class="fs-26 fw-bold text-info mb-3">Especialízate.</p>
+                  <p class="fs-26 fw-bold text-color-5 mb-3">Emprende.</p>
+                  <p class="fs-26 fw-bold text-white mb-0">Trasciende.</p>
+
+                  <div class="mt-5 pt-5">
+                    <h3 class="fs-32 fw-extrablack text-white">
+                      Tu próxima versión empieza aquí
+                    </h3>
+                    <p class="fs-14 text-white-50 mb-0">
+                      Abre la puerta a nuevas habilidades, conexiones y posibilidades.
+                    </p>
+                  </div>
+
                 </div>
 
+              </div>
+
             </div>
-        </div>
-    
-         
-    
-    </div>
-</section>
 
+          </div>
 
-<section class="pt-4 mt-4 mostrar">
-    <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-10 col-md-10 col-10">
-            <div class="row">
-                <div class="cards col-xl-4" *ngFor="let cursos of listarCursos index as i">
-                    <div class="column m-4">
-                        <div [className]="'post-module'" >
-                            <div class="thumbnail">
-                                <img src="https://ciaf.digital/public/img_educacion/{{cursos.imagen_curso}}" alt="{{cursos.nombre_curso}}" style="width:100%">
-                            </div>
-                            <div class="post-content">
-                                <div class="category" [ngStyle]="{'background-color': cursos.color}" >{{cursos.modalidad_curso}}</div>
-                                <h1 class="title">{{cursos.nombre_curso}}</h1>
-                                <div class="post-meta">
-                                    <div class="row">
-                                        <div class="col-xl-7 pt-1">
-                                            <span class="timestamp"><img src="{{calendario}}" alt="Publicado"> Publicado  {{ cursos.create_dt | date:"d MMM" }}</span>
-                                        </div>
-                                        <div class="col-xl-2 pt-1"> 
-                                            <span class="comments">39 <img src="{{vistas}}" alt="Publicado"> </span>
-                                        </div>
-                                        <div class="col-xl-3"> 
-                                            <a [routerLink]="['/continuadadetalle',cursos.id_curso]" class="btn btn-light btn-sm text-black">Leer más </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
+          <div class="col-xl-5 col-lg-12 col-md-5 col-12 d-none">
+
+            <div class="d-grid gap-3">
+
+              <div class="ciaf-card bg-transparente border-transparente rounded-5 p-4">
+                <span
+                  class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-11 fw-bold rounded-pill px-3 py-2">Diplomado</span>
+                <h3 class="fs-18 fw-extrablack text-white mt-3 mb-2">Marketing Digital</h3>
+                <p class="fs-13 text-white-50 mb-3">Estrategias que conectan y venden.</p>
+                <div class="text-end">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-color-3 fs-20"></i>
                 </div>
+              </div>
+
+              <div class="ciaf-card bg-transparente border-transparente rounded-5 p-4">
+                <span
+                  class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-11 fw-bold rounded-pill px-3 py-2">Curso</span>
+                <h3 class="fs-18 fw-extrablack text-white mt-3 mb-2">Inteligencia Artificial</h3>
+                <p class="fs-13 text-white-50 mb-3">Herramientas que están cambiando el mundo.</p>
+                <div class="text-end">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-color-3 fs-20"></i>
+                </div>
+              </div>
+
+              <div class="ciaf-card bg-transparente border-transparente rounded-5 p-4">
+                <span
+                  class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-11 fw-bold rounded-pill px-3 py-2">Diplomado</span>
+                <h3 class="fs-18 fw-extrablack text-white mt-3 mb-2">Gestión de Proyectos</h3>
+                <p class="fs-13 text-white-50 mb-3">Planifica, lidera y ejecuta con metodologías ágiles.</p>
+                <div class="text-end">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-color-3 fs-20"></i>
+                </div>
+              </div>
+
+              <div class="ciaf-card bg-transparente border-transparente rounded-5 p-4">
+                <span
+                  class="ciaf-pill ciaf-pill--compact ciaf-pill--events fs-11 fw-bold rounded-pill px-3 py-2">Seminario</span>
+                <h3 class="fs-18 fw-extrablack text-white mt-3 mb-2">Liderazgo Transformador</h3>
+                <p class="fs-13 text-white-50 mb-3">Habilidades para inspirar y generar impacto.</p>
+                <div class="text-end">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-color-3 fs-20"></i>
+                </div>
+              </div>
+
             </div>
+
+          </div>
+
         </div>
+
+      </div>
+
     </div>
+
+
+  </div>
+
 </section>
 
+<section class="p-5 continuada-oferta" id="oferta-continuada">
+  <div class="row mb-4">
+    <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+        Oferta académica
+      </span>
 
+      <h2 class="fs-36 fw-black text-color-2 mb-3">
+        Explora nuestra <span class="ciaf-gradient-text ciaf-gradient-text--brand">oferta</span>
+      </h2>
+
+      <p class="fs-18 text-color-1 mb-0">
+        Conoce toda la información: modalidad, inversión, duración y temáticas de aprendizaje, sin salir de esta página.
+      </p>
+    </div>
+  </div>
+
+  <ng-container *ngIf="listarCursos.length">
+    <div class="row">
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-4">
+        <p class="fs-12 fw-extrablack text-uppercase text-color-2 mb-2 ls-2">Tipo de curso</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="rounded-pill px-4 py-2 fw-bold fs-12 border-0"
+            [class.ciaf-btn]="filtroTipo === 'todos'" [class.ciaf-btn--primary]="filtroTipo === 'todos'"
+            [class.text-white]="filtroTipo === 'todos'" [class.ciaf-pill]="filtroTipo !== 'todos'"
+            [class.ciaf-pill--compact]="filtroTipo !== 'todos'" [class.text-color-2]="filtroTipo !== 'todos'"
+            (click)="seleccionarFiltroTipo('todos')" [attr.aria-pressed]="filtroTipo === 'todos'">
+            Todos
+          </button>
+          <button type="button" *ngFor="let tipo of tiposCurso" class="rounded-pill px-4 py-2 fw-bold fs-12 border-0"
+            [class.ciaf-btn]="filtroTipo === tipo" [class.ciaf-btn--primary]="filtroTipo === tipo"
+            [class.text-white]="filtroTipo === tipo" [class.ciaf-pill]="filtroTipo !== tipo"
+            [class.ciaf-pill--compact]="filtroTipo !== tipo" [class.text-color-2]="filtroTipo !== tipo"
+            (click)="seleccionarFiltroTipo(tipo)" [attr.aria-pressed]="filtroTipo === tipo">
+            {{ etiquetaFiltro(tipo) }}
+          </button>
+        </div>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-5">
+        <p class="fs-12 fw-extrablack text-uppercase text-color-2 mb-2 ls-2">Modalidad</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="rounded-pill px-4 py-2 fw-bold fs-12 border-0"
+            [class.ciaf-btn]="filtroModalidad === 'todos'" [class.ciaf-btn--primary]="filtroModalidad === 'todos'"
+            [class.text-white]="filtroModalidad === 'todos'" [class.ciaf-pill]="filtroModalidad !== 'todos'"
+            [class.ciaf-pill--compact]="filtroModalidad !== 'todos'" [class.text-color-2]="filtroModalidad !== 'todos'"
+            (click)="seleccionarFiltroModalidad('todos')" [attr.aria-pressed]="filtroModalidad === 'todos'">
+            Todas
+          </button>
+          <button type="button" *ngFor="let modalidad of modalidadesCurso"
+            class="rounded-pill px-4 py-2 fw-bold fs-12 border-0" [class.ciaf-btn]="filtroModalidad === modalidad"
+            [class.ciaf-btn--primary]="filtroModalidad === modalidad" [class.text-white]="filtroModalidad === modalidad"
+            [class.ciaf-pill]="filtroModalidad !== modalidad" [class.ciaf-pill--compact]="filtroModalidad !== modalidad"
+            [class.text-color-2]="filtroModalidad !== modalidad" (click)="seleccionarFiltroModalidad(modalidad)"
+            [attr.aria-pressed]="filtroModalidad === modalidad">
+            {{ etiquetaFiltro(modalidad) }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+
+  <div class="row g-4" *ngIf="cursosFiltrados.length">
+
+    <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let cursos of cursosFiltrados">
+
+      <article class="ciaf-card continuada-card border rounded-4 overflow-hidden d-flex flex-column bg-white h-100">
+
+        <div class="ratio ratio-4x3 overflow-hidden flex-shrink-0">
+
+          <img src="https://ciaf.digital/public/img_educacion/{{ cursos.imagen_curso }}" [alt]="cursos.nombre_curso"
+            class="object-fit-cover" loading="lazy" />
+
+        </div>
+
+
+
+        <div class="p-4 continuada-card__body d-flex flex-column flex-grow-1">
+
+          <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+
+            <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase">
+
+              {{ etiquetaCurso(cursos, 'categoria', 'curso') }}
+
+            </span>
+
+            <span
+              class="ciaf-pill ciaf-pill--compact bg-color-3 text-white fs-10 fw-bold rounded-pill px-3 py-1 border-0">
+
+              {{ etiquetaCurso(cursos, 'modalidad_curso') }}
+
+            </span>
+
+          </div>
+
+
+
+          <h4 class="fs-16 fw-extrablack text-color-2 mb-3 continuada-card__title flex-grow-1">
+
+            {{ cursos.nombre_curso }}
+
+          </h4>
+
+
+
+          <div class="d-flex flex-wrap gap-3 fs-12 text-color-1 mb-4">
+
+            <span *ngIf="cursos.duracion_educacion">
+
+              <i class="fa-regular fa-clock me-1" aria-hidden="true"></i>
+
+              {{ cursos.duracion_educacion }} horas
+
+            </span>
+
+            <span *ngIf="cursos.precio_curso">
+
+              <i class="fa-solid fa-chart-line me-1" aria-hidden="true"></i>
+
+              {{ formatearPrecioCurso(cursos.precio_curso) }}
+
+            </span>
+
+          </div>
+
+
+
+          <div class="d-flex justify-content-between align-items-center mt-auto">
+
+            <span class="fs-14 fw-bold text-color-2">Conoce más</span>
+
+            <a [routerLink]="['/continuadadetalle', cursos.id_curso]"
+              class="btn bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0 text-white text-decoration-none"
+              style="width: 44px; height: 44px" [attr.aria-label]="'Conocer más sobre ' + cursos.nombre_curso">
+
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+  <div class="text-center py-5" *ngIf="listarCursos.length && !cursosFiltrados.length">
+
+    <p class="fs-18 text-color-1 mb-4">No hay cursos que coincidan con los filtros seleccionados.</p>
+
+    <button type="button" class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-2 fw-bold border-0"
+      (click)="limpiarFiltros()">
+
+      Ver toda la oferta
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- Valor Educación Continuada -->
+<section class="p-5" id="valor-educacion-continuada">
+
+  <div class="row mb-5">
+
+    <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+        Por qué CIAF
+      </span>
+
+      <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+        El valor de la Educación
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">Continuada</span>
+      </h2>
+
+    </div>
+
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-solid fa-rotate text-white"></i>
+        </div>
+        <h3 class="fs-18 fw-black text-color-2 mb-3">Aprendizaje actualizado</h3>
+        <p class="fs-14 mb-0">Los cursos y diplomados producen mayores ingresos.</p>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+        <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
+          <i class="fa-regular fa-briefcase text-color-2"></i>
+        </div>
+        <h3 class="fs-18 fw-black text-color-2 mb-3">Formación para el mundo laboral</h3>
+        <p class="fs-14 mb-0">Programas alineados a lo que buscan los empleadores.</p>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+        <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
+          <i class="fa-solid fa-arrow-trend-up text-color-2"></i>
+        </div>
+        <h3 class="fs-18 fw-black text-color-2 mb-3">Crecimiento profesional</h3>
+        <p class="fs-14 mb-0">#vuelveteemprendedor y proyecta tu carrera.</p>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+        <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <i class="fa-solid fa-wand-magic-sparkles text-white"></i>
+        </div>
+        <h3 class="fs-18 fw-black text-color-2 mb-3">Conexión con nuevas habilidades</h3>
+        <p class="fs-14 mb-0">IA, datos, liderazgo y competencias del futuro.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Contacto -->
+<section class="p-5" id="contacto">
+
+  <div class="ciaf-card rounded-5 p-5 shadow-lg">
+
+    <div class="row align-items-center ">
+
+      <div class="col-xl-7 col-lg-6 col-md-12 col-12">
+
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+          Hablemos
+        </span>
+
+        <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+          Solicita información de Educación
+          <span class="ciaf-gradient-text ciaf-gradient-text--brand">Continuada</span>
+        </h2>
+
+        <div class="d-grid gap-3 mt-4">
+          <p class="fs-16 mb-0"><i class="fa-regular fa-envelope text-color-2 me-3"></i>contacto@ciaf.edu.co</p>
+          <p class="fs-16 mb-0"><i class="fa-brands fa-whatsapp text-color-2 me-3"></i>WhatsApp: 312 681 4341</p>
+          <p class="fs-16 mb-0"><i class="fa-solid fa-phone text-color-2 me-3"></i>Llamadas: 314 340 0100</p>
+          <p class="fs-16 mb-0"><i class="fa-solid fa-location-dot text-color-2 me-3"></i>Calle 20 #4-57, Pereira</p>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 mt-5">
+          <a href="https://api.whatsapp.com/send?phone=573126814341&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Educaci%C3%B3n%20Continuada%20CIAF"
+            target="_blank" rel="noopener noreferrer"
+            class="ciaf-btn ciaf-btn--lime rounded-pill px-4 py-2 fs-14 text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2">
+            <i class="fa-brands fa-whatsapp"></i>
+            Escribir por WhatsApp
+          </a>
+          <a href="tel:+573143400100"
+            class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-2 fs-14 fw-bold text-decoration-none d-inline-flex align-items-center gap-2">
+            <i class="fa-solid fa-phone"></i>
+            Llamar
+          </a>
+          <a href="mailto:contacto@ciaf.edu.co"
+            class="ciaf-btn ciaf-btn--ghost rounded-pill px-4 py-2 fs-14 fw-bold text-decoration-none d-inline-flex align-items-center gap-2">
+            <i class="fa-regular fa-envelope"></i>
+            Correo
+          </a>
+        </div>
+
+      </div>
+
+      <div class="col-xl-5 col-lg-5 col-md-12 col-12">
+
+        <div class="ciaf-card rounded-5 p-4">
+
+          <h3 class="fs-18 fw-black text-color-2 mb-2">
+            Solicitar información
+          </h3>
+
+          <p class="fs-14 mb-4">
+            Te contactamos en menos de 24h.
+          </p>
+
+          <form class="row g-3">
+
+            <div class="col-12">
+              <input type="text" class="form-control rounded-pill px-4 py-3" placeholder="Nombre completo">
+            </div>
+
+            <div class="col-12">
+              <input type="email" class="form-control rounded-pill px-4 py-3" placeholder="Correo electrónico">
+            </div>
+
+            <div class="col-12">
+              <input type="tel" class="form-control rounded-pill px-4 py-3" placeholder="Teléfono">
+            </div>
+
+            <div class="col-12">
+              <select class="form-select rounded-pill px-4 py-3">
+                <option selected disabled>Programa de interés</option>
+                <option>Curso</option>
+                <option>Diplomado</option>
+                <option>Seminario</option>
+                <option>Educación continuada</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <button type="submit"
+                class="col-12 fs-14 bg-color-3 rounded-pill px-4 py-2 fw-bold text-decoration-none text-white border-0">
+                Quiero más información
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<app-footer></app-footer>
