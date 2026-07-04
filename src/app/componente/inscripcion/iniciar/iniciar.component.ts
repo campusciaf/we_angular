@@ -106,6 +106,23 @@ export class IniciarComponent {
       });
   }
 
+  scrollToSeccion(sectionId: string, event?: Event): void {
+    event?.preventDefault();
+
+    const el = document.getElementById(sectionId);
+    if (!el) {
+      return;
+    }
+
+    const top =
+      el.getBoundingClientRect().top + window.scrollY - this.getScrollOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+
+  private getScrollOffset(): number {
+    return 38 + 78 + 24;
+  }
+
   account_validation_messages = {
     user_identificacion: [
       { type: 'required', message: 'Número de identificación requerido' },

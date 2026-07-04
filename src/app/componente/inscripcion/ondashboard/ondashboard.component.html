@@ -1,1067 +1,1270 @@
+<!-- Topbar CIAF -->
+<header class="bg-color-3 py-2">
+  <div class="container">
 
-<header class="header m-0 py-2 poslupa">
-    <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-8 col-md-12 col-12">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono"> 
-                    <a class="btn-link-1 vertical-align-center justify-content-center" href="#direccioncrai" data-bs-toggle="modal"> 
-                        <img [src]="img_destino" alt="Ubicación CIAF" class="mx-2">
-                        <span class="ml-2">Calle 20 #4-57 Pereira</span>
-                    </a>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono" href="#direccion" data-bs-toggle="modal"> 
-                    <a class="btn-link-1 vertical-align-center justify-content-center">
-                        <img [src]="img_ubicacion" alt="Ubicación CIAF" class="mx-2">
-                        <span class="ml-2">Cra. 6 No. 24-56 Pereira</span>
-                    </a>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-4 icono"> 
-                    <a href="https://www.ciaf.digital" target="_blank" class="btn-link-1 vertical-align-center justify-content-center">
-                        <img [src]="img_campus" alt="Icono campus virtual" class="mx-2">
-                        <span class="ml-2">Campus virtual</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex align-items-center justify-content-center justify-content-lg-end flex-wrap gap-2 gap-md-4">
+
+      <!-- Sede Calle 20 -->
+      <a href="#direccioncrai" data-bs-toggle="modal"
+        class="d-flex align-items-center gap-2 text-white text-decoration-none fs-12 fw-bold">
+
+        <i class="fa-solid fa-location-dot text-color-3"></i>
+
+        <span class="d-none d-md-inline">
+          Calle 20 #4-57 Pereira
+        </span>
+
+      </a>
+
+      <!-- Separador -->
+      <span class="text-white-50 d-none d-md-inline">
+        |
+      </span>
+
+      <!-- Sede Cra 6 -->
+      <a href="#direccion" data-bs-toggle="modal"
+        class="d-flex align-items-center gap-2 text-white text-decoration-none fs-12 fw-bold">
+
+        <i class="fa-solid fa-location-dot text-color-3"></i>
+
+        <span class="d-none d-md-inline">
+          Cra. 6 No. 24-56 Pereira
+        </span>
+
+      </a>
+
+      <!-- Separador -->
+      <span class="text-white-50 d-none d-md-inline">
+        |
+      </span>
+
+      <!-- Campus virtual -->
+      <a href="https://www.ciaf.digital" target="_blank"
+        class="d-flex align-items-center gap-2 text-white text-decoration-none fs-12 fw-bold">
+
+        <i class="fa-solid fa-graduation-cap text-color-3"></i>
+
+        <span>
+          Campus virtual
+        </span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square fs-10"></i>
+
+      </a>
+
     </div>
+
+  </div>
 </header>
 
-<nav class="p-3  border-bottom bg-1">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-            <img [src]="img_logo" alt="Ubicación CIAF" class="mx-2" width="100px">
-        </a>
+<!-- Navegación aspirante -->
+<nav class="bg-white border-bottom py-3">
+  <div class="container">
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center  mb-md-0">
+    <div class="d-flex align-items-center justify-content-between gap-4">
 
-                <div class=" text-white px-4">Estado: {{estado}}</div>
-        </ul>
+      <!-- Logo -->
+      <a href="/" class="d-flex align-items-center text-decoration-none flex-shrink-0">
 
-        <div class="text-white px-4">{{nombre}}</div>
+        <img [src]="img_logo" alt="CIAF" width="110">
+      </a>
 
-        <div class="dropdown text-end">
-            
-          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small">
-            <span class="px-4">Estado</span>
-            <p class="dropdown-item active ">{{estado}}</p>
-            <li><a class="dropdown-item btn" (click)="logAutUser()">Salir</a></li>
+      <!-- Información central -->
+      <div class="d-none d-lg-flex align-items-center gap-3 me-auto">
+
+        <span class="text-color-1 fs-13 fw-bold">
+          Proceso de inscripción
+        </span>
+
+        <span class="text-color-1">
+          ·
+        </span>
+
+        <span class="ciaf-pill ciaf-pill--section rounded-pill px-3 py-2 fs-11 fw-bold text-uppercase">
+          {{ estado }}
+        </span>
+
+      </div>
+
+      <!-- Usuario -->
+      <div class="d-flex align-items-center gap-3">
+
+        <!-- Nombre -->
+        <div class="d-none d-md-block text-end">
+          <p class="fs-11 text-color-1 mb-0 text-uppercase fw-bold ls-2">
+            Aspirante
+          </p>
+
+          <h3 class="fs-14 fw-extrablack text-color-2 mb-0">
+            {{ nombre }}
+          </h3>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="dropdown">
+
+          <button type="button" class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle border-0"
+            data-bs-toggle="dropdown" aria-expanded="false">
+
+            <i class="fa-regular fa-user"></i>
+
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm rounded-4 p-3">
+
+            <!-- Usuario móvil -->
+            <li class="d-md-none px-2 pb-3">
+              <p class="fs-11 text-color-1 mb-1 text-uppercase fw-bold">
+                Aspirante
+              </p>
+
+              <h3 class="fs-14 fw-extrablack text-color-2 mb-0">
+                {{ nombre }}
+              </h3>
+            </li>
+
+            <li class="d-md-none">
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- Estado -->
+            <li class="px-2 py-2">
+              <p class="fs-11 text-color-1 mb-2 text-uppercase fw-bold ls-2">
+                Estado del proceso
+              </p>
+
+              <span class="ciaf-pill ciaf-pill--section rounded-pill px-3 py-2 fs-11 fw-bold">
+                {{ estado }}
+              </span>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- Salir -->
+            <li>
+              <button type="button" class="dropdown-item rounded-3 py-2 px-3 fs-14 fw-bold text-color-2"
+                (click)="logAutUser()">
+
+                <i class="fa-solid fa-arrow-right-from-bracket me-2"></i>
+
+                Cerrar sesión
+
+              </button>
+            </li>
+
           </ul>
+
         </div>
+
       </div>
+
     </div>
+
+  </div>
 </nav>
-<div class="row justify-content-center bg-img-1">
-    <div class="col-xl-9">
-        <div class="row">
 
-            <div class="col-6">
-               
-            </div>
-            <div class="col-6 text-right py-2">
-                <button class="btn btn-sm btn-outline-warning px-2 py-0" onclick="iniciarTour()"><i class="fa-solid fa-play"></i> Tour</button>
-            </div>
+<section class="container py-5">
+  <div class="row g-4">
 
-            <div class="col-xl-8 col-12 col-md pt-4 py-md-5">
-                <h1 class="fs-42 username text-7 ">{{nombre}}, nos encanta tenerte aquí</h1>
-                <h2 class="fs-22"><b>{{nombreprograma}} </b><span class="badge text-bg-info">{{jornada}}</span></h2>
-            </div>
+    <!-- Header -->
+    <div class="col-12">
+      <div class="bg-color-3 rounded-5 p-4 p-md-5 text-white">
 
-            <div class="col-4 d-flex align-items-center p-0 m-0" id="t-tip">
-                <div class="card m-2 bg-20">
-                   <div class="card-header bg-20 text-white">
-                      <div class="row align-items-center">
-                            <div class="col">
-                               <h6 class="titulo-2 fs-18 text-semibold text-white">
-                                  <img src="../../../assets/image/seguridad.webp" width="30px">
-                                  Solicita tu crédito
-                               </h6>
-                            </div>
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+          <span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+            Panel de inscripción
+          </span>
 
-                      </div>
-                   </div>
-                   <div class="card-body text-white">
-                      <p>
-                        En CIAF estamos listos para iniciar juntos esta experiencia creativa. 
-                        Por eso diseñamos una financiación directa, garantizada y lo mejor sin intereses. 
-                        Haz click en el botón verde y comienza a vivir este increíble #ParcheCIAF.<br><br>
-
-                         <a class="btn bg-1 text-white" href="https://ciaf.digital/inscribete/" target="_blank">Crédito educativo</a>
-                      </p>
-                   </div>
-
-                </div>
-             </div>
-
-            <div class="col-xl-8">
-
-                <div class="row">
-
-                    <div class="col-sm-6">
-                      <div class="card m-2 bg-20">
-                        <div class="card-header bg-20 text-white">
-                          <div class="row align-items-center">
-                            <div class="col-2"><img src="../../../assets/image/icono-doc.webp" width="40px"></div>
-                            <div class="col-10">Diligencia el formulario de inscripción.</div>
-    
-                          </div>
-                       </div>
-                        <div class="card-body">
-                          <div class="row" *ngIf="formulario === 1; else formularioOk">
-                            <div class="col-12 text-center">
-
-                              <a data-bs-toggle="modal" data-bs-target="#formulario" class="btn bg-1 text-white">
-                                Completar formulario
-                              </a>
-
-                            </div>
-                           
-                          </div>
-                          <!-- Bloque alternativo si matricula NO es 1 -->
-                          <ng-template #formularioOk>
-                            <div class="row">
-                              <p class="card-text text-white">
-                               Formulario validado
-                              </p>
-                            </div>
-                          </ng-template>
-                          
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <div class="card m-2 bg-20">
-                        <div class="card-header bg-20 text-white">
-                          <div class="row align-items-center">
-                            <div class="col-2"><img src="../../../assets/image/icono-doc.webp" width="40px"></div>
-                            <div class="col-10">Diligencia el formulario de entrevista.</div>
-                          </div>
-                       </div>
-                        <div class="card-body">
-                          <div class="row" *ngIf="entrevista === 1; else entrevistaOk">
-                            <div class="col-12 text-center">
-
-                              <a data-bs-toggle="modal" data-bs-target="#entrevista" class="btn bg-1 text-white">
-                                Realizar entrevista
-                              </a>
-
-                            </div>
-                           
-                          </div>
-                          <!-- Bloque alternativo si matricula NO es 1 -->
-                          <ng-template #entrevistaOk>
-                            <div class="row">
-                              <p class="card-text text-white">
-                               Entrevista terminada
-                              </p>
-                            </div>
-                          </ng-template>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <div class="card m-2 bg-20">
-                        <div class="card-header bg-20 text-white">
-                          <div class="row align-items-center">
-                            <div class="col-2"><img src="../../../assets/image/icono-ok.webp" width="40px"></div>
-                            <div class="col-10">Realizar pago de inscripción.</div>
-    
-                          </div>
-                       </div>
-                        <div class="card-body text-white">
-                          
-          
-                          <div class="row" *ngIf="inscripcion === 1; else pagoExitosoins">
-                            <span class="col-12 fs-1">${{valorinscripcion + valorseguro | number:'1.0-0'}}</span><br>
-                            <span class="small">Incluye seguro</span> 
-                            <span class="small">(Ins. ${{valorinscripcion | number:'1.0-0'}} + ${{valorseguro | number:'1.0-0'}})</span>
-                            <span class="small">(Pago único)</span>
-                          </div>
-                          <!-- Bloque alternativo si matricula NO es 1 -->
-                          <ng-template #pagoExitosoins>
-                            <div class="row">Pago exitoso</div>
-                          </ng-template>
-                        
-                          <div class="col-12">
-                            <div class="row">
-                              <div class="col-auto" id="payment-container-i-e"></div>
-                              <div class="col-auto" id="payment-container-i"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <div class="card m-2 bg-20">
-                        <div class="card-header bg-20 text-white">
-                          <div class="row align-items-center">
-                            <div class="col-2"><img src="../../../assets/image/icono-ok.webp" width="40px"></div>
-                            <div class="col-10">Realizar pago de matricula.</div>
-    
-                          </div>
-                       </div>
-                        <div class="card-body text-white">
-          
-                          <div class="row" *ngIf="matricula === 1; else pagoExitoso">
-                            <span class="col-12 fs-5">Matrícula Ordinaria</span>
-                            <span class="fs-6 text-decoration-line-through">${{pecuniario | number:'1.0-0'}} </span>
-                            
-                            <span class="col-12 fs-1">${{ matricula_extraordinaria | number:'1.0-0' }}</span>
-                            <div class="col-12">
-                              <div class="row">
-                                <div class="col-auto" id="payment-container-e"></div>
-                                <div class="col-auto" id="payment-container"></div>
-                                <div class="col-auto"><a href="#" class="btn bg-1 text-white">Solicita tu crédito</a></div>
-                              </div>
-                            </div>
-                          
-                            
-                          </div>
-                          
-                          <!-- Bloque alternativo si matricula NO es 1 -->
-                          <ng-template #pagoExitoso>
-                            <div class="row">Pago exitoso</div>
-                          </ng-template>
-                          
-                          
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-            </div>
-
-            <div class="col-xl-4">
-                <div class="card m-2 bg-20">
-
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body bg-20 text-white">
-                        <h5 class="card-title">Documentos personales y académicos.</h5>
-                        <p class="card-text">El tamaño de la imagen o PDF no puede superar: 2MB</p>
-                    </div>
-                    <ul class="list-group-flush ">
-                        <li class="list-group-item py-1">
-
-                          <div class="col-12" *ngIf="isValidForm1; else documento1"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(1)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange($event)" hidden />
-                                {{ selectedFileName || "Cargar cedula" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento1>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte cedula cargado</span></div>
-                          </ng-template>
-
-                        </li>
-                        <li class="list-group-item py-1">
-                          <div class="col-12" *ngIf="isValidForm2; else documento2"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(2)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange2($event)" hidden />
-                                {{ selectedFileName2 || "Cargar diploma" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile2" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento2>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte diploma cargado</span></div>
-                          </ng-template>
-                        </li>
-                        <li class="list-group-item py-1">
-                          <div class="col-12" *ngIf="isValidForm3; else documento3"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(3)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange3($event)" hidden />
-                                {{ selectedFileName3 || "Acta de grado" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile3" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento3>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte acta de grado cargado</span></div>
-                          </ng-template>
-                        </li>
-                        <li class="list-group-item py-1">
-                          <div class="col-12" *ngIf="isValidForm4; else documento4"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(4)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange4($event)" hidden />
-                                {{ selectedFileName4 || "Seguro EPS" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile4" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento4>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte EPS cargado</span></div>
-                          </ng-template>
-                        </li>
-                        <li class="list-group-item py-1">
-                          <div class="col-12" *ngIf="isValidForm5; else documento5"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(5)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange5($event)" hidden />
-                                {{ selectedFileName5 || "Pruebas saber" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile5" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento5>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte pruebas saber cargado</span></div>
-                          </ng-template>
-                        </li>
-
-                        <li class="list-group-item py-1">
-                          <div class="col-12" *ngIf="isValidForm6; else documento6"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(6)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange6($event)" hidden />
-                                {{ selectedFileName6 || "Soporte Compromiso" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile6" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento6>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte compromiso cargado</span></div>
-                          </ng-template>
-                        </li>
-
-                        <li class="list-group-item py-1">
-                          <div class="col-12" *ngIf="isValidForm7; else documento7"><!-- // cedula de ciudadania -->
-                            <form (ngSubmit)="onSubmit(7)" #uploadForm="ngForm">
-                              <label class="custom-file-upload">
-                                <input type="file" (change)="onFileChange7($event)" hidden />
-                                {{ selectedFileName7 || "Soporte protección datos" }}
-                              </label>
-                              <button type="submit" [disabled]="!selectedFile7" class="btn bg-1 text-white rounded-0 rounded-end">Guardar</button>
-                            </form>
-                          </div>
-                          <ng-template #documento7>
-                            <div class="col-12"><img src="assets/image/img-li-ok.webp" width="20px"><span class="m-2">Soporte datos cargado</span></div>
-                          </ng-template>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>  
-
-       
+          <button
+            class="ciaf-btn ciaf-btn--glass rounded-pill px-4 py-2 fw-bold gap-2 border border-white border-opacity-25"
+            onclick="iniciarTour()">
+            <i class="fa-solid fa-play"></i>
+            Tour
+          </button>
         </div>
-    </div>
-</div>
 
-<!-- Modal plan estratégico-->
-<div class="modal fade" id="formulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-6" id="exampleModalLabel">Formulario de datos personales</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="row align-items-end g-4">
+          <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+            <h1 class="fs-48 fw-extrablack lh-1 mb-3">
+              {{ nombre }}, nos encanta tenerte aquí
+            </h1>
+
+            <p class="fs-20 text-white-80 mb-0">
+              Continúa tu proceso de inscripción y completa los pasos pendientes.
+            </p>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-12 col-12 text-xl-end">
+            <h2 class="fs-18 fw-bold text-white-80 mb-2">
+              {{ nombreprograma }}
+            </h2>
+
+            <span class="ciaf-pill ciaf-pill--hero rounded-pill px-3 py-2 fs-12 fw-bold text-uppercase">
+              {{ jornada }}
+            </span>
+          </div>
+        </div>
+
       </div>
-      <div class="modal-body">
+    </div>
 
+    <!-- Proceso principal -->
+    <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+      <div class="row g-4">
 
-        <form [formGroup]="myFormulario" (ngSubmit)="guardarFormulario()">
-          <div class="row">
-            <div class="form-group col-12 col-md-6">
-              <label>Jornada de interés:</label>
-              <select formControlName="jornada" class="form-control">
-                <option value="" disabled>-- Selecciona una jornada --</option>
-                <option value="Diurna">Diurna</option>
-                <option value="Nocturna">Nocturna</option>
-                <option value="Fds">Fds</option>
-              </select>
+        <!-- Formulario inscripción -->
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                <i class="fa-regular fa-file-lines text-white"></i>
+              </div>
+
+              <div>
+                <h3 class="fs-18 fw-extrablack text-color-2 mb-2">
+                  Formulario de inscripción
+                </h3>
+                <p class="fs-14 text-color-1 mb-0">
+                  Completa tus datos personales y académicos.
+                </p>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Primer Nombre:</label>
-              <input type="text" formControlName="nombre" class="form-control" placeholder="Primer Nombre">
-              <div *ngIf="myFormulario.controls['nombre'].invalid && myFormulario.controls['nombre'].touched" class="text-danger">
+
+            <div *ngIf="formulario === 1; else formularioOk">
+              <a data-bs-toggle="modal" data-bs-target="#formulario"
+                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold justify-content-center w-100 gap-3">
+                Completar formulario
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <ng-template #formularioOk>
+              <div class="ciaf-card rounded-5 p-3 bg-color-2">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="ciaf-icon-badge ciaf-icon-badge--lime rounded-circle">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <span class="fs-14 fw-bold text-color-2">
+                    Formulario validado
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+
+        <!-- Entrevista -->
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                <i class="fa-regular fa-comments text-white"></i>
+              </div>
+
+              <div>
+                <h3 class="fs-18 fw-extrablack text-color-2 mb-2">
+                  Entrevista
+                </h3>
+                <p class="fs-14 text-color-1 mb-0">
+                  Responde la entrevista para avanzar en tu admisión.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="entrevista === 1; else entrevistaOk">
+              <a data-bs-toggle="modal" data-bs-target="#entrevista"
+                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold justify-content-center w-100 gap-3">
+                Realizar entrevista
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <ng-template #entrevistaOk>
+              <div class="ciaf-card rounded-5 p-3 bg-color-2">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="ciaf-icon-badge ciaf-icon-badge--lime rounded-circle">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <span class="fs-14 fw-bold text-color-2">
+                    Entrevista terminada
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+
+        <!-- Pago inscripción -->
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                <i class="fa-solid fa-receipt text-white"></i>
+              </div>
+
+              <div>
+                <h3 class="fs-18 fw-extrablack text-color-2 mb-2">
+                  Pago de inscripción
+                </h3>
+                <p class="fs-14 text-color-1 mb-0">
+                  Realiza el pago único de inscripción.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="inscripcion === 1; else pagoExitosoins">
+              <h4 class="fs-40 fw-extrablack text-color-2 mb-1">
+                ${{ valorinscripcion + valorseguro | number:'1.0-0' }}
+              </h4>
+
+              <p class="fs-13 text-color-1 mb-3">
+                Incluye seguro:
+                Ins. ${{ valorinscripcion | number:'1.0-0' }} +
+                ${{ valorseguro | number:'1.0-0' }} · Pago único
+              </p>
+
+              <div class="d-flex flex-wrap gap-2">
+                <div id="payment-container-i-e"></div>
+                <div id="payment-container-i"></div>
+              </div>
+            </div>
+
+            <ng-template #pagoExitosoins>
+              <div class="ciaf-card rounded-5 p-3 bg-color-2">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="ciaf-icon-badge ciaf-icon-badge--lime rounded-circle">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <span class="fs-14 fw-bold text-color-2">
+                    Pago exitoso
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+
+        <!-- Pago matrícula -->
+        <div class="col-md-6 col-12">
+          <div class="ciaf-card rounded-5 p-4 h-100">
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
+                <i class="fa-solid fa-credit-card text-white"></i>
+              </div>
+
+              <div>
+                <h3 class="fs-18 fw-extrablack text-color-2 mb-2">
+                  Pago de matrícula
+                </h3>
+                <p class="fs-14 text-color-1 mb-0">
+                  Formaliza tu matrícula ordinaria.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="matricula === 1; else pagoExitoso">
+              <p class="fs-14 fw-bold text-color-1 mb-1">
+                Matrícula ordinaria
+              </p>
+
+              <span class="fs-16 text-decoration-line-through text-color-1">
+                ${{ pecuniario | number:'1.0-0' }}
+              </span>
+
+              <h4 class="fs-40 fw-extrablack text-color-2 mb-3">
+                ${{ matricula_extraordinaria | number:'1.0-0' }}
+              </h4>
+
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <div id="payment-container-e"></div>
+                <div id="payment-container"></div>
+
+                <a href="#" class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold fs-14">
+                  Solicita tu crédito
+                </a>
+              </div>
+            </div>
+
+            <ng-template #pagoExitoso>
+              <div class="ciaf-card rounded-5 p-3 bg-color-2">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="ciaf-icon-badge ciaf-icon-badge--lime rounded-circle">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <span class="fs-14 fw-bold text-color-2">
+                    Pago exitoso
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lateral -->
+    <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+
+      <!-- Crédito -->
+      <div class="bg-color-3 rounded-5 p-4 text-white mb-4" id="t-tip">
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <div class="ciaf-icon-badge ciaf-icon-badge--lime rounded-circle">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+
+          <div>
+            <h3 class="fs-20 fw-extrablack mb-2">
+              Solicita tu crédito
+            </h3>
+            <p class="fs-14 text-white-80 mb-0">
+              Financiación directa, garantizada y sin intereses para comenzar tu experiencia CIAF.
+            </p>
+          </div>
+        </div>
+
+        <a class="ciaf-btn ciaf-btn--lime rounded-pill px-4 py-3 fw-bold justify-content-center w-100 gap-3"
+          href="https://ciaf.digital/inscribete/" target="_blank">
+          Crédito educativo
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+
+      <!-- Documentos -->
+      <div class="ciaf-card rounded-5 p-4">
+
+        <div class="mb-4">
+          <span class="ciaf-pill ciaf-pill--section fs-11 fw-bold rounded-pill px-3 py-2 text-uppercase ls-4">
+            Soportes
+          </span>
+
+          <h3 class="fs-24 fw-extrablack text-color-2 mt-3 mb-2">
+            Documentos personales y académicos
+          </h3>
+
+          <p class="fs-14 text-color-1 mb-0">
+            El tamaño de la imagen o PDF no puede superar 2MB.
+          </p>
+        </div>
+
+        <div class="d-grid gap-3">
+
+          <!-- Documento 1 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm1; else documento1">
+              <form (ngSubmit)="onSubmit(1)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange($event)" hidden />
+                  {{ selectedFileName || "Cargar cédula" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento1>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte cédula cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- Documento 2 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm2; else documento2">
+              <form (ngSubmit)="onSubmit(2)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange2($event)" hidden />
+                  {{ selectedFileName2 || "Cargar diploma" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile2"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento2>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte diploma cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- Documento 3 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm3; else documento3">
+              <form (ngSubmit)="onSubmit(3)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange3($event)" hidden />
+                  {{ selectedFileName3 || "Acta de grado" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile3"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento3>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte acta de grado cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- Documento 4 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm4; else documento4">
+              <form (ngSubmit)="onSubmit(4)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange4($event)" hidden />
+                  {{ selectedFileName4 || "Seguro EPS" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile4"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento4>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte EPS cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- Documento 5 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm5; else documento5">
+              <form (ngSubmit)="onSubmit(5)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange5($event)" hidden />
+                  {{ selectedFileName5 || "Pruebas Saber" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile5"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento5>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte pruebas Saber cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- Documento 6 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm6; else documento6">
+              <form (ngSubmit)="onSubmit(6)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange6($event)" hidden />
+                  {{ selectedFileName6 || "Soporte compromiso" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile6"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento6>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte compromiso cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- Documento 7 -->
+          <div class="ciaf-card rounded-5 p-3">
+            <div *ngIf="isValidForm7; else documento7">
+              <form (ngSubmit)="onSubmit(7)" #uploadForm="ngForm" class="d-flex flex-column gap-2">
+                <label class="ciaf-btn ciaf-btn--outline rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  <input type="file" (change)="onFileChange7($event)" hidden />
+                  {{ selectedFileName7 || "Soporte protección datos" }}
+                </label>
+
+                <button type="submit" [disabled]="!selectedFile7"
+                  class="ciaf-btn ciaf-btn--primary rounded-pill px-3 py-2 fw-bold justify-content-center">
+                  Guardar
+                </button>
+              </form>
+            </div>
+
+            <ng-template #documento7>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-color-3"></i>
+                <span class="fs-14 fw-bold text-color-2">Soporte datos cargado</span>
+              </div>
+            </ng-template>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal formulario de datos personales -->
+<div class="modal fade" id="formulario" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content border-0 rounded-5 overflow-hidden">
+      <div class="modal-header border-0 px-4 px-md-5 pt-4 pb-0">
+        <div>
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+            Inscripción CIAF
+          </span>
+          <h1 class="modal-title fs-32 fw-extrablack text-color-2 mt-3 mb-0" id="formularioModalLabel">
+            Formulario de datos personales
+          </h1>
+          <p class="fs-14 text-color-1 mb-0 mt-2">
+            Completa tu información para continuar con el proceso.
+          </p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body px-4 px-md-5 py-4">
+        <form class="text-start" [formGroup]="myFormulario" (ngSubmit)="guardarFormulario()">
+          <div class="row g-2">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-clock"></i>
+                </span>
+                <div class="form-floating">
+                  <select formControlName="jornada" class="form-select border-start-0" id="jornada">
+                    <option value="" disabled>Selecciona una jornada</option>
+                    <option value="Diurna">Diurna</option>
+                    <option value="Nocturna">Nocturna</option>
+                    <option value="Fds">Fds</option>
+                  </select>
+                  <label for="jornada">Jornada de interés</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="text" formControlName="nombre" class="form-control border-start-0" id="nombre"
+                    placeholder="Primer nombre">
+                  <label for="nombre">Primer nombre</label>
+                </div>
+              </div>
+              <div class="error-message fs-12"
+                *ngIf="myFormulario.controls['nombre'].invalid && myFormulario.controls['nombre'].touched">
                 Solo se permiten letras
               </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Segundo Nombre:</label>
-              <input type="text" formControlName="nombre_2" class="form-control" placeholder="Segundo Nombre">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="text" formControlName="nombre_2" class="form-control border-start-0" id="nombre_2"
+                    placeholder="Segundo nombre">
+                  <label for="nombre_2">Segundo nombre</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Primer Apellido:</label>
-              <input type="text" formControlName="apellidos" class="form-control" placeholder="Primer Apellido">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="text" formControlName="apellidos" class="form-control border-start-0" id="apellidos"
+                    placeholder="Primer apellido">
+                  <label for="apellidos">Primer apellido</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Segundo Apellido:</label>
-              <input type="text" formControlName="apellidos_2" class="form-control" placeholder="Segundo Apellido">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="text" formControlName="apellidos_2" class="form-control border-start-0" id="apellidos_2"
+                    placeholder="Segundo apellido">
+                  <label for="apellidos_2">Segundo apellido</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Tipo de Documento:</label>
-              <select formControlName="tipo_documento" class="form-control">
-                <option value="" disabled>-- Selecciona un documento --</option>
-                <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
-                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
-                <option value="Pasaporte">Pasaporte</option>
-              </select>
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-id-card"></i>
+                </span>
+                <div class="form-floating">
+                  <select formControlName="tipo_documento" class="form-select border-start-0" id="tipo_documento">
+                    <option value="" disabled>Selecciona un documento</option>
+                    <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                    <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                  </select>
+                  <label for="tipo_documento">Tipo de documento</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Celular:</label>
-              <input type="tel" formControlName="celular" class="form-control" placeholder="Número de celular">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="tel" formControlName="celular" class="form-control border-start-0" id="celular"
+                    placeholder="Número de celular">
+                  <label for="celular">Celular</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Correo Personal:</label>
-              <input type="email" formControlName="email" class="form-control" placeholder="Correo electrónico">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-envelope"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="email" formControlName="email" class="form-control border-start-0" id="email"
+                    placeholder="Correo electrónico">
+                  <label for="email">Correo personal</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Nivel Escolaridad:</label>
-              <select formControlName="nivel_escolaridad" class="form-control">
-                <option value="" disabled>-- Selecciona un nivel --</option>
-                <option value="Técnico">Técnico</option>
-                <option value="Tecnólogo">Tecnólogo</option>
-                <option value="Profesional">Profesional</option>
-              </select>
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+                <div class="form-floating">
+                  <select formControlName="nivel_escolaridad" class="form-select border-start-0" id="nivel_escolaridad">
+                    <option value="" disabled>Selecciona un nivel</option>
+                    <option value="Técnico">Técnico</option>
+                    <option value="Tecnólogo">Tecnólogo</option>
+                    <option value="Profesional">Profesional</option>
+                  </select>
+                  <label for="nivel_escolaridad">Nivel de escolaridad</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Nombre del colegio:</label>
-              <input type="text" formControlName="nombre_colegio" class="form-control" placeholder="Nombre del colegio">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-solid fa-school"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="text" formControlName="nombre_colegio" class="form-control border-start-0"
+                    id="nombre_colegio" placeholder="Nombre del colegio">
+                  <label for="nombre_colegio">Nombre del colegio</label>
+                </div>
+              </div>
             </div>
-        
-            <div class="form-group col-12 col-md-6">
-              <label>Fecha de graduación:</label>
-              <input type="date" formControlName="fecha_graduacion" class="form-control">
+
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text bg-color-3 text-white border-0">
+                  <i class="fa-regular fa-calendar-days"></i>
+                </span>
+                <div class="form-floating">
+                  <input type="date" formControlName="fecha_graduacion" class="form-control border-start-0"
+                    id="fecha_graduacion">
+                  <label for="fecha_graduacion">Fecha de graduación</label>
+                </div>
+              </div>
             </div>
+
           </div>
-        
-          <div class="form-group col-12">
-            <br>
-            <button type="submit" class="btn btn-outline-success" [disabled]="myFormulario.invalid">Guardar Cambios</button>
-          </div>
+
+          <button type="submit" class="ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold w-100 gap-3 mt-4"
+            [disabled]="myFormulario.invalid">
+            Guardar cambios
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </button>
         </form>
-        
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+
+      <div class="modal-footer border-0 px-4 px-md-5 pb-4 pt-0">
+        <button type="button" class="ciaf-btn ciaf-btn--ghost rounded-pill px-4 py-2 fw-bold border-0"
+          data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal plan estratégico-->
-<div class="modal fade" id="entrevista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-6" id="exampleModalLabel">Entrevista</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Modal entrevista -->
+<div class="modal fade" id="entrevista" tabindex="-1" aria-labelledby="entrevistaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content border-0 rounded-5 overflow-hidden">
+      <div class="modal-header border-0 px-4 px-md-5 pt-4 pb-0">
+        <div>
+          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+            Inscripción CIAF
+          </span>
+          <h1 class="modal-title fs-32 fw-extrablack text-color-2 mt-3 mb-0" id="entrevistaModalLabel">
+            Entrevista
+          </h1>
+          <p class="fs-14 text-color-1 mb-0 mt-2">
+            Responde las preguntas para completar este paso de tu inscripción.
+          </p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body">
 
-        <form [formGroup]="myEntrevista" (ngSubmit)="guardarEntrevista()">
-          <div class="row">
+      <div class="modal-body px-4 px-md-5 py-4">
+        <form class="text-start" [formGroup]="myEntrevista" (ngSubmit)="guardarEntrevista()">
+          <div class="row g-2">
 
-
-
-            <div class="form-group col-md-6">
-              <label>¿Cómo describirías tu salud física actualmente?</label>
-              <select formControlName="salud_fisica" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="5">Excelente</option>
-                <option value="4">Buena</option>
-                <option value="3">Regular</option>
-                <option value="2">Mala</option>
-                <option value="1">Muy mala</option>
-              </select>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Cómo describirías tu salud física
+                actualmente?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-heart-pulse"></i></span>
+                <select formControlName="salud_fisica" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="5">Excelente</option>
+                  <option value="4">Buena</option>
+                  <option value="3">Regular</option>
+                  <option value="2">Mala</option>
+                  <option value="1">Muy mala</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-md-6">
-              <label>¿Cómo describirías tu salud mental actualmente?</label>
-              <select formControlName="salud_mental" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="5">Excelente</option>
-                <option value="4">Buena</option>
-                <option value="3">Regular</option>
-                <option value="2">Mala</option>
-                <option value="1">Muy mala</option>
-              </select>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Cómo describirías tu salud mental
+                actualmente?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-solid fa-brain"></i></span>
+                <select formControlName="salud_mental" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="5">Excelente</option>
+                  <option value="4">Buena</option>
+                  <option value="3">Regular</option>
+                  <option value="2">Mala</option>
+                  <option value="1">Muy mala</option>
+                </select>
+              </div>
             </div>
-        
-            <div class="col-12 py-2">
-             <div class="row">
-                <div class="col-12 pb-2">
-                  <label>¿Tienes alguna condición médica, neurológica o emocional que requiera atención especial en CIAF?</label>
+
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Tienes alguna condición médica, neurológica o
+                emocional que requiera atención especial en CIAF?</label>
+              <div class="row g-2">
+                <div class="col-12 col-md-4">
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-color-3 text-white border-0"><i
+                        class="fa-solid fa-circle-check"></i></span>
+                    <select formControlName="condicion_especial" class="form-select border-start-0">
+                      <option value="" disabled>Selecciona</option>
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group col-4">
-                
-                  <select formControlName="condicion_especial" class="form-control">
-                    <option value="" disabled>-- Selecciona una opción --</option>
-                    <option value="1">Si</option>
-                    <option value="0">No</option>
-                  </select>
-                </div>
-              
-                <div class="form-group col-md-8" *ngIf="myEntrevista.get('condicion_especial')?.value === '1'">
-                  <input type="text" formControlName="nombre_condicion_especial" class="form-control" placeholder="Ingrese su condición">
+                <div class="col-12 col-md-8" *ngIf="myEntrevista.get('condicion_especial')?.value === '1'">
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-color-3 text-white border-0"><i
+                        class="fa-regular fa-comment-dots"></i></span>
+                    <input type="text" formControlName="nombre_condicion_especial" class="form-control border-start-0"
+                      placeholder="Ingrese su condición">
+                  </div>
                 </div>
               </div>
             </div>
 
-
-
-             <div class="form-group col-md-12 p-2">
-              <label>¿Has sentido estrés, ansiedad o tristeza con frecuencia en los últimos 6 meses?</label>
-              <select formControlName="estres_reciente" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">N0</option>
-              </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Has sentido estrés, ansiedad o tristeza con
+                frecuencia en los últimos 6 meses?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="estres_reciente" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-
-            <div class="form-group col-md-12 p-2">
-              <label>¿Te gustaría recibir apoyo en temas relacionados con la salud mental durante tu tiempo en CIAF?</label>
-              <select formControlName="desea_apoyo_mental" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Te gustaría recibir apoyo en temas relacionados
+                con la salud mental durante tu tiempo en CIAF?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="desea_apoyo_mental" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-md-6 p-2">
-              <label>¿Eres tú quien asume los costos de tus estudios?</label>
-              <select formControlName="costea_estudios" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Eres tú quien asume los costos de tus
+                estudios?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="costea_estudios" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-md-6 p-2">
-              <label>¿Laboras actualmente?</label>
-              <select formControlName="labora_actualmente" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Laboras actualmente?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="labora_actualmente" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-md-6 p-2" *ngIf="myEntrevista.get('labora_actualmente')?.value === '1'">
-              <label>¿En qué empresa laboras?</label>
-              <input type="text" formControlName="donde_labora" class="form-control" placeholder="Ingrese empresa">
+            <div class="col-12 col-md-6 mb-3" *ngIf="myEntrevista.get('labora_actualmente')?.value === '1'">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿En qué empresa laboras?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-regular fa-building"></i></span>
+                <input type="text" formControlName="donde_labora" class="form-control border-start-0"
+                  placeholder="Ingrese empresa">
+              </div>
             </div>
 
-            <div class="form-group col-md-6 p-2" *ngIf="myEntrevista.get('labora_actualmente')?.value === '1'">
-              <label>¿Cuánto tiempo llevas laborando en esta entidad?</label>
-              <select formControlName="tiempo_laborando" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="0 a 6 meses">0 a 6 meses</option>
-                <option value="6 meses a 1 año">6 meses a un año</option>
-                <option value="un año a dos años">un año a dos años</option>
-                <option value="mayor a dos años">mayor a dos años</option>
-              </select>
+            <div class="col-12 col-md-6 mb-3" *ngIf="myEntrevista.get('labora_actualmente')?.value === '1'">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Cuánto tiempo llevas laborando en esta
+                entidad?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-regular fa-clock"></i></span>
+                <select formControlName="tiempo_laborando" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="0 a 6 meses">0 a 6 meses</option>
+                  <option value="6 meses a 1 año">6 meses a un año</option>
+                  <option value="un año a dos años">un año a dos años</option>
+                  <option value="mayor a dos años">mayor a dos años</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
-              ¿Has solicitado o estás interesado en solicitar algún tipo de beca o ayuda financiera?<br>
-              <select formControlName="desea_beca" class="form-control">
-                <option value="" selected disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Has solicitado o estás interesado en solicitar
+                algún tipo de beca o ayuda financiera?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="desea_beca" class="form-select border-start-0">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
-             ¿Tienes responsabilidades familiares que podrían afectar tu tiempo de estudio?<br>
-              <select formControlName="responsabilidades_familiares" class="form-control">
-                <option value="" selected disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Tienes responsabilidades familiares que podrían
+                afectar tu tiempo de estudio?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="responsabilidades_familiares" class="form-select border-start-0">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
-             ¿Qué tan seguro/a te sientes de que es el programa correcto para ti?<br>
-              <select formControlName="seguridad_carrera" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="5">Muy seguro</option>
-                <option value="4">Seguro</option>
-                <option value="3">Indeciso</option>
-                <option value="2">Poco seguro</option>
-                <option value="1">Nada seguro</option>
-              </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Qué tan seguro/a te sientes de que es el programa
+                correcto para ti?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="seguridad_carrera" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="5">Muy seguro</option>
+                  <option value="4">Seguro</option>
+                  <option value="3">Indeciso</option>
+                  <option value="2">Poco seguro</option>
+                  <option value="1">Nada seguro</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
-             ¿Has considerado abandonar tus estudios en algún momento antes de comenzar?<br>
-              <select formControlName="penso_abandonar" class="form-control">
-                <option value="" selected disabled>-- Selecciona una opción --</option>
-                <option value="1">Sí</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Has considerado abandonar tus estudios en algún
+                momento antes de comenzar?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="penso_abandonar" class="form-select border-start-0">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="1">Sí</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group col-md-6 p-2">
-              <label>¿Te gustaría referir personas para que inicien su experiencia profesional en CIAF?</label>
-              <select formControlName="desea_referir" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Te gustaría referir personas para que inicien su
+                experiencia profesional en CIAF?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="desea_referir" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
 
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Cómo describirías tu rendimiento académico en el
+                colegio o estudios anteriores?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-solid fa-book"></i></span>
+                <select formControlName="rendimiento_prev" class="form-select border-start-0">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="5">Excelente</option>
+                  <option value="4">Buena</option>
+                  <option value="3">Regular</option>
+                  <option value="2">Malo</option>
+                  <option value="1">Muy malo</option>
+                </select>
+              </div>
+            </div>
 
-            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Cómo describirías tu rendimiento académico en el colegio o estudios anteriores?<br>
-            <select formControlName="rendimiento_prev" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="5">Excelente</option>
-              <option value="4">Buena</option>
-              <option value="3">Regular</option>
-              <option value="2">Malo</option>
-              <option value="1">Muy malo</option>
-            </select>
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Tienes alguna materia o área en la que sientas que
+                necesitas apoyo adicional?</label>
+              <div class="row g-2">
+                <div class="col-12 col-md-4">
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-color-3 text-white border-0"><i
+                        class="fa-solid fa-circle-check"></i></span>
+                    <select formControlName="necesita_apoyo_academico" class="form-select border-start-0">
+                      <option value="" disabled>Selecciona</option>
+                      <option value="1">Si</option>
+                      <option value="2">No</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-8" *ngIf="myEntrevista.get('necesita_apoyo_academico')?.value === '1'">
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-color-3 text-white border-0"><i
+                        class="fa-regular fa-comment-dots"></i></span>
+                    <input type="text" formControlName="nombre_materia" class="form-control border-start-0"
+                      placeholder="¿Cuál materia?">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Sientes que tienes las habilidades necesarias para
+                organizarte y enfrentar las exigencias académicas?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-circle-check"></i></span>
+                <select formControlName="tiene_habilidades_organizativas" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Qué tan cómodo te sientes con el uso de
+                herramientas digitales para el aprendizaje?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-solid fa-laptop"></i></span>
+                <select formControlName="comodidad_herramientas_digitales" class="form-select border-start-0">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="5">Muy cómodo</option>
+                  <option value="4">Cómodo</option>
+                  <option value="3">Neutral</option>
+                  <option value="2">Poco cómodo</option>
+                  <option value="1">Nada cómodo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Tienes internet en casa?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-solid fa-wifi"></i></span>
+                <select formControlName="acceso_internet" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Tienes computador en casa?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-solid fa-laptop"></i></span>
+                <select formControlName="acceso_computador" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Cuál es tu estrato socioeconómico?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-solid fa-house"></i></span>
+                <select formControlName="estrato" class="form-select border-start-0">
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿En qué municipio resides actualmente?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-location-dot"></i></span>
+                <input type="text" formControlName="municipio_residencia" class="form-control border-start-0"
+                  placeholder="Ingrese el municipio">
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">¿Cuál es tu dirección de residencia actual?</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-location-dot"></i></span>
+                <input type="text" formControlName="direccion_residencia" class="form-control border-start-0"
+                  placeholder="Ingrese la dirección">
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">Nombre completo de tu referencia familiar</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i class="fa-regular fa-user"></i></span>
+                <input type="text" formControlName="nombre_referencia_familiar" class="form-control border-start-0"
+                  placeholder="Ingrese el nombre">
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">Número de contacto de tu referencia
+                familiar</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-mobile-screen-button"></i></span>
+                <input formControlName="telefono_referencia_familiar" class="form-control border-start-0"
+                  placeholder="Número de contacto">
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label class="fs-14 fw-bold text-color-2 mb-2 d-block">Parentesco con tu referencia familiar</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-color-3 text-white border-0"><i
+                    class="fa-solid fa-user-group"></i></span>
+                <select formControlName="parentesco_referencia_familiar" class="form-select border-start-0">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="Padre">Padre</option>
+                  <option value="Madre">Madre</option>
+                  <option value="Pareja">Pareja</option>
+                  <option value="Hermano/a">Hermano/a</option>
+                  <option value="Tío/a">Tío/a</option>
+                  <option value="Abuelo/a">Abuelo/a</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
           </div>
 
-          
-          <div class="col-12 py-2">
-            <div class="row">
-               <div class="col-12 pb-2">
-                 <label>¿Tienes alguna materia o área en la que sientas que necesitas apoyo adicional?</label>
-               </div>
-               <div class="form-group col-4">
-               
-                 <select formControlName="necesita_apoyo_academico" class="form-control">
-                   <option value="" disabled>-- Selecciona una opción --</option>
-                   <option value="1">Si</option>
-                   <option value="2">NO</option>
-                 </select>
-               </div>
-             
-               <div class="form-group col-md-8 px-2" *ngIf="myEntrevista.get('necesita_apoyo_academico')?.value === '1'">
-                 <input type="text" formControlName="nombre_materia" class="form-control" placeholder="¿Cual materia?">
-               </div>
-             </div>
-           </div>
-
-           <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Sientes que tienes las habilidades necesarias para organizarte y enfrentar las exigencias académicas?<br>
-            <select formControlName="tiene_habilidades_organizativas" class="form-control">
-               <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-            </select>
+          <div *ngIf="myEntrevista.invalid" class="ciaf-card rounded-5 p-4 mb-4 border">
+            <p class="fs-14 fw-bold text-color-2 mb-2">Diligencia estos campos. Si falta uno no puedes guardar.</p>
+            <ul class="fs-13 text-color-1 mb-0">
+              <li *ngFor="let control of invalidControls">{{ control }}</li>
+            </ul>
           </div>
 
-
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Qué tan cómodo te sientes con el uso de herramientas digitales para el aprendizaje?<br>
-            <select formControlName="comodidad_herramientas_digitales" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="5">Muy cómodo</option>
-              <option value="4">Cómodo</option>
-              <option value="3">Neutral</option>
-              <option value="2">Poco cómodo</option>
-              <option value="1">Nada cómodo</option>
-            </select>
-          </div>
-
-          <div class="form-group col-md-6 p-2">
-            <label>¿Tienes internet en casa?</label>
-            <select formControlName="acceso_internet" class="form-control">
-              <option value="" disabled>-- Selecciona una opción --</option>
-              <option value="1">Si</option>
-              <option value="0">No</option>
-            </select>
-          </div>
-
-          <div class="form-group col-md-6 p-2">
-            <label>¿Tienes computador en casa?</label>
-            <select formControlName="acceso_computador" class="form-control">
-              <option value="" disabled>-- Selecciona una opción --</option>
-              <option value="1">Si</option>
-              <option value="0">No</option>
-            </select>
-          </div>
-
-            <div class="form-group col-md-6">
-              <label>¿Cuál es tu estrato socioeconómico?</label>
-              <select formControlName="estrato" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label>¿En qué municipio resides actualmente?</label>
-              <input type="text" formControlName="municipio_residencia" class="form-control" placeholder="Ingrese el nombre">
-            </div>
-
-            <div class="form-group col-md-6">
-              <label>¿Cuál es tu dirección de residencia actual?</label>
-              <input type="text" formControlName="direccion_residencia" class="form-control" placeholder="Ingrese el nombre">
-            </div>
-
-
-          <div class="form-group col-xl-6 p-2">
-            <label>Escribe el nombre completo de tu referencia familiar</label>
-            <input type="text" formControlName="nombre_referencia_familiar" class="form-control" placeholder="Ingrese el nombre">
-          </div>
-
-
-          <div class="form-group col-md-6 p-2">
-            Escribe el número de contacto de tu referencia familiar<br>
-            <input formControlName="telefono_referencia_familiar" placeholder="Escribe el número de contacto de tu referencia familiar" class="form-control">
-          </div>
-
-        
-          <div class="form-group col-md-6 p-2">
-            ¿Cuál es el parentesco con tu referencia familiar?<br>
-            <select formControlName="parentesco_referencia_familiar" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="Padre">Padre</option>
-              <option value="Madre">Madre</option>
-              <option value="Pareja">Pareja</option>
-              <option value="Hermano/a">Hermano/a</option>
-              <option value="Tío/a">Tío/a</option>
-              <option value="Abuelo/a">Abuelo/a</option>
-              <option value="Otro">Otro</option>
-            </select>
-          </div>
-
-          
-
-        </div>
-        <div *ngIf="myEntrevista.invalid" class="alert alert-danger">
-          <p>Diligenciar estos campos, si falta 1 no puede guardar</p>
-          <ul>
-            <li *ngFor="let control of invalidControls">{{ control }}</li>
-          </ul>
-        </div>
-        
-          <button type="submit" class="btn btn-outline-success col-12" [disabled]="myEntrevista.invalid">Guardar y terminar Entrevista</button>
+          <button type="submit" class="ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold w-100 gap-3"
+            [disabled]="myEntrevista.invalid">
+            Guardar y terminar entrevista
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </button>
         </form>
-        
-        
-        
+
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+      <div class="modal-footer border-0 px-4 px-md-5 pb-4 pt-0">
+        <button type="button" class="ciaf-btn ciaf-btn--ghost rounded-pill px-4 py-2 fw-bold border-0"
+          data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- Modal entrevista anterior con opcion si-->
-<!-- <div class="modal fade" id="entrevista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-6" id="exampleModalLabel">Entrevista</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        <form [formGroup]="myEntrevista" (ngSubmit)="guardarEntrevista()">
-          <div class="row">
-            <div class="form-group col-md-12">
-              <label>¿Cómo describirías tu salud física y mental actualmente?</label>
-              <select formControlName="salud_fisica" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="Excelente">Excelente</option>
-                <option value="Buena">Buena</option>
-                <option value="Regular">Regular</option>
-                <option value="Mala">Mala</option>
-                <option value="Muymala">Muy mala</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-12">
-              <label>2.	¿Cómo describirías tu salud mental actualmente?</label>
-              <select formControlName="salud_mental" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="Excelente">Excelente</option>
-                <option value="Buena">Buena</option>
-                <option value="Regular">Regular</option>
-                <option value="Mala">Mala</option>
-                <option value="Muymala">Muy mala</option>
-              </select>
-            </div>
-        
-            <div class="col-12 py-2">
-             <div class="row">
-                <div class="col-12 pb-2">
-                  <label>¿Tienes alguna condición médica, neurológica o emocional que requiera atención especial en CIAF?</label>
-                </div>
-                <div class="form-group col-4">
-                
-                  <select formControlName="condicion_de_salud" class="form-control">
-                    <option value="" disabled>-- Selecciona una opción --</option>
-                    <option value="si">SI</option>
-                    <option value="no">NO</option>
-                  </select>
-                </div>
-              
-                <div class="form-group col-md-8" *ngIf="myEntrevista.get('condicion_de_salud')?.value === 'si'">
-                  <input type="text" formControlName="si_condicion_de_salud" class="form-control" placeholder="Ingrese su condición">
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 py-2">
-              <div class="row">
-                 <div class="col-12 pb-2">
-                   <label>¿Has sido diagnosticado con alguna condición neurológica?</label>
-                 </div>
-                 <div class="form-group col-4">
-                 
-                   <select formControlName="condicion_neurologica" class="form-control">
-                     <option value="" disabled>-- Selecciona una opción --</option>
-                     <option value="si">SI</option>
-                     <option value="no">NO</option>
-                     <option value="Prefiero no responder">Prefiero no responder</option>
-                   </select>
-                 </div>
-               
-                 <div class="form-group col-8" *ngIf="myEntrevista.get('condicion_neurologica')?.value === 'si'">
-                  <input type="text" formControlName="si_condicion_neurologica" class="form-control" placeholder="Ingrese la condición neurológica">
-                </div>
-               </div>
-             </div>
-
-             <div class="form-group col-md-6 p-2">
-              <label>¿Has experimentado niveles de estrés significativos en los últimos 6 meses?</label>
-              <select formControlName="niveles_de_estres" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="Excelente">Excelente</option>
-                <option value="si">SI</option>
-                <option value="no">NO</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6 p-2">
-              <label>¿Qué tan cómodo te sientes hablando sobre tu salud mental?</label>
-              <select formControlName="comodo_salud_mental" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="Excelente">Excelente</option>
-                <option value="muy comodo">muy cómodo</option>
-              <option value="moderadamente">moderadamente cómodo</option>
-              <option value="poco">poco cómodo</option>
-              <option value="experimentado">No lo he experimentado</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6 p-2">
-              <label>¿Tienes acceso a servicios de salud mental si los necesitas?</label>
-              <select formControlName="acceso_salud_mental" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="si">SI</option>
-                <option value="no">NO</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6 p-2">
-              <label>¿Te gustaría recibir apoyo en temas relacionados con la salud mental durante tu tiempo en CIAF?</label>
-              <select formControlName="recibir_apoyo_mental" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="si">SI</option>
-                <option value="no">NO</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6 p-2">
-              <label>¿Has tenido dificultades para manejar emociones como la ansiedad o la tristeza?</label>
-              <select formControlName="dificultad_emocional" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="Frecuentemente">Frecuentemente</option>
-              <option value="Ocasionalmente">Ocasionalmente</option>
-              <option value="Raramente">Raramente</option>
-              <option value="Nunca">Nunca</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6 p-2">
-              <label>¿Te gustaría referir personas para que inicien su experiencia universitaria en CIAF?</label>
-              <select formControlName="referir_persona" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="si">SI</option>
-                <option value="no">NO</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6 p-2">
-              <label>¿Quién sostiene tus estudios?</label>
-              <select formControlName="sostiene" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="padre">Padre</option>
-                <option value="madre">Madre</option>
-                <option value="papa_mama">Padre y madre</option>
-                <option value="Tú mismo">Tú mismo</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-
-        
-            <div class="form-group col-md-12 p-2">
-              <label>¿Laboras actualmente?</label>
-              <select formControlName="labora" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-        
-            <div class="form-group col-md-6 p-2" *ngIf="myEntrevista.get('labora')?.value === 'si'">
-              <label>¿En qué empresa laboras?</label>
-              <input type="text" formControlName="donde_labora" class="form-control" placeholder="Ingrese empresa">
-            </div>
-
-            <div class="form-group col-md-6 p-2" *ngIf="myEntrevista.get('labora')?.value === 'si'">
-              <label>¿Cuánto tiempo llevas laborando en esta entidad?</label>
-              <select formControlName="tiempo_laborando" class="form-control">
-                <option value="" disabled>-- Selecciona una opción --</option>
-                <option value="0 a 6 meses">0 a 6 meses</option>
-                <option value="6 meses a 1 año">6 meses a un año</option>
-                <option value="un año a dos años">un año a dos años</option>
-                <option value="mayor a dos años">mayor a dos años</option>
-              </select>
-            </div>
-
-            <div class="form-group col-xl-6 p-2">
-              <label>Escribe el nombre completo de tu referencia familiar</label>
-              <input type="text" formControlName="nombre_referencia" class="form-control" placeholder="Ingrese el nombre">
-            </div>
-
-
-          <div class="form-group col-md-6 p-2">
-            Escribe el número de contacto de tu referencia familiar<br>
-            <input formControlName="celular_referencia" placeholder="Escribe el número de contacto de tu referencia familiar" class="form-control">
-          </div>
-
-        
-          <div class="form-group col-md-6 p-2">
-            ¿Cuál es el parentesco con tu referencia familiar?<br>
-            <select formControlName="parentesco_referencia" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="Padre">Padre</option>
-              <option value="Madre">Madre</option>
-              <option value="Pareja">Pareja</option>
-              <option value="Hermano/a">Hermano/a</option>
-              <option value="Tío/a">Tío/a</option>
-              <option value="Abuelo/a">Abuelo/a</option>
-              <option value="Otro">Otro</option>
-            </select>
-          </div>
-
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 p-2">
-            ¿Has solicitado o estás interesado en solicitar algún tipo de beca o ayuda financiera?<br>
-            <select formControlName="solicitado_beca" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-        
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Cómo describirías tu desempeño académico previo?<br>
-            <select formControlName="desempeno_academico" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="Excelente">Excelente</option>
-              <option value="Buena">Buena</option>
-              <option value="Regular">Regular</option>
-              <option value="Deficiente">Deficiente</option>
-            </select>
-          </div>
-
-          <div class="col-12 py-2">
-            <div class="row">
-               <div class="col-12 pb-2">
-                 <label>¿Tienes alguna materia o área de estudio en la que sientas que necesitas apoyo adicional?</label>
-               </div>
-               <div class="form-group col-4">
-               
-                 <select formControlName="materia_apoyo" class="form-control">
-                   <option value="" disabled>-- Selecciona una opción --</option>
-                   <option value="si">SI</option>
-                   <option value="no">NO</option>
-                   <option value="Prefiero no responder">Prefiero no responder</option>
-                 </select>
-               </div>
-             
-               <div class="form-group col-md-8 px-2" *ngIf="myEntrevista.get('materia_apoyo')?.value === 'si'">
-                 <input type="text" formControlName="si_materia_apoyo" class="form-control" placeholder="¿Cual materia?">
-               </div>
-             </div>
-           </div>
-
-
-        
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Cómo te sientes respecto a tus habilidades de estudio y organización?<br>
-            <select formControlName="habilidades_estudio" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="Muy seguro">Muy seguro</option>
-              <option value="Seguro">Seguro</option>
-              <option value="Poco seguro">Poco seguro</option>
-              <option value="Inseguro">Inseguro</option>
-            </select>
-          </div>
-        
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Has tenido dificultades para cumplir con las exigencias académicas en el pasado?<br>
-            <select formControlName="dificultades_exigencias" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-        
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-2">
-            ¿Qué tan cómodo te sientes con el uso de herramientas digitales para el aprendizaje?<br>
-            <select formControlName="comodo_herramientas" class="form-control">
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="Muy cómodo">Muy cómodo</option>
-              <option value="Moderadamente cómodo">Moderadamente cómodo</option>
-              <option value="Poco cómodo">Poco cómodo</option>
-              <option value="No cómodo en absoluto">No cómodo en absoluto</option>
-            </select>
-          </div>
-
-        </div>
-        <div *ngIf="myEntrevista.invalid" class="alert alert-danger">
-          <p>Diligenciar estos campos, si falta 1 no puede guardar</p>
-          <ul>
-            <li *ngFor="let control of invalidControls">{{ control }}</li>
-          </ul>
-        </div>
-        
-          <button type="submit" class="btn btn-outline-success col-12" [disabled]="myEntrevista.invalid">Guardar y terminar Entrevista</button>
-        </form>
-        
-        
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div> -->

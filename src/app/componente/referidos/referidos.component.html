@@ -1,205 +1,381 @@
-<!-- Formulario de registro -->
-<div class="row  mt-4">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-12 ">
-        <div class="row justify-content-center">
+<app-header></app-header>
 
-            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+<!-- Hero referidos -->
+<section class="position-relative overflow-hidden text-white py-5">
+  <!-- Imagen fondo -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
+    <img src="assets/referidos/bg-referidos.webp" alt="Programa de referidos CIAF"
+      class="w-100 h-100 object-fit-cover d-block">
+  </div>
 
-                <div class="row justify-content-center ">
-                    <div class="col-12">
-                        
-                            <img [src]="banner_r" alt="Imprime tu futuro" width="100%">
-                       
-                    </div>
-                    <div class="col-12 mtop-4">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-6 text-center">
-                                <p class="text-1 fs-48 lh-40">Transformamos vidas a través de la educación. Y sabemos que tú puedes ser parte de ese cambio</p>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Capa azul -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 bg-color-3 opacity-75" aria-hidden="true"></div>
 
+  <!-- Contenido -->
+  <div class="container position-relative py-5">
+    <div class="row py-5">
+      <div class="col-xl-8 col-lg-9 col-md-11 col-12">
 
+        <span
+          class="ciaf-pill ciaf-pill--hero bg-white text-color-1 fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4 mb-4">
+          <i class="fa-solid fa-people-arrows me-2"></i>
+          Programa de referidos CIAF
+        </span>
 
-                    <div class="col-12">
+        <h1 class="fs-40 fw-extrablack lh-1 mb-0">
+          Cuando ayudas a alguien a estudiar, no
+          <br class="d-none d-lg-block">
+          solo cambias su destino...
+          <br class="d-none d-lg-block">
+          <span class="text-color-3">
+            también estás transformando el tuyo.
+          </span>
+        </h1>
 
-                       <div class="row justify-content-center">
-                         <!-- Bootstrap contenedor -->
+      </div>
+    </div>
+  </div>
+</section>
 
-                            <div class="col-xl-3 col-lg-4 col-md-5 col-11">
-                                <div class="row">
-                                    <div class="col-12 titulo-como-funciona text-white text-center  fs-42 lh-36 py-4">
-                                        ¿Cómo <br> funciona?
-                                    </div>
-                                    <div class="col-12 p-4 how-it-works border rounded-bottom">
+<section class="referidos-incentivo-section">
+  <div class="container py-5">
 
-                                        <ol class="pasos-circulares fs-20 lh-20">
-                                            <li>Registra a tu referido llenando el formulario.</li>
-                                            <li>Asegúrate de que se inscriba y empiece clases en CIAF.</li>
-                                            <li>Recibe incentivos por cada nivel académico que finalice:</li>
-                                        </ol>
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-7 col-lg-8 col-md-10 col-12">
 
+        <span class="referidos-pill">
+          <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+          Programa de referidos CIAF
+        </span>
 
+        <h2 class="referidos-title mt-4">
+          Transformamos vidas a través de la educación, y
+          sabemos que tú puedes ser parte de ese cambio.
+        </h2>
 
-                                        <div class="col-12 mx-4">
-                                            <ul class="text-1 fs-24 ">
-                                                <li><span class="fw-bold">Inicia Clases </span><br>$300.000*</li>
-                                                <li><span class="fw-bold">Finaliza Nivel Técnico </span><br>$600.000*</li>
-                                                <li><span class="fw-bold">Finaliza Tecnólogo </span><br>$900.000*</li>
-                                                <li><span class="fw-bold">Cumple su meta como Profesional </span><br>$1.200.000*</li>
-                                            </ul>
-                                        </div>
-                                         
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-12 py-4"></div>
-
-                            <div class="col-xl-4 col-lg-5 col-md-5 col-11 border rounded-5">
-
-                                <form class="row text-1 justify-content-center" [formGroup]="myForm" (ngSubmit)="agregar()">
-
-                                    <div class="col-12 text-center py-3">
-                                        <h2 class="titulo-degradado text-center fs-36 fw-bold">Referente</h2>
-                                    </div>
-
-                                    <div class="col-xl-10 col-12 text-1 p-2">
-                                        <div class="row ">
-                                            <div class="col-12 p-2">
-                                                <label class="form-label fs-24">* Nombre completo</label>
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <input matInput type="text" class=" form-line-input" name="nombre_r"  formControlName="nombre_r" required>
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.nombre_r">
-                                                    <div class="error-message" *ngIf="myForm.get('nombre_r')?.hasError(validation.type) && (myForm.get('nombre_r')?.dirty || myForm.get('nombre_r')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2">
-                                                <label class="form-label fs-24">* Celular</label>
-                                                <div class="input-group mb-3 input-group-lg">
-                                                
-                                                    <input matInput type="text" class=" form-line-input" aria-label="celular_r" aria-describedby="basic-addon1" required="" name="celular_r"  formControlName="celular_r" #celular pattern="[1-9]\d{6,10}">
-                                                </div>
-                                                <div *ngFor="let validation of account_validation_messages.celular_r">
-                                                    <div class="error-message p-2" *ngIf="myForm.get('celular_r')?.hasError(validation.type) && (myForm.get('celular_r')?.dirty || myForm.get('celular_r')?.touched)">{{validation.message}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2">
-                                                <label class="form-label fs-24 pb-3">* Cargo</label>
-                                                <div class="input-group mb-3 input-group-lg">
-                                                    <div class="fs-18">
-                                                        <div class="form-check" *ngFor="let relacion of cargos">
-                                                            <input class="form-check-input" type="radio" name="relacion" [value]="relacion.valor" formControlName="relacion">
-                                                            <label class="form-check-label">{{ relacion.texto }}</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-12 text-center py-3">
-                                        <h2 class="titulo-degradado text-center fs-36 fw-bold">Referido</h2>
-                                    </div>
-
-                       
-
-                                    <div class="col-xl-10 col-12 p-2">
-                                         <label class="form-label fs-24">* Nombre completo</label>
-                                        <div class="input-group mb-3 input-group-lg">
-                                                <input matInput type="text" class="form-line-input" name="nombre"  formControlName="nombre" required>
-                                        </div>
-                                        <div *ngFor="let validation of account_validation_messages.nombre">
-                                            <div class="error-message" *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">{{validation.message}}
-                                            </div>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="col-xl-10 col-12 p-2">
-                                         <label class="form-label fs-24">* Celular</label>
-                                        <div class="input-group mb-3 input-group-lg">
-                                            
-                                            <input matInput type="text" class="form-line-input" aria-label="celular" aria-describedby="basic-addon1" required="" name="celular"  formControlName="celular" #celular pattern="[1-9]\d{6,10}">
-                                        </div>
-                                        <div *ngFor="let validation of account_validation_messages.celular">
-                                            <div class="error-message p-2" *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">{{validation.message}}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-10 col-12 p-2">
-                                         <label class="form-label fs-24 pb-3">* Programa de interés</label>
-                                        <div class="input-group mb-3 input-group-lg">
-                                            <div class="fs-18">
-                                                <div class="form-check" *ngFor="let programa of programas">
-                                                    <input class="form-check-input" type="radio" name="fo_programa" [value]="programa.valor" formControlName="fo_programa">
-                                                    <label class="form-check-label">{{ programa.texto }}</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-10 col-12 p-2">
-                                         <label class="form-label fs-24 pb-3">* Jornada</label>
-                                        <div class="input-group mb-3 input-group-lg">
-                                            <div class="fs-18">
-                                                <div class="form-check" *ngFor="let jornada of jornadas">
-                                                    <input class="form-check-input" type="radio" name="jornada_e" [value]="jornada.valor" formControlName="jornada_e">
-                                                    <label class="form-check-label">{{ jornada.texto }}</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                      
-
-
-                                    <div class="col-xl-10 col-12 bg-form-ref p-2 mt-4">
-                                        <div class="row ">
-                                
-                                        
-                                            <div class="col-12 p-2 ">
-                                                <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" formControlName="acepto" name="acepto">
-                                                Acepto el envío de información a mi correo electrónico. He revisado las <a routerLink="/tratamientodatos" target="_blank">Políticas de protección de Datos </a> y <a href="https://ciaf.edu.co/assets/referidos/terminosycondiciones.pdf" target="_blank">  Términos condiciones</a>.
-                                            </div>
-                                                
-                                            
-                                        </div>
-                                    </div>
-
-
-
-                                    <div *ngFor="let validation of account_validation_messages.terms">
-                                        <div class="error-message" *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">{{validation.message}}
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-8 col-8 text-center pb-4">
-                                        <button type="submit" class="btn bg-1 btn-lg text-white btn-enviar fs-24" [disabled]="!myForm.valid">Enviar</button>
-                                        
-                                    </div>
-                                </form>
-
-                            </div>
-
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 p-4"></div>
-
-                       </div>
-
-                    </div>
-
-                    
-
-                </div>
-                
-            </div>
-
-        </div>
+      </div>
     </div>
 
-</div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-xl-5 col-lg-6 col-md-8 col-12">
+
+        <div class="referidos-incentivo-card">
+
+          <p class="referidos-label mb-2">
+            Valor del incentivo
+          </p>
+
+          <h3 class="referidos-price mb-3">
+            $150.000
+          </h3>
+
+          <p class="referidos-copy mb-4">
+            Si eres estudiante, este beneficio es redimible en tu matrícula.
+          </p>
+
+          <div class="referidos-progress-info mb-2">
+            <span>Tú lo impulsas</span>
+            <span>¡Profesional!</span>
+          </div>
+
+          <div class="referidos-progress">
+            <div class="referidos-progress-bar"></div>
+
+            <div class="referidos-progress-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+          </div>
+
+          <p class="referidos-copy mt-4 mb-3">
+            Tu recomendación ayuda a que alguien llegue a graduarse
+            y se convierta en <strong>profesional.</strong>
+          </p>
+
+          <p class="referidos-terms mb-0">
+            * Aplican términos y condiciones.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Cómo funciona -->
+<section class="container py-5">
+  <div class="row justify-content-center">
+
+    <!-- Título -->
+    <div class="col-12 text-center mb-5">
+      <h2 class="fs-40 fw-extrablack text-color-2 mb-0">
+        ¿Cómo funciona?
+      </h2>
+    </div>
+
+    <!-- Paso 1 -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <span class="fs-13 fw-bold text-color-1 text-uppercase">
+          Paso 1
+        </span>
+
+        <h3 class="fs-18 fw-extrablack text-color-2 mt-2 mb-3">
+          Registra a tu referido
+        </h3>
+
+        <p class="fs-15 text-color-1 mb-0">
+          Llena el formulario con los datos de la persona que quieres recomendar.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <span class="fs-13 fw-bold text-color-1 text-uppercase">
+          Paso 2
+        </span>
+
+        <h3 class="fs-18 fw-extrablack text-color-2 mt-2 mb-3">
+          Asegúrate que se inscriba
+        </h3>
+
+        <p class="fs-15 text-color-1 mb-0">
+          Tu referido debe inscribirse y empezar clases en CIAF.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4">
+      <div class="ciaf-card rounded-5 p-4 h-100">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+
+        <span class="fs-13 fw-bold text-color-1 text-uppercase">
+          Paso 3
+        </span>
+
+        <h3 class="fs-18 fw-extrablack text-color-2 mt-2 mb-3">
+          Recibe tu incentivo
+        </h3>
+
+        <p class="fs-15 text-color-1 mb-0">
+          Cuando la persona que referiste inicie clases en CIAF,
+          recibirás tu incentivo redimible en el valor de tu matrícula.
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Formulario de registro -->
+<section class="container py-5">
+
+  <div class="row justify-content-center">
+    <div class="col-xl-9 col-lg-10 col-md-11 col-12">
+
+      <!-- Volver -->
+      <div class="mb-4">
+        <a routerLink="/"
+          class="text-decoration-none text-color-1 fs-14 fw-bold d-inline-flex align-items-center gap-2">
+          <i class="fa-solid fa-arrow-left"></i>
+          Volver al inicio
+        </a>
+      </div>
+
+      <form [formGroup]="myForm" (ngSubmit)="agregar()">
+
+        <!-- Referente -->
+        <fieldset class="ciaf-card rounded-5 p-4 p-md-5 mb-5">
+          <legend class="float-none w-auto px-3 fs-20 fw-extrablack text-color-2 mb-0">
+            Referente
+          </legend>
+
+          <div class="row g-4">
+
+            <!-- Nombre referente -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Nombre completo
+              </label>
+
+              <input matInput type="text" class="form-control form-control-lg rounded-pill px-4"
+                placeholder="Nombre completo" name="nombre_r" formControlName="nombre_r" required>
+
+              <div *ngFor="let validation of account_validation_messages.nombre_r">
+                <div class="error-message fs-12 mt-2"
+                  *ngIf="myForm.get('nombre_r')?.hasError(validation.type) && (myForm.get('nombre_r')?.dirty || myForm.get('nombre_r')?.touched)">
+                  {{ validation.message }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular referente -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Celular
+              </label>
+
+              <input matInput type="text" class="form-control form-control-lg rounded-pill px-4" placeholder="Celular"
+                name="celular_r" formControlName="celular_r" pattern="[1-9]\d{6,10}" required>
+
+              <div *ngFor="let validation of account_validation_messages.celular_r">
+                <div class="error-message fs-12 mt-2"
+                  *ngIf="myForm.get('celular_r')?.hasError(validation.type) && (myForm.get('celular_r')?.dirty || myForm.get('celular_r')?.touched)">
+                  {{ validation.message }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Cargo referente -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Cargo
+              </label>
+
+              <select class="form-select form-select-lg rounded-pill px-4" name="relacion" formControlName="relacion"
+                required>
+                <option value="" selected disabled>Selecciona</option>
+                <option *ngFor="let relacion of cargos" [value]="relacion.valor">
+                  {{ relacion.texto }}
+                </option>
+              </select>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- Referido -->
+        <fieldset class="ciaf-card rounded-5 p-4 p-md-5 mb-4">
+          <legend class="float-none w-auto px-3 fs-20 fw-extrablack text-color-2 mb-0">
+            Referido
+          </legend>
+
+          <div class="row g-4">
+
+            <!-- Nombre referido -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Nombre completo
+              </label>
+
+              <input matInput type="text" class="form-control form-control-lg rounded-pill px-4"
+                placeholder="Nombre completo" name="nombre" formControlName="nombre" required>
+
+              <div *ngFor="let validation of account_validation_messages.nombre">
+                <div class="error-message fs-12 mt-2"
+                  *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">
+                  {{ validation.message }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular referido -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Celular
+              </label>
+
+              <input matInput type="text" class="form-control form-control-lg rounded-pill px-4" placeholder="Celular"
+                name="celular" formControlName="celular" pattern="[1-9]\d{6,10}" required>
+
+              <div *ngFor="let validation of account_validation_messages.celular">
+                <div class="error-message fs-12 mt-2"
+                  *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">
+                  {{ validation.message }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Programa -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Programa de interés
+              </label>
+
+              <select class="form-select form-select-lg rounded-pill px-4" name="fo_programa"
+                formControlName="fo_programa" required>
+                <option value="" selected disabled>Selecciona</option>
+                <option *ngFor="let programa of programas" [value]="programa.valor">
+                  {{ programa.texto }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Jornada -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+              <label class="form-label fs-12 fw-bold text-color-1">
+                Jornada
+              </label>
+
+              <select class="form-select form-select-lg rounded-pill px-4" name="jornada_e" formControlName="jornada_e"
+                required>
+                <option value="" selected disabled>Selecciona</option>
+                <option *ngFor="let jornada of jornadas" [value]="jornada.valor">
+                  {{ jornada.texto }}
+                </option>
+              </select>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- Términos -->
+        <div class="form-check my-4">
+          <input class="form-check-input" type="checkbox" id="flexCheckDefault" formControlName="acepto" name="acepto">
+
+          <label class="form-check-label fs-15 text-color-1" for="flexCheckDefault">
+            Acepto el envío de información a mi correo electrónico. He revisado las
+            <a routerLink="/tratamientodatos" target="_blank" class="fw-bold text-color-2">
+              Políticas de protección de Datos
+            </a>
+            y
+            <a href="https://ciaf.edu.co/assets/referidos/terminosycondiciones.pdf" target="_blank"
+              class="fw-bold text-color-2">
+              Términos y condiciones.
+            </a>
+          </label>
+        </div>
+
+        <div *ngFor="let validation of account_validation_messages.terms">
+          <div class="error-message fs-12 mb-3"
+            *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">
+            {{ validation.message }}
+          </div>
+        </div>
+
+        <!-- Botón -->
+        <button type="submit" class="ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold gap-3"
+          [disabled]="!myForm.valid">
+          <i class="fa-regular fa-paper-plane"></i>
+          Registrar referido
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+</section>
 <!-- ******************************** -->
+
+<app-footer></app-footer>
