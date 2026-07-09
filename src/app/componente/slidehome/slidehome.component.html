@@ -1,192 +1,108 @@
-<section
-	  class="hero-slider"
-	  *ngIf="listarSlider?.length"
-	  (mouseenter)="pauseSlider()"
-	  (mouseleave)="resumeSlider()"
-	>
+<section class="hero-slider" *ngIf="listarSlider?.length" (mouseenter)="pauseSlider()" (mouseleave)="resumeSlider()">
 
-	<ngb-carousel
-	  #carousel
-	  [interval]="7000"
-	  [pauseOnHover]="true"
-	  [pauseOnFocus]="true"
-	  [showNavigationArrows]="false"
-	  [showNavigationIndicators]="false"
-	  (slide)="onSlide($event)"
-	>
-  
-	  <ng-template
-		ngbSlide
-		*ngFor="let slides of listarSlider; let i = index"
-		[id]="'slide-' + i"
-	  >
-  
-		<div class="hero-slide">
-  
-		  <ng-container *ngIf="slides.tipo === 1">
-			<picture>
-			  <source
-				media="(max-width: 767px)"
-				[srcset]="urlBanner + slides.img_movil"
-			  >
-  
-			  <img
-				[src]="urlBanner + slides.img_pc"
-				[alt]="slides.titulo || 'Banner CIAF'"
-				class="hero-media hero-kenburns"
-			  >
-			</picture>
-		  </ng-container>
-  
-		  <ng-container *ngIf="slides.tipo === 2">
-			<video
-			  class="hero-media"
-			  preload="auto"
-			  autoplay
-			  loop
-			  muted
-			  playsinline
-			>
-			  <source [src]="'assets/image/' + slides.img_pc + '.mp4'" type="video/mp4">
-			  <source [src]="'assets/image/img/' + slides.img_pc + '.webm'" type="video/webm">
-			  <source [src]="'assets/image/img/' + slides.img_pc + '.ogg'" type="video/ogg">
-			</video>
-		  </ng-container>
-  
-		  <div class="hero-overlay hero-overlay-x"></div>
-		  <div class="hero-overlay hero-overlay-y"></div>
-		  <div class="hero-overlay hero-overlay-color"></div>
-		  <div class="hero-grid"></div>
-  
-		  <div class="hero-blur hero-blur-left"></div>
-		  <div class="hero-blur hero-blur-right"></div>
-  
-		  <div class="hero-content-wrap">
-			<div class="container-xxl">
-			  <div class="hero-content">
-  
-				<span class="ciaf-pill bg-white text-color-4 fs-12 fw-bold rounded-pill mb-4 px-3 py-2 text-uppercase ls-4" *ngIf="slides.subtitulo">
-					<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					fill="#84cc16"
-					stroke="#84cc16"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					class="icon-craia"
-				  >
-					<path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
-					<path d="M20 2v4"></path>
-					<path d="M22 4h-4"></path>
-					<circle cx="4" cy="20" r="2"></circle>
-				</svg> 
-				  {{ slides.subtitulo }}
-				</span>
-  
-				<h1 class="ciaf-title-display ciaf-title-display--hero fs-80 fw-black m-0 lh-1" *ngIf="slides.titulo">
-					<ng-container *ngFor="let parte of getTituloPartes(slides.titulo)">
-					  <span
-						class="hero-title-part"
-						[class.ciaf-gradient-text]="parte.resaltada"
-						[class.ciaf-gradient-text--hero]="parte.resaltada"
-					  >{{ parte.texto }}</span>
-					</ng-container>
-				  </h1>
-  
-				<p class="ciaf-text-lead ciaf-text-lead--inverse fs-20 fw-medium m-0 mt-4" *ngIf="slides.descripcion">
-				  {{ slides.descripcion }}
-				</p>
-  
-				<div class="hero-buttons" *ngIf="slides.ruta_url">
-				  <a [href]="slides.ruta_url" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
-					Ver información
-					<i class="fa-solid fa-arrow-up-right-from-square"></i>
-				  </a>
-				</div>
-  
-			  </div>
-			</div>
-		  </div>
-  
-		</div>
-  
-	  </ng-template>
-  
-	</ngb-carousel>
-  
-	<div class="hero-controls container-xxl">
-  
-	  <div class="hero-dots">
-		<button
-		  *ngFor="let slide of listarSlider; let i = index"
-		  type="button"
-		  class="hero-dot"
-		  [class.active]="i === activeSlide"
-		  [attr.aria-label]="'Slide ' + (i + 1)"
-		  (click)="carousel.select('slide-' + i)"
-		></button>
-  
-		<span class="hero-count fs-12 fw-bold">
-		  {{ activeSlide + 1 | number:'2.0' }} / {{ listarSlider.length | number:'2.0' }}
-		</span>
-	  </div>
-  
-	  <div class="hero-arrows">
-		<button type="button" class="hero-arrow" aria-label="Anterior" (click)="carousel.prev()">
-		  <i class="fa-solid fa-chevron-left"></i>
-		</button>
-  
-		<button type="button" class="hero-arrow" aria-label="Siguiente" (click)="carousel.next()">
-		  <i class="fa-solid fa-chevron-right"></i>
-		</button>
-	  </div>
-  
-	</div>
-  
-  </section>
-  
-  <section class="ciaf-marquee-strip">
-	<div class="ciaf-marquee-strip__track fs-14 fw-bold gap-5 d-flex">
-	  <span>Vigilada Mineducación <b>✦</b></span>
-	  <span>Universitarios sin Límites <b>✦</b></span>
-	  <span>Humanos · Innovadores · Originales <b>✦</b></span>
-	  <span>Mentalidad Digital <b>✦</b></span>
-	  <span>Presente Extraordinario <b>✦</b></span>
-  
-	  <span>Vigilada Mineducación <b>✦</b></span>
-	  <span>Universitarios sin Límites <b>✦</b></span>
-	  <span>Humanos · Innovadores · Originales <b>✦</b></span>
-	  <span>Mentalidad Digital <b>✦</b></span>
-	  <span>Presente Extraordinario <b>✦</b></span>
-	</div>
-  </section>
+  <ngb-carousel #carousel [interval]="7000" [pauseOnHover]="true" [pauseOnFocus]="true" [showNavigationArrows]="false"
+    [showNavigationIndicators]="false" (slide)="onSlide($event)">
 
-  <section class="impact-pre-marquee">
-	<div class="ciaf-marquee-big">
-	  <div class="ciaf-marquee-big__track ciaf-marquee-big__track--ink-dots gap-5 d-flex">
-  
-		<span class="fs-64 fw-black">Financiación <i></i></span>
-		<span class="fs-64 fw-black">Becas <i></i></span>
-		<span class="fs-64 fw-black">Créditos <i></i></span>
-		<span class="fs-64 fw-black">Egresados <i></i></span>
-		<span class="fs-64 fw-black">Oportunidades <i></i></span>
-		<span class="fs-64 fw-black">Futuro <i></i></span>
-		<span class="fs-64 fw-black">Transformación <i></i></span>
-		<span class="fs-64 fw-black">Propósito <i></i></span>
-  
-		<span class="fs-64 fw-black">Financiación <i></i></span>
-		<span class="fs-64 fw-black">Becas <i></i></span>
-		<span class="fs-64 fw-black">Créditos <i></i></span>
-		<span class="fs-64 fw-black">Egresados <i></i></span>
-		<span class="fs-64 fw-black">Oportunidades <i></i></span>
-		<span class="fs-64 fw-black">Futuro <i></i></span>
-		<span class="fs-64 fw-black">Transformación <i></i></span>
-		<span class="fs-64 fw-black">Propósito <i></i></span>
-  
-	  </div>
-	</div>
-  </section>
+    <ng-template ngbSlide *ngFor="let slides of listarSlider; let i = index" [id]="'slide-' + i">
+
+      <div class="hero-slide">
+
+        <ng-container *ngIf="slides.tipo === 1">
+          <picture>
+            <source media="(max-width: 767px)" [srcset]="urlBanner + slides.img_movil">
+
+            <img [src]="urlBanner + slides.img_pc" [alt]="slides.titulo || 'Banner CIAF'"
+              class="hero-media hero-kenburns">
+          </picture>
+        </ng-container>
+
+        <ng-container *ngIf="slides.tipo === 2">
+          <video class="hero-media" preload="auto" autoplay loop muted playsinline>
+            <source [src]="'assets/image/' + slides.img_pc + '.mp4'" type="video/mp4">
+            <source [src]="'assets/image/img/' + slides.img_pc + '.webm'" type="video/webm">
+            <source [src]="'assets/image/img/' + slides.img_pc + '.ogg'" type="video/ogg">
+          </video>
+        </ng-container>
+
+        <div class="hero-overlay hero-overlay-x"></div>
+        <div class="hero-overlay hero-overlay-y"></div>
+        <div class="hero-overlay hero-overlay-color"></div>
+        <div class="hero-grid"></div>
+
+        <div class="hero-blur hero-blur-left"></div>
+        <div class="hero-blur hero-blur-right"></div>
+
+        <div class="hero-content-wrap">
+          <div class="container-xxl">
+            <div class="hero-content">
+
+              <span
+                class="ciaf-pill bg-white text-color-4 fs-12 fw-bold rounded-pill mb-4 px-3 py-2 text-uppercase ls-4"
+                *ngIf="slides.subtitulo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#84cc16"
+                  stroke="#84cc16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon-craia">
+                  <path
+                    d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                  </path>
+                  <path d="M20 2v4"></path>
+                  <path d="M22 4h-4"></path>
+                  <circle cx="4" cy="20" r="2"></circle>
+                </svg>
+                {{ slides.subtitulo }}
+              </span>
+
+              <h1 class="ciaf-title-display ciaf-title-display--hero fs-80 fw-black m-0 lh-1" *ngIf="slides.titulo">
+                <ng-container *ngFor="let parte of getTituloPartes(slides.titulo)">
+                  <span class="hero-title-part" [class.ciaf-gradient-text]="parte.resaltada"
+                    [class.ciaf-gradient-text--hero]="parte.resaltada">{{ parte.texto }}</span>
+                </ng-container>
+              </h1>
+
+              <p class="ciaf-text-lead ciaf-text-lead--inverse fs-20 fw-medium m-0 mt-4" *ngIf="slides.descripcion">
+                {{ slides.descripcion }}
+              </p>
+
+              <div class="hero-buttons" *ngIf="slides.ruta_url">
+                <a [href]="slides.ruta_url" target="_blank"
+                  class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                  Ver información
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </ng-template>
+
+  </ngb-carousel>
+
+  <div class="hero-controls container-xxl">
+
+    <div class="hero-dots">
+      <button *ngFor="let slide of listarSlider; let i = index" type="button" class="hero-dot"
+        [class.active]="i === activeSlide" [attr.aria-label]="'Slide ' + (i + 1)"
+        (click)="carousel.select('slide-' + i)"></button>
+
+      <span class="hero-count fs-12 fw-bold">
+        {{ activeSlide + 1 | number:'2.0' }} / {{ listarSlider.length | number:'2.0' }}
+      </span>
+    </div>
+
+    <div class="hero-arrows">
+      <button type="button" class="hero-arrow" aria-label="Anterior" (click)="carousel.prev()">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <button type="button" class="hero-arrow" aria-label="Siguiente" (click)="carousel.next()">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </div>
+
+</section>

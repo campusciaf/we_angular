@@ -1,14 +1,95 @@
 <app-header></app-header>
 <app-slidehome></app-slidehome>
-<app-cifras></app-cifras>
-<app-adnciaf></app-adnciaf>
-<app-ofertaprofesional></app-ofertaprofesional>
-<app-ofertalaboral></app-ofertalaboral>
-<app-porqueciaf></app-porqueciaf>
-<app-formularioregistro></app-formularioregistro>
-<app-eventos></app-eventos>
-<app-noticias-home></app-noticias-home>
-<app-aliados></app-aliados>
-<app-accesosrapidos></app-accesosrapidos>
-<app-newsletter></app-newsletter>
+
+<!-- Navegación por secciones (scroll) -->
+<section class="ciaf-program-nav row justify-content-center">
+  <div class="col-xxl-10">
+    <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
+      aria-label="Secciones del programa">
+      <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
+        class="nav-link flex-shrink-0 px-3 py-3 text-white-50 text-decoration-none border-0"
+        [class.active]="activo === seccion.nav" [class.text-white]="activo === seccion.nav"
+        [class.fw-bold]="activo === seccion.nav" [class.fw-semibold]="activo !== seccion.nav"
+        [attr.id]="'btn-' + seccion.nav"
+        [attr.aria-current]="activo === seccion.nav ? 'true' : null">{{ seccion.label }}</a>
+    </nav>
+  </div>
+</section>
+
+<section class="ciaf-marquee-strip">
+  <div class="ciaf-marquee-strip__track fs-14 fw-bold gap-5 d-flex">
+    <span>Vigilada Mineducación <b>✦</b></span>
+    <span>Universitarios sin Límites <b>✦</b></span>
+    <span>Humanos · Innovadores · Originales <b>✦</b></span>
+    <span>Mentalidad Digital <b>✦</b></span>
+    <span>Presente Extraordinario <b>✦</b></span>
+
+    <span>Vigilada Mineducación <b>✦</b></span>
+    <span>Universitarios sin Límites <b>✦</b></span>
+    <span>Humanos · Innovadores · Originales <b>✦</b></span>
+    <span>Mentalidad Digital <b>✦</b></span>
+    <span>Presente Extraordinario <b>✦</b></span>
+  </div>
+</section>
+
+<section class="impact-pre-marquee ciaf-section-light">
+  <div class="ciaf-marquee-big py-5">
+    <div class="ciaf-marquee-big__track ciaf-marquee-big__track--ink-dots gap-5 d-flex py-5">
+
+      <span class="fs-64 fw-black">Financiación <i></i></span>
+      <span class="fs-64 fw-black">Becas <i></i></span>
+      <span class="fs-64 fw-black">Créditos <i></i></span>
+      <span class="fs-64 fw-black">Egresados <i></i></span>
+      <span class="fs-64 fw-black">Oportunidades <i></i></span>
+      <span class="fs-64 fw-black">Futuro <i></i></span>
+      <span class="fs-64 fw-black">Transformación <i></i></span>
+      <span class="fs-64 fw-black">Propósito <i></i></span>
+
+      <span class="fs-64 fw-black">Financiación <i></i></span>
+      <span class="fs-64 fw-black">Becas <i></i></span>
+      <span class="fs-64 fw-black">Créditos <i></i></span>
+      <span class="fs-64 fw-black">Egresados <i></i></span>
+      <span class="fs-64 fw-black">Oportunidades <i></i></span>
+      <span class="fs-64 fw-black">Futuro <i></i></span>
+      <span class="fs-64 fw-black">Transformación <i></i></span>
+      <span class="fs-64 fw-black">Propósito <i></i></span>
+
+    </div>
+  </div>
+</section>
+
+<div id="impacto-social">
+  <app-cifras></app-cifras>
+</div>
+<div id="adnciaf">
+  <app-adnciaf></app-adnciaf>
+</div>
+<div id="ofertaprofesional">
+  <app-ofertaprofesional></app-ofertaprofesional>
+</div>
+<div id="ofertalaboral">
+  <app-ofertalaboral></app-ofertalaboral>
+</div>
+<div id="porqueciaf">
+  <app-porqueciaf></app-porqueciaf>
+</div>
+<div id="formularioregistro">
+  <app-formularioregistro></app-formularioregistro>
+</div>
+<div id="eventos">
+  <app-eventos></app-eventos>
+</div>
+<div id="noticias-home">
+  <app-noticias-home></app-noticias-home>
+</div>
+<div id="aliados">
+  <app-aliados></app-aliados>
+</div>
+<div id="accesosrapidos">
+  <app-accesosrapidos></app-accesosrapidos>
+</div>
+<div id="newsletter">
+  <app-newsletter></app-newsletter>
+</div>
+
 <app-footer></app-footer>
