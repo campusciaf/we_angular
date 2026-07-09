@@ -42,6 +42,9 @@ export class BlogComponent implements OnInit {
   listarBlog2: any;
   detalleBlog: any;
   listarBlogPrincipal: any;
+  listarBlogCategorias: any;
+  categoriaSeleccionada = '';
+  textoBusqueda = '';
 
   tipobusquedad: any;
 
@@ -51,16 +54,102 @@ export class BlogComponent implements OnInit {
   >();
   private firmaAutorCache = new Map<string, SafeHtml>();
 
-  get entradasBlog(): any[] {
+  get hayFiltrosActivos(): boolean {
+    return (
+      this.normalizarTexto(this.categoriaSeleccionada) !== '' ||
+      this.normalizarTexto(this.textoBusqueda) !== ''
+    );
+  }
+
+  get blogFiltrados(): any[] {
     if (!Array.isArray(this.listarBlog)) {
       return [];
     }
 
-    if (this.tipobusquedad == undefined) {
-      return this.listarBlog.slice(1);
+    const categoriaFiltro = this.normalizarTexto(this.categoriaSeleccionada);
+    const textoFiltro = this.normalizarTexto(this.textoBusqueda);
+
+    return this.listarBlog.filter((blog) => {
+      const categoriaBlog = this.normalizarTexto(
+        blog?.nombre_categoria || blog?.categoria_blog || '',
+      );
+
+      if (categoriaFiltro && categoriaBlog !== categoriaFiltro) {
+        return false;
+      }
+
+      if (!textoFiltro) {
+        return true;
+      }
+
+      const camposBusqueda = [
+        blog?.titulo_blog,
+        blog?.subtitulo_blog,
+        blog?.nombre_categoria,
+        blog?.categoria_blog,
+        blog?.nombre_autor,
+        this.getExcerpt(blog),
+      ]
+        .map((valor) => this.normalizarTexto(valor))
+        .filter(Boolean);
+
+      return camposBusqueda.some((campo) => campo.includes(textoFiltro));
+    });
+  }
+
+  get blogDestacado(): any | null {
+    if (this.tipobusquedad != undefined || this.hayFiltrosActivos) {
+      return null;
     }
 
-    return this.listarBlog;
+    return this.blogFiltrados.length ? this.blogFiltrados[0] : null;
+  }
+
+  get entradasBlog(): any[] {
+    const blogs = this.blogFiltrados;
+
+    if (!blogs.length) {
+      return [];
+    }
+
+    if (this.tipobusquedad == undefined && !this.hayFiltrosActivos) {
+      return blogs.slice(1);
+    }
+
+    return blogs;
+  }
+
+  seleccionarCategoria(nombreCategoria: string): void {
+    const categoriaNormalizada = this.normalizarTexto(nombreCategoria);
+    const seleccionActual = this.normalizarTexto(this.categoriaSeleccionada);
+
+    this.categoriaSeleccionada =
+      categoriaNormalizada === seleccionActual ? '' : String(nombreCategoria || '');
+  }
+
+  limpiarFiltrosBlog(): void {
+    this.categoriaSeleccionada = '';
+    this.textoBusqueda = '';
+  }
+
+  isCategoriaActiva(nombreCategoria: string): boolean {
+    return (
+      this.normalizarTexto(nombreCategoria) ===
+      this.normalizarTexto(this.categoriaSeleccionada)
+    );
+  }
+
+  aplicarFiltros(): void {
+    this.textoBusqueda = String(this.textoBusqueda || '');
+  }
+
+  private normalizarTexto(valor: any): string {
+    return String(valor || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
   }
 
   etiquetaCategoria(blog: any): string {
@@ -68,22 +157,28 @@ export class BlogComponent implements OnInit {
     return String(categoria).trim();
   }
 
-  getExcerpt(blog: any, maxLength = 120): string {
-    const html = blog?.subtitulo_blog || blog?.contenido_blog || '';
-    const text = String(html)
-      .replace(/<[^>]*>/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
+  getAutorBlog(blog: any): string {
+    const autor = blog?.nombre_autor;
+    return String(autor || '').trim() || 'Equipo CIAF';
+  }
 
-    if (!text) {
+  getExcerpt(blog: any): string {
+    const html = blog?.contenido_blog || blog?.contenido_blog || '';
+    return this.htmlToPlainText(String(html));
+  }
+
+  private htmlToPlainText(html: string): string {
+    if (!html) {
       return '';
     }
 
-    if (text.length <= maxLength) {
-      return text;
-    }
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(`<div>${html}</div>`, 'text/html');
 
-    return `${text.slice(0, maxLength).trim()}...`;
+    return (doc.body.textContent || '')
+      .replace(/\u00a0/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
   }
 
   getTablaContenido(contenido: string | null | undefined): BlogTocItem[] {
@@ -519,6 +614,11 @@ export class BlogComponent implements OnInit {
     this.conectarApiService.obtenerBlog().subscribe((respuesta) => {
       this.listarBlog = Array.isArray(respuesta) ? respuesta : [];
       this.tipobusquedad = this.id[0];
+    });
+
+    this.conectarApiService.obtenerBlogCategorias().subscribe((respuesta) => {
+      this.listarBlogCategorias = Array.isArray(respuesta) ? respuesta : [];
+      console.log('listarBlogCategorias', this.listarBlogCategorias);
     });
   }
 

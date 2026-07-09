@@ -19,63 +19,67 @@
     
         <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
     
-        <div class="row z-2 py-5 mt-5">
-            <div class="col-xxl-7 col-xl-7 col-lg-6 col-md-6 col-12 mt-5 p-4">
-                <span
-                class="badge rounded-pill bg-white text-color-1 fs-12 fw-bold px-3 py-2 my-3 ls-4"
-                *ngIf="datos.snies"
-                >
-                SNIES {{ datos.snies }}
-                </span>
-                <div class="fs-20 text-color-3 fw-black ls-3">Técnico Laboral en</div>
-                <h1 class="fs-60 fw-extrablack mb-3 lh-1">
-                    {{ datos.nombre_programa || 'Enfermería' }}
-                </h1>
-        
-                <p class="fs-24 fw-bold mb-3 text-color-3" *ngIf="datos.frase_programa">
-                {{ datos.frase_programa }}
-                </p>
-        
-                <div class="text-color-5 fs-18  mb-4 lh-base" *ngIf="datos.descripcion_programa" [innerHTML]="datos.descripcion_programa"></div>
-        
-                <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-                    <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                        <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-                        Programa Técnico Laboral por Competencias
-                    </li>
-                    <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                        <i class="fa-solid fa-clock text-color-3" aria-hidden="true"></i>
-                        Duración: 3 semestres
-                    </li>
-                    <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                        <i class="fa-solid fa-calendar-days text-color-3" aria-hidden="true"></i>
-                        Diferenes jornadas
-                    </li>
-                    <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-                        <i class="fa-solid fa-location-dot text-color-3" aria-hidden="true"></i>
-                        Modalidad Presencial
-                    </li>
-                </ul>
-        
-                <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
-                <button
-                    type="button"
-                    class="ciaf-btn ciaf-btn--lime fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
-                    (click)="scrollToSeccion('conoce-el-programa', '1')"
-                >
-                    Conoce el programa
-                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <button
-                    type="button"
-                    class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
-                    (click)="scrollToSeccion('proceso-paso-a-paso', '9')"
-                >
-                    Inicia tu matrícula
-                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </button>
-                </div>
+        <div class="row justify-content-center z-2 py-5 mt-5">
+          <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+            <div class="row">
+              <div class="col-xxl-7 col-xl-7 col-lg-6 col-md-6 col-12 mt-5 py-4 px-0">
+                  <span
+                  class="badge rounded-pill bg-white text-color-1 fs-12 fw-bold px-3 py-2 my-3 ls-4"
+                  *ngIf="datos.snies"
+                  >
+                  SNIES {{ datos.snies }}
+                  </span>
+                  <div class="fs-20 text-color-3 fw-black ls-3">Técnico Laboral en</div>
+                  <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+                      {{ datos.nombre_programa || 'Enfermería' }}
+                  </h1>
+          
+                  <p class="fs-24 fw-bold mb-3 text-color-3" *ngIf="datos.frase_programa">
+                  {{ datos.frase_programa }}
+                  </p>
+          
+                  <div class="text-color-5 fs-18  mb-4 lh-base" *ngIf="datos.descripcion_programa" [innerHTML]="datos.descripcion_programa"></div>
+          
+                  <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+                      <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                          <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+                          Programa Técnico Laboral por Competencias
+                      </li>
+                      <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                          <i class="fa-solid fa-clock text-color-3" aria-hidden="true"></i>
+                          Duración: 3 semestres
+                      </li>
+                      <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                          <i class="fa-solid fa-calendar-days text-color-3" aria-hidden="true"></i>
+                          Diferenes jornadas
+                      </li>
+                      <li class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                          <i class="fa-solid fa-location-dot text-color-3" aria-hidden="true"></i>
+                          Modalidad Presencial
+                      </li>
+                  </ul>
+          
+                  <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+                  <button
+                      type="button"
+                      class="ciaf-btn ciaf-btn--lime fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
+                      (click)="scrollToSeccion('conoce-el-programa', '1')"
+                  >
+                      Conoce el programa
+                      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <button
+                      type="button"
+                      class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4"
+                      (click)="scrollToSeccion('proceso-paso-a-paso', '9')"
+                  >
+                      Inicia tu matrícula
+                      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  </button>
+                  </div>
+              </div>
             </div>
+          </div>
         </div>
     
         <div class="ciaf-program-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white-50 fs-20" aria-hidden="true">
@@ -84,8 +88,8 @@
     </section>
   
   <!-- Navegación por secciones (scroll) -->
-  <section class="row ciaf-program-nav">
-      <div class="col-12">
+  <section class="row justify-content-center ciaf-program-nav">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 p-0">
         <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto" aria-label="Secciones del programa">
           <a
             *ngFor="let seccion of seccionesPrograma"
@@ -107,453 +111,431 @@
   <section class="p-0 m-0">
       <div id="content-programa">
   
-          <!-- Sección 1: Conoce el programa -->
-          <section class="py-5 bg-img-2" id="conoce-el-programa">
-              <div class="row justify-content-center py-5">
-  
-                <header class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 text-center">
-                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Conoce el programa</span>
-  
-                  <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                    Formación para liderar, emprender y <br>transformar 
-                    <span class="ciaf-gradient-text ciaf-gradient-text--brand"> vidas</span>
-                  </h2>
-  
-                  <p class="fs-16 text-color-1">
-                    Descubre el perfil ocupacional y los campos donde podrás generar impacto como Auxiliar de Veterinaria y Cuidado de Mascotas CIAF.
-                  </p>
-                </header>
-  
-                <div class="ciaf-conoce__tabs-wrap">
-                  <input
-                    type="radio"
-                    name="ciaf-perfil-tab"
-                    id="ciaf-tab-perfil-pro"
-                    class="ciaf-conoce__tab-input"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="ciaf-perfil-tab"
-                    id="ciaf-tab-perfil-ocu"
-                    class="ciaf-conoce__tab-input"
-                  />
-  
-                  <div class="shadow-sm p-2 rounded-pill" role="tablist" aria-label="Tipo de perfil">
-                    <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro fs-14 fw-semibold" for="ciaf-tab-perfil-pro">
-                      Perfil ocupacional
-                    </label>
-                    <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14 fw-bold" for="ciaf-tab-perfil-ocu">
-                      Campo profesional
-                    </label>
-                  </div>
-  
-                  <!-- Panel: Perfil profesional -->
-                  <div
-                    class="ciaf-conoce__panel ciaf-conoce__panel--pro"
-                    role="tabpanel"
-                    aria-labelledby="ciaf-tab-perfil-pro"
-                  >
-                    <div class="row p-4">
-  
-                      <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 bg-white" *ngFor="let datos2 of listarPrograma">
-                        <span class="ciaf-conoce__card-badge fs-12 fw-bold">
-                          <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
-                          Perfil ocupacional
-                        </span>
-  
-                        <div
-                          class=" fs-16"
-                          *ngIf="datos2.descripcion_programa; else conoceProFallback"
-                          [innerHTML]="datos2.descripcion_programa"
-                        ></div>
-  
-                        <ng-template #conoceProFallback>
-                          <div class="fs-14">
-                            <p>
-                                Nuestro técnico laboral en Auxiliar de Veterinaria y Cuidado de Mascotas es un líder autónomo, creativo e innovador, con capacidad para desarrollar labores operativas de administración de medicamentos a sus pacientes.
-                            </p>
-                            <p>
-                                Se caracteriza por su gran desarrollo de habilidades “blandas”, como la empatía, la inteligencia emocional y el trabajo en equipo.
-                            </p>
+            <!-- Sección 1: Conoce el programa -->
+            <section class="row justify-content-center py-5 bg-img-2" id="conoce-el-programa">
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+                <div class="row justify-content-center py-5">
+    
+                  <header class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 text-center">
+                    <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Conoce el programa</span>
+    
+                    <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+                      Formación para liderar, emprender y <br>transformar 
+                      <span class="ciaf-gradient-text ciaf-gradient-text--brand"> vidas</span>
+                    </h2>
+    
+                    <p class="fs-16 text-color-1">
+                      Descubre el perfil ocupacional y los campos donde podrás generar impacto como Auxiliar de Veterinaria y Cuidado de Mascotas CIAF.
+                    </p>
+                  </header>
+    
+                  <div class="ciaf-conoce__tabs-wrap">
+                    <input
+                      type="radio"
+                      name="ciaf-perfil-tab"
+                      id="ciaf-tab-perfil-pro"
+                      class="ciaf-conoce__tab-input"
+                      checked
+                    />
+                    <input
+                      type="radio"
+                      name="ciaf-perfil-tab"
+                      id="ciaf-tab-perfil-ocu"
+                      class="ciaf-conoce__tab-input"
+                    />
+    
+                    <div class="shadow-sm p-2 rounded-pill" role="tablist" aria-label="Tipo de perfil">
+                      <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro fs-14 fw-semibold" for="ciaf-tab-perfil-pro">
+                        Perfil ocupacional
+                      </label>
+                      <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14 fw-bold" for="ciaf-tab-perfil-ocu">
+                        Campo profesional
+                      </label>
+                    </div>
+    
+                    <!-- Panel: Perfil profesional -->
+                    <div
+                      class="ciaf-conoce__panel ciaf-conoce__panel--pro"
+                      role="tabpanel"
+                      aria-labelledby="ciaf-tab-perfil-pro"
+                    >
+                      <div class="row p-4">
+    
+                        <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 bg-white" *ngFor="let datos2 of listarPrograma">
+                          <span class="ciaf-conoce__card-badge fs-12 fw-bold">
+                            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                            Perfil ocupacional
+                          </span>
+    
+                          <div
+                            class=" fs-16"
+                            *ngIf="datos2.descripcion_programa; else conoceProFallback"
+                            [innerHTML]="datos2.descripcion_programa"
+                          ></div>
+    
+                          <ng-template #conoceProFallback>
+                            <div class="fs-14">
+                              <p>
+                                  Nuestro técnico laboral en Auxiliar de Veterinaria y Cuidado de Mascotas es un líder autónomo, creativo e innovador, con capacidad para desarrollar labores operativas de administración de medicamentos a sus pacientes.
+                              </p>
+                              <p>
+                                  Se caracteriza por su gran desarrollo de habilidades “blandas”, como la empatía, la inteligencia emocional y el trabajo en equipo.
+                              </p>
 
+                            </div>
+                          </ng-template>
+                        </article>
+    
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                          <div class="row g-3">
+    
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                                <article class="card h-100 border shadow-sm p-4">
+                                    <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3 "
+                                          style="width:56px;height:56px;">
+                                        <i class="fa-solid fa-user-group text-color-2"></i>
+                                    </span>
+                                    <h3 class="fs-16 fw-bold text-color-2">
+                                      Empatía y cuidado humano
+                                    </h3>
+                                    <p class="fs-14 text-color-1 mb-0">
+                                      Acompaña a los pacientes con sensibilidad, calidez y respeto en cada momento.
+                                    </p>
+                                </article>
+                            </div>
+                        
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                                <article class="card h-100 border shadow-sm p-4">
+                                    <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                                          style="width:56px;height:56px;">
+                                        <i class="fa-solid fa-rocket text-color-2"></i>
+                                    </span>
+                                    <h3 class="fs-16 fw-bold text-color-2">
+                                      Trabajo en equipo
+                                    </h3>
+                                    <p class="fs-14 text-color-1 mb-0">
+                                      Colabora con el personal de salud para una atención integral y segura.
+                                    </p>
+                        
+                                </article>
+                            </div>
+                        
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                                <article class="card h-100 border shadow-sm p-4">
+                                    <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                                          style="width:56px;height:56px;">
+                                          <i class="fa-solid fa-laptop-code text-color-2"></i>
+                                    </span>
+                                    <h3 class="fs-16 fw-bold text-color-2">
+                                      Inteligencia emocional
+                                    </h3>
+                                    <p class="fs-14 text-color-1 mb-0">
+                                      Gestiona situaciones de presión con autocontrol y vocación de servicio.
+                                    </p>
+                        
+                                </article>
+                            </div>
+                        
+                          </div>
+                        </div>
+    
+                      </div>
+                    </div>
+    
+                    <!-- Panel: Perfil ocupacional -->
+                    <div
+                      class="ciaf-conoce__panel ciaf-conoce__panel--ocu mt-5"
+                      role="tabpanel"
+                      aria-labelledby="ciaf-tab-perfil-ocu"
+                    >
+                      <div class="ciaf-conoce__ocu-grid">
+                        <ng-container *ngIf="listarDesempenate?.length; else ocuFallback">
+                          <article
+                            class="ciaf-conoce__ocu-card"
+                            *ngFor="let datos4 of listarDesempenate; let i = index"
+                          >
+                            <span class="ciaf-conoce__ocu-card-icon fs-16" aria-hidden="true">
+                              <i class="fa-solid" [ngClass]="{
+                                'fa-building': i % 6 === 0,
+                                'fa-briefcase': i % 6 === 1,
+                                'fa-lightbulb': i % 6 === 2,
+                                'fa-user-gear': i % 6 === 3,
+                                'fa-chart-line': i % 6 === 4,
+                                'fa-crown': i % 6 === 5
+                              }"></i>
+                            </span>
+                            <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">{{ datos4.nombre_desempenate }}</p>
+                          </article>
+                        </ng-container>
+    
+                        <ng-template #ocuFallback>
+                          <div class="row g-3 px-4">
+    
+                              <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                  <article class="card rounded-4 border p-3 h-100">
+                                      <div class="d-flex align-items-center gap-3">
+                                          <span class="bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                                style="width: 52px; height: 52px;">
+                                              <i class="fa-solid fa-house-medical text-white fs-5"></i>
+                                          </span>
+                                          <p class="fs-14 fw-bold mb-0 text-color-2">
+                                              Atención Domiciliaria
+                                          </p>
+                                      </div>
+                                  </article>
+                              </div>
+                          
+                              <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                  <article class="card rounded-4 border p-3 h-100">
+                                      <div class="d-flex align-items-center gap-3">
+                                          <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                                style="width: 52px; height: 52px;">
+                                              <i class="fa-solid fa-stethoscope text-white fs-5"></i>
+                                          </span>
+                                          <p class="fs-14 fw-bold mb-0 text-color-2">
+                                              Consultorios Médicos
+                                          </p>
+                                      </div>
+                                  </article>
+                              </div>
+                          
+                              <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                  <article class="card rounded-4 border p-3 h-100">
+                                      <div class="d-flex align-items-center gap-3">
+                                          <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                                style="width: 52px; height: 52px;">
+                                              <i class="fa-solid fa-graduation-cap text-white fs-5"></i>
+                                          </span>
+                                          <p class="fs-14 fw-bold mb-0 text-color-2">
+                                              Instituciones Educativas
+                                          </p>
+                                      </div>
+                                  </article>
+                              </div>
+                          
+                              <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                  <article class="card rounded-4 border p-3 h-100">
+                                      <div class="d-flex align-items-center gap-3">
+                                          <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                                style="width: 52px; height: 52px;">
+                                              <i class="fa-solid fa-hospital text-white fs-5"></i>
+                                          </span>
+                                          <p class="fs-14 fw-bold mb-0 text-color-2">
+                                              Hospitales y Clínicas
+                                          </p>
+                                      </div>
+                                  </article>
+                              </div>
+                          
+                              <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                  <article class="card rounded-4 border p-3 h-100">
+                                      <div class="d-flex align-items-center gap-3">
+                                          <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                                                style="width: 52px; height: 52px;">
+                                              <i class="fa-solid fa-hand-holding-heart text-white fs-5"></i>
+                                          </span>
+                                          <p class="fs-14 fw-bold mb-0 text-color-2">
+                                              Residencias de Ancianos
+                                          </p>
+                                      </div>
+                                  </article>
+                              </div>
+                          
                           </div>
                         </ng-template>
-                      </article>
-  
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-                        <div class="row g-3">
-  
-                          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                              <article class="card h-100 border shadow-sm p-4">
-                                  <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3 "
-                                        style="width:56px;height:56px;">
-                                      <i class="fa-solid fa-user-group text-color-2"></i>
-                                  </span>
-                                  <h3 class="fs-16 fw-bold text-color-2">
-                                    Empatía y cuidado humano
-                                  </h3>
-                                  <p class="fs-14 text-color-1 mb-0">
-                                    Acompaña a los pacientes con sensibilidad, calidez y respeto en cada momento.
-                                  </p>
-                              </article>
-                          </div>
-                      
-                          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                              <article class="card h-100 border shadow-sm p-4">
-                                  <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
-                                        style="width:56px;height:56px;">
-                                      <i class="fa-solid fa-rocket text-color-2"></i>
-                                  </span>
-                                  <h3 class="fs-16 fw-bold text-color-2">
-                                    Trabajo en equipo
-                                  </h3>
-                                  <p class="fs-14 text-color-1 mb-0">
-                                    Colabora con el personal de salud para una atención integral y segura.
-                                  </p>
-                      
-                              </article>
-                          </div>
-                      
-                          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                              <article class="card h-100 border shadow-sm p-4">
-                                  <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
-                                        style="width:56px;height:56px;">
-                                        <i class="fa-solid fa-laptop-code text-color-2"></i>
-                                  </span>
-                                  <h3 class="fs-16 fw-bold text-color-2">
-                                    Inteligencia emocional
-                                  </h3>
-                                  <p class="fs-14 text-color-1 mb-0">
-                                    Gestiona situaciones de presión con autocontrol y vocación de servicio.
-                                  </p>
-                      
-                              </article>
-                          </div>
-                      
-                        </div>
                       </div>
-  
                     </div>
                   </div>
-  
-                  <!-- Panel: Perfil ocupacional -->
-                  <div
-                    class="ciaf-conoce__panel ciaf-conoce__panel--ocu mt-5"
-                    role="tabpanel"
-                    aria-labelledby="ciaf-tab-perfil-ocu"
-                  >
-                    <div class="ciaf-conoce__ocu-grid">
-                      <ng-container *ngIf="listarDesempenate?.length; else ocuFallback">
-                        <article
-                          class="ciaf-conoce__ocu-card"
-                          *ngFor="let datos4 of listarDesempenate; let i = index"
-                        >
-                          <span class="ciaf-conoce__ocu-card-icon fs-16" aria-hidden="true">
-                            <i class="fa-solid" [ngClass]="{
-                              'fa-building': i % 6 === 0,
-                              'fa-briefcase': i % 6 === 1,
-                              'fa-lightbulb': i % 6 === 2,
-                              'fa-user-gear': i % 6 === 3,
-                              'fa-chart-line': i % 6 === 4,
-                              'fa-crown': i % 6 === 5
-                            }"></i>
-                          </span>
-                          <p class="ciaf-conoce__ocu-card-text fs-14 fw-bold">{{ datos4.nombre_desempenate }}</p>
-                        </article>
-                      </ng-container>
-  
-                      <ng-template #ocuFallback>
-                        <div class="row g-3 px-4">
-  
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                                <article class="card rounded-4 border p-3 h-100">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <span class="bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
-                                              style="width: 52px; height: 52px;">
-                                            <i class="fa-solid fa-house-medical text-white fs-5"></i>
-                                        </span>
-                                        <p class="fs-14 fw-bold mb-0 text-color-2">
-                                            Atención Domiciliaria
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                                <article class="card rounded-4 border p-3 h-100">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
-                                              style="width: 52px; height: 52px;">
-                                            <i class="fa-solid fa-stethoscope text-white fs-5"></i>
-                                        </span>
-                                        <p class="fs-14 fw-bold mb-0 text-color-2">
-                                            Consultorios Médicos
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                                <article class="card rounded-4 border p-3 h-100">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
-                                              style="width: 52px; height: 52px;">
-                                            <i class="fa-solid fa-graduation-cap text-white fs-5"></i>
-                                        </span>
-                                        <p class="fs-14 fw-bold mb-0 text-color-2">
-                                            Instituciones Educativas
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                                <article class="card rounded-4 border p-3 h-100">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
-                                              style="width: 52px; height: 52px;">
-                                            <i class="fa-solid fa-hospital text-white fs-5"></i>
-                                        </span>
-                                        <p class="fs-14 fw-bold mb-0 text-color-2">
-                                            Hospitales y Clínicas
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                                <article class="card rounded-4 border p-3 h-100">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <span class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
-                                              style="width: 52px; height: 52px;">
-                                            <i class="fa-solid fa-hand-holding-heart text-white fs-5"></i>
-                                        </span>
-                                        <p class="fs-14 fw-bold mb-0 text-color-2">
-                                            Residencias de Ancianos
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        
-                        </div>
-                      </ng-template>
-                    </div>
-                  </div>
+    
                 </div>
-  
               </div>
             </section>
   
             <!-- Sección 2: Campo de acción -->
-            <section class="ciaf-section-light mt-5 pt-5" id="campo-de-accion" [class.ciaf-section-light]="campoAccionActivo !== null">
-              <div class="row p-4">
-                <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
-                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Campo de acción</span>
-                  <h2 class="fs-36 fw-extrablack text-color-2">
-                    ¿Dónde podrás generar <span class="ciaf-gradient-text ciaf-gradient-text--brand fs-40">impacto</span>?
-                  </h2>
-                </header>
-  
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '1'">
-                    <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('1')">
-                
-                        <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
-                            <span class="fs-16 fw-bold text-color-2">
-                                Atención Domiciliaria
-                            </span>
-                
-                            <i class="fa-solid fa-chevron-right text-color-2"></i>
-                        </div>
-                
-                        <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
-                            Brinda cuidado y acompañamiento al paciente en su propio hogar.
-                        </div>
-                
-                    </button>
+            <section class="row justify-content-center ciaf-section-light mt-5 pt-5" id="campo-de-accion" [class.ciaf-section-light]="campoAccionActivo !== null">
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+                <div class="row p-4">
+                  <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
+                    <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Campo de acción</span>
+                    <h2 class="fs-36 fw-extrablack text-color-2">
+                      ¿Dónde podrás generar <span class="ciaf-gradient-text ciaf-gradient-text--brand fs-40">impacto</span>?
+                    </h2>
+                  </header>
+    
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '1'">
+                      <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('1')">
+                  
+                          <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
+                              <span class="fs-16 fw-bold text-color-2">
+                                  Atención Domiciliaria
+                              </span>
+                  
+                              <i class="fa-solid fa-chevron-right text-color-2"></i>
+                          </div>
+                  
+                          <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
+                              Brinda cuidado y acompañamiento al paciente en su propio hogar.
+                          </div>
+                  
+                      </button>
+                  </div>
+    
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '2'">
+                      <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('2')">
+                  
+                          <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
+                              <span class="fs-16 fw-bold text-color-2">
+                                  Consultorios Médicos
+                              </span>
+                  
+                              <i class="fa-solid fa-chevron-right text-color-2"></i>
+                          </div>
+                  
+                          <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
+                              Apoya la atención y los procedimientos durante la consulta.
+                          </div>
+                  
+                      </button>
+                  </div>
+                  
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '3'">
+                      <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('3')">
+                  
+                          <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                              <span class="fs-16 fw-bold text-color-2">
+                                  Instituciones Educativas
+                              </span>
+                  
+                              <i class="fa-solid fa-chevron-right text-color-2"></i>
+                          </div>
+                  
+                          <div class="ciaf-campo__body fs-14">
+                              Acompaña la salud y el bienestar en colegios e instituciones.
+                          </div>
+                  
+                      </button>
+                  </div>
+                  
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '4'">
+                      <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('4')">
+                  
+                          <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                              <span class="fs-16 fw-bold text-color-2">
+                                  Hospitales y Clínicas
+                              </span>
+                  
+                              <i class="fa-solid fa-chevron-right text-color-2"></i>
+                          </div>
+                  
+                          <div class="ciaf-campo__body fs-14">
+                              Asiste en el cuidado y la recuperación del paciente hospitalizado.
+                          </div>
+                  
+                      </button>
+                  </div>
+                  
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '5'">
+                      <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('5')">
+                  
+                          <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
+                              <span class="fs-16 fw-bold text-color-2">
+                                  Residencias de Ancianos
+                              </span>
+                  
+                              <i class="fa-solid fa-chevron-right text-color-2"></i>
+                          </div>
+                  
+                          <div class="ciaf-campo__body fs-14">
+                              Cuida y acompaña al adulto mayor con calidez y profesionalismo.
+                          </div>
+                  
+                      </button>
+                  </div>
+                  
+    
                 </div>
-  
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '2'">
-                    <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('2')">
-                
-                        <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-1">
-                            <span class="fs-16 fw-bold text-color-2">
-                                Consultorios Médicos
-                            </span>
-                
-                            <i class="fa-solid fa-chevron-right text-color-2"></i>
-                        </div>
-                
-                        <div class="ciaf-campo__body fs-14 text-color-1 fw-medium">
-                            Apoya la atención y los procedimientos durante la consulta.
-                        </div>
-                
-                    </button>
-                </div>
-                
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '3'">
-                    <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('3')">
-                
-                        <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
-                            <span class="fs-16 fw-bold text-color-2">
-                                Instituciones Educativas
-                            </span>
-                
-                            <i class="fa-solid fa-chevron-right text-color-2"></i>
-                        </div>
-                
-                        <div class="ciaf-campo__body fs-14">
-                            Acompaña la salud y el bienestar en colegios e instituciones.
-                        </div>
-                
-                    </button>
-                </div>
-                
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '4'">
-                    <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('4')">
-                
-                        <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
-                            <span class="fs-16 fw-bold text-color-2">
-                                Hospitales y Clínicas
-                            </span>
-                
-                            <i class="fa-solid fa-chevron-right text-color-2"></i>
-                        </div>
-                
-                        <div class="ciaf-campo__body fs-14">
-                            Asiste en el cuidado y la recuperación del paciente hospitalizado.
-                        </div>
-                
-                    </button>
-                </div>
-                
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 ciaf-campo__item mb-3" [class.ciaf-campo__item--active]="campoAccionActivo === '5'">
-                    <button type="button" class="card border rounded-4 p-4 w-100 text-start" (click)="toggleCampoAccion('5')">
-                
-                        <div class="ciaf-campo__head d-flex justify-content-between align-items-center mb-3">
-                            <span class="fs-16 fw-bold text-color-2">
-                                Residencias de Ancianos
-                            </span>
-                
-                            <i class="fa-solid fa-chevron-right text-color-2"></i>
-                        </div>
-                
-                        <div class="ciaf-campo__body fs-14">
-                            Cuida y acompaña al adulto mayor con calidez y profesionalismo.
-                        </div>
-                
-                    </button>
-                </div>
-                
-   
               </div>
             </section>
-  
+
             <!-- Sección 3: Experiencias reales -->
-            <section class="bg-color-4 py-5" id="experiencias-reales">
-              <div class="row p-4">
-                <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
-                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mb-2 text-white">Experiencias reales</span>
-                  <h2 class=" fs-36 fw-extrablack text-white">
-                    Conoce cómo se vive Auxiliar de Veterinaria y Cuidado de Mascotas en CIAF
-                  </h2>
-                </header>
-  
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
-                  <a
-                    class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
-                    href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div class="position-absolute top-0 start-0 w-100 h-100">
-                      <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
-                        <video
-                          class="w-100 h-100 object-fit-cover"
-                          poster="https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg"
-                          muted
-                          playsinline
-                          preload="none"
-                          aria-hidden="true"
-                        ></video>
+            <section class="row bg-color-4 py-5 justify-content-center" id="experiencias-reales">
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+                <div class="row p-4">
+                  <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
+                    <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mb-2 text-white">Experiencias
+                      reales</span>
+                    <h2 class=" fs-36 fw-extrablack text-white">
+                      Conoce cómo se vive Auxiliar de Veterinaria y Cuidado de Mascotas en CIAF
+                    </h2>
+                  </header>
+
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
+                    <a class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
+                      href="https://www.youtube.com/watch?v=gc4Ef5xf_30" target="_blank" rel="noopener noreferrer">
+                      <div class="position-absolute top-0 start-0 w-100 h-100">
+                        <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                          <video class="w-100 h-100 object-fit-cover"
+                            poster="https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg" muted playsinline preload="none"
+                            aria-hidden="true"></video>
+                        </div>
+                        <span
+                          class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                          aria-hidden="true">
+                          <i class="fa-solid fa-play text-dark ms-1"></i>
+                        </span>
+                        <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                          Vive la experiencia CIAF
+                        </span>
                       </div>
-                      <span
-                        class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
-                        aria-hidden="true"
-                      >
-                        <i class="fa-solid fa-play text-dark ms-1"></i>
-                      </span>
-                      <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
-                        Vive la experiencia CIAF
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
-                  <a
-                    class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
-                    href="https://www.youtube.com/watch?v=Ye8mB69B23A"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div class="position-absolute top-0 start-0 w-100 h-100">
-                      <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
-                        <video
-                          class="w-100 h-100 object-fit-cover"
-                          poster="https://img.youtube.com/vi/Ye8mB69B23A/hqdefault.jpg"
-                          muted
-                          playsinline
-                          preload="none"
-                          aria-hidden="true"
-                        ></video>
+                    </a>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
+                    <a class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
+                      href="https://www.youtube.com/shorts/uWeDCygMGpw?feature=share" target="_blank"
+                      rel="noopener noreferrer">
+                      <div class="position-absolute top-0 start-0 w-100 h-100">
+                        <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                          <video class="w-100 h-100 object-fit-cover"
+                            poster="https://img.youtube.com/vi/Ye8mB69B23A/hqdefault.jpg" muted playsinline preload="none"
+                            aria-hidden="true"></video>
+                        </div>
+                        <span
+                          class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                          aria-hidden="true">
+                          <i class="fa-solid fa-play text-dark ms-1"></i>
+                        </span>
+                        <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                          Historias de nuestros estudiantes
+                        </span>
                       </div>
-                      <span
-                        class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
-                        aria-hidden="true"
-                      >
-                        <i class="fa-solid fa-play text-dark ms-1"></i>
-                      </span>
-                      <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
-                        Historias de nuestros estudiantes
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
-                  <a
-                    class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
-                    href="https://www.youtube.com/watch?v=aqz-KE-bpKQ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div class="position-absolute top-0 start-0 w-100 h-100">
-                      <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
-                        <video
-                          class="w-100 h-100 object-fit-cover"
-                          poster="https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
-                          muted
-                          playsinline
-                          preload="none"
-                          aria-hidden="true"
-                        ></video>
+                    </a>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
+                    <a class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
+                      href="https://www.youtube.com/shorts/04uG_znhY_c?feature=share" target="_blank"
+                      rel="noopener noreferrer">
+                      <div class="position-absolute top-0 start-0 w-100 h-100">
+                        <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+                          <video class="w-100 h-100 object-fit-cover"
+                            poster="https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg" muted playsinline preload="none"
+                            aria-hidden="true"></video>
+                        </div>
+                        <span
+                          class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
+                          aria-hidden="true">
+                          <i class="fa-solid fa-play text-dark ms-1"></i>
+                        </span>
+                        <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
+                          Emprendimiento y liderazgo
+                        </span>
                       </div>
-                      <span
-                        class="position-absolute top-50 start-50 translate-middle z-2 d-flex align-items-center justify-content-center rounded-circle bg-color-5 flex-shrink-0 p-3"
-                        aria-hidden="true"
-                      >
-                        <i class="fa-solid fa-play text-dark ms-1"></i>
-                      </span>
-                      <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
-                        Emprendimiento y liderazgo
-                      </span>
-                    </div>
-                  </a>
+                    </a>
+                  </div>
+
                 </div>
-              
               </div>
             </section>
-  
-  
+
             <!-- Sección 5: Plan de estudios -->
             <section class="ciaf-section-light py-5" id="plan-estudios">
               <div class="row pt-5 justify-content-center">
@@ -570,7 +552,7 @@
                   </a>
                 </div>
   
-                <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-12">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-8 col-10">
                   <div
                     class="ciaf-plan__item mb-3"
                     *ngFor="let datos of semestresPlan"
@@ -713,114 +695,116 @@
             </section>
   
             <!-- Sección 7: Por qué estudiarlo -->
-            <section class="ciaf-section-light py-5" id="por-que-estudiarlo">
-              <div class="row py-5 px-4">
-            
-                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
-                    ¿POR QUÉ ESTUDIARLO?
-                  </span>
+            <section class="row justify-content-center ciaf-section-light py-5" id="por-que-estudiarlo">
+               <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12"> 
+                <div class="row py-5 px-4">
+                
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                        ¿POR QUÉ ESTUDIARLO?
+                      </span>
+                    </div>
+                    <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-12 my-3">
+                      <h2 class="text-color-2 fs-36 fw-extrablack">
+                        El sector salud necesita personas capaces de cuidar, atender y
+                        <span class="ciaf-gradient-text ciaf-gradient-text--brand">salvar vidas.</span>
+                      </h2>
+                    </div>
+                
+                    <div class="row">
+                
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <article class="ciaf-card p-4 rounded-4">
+                          <div class="icono-rounded bg-color-1 fs-16 mb-2">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                          </div>
+                
+                          <h3 class="text-color-2 fs-18 fw-bold">Cuidado humano</h3>
+                
+                          <p class="text-color-1 fs-14">
+                            Acompaña y cuida a los pacientes con vocación y calidez.
+                          </p>
+                        </article>
+                      </div>
+                
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <article class="ciaf-card p-4 rounded-4">
+                          <div class="icono-rounded bg-color-2 fs-16 mb-2">
+                            <i class="fa-regular fa-lightbulb"></i>
+                          </div>
+                
+                          <h3 class="text-color-2 fs-18 fw-bold">Alta empleabilidad</h3>
+                
+                          <p class="text-color-1 fs-14">
+                            El sector salud demanda constantemente personal capacitado.
+                          </p>
+                        </article>
+                      </div>
+                
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <article class="ciaf-card p-4 rounded-4">
+                          <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                            <i class="fa-solid fa-users text-color-6"></i>
+                          </div>
+                
+                          <h3 class="text-color-2 fs-18 fw-bold">Atención al paciente</h3>
+                
+                          <p class="text-color-1 fs-14">
+                            Apoya procedimientos clínicos y la administración de medicamentos.
+                          </p>
+                        </article>
+                      </div>
+                
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <article class="ciaf-card p-4 rounded-4">
+                          <div class="icono-rounded bg-color-1 fs-16 mb-2">
+                            <i class="fa-solid fa-earth-americas"></i>
+                          </div>
+                
+                          <h3 class="text-color-2 fs-18 fw-bold">Vocación de servicio</h3>
+                
+                          <p class="text-color-1 fs-14">
+                            Genera un impacto real en la vida y bienestar de las personas.
+                          </p>
+                        </article>
+                      </div>
+                
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <article class="ciaf-card p-4 rounded-4">
+                          <div class="icono-rounded bg-color-2 fs-16 mb-2">
+                            <i class="fa-solid fa-chart-column"></i>
+                          </div>
+                
+                          <h3 class="text-color-2 fs-18 fw-bold">Formación práctica</h3>
+                
+                          <p class="text-color-1 fs-14">
+                            Aprende haciendo en laboratorios y escenarios clínicos reales.
+                          </p>
+                        </article>
+                      </div>
+                
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <article class="ciaf-card p-4 rounded-4">
+                          <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                            <i class="fa-solid fa-rocket text-color-6"></i>
+                          </div>
+                
+                          <h3 class="text-color-2 fs-18 fw-bold">Bioseguridad</h3>
+                
+                          <p class="text-color-1 fs-14">
+                            Domina los protocolos para una atención segura y responsable.
+                          </p>
+                        </article>
+                      </div>
+                
+                    </div>
+                
                 </div>
-                <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-12 my-3">
-                  <h2 class="text-color-2 fs-36 fw-extrablack">
-                    El sector salud necesita personas capaces de cuidar, atender y
-                    <span class="ciaf-gradient-text ciaf-gradient-text--brand">salvar vidas.</span>
-                  </h2>
-                </div>
-            
-                <div class="row">
-            
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <article class="ciaf-card p-4 rounded-4">
-                      <div class="icono-rounded bg-color-1 fs-16 mb-2">
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                      </div>
-            
-                      <h3 class="text-color-2 fs-18 fw-bold">Cuidado humano</h3>
-            
-                      <p class="text-color-1 fs-14">
-                        Acompaña y cuida a los pacientes con vocación y calidez.
-                      </p>
-                    </article>
-                  </div>
-            
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <article class="ciaf-card p-4 rounded-4">
-                      <div class="icono-rounded bg-color-2 fs-16 mb-2">
-                        <i class="fa-regular fa-lightbulb"></i>
-                      </div>
-            
-                      <h3 class="text-color-2 fs-18 fw-bold">Alta empleabilidad</h3>
-            
-                      <p class="text-color-1 fs-14">
-                        El sector salud demanda constantemente personal capacitado.
-                      </p>
-                    </article>
-                  </div>
-            
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <article class="ciaf-card p-4 rounded-4">
-                      <div class="icono-rounded bg-color-9 fs-16 mb-2">
-                        <i class="fa-solid fa-users text-color-6"></i>
-                      </div>
-            
-                      <h3 class="text-color-2 fs-18 fw-bold">Atención al paciente</h3>
-            
-                      <p class="text-color-1 fs-14">
-                        Apoya procedimientos clínicos y la administración de medicamentos.
-                      </p>
-                    </article>
-                  </div>
-            
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <article class="ciaf-card p-4 rounded-4">
-                      <div class="icono-rounded bg-color-1 fs-16 mb-2">
-                        <i class="fa-solid fa-earth-americas"></i>
-                      </div>
-            
-                      <h3 class="text-color-2 fs-18 fw-bold">Vocación de servicio</h3>
-            
-                      <p class="text-color-1 fs-14">
-                        Genera un impacto real en la vida y bienestar de las personas.
-                      </p>
-                    </article>
-                  </div>
-            
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <article class="ciaf-card p-4 rounded-4">
-                      <div class="icono-rounded bg-color-2 fs-16 mb-2">
-                        <i class="fa-solid fa-chart-column"></i>
-                      </div>
-            
-                      <h3 class="text-color-2 fs-18 fw-bold">Formación práctica</h3>
-            
-                      <p class="text-color-1 fs-14">
-                        Aprende haciendo en laboratorios y escenarios clínicos reales.
-                      </p>
-                    </article>
-                  </div>
-            
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <article class="ciaf-card p-4 rounded-4">
-                      <div class="icono-rounded bg-color-9 fs-16 mb-2">
-                        <i class="fa-solid fa-rocket text-color-6"></i>
-                      </div>
-            
-                      <h3 class="text-color-2 fs-18 fw-bold">Bioseguridad</h3>
-            
-                      <p class="text-color-1 fs-14">
-                        Domina los protocolos para una atención segura y responsable.
-                      </p>
-                    </article>
-                  </div>
-            
-                </div>
-            
               </div>
             </section>
   
             <!-- Sección 8: Valores y financiación -->
-            <section class="pt-5" id="valores-financiacion">
+            <section class="" id="valores-financiacion">
                   <div class="row justify-content-center bg-img-1 py-5">
     
                     <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
@@ -885,62 +869,64 @@
   
             <!-- Sección 9: Proceso paso a paso -->
             <section class="row justify-content-center my-4" id="proceso-paso-a-paso">
-              <!-- PASO A PASO -->
-              <div class="row justify-content-center my-5 py-5" id="proceso-paso-a-paso">
-                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
-                  <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5">TU PROCESO PASO A PASO</span>
-                </div>
-  
-                <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-12 col-12 text-center">
-                  <h3 class="text-color-2 fs-36 fw-black my-3">
-                    Matricularte es más fácil de lo que crees
-                  </h3>
-                </div>
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12"> 
+                <!-- PASO A PASO -->
+                <div class="row justify-content-center my-5 py-5" id="proceso-paso-a-paso">
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+                    <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5">TU PROCESO PASO A PASO</span>
+                  </div>
+    
+                  <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-12 col-12 text-center">
+                    <h3 class="text-color-2 fs-36 fw-black my-3">
+                      Matricularte es más fácil de lo que crees
+                    </h3>
+                  </div>
+              
+                  <div class="row g-4  px-4">
             
-                <div class="row g-4  px-4">
-          
-                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
-                    <article class="ciaf-card p-4 rounded-4 text-center">
-                      <div class="fs-24">
-                        <i class="fa-solid fa-receipt bg-color-3 text-white rounded-pill p-4"></i>
-                      </div>
-                      <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 1</span> </div>
-                      <h4 class="text-color-2 fs-20 fw-bold">Valor de inscripción</h4>
-                      <p class="text-color-1 fs-14 fw-medium">Un único pago para reservar tu cupo. Incluye seguro estudiantil.</p>
-                    </article>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+                      <article class="ciaf-card p-4 rounded-4 text-center">
+                        <div class="fs-24">
+                          <i class="fa-solid fa-receipt bg-color-3 text-white rounded-pill p-4"></i>
+                        </div>
+                        <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 1</span> </div>
+                        <h4 class="text-color-2 fs-20 fw-bold">Valor de inscripción</h4>
+                        <p class="text-color-1 fs-14 fw-medium">Un único pago para reservar tu cupo. Incluye seguro estudiantil.</p>
+                      </article>
+                    </div>
+            
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                      <article class="ciaf-card p-4 rounded-4 text-center">
+                        <div class="fs-24">
+                          <i class="fa-regular fa-file-lines bg-color-3 text-white rounded-pill p-4"></i>
+                        </div>
+                        <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 2</span> </div>
+                        <h4 class="text-color-2 fs-20 fw-bold">Matrícula</h4>
+                        <p class="text-color-1 fs-14 fw-medium">Financiación directa, sin fiadores y sin revisar centrales de riesgo.</p>
+                      </article>
+                    </div>
+            
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+                      <article class="ciaf-card p-4 rounded-4 text-center">
+                        <div class="fs-24">
+                          <i class="fa-solid fa-rocket bg-color-3 text-white rounded-pill p-4"></i>
+                        </div>
+                        <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 3</span> </div>
+                        <h4 class="text-color-2 fs-20 fw-bold">Inicio de clases</h4>
+                        <p class="text-color-1 fs-14 fw-medium">Empieza tu camino profesional en la jornada que mejor se adapte a ti.</p>
+                      </article>
+                    </div>
+            
                   </div>
-          
-                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
-                    <article class="ciaf-card p-4 rounded-4 text-center">
-                      <div class="fs-24">
-                        <i class="fa-regular fa-file-lines bg-color-3 text-white rounded-pill p-4"></i>
-                      </div>
-                      <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 2</span> </div>
-                      <h4 class="text-color-2 fs-20 fw-bold">Matrícula</h4>
-                      <p class="text-color-1 fs-14 fw-medium">Financiación directa, sin fiadores y sin revisar centrales de riesgo.</p>
-                    </article>
-                  </div>
-          
-                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 text-center">
-                    <article class="ciaf-card p-4 rounded-4 text-center">
-                      <div class="fs-24">
-                        <i class="fa-solid fa-rocket bg-color-3 text-white rounded-pill p-4"></i>
-                      </div>
-                      <div class="my-3"> <span class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 3</span> </div>
-                      <h4 class="text-color-2 fs-20 fw-bold">Inicio de clases</h4>
-                      <p class="text-color-1 fs-14 fw-medium">Empieza tu camino profesional en la jornada que mejor se adapte a ti.</p>
-                    </article>
-                  </div>
-          
+    
                 </div>
-  
               </div>
             </section>
   
             <!-- Sección 10: Costos -->
             <section class="row justify-content-center my-4" id="costos">
                 
-                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11">
+                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-11">
                   <div class="row g-4 align-items-stretch">
             
                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 border-end p-4">
@@ -1001,7 +987,7 @@
             <!-- sección 11: OPCIONES -->
             <div class="row justify-content-center py-5 my-4" id="opciones">
   
-              <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 text-center pt-5">
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-center pt-5">
           
                 <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">ALTERNATIVAS PENSADAS PARA TI</span>
           
@@ -1010,7 +996,7 @@
                 </h3>
               </div>
           
-              <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 text-center ">
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-center ">
                 <div class="row g-4 mt-4 text-start">
           
                   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
@@ -1067,7 +1053,7 @@
             <!-- sección 12: SIMULADOR -->
             <div class="row justify-content-center bg-section-degradado py-5" id="simulador">
   
-              <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 mt-4">
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-11 mt-4">
                 <div class="text-center">
                     <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
                       <i class="fa-solid fa-calculator"></i>
@@ -1078,7 +1064,7 @@
                     </h2>
                 </div>
               </div>
-              <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-11 mt-5">
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-10 mt-5">
                 <div class="ciaf-simulator-card">
                     <div class="row g-0 align-items-stretch">
                         <!-- IZQUIERDA -->
@@ -1183,43 +1169,67 @@
   
             </div>
   
+
             <!-- sección 13: CTA FINAL -->
             <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section" id="tu-futuro">
-           
-              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white position-relative py-5">
-                <h3 class="text-white fs-48 fw-extrablack">Tu futuro está más cerca de lo que imaginas.</h3>
-          
-                <p class="text-color-5 fs-18 fw-medium">
-                  Miles de estudiantes han comenzado su camino profesional gracias a las
-                  alternativas de financiación y acompañamiento de CIAF.
-                </p>  
-          
-                <div class="col-12">
-  
-                  <div class="row justify-content-center text-center">
-                    <div class="col-auto">
-                      <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
-                        Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
-                      </a>
-                    </div>
-                    <div class="col-auto">
-                      <a href="https://wa.me/573126814341" target="_blank" class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
-                        Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                      </a>
+              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-11 mt-4">
+                <div class="row justify-content-center">
+
+                  <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-8 col-12 text-center text-white position-relative py-5">
+                    <h3 class="text-white fs-48 fw-extrablack">Tu futuro está más cerca de lo que imaginas.</h3>
+
+                    <p class="text-color-5 fs-18 fw-medium">
+                      Miles de estudiantes han comenzado su camino profesional gracias a las
+                      alternativas de financiación y acompañamiento de CIAF.
+                    </p>
+
+                    <div class="col-12">
+
+                      <div class="row justify-content-center text-center">
+                        <div class="col-auto">
+                          <a href="https://wa.me/573126814341" target="_blank"
+                            class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                            Hablar con CRAIA <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                        <div class="col-auto">
+                          <a href="https://wa.me/573126814341" target="_blank"
+                            class="ciaf-btn ciaf-btn--blanco fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+                            Solicitar información <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <div class="col-12"></div>
+
+                  <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-12 bg-transparente p-4 border-transparente rounded-4">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                      <!-- Avatar -->
+                      <div class="flex-shrink-0">
+                        <img src="assets/image/craia-avatar.webp" alt="CRAIA" class="rounded-circle border-lime"
+                          style="width: 56px; height: 56px; object-fit: cover;">
+                      </div>
+
+                      <!-- Texto -->
+                      <div>
+                        <p class="fs-14 fw-medium text-white mb-0">
+                          <strong>Hola, soy CRAIA.</strong>
+                          Te ayudo a encontrar la mejor opción de financiación para estudiar en CIAF.
+                        </p>
+                      </div>
+
+                    </div>
+
+                  </div>
+
                 </div>
               </div>
-          
-              <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-12 bg-transparente p-4 border-transparente rounded-4">
-                <img src="assets/image/craia-avatar.webp" alt="CRAIA" class="rounded-circle border-lime" style="width: 56px; height: 56px;">
-                <p class="fs-14 fw-medium text-white">
-                  <strong>Hola, soy CRAIA.</strong> Te ayudo a encontrar la mejor opción
-                  de financiación para estudiar en CIAF.
-                </p>
-              </div>
-              
             </div>
+
   
   
       </div>

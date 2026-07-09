@@ -3,52 +3,55 @@
 <section
   class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4 bg-color-3">
 
-
-
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row z-2 py-5 mt-5 col-12">
-    <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 mt-5 p-4">
-      <span
-        class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
-        Centro de Conocimiento CIAF
-      </span>
-      <h1 class="fs-60 fw-extrablack mb-3 lh-1">
-        Ideas que <span class="ciaf-gradient-text ciaf-gradient-text--brand">transforman</span>
-      </h1>
+  <div class="row justify-content-center z-2 py-5 mt-5 col-12">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+      <div class="row">
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 mt-5 py-4 px-0">
+          <span
+            class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
+            Centro de Conocimiento CIAF
+          </span>
+          <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+            Ideas que <span class="ciaf-gradient-text ciaf-gradient-text--brand">transforman</span>
+          </h1>
 
-      <p class="fs-16 fw-semibold mb-3 text-color-5">
-        Conocimiento, tendencias, innovación y experiencias para construir un futuro sin límites.
-      </p>
+          <p class="fs-16 fw-semibold mb-3 text-color-5">
+            Conocimiento, tendencias, innovación y experiencias para construir un futuro sin límites.
+          </p>
 
-      <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-        <li data-bs-toggle="modal" data-bs-target="#modalreglamento"
-          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-          <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-          Administración
-        </li>
-        <li role="button" (click)="scrollToSeccion('normatividad', '4')"
-          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-          <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
-          Contaduría
-        </li>
-        <li role="button" (click)="scrollToSeccion('normatividad', '4')"
-          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-          <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
-          Ingeniería
-        </li>
-        <li role="button" (click)="scrollToSeccion('normatividad', '4')"
-          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-          <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
-          SST
-        </li>
-        <li role="button" (click)="scrollToSeccion('normatividad', '4')"
-          class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-          <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
-          Investigación
-        </li>
-      </ul>
+          <div class="input-group bg-white rounded-pill p-1 mt-2 mb-4">
 
+            <span class="input-group-text bg-white border-0 rounded-pill ps-3 pe-2">
+              <i class="fa-solid fa-magnifying-glass text-color-1 fs-16"></i>
+            </span>
+
+            <input type="text" class="form-control border-0 shadow-none fs-14" placeholder="¿Qué quieres aprender hoy?"
+              aria-label="Buscar" [(ngModel)]="textoBusqueda" (input)="aplicarFiltros()"
+              (keyup.enter)="aplicarFiltros()">
+
+            <button class="btn bg-color-3 text-white rounded-pill px-4 fw-bold" type="button"
+              (click)="aplicarFiltros()">
+              Buscar
+            </button>
+
+          </div>
+
+          <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+            <li *ngFor="let categoria of listarBlogCategorias"
+              class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap"
+              [class.text-color-3]="isCategoriaActiva(categoria.nombre_categoria)"
+              [class.border-color-3]="isCategoriaActiva(categoria.nombre_categoria)"
+              (click)="seleccionarCategoria(categoria.nombre_categoria)">
+              <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+              {{ categoria.nombre_categoria }}
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
     </div>
   </div>
 
@@ -58,107 +61,105 @@
   </div>
 </section>
 
-<section>
-  <div class="row justify-content-center bg-light">
-    <div class="col-11 pt-3">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">Estamos en:</li>
-          <li class="breadcrumb-item active" *ngIf="tipobusquedad==undefined" aria-current="page">Blog post</li>
-          <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page"><a
-              routerLink="/blog">Blog</a></li>
-          <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page">{{tipobusquedad}}</li>
-        </ol>
-      </nav>
-    </div>
+<!-- miga de pan -->
+<section class="row justify-content-center bg-light">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 pt-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Estamos en:</li>
+        <li class="breadcrumb-item active" *ngIf="tipobusquedad==undefined" aria-current="page">Blog post</li>
+        <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page"><a
+            routerLink="/blog">Blog</a></li>
+        <li class="breadcrumb-item active" *ngIf="tipobusquedad!=undefined" aria-current="page">{{tipobusquedad}}</li>
+      </ol>
+    </nav>
   </div>
 </section>
 
-<section class="pt-4 mt-4 mostrar">
-  <div class="row justify-content-center">
+<!-- articulo destacado -->
+<section class="row justify-content-center pt-4 mt-4 mostrar">
 
-    <div class="col-xxl-12">
-      <div class="row">
 
-        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12" *ngIf="tipobusquedad == undefined">
-          <ng-container *ngFor="let valor of listarBlog; first as isFirst">
-            <section class="container py-5" *ngIf="isFirst">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
 
-              <div class="mb-4">
-                <span class="ciaf-pill fs-12 fw-bold text-uppercase ls-4 text-color-1">
-                  <i class="fa-solid fa-fire-flame-curved text-color-3 me-2"></i>
-                  Artículo destacado
-                </span>
-              </div>
+    <div class="row">
 
-              <article class="ciaf-card rounded-5 overflow-hidden bg-white">
-                <div class="row g-0 align-items-stretch">
+      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12" *ngIf="blogDestacado as valor">
 
-                  <!-- Imagen -->
-                  <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                    <img src="https://ciaf.digital/public/web_blog/{{ valor.blog_img }}" alt="{{ valor.titulo_blog }}"
-                      class="w-100 h-100 object-fit-cover d-block" />
-                  </div>
+          <section class="py-5">
 
-                  <!-- Contenido -->
-                  <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                    <div class="p-5 h-100 d-flex flex-column justify-content-center">
+            <div class="mb-4">
+              <span class="ciaf-pill fs-12 fw-bold text-uppercase ls-4 text-color-1">
+                <i class="fa-solid fa-fire-flame-curved text-color-3 me-2"></i>
+                Artículo destacado
+              </span>
+            </div>
 
-                      <span
-                        class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase mb-4 ">
-                        {{ valor.categoria_blog || 'Blog' }}
+            <article class="ciaf-card rounded-5 overflow-hidden bg-white">
+              <div class="row g-0 align-items-stretch">
+
+                <!-- Imagen -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                  <img src="https://ciaf.digital/public/web_blog/{{ valor.blog_img }}" alt="{{ valor.titulo_blog }}"
+                    class="w-100 h-100 object-fit-cover d-block" />
+                </div>
+
+                <!-- Contenido -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                  <div class="p-5 h-100 d-flex flex-column justify-content-center">
+
+                    <span
+                      class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase mb-4 ">
+                      {{ valor.nombre_categoria || 'Blog' }}
+                    </span>
+
+                    <h2 class="fs-36 fw-black text-color-2 lh-1 mb-3">
+                      {{ valor.titulo_blog }}
+                    </h2>
+
+                    <p class="fs-16 text-color-1 mb-4 blog-excerpt-clamp" *ngIf="getExcerpt(valor)">
+                      {{ getExcerpt(valor) }}
+                    </p>
+
+                    <div class="d-flex flex-wrap align-items-center gap-3 fs-14 mb-4">
+                      <span class="fw-bold text-color-2">
+                        CIAF
                       </span>
 
-                      <h2 class="fs-36 fw-black text-color-2 lh-1 mb-3">
-                        {{ valor.titulo_blog }}
-                      </h2>
+                      <span class="text-color-1">
+                        ·
+                      </span>
 
-                      <div class="fs-16 text-color-1 mb-4" [innerHTML]="valor.contenido_blog"
-                        style="max-height: 96px; overflow: hidden;">
-                      </div>
+                      <span class="text-color-1">
+                        <i class="fa-regular fa-clock me-1"></i>
+                        7 min
+                      </span>
 
-                      <div class="d-flex flex-wrap align-items-center gap-3 fs-14 mb-4">
-                        <span class="fw-bold text-color-2">
-                          CIAF
-                        </span>
+                      <span class="text-color-1">
+                        ·
+                      </span>
 
-                        <span class="text-color-1">
-                          ·
-                        </span>
-
-                        <span class="text-color-1">
-                          <i class="fa-regular fa-clock me-1"></i>
-                          7 min
-                        </span>
-
-                        <span class="text-color-1">
-                          ·
-                        </span>
-
-                        <span class="text-color-1">
-                          <i class="fa-regular fa-calendar me-1"></i>
-                          {{ valor.fecha_blog || 'Publicado recientemente' }}
-                        </span>
-                      </div>
-
-                      <div>
-                        <a [routerLink]="['/blog', valor.link_blog]" target="_parent" (click)="traerBlog()"
-                          class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2">
-                          Leer artículo
-                          <i class="fa-solid fa-arrow-up-right-from-square fs-12"></i>
-                        </a>
-                      </div>
-
+                      <span class="text-color-1">
+                        <i class="fa-regular fa-calendar me-1"></i>
+                        {{ valor.fecha_blog || 'Publicado recientemente' }}
+                      </span>
                     </div>
+
+                    <div>
+                      <a [routerLink]="['/blog', valor.link_blog]" target="_parent" (click)="traerBlog()"
+                        class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-up-right-from-square fs-12"></i>
+                      </a>
+                    </div>
+
                   </div>
-
                 </div>
-              </article>
 
-            </section>
-          </ng-container>
-        </div>
+              </div>
+            </article>
 
+          </section>
       </div>
 
     </div>
@@ -166,8 +167,9 @@
   </div>
 </section>
 
-<!-- esta parte es el detalle del blog -->
+<!-- ver el detalle del blog -->
 <section class="pt-4 mt-4 ">
+  <!-- blog destacado -->
   <div class="col-12" *ngIf="tipobusquedad!=undefined">
     <!-- <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button> -->
 
@@ -285,56 +287,88 @@
     <!-- <button (click)="nextImg()" class="boton-next"><img src="{{next}}" alt="Siguiente"></button> -->
   </div>
 
+  <!-- lista de todos lo blogs activos -->
   <div class="col-12" *ngIf="entradasBlog.length">
-    <section class="container py-5 blog-oferta" id="blog-entradas">
-      <div class="row mb-4">
-        <div class="col-xl-8 col-lg-9 col-md-10 col-12">
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-            Blog CIAF
-          </span>
-          <h2 class="fs-36 fw-black text-color-2 mt-3 mb-0">
-            Otras <span class="ciaf-gradient-text ciaf-gradient-text--brand">entradas</span>
-          </h2>
+    <section class="row justify-content-center py-5 blog-oferta" id="blog-entradas">
+
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 mb-4">
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+          Blog CIAF
+        </span>
+        <h2 class="fs-36 fw-black text-color-2 mt-3 mb-0">
+          Otras <span class="ciaf-gradient-text ciaf-gradient-text--brand">entradas</span>
+        </h2>
+      </div>
+
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 mb-4">
+        <div class="row g-4">
+          <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let blog of entradasBlog">
+            <article
+              class="blog-card ciaf-card rounded-5 overflow-hidden d-flex flex-column bg-white h-100 border shadow-sm">
+              <div class="blog-card__media position-relative flex-shrink-0">
+                <img src="https://ciaf.digital/public/web_blog/{{ blog.blog_img }}" [alt]="blog.titulo_blog"
+                  class="blog-card__img w-100 object-fit-cover" loading="lazy" />
+                <span class="blog-card__badge ciaf-pill fs-10 fw-bold rounded-pill px-3 py-2 text-uppercase ls-4">
+                  {{ etiquetaCategoria(blog) }}
+                </span>
+              </div>
+
+              <div class="blog-card__body p-4 d-flex flex-column flex-grow-1">
+                <h4 class="blog-card__title fs-18 fw-black text-color-2 mb-3">
+                  {{ blog.titulo_blog }}
+                </h4>
+
+                <p class="blog-card__excerpt blog-excerpt-clamp fs-14 text-color-1 mb-4" *ngIf="getExcerpt(blog)">
+                  {{ getExcerpt(blog) }}
+                </p>
+
+                <div class="blog-card__meta d-flex flex-wrap align-items-center gap-1 fs-14 mb-4">
+                  <span class="fw-bold text-color-2">{{ getAutorBlog(blog) }}</span>
+                  <span class="text-color-1">·</span>
+                  <span class="text-color-1">
+                    <i class="fa-regular fa-clock me-1" aria-hidden="true"></i>
+                    7 min
+                  </span>
+                  <span class="text-color-1">·</span>
+                  <span class="text-color-1">
+                    <i class="fa-regular fa-eye me-1" aria-hidden="true"></i>
+                    2.480
+                  </span>
+                </div>
+
+                <div class="blog-card__footer d-flex justify-content-between align-items-center mt-auto pt-1">
+                  <span class="fs-14 text-color-1">
+                    <i class="fa-regular fa-calendar me-1" aria-hidden="true"></i>
+                    {{ blog.fecha_blog | date:'d MMM y' }}
+                  </span>
+                  <a [routerLink]="['/blog', blog.link_blog]" (click)="traerBlog()"
+                    class="blog-card__link fs-14 fw-bold text-color-2 text-decoration-none d-inline-flex align-items-center gap-2"
+                    [attr.aria-label]="'Leer artículo ' + blog.titulo_blog">
+                    Leer
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
 
-      <div class="row g-4">
-        <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let blog of entradasBlog">
-          <article class="ciaf-card blog-card border rounded-4 overflow-hidden d-flex flex-column bg-white h-100">
-            <div class="ratio ratio-4x3 overflow-hidden flex-shrink-0">
-              <img src="https://ciaf.digital/public/web_blog/{{ blog.blog_img }}" [alt]="blog.titulo_blog"
-                class="object-fit-cover" loading="lazy" />
-            </div>
+    </section>
+  </div>
 
-            <div class="p-4 blog-card__body d-flex flex-column flex-grow-1">
-              <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
-                <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase">
-                  {{ etiquetaCategoria(blog) }}
-                </span>
-                <span
-                  class="ciaf-pill ciaf-pill--compact bg-color-3 text-white fs-10 fw-bold rounded-pill px-3 py-1 border-0">
-                  {{ blog.fecha_blog | date:'d MMM y' }}
-                </span>
-              </div>
-
-              <h4 class="fs-16 fw-extrablack text-color-2 mb-3 blog-card__title flex-grow-1">
-                {{ blog.titulo_blog }}
-              </h4>
-
-              <p class="fs-12 text-color-1 mb-4 blog-card__excerpt" *ngIf="getExcerpt(blog)">
-                {{ getExcerpt(blog) }}
-              </p>
-
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fs-14 fw-bold text-color-2">Leer más</span>
-                <a [routerLink]="['/blog', blog.link_blog]" (click)="traerBlog()"
-                  class="btn bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0 text-white text-decoration-none"
-                  style="width: 44px; height: 44px" [attr.aria-label]="'Leer artículo ' + blog.titulo_blog">
-                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </article>
+  <div class="col-12" *ngIf="!entradasBlog.length && hayFiltrosActivos">
+    <section class="row justify-content-center py-5">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
+        <div class="ciaf-card rounded-4 p-4 bg-white text-center">
+          <h3 class="fs-24 fw-black text-color-2 mb-2">No encontramos resultados</h3>
+          <p class="fs-14 text-color-1 mb-3">
+            Intenta con otra palabra clave o selecciona una categoría diferente.
+          </p>
+          <button type="button" class="btn bg-color-3 text-white rounded-pill px-4 fw-bold"
+            (click)="limpiarFiltrosBlog()">
+            Limpiar filtros
+          </button>
         </div>
       </div>
     </section>

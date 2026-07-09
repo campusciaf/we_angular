@@ -150,15 +150,16 @@ toggleCampoAccion(id: string): void {
     readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
       { id: 'transformacion-humana', nav: '1', label: 'Transformacion Humana' },
       { id: 'programa-de-permanencia', nav: '2', label: 'Programas de permanencia' },
-      { id: 'salud-y-vida', nav: '3', label: 'salud y vida' },
-      { id: 'deporte-y-recreacion', nav: '4', label: 'Deporte y recreacion' },
-      { id: 'arte-y-cultura', nav: '5', label: 'Arte y cultura' },
-      { id: 'desarrollo-humano', nav: '6', label: 'Desarrollo Humano' },
-      { id: 'promocion-socioeconomica', nav: '7', label: 'Promocion Socioeconomica' },
-      { id: 'bienestar-en-video', nav: '8', label: 'Bienestar en video' },
-      { id: 'orientacion', nav: '9', label: 'Orientacion psicosocial' },
-      { id: 'convenios-y-beneficios', nav: '10', label: 'Convenios y beneficios' },
-      { id: 'formula', nav: '11', label: 'Formula 4x5' },
+      { id: 'historias-que-inspiran', nav: '3', label: 'Historias que inspiran' },
+      { id: 'salud-y-vida', nav: '4', label: 'salud y vida' },
+      { id: 'deporte-y-recreacion', nav: '5', label: 'Deporte y recreacion' },
+      { id: 'arte-y-cultura', nav: '6', label: 'Arte y cultura' },
+      { id: 'desarrollo-humano', nav: '7', label: 'Desarrollo Humano' },
+      { id: 'promocion-socioeconomica', nav: '8', label: 'Promocion Socioeconomica' },
+      { id: 'bienestar-en-video', nav: '9', label: 'Bienestar en video' },
+      { id: 'orientacion', nav: '10', label: 'Orientacion psicosocial' },
+      { id: 'convenios-y-beneficios', nav: '11', label: 'Convenios y beneficios' },
+      { id: 'formula', nav: '12', label: 'Formula 4x5' },
     ];
           
     scrollToSeccion(sectionId: string, navId?: string): void {
