@@ -1,3 +1,4 @@
+<app-header></app-header>
 <section class="ciaf-news-breadcrumb">
 
   <div class="container-xxl">
@@ -30,10 +31,11 @@
 
 <!-- Listado: todas las noticias desde la API -->
 
+
 <section class="container py-5" *ngIf="!tipobusquedad">
 
   <!-- Header -->
-  <div class="row align-items-end mb-5">
+  <div class="row align-items-end my-5">
     <div class="col-xl-8 col-lg-8 col-md-12 col-12">
 
       <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
@@ -47,8 +49,9 @@
         </span>
       </h2>
 
-      <p class="fs-18 text-color-1 mb-0" *ngIf="listarNoticias.length">
-        {{ listarNoticias.length }} noticias disponibles
+      <p class="fs-18 text-color-1 mb-0" *ngIf="noticiasFiltradas.length">
+        {{ noticiasFiltradas.length }} noticias disponibles
+        <span *ngIf="hayFiltroActivo"> en {{ categoriaSeleccionada }}</span>
       </p>
 
     </div>
@@ -61,55 +64,121 @@
     </div>
   </div>
 
-  <!-- Grid -->
-  <div class="row g-4" *ngIf="listarNoticias.length">
+  <!-- Filtro por categoría -->
+  <div class="d-flex flex-wrap align-items-center gap-2 mb-5" *ngIf="categorias.length">
+    <button type="button" class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3 py-2 border-0"
+      [class.ciaf-btn--primary]="!hayFiltroActivo" [class.text-white]="!hayFiltroActivo" (click)="limpiarFiltro()">
+      Todas
+    </button>
 
-    <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let noticia of listarNoticias">
+    <button type="button"
+      class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill px-3 py-2 border-0 text-uppercase"
+      *ngFor="let categoria of categorias" [class.ciaf-btn--primary]="isCategoriaActiva(categoria)"
+      [class.text-white]="isCategoriaActiva(categoria)" (click)="seleccionarCategoria(categoria)">
+      {{ categoria }}
+    </button>
+  </div>
 
-      <article class="ciaf-card rounded-5 overflow-hidden h-100 d-flex flex-column">
+  <!-- Noticia más reciente destacada -->
+  <div class="mb-5" *ngIf="noticiaDestacada as destacada">
+    <div class="mb-4">
+      <span class="ciaf-pill fs-12 fw-bold text-uppercase ls-4 text-color-1">
+        <i class="fa-solid fa-fire-flame-curved text-color-3 me-2"></i>
+        Noticia más reciente
+      </span>
+    </div>
 
-        <!-- Media -->
-        <div class="position-relative">
+    <article class="ciaf-card rounded-5 overflow-hidden bg-white">
+      <div class="row g-0 align-items-stretch">
 
-          <img *ngIf="getImagenUrl(noticia)" [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias"
-            loading="lazy" class="w-100 object-fit-cover d-block" style="height: 240px;">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-12 position-relative">
+          <img *ngIf="getImagenUrl(destacada)" [src]="getImagenUrl(destacada)" [alt]="destacada.titulo_noticias"
+            class="w-100 h-100 object-fit-cover d-block" />
 
-          <!-- Play -->
-          <button *ngIf="esVideo(noticia)" type="button"
+          <button *ngIf="esVideo(destacada)" type="button"
             class="position-absolute top-50 start-50 translate-middle bg-white border-0 rounded-circle d-flex align-items-center justify-content-center"
             style="width: 58px; height: 58px;"
-            (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
+            (click)="open(content); videoYoutube(destacada.url_video!, destacada.titulo_noticias)"
             aria-label="Reproducir video">
             <i class="fa-solid fa-play text-color-2 fs-20"></i>
           </button>
+        </div>
 
-          <!-- Categoría -->
-          <span
-            class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase position-absolute top-0 start-0 m-3"
-            *ngIf="noticia.nombre_categoria">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+          <div class="p-5 h-100 d-flex flex-column justify-content-center">
+
+            <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase mb-4"
+              *ngIf="destacada.nombre_categoria">
+              {{ destacada.nombre_categoria }}
+            </span>
+
+            <p class="fs-12 fw-bold text-color-1 text-uppercase ls-4 mb-3">
+              {{ destacada.fecha_noticias | date:'d MMM y' }}
+            </p>
+
+            <h2 class="fs-36 fw-black text-color-2 lh-1 mb-3">
+              {{ destacada.titulo_noticias }}
+            </h2>
+
+            <p class="fs-16 text-color-1 mb-4" *ngIf="getExcerpt(destacada)">
+              {{ getExcerpt(destacada) }}
+            </p>
+
+            <div>
+              <a [routerLink]="['/noticias', destacada.link_noticia]" (click)="traerNoticia(destacada.link_noticia)"
+                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2">
+                Leer más
+                <i class="fa-solid fa-arrow-up-right-from-square fs-12"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+
+  <!-- Grid de noticias -->
+  <div class="row g-4" *ngIf="noticiasListado.length">
+
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let noticia of noticiasListado">
+
+      <article class="ciaf-news-card rounded-5 h-100">
+
+        <div class="ciaf-news-card__media">
+
+          <img *ngIf="getImagenUrl(noticia)" [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias"
+            loading="lazy" />
+
+          <button *ngIf="esVideo(noticia)" type="button" class="ciaf-news-card__play"
+            (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
+            aria-label="Reproducir video">
+            <i class="fa-solid fa-circle-play"></i>
+          </button>
+
+          <span class="ciaf-news-card__badge fs-11 fw-bold py-1 px-2 rounded-pill" *ngIf="noticia.nombre_categoria">
             {{ noticia.nombre_categoria }}
           </span>
 
         </div>
 
-        <!-- Body -->
-        <div class="p-4 d-flex flex-column flex-grow-1">
+        <div class="ciaf-news-card__body p-4 d-flex flex-column flex-grow-1">
 
-          <p class="fs-12 fw-bold text-color-1 text-uppercase ls-2 mb-3">
-            <i class="fa-regular fa-calendar me-1"></i>
+          <p class="fs-12 fw-bold mb-2 text-uppercase ls-4 text-color-1">
             {{ noticia.fecha_noticias | date:'d MMM y' }}
           </p>
 
-          <h3 class="fs-20 fw-extrablack text-color-2 mb-3">
+          <h3 class="fs-18 fw-bold mb-2 text-color-2">
             {{ noticia.titulo_noticias }}
           </h3>
 
-          <p class="fs-14 text-color-1 mb-4 flex-grow-1" *ngIf="getExcerpt(noticia)">
+          <p class="fs-14 mb-4 text-color-1 flex-grow-1" *ngIf="getExcerpt(noticia)">
             {{ getExcerpt(noticia) }}
           </p>
 
           <a [routerLink]="['/noticias', noticia.link_noticia]" (click)="traerNoticia(noticia.link_noticia)"
-            class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold justify-content-center gap-3 mt-auto">
+            class="ciaf-news-card__link fs-14 fw-bold gap-1 d-inline-flex align-items-center mt-auto">
             Leer más
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
@@ -122,75 +191,122 @@
 
   </div>
 
+  <div class="text-center py-5" *ngIf="!noticiasFiltradas.length && listarNoticias.length">
+    <p class="fs-16 text-color-1 mb-3">No hay noticias en esta categoría.</p>
+    <button type="button" class="ciaf-btn ciaf-btn--outline rounded-pill px-4 py-3 fw-bold" (click)="limpiarFiltro()">
+      Ver todas
+    </button>
+  </div>
+
 </section>
 
 
 <!-- Detalle desde la API por id -->
-<section class="ciaf-news-section ciaf-section-white" *ngIf="tipobusquedad">
-  <div class="container-xxl ciaf-news-container">
+<section class="container py-4 py-lg-5" *ngIf="tipobusquedad">
 
-    <article class="ciaf-news-detail" *ngFor="let noticia of detalleNoticia">
+  <div class="row justify-content-center" *ngFor="let noticia of detalleNoticia">
+    <div class="col-12 col-lg-10 col-xl-8">
 
-      <!-- Encabezado editorial -->
-      <header class="ciaf-news-detail__header mx-auto mb-5">
-
-        <!-- Meta información -->
-        <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3 mb-4">
-          <span class="ciaf-pill ciaf-pill--compact fw-bold" *ngIf="noticia.nombre_categoria">
-            {{ noticia.nombre_categoria }}
-          </span>
-
-          <span class="d-inline-flex align-items-center gap-2 fs-14 text-color-1 fw-medium">
-            <i class="fa-regular fa-calendar"></i>
-            {{ noticia.fecha_noticias | date:'d MMM y' }}
-          </span>
-        </div>
-
-        <!-- Título -->
-        <h1 class="ciaf-title-display ciaf-news-detail__title fw-extrablack text-color-2 mb-4">
-          {{ noticia.titulo_noticias }}
-        </h1>
-
-        <!-- Subtítulo -->
-        <p class="ciaf-text-lead ciaf-text-lead--muted fw-regular mb-0" *ngIf="noticia.subtitulo_noticias">
-          {{ noticia.subtitulo_noticias }}
-        </p>
-
-      </header>
-
-
-      <!-- Imagen / video protagonista -->
-      <div class="ciaf-news-detail__media position-relative overflow-hidden rounded-5 mb-5"
-        *ngIf="getImagenUrl(noticia)">
-
-        <!-- Acción de video -->
-        <button *ngIf="esVideo(noticia)" type="button"
-          class="ciaf-news-detail__play position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center rounded-circle border-0"
-          (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
-          [attr.aria-label]="'Reproducir video: ' + noticia.titulo_noticias">
-          <i class="fa-solid fa-play"></i>
-        </button>
-
-        <!-- Imagen -->
-        <img [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias" class="w-100 h-100 object-fit-cover" />
-
+      <!-- Volver al listado -->
+      <div class="my-4 mb-lg-5">
+        <a routerLink="/noticias" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill px-4">
+          <i class="fa-solid fa-arrow-left"></i>
+          Volver a noticias
+        </a>
       </div>
 
+      <article>
 
-      <!-- Contenido editorial -->
-      <div class="row justify-content-center">
+        <!-- Cabecera editorial -->
+        <header class="mb-4 mb-lg-5">
 
-        <div class="col-12 col-xl-10 col-xxl-9">
+          <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3 mb-4">
+            <span class="ciaf-pill ciaf-pill--compact fs-11 fw-bold rounded-pill px-3 py-1 text-uppercase"
+              *ngIf="noticia.nombre_categoria">
+              {{ noticia.nombre_categoria }}
+            </span>
 
-          <div class="ciaf-news-detail__content fw-regular" [innerHTML]="noticia.contenido_noticias"></div>
+            <span class="d-inline-flex align-items-center gap-2 fs-14 text-color-1 fw-medium">
+              <i class="fa-regular fa-calendar"></i>
+              {{ noticia.fecha_noticias | date:"d 'de' MMMM 'de' y" }}
+            </span>
+          </div>
 
+          <h1 class="fs-48 fw-extrablack text-color-2 lh-1 mb-4">
+            {{ noticia.titulo_noticias }}
+          </h1>
+
+          <p class="fs-20 text-color-1 fw-regular mb-4 lh-base" *ngIf="noticia.subtitulo_noticias">
+            {{ noticia.subtitulo_noticias }}
+          </p>
+
+          <div class="d-flex align-items-center flex-wrap gap-3 pt-2">
+            <span class="fs-14 fw-bold text-uppercase text-color-1 ls-2">
+              Compartir:
+            </span>
+
+            <a [href]="'https://www.linkedin.com/sharing/share-offsite/?url=' + urlActual" target="_blank"
+              rel="noopener" class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle text-decoration-none"
+              aria-label="Compartir en LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a [href]="'https://www.facebook.com/sharer/sharer.php?u=' + urlActual" target="_blank" rel="noopener"
+              class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle text-decoration-none"
+              aria-label="Compartir en Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a [href]="'https://wa.me/?text=' + urlActual" target="_blank" rel="noopener"
+              class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle text-decoration-none"
+              aria-label="Compartir en WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a [href]="'https://twitter.com/intent/tweet?url=' + urlActual" target="_blank" rel="noopener"
+              class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle text-decoration-none"
+              aria-label="Compartir en X">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+
+        </header>
+
+        <!-- Imagen / video protagonista -->
+        <div class="ciaf-news-detail__media position-relative overflow-hidden rounded-5 mb-4 mb-lg-5"
+          *ngIf="getImagenUrl(noticia)">
+          <button *ngIf="esVideo(noticia)" type="button" class="ciaf-link-video-overlay border-0"
+            (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
+            [attr.aria-label]="'Reproducir video: ' + noticia.titulo_noticias">
+            <img src="assets/image/video.webp" alt="Reproducir video" />
+          </button>
+
+          <img [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias" class="w-100 d-block object-fit-cover" />
         </div>
 
-      </div>
+        <!-- Cuerpo de la noticia -->
+        <div class="fs-18 text-color-1 fw-regular lh-lg text-justify mb-5" [innerHTML]="noticia.contenido_noticias">
+        </div>
 
-    </article>
+        <!-- Cierre / volver -->
+        <div class="ciaf-card rounded-5 p-4 p-md-5 text-center">
+          <p class="fs-18 fw-bold text-color-2 mb-3">
+            ¿Quieres seguir explorando?
+          </p>
+          <p class="fs-14 text-color-1 mb-4">
+            Descubre más historias, logros y novedades de la comunidad CIAF.
+          </p>
+          <a routerLink="/noticias" class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver al listado de noticias
+          </a>
+        </div>
 
+      </article>
+
+    </div>
   </div>
+
 </section>
 
 <ng-template #content let-modal>
@@ -210,3 +326,4 @@
   </div>
 
 </ng-template>
+<app-footer></app-footer>

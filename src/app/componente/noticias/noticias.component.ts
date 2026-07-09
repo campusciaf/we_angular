@@ -28,6 +28,8 @@ export class NoticiasComponent implements OnInit {
   detalleNoticia: Noticia[] = [];
   listarNoticiasPrincipal: Noticia[] = [];
   tipobusquedad: string | undefined;
+  categoriaSeleccionada = '';
+  urlActual = '';
 
   titulo: string | undefined;
   total: any;
@@ -42,17 +44,20 @@ export class NoticiasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.urlActual = window.location.href;
+
     this.conectarApiService.obtenerNoticiasPrincipal('codefc').subscribe(respuesta => {
       this.listarNoticiasPrincipal = (respuesta as Noticia[]) || [];
     });
 
     this.conectarApiService.obtenerNoticias().subscribe(respuesta => {
-      this.listarNoticias = (respuesta as Noticia[]) || [];
+      this.listarNoticias = this.ordenarPorFecha((respuesta as Noticia[]) || []);
     });
 
     // Misma ruta/componente para listado y detalle: hay que reaccionar al :id
     this._route.paramMap.subscribe(params => {
       const noticiaId = params.get('id');
+      this.urlActual = window.location.href;
 
       if (noticiaId) {
         this.id = [noticiaId];
@@ -63,6 +68,87 @@ export class NoticiasComponent implements OnInit {
       this.id = [];
       this.tipobusquedad = undefined;
       this.detalleNoticia = [];
+    });
+  }
+
+  get categorias(): string[] {
+    const nombres = this.listarNoticias
+      .map(noticia => (noticia.nombre_categoria || '').trim())
+      .filter(Boolean);
+
+    return [...new Set(nombres)].sort((a, b) => a.localeCompare(b, 'es'));
+  }
+
+  get hayFiltroActivo(): boolean {
+    return this.normalizarTexto(this.categoriaSeleccionada) !== '';
+  }
+
+  get noticiasFiltradas(): Noticia[] {
+    const categoriaFiltro = this.normalizarTexto(this.categoriaSeleccionada);
+
+    if (!categoriaFiltro) {
+      return this.listarNoticias;
+    }
+
+    return this.listarNoticias.filter(noticia =>
+      this.normalizarTexto(noticia.nombre_categoria) === categoriaFiltro
+    );
+  }
+
+  get noticiaDestacada(): Noticia | null {
+    if (this.hayFiltroActivo) {
+      return null;
+    }
+
+    return this.noticiasFiltradas.length ? this.noticiasFiltradas[0] : null;
+  }
+
+  get noticiasListado(): Noticia[] {
+    const noticias = this.noticiasFiltradas;
+
+    if (!noticias.length) {
+      return [];
+    }
+
+    if (!this.hayFiltroActivo) {
+      return noticias.slice(1);
+    }
+
+    return noticias;
+  }
+
+  seleccionarCategoria(nombreCategoria: string): void {
+    const categoriaNormalizada = this.normalizarTexto(nombreCategoria);
+    const seleccionActual = this.normalizarTexto(this.categoriaSeleccionada);
+
+    this.categoriaSeleccionada =
+      categoriaNormalizada === seleccionActual ? '' : String(nombreCategoria || '');
+  }
+
+  limpiarFiltro(): void {
+    this.categoriaSeleccionada = '';
+  }
+
+  isCategoriaActiva(nombreCategoria: string): boolean {
+    return (
+      this.normalizarTexto(nombreCategoria) ===
+      this.normalizarTexto(this.categoriaSeleccionada)
+    );
+  }
+
+  private normalizarTexto(valor: unknown): string {
+    return String(valor || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+  }
+
+  private ordenarPorFecha(noticias: Noticia[]): Noticia[] {
+    return [...noticias].sort((a, b) => {
+      const fechaA = new Date(a.fecha_noticias || 0).getTime();
+      const fechaB = new Date(b.fecha_noticias || 0).getTime();
+      return fechaB - fechaA;
     });
   }
 
