@@ -30,114 +30,88 @@
 
 <!-- Listado: todas las noticias desde la API -->
 
-<section class="ciaf-news-section ciaf-section-white" *ngIf="!tipobusquedad">
+<section class="container py-5" *ngIf="!tipobusquedad">
 
-  <div class="container-xxl ciaf-news-container">
+  <!-- Header -->
+  <div class="row align-items-end mb-5">
+    <div class="col-xl-8 col-lg-8 col-md-12 col-12">
 
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+        Noticias
+      </span>
 
+      <h2 class="fs-48 fw-extrablack text-color-2 mt-4 mb-3">
+        Noticias que
+        <span class="ciaf-gradient-text ciaf-gradient-text--brand">
+          inspiran
+        </span>
+      </h2>
 
-    <div class="ciaf-news-header">
-
-      <div>
-
-        <span class="ciaf-pill ciaf-pill--compact fw-bold">NOTICIAS</span>
-
-        <h2 class="ciaf-title-display ciaf-title-display--news fw-black">
-
-          Noticias que <span class="ciaf-gradient-text ciaf-gradient-text--brand">inspiran</span>
-
-        </h2>
-
-        <p class="ciaf-text-lead ciaf-text-lead--muted fw-regular" *ngIf="listarNoticias.length">
-
-          {{ listarNoticias.length }} noticias disponibles
-
-        </p>
-
-      </div>
-
-
-
-      <a routerLink="/blog" class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fw-bold">
-
-        Ir al blog
-
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-      </a>
+      <p class="fs-18 text-color-1 mb-0" *ngIf="listarNoticias.length">
+        {{ listarNoticias.length }} noticias disponibles
+      </p>
 
     </div>
 
+    <div class="col-xl-4 col-lg-4 col-md-12 col-12 text-xl-end mt-4 mt-xl-0">
+      <a routerLink="/blog" class="ciaf-btn ciaf-btn--outline rounded-pill px-4 py-3 fw-bold gap-3">
+        Ir al blog
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+  </div>
 
+  <!-- Grid -->
+  <div class="row g-4" *ngIf="listarNoticias.length">
 
-    <div class="ciaf-news-grid" *ngIf="listarNoticias.length">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let noticia of listarNoticias">
 
-      <article class="ciaf-news-card" *ngFor="let noticia of listarNoticias">
+      <article class="ciaf-card rounded-5 overflow-hidden h-100 d-flex flex-column">
 
-        <div class="ciaf-news-card__media">
+        <!-- Media -->
+        <div class="position-relative">
 
-          <img
+          <img *ngIf="getImagenUrl(noticia)" [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias"
+            loading="lazy" class="w-100 object-fit-cover d-block" style="height: 240px;">
 
-            *ngIf="getImagenUrl(noticia)"
-
-            [src]="getImagenUrl(noticia)"
-
-            [alt]="noticia.titulo_noticias"
-
-            loading="lazy"
-
-          />
-
-
-
-          <button
-
-            *ngIf="esVideo(noticia)"
-
-            type="button"
-
-            class="ciaf-news-card__play"
-
+          <!-- Play -->
+          <button *ngIf="esVideo(noticia)" type="button"
+            class="position-absolute top-50 start-50 translate-middle bg-white border-0 rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 58px; height: 58px;"
             (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
-
-            aria-label="Reproducir video"
-
-          >
-
-            <i class="fa-solid fa-circle-play"></i>
-
+            aria-label="Reproducir video">
+            <i class="fa-solid fa-play text-color-2 fs-20"></i>
           </button>
 
-
-
-          <span class="ciaf-news-card__badge" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
+          <!-- Categoría -->
+          <span
+            class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase position-absolute top-0 start-0 m-3"
+            *ngIf="noticia.nombre_categoria">
+            {{ noticia.nombre_categoria }}
+          </span>
 
         </div>
 
+        <!-- Body -->
+        <div class="p-4 d-flex flex-column flex-grow-1">
 
+          <p class="fs-12 fw-bold text-color-1 text-uppercase ls-2 mb-3">
+            <i class="fa-regular fa-calendar me-1"></i>
+            {{ noticia.fecha_noticias | date:'d MMM y' }}
+          </p>
 
-        <div class="ciaf-news-card__body">
+          <h3 class="fs-20 fw-extrablack text-color-2 mb-3">
+            {{ noticia.titulo_noticias }}
+          </h3>
 
-          <p class="ciaf-news-card__date fw-black">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+          <p class="fs-14 text-color-1 mb-4 flex-grow-1" *ngIf="getExcerpt(noticia)">
+            {{ getExcerpt(noticia) }}
+          </p>
 
-          <h3 class="ciaf-news-card__title fw-extrablack">{{ noticia.titulo_noticias }}</h3>
-
-          <p class="ciaf-news-card__text" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
-
-          <a
-
-            [routerLink]="['/noticias', noticia.link_noticia]"
-
-            (click)="traerNoticia(noticia.link_noticia)"
-
-            class="ciaf-news-card__link fw-black"
-
-          >
-
+          <a [routerLink]="['/noticias', noticia.link_noticia]" (click)="traerNoticia(noticia.link_noticia)"
+            class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold justify-content-center gap-3 mt-auto">
             Leer más
-
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
           </a>
 
         </div>
@@ -146,71 +120,78 @@
 
     </div>
 
-
-
   </div>
 
 </section>
 
 
-
 <!-- Detalle desde la API por id -->
-
 <section class="ciaf-news-section ciaf-section-white" *ngIf="tipobusquedad">
-
   <div class="container-xxl ciaf-news-container">
 
     <article class="ciaf-news-detail" *ngFor="let noticia of detalleNoticia">
 
-      <p class="ciaf-news-card__date fw-black">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
+      <!-- Encabezado editorial -->
+      <header class="ciaf-news-detail__header mx-auto mb-5">
 
-      <span class="ciaf-news-card__badge d-inline-flex mb-3" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
+        <!-- Meta información -->
+        <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3 mb-4">
+          <span class="ciaf-pill ciaf-pill--compact fw-bold" *ngIf="noticia.nombre_categoria">
+            {{ noticia.nombre_categoria }}
+          </span>
+
+          <span class="d-inline-flex align-items-center gap-2 fs-14 text-color-1 fw-medium">
+            <i class="fa-regular fa-calendar"></i>
+            {{ noticia.fecha_noticias | date:'d MMM y' }}
+          </span>
+        </div>
+
+        <!-- Título -->
+        <h1 class="ciaf-title-display ciaf-news-detail__title fw-extrablack text-color-2 mb-4">
+          {{ noticia.titulo_noticias }}
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="ciaf-text-lead ciaf-text-lead--muted fw-regular mb-0" *ngIf="noticia.subtitulo_noticias">
+          {{ noticia.subtitulo_noticias }}
+        </p>
+
+      </header>
 
 
+      <!-- Imagen / video protagonista -->
+      <div class="ciaf-news-detail__media position-relative overflow-hidden rounded-5 mb-5"
+        *ngIf="getImagenUrl(noticia)">
 
-      <h1 class="ciaf-title-display ciaf-title-display--news mb-3 fw-black">{{ noticia.titulo_noticias }}</h1>
-
-
-
-      <p class="ciaf-text-lead ciaf-text-lead--muted mb-4 fw-regular" *ngIf="noticia.subtitulo_noticias">
-
-        {{ noticia.subtitulo_noticias }}
-
-      </p>
-
-
-
-      <div class="ciaf-news-detail__media" *ngIf="getImagenUrl(noticia)">
-
-        <a
-
-          *ngIf="esVideo(noticia)"
-
-          class="ciaf-link-video-overlay"
-
+        <!-- Acción de video -->
+        <button *ngIf="esVideo(noticia)" type="button"
+          class="ciaf-news-detail__play position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center rounded-circle border-0"
           (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
+          [attr.aria-label]="'Reproducir video: ' + noticia.titulo_noticias">
+          <i class="fa-solid fa-play"></i>
+        </button>
 
-        >
-
-          <img src="assets/image/video.webp" alt="Video noticia" />
-
-        </a>
-
-        <img [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias" />
+        <!-- Imagen -->
+        <img [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias" class="w-100 h-100 object-fit-cover" />
 
       </div>
 
 
+      <!-- Contenido editorial -->
+      <div class="row justify-content-center">
 
-      <div class="ciaf-text-lead ciaf-text-lead--muted fw-regular" [innerHTML]="noticia.contenido_noticias"></div>
+        <div class="col-12 col-xl-10 col-xxl-9">
+
+          <div class="ciaf-news-detail__content fw-regular" [innerHTML]="noticia.contenido_noticias"></div>
+
+        </div>
+
+      </div>
 
     </article>
 
   </div>
-
 </section>
-
-
 
 <ng-template #content let-modal>
 
@@ -224,21 +205,8 @@
 
   <div class="modal-body">
 
-    <iframe
-
-      [src]="total"
-
-      width="100%"
-
-      height="315"
-
-      frameborder="0"
-
-      allowfullscreen
-
-    ></iframe>
+    <iframe [src]="total" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
 
   </div>
 
 </ng-template>
-
