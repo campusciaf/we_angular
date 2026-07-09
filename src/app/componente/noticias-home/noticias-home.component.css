@@ -26,3 +26,11 @@
   width: var(--ciaf-news-card-width, 100%);
   min-width: 0;
 }
+
+.ciaf-news-slider .ciaf-news-card__link,
+.ciaf-news-slider .ciaf-news-card__play {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: pointer;
+}

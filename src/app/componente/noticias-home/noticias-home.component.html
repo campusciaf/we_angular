@@ -74,7 +74,13 @@
     <p class="fs-12 fw-bold mb-2 text-uppercase ls-4">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
     <h3 class="fs-18 fw-bold mb-2 text-color-2">{{ noticia.titulo_noticias }}</h3>
     <p class="fs-14 mb-4" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
-    <a [routerLink]="['/noticias', noticia.link_noticia]" class="ciaf-news-card__link fs-14 fw-bold gap-1 d-inline-flex align-items-center">
+    <a
+      href="#"
+      class="ciaf-news-card__link fs-14 fw-bold gap-1 d-inline-flex align-items-center"
+      (pointerdown)="$event.stopPropagation()"
+      (pointerup)="$event.stopPropagation()"
+      (click)="irANoticia($event, noticia)"
+    >
       Leer más
       <i class="fa-solid fa-arrow-up-right-from-square"></i>
     </a>

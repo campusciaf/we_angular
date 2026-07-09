@@ -32,7 +32,7 @@ export class NoticiasComponent implements OnInit {
   titulo: string | undefined;
   total: any;
 
-  id: string[] | null = this._route.snapshot.paramMap.getAll('id');
+  id: string[] = [];
 
   constructor(
     private conectarApiService: ConectarApiService,
@@ -50,12 +50,27 @@ export class NoticiasComponent implements OnInit {
       this.listarNoticias = (respuesta as Noticia[]) || [];
     });
 
-    if (this.id?.length) {
-      this.conectarApiService.obtenerNoticiaId(this.id).subscribe(respuesta => {
-        this.detalleNoticia = (respuesta as Noticia[]) || [];
-        this.tipobusquedad = this.id?.[0];
-      });
-    }
+    // Misma ruta/componente para listado y detalle: hay que reaccionar al :id
+    this._route.paramMap.subscribe(params => {
+      const noticiaId = params.get('id');
+
+      if (noticiaId) {
+        this.id = [noticiaId];
+        this.cargarDetalle(noticiaId);
+        return;
+      }
+
+      this.id = [];
+      this.tipobusquedad = undefined;
+      this.detalleNoticia = [];
+    });
+  }
+
+  private cargarDetalle(noticiaId: string): void {
+    this.conectarApiService.obtenerNoticiaId(noticiaId).subscribe(respuesta => {
+      this.detalleNoticia = (respuesta as Noticia[]) || [];
+      this.tipobusquedad = noticiaId;
+    });
   }
 
   esVideo(noticia: Noticia): boolean {
@@ -113,10 +128,14 @@ export class NoticiasComponent implements OnInit {
     return `with: ${reason}`;
   }
 
-  traerNoticia(): void {
-    this.conectarApiService.obtenerNoticiaId(this.id).subscribe(respuesta => {
-      this.detalleNoticia = (respuesta as Noticia[]) || [];
-      this.tipobusquedad = this.id?.[0];
-    });
+  traerNoticia(linkNoticia?: string): void {
+    const noticiaId = linkNoticia || this._route.snapshot.paramMap.get('id') || this.id[0];
+
+    if (!noticiaId) {
+      return;
+    }
+
+    this.id = [noticiaId];
+    this.cargarDetalle(noticiaId);
   }
 }
