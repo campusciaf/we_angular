@@ -1,10 +1,10 @@
-<footer class="row ciaf-section-light border-top mb-4">
+<footer class="row ciaf-section-light border-top mb-4 mx-0 px-0">
   <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 p-4">
 
-    <div class="row mt-5 px-4">
+    <div class="row mt-5">
 
       <!-- Marca y redes -->
-      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-5">
+      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-5 p-4">
         <a routerLink="/inicio" class="mb-4" aria-label="CIAF inicio">
           <img [src]="logo" alt="CIAF" width="120" height="auto" />
         </a>
@@ -14,27 +14,23 @@
 
         <h3 class="fs-12 fw-bold mb-4 text-uppercase text-color-2 ls-3">Síguenos</h3>
         <div class="ciaf-footer-social gap-2 d-flex">
-          <a
-            *ngFor="let red of redes"
-            [href]="red.href"
-            class="ciaf-footer-social__link fs-14 rounded-circle"
-            [attr.aria-label]="red.nombre"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a *ngFor="let red of redes" [href]="red.href" class="ciaf-footer-social__link fs-14 rounded-circle"
+            [attr.aria-label]="red.nombre" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands" [ngClass]="red.icono" aria-hidden="true"></i>
           </a>
         </div>
       </div>
 
       <!-- Contacto -->
-      <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4 col-12 mb-5">
+      <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4 col-12 mb-5 p-4">
         <h3 class="fs-14 fw-bold mb-4 text-uppercase text-color-2 ls-4">Contáctanos</h3>
 
         <div class="row g-3 g-md-4">
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
             <div class="d-flex align-items-start gap-3">
-              <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16" aria-hidden="true">
+              <span
+                class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16"
+                aria-hidden="true">
                 <i class="fa-solid fa-location-dot text-color-2"></i>
               </span>
               <div class="min-w-0">
@@ -46,7 +42,9 @@
 
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
             <div class="d-flex align-items-start gap-3">
-              <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16" aria-hidden="true">
+              <span
+                class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16"
+                aria-hidden="true">
                 <i class="fa-solid fa-clock text-color-2"></i>
               </span>
               <div class="min-w-0">
@@ -58,7 +56,9 @@
 
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
             <div class="d-flex align-items-start gap-3">
-              <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16" aria-hidden="true">
+              <span
+                class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16"
+                aria-hidden="true">
                 <i class="fa-solid fa-phone text-color-2"></i>
               </span>
               <div class="min-w-0">
@@ -70,17 +70,15 @@
 
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
             <div class="d-flex align-items-start gap-3">
-              <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-2 p-2 lh-1 fs-16" aria-hidden="true">
+              <span
+                class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-2 p-2 lh-1 fs-16"
+                aria-hidden="true">
                 <i class="fa-brands fa-whatsapp text-color-2"></i>
               </span>
               <div class="min-w-0">
                 <p class="fs-11 mb-1 text-uppercase fw-medium text-color-1 ls-2">WhatsApp</p>
-                <a
-                  href="https://api.whatsapp.com/send?phone=573126814341&text=Mensaje%20desde%20la%20web"
-                  class="fs-14 text-color-2 text-decoration-none"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://api.whatsapp.com/send?phone=573126814341&text=Mensaje%20desde%20la%20web"
+                  class="fs-14 text-color-2 text-decoration-none" target="_blank" rel="noopener noreferrer">
                   312 681 4341
                 </a>
               </div>
@@ -89,7 +87,9 @@
 
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
             <div class="d-flex align-items-start gap-3">
-              <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16" aria-hidden="true">
+              <span
+                class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16"
+                aria-hidden="true">
                 <i class="fa-solid fa-envelope text-color-2"></i>
               </span>
               <div class="min-w-0">
@@ -101,7 +101,9 @@
 
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
             <div class="d-flex align-items-start gap-3">
-              <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16" aria-hidden="true">
+              <span
+                class="flex-shrink-0 d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 p-2 lh-1 fs-16"
+                aria-hidden="true">
                 <i class="fa-solid fa-file-lines text-color-2"></i>
               </span>
               <div class="min-w-0">
@@ -114,25 +116,18 @@
       </div>
 
       <!-- Enlaces -->
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-12">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-12 p-4">
         <div class="row">
 
           <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6 col-6">
             <h3 class="fs-12 fw-bold mb-2 text-uppercase text-color-2 ls-4">Académico</h3>
             <ul class="list-unstyled">
               <li *ngFor="let link of linksAcademico" class="mb-2">
-                <a
-                  *ngIf="link.routerLink"
-                  [routerLink]="link.routerLink"
-                  class="text-decoration-none text-color-1 fs-14"
-                >{{ link.label }}</a>
-                <a
-                  *ngIf="link.href"
-                  [href]="link.href"
-                  class="ciaf-footer-nav-link fs-14"
+                <a *ngIf="link.routerLink" [routerLink]="link.routerLink"
+                  class="text-decoration-none text-color-1 fs-14">{{ link.label }}</a>
+                <a *ngIf="link.href" [href]="link.href" class="ciaf-footer-nav-link fs-14"
                   [attr.target]="link.external ? '_blank' : null"
-                  [attr.rel]="link.external ? 'noopener noreferrer' : null"
-                >{{ link.label }}</a>
+                  [attr.rel]="link.external ? 'noopener noreferrer' : null">{{ link.label }}</a>
               </li>
             </ul>
           </div>
@@ -141,18 +136,10 @@
             <h3 class="fs-12 fw-bold mb-2 text-uppercase text-color-2 ls-4">Institución</h3>
             <ul class="list-unstyled">
               <li *ngFor="let link of linksInstitucion" class="mb-2">
-                <a
-                  *ngIf="link.routerLink"
-                  [routerLink]="link.routerLink"
-                  class="text-decoration-none text-color-1 fs-14"
-                >{{ link.label }}</a>
-                <a
-                  *ngIf="link.href"
-                  [href]="link.href"
-                  class="text-decoration-none text-color-1 fs-14"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >{{ link.label }}</a>
+                <a *ngIf="link.routerLink" [routerLink]="link.routerLink"
+                  class="text-decoration-none text-color-1 fs-14">{{ link.label }}</a>
+                <a *ngIf="link.href" [href]="link.href" class="text-decoration-none text-color-1 fs-14" target="_blank"
+                  rel="noopener noreferrer">{{ link.label }}</a>
               </li>
             </ul>
           </div>
@@ -161,18 +148,11 @@
             <h3 class="fs-12 fw-bold mb-2 text-uppercase text-color-2 ls-4">Aspectos legales</h3>
             <ul class="list-unstyled">
               <li *ngFor="let link of linksLegales" class="mb-2">
-                <a
-                  *ngIf="link.routerLink"
-                  [routerLink]="link.routerLink"
-                  class="text-decoration-none text-color-1 fs-14"
-                >{{ link.label }}</a>
-                <a
-                  *ngIf="link.href"
-                  [href]="link.href"
-                  class="text-decoration-none text-color-1 fs-14"
+                <a *ngIf="link.routerLink" [routerLink]="link.routerLink"
+                  class="text-decoration-none text-color-1 fs-14">{{ link.label }}</a>
+                <a *ngIf="link.href" [href]="link.href" class="text-decoration-none text-color-1 fs-14"
                   [attr.target]="link.external ? '_blank' : null"
-                  [attr.rel]="link.external ? 'noopener noreferrer' : null"
-                >{{ link.label }}</a>
+                  [attr.rel]="link.external ? 'noopener noreferrer' : null">{{ link.label }}</a>
               </li>
             </ul>
           </div>
@@ -182,13 +162,14 @@
     </div>
 
     <div class="row border-top pt-5">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-4">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-4">
         <p class="fs-12">
           © {{ anioActual }} CIAF — Corporación Instituto de Administración y Finanzas.
         </p>
       </div>
-      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
-        <img [src]="vigilada" alt="Vigilada Mineducación" class="ciaf-footer-vigilada rounded" width="80" height="auto" />
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 px-4">
+        <img [src]="vigilada" alt="Vigilada Mineducación" class="ciaf-footer-vigilada rounded" width="80"
+          height="auto" />
       </div>
     </div>
 

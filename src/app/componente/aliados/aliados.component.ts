@@ -2,6 +2,8 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
+  NgZone,
   OnDestroy,
   OnInit,
   ViewChild
@@ -21,7 +23,6 @@ interface Aliado {
 })
 export class AliadosComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly visibles = 5;
   readonly gapPx = 16;
   readonly segundosPorTarjeta = 4;
 
@@ -30,12 +31,16 @@ export class AliadosComponent implements OnInit, AfterViewInit, OnDestroy {
   listarAliados: Aliado[] = [];
   listarAliadosLoop: Aliado[] = [];
 
+  visibles = 5;
   anchoTarjeta = 168;
   duracionAnimacion = 40;
 
   private resizeObserver?: ResizeObserver;
 
-  constructor(private conectarApiService: ConectarApiService) {}
+  constructor(
+    private conectarApiService: ConectarApiService,
+    private ngZone: NgZone
+  ) {}
 
   ngOnInit(): void {
     this.conectarApiService.obtenerAliados().subscribe((respuesta) => {
@@ -45,16 +50,18 @@ export class AliadosComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    this.asegurarObserver();
     this.medirAncho();
-
-    if (typeof ResizeObserver !== 'undefined' && this.viewport?.nativeElement) {
-      this.resizeObserver = new ResizeObserver(() => this.medirAncho());
-      this.resizeObserver.observe(this.viewport.nativeElement);
-    }
   }
 
   ngOnDestroy(): void {
     this.resizeObserver?.disconnect();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    this.asegurarObserver();
+    this.medirAncho();
   }
 
   get usarCarrusel(): boolean {
@@ -89,10 +96,46 @@ export class AliadosComponent implements OnInit, AfterViewInit, OnDestroy {
       this.listarAliados.length * this.segundosPorTarjeta
     );
 
-    setTimeout(() => this.medirAncho(), 0);
+    setTimeout(() => {
+      this.asegurarObserver();
+      this.medirAncho();
+    }, 0);
+  }
+
+  private asegurarObserver(): void {
+    const el = this.viewport?.nativeElement;
+
+    if (!el || typeof ResizeObserver === 'undefined') {
+      return;
+    }
+
+    if (!this.resizeObserver) {
+      this.resizeObserver = new ResizeObserver(() => {
+        this.ngZone.run(() => this.medirAncho());
+      });
+    }
+
+    this.resizeObserver.disconnect();
+    this.resizeObserver.observe(el);
+  }
+
+  private actualizarVisibles(): void {
+    const ancho = typeof window !== 'undefined' ? window.innerWidth : 1200;
+
+    if (ancho < 576) {
+      this.visibles = 2;
+    } else if (ancho < 768) {
+      this.visibles = 3;
+    } else if (ancho < 992) {
+      this.visibles = 4;
+    } else {
+      this.visibles = 5;
+    }
   }
 
   private medirAncho(): void {
+    this.actualizarVisibles();
+
     const anchoViewport = this.viewport?.nativeElement?.clientWidth ?? 0;
 
     if (!anchoViewport) {

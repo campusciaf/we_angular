@@ -1,5 +1,5 @@
-<section class="row justify-content-center ciaf-section-white my-5 py-5">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 ">
+<section class="row justify-content-center ciaf-section-white my-5 py-5 mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 ">
 
     <div class="ciaf-news-header d-flex align-items-end justify-content-between gap-4 mb-5">
       <div>
@@ -15,7 +15,7 @@
       </a>
     </div>
 
-    <!-- Mismo diseño de cuadrícula (3 columnas); solo se desplaza el contenido -->
+    <!-- 3 en PC, 1 en móvil; solo se desplaza el contenido -->
     <div #viewport class="ciaf-news-slider" *ngIf="listarNoticias.length && usarCarrusel"
       (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)" (pointerup)="onPointerUp($event)"
       (pointercancel)="onPointerUp($event)" (pointerleave)="onPointerLeave($event)">

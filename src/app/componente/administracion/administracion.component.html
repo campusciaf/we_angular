@@ -14,8 +14,8 @@
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row z-2 p-5 mt-5">
-    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 mt-5 px-5">
+  <div class="row z-2 p-1 pxl-5 mt-5">
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 mt-5 px-1 px-xl-5">
       <span class="badge rounded-pill bg-white text-color-1 fs-12 fw-bold px-3 py-2 my-3 ls-4" *ngIf="datos.snies">
         SNIES {{ datos.snies }}
       </span>
@@ -76,8 +76,8 @@
 </section>
 
 <!-- Navegación por secciones (scroll) -->
-<section class="ciaf-program-nav row justify-content-center">
-  <div class="col-xxl-10">
+<section class="ciaf-program-nav row justify-content-center px-0 mx-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 mx-0 px-0">
     <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
       aria-label="Secciones del programa">
       <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
@@ -94,11 +94,11 @@
 
   <div id="content-programa">
 
-    <div class="row justify-content-center" id="programa-administracion">
+    <div class="row justify-content-center px-0 mx-0" id="programa-administracion">
 
       <!-- Sección 1: Conoce el programa -->
       <section class="py-5 bg-img-2" id="conoce-el-programa">
-        <div class="row justify-content-center py-5">
+        <div class="row justify-content-center py-1 py-xl-5 px-0 mx-0">
           <header class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 text-center">
             <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Conoce el programa</span>
 
@@ -129,11 +129,12 @@
             </div>
 
             <!-- Panel: Perfil profesional -->
-            <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12ciaf-conoce__panel ciaf-conoce__panel--pro"
+            <div
+              class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 ciaf-conoce__panel ciaf-conoce__panel--pro mb-xl-0 mb-5"
               role="tabpanel" aria-labelledby="ciaf-tab-perfil-pro">
-              <div class="row p-4">
+              <div class="row px-0 mx-0">
 
-                <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 bg-white"
+                <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 my-4 bg-white"
                   *ngFor="let datos2 of listarPrograma">
                   <span class="ciaf-conoce__card-badge fs-12 fw-bold">
                     <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
@@ -163,10 +164,10 @@
                   </ng-template>
                 </article>
 
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-                  <div class="row g-3">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 mx-0 px-0">
+                  <div class="row g-3 mx-0 px-0">
 
-                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12 mx-0 px-0">
                       <article class="card h-100 border shadow-sm p-4">
                         <span
                           class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3 "
@@ -183,7 +184,7 @@
                       </article>
                     </div>
 
-                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12 mx-0 px-0">
                       <article class="card h-100 border shadow-sm p-4">
                         <span
                           class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
@@ -201,7 +202,7 @@
                       </article>
                     </div>
 
-                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12 mx-0 px-0">
                       <article class="card h-100 border shadow-sm p-4">
                         <span
                           class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
@@ -347,7 +348,7 @@
       </section>
 
       <!-- Sección 2: Campo de acción -->
-      <section class="col-xl-10 ciaf-section-light mt-5 pt-5" id="campo-de-accion"
+      <section class="col-xl-10 ciaf-section-light mt-1 mt-xl-5 pt-0 pt-xl-5" id="campo-de-accion"
         [class.ciaf-section-light]="campoAccionActivo !== null">
         <div class="row p-4">
           <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
@@ -494,7 +495,7 @@
 
       <!-- Sección 3: Experiencias reales -->
       <section class="row bg-color-4 py-5 justify-content-center" id="experiencias-reales">
-        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
           <div class="row p-4">
             <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
               <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mb-2 text-white">Experiencias
@@ -574,7 +575,7 @@
       <!-- Sección 4: Ruta de crecimiento profesional -->
       <section class="col-xxl-10 my-5 p-5 ciaf-section-white" id="ruta-crecimiento">
         <div class="row p-4 justify-content-center">
-          <header class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 my-5 text-center">
+          <header class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 my-5 text-center">
             <span class="ciaf-pill ciaf-pill--section fs-12 fw-black rounded-pill px-4">Ruta de crecimiento
               profesional</span>
             <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
@@ -933,7 +934,7 @@
               </a>
             </div>
 
-            <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-12">
+            <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-lg-10">
               <div class="ciaf-plan__item mb-3" *ngFor="let datos of semestresPlan"
                 [class.ciaf-plan__item--milestone]="esSemestreHito(datos.semestre)"
                 [class.ciaf-plan__item--open]="planSemestreEstaAbierto(datos.semestre)">
@@ -970,109 +971,112 @@
       </section>
 
       <!-- Sección 6: Transformación -->
-      <section class=" ciaf-section-white py-5" id="transformacion">
-        <div class="row py-5">
+      <section class="row justify-content-center ciaf-section-white py-0 py-xl-5" id="transformacion">
+        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 py-5">
+          <div class="row px-0 mx-0">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+              <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+                AQUÍ NO SOLO OBTIENES UN TÍTULO
+              </span>
 
-          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
-            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
-              AQUÍ NO SOLO OBTIENES UN TÍTULO
-            </span>
+              <h2 class="text-color-2 fs-36 fw-extrablack my-3">
+                Vives una <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformación completa</span>
+              </h2>
+            </div>
 
-            <h2 class="text-color-2 fs-36 fw-extrablack my-3">
-              Vives una <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformación completa</span>
-            </h2>
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
+              <div class="row ciaf-transform-grid mt-5 justify-content-center">
+
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Transformación Humana</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Despertamos tu pasión y potencial más allá del aula.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Mentalidad Digital</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Te preparamos para el mundo laboral 4.0 con IA y tecnología.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-solid fa-gear"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Técnico con Propósito</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Formación orientada a crear valor real en las organizaciones.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Experiencias Nacionales e Internacionales</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Convenios, movilidad y conexiones nacionales e internacionales que abren nuevas puertas.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4">
+                  <article class="ciaf-transform-card h-100">
+                    <div class="ciaf-transform-glow"></div>
+
+                    <div class="ciaf-transform-icon fs-36">
+                      <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold mt-3">Título +</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Desde el primer nivel ya puedes emplearte y seguir creciendo.
+                    </p>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
           </div>
-
-          <div class="row ciaf-transform-grid mt-5 px-4 justify-content-center">
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
-              <article class="ciaf-transform-card h-100">
-                <div class="ciaf-transform-glow"></div>
-
-                <div class="ciaf-transform-icon fs-36">
-                  <i class="fa-regular fa-heart"></i>
-                </div>
-
-                <h3 class="text-color-2 fs-18 fw-bold mt-3">Transformación Humana</h3>
-
-                <p class="text-color-1 fs-14">
-                  Despertamos tu pasión y potencial más allá del aula.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
-              <article class="ciaf-transform-card h-100">
-                <div class="ciaf-transform-glow"></div>
-
-                <div class="ciaf-transform-icon fs-36">
-                  <i class="fa-solid fa-brain"></i>
-                </div>
-
-                <h3 class="text-color-2 fs-18 fw-bold mt-3">Mentalidad Digital</h3>
-
-                <p class="text-color-1 fs-14">
-                  Te preparamos para el mundo laboral 4.0 con IA y tecnología.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
-              <article class="ciaf-transform-card h-100">
-                <div class="ciaf-transform-glow"></div>
-
-                <div class="ciaf-transform-icon fs-36">
-                  <i class="fa-solid fa-gear"></i>
-                </div>
-
-                <h3 class="text-color-2 fs-18 fw-bold mt-3">Técnico con Propósito</h3>
-
-                <p class="text-color-1 fs-14">
-                  Formación orientada a crear valor real en las organizaciones.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
-              <article class="ciaf-transform-card h-100">
-                <div class="ciaf-transform-glow"></div>
-
-                <div class="ciaf-transform-icon fs-36">
-                  <i class="fa-solid fa-earth-americas"></i>
-                </div>
-
-                <h3 class="text-color-2 fs-18 fw-bold mt-3">Experiencias Nacionales e Internacionales</h3>
-
-                <p class="text-color-1 fs-14">
-                  Convenios, movilidad y conexiones nacionales e internacionales que abren nuevas puertas.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
-              <article class="ciaf-transform-card h-100">
-                <div class="ciaf-transform-glow"></div>
-
-                <div class="ciaf-transform-icon fs-36">
-                  <i class="fa-regular fa-lightbulb"></i>
-                </div>
-
-                <h3 class="text-color-2 fs-18 fw-bold mt-3">Título +</h3>
-
-                <p class="text-color-1 fs-14">
-                  Desde el primer nivel ya puedes emplearte y seguir creciendo.
-                </p>
-              </article>
-            </div>
-
-          </div>
-
         </div>
       </section>
 
       <!-- Sección 7: Por qué estudiarlo -->
-      <section class="row justify-content-center ciaf-section-light p-5" id="por-que-estudiarlo">
-        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+      <section class="row justify-content-center ciaf-section-light p-xl-5 p-0" id="por-que-estudiarlo">
+        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
           <div class="row py-5 px-4">
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
@@ -1080,6 +1084,7 @@
                 ¿POR QUÉ ESTUDIARLO?
               </span>
             </div>
+
             <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-12 my-3">
               <h2 class="text-color-2 fs-36 fw-extrablack">
                 Las empresas necesitan líderes capaces de
@@ -1087,92 +1092,94 @@
               </h2>
             </div>
 
-            <div class="row">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+              <div class="row">
 
-              <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <article class="ciaf-card p-4 rounded-4">
-                  <div class="icono-rounded bg-color-1 fs-16 mb-2">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                  </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-1 fs-16 mb-2">
+                      <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
 
-                  <h3 class="text-color-2 fs-18 fw-bold">Estrategia empresarial</h3>
+                    <h3 class="text-color-2 fs-18 fw-bold">Estrategia empresarial</h3>
 
-                  <p class="text-color-1 fs-14">
-                    Diseña planes que llevan a las organizaciones al siguiente nivel.
-                  </p>
-                </article>
+                    <p class="text-color-1 fs-14">
+                      Diseña planes que llevan a las organizaciones al siguiente nivel.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-2 fs-16 mb-2">
+                      <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold">Innovación y emprendimiento</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Convierte ideas en soluciones, proyectos y oportunidades reales.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                      <i class="fa-solid fa-users text-color-6"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold">Liderazgo y gestión de equipos</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Desarrolla habilidades para dirigir personas, procesos y resultados.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-1 fs-16 mb-2">
+                      <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold">Negocios y transformación digital</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Entiende los nuevos modelos de negocio impulsados por la tecnología.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-2 fs-16 mb-2">
+                      <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold">Análisis financiero</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Toma decisiones con datos, indicadores y visión estratégica.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                  <article class="ciaf-card p-4 rounded-4">
+                    <div class="icono-rounded bg-color-9 fs-16 mb-2">
+                      <i class="fa-solid fa-rocket text-color-6"></i>
+                    </div>
+
+                    <h3 class="text-color-2 fs-18 fw-bold">Creación de nuevos proyectos</h3>
+
+                    <p class="text-color-1 fs-14">
+                      Aprende a estructurar iniciativas sostenibles, viables y escalables.
+                    </p>
+                  </article>
+                </div>
+
               </div>
-
-              <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <article class="ciaf-card p-4 rounded-4">
-                  <div class="icono-rounded bg-color-2 fs-16 mb-2">
-                    <i class="fa-regular fa-lightbulb"></i>
-                  </div>
-
-                  <h3 class="text-color-2 fs-18 fw-bold">Innovación y emprendimiento</h3>
-
-                  <p class="text-color-1 fs-14">
-                    Convierte ideas en soluciones, proyectos y oportunidades reales.
-                  </p>
-                </article>
-              </div>
-
-              <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <article class="ciaf-card p-4 rounded-4">
-                  <div class="icono-rounded bg-color-9 fs-16 mb-2">
-                    <i class="fa-solid fa-users text-color-6"></i>
-                  </div>
-
-                  <h3 class="text-color-2 fs-18 fw-bold">Liderazgo y gestión de equipos</h3>
-
-                  <p class="text-color-1 fs-14">
-                    Desarrolla habilidades para dirigir personas, procesos y resultados.
-                  </p>
-                </article>
-              </div>
-
-              <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <article class="ciaf-card p-4 rounded-4">
-                  <div class="icono-rounded bg-color-1 fs-16 mb-2">
-                    <i class="fa-solid fa-earth-americas"></i>
-                  </div>
-
-                  <h3 class="text-color-2 fs-18 fw-bold">Negocios y transformación digital</h3>
-
-                  <p class="text-color-1 fs-14">
-                    Entiende los nuevos modelos de negocio impulsados por la tecnología.
-                  </p>
-                </article>
-              </div>
-
-              <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <article class="ciaf-card p-4 rounded-4">
-                  <div class="icono-rounded bg-color-2 fs-16 mb-2">
-                    <i class="fa-solid fa-chart-column"></i>
-                  </div>
-
-                  <h3 class="text-color-2 fs-18 fw-bold">Análisis financiero</h3>
-
-                  <p class="text-color-1 fs-14">
-                    Toma decisiones con datos, indicadores y visión estratégica.
-                  </p>
-                </article>
-              </div>
-
-              <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <article class="ciaf-card p-4 rounded-4">
-                  <div class="icono-rounded bg-color-9 fs-16 mb-2">
-                    <i class="fa-solid fa-rocket text-color-6"></i>
-                  </div>
-
-                  <h3 class="text-color-2 fs-18 fw-bold">Creación de nuevos proyectos</h3>
-
-                  <p class="text-color-1 fs-14">
-                    Aprende a estructurar iniciativas sostenibles, viables y escalables.
-                  </p>
-                </article>
-              </div>
-
             </div>
 
           </div>
@@ -1371,6 +1378,7 @@
 
       </section>
 
+
       <!-- sección 11: OPCIONES -->
       <div class="row justify-content-center my-4" id="opciones">
 
@@ -1444,7 +1452,7 @@
       <!-- sección 12: SIMULADOR -->
       <div class="row justify-content-center bg-section-degradado py-5" id="simulador">
 
-        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-11 mt-4">
+        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mt-4">
           <div class="text-center">
             <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
               <i class="fa-solid fa-calculator"></i>
@@ -1455,11 +1463,12 @@
             </h2>
           </div>
         </div>
-        <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-11 mt-5">
+        <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 mt-5">
           <div class="ciaf-simulator-card">
-            <div class="row g-0 align-items-stretch">
+            <div class="row justify-content-center align-items-stretch">
               <!-- IZQUIERDA -->
-              <div class="col-lg-6 p-5 bg-white p-4 rounded-start-4 border">
+              <div
+                class="col-lg-6 p-4 p-lg-5 bg-white border rounded-top-4 rounded-bottom-0 rounded-lg-start-4 rounded-lg-end-0">
                 <label class="text-color-1 fs-14 fw-bold mb-3 ls-3">
                   PROGRAMA
                 </label>
@@ -1500,8 +1509,9 @@
 
               </div>
               <!-- DERECHA -->
-              <div class="col-lg-6">
-                <div class="bg-section2-degradado rounded-end-4">
+              <div class="col-lg-6 p-0 p-lg-4">
+                <!-- DERECHA -->
+                <div class="bg-section2-degradado rounded-bottom-4 rounded-top-0 rounded-lg-end-4 rounded-lg-start-0">
                   <div class="text-color-5 fs-12 fw-bold mb-3">
                     TU CAMINO EN CIAF
                   </div>

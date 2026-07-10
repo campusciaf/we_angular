@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   NgZone,
   OnDestroy,
   OnInit,
@@ -31,10 +32,10 @@ interface Noticia {
 })
 export class NoticiasHomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly visibles = 3;
   readonly gapPx = 24;
   readonly autoplayMs = 5500;
   readonly transicionMs = 650;
+  readonly breakpointMovil = 768;
 
   @ViewChild('viewport') viewport?: ElementRef<HTMLElement>;
 
@@ -43,6 +44,7 @@ export class NoticiasHomeComponent implements OnInit, AfterViewInit, OnDestroy {
   titulo: string | undefined;
   total: any;
 
+  visibles = 3;
   indice = 0;
   desplazamiento = 0;
   anchoTarjeta = 0;
@@ -79,17 +81,19 @@ export class NoticiasHomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    this.asegurarObserver();
     this.medirAncho();
-
-    if (typeof ResizeObserver !== 'undefined' && this.viewport?.nativeElement) {
-      this.resizeObserver = new ResizeObserver(() => this.medirAncho());
-      this.resizeObserver.observe(this.viewport.nativeElement);
-    }
   }
 
   ngOnDestroy(): void {
     this.detenerAutoplay();
     this.resizeObserver?.disconnect();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    this.asegurarObserver();
+    this.medirAncho();
   }
 
   get usarCarrusel(): boolean {
@@ -110,19 +114,52 @@ export class NoticiasHomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private reiniciarCarrusel(): void {
+    this.actualizarVisibles();
     this.indice = 0;
     this.actualizarDesplazamiento(false);
     this.detenerAutoplay();
 
     if (this.usarCarrusel) {
       setTimeout(() => {
+        this.asegurarObserver();
         this.medirAncho();
         this.iniciarAutoplay();
       }, 0);
     }
   }
 
+  private asegurarObserver(): void {
+    const el = this.viewport?.nativeElement;
+
+    if (!el || typeof ResizeObserver === 'undefined') {
+      return;
+    }
+
+    if (!this.resizeObserver) {
+      this.resizeObserver = new ResizeObserver(() => {
+        this.ngZone.run(() => this.medirAncho());
+      });
+    }
+
+    this.resizeObserver.disconnect();
+    this.resizeObserver.observe(el);
+  }
+
+  private actualizarVisibles(): void {
+    const anchoVentana = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const siguientes = anchoVentana < this.breakpointMovil ? 1 : 3;
+
+    if (siguientes === this.visibles) {
+      return;
+    }
+
+    this.visibles = siguientes;
+    this.indice = Math.min(this.indice, this.maxIndice);
+  }
+
   private medirAncho(): void {
+    this.actualizarVisibles();
+
     const anchoViewport = this.viewport?.nativeElement?.clientWidth ?? 0;
 
     if (!anchoViewport) {

@@ -23,6 +23,16 @@
   }
 }
 
+@media (max-width: 767.98px) {
+  .ciaf-allies-card {
+    min-height: 112px;
+  }
+
+  .ciaf-allies-card img {
+    max-height: 72px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .aliados-marquee-track {
     animation: none;
