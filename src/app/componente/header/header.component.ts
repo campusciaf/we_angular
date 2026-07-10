@@ -6,7 +6,7 @@ import { filter } from 'rxjs/operators';
 declare const jQuery: any;
 declare const $: any;
 
-type SeccionMega = 'oferta' | 'institucion' | 'bienestar' | 'investigacion' | 'egresados';
+type SeccionMega = 'oferta' | 'institucion' | 'bienestar' | 'investigacion' | 'egresados' | 'blog';
 
 interface CollapseInstance {
   show: () => void;
@@ -77,7 +77,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     institucion: ['conocenos', 'proyeccion-social'],
     bienestar: ['bienestar', 'permanencia', 'bienestarnoticias'],
     investigacion: ['investigaciones', 'relacion-externo', 'sac'],
-    egresados: ['egresados', 'egresadosdata']
+    egresados: ['egresados', 'egresadosdata'],
+    blog: ['blog']
   };
 
   constructor(

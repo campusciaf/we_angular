@@ -201,6 +201,10 @@
 .fs-80 { font-size: 80px; }
 .fs-96 { font-size: 96px; }
 
+@media screen and (max-width: 425px ) {
+  .fs-80 { font-size: 40px; }
+}
+
 /* ==========================================
    FONT WEIGHT UTILITIES
    500, 600, 700, 800, 900

@@ -1,57 +1,41 @@
-<section class="ciaf-allies-section">
-  <div class="container-xxl ciaf-allies-container">
+<section class="row justify-content-center ciaf-allies-section my-5 py-5">
+  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 ">
 
     <header class="ciaf-allies-header mx-auto mb-5">
       <span class="ciaf-pill ciaf-pill--allies fs-12 fw-bold rounded-pill px-3">CONVENIOS CIAF</span>
-      <div><h2 class="fs-36 fw-black m-0 mt-3 mb-3 ciaf-gradient-text ciaf-gradient-text--brand">Aliados Estratégicos</h2></div>
+      <div>
+        <h2 class="fs-36 fw-black m-0 mt-3 mb-3 ciaf-gradient-text ciaf-gradient-text--brand">Aliados Estratégicos</h2>
+      </div>
       <p class="fs-16 fw-regular m-0 mx-auto">
-        Convenios, alianzas académicas y financieras que potencian la experiencia y empleabilidad de cada estudiante CIAF.
+        Convenios, alianzas académicas y financieras que potencian la experiencia y empleabilidad de cada estudiante
+        CIAF.
       </p>
     </header>
 
     <div class="ciaf-allies-slider-wrap" *ngIf="listarAliados?.length && usarCarrusel">
       <div #viewport class="ciaf-allies-slider">
-        <div
-          class="ciaf-allies-slider__track gap-3 d-flex aliados-marquee-track"
-          [style.--ciaf-allies-card-width.px]="anchoTarjeta"
-          [style.animationDuration.s]="duracionAnimacion"
-        >
-          <a
-            *ngFor="let aliado of listarAliadosLoop; trackBy: trackByIndice"
-            class="ciaf-allies-card p-4 rounded-4"
-            [href]="aliado.url_aliado || '#'"
-            [attr.target]="aliado.url_aliado ? '_blank' : null"
-            [attr.rel]="aliado.url_aliado ? 'noopener noreferrer' : null"
-          >
-            <img
-              *ngIf="getImagenUrl(aliado)"
-              [src]="getImagenUrl(aliado)"
-              [alt]="aliado.nombre_aliado"
-              loading="lazy"
-              draggable="false"
-            />
-            <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name fs-14 fw-black">{{ aliado.nombre_aliado }}</span>
+        <div class="ciaf-allies-slider__track gap-3 d-flex aliados-marquee-track"
+          [style.--ciaf-allies-card-width.px]="anchoTarjeta" [style.animationDuration.s]="duracionAnimacion">
+          <a *ngFor="let aliado of listarAliadosLoop; trackBy: trackByIndice" class="ciaf-allies-card p-4 rounded-4"
+            [href]="aliado.url_aliado || '#'" [attr.target]="aliado.url_aliado ? '_blank' : null"
+            [attr.rel]="aliado.url_aliado ? 'noopener noreferrer' : null">
+            <img *ngIf="getImagenUrl(aliado)" [src]="getImagenUrl(aliado)" [alt]="aliado.nombre_aliado" loading="lazy"
+              draggable="false" />
+            <span *ngIf="!getImagenUrl(aliado)"
+              class="ciaf-allies-card__name fs-14 fw-black">{{ aliado.nombre_aliado }}</span>
           </a>
         </div>
       </div>
     </div>
 
     <div class="ciaf-allies-grid g-3" *ngIf="listarAliados?.length && !usarCarrusel">
-      <a
-        *ngFor="let aliado of listarAliados"
-        class="ciaf-allies-card p-4 rounded-4"
-        [href]="aliado.url_aliado || '#'"
+      <a *ngFor="let aliado of listarAliados" class="ciaf-allies-card p-4 rounded-4" [href]="aliado.url_aliado || '#'"
         [attr.target]="aliado.url_aliado ? '_blank' : null"
-        [attr.rel]="aliado.url_aliado ? 'noopener noreferrer' : null"
-      >
-        <img
-          *ngIf="getImagenUrl(aliado)"
-          [src]="getImagenUrl(aliado)"
-          [alt]="aliado.nombre_aliado"
-          loading="lazy"
-          draggable="false"
-        />
-        <span *ngIf="!getImagenUrl(aliado)" class="ciaf-allies-card__name fs-14 fw-black">{{ aliado.nombre_aliado }}</span>
+        [attr.rel]="aliado.url_aliado ? 'noopener noreferrer' : null">
+        <img *ngIf="getImagenUrl(aliado)" [src]="getImagenUrl(aliado)" [alt]="aliado.nombre_aliado" loading="lazy"
+          draggable="false" />
+        <span *ngIf="!getImagenUrl(aliado)"
+          class="ciaf-allies-card__name fs-14 fw-black">{{ aliado.nombre_aliado }}</span>
       </a>
     </div>
 

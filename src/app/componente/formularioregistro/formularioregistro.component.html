@@ -1,5 +1,5 @@
-<section class="my-4 py-4" id="inscribete">
-  <div class="container-xxl pt-4 mt-4">
+<section class="row justify-content-center py-4" id="inscribete">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 pt-4 mt-4">
     <div class="border p-5 rounded-5 shadow">
 
       <div class="row justify-content-center align-items-center">
@@ -18,28 +18,23 @@
           </p>
 
           <div class="ciaf-register-actions d-flex flex-wrap gap-3">
-            <a
-              href="https://ciaf.digital/inscripciones/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-4"
-            >
+
+            <a routerLink="/pago-online"
+              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill px-4">
+              Pagos en Línea
+            </a>
+
+             <a href="https://www.ciaf.digital/inscribete/" target="_blank"
+              class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
+              Financiación Directa
+            </a>
+
+            <a routerLink="/iniciar" 
+              class="ciaf-btn ciaf-btn--primary ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-2 px-4">
               Inscríbete Aquí
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
 
-            <a
-              href="https://ciaf.digital/pagos_pse/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="ciaf-btn ciaf-btn--ghost ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill px-4"
-            >
-              Pagos en Línea
-            </a>
-
-            <a href="#financiacion" class="ciaf-btn ciaf-btn--lime ciaf-btn--sm fs-14 fw-bold gap-2 rounded-pill py-3 px-4">
-              Financiación Directa
-            </a>
           </div>
         </div>
 
@@ -48,67 +43,53 @@
           <p class="fs-14 mb-3">Te contactamos en menos de 24h.</p>
 
           <form [formGroup]="myForm" (ngSubmit)="agregar()" novalidate>
-            <input
-              type="text"
-              class="ciaf-field fs-14 mb-3 px-4 rounded-pill"
-              placeholder="Nombre completo"
-              formControlName="nombre"
-              autocomplete="name"
-            />
+            <input type="text" class="ciaf-field fs-14 mb-3 px-4 rounded-pill" placeholder="Nombre completo"
+              formControlName="nombre" autocomplete="name" />
             <ng-container *ngFor="let validation of account_validation_messages.nombre">
-              <div
-                class="ciaf-field-error fs-14"
-                *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)"
-              >
+              <div class="ciaf-field-error fs-14"
+                *ngIf="myForm.get('nombre')?.hasError(validation.type) && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)">
                 {{ validation.message }}
               </div>
             </ng-container>
 
-            <input
-              type="email"
-              class="ciaf-field fs-14 mb-3 px-4 rounded-pill"
-              placeholder="Correo electrónico"
-              formControlName="correo"
-              autocomplete="email"
-            />
+            <input type="email" class="ciaf-field fs-14 mb-3 px-4 rounded-pill" placeholder="Correo electrónico"
+              formControlName="correo" autocomplete="email" />
             <ng-container *ngFor="let validation of account_validation_messages.correo">
-              <div
-                class="ciaf-field-error fs-14"
-                *ngIf="myForm.get('correo')?.hasError(validation.type) && (myForm.get('correo')?.dirty || myForm.get('correo')?.touched)"
-              >
+              <div class="ciaf-field-error fs-14"
+                *ngIf="myForm.get('correo')?.hasError(validation.type) && (myForm.get('correo')?.dirty || myForm.get('correo')?.touched)">
                 {{ validation.message }}
               </div>
             </ng-container>
 
-            <input
-              type="tel"
-              class="ciaf-field fs-14 mb-3 px-4 rounded-pill"
-              placeholder="Teléfono"
-              formControlName="celular"
-              autocomplete="tel"
-            />
+            <input type="tel" class="ciaf-field fs-14 mb-3 px-4 rounded-pill" placeholder="Teléfono"
+              formControlName="celular" autocomplete="tel" />
             <ng-container *ngFor="let validation of account_validation_messages.celular">
-              <div
-                class="ciaf-field-error fs-14"
-                *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)"
-              >
+              <div class="ciaf-field-error fs-14"
+                *ngIf="myForm.get('celular')?.hasError(validation.type) && (myForm.get('celular')?.dirty || myForm.get('celular')?.touched)">
                 {{ validation.message }}
               </div>
             </ng-container>
 
-            <select class="ciaf-field ciaf-field--select fs-14 mb-3 px-4 rounded-pill pe-5" formControlName="fo_programa" required>
+            <select class="ciaf-field ciaf-field--select fs-14 mb-3 px-4 rounded-pill pe-5"
+              formControlName="fo_programa" required>
               <option value="">Programa de interés</option>
-              <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas</option>
+              <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Administración de Empresas
+              </option>
               <option value="Técnica Profesional en Gestión Financiera">Contaduría Pública</option>
               <option value="Nivel 1 - Técnica profesional en programación de software">Ingeniería de Software</option>
-              <option value="Nivel 1 - Técnico Profesional en Procesos de Seguridad y Salud en el Trabajo">Seguridad y salud en el Trabajo</option>
+              <option value="Nivel 1 - Técnico Profesional en Procesos de Seguridad y Salud en el Trabajo">Seguridad y
+                salud en el Trabajo</option>
               <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Ingeniería Industrial</option>
-              <option value="Técnico laboral por competencias en mecánica de motocicletas">Técnico Laboral en Mecanica de motocicletas</option>
-              <option value="Técnico laboral por competencias en auxiliar en enfermería">Técnico Laboral en Auxiliar en Enfermería</option>
-              <option value="Técnico Laboral por Competencias en Administrativo en Salud">Técnico Laboral en Administrativo en Salud</option>
+              <option value="Técnico laboral por competencias en mecánica de motocicletas">Técnico Laboral en Mecanica
+                de motocicletas</option>
+              <option value="Técnico laboral por competencias en auxiliar en enfermería">Técnico Laboral en Auxiliar en
+                Enfermería</option>
+              <option value="Técnico Laboral por Competencias en Administrativo en Salud">Técnico Laboral en
+                Administrativo en Salud</option>
             </select>
 
-            <select class="ciaf-field ciaf-field--select fs-14 mb-3 px-4 rounded-pill pe-5" formControlName="jornada_e" required>
+            <select class="ciaf-field ciaf-field--select fs-14 mb-3 px-4 rounded-pill pe-5" formControlName="jornada_e"
+              required>
               <option value="">Jornada de interés</option>
               <option value="Diurna">Diurna</option>
               <option value="Nocturna">Nocturna</option>
@@ -124,15 +105,15 @@
               </label>
             </div>
             <ng-container *ngFor="let validation of account_validation_messages.acepto">
-              <div
-                class="ciaf-field-error fs-14"
-                *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)"
-              >
+              <div class="ciaf-field-error fs-14"
+                *ngIf="myForm.get('acepto')?.hasError(validation.type) && (myForm.get('acepto')?.dirty || myForm.get('acepto')?.touched)">
                 {{ validation.message }}
               </div>
             </ng-container>
 
-            <button type="submit" class="ciaf-btn ciaf-btn--primary ciaf-btn--submit fs-14 fw-bold gap-2 rounded-pill py-2 px-4 mt-1 py-3" [disabled]="!myForm.valid">
+            <button type="submit"
+              class="ciaf-btn ciaf-btn--primary ciaf-btn--submit fs-14 fw-bold gap-2 rounded-pill py-2 px-4 mt-1 py-3"
+              [disabled]="!myForm.valid">
               Quiero más información
             </button>
           </form>

@@ -1,175 +1,313 @@
-<div  *ngIf="!loading" class="container-fluid py-5 px-5">
-  <div class="row">
-    <div class="col-12 mb-3">
-      <h2 class="fw-semibold text-dark">Cuota actual</h2>
+<app-header></app-header>
+<div *ngIf="!loading" class="container-xxl py-5">
+
+  <!-- Encabezado -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-xl-10 col-lg-11 col-12">
+
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+
+        <div>
+          <span class="ciaf-pill ciaf-pill--section d-inline-flex align-items-center gap-2 px-3 py-2 mb-3 rounded-pill fs-12 fw-bold ls-4 text-uppercase">
+            <i class="fa-solid fa-shield-halved"></i>
+            Pago seguro
+          </span>
+
+          <h2 class="fs-42 fw-extrablack text-color-2 mb-2">
+            Cuota actual
+          </h2>
+
+          <p class="fs-16 fw-regular text-color-1 mb-0">
+            Consulta tus cuotas pendientes y realiza tu pago de forma rápida y protegida.
+          </p>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 fs-14 text-color-1">
+          <i class="fa-solid fa-lock text-success"></i>
+          <span>Transacción cifrada y protegida</span>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
-  <div class="row g-4 px-2">
-    <div *ngFor="let it of installments" class="col-12 col-md-6 col-lg-4">
-      <div
-        class="card border-0 h-100"
-        style="
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-          border-radius: 1rem;
-          min-height: 280px;
-          padding: 1rem;
-          background-color: #f8f9fa;
-        "
-      >
-        <div class="card-body d-flex flex-column justify-content-between">
-          <div>
-            <p class="text-secondary mb-1 fs-6">
-              Financiación matrícula&nbsp;<strong>#{{ it.id_credito }}</strong>
+
+  <!-- Cuotas -->
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-11 col-12">
+
+      <div class="row g-4">
+
+        <div *ngFor="let it of installments" class="col-12 col-md-6 col-lg-4">
+
+          <div class="ciaf-card rounded-5 p-4 h-100">
+
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+
+              <span class="ciaf-pill ciaf-pill--compact fs-12 fw-bold rounded-pill">
+                Pendiente
+              </span>
+            </div>
+
+            <p class="fs-14 fw-medium text-color-1 mb-2">
+              Financiación matrícula
+              <strong class="text-color-2">#{{ it.id_credito }}</strong>
             </p>
 
-            <h2
-              class="fw-bold mb-3"
-              style="color: #001550; font-size: 2rem; letter-spacing: -0.5px;"
+            <h3 class="fs-36 fw-extrablack text-color-2 mb-4">
+              $ {{ it.valor_formato }}
+            </h3>
+
+            <div class="d-flex align-items-start gap-2 mb-4">
+              <i class="fa-regular fa-calendar text-color-2 mt-1"></i>
+              <p class="fs-15 fw-regular text-color-1 mb-0">
+                Fecha límite de pago:
+                <br>
+                <strong class="text-color-2">{{ it.fecha_limite_pago }}</strong>
+              </p>
+            </div>
+
+            <button
+              class="ciaf-btn ciaf-btn--primary d-flex align-items-center justify-content-center gap-2 rounded-pill px-4 py-3 fw-bold fs-16 border-0 w-100"
+              (click)="openPaymentPanel(it)"
             >
-              $&nbsp;{{ it.valor_formato }}
-            </h2>
+              Pagar ahora
+              <i class="fa-solid fa-arrow-right fs-14"></i>
+            </button>
 
-            <p class="text-dark mb-4">
-              <span class="fw-semibold">Fecha límite de pago:&nbsp;</span>
-              <span class="text-primary">{{ it.fecha_limite_pago }}</span>
-            </p>
           </div>
 
-          <button
-            class="btn btn-lg bg-1 text-white w-100 fw-semibold py-2"
-            style="
-              font-size: 1.1rem;
-              border-radius: 0.6rem;
-              transition: all 0.3s ease;
-            "
-            (click)="openPaymentPanel(it)"
-            onmouseover="this.style.backgroundColor='#4a0072'"
-            onmouseout="this.style.backgroundColor='#6a1b9a'"
-          >
-            Pagar
-          </button>
         </div>
-      </div>
-    </div>
 
-    <div *ngIf="!installments.length" class="col-12 text-center py-5">
-      <p class="text-muted fs-5">No tienes cuotas pendientes por pagar.</p>
+
+        <!-- Sin cuotas -->
+        <div *ngIf="!installments.length" class="col-12">
+
+          <div class="ciaf-card rounded-5 p-5 text-center">
+
+            <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mx-auto mb-3">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h3 class="fs-24 fw-extrablack text-color-2 mb-2">
+              No tienes cuotas pendientes
+            </h3>
+
+            <p class="fs-16 fw-regular text-color-1 mb-0">
+              Por ahora no tienes pagos pendientes registrados.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Loading -->
+<div *ngIf="loading" class="container-xxl py-5">
+  <div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-8 col-12">
+
+      <div class="ciaf-card rounded-5 p-5 text-center">
+
+        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mx-auto mb-3">
+          <i class="fa-solid fa-spinner fa-spin"></i>
+        </div>
+
+        <h3 class="fs-24 fw-extrablack text-color-2 mb-2">
+          Cargando cuotas
+        </h3>
+
+        <p class="fs-16 fw-regular text-color-1 mb-0">
+          Estamos consultando tus cuotas pendientes por pagar...
+        </p>
+
+      </div>
+
     </div>
   </div>
 </div>
 
-<div *ngIf="loading"  class="col-12 text-center py-5">
-  <p class="text-muted fs-5">
-    Cargando cuotas pendientes por pagar...
-  </p>
-</div>
 
 <!-- Drawer lateral para generar el pago -->
 <div
-  class="offcanvas offcanvas-end shadow"
+  class="offcanvas offcanvas-end shadow border-0"
   tabindex="-1"
   id="paymentPanel"
   aria-labelledby="offcanvasLabel"
 >
-  <div class="offcanvas-header bg-purple text-white">
-    <h5
-      id="offcanvasLabel"
-      class="mb-0 fw-bold"
-      style="color: #001550; font-size: 1.15rem; letter-spacing: -0.3px;"
-    >
-      {{ step === 1 ? 'Selecciona el monto a pagar' : 'Selecciona el método de pago' }}
-    </h5>
+  <div class="offcanvas-header border-bottom px-4 py-4">
+
+    <div>
+      <span class="d-inline-flex align-items-center gap-2 fs-13 fw-bold text-success mb-2">
+        <i class="fa-solid fa-lock"></i>
+        Pago seguro
+      </span>
+
+      <h5 id="offcanvasLabel" class="fs-22 fw-extrablack text-color-2 mb-0">
+        {{ step === 1 ? 'Selecciona el monto a pagar' : 'Selecciona el método de pago' }}
+      </h5>
+    </div>
+
     <button
       type="button"
-      class="btn-close btn-close-white"
+      class="btn-close"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
     ></button>
+
   </div>
 
-  <div class="offcanvas-body" style="font-size: 1rem;">
+
+  <div class="offcanvas-body p-4">
+
     <!-- Paso 1: Selección de monto -->
     <div *ngIf="step === 1">
-      <p class="fw-semibold text-dark mb-4 fs-5">
-        Financiación <span class="text-primary">#{{ selected?.id_credito }}</span>
-      </p>
+
+      <div class="ciaf-card rounded-5 p-4 mb-4">
+
+        <p class="fs-14 fw-medium text-color-1 mb-1">
+          Financiación matrícula
+        </p>
+
+        <h3 class="fs-24 fw-extrablack text-color-2 mb-0">
+          #{{ selected?.id_credito }}
+        </h3>
+
+      </div>
+
 
       <div class="mb-4">
-        <label class="fw-bold mb-3 text-dark fs-6">Seleccionar monto:</label>
+
+        <label class="form-label fs-13 fw-bold text-color-1 mb-3">
+          Seleccionar monto
+        </label>
 
         <div
           *ngFor="let option of paymentOptions"
-          class="d-flex align-items-center justify-content-between mb-3 p-2 rounded"
-          style="background-color: #f9f9fb;"
+          class="ciaf-card rounded-4 p-3 mb-3"
         >
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="amountOption"
-              [value]="option.id"
-              [(ngModel)]="selectedOption"
-              id="option-{{ option.id }}"
-            />
-            <label
-              class="form-check-label fw-medium"
-              for="option-{{ option.id }}"
-              style="font-size: 1rem;"
-            >
-              {{ option.label }}
-            </label>
-          </div>
 
-          <ng-container *ngIf="option.amount && option.id !== 'pago_parcial'">
-            <span class="fw-bold text-secondary fs-6">
-              {{ option.amount | currency:'COP':'symbol':'1.0-0' }}
-            </span>
-          </ng-container>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+
+            <div class="form-check mb-0">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="amountOption"
+                [value]="option.id"
+                [(ngModel)]="selectedOption"
+                id="option-{{ option.id }}"
+              />
+
+              <label
+                class="form-check-label fs-15 fw-bold text-color-2"
+                for="option-{{ option.id }}"
+              >
+                {{ option.label }}
+              </label>
+            </div>
+
+            <ng-container *ngIf="option.amount && option.id !== 'pago_parcial'">
+              <span class="fs-15 fw-extrablack text-color-2">
+                {{ option.amount | currency:'COP':'symbol':'1.0-0' }}
+              </span>
+            </ng-container>
+
+          </div>
 
           <input
             *ngIf="option.id === 'pago_parcial'"
             type="number"
-            class="form-control w-50"
+            class="form-control form-control-lg rounded-pill px-4 mt-3 fs-16"
             placeholder="Ingresa el valor"
             [(ngModel)]="customAmount"
             [disabled]="selectedOption !== 'pago_parcial'"
-            style="font-size: 0.95rem;"
           />
+
         </div>
+
       </div>
 
-      <div class="text-end">
+
+      <div class="d-grid">
         <button
-          class="btn btn-lg bg-1 text-white fw-semibold px-4"
-          style="font-size: 1.05rem;"
+          class="ciaf-btn ciaf-btn--primary d-flex align-items-center justify-content-center gap-2 rounded-pill px-4 py-3 fw-bold fs-16 border-0"
           (click)="goToPaymentMethods()"
           [disabled]="!selectedOption || (selectedOption === 'pago_parcial' && !customAmount)"
         >
           Continuar
+          <i class="fa-solid fa-arrow-right fs-14"></i>
         </button>
       </div>
+
     </div>
+
 
     <!-- Paso 2: Selección de método de pago -->
     <div *ngIf="step === 2">
-      <p class="fw-semibold text-dark mb-4 fs-5">
-        Total a pagar:
-        <span class="text-primary fw-bold">
-          $&nbsp;{{ computedAmount | currency:'COP':'symbol':'1.0-0' }}
-        </span>
-      </p>
 
-      <div class="mt-4 col-12">
-        <h6 class="fw-semibold mb-3 text-dark">Finaliza tu pago:</h6>
-        <div class="col-12">
-          <div class="row">
-            <div class="col-auto" id="payment-container-i-e"></div>
-            <div class="col-auto" id="payment-container-i"></div>
+      <div class="ciaf-card rounded-5 p-4 mb-4">
+
+        <div class="d-flex align-items-center justify-content-between gap-3">
+
+          <div>
+            <p class="fs-14 fw-medium text-color-1 mb-1">
+              Total a pagar
+            </p>
+
+            <h3 class="fs-30 fw-extrablack text-color-2 mb-0">
+              {{ computedAmount | currency:'COP':'symbol':'1.0-0' }}
+            </h3>
           </div>
+
+          <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
         </div>
+
+      </div>
+
+
+      <div class="mb-4">
+
+        <h6 class="fs-16 fw-extrablack text-color-2 mb-2">
+          Finaliza tu pago
+        </h6>
+
+        <p class="fs-15 fw-regular text-color-1 mb-4">
+          Selecciona el medio de pago disponible en la pasarela segura.
+        </p>
+
+        <div class="ciaf-card rounded-5 p-4">
+
+          <div class="row g-3 align-items-center">
+            <div class="col-12" id="payment-container-i-e"></div>
+            <div class="col-12" id="payment-container-i"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="d-flex align-items-center justify-content-center gap-2 fs-14 text-color-1">
+        <i class="fa-solid fa-lock text-success"></i>
+        <span>Tus datos viajan cifrados durante la transacción.</span>
       </div>
 
     </div>
+
   </div>
 </div>

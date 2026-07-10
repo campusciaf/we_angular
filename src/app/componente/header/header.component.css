@@ -33,7 +33,6 @@
 
 .top-content {
   position: relative;
-  max-width: var(--container-max);
   height: var(--topbar-height);
   margin: 0 auto;
   padding: 0 var(--space-4);
@@ -502,6 +501,10 @@
   .mobile-menu .accordion-button::after {
     color: var(--ciaf-primary);
     opacity: .55;
+  }
+
+  .mobile-menu .mobile-direct-link::after {
+    display: none;
   }
 
   .mobile-menu .accordion-button:not(.collapsed) {

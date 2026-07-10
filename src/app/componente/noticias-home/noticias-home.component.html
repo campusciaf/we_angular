@@ -1,5 +1,5 @@
-<section class="ciaf-news-section ciaf-section-white">
-  <div class="container-xxl ciaf-news-container">
+<section class="row justify-content-center ciaf-section-white my-5 py-5">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 ">
 
     <div class="ciaf-news-header d-flex align-items-end justify-content-between gap-4 mb-5">
       <div>
@@ -16,22 +16,12 @@
     </div>
 
     <!-- Mismo diseño de cuadrícula (3 columnas); solo se desplaza el contenido -->
-    <div
-      #viewport
-      class="ciaf-news-slider"
-      *ngIf="listarNoticias.length && usarCarrusel"
-      (pointerdown)="onPointerDown($event)"
-      (pointermove)="onPointerMove($event)"
-      (pointerup)="onPointerUp($event)"
-      (pointercancel)="onPointerUp($event)"
-      (pointerleave)="onPointerLeave($event)"
-    >
-      <div
-        class="ciaf-news-slider__track"
-        [class.ciaf-news-slider__track--anim]="animando"
+    <div #viewport class="ciaf-news-slider" *ngIf="listarNoticias.length && usarCarrusel"
+      (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)" (pointerup)="onPointerUp($event)"
+      (pointercancel)="onPointerUp($event)" (pointerleave)="onPointerLeave($event)">
+      <div class="ciaf-news-slider__track" [class.ciaf-news-slider__track--anim]="animando"
         [style.transform]="'translate3d(' + desplazamiento + 'px, 0, 0)'"
-        [style.--ciaf-news-card-width.px]="anchoTarjeta"
-      >
+        [style.--ciaf-news-card-width.px]="anchoTarjeta">
         <article class="ciaf-news-card rounded-5" *ngFor="let noticia of listarNoticias">
           <ng-container *ngTemplateOutlet="tarjetaNoticia; context: { $implicit: noticia }"></ng-container>
         </article>
@@ -49,38 +39,25 @@
 
 <ng-template #tarjetaNoticia let-noticia>
   <div class="ciaf-news-card__media">
-    <img
-      *ngIf="getImagenUrl(noticia)"
-      [src]="getImagenUrl(noticia)"
-      [alt]="noticia.titulo_noticias"
-      loading="lazy"
-      draggable="false"
-    />
+    <img *ngIf="getImagenUrl(noticia)" [src]="getImagenUrl(noticia)" [alt]="noticia.titulo_noticias" loading="lazy"
+      draggable="false" />
 
-    <button
-      *ngIf="esVideo(noticia)"
-      type="button"
-      class="ciaf-news-card__play"
-      (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)"
-      aria-label="Reproducir video"
-    >
+    <button *ngIf="esVideo(noticia)" type="button" class="ciaf-news-card__play"
+      (click)="open(content); videoYoutube(noticia.url_video!, noticia.titulo_noticias)" aria-label="Reproducir video">
       <i class="fa-solid fa-circle-play"></i>
     </button>
 
-    <span class="ciaf-news-card__badge fs-11 fw-bold py-1 px-2 rounded-pill text-color-2" *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
+    <span class="ciaf-news-card__badge fs-11 fw-bold py-1 px-2 rounded-pill text-color-2"
+      *ngIf="noticia.nombre_categoria">{{ noticia.nombre_categoria }}</span>
   </div>
 
   <div class="ciaf-news-card__body p-4 d-flex flex-column">
     <p class="fs-12 fw-bold mb-2 text-uppercase ls-4">{{ noticia.fecha_noticias | date:'d MMM y' }}</p>
     <h3 class="fs-18 fw-bold mb-2 text-color-2">{{ noticia.titulo_noticias }}</h3>
     <p class="fs-14 mb-4" *ngIf="getExcerpt(noticia)">{{ getExcerpt(noticia) }}</p>
-    <a
-      href="#"
-      class="ciaf-news-card__link fs-14 fw-bold gap-1 d-inline-flex align-items-center"
-      (pointerdown)="$event.stopPropagation()"
-      (pointerup)="$event.stopPropagation()"
-      (click)="irANoticia($event, noticia)"
-    >
+    <a href="#" class="ciaf-news-card__link fs-14 fw-bold gap-1 d-inline-flex align-items-center"
+      (pointerdown)="$event.stopPropagation()" (pointerup)="$event.stopPropagation()"
+      (click)="irANoticia($event, noticia)">
       Leer más
       <i class="fa-solid fa-arrow-up-right-from-square"></i>
     </a>
