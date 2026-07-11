@@ -34,6 +34,9 @@ export class CifrasComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('statsSection', { read: ElementRef })
   statsSection?: ElementRef<HTMLElement>;
 
+  @ViewChild('statsGrid', { read: ElementRef })
+  statsGrid?: ElementRef<HTMLElement>;
+
   @ViewChildren('counterElement', { read: ElementRef })
   counterElements!: QueryList<ElementRef>;
 
@@ -43,7 +46,10 @@ export class CifrasComponent implements OnInit, AfterViewInit, OnDestroy {
   private viewReady = false;
   private dataReady = false;
   private scrollRafId = 0;
+  private cardsRevealDone = false;
+  private cardsScrollRaf = 0;
   private readonly boundScrollHandler = () => this.scheduleLineProgressUpdate();
+  private readonly boundCardsScrollHandler = () => this.scheduleCardsReveal();
 
   marqueeItems: string[] = [
     'Futuro',
@@ -141,15 +147,22 @@ export class CifrasComponent implements OnInit, AfterViewInit, OnDestroy {
     this.updateLineProgress();
     window.addEventListener('scroll', this.boundScrollHandler, { passive: true });
     window.addEventListener('resize', this.boundScrollHandler, { passive: true });
+    // Solo al hacer scroll (no al montar): evita animar antes de llegar a la sección
+    window.addEventListener('scroll', this.boundCardsScrollHandler, { passive: true });
   }
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
     window.removeEventListener('scroll', this.boundScrollHandler);
     window.removeEventListener('resize', this.boundScrollHandler);
+    window.removeEventListener('scroll', this.boundCardsScrollHandler);
 
     if (this.scrollRafId) {
       cancelAnimationFrame(this.scrollRafId);
+    }
+
+    if (this.cardsScrollRaf) {
+      cancelAnimationFrame(this.cardsScrollRaf);
     }
   }
 
@@ -185,6 +198,52 @@ export class CifrasComponent implements OnInit, AfterViewInit, OnDestroy {
     if (Math.abs(this.lineProgress - next) > 0.05) {
       this.lineProgress = next;
     }
+  }
+
+  private scheduleCardsReveal(): void {
+    if (this.cardsRevealDone || this.cardsScrollRaf) {
+      return;
+    }
+
+    this.cardsScrollRaf = requestAnimationFrame(() => {
+      this.cardsScrollRaf = 0;
+      this.revelarCardsSiCorresponde();
+    });
+  }
+
+  private revelarCardsSiCorresponde(): void {
+    if (this.cardsRevealDone) {
+      return;
+    }
+
+    const section = this.statsSection?.nativeElement;
+    const grid = this.statsGrid?.nativeElement;
+
+    if (!section || !grid) {
+      return;
+    }
+
+    // Sin scroll real aún: no animar (evita el falso positivo al cargar inicio)
+    if (window.scrollY < 24) {
+      return;
+    }
+
+    const rect = grid.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // Las cards deben estar entrando al viewport por scroll
+    const entrando =
+      rect.top < vh * 0.72 &&
+      rect.bottom > vh * 0.28 &&
+      rect.top > -rect.height * 0.4;
+
+    if (!entrando) {
+      return;
+    }
+
+    this.cardsRevealDone = true;
+    section.classList.add('ciaf-stats--in');
+    window.removeEventListener('scroll', this.boundCardsScrollHandler);
   }
 
   private initObserverWhenReady(): void {

@@ -87,6 +87,7 @@ import { FormularioregistroComponent } from './componente/formularioregistro/for
 import { AccesosrapidosComponent } from './componente/accesosrapidos/accesosrapidos.component';
 import { NewsletterComponent } from './componente/newsletter/newsletter.component';
 import { ConveniosComponent } from './componente/convenios/convenios.component';
+import { CiafStaggerDirective } from './core/directives/ciaf-stagger.directive';
 
 
 
@@ -153,6 +154,7 @@ import { ConveniosComponent } from './componente/convenios/convenios.component';
     AccesosrapidosComponent,
     NewsletterComponent,
     ConveniosComponent,
+    CiafStaggerDirective,
   ],
   imports: [
     BrowserModule,

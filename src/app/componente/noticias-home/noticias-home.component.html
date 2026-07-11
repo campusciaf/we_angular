@@ -17,6 +17,7 @@
 
     <!-- 3 en PC, 1 en móvil; solo se desplaza el contenido -->
     <div #viewport class="ciaf-news-slider" *ngIf="listarNoticias.length && usarCarrusel"
+      ciafStagger=".ciaf-news-card" ciafStaggerMode="up"
       (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)" (pointerup)="onPointerUp($event)"
       (pointercancel)="onPointerUp($event)" (pointerleave)="onPointerLeave($event)">
       <div class="ciaf-news-slider__track" [class.ciaf-news-slider__track--anim]="animando"
@@ -28,7 +29,8 @@
       </div>
     </div>
 
-    <div class="ciaf-news-grid g-4" *ngIf="listarNoticias.length && !usarCarrusel">
+    <div class="ciaf-news-grid g-4" *ngIf="listarNoticias.length && !usarCarrusel"
+      ciafStagger=".ciaf-news-card" ciafStaggerMode="up">
       <article class="ciaf-news-card rounded-5" *ngFor="let noticia of listarNoticias">
         <ng-container *ngTemplateOutlet="tarjetaNoticia; context: { $implicit: noticia }"></ng-container>
       </article>

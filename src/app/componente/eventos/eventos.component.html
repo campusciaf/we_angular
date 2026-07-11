@@ -18,7 +18,7 @@
     </div>
 
     <ngx-slick-carousel *ngIf="listarEventos?.length" class="ciaf-events-carousel" #slickModal="slick-carousel"
-      [config]="slideConfig">
+      [config]="slideConfig" ciafStagger=".ciaf-event-card" ciafStaggerMode="soft">
       <article ngxSlickItem *ngFor="let datos of listarEventos" class="ciaf-event-card mx-2 p-4 rounded-5">
         <div class="ciaf-event-card__head d-flex gap-3 mb-4">
           <div class="ciaf-event-date rounded-3">
