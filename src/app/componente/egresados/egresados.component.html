@@ -1,14 +1,15 @@
 <app-header></app-header>
 
-<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4">
+<section
+  class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 mx-0 px-0">
   <div class="position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
     <img src="{{ logo_pc }}" alt="Egresados" />
   </div>
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row justify-content-center z-2 py-5 mt-5 col-12">
-    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+  <div class="row justify-content-center z-2 py-5 mt-5 col-12 mx-0 px-0">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
       <div class="row">
         <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 py-4 px-0">
           <span
@@ -56,8 +57,8 @@
 </section>
 
 <!-- Navegación por secciones (scroll) -->
-<section class="row justify-content-center ciaf-program-nav">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 px-0">
+<section class="row justify-content-center ciaf-program-nav mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 px-0 mx-0">
     <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
       aria-label="Secciones del programa">
       <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
@@ -71,8 +72,8 @@
 </section>
 
 <!-- Comunidad CIAF -->
-<section class="row justify-content-center py-5" id="comunidad">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+<section class="row justify-content-center py-5 mx-0 px-0" id="comunidad">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
     <div class="row align-items-stretch g-5">
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
@@ -99,7 +100,7 @@
           ¿Qué tenemos para ti?
         </h3>
 
-        <div class="row g-3">
+        <div class="row g-3 mx-0 px-0">
           <div class="col-md-6 col-12">
             <button type="button" class="ciaf-card rounded-5 p-4 h-100 w-100 text-start border-transparent"
               (click)="abrirModalClubEgresados()">
@@ -170,15 +171,16 @@
 
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <div class="h-100 overflow-hidden rounded-5">
-          <img src="assets/egresados/comunidad.webp" class="w-100 h-100 object-fit-cover d-block" alt="Comunidad CIAF" />
+          <img src="assets/egresados/comunidad.webp" class="w-100 h-100 object-fit-cover d-block"
+            alt="Comunidad CIAF" />
         </div>
       </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 mx-0 px-0">
       <div class="col-12">
         <div class="ciaf-card rounded-5 p-5">
-          <div class="row">
+          <div class="row mx-0 px-0">
             <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-10 col-12">
               <h2 class="fs-42 fw-extrablack text-color-2 mb-4">
                 Un lazo que nos conecta para
@@ -208,10 +210,10 @@
 </section>
 
 <!-- Beneficios para egresados -->
-<section class="row justify-content-center py-5" id="beneficios">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row mb-5">
-      <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-12">
+<section class="row justify-content-center py-5 mx-0 px-0" id="beneficios">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mb-5 mx-0 px-0">
+      <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Beneficios para Egresados
         </span>
@@ -228,8 +230,8 @@
       </div>
     </div>
 
-    <div class="row g-4">
-      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+    <div class="row g-4 mx-0 px-0 justify-content-center">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
           <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
             <i class="fa-regular fa-gift text-color-2"></i>
@@ -250,7 +252,7 @@
         </div>
       </div>
 
-      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
           <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
             <i class="fa-solid fa-graduation-cap text-color-2"></i>
@@ -271,7 +273,7 @@
         </div>
       </div>
 
-      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
           <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
             <i class="fa-regular fa-briefcase text-color-2"></i>
@@ -296,9 +298,9 @@
 </section>
 
 <!-- Empleabilidad -->
-<section class="row justify-content-center py-5" id="empleabilidad">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row align-items-stretch g-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="empleabilidad">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row align-items-stretch g-5 mx-0 px-0">
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Empleabilidad
@@ -315,7 +317,7 @@
           transformando su realidad.
         </p>
 
-        <div class="d-grid gap-3">
+        <div class="d-grid gap-3 mx-0 px-0">
           <div class="ciaf-card rounded-5 p-4">
             <div class="d-flex align-items-center gap-4">
               <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
@@ -393,13 +395,13 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </section>
 
 <!-- educacion-continuada -->
-<section class="row justify-content-center py-5" id="educacion-continuada">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row mb-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="educacion-continuada">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mb-5 mx-0 px-0">
       <div class="col-xl-8 col-lg-9 col-md-10 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Educación continuada
@@ -415,8 +417,8 @@
       </div>
     </div>
 
-    <div class="row justify-content-center" *ngIf="listarCursos?.length">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+    <div class="row justify-content-center mx-0 px-0" *ngIf="listarCursos?.length">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-10">
         <ngx-slick-carousel class="carousel" #slickModalContinuada="slick-carousel" [config]="slideConfigContinuada">
           <div ngxSlickItem class="slide px-2 continuada-slide" *ngFor="let cursos of listarCursos">
             <article class="ciaf-card continuada-card border rounded-4 overflow-hidden d-flex flex-column bg-white">
@@ -478,9 +480,9 @@
 </section>
 
 <!-- Egresados destacados -->
-<section class="row justify-content-center py-5" id="egresados-destacados">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row mb-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="egresados-destacados">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mb-5 mx-0 px-0">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Egresados
           Destacados</span>
@@ -495,8 +497,8 @@
       </div>
     </div>
 
-    <div class="row g-4">
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+    <div class="row g-4 mx-0 px-0 justify-content-center">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="ciaf-card rounded-5 h-100 p-4 text-center">
           <img [src]="testimonio_egresado_1" alt="Esteban Ganan" class="rounded-circle object-fit-cover mb-4"
             style="width: 96px; height: 96px" />
@@ -512,7 +514,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="ciaf-card rounded-5 h-100 p-4 text-center">
           <img [src]="testimonio_egresado_2" alt="Ana Carolina Mas" class="rounded-circle object-fit-cover mb-4"
             style="width: 96px; height: 96px" />
@@ -528,7 +530,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="ciaf-card rounded-5 h-100 p-4 text-center">
           <img [src]="testimonio_egresado_3" alt="Daniel Mora" class="rounded-circle object-fit-cover mb-4"
             style="width: 96px; height: 96px" />
@@ -544,7 +546,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="ciaf-card rounded-5 h-100 p-4 text-center">
           <img [src]="testimonio_egresado_4" alt="John Jairo Celis" class="rounded-circle object-fit-cover mb-4"
             style="width: 96px; height: 96px" />
@@ -565,11 +567,12 @@
 </section>
 
 <!-- historia -->
-<section class="row justify-content-center py-5" id="historias">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row mb-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="historias">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mb-5 mx-0 px-0">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
-        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Historias que
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Historias
+          que
           inspiran</span>
         <h2 class="fs-48 fw-extrablack text-color-2 mt-4">
           Conoce más
@@ -581,10 +584,11 @@
       </div>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 mx-0 px-0">
       <!-- Video 1 -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+      <div class="col-12 col-md-6 col-lg-4 col-10">
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           data-bs-toggle="modal" data-bs-target="#modalVideoArte1">
           <img src="assets/bienestar/video-1.webp" class="w-100 object-fit-cover bienestar-video-img"
             alt="Video arte y cultura" />
@@ -599,8 +603,9 @@
       </div>
 
       <!-- Video 2 -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+      <div class="col-12 col-md-6 col-lg-4 col-10">
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           data-bs-toggle="modal" data-bs-target="#modalVideoArte2">
           <img src="assets/bienestar/video-1.webp" class="w-100 object-fit-cover bienestar-video-img"
             alt="Video arte y cultura" />
@@ -615,8 +620,9 @@
       </div>
 
       <!-- Video 3 -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+      <div class="col-12 col-md-6 col-lg-4 col-10">
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           data-bs-toggle="modal" data-bs-target="#modalVideoArte3">
           <img src="assets/bienestar/video-1.webp" class="w-100 object-fit-cover bienestar-video-img"
             alt="Video arte y cultura" />
@@ -697,9 +703,9 @@
 </section>
 
 <!-- Galería de egresados -->
-<section class="row justify-content-center py-5" id="galeria-egresados">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row mb-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="galeria-egresados">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mb-5 mx-0 px-0 justify-content-center">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">Comunidad
           CIAF</span>
@@ -714,8 +720,8 @@
       </div>
     </div>
 
-    <div class="row g-3 align-items-start">
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+    <div class="row g-3 align-items-start mx-0 px-0 justify-content-center">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="d-grid gap-3">
           <img src="assets/egresados/pic-1.webp" alt="Galería egresados CIAF"
             class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height: 420px" />
@@ -724,7 +730,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="d-grid gap-3">
           <img src="assets/egresados/pic-2.webp" alt="Galería egresados CIAF"
             class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height: 220px" />
@@ -733,7 +739,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="d-grid gap-3">
           <img src="assets/egresados/pic-3.webp" alt="Galería egresados CIAF"
             class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height: 220px" />
@@ -742,7 +748,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="d-grid gap-3">
           <img src="assets/egresados/pic-4.webp" alt="Galería egresados CIAF"
             class="img-fluid rounded-4 shadow object-fit-cover w-100 ef-zoom" style="height: 220px" />
@@ -752,7 +758,7 @@
       </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mt-4 mx-0 px-0">
       <div class="col-12">
         <span class="ciaf-pill ciaf-pill--compact fs-11 fw-bold rounded-pill px-3 py-2">
           <i class="fa-regular fa-images me-2"></i>
@@ -764,9 +770,9 @@
 </section>
 
 <!-- Contacto -->
-<section class="row justify-content-center py-5 ciaf-section-light" id="contacto">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-    <div class="row align-items-center g-5">
+<section class="row justify-content-center py-5 ciaf-section-light mx-0 px-0" id="contacto">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row align-items-center g-5 mx-0 px-0">
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Contacto
@@ -858,7 +864,7 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </section>
 
 <!-- eventos -->
@@ -868,40 +874,40 @@
 <app-convenios id="convenios"></app-convenios>
 
 <!-- Pertenencia y acompañamiento -->
-<section class="row justify-content-center-fluid p-0 overflow-hidden" id="pertenencia">
+<section class="row justify-content-center-fluid p-0 overflow-hidden mx-0 px-0" id="pertenencia">
 
-    <div class="row justify-content-center egresados-pertenencia-banner py-5">
-      <div class="col-xxl- col-xl-7 col-lg-8 col-md-9 col-12 text-center text-white py-5 my-5">
-        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white text-uppercase ls-4">
-          <i class="fa-regular fa-heart me-2"></i>
-          Pertenencia y acompañamiento
-        </span>
+  <div class="row justify-content-center egresados-pertenencia-banner py-5 mx-0 px-0">
+    <div class="col-xxl- col-xl-7 col-lg-8 col-md-10 col-10 text-center text-white py-5 my-5">
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white text-uppercase ls-4">
+        <i class="fa-regular fa-heart me-2"></i>
+        Pertenencia y acompañamiento
+      </span>
 
-        <h2 class="fs-48 fw-extrablack mt-4">
-          Siempre serás parte de la comunidad CIAF
-        </h2>
+      <h2 class="fs-48 fw-extrablack mt-4">
+        Siempre serás parte de la comunidad CIAF
+      </h2>
 
-        <p class="fs-18 mt-5 mb-0">
-          Como egresado CIAF sigues siendo parte de nuestra historia. Te
-          acompañamos en cada etapa de tu desarrollo profesional, personal y
-          social. Graduarte no es el final, es el comienzo de una nueva etapa.
-        </p>
+      <p class="fs-18 mt-5 mb-0">
+        Como egresado CIAF sigues siendo parte de nuestra historia. Te
+        acompañamos en cada etapa de tu desarrollo profesional, personal y
+        social. Graduarte no es el final, es el comienzo de una nueva etapa.
+      </p>
 
-        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-          <a (click)="mostrarModalInfo()"
-            class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-            Actualizar mis datos
-            <i class="fa-regular fa-user-pen"></i>
-          </a>
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+        <a (click)="mostrarModalInfo()"
+          class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+          Actualizar mis datos
+          <i class="fa-regular fa-user-pen"></i>
+        </a>
 
-          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20soy%20egresado%20CIAF%20y%20necesito%20informaci%C3%B3n"
-            target="_blank" rel="noopener noreferrer"
-            class="ciaf-btn btn border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-            Contactar a Egresados
-          </a>
-        </div>
+        <a href="https://api.whatsapp.com/send?phone=573143400100&text=Hola%2C%20soy%20egresado%20CIAF%20y%20necesito%20informaci%C3%B3n"
+          target="_blank" rel="noopener noreferrer"
+          class="ciaf-btn btn border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+          Contactar a Egresados
+        </a>
       </div>
     </div>
+  </div>
 
 </section>
 

@@ -14,10 +14,10 @@
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row justify-content-center z-2 py-5 mt-5">
+  <div class="row justify-content-center z-2 py-5 mt-5 mx-0 px-0">
     <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mt-5 py-4 px-0">
-      <div class="row">
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 mt-5 py-4 px-0">
+      <div class="row mx-0 px-0">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-10 mt-5 py-4 px-0">
           <span class="badge rounded-pill bg-white text-color-1 fs-12 fw-bold px-3 py-2 my-3 ls-4" *ngIf="datos.snies">
             SNIES {{ datos.snies }}
           </span>
@@ -80,8 +80,8 @@
 </section>
 
 <!-- Navegación por secciones (scroll) -->
-<section class="row justify-content-center ciaf-program-nav">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 p-0">
+<section class="row justify-content-center ciaf-program-nav mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 p-0 mx-0 px-0">
     <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
       aria-label="Secciones del programa">
       <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
@@ -99,8 +99,8 @@
   <div id="content-programa">
 
     <!-- Sección 1: Conoce el programa -->
-    <section class="row justify-content-center py-5 bg-img-2" id="conoce-el-programa">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+    <section class="row justify-content-center py-5 bg-img-2 mx-0 px-0" id="conoce-el-programa">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-xl-10">
         <div class="row justify-content-center py-5">
 
           <header class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 text-center">
@@ -135,9 +135,9 @@
             <!-- Panel: Perfil profesional -->
             <div class="ciaf-conoce__panel ciaf-conoce__panel--pro" role="tabpanel"
               aria-labelledby="ciaf-tab-perfil-pro">
-              <div class="row p-4">
+              <div class="row justify-content-center mx-0 px-0">
 
-                <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12 border rounded-4 p-4 bg-white"
+                <article class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-10 border rounded-4 p-4 bg-white my-4 my-xl-0"
                   *ngFor="let datos2 of listarPrograma">
                   <span class="ciaf-conoce__card-badge fs-12 fw-bold">
                     <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
@@ -167,7 +167,7 @@
                   </ng-template>
                 </article>
 
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-10 pt-4">
                   <div class="row g-3">
 
                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
@@ -353,9 +353,9 @@
     </section>
 
     <!-- Sección 2: Campo de acción -->
-    <section class="row justify-content-center ciaf-section-light mb-5 pt-5" id="campo-de-accion"
+    <section class="row justify-content-center ciaf-section-light mb-5 pt-5 mx-0 px-0" id="campo-de-accion"
       [class.ciaf-section-light]="campoAccionActivo !== null">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
         <div class="row p-4">
           <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
             <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Campo de acción</span>
@@ -501,8 +501,8 @@
     </section>
 
     <!-- Sección 3: Experiencias reales -->
-    <section class="row bg-color-4 py-5 justify-content-center" id="experiencias-reales">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+    <section class="row bg-color-4 py-5 justify-content-center mx-0 px-0" id="experiencias-reales">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
         <div class="row p-4">
           <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 my-5">
             <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mb-2 text-white">Experiencias
@@ -534,8 +534,7 @@
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
             <a class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
-              href="https://www.youtube.com/shorts/widcuwxBIe8?feature=share" target="_blank"
-              rel="noopener noreferrer">
+              href="https://www.youtube.com/shorts/widcuwxBIe8?feature=share" target="_blank" rel="noopener noreferrer">
               <div class="position-absolute top-0 start-0 w-100 h-100">
                 <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
                   <video class="w-100 h-100 object-fit-cover"
@@ -555,8 +554,7 @@
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 mb-3">
             <a class="ciaf-experiencias__card d-block w-100 ratio ratio-16x9 rounded-4 overflow-hidden position-relative text-decoration-none shadow"
-              href="https://www.youtube.com/shorts/iCdHCw7w-d0?feature=share" target="_blank"
-              rel="noopener noreferrer">
+              href="https://www.youtube.com/shorts/iCdHCw7w-d0?feature=share" target="_blank" rel="noopener noreferrer">
               <div class="position-absolute top-0 start-0 w-100 h-100">
                 <div class="ciaf-offer-media position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
                   <video class="w-100 h-100 object-fit-cover"
@@ -569,7 +567,7 @@
                   <i class="fa-solid fa-play text-dark ms-1"></i>
                 </span>
                 <span class="position-absolute bottom-0 start-0 z-2 p-3 text-white fs-14 fw-semibold text-start">
-                 Visita a Suzuki ¡Muy Top!
+                  Visita a Suzuki ¡Muy Top!
                 </span>
               </div>
             </a>
@@ -580,421 +578,421 @@
     </section>
 
     <!-- Sección 4: Ruta de crecimiento profesional -->
-    <section class="row justify-content-center my-5 py-5 ciaf-section-white py-5" id="ruta-crecimiento">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
-          <div class="row p-4 justify-content-center">
-            <header class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 my-5 text-center">
-              <span class="ciaf-pill ciaf-pill--section fs-12 fw-black rounded-pill px-4">Ruta de crecimiento
-                profesional</span>
-              <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-                Gradúate con <span class="ciaf-gradient-text ciaf-gradient-text--brand">tres títulos</span> y crece paso a
-                paso
-              </h2>
-              <p class="fs-16">
-                En CIAF avanzas por ciclos propedéuticos. Cada etapa te permite obtener un título y seguir
-                creciendo profesionalmente.
-              </p>
-            </header>
+    <section class="row justify-content-center my-5 py-5 ciaf-section-white py-5 mx-0 px-0" id="ruta-crecimiento">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
+        <div class="row p-4 justify-content-center">
+          <header class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 my-5 text-center">
+            <span class="ciaf-pill ciaf-pill--section fs-12 fw-black rounded-pill px-4">Ruta de crecimiento
+              profesional</span>
+            <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+              Gradúate con <span class="ciaf-gradient-text ciaf-gradient-text--brand">tres títulos</span> y crece paso a
+              paso
+            </h2>
+            <p class="fs-16">
+              En CIAF avanzas por ciclos propedéuticos. Cada etapa te permite obtener un título y seguir
+              creciendo profesionalmente.
+            </p>
+          </header>
 
-            <div class="ciaf-ruta__shell col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-              <input type="radio" name="ruta-ciclo" id="ruta-ciclo-1" class="ciaf-ruta__input" checked />
-              <input type="radio" name="ruta-ciclo" id="ruta-ciclo-2" class="ciaf-ruta__input" />
-              <input type="radio" name="ruta-ciclo" id="ruta-ciclo-3" class="ciaf-ruta__input" />
+          <div class="ciaf-ruta__shell col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+            <input type="radio" name="ruta-ciclo" id="ruta-ciclo-1" class="ciaf-ruta__input" checked />
+            <input type="radio" name="ruta-ciclo" id="ruta-ciclo-2" class="ciaf-ruta__input" />
+            <input type="radio" name="ruta-ciclo" id="ruta-ciclo-3" class="ciaf-ruta__input" />
 
-              <nav class="ciaf-ruta__path" aria-label="Etapas del programa">
-                <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student fs-14 fw-bold">Estudiante</span>
-                <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
-                <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2 fs-14 fw-bold">Técnico Profesional</span>
-                <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
-                <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3 fs-14 fw-bold">Tecnólogo</span>
-                <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
-                <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4 fs-14 fw-bold">Profesional Universitario</span>
-              </nav>
+            <nav class="ciaf-ruta__path" aria-label="Etapas del programa">
+              <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--student fs-14 fw-bold">Estudiante</span>
+              <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+              <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s2 fs-14 fw-bold">Técnico Profesional</span>
+              <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+              <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s3 fs-14 fw-bold">Tecnólogo</span>
+              <i class="fa-solid fa-chevron-right ciaf-ruta__path-chevron fs-10" aria-hidden="true"></i>
+              <span class="ciaf-ruta__path-pill ciaf-ruta__path-pill--s4 fs-14 fw-bold">Profesional Universitario</span>
+            </nav>
 
-              <div class="ciaf-ruta__pickers">
-                <label class="ciaf-ruta__picker ciaf-ruta__picker--1" for="ruta-ciclo-1">
-                  <span class="ciaf-ruta__picker-top">
-                    <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 1</span>
-                    <span class="bg-color-4 p-2 fs-14 rounded-circle" aria-hidden="true">
-                      <i class="fa-solid fa-graduation-cap text-white"></i>
-                    </span>
+            <div class="ciaf-ruta__pickers">
+              <label class="ciaf-ruta__picker ciaf-ruta__picker--1" for="ruta-ciclo-1">
+                <span class="ciaf-ruta__picker-top">
+                  <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 1</span>
+                  <span class="bg-color-4 p-2 fs-14 rounded-circle" aria-hidden="true">
+                    <i class="fa-solid fa-graduation-cap text-white"></i>
                   </span>
-                  <span class="ciaf-ruta__picker-title fs-16 fw-bold">Técnica profesional en Operaciones contables y
-                    financieras</span>
-                  <span class="ciaf-ruta__sem-track">
-                    <span class="ciaf-ruta__sem-node fs-12">1</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node  fs-12">2</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node  fs-12">3</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node  fs-12">4</span>
+                </span>
+                <span class="ciaf-ruta__picker-title fs-16 fw-bold">Técnica profesional en Operaciones contables y
+                  financieras</span>
+                <span class="ciaf-ruta__sem-track">
+                  <span class="ciaf-ruta__sem-node fs-12">1</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node  fs-12">2</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node  fs-12">3</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node  fs-12">4</span>
+                </span>
+                <div class="row fs-12 text-color-2 fw-bold">
+                  <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+                  <div class="col-auto mx-0 px-0">Técnico Profesional</div>
+                </div>
+              </label>
+
+              <label class="ciaf-ruta__picker ciaf-ruta__picker--2" for="ruta-ciclo-2">
+                <span class="ciaf-ruta__picker-top">
+                  <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 2</span>
+                  <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--2 fs-14" aria-hidden="true">
+                    <i class="fa-solid fa-graduation-cap"></i>
                   </span>
-                  <div class="row fs-12 text-color-2 fw-bold">
-                    <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
-                    <div class="col-auto mx-0 px-0">Técnico Profesional</div>
-                  </div>
-                </label>
+                </span>
+                <span class="ciaf-ruta__picker-title fs-16 fw-bold">Tecnología en Gestión Contable <small
+                    class="text-muted fs-10">*convenio INTEP</small></span>
+                <span class="ciaf-ruta__sem-track">
+                  <span class="ciaf-ruta__sem-node fs-12">5</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node fs-12">6</span>
+                </span>
+                <div class="row fs-12 text-color-6 fw-bold">
+                  <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+                  <div class="col-auto mx-0 px-0">Tecnólogo</div>
+                </div>
+              </label>
 
-                <label class="ciaf-ruta__picker ciaf-ruta__picker--2" for="ruta-ciclo-2">
-                  <span class="ciaf-ruta__picker-top">
-                    <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 2</span>
-                    <span class="ciaf-ruta__picker-icon ciaf-ruta__picker-icon--2 fs-14" aria-hidden="true">
-                      <i class="fa-solid fa-graduation-cap"></i>
-                    </span>
+              <label class="ciaf-ruta__picker ciaf-ruta__picker--3" for="ruta-ciclo-3">
+                <span class="ciaf-ruta__picker-top">
+                  <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 3</span>
+                  <span class="bg-color-5 p-2 fs-14 rounded-circle" aria-hidden="true">
+                    <i class="fa-solid fa-graduation-cap text-white"></i>
                   </span>
-                  <span class="ciaf-ruta__picker-title fs-16 fw-bold">Tecnología en Gestión Contable <small
-                      class="text-muted fs-10">*convenio INTEP</small></span>
-                  <span class="ciaf-ruta__sem-track">
-                    <span class="ciaf-ruta__sem-node fs-12">5</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node fs-12">6</span>
-                  </span>
-                  <div class="row fs-12 text-color-6 fw-bold">
-                    <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
-                    <div class="col-auto mx-0 px-0">Tecnólogo</div>
-                  </div>
-                </label>
-
-                <label class="ciaf-ruta__picker ciaf-ruta__picker--3" for="ruta-ciclo-3">
-                  <span class="ciaf-ruta__picker-top">
-                    <span class="ciaf-ruta__picker-badge fs-10 fw-bold">Ciclo 3</span>
-                    <span class="bg-color-5 p-2 fs-14 rounded-circle" aria-hidden="true">
-                      <i class="fa-solid fa-graduation-cap text-white"></i>
-                    </span>
-                  </span>
-                  <span class="ciaf-ruta__picker-title fs-16 fw-bold">Profesional Universitario en Contaduría Publíca <small
-                      class="text-muted fs-10">*convenio INTEP</small></span>
-                  <span class="ciaf-ruta__sem-track">
-                    <span class="ciaf-ruta__sem-node fs-12">7</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node fs-12">8</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node fs-12">9</span>
-                    <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                    <span class="ciaf-ruta__sem-node fs-12">10</span>
-                  </span>
-                  <div class="row fs-12 text-color-3 fw-bold">
-                    <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
-                    <div class="col-auto mx-0 px-0">Profesional Universitario</div>
-                  </div>
-                </label>
-              </div>
-
-              <article class="ciaf-ruta__panel ciaf-ruta__panel--1">
-                <div class="ciaf-ruta__panel-meta">
-                  <span class="ciaf-ruta__meta-pill bg-color-4 text-white fs-12 fw-semibold">Ciclo 1</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Técnico Profesional</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109022</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14400</span>
+                </span>
+                <span class="ciaf-ruta__picker-title fs-16 fw-bold">Profesional Universitario en Contaduría Publíca
+                  <small class="text-muted fs-10">*convenio INTEP</small></span>
+                <span class="ciaf-ruta__sem-track">
+                  <span class="ciaf-ruta__sem-node fs-12">7</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node fs-12">8</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node fs-12">9</span>
+                  <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                  <span class="ciaf-ruta__sem-node fs-12">10</span>
+                </span>
+                <div class="row fs-12 text-color-3 fw-bold">
+                  <div class="col-auto"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+                  <div class="col-auto mx-0 px-0">Profesional Universitario</div>
                 </div>
-                <h3 class="fs-24 fw-black text-color-2">Técnica profesional en Operaciones contables y financieras</h3>
-                <div class="row">
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2"><i class="fa-solid fa-lightbulb"
-                        aria-hidden="true"></i> Qué aprenderás</h4>
-                    <p class="fs-14">Fundamentos de administración, procesos empresariales, contabilidad básica y servicio
-                      al cliente.</p>
-                  </div>
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-                    <div class="">
-                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado
-                      </h4>
-                      <p class="fs-14">Técnico Profesional</p>
-                    </div>
-                    <div class="">
-                      <h4 class="fs-14 fw-bold text-color-2 ">
-                        <i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales
-                      </h4>
-                      <p class="fs-14">Te puedes emplear desde el primer ciclo en áreas de apoyo administrativo y procesos.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                      <i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte
-                    </h4>
-                  </div>
-                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 mt-3">
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Apoyo administrativo</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Gestión de procesos</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Servicio al cliente</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Contabilidad básica</span>
-                  </div>
-                </div>
-                <div class="col-12 mt-3">
-                  <div class="d-flex align-items-center rounded-pill p-3 bg-color-7">
-                    <div class="flex-shrink-0 me-3">
-                      <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-4"
-                        style="width:48px;height:48px;">
-                        <i class="fa-solid fa-graduation-cap text-white"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <p class="mb-0 text-color-2 fs-14">
-                        Al finalizar obtienes el título de
-                        <strong>Técnico Profesional en Procesos Empresariales</strong>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <article class="ciaf-ruta__panel ciaf-ruta__panel--2">
-
-                <div class="ciaf-ruta__panel-meta">
-                  <span class="ciaf-ruta__meta-pill bg-color-6 text-white fs-12 fw-semibold">Ciclo 2</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Tecnológico</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109021</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14399</span>
-                </div>
-
-                <h3 class="fs-24 fw-black text-color-2">
-                  Tecnología en Gestión Contable <small class="text-muted fs-10">*convenio INTEP</small>
-                </h3>
-
-                <div class="row">
-
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                      <i class="fa-solid fa-lightbulb text-color-6"></i> Qué aprenderás
-                    </h4>
-
-                    <p class="fs-14">
-                      Gestión administrativa, auditoría, control interno, finanzas y gestión del talento humano.
-                    </p>
-                  </div>
-
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-
-                    <div>
-                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                        <i class="fa-solid fa-chart-line text-color-6"></i> Nivel alcanzado
-                      </h4>
-
-                      <p class="fs-14">Tecnólogo</p>
-                    </div>
-
-                    <div>
-                      <h4 class="fs-14 fw-bold text-color-2">
-                        <i class="fa-solid fa-user-check text-color-6"></i> Beneficios laborales
-                      </h4>
-
-                      <p class="fs-14">
-                        Accede a cargos de coordinación, supervisión y auditoría con mayor remuneración.
-                      </p>
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="row">
-
-                  <div class="col-12">
-                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                      <i class="fa-solid fa-briefcase text-color-6"></i> Áreas donde puedes desempeñarte
-                    </h4>
-                  </div>
-
-                  <div class="col-12 mt-3">
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Coordinación administrativa</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Auditoría y control interno</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Análisis financiero</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Supervisión de equipos</span>
-                  </div>
-
-                </div>
-
-                <div class="col-12 mt-3">
-                  <div class="d-flex align-items-center rounded-pill p-3 bg-color-8">
-
-                    <div class="flex-shrink-0 me-3">
-                      <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-6"
-                        style="width:48px;height:48px;">
-                        <i class="fa-solid fa-graduation-cap text-white"></i>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p class="mb-0 text-color-2 fs-14">
-                        Al finalizar obtienes el título de
-                        <strong class="text-color-6">Tecnólogo en Gestión y Auditoría Administrativa</strong>
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-
-              </article>
-
-              <article class="ciaf-ruta__panel ciaf-ruta__panel--3">
-
-                <div class="ciaf-ruta__panel-meta">
-                  <span class="ciaf-ruta__meta-pill bg-color-5 text-white fs-12 fw-semibold">Ciclo 3</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Profesional Universitario</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 108591</span>
-                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14398</span>
-                </div>
-
-                <h3 class="fs-24 fw-black text-color-2">
-                  Profesional Universitario en Contaduría Publíca <small class="text-muted fs-10">*convenio INTEP</small>
-                </h3>
-
-                <div class="row">
-
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                      <i class="fa-solid fa-lightbulb text-color-3"></i> Qué aprenderás
-                    </h4>
-
-                    <p class="fs-14">
-                      Dirección estratégica, gerencia financiera, operaciones, negocios internacionales y liderazgo
-                      organizacional.
-                    </p>
-                  </div>
-
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-
-                    <div>
-                      <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                        <i class="fa-solid fa-chart-line text-color-3"></i> Nivel alcanzado
-                      </h4>
-
-                      <p class="fs-14">Profesional Universitario</p>
-                    </div>
-
-                    <div>
-                      <h4 class="fs-14 fw-bold text-color-2">
-                        <i class="fa-solid fa-user-check text-color-3"></i> Beneficios laborales
-                      </h4>
-
-                      <p class="fs-14">
-                        Accede a cargos de gerencia, consultoría, planeación estratégica y dirección en organizaciones de
-                        todos los sectores.
-                      </p>
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="row">
-
-                  <div class="col-12">
-                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
-                      <i class="fa-solid fa-briefcase text-color-3"></i> Áreas donde puedes desempeñarte
-                    </h4>
-                  </div>
-
-                  <div class="col-12 mt-3">
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Gerencia general</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Dirección de áreas</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Consultoría organizacional</span>
-                    <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Creación de empresa</span>
-                  </div>
-
-                </div>
-
-                <div class="col-12 mt-3">
-                  <div class="d-flex align-items-center rounded-pill p-3 bg-color-2">
-
-                    <div class="flex-shrink-0 me-3">
-                      <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-5"
-                        style="width:48px;height:48px;">
-                        <i class="fa-solid fa-graduation-cap text-white"></i>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p class="mb-0 text-color-2 fs-14">
-                        Al finalizar obtienes el título de
-                        <strong class="text-color-3">Profesional Universitario en Administración de Empresas</strong>
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-
-              </article>
-
+              </label>
             </div>
 
+            <article class="ciaf-ruta__panel ciaf-ruta__panel--1">
+              <div class="ciaf-ruta__panel-meta">
+                <span class="ciaf-ruta__meta-pill bg-color-4 text-white fs-12 fw-semibold">Ciclo 1</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Técnico Profesional</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109022</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14400</span>
+              </div>
+              <h3 class="fs-24 fw-black text-color-2">Técnica profesional en Operaciones contables y financieras</h3>
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                  <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2"><i class="fa-solid fa-lightbulb"
+                      aria-hidden="true"></i> Qué aprenderás</h4>
+                  <p class="fs-14">Fundamentos de administración, procesos empresariales, contabilidad básica y servicio
+                    al cliente.</p>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                  <div class="">
+                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                      <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Nivel alcanzado
+                    </h4>
+                    <p class="fs-14">Técnico Profesional</p>
+                  </div>
+                  <div class="">
+                    <h4 class="fs-14 fw-bold text-color-2 ">
+                      <i class="fa-solid fa-user-check" aria-hidden="true"></i> Beneficios laborales
+                    </h4>
+                    <p class="fs-14">Te puedes emplear desde el primer ciclo en áreas de apoyo administrativo y
+                      procesos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                  <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                    <i class="fa-solid fa-briefcase" aria-hidden="true"></i> Áreas donde puedes desempeñarte
+                  </h4>
+                </div>
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 mt-3">
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Apoyo administrativo</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Gestión de procesos</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Servicio al cliente</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2 fs-12">Contabilidad básica</span>
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <div class="d-flex align-items-center rounded-pill p-3 bg-color-7">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-4"
+                      style="width:48px;height:48px;">
+                      <i class="fa-solid fa-graduation-cap text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="mb-0 text-color-2 fs-14">
+                      Al finalizar obtienes el título de
+                      <strong>Técnico Profesional en Procesos Empresariales</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="ciaf-ruta__panel ciaf-ruta__panel--2">
+
+              <div class="ciaf-ruta__panel-meta">
+                <span class="ciaf-ruta__meta-pill bg-color-6 text-white fs-12 fw-semibold">Ciclo 2</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Tecnológico</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 109021</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14399</span>
+              </div>
+
+              <h3 class="fs-24 fw-black text-color-2">
+                Tecnología en Gestión Contable <small class="text-muted fs-10">*convenio INTEP</small>
+              </h3>
+
+              <div class="row">
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                  <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                    <i class="fa-solid fa-lightbulb text-color-6"></i> Qué aprenderás
+                  </h4>
+
+                  <p class="fs-14">
+                    Gestión administrativa, auditoría, control interno, finanzas y gestión del talento humano.
+                  </p>
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+
+                  <div>
+                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                      <i class="fa-solid fa-chart-line text-color-6"></i> Nivel alcanzado
+                    </h4>
+
+                    <p class="fs-14">Tecnólogo</p>
+                  </div>
+
+                  <div>
+                    <h4 class="fs-14 fw-bold text-color-2">
+                      <i class="fa-solid fa-user-check text-color-6"></i> Beneficios laborales
+                    </h4>
+
+                    <p class="fs-14">
+                      Accede a cargos de coordinación, supervisión y auditoría con mayor remuneración.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-12">
+                  <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                    <i class="fa-solid fa-briefcase text-color-6"></i> Áreas donde puedes desempeñarte
+                  </h4>
+                </div>
+
+                <div class="col-12 mt-3">
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Coordinación administrativa</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Auditoría y control interno</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Análisis financiero</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Supervisión de equipos</span>
+                </div>
+
+              </div>
+
+              <div class="col-12 mt-3">
+                <div class="d-flex align-items-center rounded-pill p-3 bg-color-8">
+
+                  <div class="flex-shrink-0 me-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-6"
+                      style="width:48px;height:48px;">
+                      <i class="fa-solid fa-graduation-cap text-white"></i>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p class="mb-0 text-color-2 fs-14">
+                      Al finalizar obtienes el título de
+                      <strong class="text-color-6">Tecnólogo en Gestión y Auditoría Administrativa</strong>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+            </article>
+
+            <article class="ciaf-ruta__panel ciaf-ruta__panel--3">
+
+              <div class="ciaf-ruta__panel-meta">
+                <span class="ciaf-ruta__meta-pill bg-color-5 text-white fs-12 fw-semibold">Ciclo 3</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold border">Nivel Profesional Universitario</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">SNIES 108591</span>
+                <span class="ciaf-ruta__meta-pill fs-12 fw-semibold">Resolución 14398</span>
+              </div>
+
+              <h3 class="fs-24 fw-black text-color-2">
+                Profesional Universitario en Contaduría Publíca <small class="text-muted fs-10">*convenio INTEP</small>
+              </h3>
+
+              <div class="row">
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+                  <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                    <i class="fa-solid fa-lightbulb text-color-3"></i> Qué aprenderás
+                  </h4>
+
+                  <p class="fs-14">
+                    Dirección estratégica, gerencia financiera, operaciones, negocios internacionales y liderazgo
+                    organizacional.
+                  </p>
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+
+                  <div>
+                    <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                      <i class="fa-solid fa-chart-line text-color-3"></i> Nivel alcanzado
+                    </h4>
+
+                    <p class="fs-14">Profesional Universitario</p>
+                  </div>
+
+                  <div>
+                    <h4 class="fs-14 fw-bold text-color-2">
+                      <i class="fa-solid fa-user-check text-color-3"></i> Beneficios laborales
+                    </h4>
+
+                    <p class="fs-14">
+                      Accede a cargos de gerencia, consultoría, planeación estratégica y dirección en organizaciones de
+                      todos los sectores.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-12">
+                  <h4 class="fs-14 fw-bold text-color-2 mt-5 pt-2">
+                    <i class="fa-solid fa-briefcase text-color-3"></i> Áreas donde puedes desempeñarte
+                  </h4>
+                </div>
+
+                <div class="col-12 mt-3">
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Gerencia general</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Dirección de áreas</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Consultoría organizacional</span>
+                  <span class="ciaf-ruta__meta-pill fs-12 fw-semibold text-color-2">Creación de empresa</span>
+                </div>
+
+              </div>
+
+              <div class="col-12 mt-3">
+                <div class="d-flex align-items-center rounded-pill p-3 bg-color-2">
+
+                  <div class="flex-shrink-0 me-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center bg-color-5"
+                      style="width:48px;height:48px;">
+                      <i class="fa-solid fa-graduation-cap text-white"></i>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p class="mb-0 text-color-2 fs-14">
+                      Al finalizar obtienes el título de
+                      <strong class="text-color-3">Profesional Universitario en Administración de Empresas</strong>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+            </article>
 
           </div>
+
+
+        </div>
       </div>
     </section>
 
     <!-- Sección 5: Plan de estudios -->
-    <section class="ciaf-section-light py-5" id="plan-estudios">
-      <div class="row pt-5 justify-content-center">
-        <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Plan de estudios</span>
-          <h2 class=" fs-36 fw-extrablack text-color-2">Tu camino semestre a semestre</h2>
-        </header>
+    <section class="row justify-content-center ciaf-section-light py-5 mx-0 px-0" id="plan-estudios">
 
-        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
-          <a href="assets/planes/malla_administracion.pdf" target="_blank" rel="noopener noreferrer" class="btn">
-            <div class="ciaf-plan__download-credits fs-12 fw-semibold">150 créditos</div>
-            <img src="{{ descargar }}" alt="Descargar malla curricular" />
-          </a>
-        </div>
+      <header class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10 text-center">
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Plan de estudios</span>
+        <h2 class=" fs-36 fw-extrablack text-color-2">Tu camino semestre a semestre</h2>
+      </header>
 
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-10">
-          <div class="ciaf-plan__item mb-3" *ngFor="let datos of semestresPlan"
-            [class.ciaf-plan__item--milestone]="esSemestreHito(datos.semestre)"
-            [class.ciaf-plan__item--open]="planSemestreEstaAbierto(datos.semestre)">
-            <div class="ciaf-plan__card">
-              <button type="button" class="ciaf-plan__trigger" (click)="togglePlanSemestre(datos.semestre)"
-                [attr.aria-expanded]="planSemestreEstaAbierto(datos.semestre)"
-                [attr.aria-controls]="'plan-panel-' + datos.semestre">
-                <span class="ciaf-plan__num fs-16 fw-bold">{{ datos.semestre }}</span>
-                <span class="ciaf-plan__head-main">
-                  <span class="ciaf-plan__name fs-16 fw-bold">Semestre {{ datos.semestre }}</span>
-                  <span class="ciaf-plan__badge fs-10" *ngIf="etiquetaTituloSemestre(datos.semestre) as titulo">
-                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                    {{ titulo }}
-                  </span>
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-center">
+        <a href="assets/planes/malla_administracion.pdf" target="_blank" rel="noopener noreferrer" class="btn">
+          <div class="ciaf-plan__download-credits fs-12 fw-semibold">150 créditos</div>
+          <img src="{{ descargar }}" alt="Descargar malla curricular" />
+        </a>
+      </div>
+
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-10">
+        <div class="ciaf-plan__item mb-3" *ngFor="let datos of semestresPlan"
+          [class.ciaf-plan__item--milestone]="esSemestreHito(datos.semestre)"
+          [class.ciaf-plan__item--open]="planSemestreEstaAbierto(datos.semestre)">
+          <div class="ciaf-plan__card">
+            <button type="button" class="ciaf-plan__trigger" (click)="togglePlanSemestre(datos.semestre)"
+              [attr.aria-expanded]="planSemestreEstaAbierto(datos.semestre)"
+              [attr.aria-controls]="'plan-panel-' + datos.semestre">
+              <span class="ciaf-plan__num fs-16 fw-bold">{{ datos.semestre }}</span>
+              <span class="ciaf-plan__head-main">
+                <span class="ciaf-plan__name fs-16 fw-bold">Semestre {{ datos.semestre }}</span>
+                <span class="ciaf-plan__badge fs-10" *ngIf="etiquetaTituloSemestre(datos.semestre) as titulo">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  {{ titulo }}
                 </span>
-                <i class="fa-solid fa-chevron-down ciaf-plan__chevron fs-14" aria-hidden="true"></i>
-              </button>
+              </span>
+              <i class="fa-solid fa-chevron-down ciaf-plan__chevron fs-14" aria-hidden="true"></i>
+            </button>
 
-              <div class="ciaf-plan__panel" [id]="'plan-panel-' + datos.semestre"
-                *ngIf="planSemestreEstaAbierto(datos.semestre)">
-                <ul class="ciaf-plan__materias">
-                  <li *ngFor="let mate of materiasDelSemestre(datos.semestre)">
-                    <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
-                    <span>{{ mate.materia }}</span>
-                  </li>
-                </ul>
-              </div>
+            <div class="ciaf-plan__panel" [id]="'plan-panel-' + datos.semestre"
+              *ngIf="planSemestreEstaAbierto(datos.semestre)">
+              <ul class="ciaf-plan__materias">
+                <li *ngFor="let mate of materiasDelSemestre(datos.semestre)">
+                  <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+                  <span>{{ mate.materia }}</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-
       </div>
+
+
     </section>
 
     <!-- Sección 6: Transformación -->
-    <section class=" ciaf-section-white py-5" id="transformacion">
-      <div class="row py-5">
+    <section class="row justify-content-center ciaf-section-white py-5 mx-0 px-0" id="transformacion">
 
-        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
-            AQUÍ NO SOLO OBTIENES UN TÍTULO
-          </span>
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-center">
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">
+          AQUÍ NO SOLO OBTIENES UN TÍTULO
+        </span>
 
-          <h2 class="text-color-2 fs-36 fw-extrablack my-3">
-            Vives una <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformación completa</span>
-          </h2>
-        </div>
-
+        <h2 class="text-color-2 fs-36 fw-extrablack my-3">
+          Vives una <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformación completa</span>
+        </h2>
+      </div>
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 ">
         <div class="row ciaf-transform-grid mt-5 px-4 justify-content-center">
 
-          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4 mb-xl-0">
             <article class="ciaf-transform-card h-100">
               <div class="ciaf-transform-glow"></div>
 
@@ -1010,7 +1008,7 @@
             </article>
           </div>
 
-          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4 mb-xl-0">
             <article class="ciaf-transform-card h-100">
               <div class="ciaf-transform-glow"></div>
 
@@ -1026,7 +1024,7 @@
             </article>
           </div>
 
-          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4 mb-xl-0">
             <article class="ciaf-transform-card h-100">
               <div class="ciaf-transform-glow"></div>
 
@@ -1042,7 +1040,7 @@
             </article>
           </div>
 
-          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4 mb-xl-0">
             <article class="ciaf-transform-card h-100">
               <div class="ciaf-transform-glow"></div>
 
@@ -1058,7 +1056,7 @@
             </article>
           </div>
 
-          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-12 mb-4 mb-xl-0">
             <article class="ciaf-transform-card h-100">
               <div class="ciaf-transform-glow"></div>
 
@@ -1075,13 +1073,13 @@
           </div>
 
         </div>
-
       </div>
+
     </section>
 
     <!-- Sección 7: Por qué estudiarlo -->
-    <section class="row justify-content-center ciaf-section-light py-5" id="por-que-estudiarlo">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
+    <section class="row justify-content-center ciaf-section-light py-5 mx-0 px-0" id="por-que-estudiarlo">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
         <div class="row py-5 px-4">
 
           <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
@@ -1189,31 +1187,28 @@
     </section>
 
     <!-- Sección 8: Valores y financiación -->
-    <section class="" id="valores-financiacion">
-      <div class="row justify-content-center bg-img-1 py-5">
+    <section class="row justify-content-center bg-img-1 py-5 mx-0 px-0" id="valores-financiacion">
 
-        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white">VALORES Y
-            FINANCIACIÓN</span>
+      <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white">VALORES Y
+          FINANCIACIÓN</span>
 
-          <h2 class="fs-60 fw-extrablack my-3">
-            Financiación <span class="text-color-3">0% interés</span>
-          </h2>
+        <h2 class="fs-60 fw-extrablack my-3">
+          Financiación <span class="text-color-3">0% interés</span>
+        </h2>
 
-          <p class="fs-24 fw-bold">
-            Invierte en tu futuro sin que el dinero detenga tus metas.
-          </p>
+        <p class="fs-24 fw-bold">
+          Invierte en tu futuro sin que el dinero detenga tus metas.
+        </p>
 
-          <p class="fs-18 text-color-5">
-            En CIAF encuentras financiación directa, descuentos y beneficios pensados
-            para acompañarte durante toda tu carrera.
-          </p>
+        <p class="fs-18 text-color-5">
+          En CIAF encuentras financiación directa, descuentos y beneficios pensados
+          para acompañarte durante toda tu carrera.
+        </p>
 
-          <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
-            Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
-          </p>
-        </div>
-
+        <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
+          Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
+        </p>
       </div>
 
       <!-- BANDA GLASS -->
@@ -1254,12 +1249,13 @@
     </section>
 
     <!-- Sección 9: Proceso paso a paso -->
-    <section class="row justify-content-center my-4" id="proceso-paso-a-paso">
+    <section class="row justify-content-center my-4 mx-0 px-0" id="proceso-paso-a-paso">
       <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
         <!-- PASO A PASO -->
         <div class="row justify-content-center my-5 py-5" id="proceso-paso-a-paso">
           <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 text-center">
-            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5">TU PROCESO PASO A PASO</span>
+            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5">TU PROCESO PASO A
+              PASO</span>
           </div>
 
           <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-12 col-12 text-center">
@@ -1307,7 +1303,8 @@
                     class="bg-color-5 text-color-2 rounded-pill py-1 px-4 fs-12 fw-bold text-uppercase">Paso 3</span>
                 </div>
                 <h4 class="text-color-2 fs-20 fw-bold">Inicio de clases</h4>
-                <p class="text-color-1 fs-14 fw-medium">Empieza tu camino profesional en la jornada que mejor se adapte a
+                <p class="text-color-1 fs-14 fw-medium">Empieza tu camino profesional en la jornada que mejor se adapte
+                  a
                   ti.</p>
               </article>
             </div>
@@ -1319,7 +1316,7 @@
     </section>
 
     <!-- Sección 10: Costos -->
-    <section class="row justify-content-center my-4" id="costos">
+    <section class="row justify-content-center my-4 mx-0 px-0" id="costos">
 
       <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
         <div class="row g-4 align-items-stretch">
@@ -1380,7 +1377,7 @@
     </section>
 
     <!-- sección 11: OPCIONES -->
-    <div class="row justify-content-center my-4" id="opciones">
+    <div class="row justify-content-center my-4 mx-0 px-0" id="opciones">
 
       <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-center pt-5">
 
@@ -1449,7 +1446,7 @@
     </div>
 
     <!-- sección 12: SIMULADOR -->
-    <div class="row justify-content-center bg-section-degradado py-5" id="simulador">
+    <div class="row justify-content-center bg-section-degradado py-5 mx-0 px-0" id="simulador">
 
       <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mt-4">
         <div class="text-center">
@@ -1462,11 +1459,12 @@
           </h2>
         </div>
       </div>
-      <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-10 mt-5">
+      <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-10 mt-5">
         <div class="ciaf-simulator-card">
-          <div class="row g-0 align-items-stretch">
+          <div class="row justify-content-center align-items-stretch">
             <!-- IZQUIERDA -->
-            <div class="col-lg-6 p-5 bg-white p-4 rounded-start-4 border">
+            <div
+              class="col-lg-6 p-4 p-lg-5 bg-white border rounded-top-4 rounded-bottom-0 rounded-lg-start-4 rounded-lg-end-0">
               <label class="text-color-1 fs-14 fw-bold mb-3 ls-3">
                 PROGRAMA
               </label>
@@ -1507,8 +1505,9 @@
 
             </div>
             <!-- DERECHA -->
-            <div class="col-lg-6">
-              <div class="bg-section2-degradado rounded-end-4">
+            <div class="col-lg-6 p-0 p-lg-4">
+              <!-- DERECHA -->
+              <div class="bg-section2-degradado rounded-bottom-4 rounded-top-0 rounded-lg-end-4 rounded-lg-start-0">
                 <div class="text-color-5 fs-12 fw-bold mb-3">
                   TU CAMINO EN CIAF
                 </div>
@@ -1571,8 +1570,8 @@
     </div>
 
     <!-- sección 13: CTA FINAL -->
-    <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section" id="tu-futuro">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-11 mt-4">
+    <div class="row justify-content-center bg-img-1 py-5 ciaf-program-section mx-0 px-0" id="tu-futuro">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mt-4">
         <div class="row justify-content-center">
 
           <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-8 col-12 text-center text-white position-relative py-5">
@@ -1629,7 +1628,6 @@
         </div>
       </div>
     </div>
-
 
   </div>
 </section>

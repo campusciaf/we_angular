@@ -1,6 +1,7 @@
 <app-header></app-header>
 
-<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4">
+<section
+  class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 px-0 mx-0">
 
   <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
     <img src="{{bienestar_pc}}" alt="Administración de empresas">
@@ -9,10 +10,10 @@
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row justify-content-center z-2 py-5 mt-5 col-12">
+  <div class="row justify-content-center z-2 py-5 mt-5 col-12 mx-0 px-0">
 
-    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0"> 
-      <div class="row">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
+      <div class="row mx-0 px-0">
         <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 py-4 px-0">
           <span
             class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente text-uppercase">
@@ -74,8 +75,8 @@
 </section>
 
 <!-- Navegación por secciones (scroll) -->
-<section class="row justify-content-center ciaf-program-nav">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+<section class="row justify-content-center ciaf-program-nav mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 px-0 mx-0">
     <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
       aria-label="Secciones del programa">
       <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
@@ -90,8 +91,8 @@
 
 
 <!-- Transformacion Humana -->
-<section class="row justify-content-center py-5" id="transformacion-humana">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0"> 
+<section class="row justify-content-center py-5 mx-0 px-0" id="transformacion-humana">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
     <div class="row align-items-center g-5">
 
       <!-- Imagen / Slider -->
@@ -209,193 +210,183 @@
   </div>
 </section>
 
+
 <!-- permanencia y graduacion  -->
-<section class="row justify-content-center py-5 my-5" id="programa-de-permanencia">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-    <div class="row align-items-center g-5">
+<section class="row justify-content-center py-5 my-5 mx-0 px-0" id="programa-de-permanencia">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
+    <div class="row align-items-center g-5 mx-0 px-0">
 
-        <!-- Información -->
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
+      <!-- Información -->
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
 
-            <span
-                class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5 text-uppercase ls-4">
-                Permanencia y graduación
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 mt-5 text-uppercase ls-4">
+          Permanencia y graduación
+        </span>
+
+        <h2 class="fs-60 fw-black lh-1 text-color-2 mt-4 mb-3">
+          ¡Quédate!
+        </h2>
+
+        <h3 class="fs-24 fw-bold lh-sm text-color-2 mb-4">
+          Porque los grandes sueños merecen llegar hasta la meta.
+        </h3>
+
+        <p class="fs-18 text-color-1 lh-lg mb-4">
+          En CIAF creemos que cada estudiante tiene el potencial de
+          transformar su historia. Por eso creamos
+          <strong class="text-color-2">¡Quédate!</strong>,
+          nuestro programa de permanencia y graduación: una estrategia
+          integral diseñada para acompañarte durante toda tu vida
+          universitaria, brindándote herramientas, orientación y una red
+          de apoyo que te impulse a continuar, superar los desafíos y
+          alcanzar tu título profesional.
+        </p>
+
+        <p class="fs-18 text-color-1 lh-lg mb-0">
+          A través de
+          <strong class="text-color-2">Influencer+</strong>
+          e
+          <strong class="text-color-2">Inspiradores</strong>,
+          caminamos contigo para que ningún obstáculo sea más grande que
+          tus sueños.
+        </p>
+
+      </div>
+
+      <!-- Imagen -->
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
+
+        <div class="position-relative">
+
+          <img src="assets/bienestar/quedate.webp" alt="Programa Quédate" class="img-fluid rounded-5 shadow-lg w-100">
+
+          <!-- Badge inferior -->
+          <div class="position-absolute start-50 translate-middle-x bottom-0 mb-n3">
+
+            <span class="ciaf-pill bg-white text-color-2 rounded-pill px-4 py-3 shadow fw-bold fs-16">
+
+              <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+
+              Universitarios sin Límites
+
             </span>
 
-            <h2 class="fs-60 fw-black lh-1 text-color-2 mt-4 mb-3">
-                ¡Quédate!
-            </h2>
-
-            <h3 class="fs-24 fw-bold lh-sm text-color-2 mb-4">
-                Porque los grandes sueños merecen llegar hasta la meta.
-            </h3>
-
-            <p class="fs-18 text-color-1 lh-lg mb-4">
-                En CIAF creemos que cada estudiante tiene el potencial de
-                transformar su historia. Por eso creamos
-                <strong class="text-color-2">¡Quédate!</strong>,
-                nuestro programa de permanencia y graduación: una estrategia
-                integral diseñada para acompañarte durante toda tu vida
-                universitaria, brindándote herramientas, orientación y una red
-                de apoyo que te impulse a continuar, superar los desafíos y
-                alcanzar tu título profesional.
-            </p>
-
-            <p class="fs-18 text-color-1 lh-lg mb-0">
-                A través de
-                <strong class="text-color-2">Influencer+</strong>
-                e
-                <strong class="text-color-2">Inspiradores</strong>,
-                caminamos contigo para que ningún obstáculo sea más grande que
-                tus sueños.
-            </p>
+          </div>
 
         </div>
 
-        <!-- Imagen -->
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
-
-            <div class="position-relative">
-
-                <img
-                    src="assets/bienestar/quedate.webp"
-                    alt="Programa Quédate"
-                    class="img-fluid rounded-5 shadow-lg w-100">
-
-                <!-- Badge inferior -->
-                <div
-                    class="position-absolute start-50 translate-middle-x bottom-0 mb-n3">
-
-                    <span
-                        class="ciaf-pill bg-white text-color-2 rounded-pill px-4 py-3 shadow fw-bold fs-16">
-
-                        <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
-
-                        Universitarios sin Límites
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
     <!-- ESTRATEGIAS -->
     <div class="row pt-5 mt-5">
 
-        <!-- Título -->
-        <div class="col-12 text-center mb-5">
+      <!-- Título -->
+      <div class="col-12 text-center mb-5">
 
-            <h2 class="fs-30 fw-extrablack text-color-2">
-                Dos estrategias que
-                <span class="ciaf-gradient-text ciaf-gradient-text--brand">
-                    caminan contigo
-                </span>
-            </h2>
+        <h2 class="fs-30 fw-extrablack text-color-2">
+          Dos estrategias que
+          <span class="ciaf-gradient-text ciaf-gradient-text--brand">
+            caminan contigo
+          </span>
+        </h2>
 
-        </div>
+      </div>
 
-        <!-- Influencer -->
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
+      <!-- Influencer -->
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
 
-            <div class="ciaf-card rounded-5 p-5 h-100 position-relative overflow-hidden">
+        <div class="ciaf-card rounded-5 p-5 h-100 position-relative overflow-hidden">
 
-                <!-- Decoración -->
-                <div class="position-absolute top-0 end-0 bg-color-2 rounded-circle opacity-50"
-                    style="width:120px;height:120px;transform:translate(40%,-40%);">
-                </div>
+          <!-- Decoración -->
+          <div class="position-absolute top-0 end-0 bg-color-2 rounded-circle opacity-50"
+            style="width:120px;height:120px;transform:translate(40%,-40%);">
+          </div>
 
-                <!-- Logo -->
-                <img
-                    src="assets/bienestar/influencer.webp"
-                    alt="Influencer+"
-                    style="height:55px;"
-                    class="mb-4">
+          <!-- Logo -->
+          <img src="assets/bienestar/influencer.webp" alt="Influencer+" style="height:55px;" class="mb-4">
 
-                <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
-                    Más oportunidades para seguir avanzando.
-                </h3>
+          <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
+            Más oportunidades para seguir avanzando.
+          </h3>
 
-                <p class="fs-18 text-color-1 lh-lg mb-0">
+          <p class="fs-18 text-color-1 lh-lg mb-0">
 
-                    Sabemos que cada estudiante vive una historia diferente.
+            Sabemos que cada estudiante vive una historia diferente.
 
-                    Por eso,
+            Por eso,
 
-                    <strong class="text-color-2">
-                        Influencer+
-                    </strong>
+            <strong class="text-color-2">
+              Influencer+
+            </strong>
 
-                    reúne estrategias de acompañamiento académico,
-                    psicosocial, bienestar y apoyo financiero que fortalecen
-                    tu experiencia universitaria y te ayudan a mantener el
-                    rumbo hacia la graduación.
+            reúne estrategias de acompañamiento académico,
+            psicosocial, bienestar y apoyo financiero que fortalecen
+            tu experiencia universitaria y te ayudan a mantener el
+            rumbo hacia la graduación.
 
-                    Porque en CIAF creemos que el éxito se construye cuando
-                    alguien cree en ti y te acompaña en el camino.
+            Porque en CIAF creemos que el éxito se construye cuando
+            alguien cree en ti y te acompaña en el camino.
 
-                </p>
-
-            </div>
+          </p>
 
         </div>
 
-        <!-- Inspiradores -->
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
+      </div>
 
-            <div class="ciaf-card rounded-5 p-5 h-100 position-relative overflow-hidden">
+      <!-- Inspiradores -->
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
 
-                <!-- Decoración -->
-                <div class="position-absolute top-0 end-0 bg-color-2 rounded-circle opacity-50"
-                    style="width:120px;height:120px;transform:translate(40%,-40%);">
-                </div>
+        <div class="ciaf-card rounded-5 p-5 h-100 position-relative overflow-hidden">
 
-                <!-- Icono -->
+          <!-- Decoración -->
+          <div class="position-absolute top-0 end-0 bg-color-2 rounded-circle opacity-50"
+            style="width:120px;height:120px;transform:translate(40%,-40%);">
+          </div>
 
-                <div
-                    class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
+          <!-- Icono -->
 
-                    <i class="fa-solid fa-hand-holding-heart"></i>
+          <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
 
-                </div>
+            <i class="fa-solid fa-hand-holding-heart"></i>
 
-                <h3 class="fs-42 fw-extrablack text-color-2 mb-2">
+          </div>
 
-                    Inspiradores
+          <h3 class="fs-42 fw-extrablack text-color-2 mb-2">
 
-                </h3>
+            Inspiradores
 
-                <h4 class="fs-18 fw-bold text-color-2 mb-4">
+          </h3>
 
-                    Tu red de apoyo también hace parte de este sueño.
+          <h4 class="fs-18 fw-bold text-color-2 mb-4">
 
-                </h4>
+            Tu red de apoyo también hace parte de este sueño.
 
-                <p class="fs-18 text-color-1 lh-lg mb-0">
+          </h4>
 
-                    Los sueños crecen cuando se comparten.
+          <p class="fs-18 text-color-1 lh-lg mb-0">
 
-                    <strong class="text-color-2">
-                        Inspiradores
-                    </strong>
+            Los sueños crecen cuando se comparten.
 
-                    vincula a las personas más importantes de tu entorno
-                    familiar, personal o laboral para convertirlas en una
-                    red de apoyo que te motive, te impulse y celebre contigo
-                    cada logro hasta el día de tu graduación.
+            <strong class="text-color-2">
+              Inspiradores
+            </strong>
 
-                    Porque en CIAF no solo formamos profesionales;
-                    construimos comunidades que inspiran,
-                    acompañan y transforman vidas.
+            vincula a las personas más importantes de tu entorno
+            familiar, personal o laboral para convertirlas en una
+            red de apoyo que te motive, te impulse y celebre contigo
+            cada logro hasta el día de tu graduación.
 
-                </p>
+            Porque en CIAF no solo formamos profesionales;
+            construimos comunidades que inspiran,
+            acompañan y transforman vidas.
 
-            </div>
+          </p>
 
         </div>
+
+      </div>
 
     </div>
   </div>
@@ -403,10 +394,10 @@
 </section>
 
 <!-- Permanencia y Graduación esto lo quitaron pero ues un foramto de video muy bueno-->
-<section class="row justify-content-centerpy-5 d-none" >
+<section class="row justify-content-centerpy-5 mx-0 px-0 d-none">
 
-  <div class="row">
-    <div class="col-12">
+  <div class="row mx-0 px-0 justify-content-center">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
       <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
         Permanencia y Graduación
       </span>
@@ -422,8 +413,8 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
+  <div class="row justify-content-center mx-0 px-0">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
       <a href="https://www.youtube.com/watch?v=TU_VIDEO" target="_blank"
         class="bienestar-video-card d-block position-relative rounded-5 overflow-hidden text-decoration-none">
 
@@ -448,7 +439,7 @@
     </div>
   </div>
 
-  <div class="row g-4 my-5">
+  <div class="row g-4 my-5 mx-0 px-0 justify-content-center">
 
     <!-- Quédate -->
     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
@@ -533,9 +524,9 @@
 </section>
 
 <!-- HISTORIAS QUE INSPIRAN -->
-<section class="row justify-content-center py-5" id="historias-que-inspiran">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-    <div class="row mb-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="historias-que-inspiran">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
+    <div class="row mb-5 mx-0 px-0 justify-content-center">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
 
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
@@ -561,16 +552,11 @@
 
       <!-- Video YouTube -->
       <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-        <a
-          href="https://youtu.be/1NaRdoGCLdM?si=xW5sgFs9j39n54Hd"
-          target="_blank"
+        <a href="https://youtu.be/1NaRdoGCLdM?si=xW5sgFs9j39n54Hd" target="_blank"
           class="d-block position-relative rounded-5 overflow-hidden shadow text-decoration-none">
 
-          <img
-            src="assets/bienestar/transformacion-1.webp"
-            alt="Historia Quédate CIAF"
-            class="w-100 object-fit-cover d-block"
-            style="height: 410px;">
+          <img src="assets/bienestar/transformacion-1.webp" alt="Historia Quédate CIAF"
+            class="w-100 object-fit-cover d-block" style="height: 410px;">
 
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-color-3 opacity-50"></div>
 
@@ -587,31 +573,23 @@
         <div class="row g-4">
 
           <div class="col-md-6 col-12">
-            <img src="assets/bienestar/transformacion-1.webp"
-              alt="Experiencia Quédate CIAF"
-              class="w-100 object-fit-cover rounded-5 shadow d-block"
-              style="height: 198px;">
+            <img src="assets/bienestar/transformacion-1.webp" alt="Experiencia Quédate CIAF"
+              class="w-100 object-fit-cover rounded-5 shadow d-block" style="height: 198px;">
           </div>
 
           <div class="col-md-6 col-12">
-            <img src="assets/bienestar/transformacion-2.webp"
-              alt="Experiencia Quédate CIAF"
-              class="w-100 object-fit-cover rounded-5 shadow d-block"
-              style="height: 198px;">
+            <img src="assets/bienestar/transformacion-2.webp" alt="Experiencia Quédate CIAF"
+              class="w-100 object-fit-cover rounded-5 shadow d-block" style="height: 198px;">
           </div>
 
           <div class="col-md-6 col-12">
-            <img src="assets/bienestar/transformacion-3.webp"
-              alt="Experiencia Quédate CIAF"
-              class="w-100 object-fit-cover rounded-5 shadow d-block"
-              style="height: 198px;">
+            <img src="assets/bienestar/transformacion-3.webp" alt="Experiencia Quédate CIAF"
+              class="w-100 object-fit-cover rounded-5 shadow d-block" style="height: 198px;">
           </div>
 
           <div class="col-md-6 col-12">
-            <img src="assets/bienestar/arte-y-cultura.webp"
-              alt="Experiencia Quédate CIAF"
-              class="w-100 object-fit-cover rounded-5 shadow d-block"
-              style="height: 198px;">
+            <img src="assets/bienestar/arte-y-cultura.webp" alt="Experiencia Quédate CIAF"
+              class="w-100 object-fit-cover rounded-5 shadow d-block" style="height: 198px;">
           </div>
 
         </div>
@@ -619,16 +597,11 @@
 
       <!-- Video Instagram -->
       <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-        <a
-          href="https://www.instagram.com/reel/DYDhHwSh71n/?utm_source=ig_embed&amp;ig_rid=AOJnGlg0DHUi-2YA0KsdPUn"
-          target="_blank"
-          class="d-block position-relative rounded-5 overflow-hidden shadow text-decoration-none">
+        <a href="https://www.instagram.com/reel/DYDhHwSh71n/?utm_source=ig_embed&amp;ig_rid=AOJnGlg0DHUi-2YA0KsdPUn"
+          target="_blank" class="d-block position-relative rounded-5 overflow-hidden shadow text-decoration-none">
 
-          <img
-            src="assets/bienestar/transformacion-2.webp"
-            alt="Historia Inspiradores CIAF"
-            class="w-100 object-fit-cover d-block"
-            style="height: 410px;">
+          <img src="assets/bienestar/transformacion-2.webp" alt="Historia Inspiradores CIAF"
+            class="w-100 object-fit-cover d-block" style="height: 410px;">
 
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-color-3 opacity-50"></div>
 
@@ -644,121 +617,121 @@
   </div>
 </section>
 
+
 <!--  CTA BIENESTAR -->
-<section class="row justify-content-center py-5">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-      <div class="position-relative overflow-hidden rounded-5 text-white">
+<section class="row justify-content-center py-5 mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="position-relative overflow-hidden rounded-5 text-white">
 
-        <!-- Imagen de fondo -->
-        <div class="position-absolute top-0 start-0 w-100 h-100">
-          <img
-            src="assets/bienestar/no-esta-solo.webp"
-            alt="Bienestar Institucional CIAF"
-            class="w-100 h-100 object-fit-cover d-block">
-        </div>
+      <!-- Imagen de fondo -->
+      <div class="position-absolute top-0 start-0 w-100 h-100">
+        <img src="assets/bienestar/no-esta-solo.webp" alt="Bienestar Institucional CIAF"
+          class="w-100 h-100 object-fit-cover d-block">
+      </div>
 
-        <!-- Overlay azul -->
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-color-3 opacity-75"></div>
+      <!-- Overlay azul -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-color-3 opacity-75"></div>
 
-        <!-- Contenido -->
-        <div class="position-relative py-5 px-4 px-md-5 text-center">
-          <div class="row justify-content-center py-5">
-            <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+      <!-- Contenido -->
+      <div class="position-relative py-5 px-4 px-md-5 text-center">
+        <div class="row justify-content-center py-5">
+          <div class="col-xl-7 col-lg-8 col-md-10 col-12">
 
-              <div class="fs-56 text-color-3 lh-1 mb-3">
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-
-              <h2 class="fs-48 fw-extrablack lh-1 mb-4">
-                En CIAF nadie camina solo.
-              </h2>
-
-              <p class="fs-20 fw-medium text-white mb-5">
-                Cada estrategia de Bienestar Institucional nace con un propósito:
-                acompañarte, impulsarte y demostrarte que, con el apoyo adecuado,
-                no hay límites para alcanzar tus metas.
-              </p>
-
-              <a (click)="scrollToSeccion('salud-y-vida', '4')"
-                class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold justify-content-center gap-3">
-                Conoce más sobre Bienestar Institucional
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-
+            <div class="fs-56 text-color-3 lh-1 mb-3">
+              <i class="fa-solid fa-quote-right"></i>
             </div>
+
+            <h2 class="fs-48 fw-extrablack lh-1 mb-4">
+              En CIAF nadie camina solo.
+            </h2>
+
+            <p class="fs-20 fw-medium text-white mb-5">
+              Cada estrategia de Bienestar Institucional nace con un propósito:
+              acompañarte, impulsarte y demostrarte que, con el apoyo adecuado,
+              no hay límites para alcanzar tus metas.
+            </p>
+
+            <a (click)="scrollToSeccion('salud-y-vida', '4')"
+              class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold justify-content-center gap-3">
+              Conoce más sobre Bienestar Institucional
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
           </div>
         </div>
-
       </div>
+
+    </div>
   </div>
 </section>
 
 <!-- Salud y Vida -->
-<section class="row justify-content-center py-5" id="salud-y-vida">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-      <div class="row align-items-center g-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="salud-y-vida">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row align-items-center g-5">
 
-        <!-- Contenido -->
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+      <!-- Contenido -->
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
 
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
-            Salud y Vida
-          </span>
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
+          Salud y Vida
+        </span>
 
-          <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-            Bienestar es <span class="ciaf-gradient-text ciaf-gradient-text--brand">Salud y vida</span>
-          </h2>
+        <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+          Bienestar es <span class="ciaf-gradient-text ciaf-gradient-text--brand">Salud y vida</span>
+        </h2>
 
-          <p class="fs-18 py-4">
-            En este espacio, la Transformación Humana comienza por ti.
-            Te acompañamos a fortalecer tu salud mental y física,
-            brindándote las herramientas para que seas el líder consciente
-            de tu propia historia, encontrando el equilibrio perfecto para
-            crecer en lo personal y lo profesional.
+        <p class="fs-18 py-4">
+          En este espacio, la Transformación Humana comienza por ti.
+          Te acompañamos a fortalecer tu salud mental y física,
+          brindándote las herramientas para que seas el líder consciente
+          de tu propia historia, encontrando el equilibrio perfecto para
+          crecer en lo personal y lo profesional.
+        </p>
+
+        <!-- Card CTA -->
+        <div class="ciaf-card p-4 rounded-5">
+
+          <h3 class="fs-18 fw-bold text-color-2 mb-3 ">
+            Servicio gratuito para comunidad CIAF
+          </h3>
+
+          <p class="fs-14 mb-4">
+            Agenda tu acompañamiento psicosocial con nuestro equipo profesional.
           </p>
 
-          <!-- Card CTA -->
-          <div class="ciaf-card p-4 rounded-5">
+          <a href="https://docs.google.com/forms/d/1uoMEnHF6Sa5uUEsOsT_VfZd5Dntg0-s_2rf674eW7f4/viewform?edit_requested=true"
+            target="_blank" class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold fs-14 border-0">
 
-            <h3 class="fs-18 fw-bold text-color-2 mb-3 ">
-              Servicio gratuito para comunidad CIAF
-            </h3>
+            <i class="fa-regular fa-calendar-check me-2"></i>
+            Solicitar cita de acompañamiento psicosocial
 
-            <p class="fs-14 mb-4">
-              Agenda tu acompañamiento psicosocial con nuestro equipo profesional.
-            </p>
-
-            <a href="https://docs.google.com/forms/d/1uoMEnHF6Sa5uUEsOsT_VfZd5Dntg0-s_2rf674eW7f4/viewform?edit_requested=true"
-              target="_blank" class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold fs-14 border-0">
-
-              <i class="fa-regular fa-calendar-check me-2"></i>
-              Solicitar cita de acompañamiento psicosocial
-
-            </a>
-
-          </div>
-
-        </div>
-
-        <!-- Imagen -->
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
-
-          <div class="overflow-hidden rounded-5">
-
-            <img src="assets/bienestar/salud-y-vida.webp" class="w-100 salud-vida-img object-fit-cover" alt="Salud y Vida">
-
-          </div>
+          </a>
 
         </div>
 
       </div>
+
+      <!-- Imagen -->
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+
+        <div class="overflow-hidden rounded-5">
+
+          <img src="assets/bienestar/salud-y-vida.webp" class="w-100 salud-vida-img object-fit-cover"
+            alt="Salud y Vida">
+
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- Deporte y Recreación -->
-<section class="row justify-content-center py-5" id="deporte-y-recreacion">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-    <div class="row">
+<section class="row justify-content-center py-5 mx-0 px-0" id="deporte-y-recreacion">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mx-0 px-0 justify-content-center">
       <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12">
 
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
@@ -788,7 +761,8 @@
         <div class="ciaf-card h-100 text-center p-4 rounded-5 cursor-pointer" data-bs-toggle="modal"
           data-bs-target="#modalFutbol">
 
-          <div class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
+          <div
+            class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
             style="width: 64px; height: 64px;">
             <i class="fa-solid fa-trophy fs-28"></i>
           </div>
@@ -810,7 +784,8 @@
         <div class="ciaf-card h-100 text-center p-4 rounded-5 cursor-pointer" data-bs-toggle="modal"
           data-bs-target="#modalVoley">
 
-          <div class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
+          <div
+            class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
             style="width: 64px; height: 64px;">
             <i class="fa-solid fa-volleyball fs-28"></i>
           </div>
@@ -832,7 +807,8 @@
         <div class="ciaf-card h-100 text-center p-4 rounded-5 cursor-pointer" data-bs-toggle="modal"
           data-bs-target="#modalBasquet">
 
-          <div class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
+          <div
+            class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
             style="width: 64px; height: 64px;">
             <i class="fa-solid fa-wave-square fs-28"></i>
           </div>
@@ -854,7 +830,8 @@
         <div class="ciaf-card h-100 text-center p-4 rounded-5 cursor-pointer" data-bs-toggle="modal"
           data-bs-target="#modalGimnasio">
 
-          <div class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
+          <div
+            class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
             style="width: 64px; height: 64px;">
             <i class="fa-solid fa-dumbbell fs-28"></i>
           </div>
@@ -876,7 +853,8 @@
         <div class="ciaf-card h-100 text-center p-4 rounded-5 cursor-pointer" data-bs-toggle="modal"
           data-bs-target="#modalEsports">
 
-          <div class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
+          <div
+            class="mx-auto mb-4 bg-color-3 text-white rounded-circle d-flex align-items-center justify-content-center"
             style="width: 64px; height: 64px;">
             <i class="fa-solid fa-gamepad fs-28"></i>
           </div>
@@ -929,6 +907,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Modal Vóley -->
 <div class="modal fade" id="modalVoley" tabindex="-1" aria-hidden="true">
@@ -1047,8 +1026,8 @@
 </div>
 
 <!-- Arte y Cultura -->
-<section class="row justify-content-center py-5" id="arte-y-cultura">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+<section class="row justify-content-center py-5 px-0 mx-0" id="arte-y-cultura">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
     <div class="row align-items-center g-5">
 
       <!-- Imagen -->
@@ -1119,7 +1098,8 @@
 
       <!-- Video 1 -->
       <div class="col-12 col-md-6 col-lg-4">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           data-bs-toggle="modal" data-bs-target="#modalVideoArte1">
 
           <img src="assets/bienestar/video-1.webp" class="w-100 object-fit-cover bienestar-video-img"
@@ -1136,7 +1116,8 @@
 
       <!-- Video 2 -->
       <div class="col-12 col-md-6 col-lg-4">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           data-bs-toggle="modal" data-bs-target="#modalVideoArte2">
 
           <img src="assets/bienestar/video-1.webp" class="w-100 object-fit-cover bienestar-video-img"
@@ -1153,7 +1134,8 @@
 
       <!-- Video 3 -->
       <div class="col-12 col-md-6 col-lg-4">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           data-bs-toggle="modal" data-bs-target="#modalVideoArte3">
 
           <img src="assets/bienestar/video-1.webp" class="w-100 object-fit-cover bienestar-video-img"
@@ -1241,8 +1223,8 @@
 </section>
 
 <!-- Desarrollo Humano -->
-<section class="row justify-content-center py-5" id="desarrollo-humano">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+<section class="row justify-content-center py-5 mx-0 px-0" id="desarrollo-humano">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
     <div class="ciaf-card rounded-5 shadow-lg p-4 p-lg-5">
 
       <div class="row">
@@ -1290,117 +1272,117 @@
 </section>
 
 <!-- Promoción Socioeconómica -->
-<section class="row justify-content-center py-5" id="promocion-socioeconomica">
+<section class="row justify-content-center py-5 mx-0 px-0" id="promocion-socioeconomica">
 
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-      <div class="row">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mx-0 px-0 justify-content-center">
 
-        <div class="col-lg-8">
+      <div class="col-lg-8">
 
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
-            Promoción Socioeconómica
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
+          Promoción Socioeconómica
+        </span>
+
+        <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
+          Bienestar es promoción
+          <span class="ciaf-gradient-text ciaf-gradient-text--brand">
+            socioeconómica
           </span>
+        </h2>
 
-          <h2 class="fs-36 fw-extrablack text-color-2 mt-4">
-            Bienestar es promoción
-            <span class="ciaf-gradient-text ciaf-gradient-text--brand">
-              socioeconómica
-            </span>
-          </h2>
-
-          <p class="fs-18 py-4">
-            La Transformación Humana requiere tranquilidad para enfocarse en lo esencial.
-            Nuestra línea socioeconómica te brinda herramientas financieras necesarias y
-            reconoce tu esfuerzo con incentivos, para que tu única prioridad sea liderar
-            tu formación. Buscamos eliminar las barreras que te limitan, permitiéndote
-            concentrarte en el desarrollo de tu talento y en la construcción del futuro
-            que sueñas.
-          </p>
-
-        </div>
+        <p class="fs-18 py-4">
+          La Transformación Humana requiere tranquilidad para enfocarse en lo esencial.
+          Nuestra línea socioeconómica te brinda herramientas financieras necesarias y
+          reconoce tu esfuerzo con incentivos, para que tu única prioridad sea liderar
+          tu formación. Buscamos eliminar las barreras que te limitan, permitiéndote
+          concentrarte en el desarrollo de tu talento y en la construcción del futuro
+          que sueñas.
+        </p>
 
       </div>
 
-      <div class="row g-4">
+    </div>
 
-        <!-- Apoyos y beneficios -->
-        <div class="col-lg-4 col-md-6">
-          <div class="ciaf-card px-4 py-3 rounded-5 h-100">
+    <div class="row g-4">
 
-            <div class="d-flex align-items-center gap-3">
+      <!-- Apoyos y beneficios -->
+      <div class="col-lg-4 col-md-6">
+        <div class="ciaf-card px-4 py-3 rounded-5 h-100">
 
-              <div class="bg-color-5 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                style="width: 56px; height: 56px;">
+          <div class="d-flex align-items-center gap-3">
 
-                <i class="fa-solid fa-hand-holding-heart text-color-2"></i>
+            <div class="bg-color-5 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+              style="width: 56px; height: 56px;">
 
-              </div>
-
-              <h3 class="fs-14 fw-bold text-color-2 mb-0">
-                Apoyos y beneficios
-              </h3>
+              <i class="fa-solid fa-hand-holding-heart text-color-2"></i>
 
             </div>
 
-          </div>
-        </div>
-
-        <!-- Convenios -->
-        <div class="col-lg-4 col-md-6">
-          <div class="ciaf-card px-4 py-3 rounded-5 h-100">
-
-            <div class="d-flex align-items-center gap-3">
-
-              <div class="bg-color-5 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                style="width: 56px; height: 56px;">
-
-                <i class="fa-solid fa-handshake text-color-2"></i>
-
-              </div>
-
-              <h3 class="fs-14 fw-bold text-color-2 mb-0">
-                Convenios institucionales
-              </h3>
-
-            </div>
+            <h3 class="fs-14 fw-bold text-color-2 mb-0">
+              Apoyos y beneficios
+            </h3>
 
           </div>
+
         </div>
-
-        <!-- Incentivos -->
-        <div class="col-lg-4 col-md-6">
-          <div class="ciaf-card px-4 py-3 rounded-5 h-100">
-
-            <div class="d-flex align-items-center gap-3">
-
-              <div class="bg-color-5 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                style="width: 56px; height: 56px;">
-
-                <i class="fa-solid fa-award text-color-2"></i>
-
-              </div>
-
-              <h3 class="fs-14 fw-bold text-color-2 mb-0">
-                Incentivos al mérito
-              </h3>
-
-            </div>
-
-          </div>
-        </div>
-
       </div>
 
-      <p class="fs-14 mt-4 mb-0">
-        Calendario de contenidos y líneas de atención disponibles a través de los canales institucionales.
-      </p>
+      <!-- Convenios -->
+      <div class="col-lg-4 col-md-6">
+        <div class="ciaf-card px-4 py-3 rounded-5 h-100">
+
+          <div class="d-flex align-items-center gap-3">
+
+            <div class="bg-color-5 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+              style="width: 56px; height: 56px;">
+
+              <i class="fa-solid fa-handshake text-color-2"></i>
+
+            </div>
+
+            <h3 class="fs-14 fw-bold text-color-2 mb-0">
+              Convenios institucionales
+            </h3>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Incentivos -->
+      <div class="col-lg-4 col-md-6">
+        <div class="ciaf-card px-4 py-3 rounded-5 h-100">
+
+          <div class="d-flex align-items-center gap-3">
+
+            <div class="bg-color-5 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+              style="width: 56px; height: 56px;">
+
+              <i class="fa-solid fa-award text-color-2"></i>
+
+            </div>
+
+            <h3 class="fs-14 fw-bold text-color-2 mb-0">
+              Incentivos al mérito
+            </h3>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <p class="fs-14 mt-4 mb-0">
+      Calendario de contenidos y líneas de atención disponibles a través de los canales institucionales.
+    </p>
   </div>
 </section>
 
 <!-- Bienestar en video -->
-<section class="row justify-content-center py-5" id="bienestar-en-video">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-    <div class="row">
+<section class="row justify-content-center py-5 mx-0 px-0" id="bienestar-en-video">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+    <div class="row mx-0 px-0 justify-content-center">
       <div class="col-12">
 
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-uppercase ls-4">
@@ -1425,7 +1407,8 @@
 
       <!-- VIDEO 1 -->
       <div class="col-12 col-md-6 col-lg-3">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           (click)="abrirVideo('1NaRdoGCLdM')" data-bs-toggle="modal" data-bs-target="#modalBienestarVideo">
 
           <img src="https://img.youtube.com/vi/1NaRdoGCLdM/maxresdefault.jpg"
@@ -1443,7 +1426,8 @@
 
       <!-- VIDEO 2 -->
       <div class="col-12 col-md-6 col-lg-3">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           (click)="abrirVideo('NdY-QkDyF9E')" data-bs-toggle="modal" data-bs-target="#modalBienestarVideo">
 
           <img src="https://img.youtube.com/vi/NdY-QkDyF9E/maxresdefault.jpg"
@@ -1461,7 +1445,8 @@
 
       <!-- VIDEO 3 -->
       <div class="col-12 col-md-6 col-lg-3">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           (click)="abrirVideo('y32i14pjYWY')" data-bs-toggle="modal" data-bs-target="#modalBienestarVideo">
 
           <img src="https://img.youtube.com/vi/y32i14pjYWY/maxresdefault.jpg"
@@ -1479,7 +1464,8 @@
 
       <!-- VIDEO 4 -->
       <div class="col-12 col-md-6 col-lg-3">
-        <button type="button" class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
+        <button type="button"
+          class="bienestar-video-card border-0 p-0 w-100 rounded-5 overflow-hidden position-relative"
           (click)="abrirVideo('3gdZQw7zyXE')" data-bs-toggle="modal" data-bs-target="#modalBienestarVideo">
 
           <img src="https://img.youtube.com/vi/3gdZQw7zyXE/maxresdefault.jpg"
@@ -1525,9 +1511,10 @@
 
 </div>
 
+
 <!-- orientacion psicosocial -->
-<section class="row justify-content-center py-5" id="orientacion">
-  <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-12 px-0">
+<section class="row justify-content-center py-5 mx-0 px-0" id="orientacion">
+  <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-10 px-0 mx-0">
     <div class="ciaf-card rounded-5 p-4 p-lg-5 shadow-lg">
 
       <div class="row align-items-center g-5">
@@ -1607,8 +1594,8 @@
 
 <app-convenios></app-convenios>
 
-<section class="row justify-content-center py-5" id="formula">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
+<section class="row justify-content-center py-5 mx-0 px-0" id="formula">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
     <div class="row">
 
       <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-8">
@@ -1627,7 +1614,8 @@
     <div class="row justify-content-center">
 
       <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+          responsive="breakpoints">
           <div ngxSlickItem *ngFor="let imagenes of imagenesExperiencias" class="slide px-2">
             <a [href]="imagenes.link" target="_blank" rel="noopener noreferrer"
               class="bienestar-video-card d-block border-0 p-0 w-100 rounded-5 overflow-hidden position-relative text-decoration-none">

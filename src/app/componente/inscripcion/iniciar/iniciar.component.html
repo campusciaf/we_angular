@@ -1,156 +1,160 @@
 <app-header></app-header>
 
 <!-- CTA Inscripción -->
-<section class="container py-5" id="inicio">
-  <div class="row align-items-center g-5 py-4">
+<section class="row justify-content-center py-5 mx-0 px-0" id="inicio">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+    <div class="row justify-content-center align-items-center py-4 mx-0 px-0 pt-5 mt-5">
 
-    <!-- Contenido -->
-    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+      <!-- Contenido -->
+      <div class="col-xl-6 col-lg-6 col-md-12 col-10 mt-2">
 
-      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-        Universitarios sin límites
-      </span>
-
-      <h2 class="fs-60 fw-extrablack text-color-2 mt-4 mb-4 lh-1">
-        Empieza hoy el
-        <br>
-        camino hacia tu
-        <br>
-        <span class="ciaf-gradient-text ciaf-gradient-text--brand">
-          futuro profesional.
+        <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+          Universitarios sin límites
         </span>
-      </h2>
 
-      <p class="fs-20 text-color-1 mb-5">
-        En CIAF creemos que no existen los límites cuando decides
-        transformar tu vida a través de la educación. Déjanos acompañarte
-        desde el primer paso.
-      </p>
+        <h2 class="fs-60 fw-extrablack text-color-2 mt-4 mb-4 lh-1">
+          Empieza hoy el
+          <br>
+          camino hacia tu
+          <br>
+          <span class="ciaf-gradient-text ciaf-gradient-text--brand">
+            futuro profesional.
+          </span>
+        </h2>
 
-      <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+        <p class="fs-20 text-color-1 mb-5">
+          En CIAF creemos que no existen los límites cuando decides
+          transformar tu vida a través de la educación. Déjanos acompañarte
+          desde el primer paso.
+        </p>
 
-        <a href="#inscribirme" role="button" (click)="scrollToSeccion('inscribirme', $event)"
-          class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-3 justify-content-center text-decoration-none">
-          Quiero inscribirme
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
+        <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
 
-        <a routerLink="/onlogin"
-          class="ciaf-btn ciaf-btn--lime rounded-pill px-4 py-3 fw-bold gap-3 justify-content-center text-decoration-none">
-          Continuar proceso
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
+          <a href="#inscribirme" role="button" (click)="scrollToSeccion('inscribirme', $event)"
+            class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-3 justify-content-center text-decoration-none">
+            Quiero inscribirme
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
 
-        <a href="https://api.whatsapp.com/send/?phone=573126814341&text&type=phone_number&app_absent=0" target="_blank"
-          rel="noopener noreferrer"
-          class="ciaf-btn ciaf-btn--outline rounded-pill px-4 py-3 fw-bold gap-3 justify-content-center text-decoration-none">
-          Hablar con un asesor
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
+          <a routerLink="/onlogin"
+            class="ciaf-btn ciaf-btn--lime rounded-pill px-4 py-3 fw-bold gap-3 justify-content-center text-decoration-none">
+            Continuar proceso
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+          <a href="https://api.whatsapp.com/send/?phone=573126814341&text&type=phone_number&app_absent=0"
+            target="_blank" rel="noopener noreferrer"
+            class="ciaf-btn ciaf-btn--outline rounded-pill px-4 py-3 fw-bold gap-3 justify-content-center text-decoration-none">
+            Hablar con un asesor
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Imagen -->
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+        <div class="ciaf-card rounded-5 overflow-hidden">
+          <img src="assets/inscribete/inscribete.webp" alt="Estudiantes universitarios CIAF"
+            class="w-100 object-fit-cover d-block" style="height: 435px;">
+        </div>
 
       </div>
 
     </div>
-
-    <!-- Imagen -->
-    <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-
-      <div class="ciaf-card rounded-5 overflow-hidden">
-        <img src="assets/inscribete/inscribete.webp" alt="Estudiantes universitarios CIAF"
-          class="w-100 object-fit-cover d-block" style="height: 435px;">
-      </div>
-
-    </div>
-
   </div>
 </section>
 
 <!-- Por qué estudiar en CIAF -->
-<section class="container py-5" id="porque">
-  <div class="row justify-content-center mb-5">
-    <div class="col-xl-8 col-lg-9 col-md-10 col-12 text-center">
-      <h2 class="fs-40 fw-extrablack text-color-2 mb-0">
-        ¿Por qué estudiar en CIAF?
-      </h2>
-    </div>
-  </div>
-
-  <div class="row g-4">
-
-    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-      <div class="ciaf-card rounded-5 p-4 h-100">
-        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
-          <i class="fa-solid fa-hammer"></i>
-        </div>
-
-        <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
-          Aprendizaje práctico
-        </h3>
-
-        <p class="fs-16 text-color-1 mb-0">
-          Aprendes haciendo, con proyectos reales desde el primer día.
-        </p>
+<section class="row justify-content-center py-5 mx-0 px-0" id="porque">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+    <div class="row justify-content-center mb-5 mx-0 px-0">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-10 text-center">
+        <h2 class="fs-40 fw-extrablack text-color-2 mb-0">
+          ¿Por qué estudiar en CIAF?
+        </h2>
       </div>
     </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-      <div class="ciaf-card rounded-5 p-4 h-100">
-        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
-          <i class="fa-regular fa-user-check"></i>
+    <div class="row g-4 mx-0 px-0 justify-content-center">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+        <div class="ciaf-card rounded-5 p-4 h-100">
+          <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+            <i class="fa-solid fa-hammer"></i>
+          </div>
+
+          <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
+            Aprendizaje práctico
+          </h3>
+
+          <p class="fs-16 text-color-1 mb-0">
+            Aprendes haciendo, con proyectos reales desde el primer día.
+          </p>
         </div>
-
-        <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
-          Docentes con experiencia
-        </h3>
-
-        <p class="fs-16 text-color-1 mb-0">
-          Profesionales que conocen el mundo laboral y te guían.
-        </p>
       </div>
-    </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-      <div class="ciaf-card rounded-5 p-4 h-100">
-        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
-          <i class="fa-regular fa-life-ring"></i>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+        <div class="ciaf-card rounded-5 p-4 h-100">
+          <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+            <i class="fa-regular fa-user-check"></i>
+          </div>
+
+          <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
+            Docentes con experiencia
+          </h3>
+
+          <p class="fs-16 text-color-1 mb-0">
+            Profesionales que conocen el mundo laboral y te guían.
+          </p>
         </div>
-
-        <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
-          Acompañamiento permanente
-        </h3>
-
-        <p class="fs-16 text-color-1 mb-0">
-          Nunca estás solo. Te acompañamos en cada etapa.
-        </p>
       </div>
-    </div>
 
-    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-      <div class="ciaf-card rounded-5 p-4 h-100">
-        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
-          <i class="fa-solid fa-suitcase"></i>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+        <div class="ciaf-card rounded-5 p-4 h-100">
+          <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+            <i class="fa-regular fa-life-ring"></i>
+          </div>
+
+          <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
+            Acompañamiento permanente
+          </h3>
+
+          <p class="fs-16 text-color-1 mb-0">
+            Nunca estás solo. Te acompañamos en cada etapa.
+          </p>
         </div>
-
-        <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
-          Conexión laboral
-        </h3>
-
-        <p class="fs-16 text-color-1 mb-0">
-          Formación conectada con las oportunidades del mundo real.
-        </p>
       </div>
-    </div>
 
+      <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+        <div class="ciaf-card rounded-5 p-4 h-100">
+          <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
+            <i class="fa-solid fa-suitcase"></i>
+          </div>
+
+          <h3 class="fs-18 fw-extrablack text-color-2 mb-3">
+            Conexión laboral
+          </h3>
+
+          <p class="fs-16 text-color-1 mb-0">
+            Formación conectada con las oportunidades del mundo real.
+          </p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- Proceso de inscripción -->
-<section class="ciaf-section-light py-5" id="proceso">
-  <div class="container py-4">
+<section class="row justify-content-center ciaf-section-light py-5 mx-0 px-0" id="proceso">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
 
     <!-- Encabezado -->
-    <div class="row justify-content-center text-center mb-5">
-      <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+    <div class="row justify-content-center text-center mb-5 mx-0 px-0">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-10">
 
         <h2 class="fs-40 fw-extrablack text-color-2 mb-3">
           Proceso de inscripción
@@ -164,8 +168,8 @@
     </div>
 
     <!-- Pasos -->
-    <div class="row justify-content-center">
-      <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+    <div class="row justify-content-center mx-0 px-0">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-10 ">
 
         <!-- Paso 1 -->
         <div class="ciaf-card rounded-5 p-4">
@@ -299,234 +303,237 @@
 </section>
 
 
-<section class="container py-5" id="inscribirme">
-  <div class="row align-items-stretch g-5">
+<section class="row justify-content-center py-5 mx-0 px-0" id="inscribirme">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+    <div class="row align-items-stretch g-5 mx-0 px-0">
 
-    <!-- Mensaje izquierdo -->
-    <div class="col-xl-5 col-lg-5 col-md-12 col-12">
-      <div class="h-100 bg-color-3 rounded-5 p-5 text-white d-flex flex-column justify-content-center">
+      <!-- Mensaje izquierdo -->
+      <div class="col-xl-5 col-lg-5 col-md-12 col-12">
+        <div class="h-100 bg-color-3 rounded-5 p-5 text-white d-flex flex-column justify-content-center">
 
-        <span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4 mb-4">
-          Inscripción CIAF
-        </span>
-
-        <h2 class="fs-48 fw-extrablack lh-1 mb-4">
-          Estás a un paso de subir tu nivel con CIAF
-        </h2>
-
-        <p class="fs-18 text-white-80 mb-4">
-          En CIAF estamos listos para iniciar juntos esta experiencia. Completa tus datos y un asesor te acompañará en
-          el proceso.
-        </p>
-
-        <div class="ciaf-card bg-white rounded-5 p-4 mb-4">
-          <h3 class="fs-18 fw-extrablack text-color-2 mb-2">
-            ¿Ya tienes cuenta?
-          </h3>
-          <p class="fs-14 text-color-1 mb-3">
-            Ingresa para continuar tu proceso de inscripción.
-          </p>
-
-          <a routerLink="/onlogin" class="ciaf-btn ciaf-btn--lime  rounded-pill px-4 py-3 fw-bold gap-3">
-            Continuar proceso
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Formulario -->
-    <div class="col-xl-7 col-lg-7 col-md-12 col-12">
-      <div class="ciaf-card rounded-5 p-4 p-md-5 h-100">
-
-        <div class="mb-4">
-          <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
-            Datos del aspirante
+          <span class="ciaf-pill ciaf-pill--hero fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4 mb-4">
+            Inscripción CIAF
           </span>
 
-          <h1 class="fs-40 fw-extrablack text-color-2 mt-4 mb-2">
-            Inicia tu proceso
-          </h1>
+          <h2 class="fs-48 fw-extrablack lh-1 mb-4">
+            Estás a un paso de subir tu nivel con CIAF
+          </h2>
 
-          <p class="fs-16 text-color-1 mb-0">
-            Completa la información básica y selecciona el programa de tu interés.
+          <p class="fs-18 text-white-80 mb-4">
+            En CIAF estamos listos para iniciar juntos esta experiencia. Completa tus datos y un asesor te acompañará en
+            el proceso.
           </p>
+
+          <div class="ciaf-card bg-white rounded-5 p-4 mb-4">
+            <h3 class="fs-18 fw-extrablack text-color-2 mb-2">
+              ¿Ya tienes cuenta?
+            </h3>
+            <p class="fs-14 text-color-1 mb-3">
+              Ingresa para continuar tu proceso de inscripción.
+            </p>
+
+            <a routerLink="/onlogin" class="ciaf-btn ciaf-btn--lime  rounded-pill px-4 py-3 fw-bold gap-3">
+              Continuar proceso
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
         </div>
-
-        <form class="text-start" [formGroup]="myForm" (ngSubmit)="registro()">
-
-          <!-- Identificación -->
-          <div class="input-group input-group-lg mb-2">
-            <span class="input-group-text bg-color-3 text-white border-0">
-              <i class="fa-regular fa-id-card"></i>
-            </span>
-            <div class="form-floating">
-              <input class="form-control border-start-0" placeholder="Número de identificación" type="text"
-                name="user_identificacion" formControlName="user_identificacion" required autocomplete="on">
-              <label>Número de identificación</label>
-            </div>
-          </div>
-
-          <div class="mb-3" *ngFor="let validation of account_validation_messages.user_identificacion">
-            <div class="error-message fs-12"
-              *ngIf="myForm.get('user_identificacion')?.hasError(validation.type) && (myForm.get('user_identificacion')?.dirty || myForm.get('user_identificacion')?.touched)">
-              {{ validation.message }}
-            </div>
-          </div>
-
-          <!-- Repetir identificación -->
-          <div class="input-group input-group-lg mb-2">
-            <span class="input-group-text bg-color-3 text-white border-0">
-              <i class="fa-regular fa-id-card"></i>
-            </span>
-            <div class="form-floating">
-              <input class="form-control border-start-0" placeholder="Repetir número de identificación" type="text"
-                name="user_identificacion_r" formControlName="user_identificacion_r" required autocomplete="on">
-              <label>Repetir número de identificación</label>
-            </div>
-          </div>
-
-          <div class="mb-3" *ngFor="let validation of account_validation_messages.user_identificacion_r">
-            <div class="error-message fs-12"
-              *ngIf="myForm.get('user_identificacion_r')?.hasError(validation.type) && (myForm.get('user_identificacion_r')?.dirty || myForm.get('user_identificacion_r')?.touched)">
-              {{ validation.message }}
-            </div>
-          </div>
-
-          <!-- Nombre -->
-          <div class="input-group input-group-lg mb-2">
-            <span class="input-group-text bg-color-3 text-white border-0">
-              <i class="fa-regular fa-user"></i>
-            </span>
-            <div class="form-floating">
-              <input class="form-control border-start-0" placeholder="Nombre completo" type="text" name="user_nombre"
-                formControlName="user_nombre" required autocomplete="on">
-              <label>Nombre completo</label>
-            </div>
-          </div>
-
-          <div class="mb-3" *ngFor="let validation of account_validation_messages.user_nombre">
-            <div class="error-message fs-12"
-              *ngIf="myForm.get('user_nombre')?.hasError(validation.type) && (myForm.get('user_nombre')?.dirty || myForm.get('user_nombre')?.touched)">
-              {{ validation.message }}
-            </div>
-          </div>
-
-          <!-- Correo -->
-          <div class="input-group input-group-lg mb-2">
-            <span class="input-group-text bg-color-3 text-white border-0">
-              <i class="fa-regular fa-envelope"></i>
-            </span>
-            <div class="form-floating">
-              <input class="form-control border-start-0" placeholder="Correo electrónico" type="email" name="user_email"
-                formControlName="user_email" required autocomplete="on">
-              <label>Correo electrónico</label>
-            </div>
-          </div>
-
-          <div class="mb-3" *ngFor="let validation of account_validation_messages.user_email">
-            <div class="error-message fs-12"
-              *ngIf="myForm.get('user_email')?.hasError(validation.type) && (myForm.get('user_email')?.dirty || myForm.get('user_email')?.touched)">
-              {{ validation.message }}
-            </div>
-          </div>
-
-          <!-- Celular -->
-          <div class="input-group input-group-lg mb-2">
-            <span class="input-group-text bg-color-3 text-white border-0">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-            </span>
-            <div class="form-floating">
-              <input class="form-control border-start-0" placeholder="Número de contacto" type="number"
-                name="user_celular" formControlName="user_celular" required autocomplete="on">
-              <label>Número de contacto</label>
-            </div>
-          </div>
-
-          <div class="mb-3" *ngFor="let validation of account_validation_messages.user_celular">
-            <div class="error-message fs-12"
-              *ngIf="myForm.get('user_celular')?.hasError(validation.type) && (myForm.get('user_celular')?.dirty || myForm.get('user_celular')?.touched)">
-              {{ validation.message }}
-            </div>
-          </div>
-
-          <!-- Programa -->
-          <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text bg-color-3 text-white border-0">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </span>
-            <div class="form-floating">
-              <select name="fo_programa" id="user_programa" class="form-control border-start-0"
-                formControlName="user_programa" required>
-                <option value="" selected disabled>Selecciona el programa de tu interés</option>
-                <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Profesional Administración de
-                  empresas</option>
-                <option value="Técnica Profesional en Gestión Financiera">Profesional Contaduría pública</option>
-                <option value="Nivel 1 - Técnico Profesional en Seguridad y Salud en el Trabajo">Profesional Seguridad y
-                  salud en el trabajo</option>
-                <option value="Nivel 1 - Técnica profesional en programación de software">Profesional Ingeniería de
-                  software</option>
-                <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Profesional Ingeniería
-                  Industrial</option>
-                <option value="Programas técnicos laborales">Profesional Programas técnicos laborales</option>
-                <option value="Diplomados y educación continua">Diplomados y educación continua</option>
-                <option value="Homologaciones y nivelaciones">Homologaciones y nivelaciones</option>
-              </select>
-              <label>Selecciona el programa</label>
-            </div>
-          </div>
-
-          <!-- Checks -->
-          <div class="ciaf-card rounded-5 p-4 mb-4">
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="flexCheckDefault" formControlName="acepto"
-                name="acepto">
-              <label class="form-check-label fs-13 text-color-1" for="flexCheckDefault">
-                Acepto los
-                <strong>
-                  <a href="https://www.ciaf.edu.co/tratamiento_datos.php" target="_blank">términos y condiciones</a>
-                </strong>
-                para el uso de mi información.
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="flexCheckDefault1" formControlName="politic"
-                name="politic">
-              <label class="form-check-label fs-13 text-color-1" for="flexCheckDefault1">
-                Acepto el envío de información a mi correo electrónico. He revisado las
-                <a routerLink="/tratamientodatos" target="_blank">Políticas de protección de Datos</a>
-                y
-                <a href="https://ciaf.edu.co/assets/referidos/terminosycondiciones.pdf" target="_blank">
-                  Términos condiciones
-                </a>.
-              </label>
-            </div>
-          </div>
-
-          <!-- Botón -->
-          <button type="submit" id="ingresar_inscripcion"
-            class="ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold justify-content-center w-100 gap-3"
-            [disabled]="!myForm.valid">
-            Iniciar proceso
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </button>
-
-        </form>
       </div>
-    </div>
 
+      <!-- Formulario -->
+      <div class="col-xl-7 col-lg-7 col-md-12 col-12">
+        <div class="ciaf-card rounded-5 p-4 p-md-5 h-100">
+
+          <div class="mb-4">
+            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
+              Datos del aspirante
+            </span>
+
+            <h1 class="fs-40 fw-extrablack text-color-2 mt-4 mb-2">
+              Inicia tu proceso
+            </h1>
+
+            <p class="fs-16 text-color-1 mb-0">
+              Completa la información básica y selecciona el programa de tu interés.
+            </p>
+          </div>
+
+          <form class="text-start" [formGroup]="myForm" (ngSubmit)="registro()">
+
+            <!-- Identificación -->
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text bg-color-3 text-white border-0">
+                <i class="fa-regular fa-id-card"></i>
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Número de identificación" type="text"
+                  name="user_identificacion" formControlName="user_identificacion" required autocomplete="on">
+                <label>Número de identificación</label>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngFor="let validation of account_validation_messages.user_identificacion">
+              <div class="error-message fs-12"
+                *ngIf="myForm.get('user_identificacion')?.hasError(validation.type) && (myForm.get('user_identificacion')?.dirty || myForm.get('user_identificacion')?.touched)">
+                {{ validation.message }}
+              </div>
+            </div>
+
+            <!-- Repetir identificación -->
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text bg-color-3 text-white border-0">
+                <i class="fa-regular fa-id-card"></i>
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Repetir número de identificación" type="text"
+                  name="user_identificacion_r" formControlName="user_identificacion_r" required autocomplete="on">
+                <label>Repetir número de identificación</label>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngFor="let validation of account_validation_messages.user_identificacion_r">
+              <div class="error-message fs-12"
+                *ngIf="myForm.get('user_identificacion_r')?.hasError(validation.type) && (myForm.get('user_identificacion_r')?.dirty || myForm.get('user_identificacion_r')?.touched)">
+                {{ validation.message }}
+              </div>
+            </div>
+
+            <!-- Nombre -->
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text bg-color-3 text-white border-0">
+                <i class="fa-regular fa-user"></i>
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Nombre completo" type="text" name="user_nombre"
+                  formControlName="user_nombre" required autocomplete="on">
+                <label>Nombre completo</label>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngFor="let validation of account_validation_messages.user_nombre">
+              <div class="error-message fs-12"
+                *ngIf="myForm.get('user_nombre')?.hasError(validation.type) && (myForm.get('user_nombre')?.dirty || myForm.get('user_nombre')?.touched)">
+                {{ validation.message }}
+              </div>
+            </div>
+
+            <!-- Correo -->
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text bg-color-3 text-white border-0">
+                <i class="fa-regular fa-envelope"></i>
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Correo electrónico" type="email"
+                  name="user_email" formControlName="user_email" required autocomplete="on">
+                <label>Correo electrónico</label>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngFor="let validation of account_validation_messages.user_email">
+              <div class="error-message fs-12"
+                *ngIf="myForm.get('user_email')?.hasError(validation.type) && (myForm.get('user_email')?.dirty || myForm.get('user_email')?.touched)">
+                {{ validation.message }}
+              </div>
+            </div>
+
+            <!-- Celular -->
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text bg-color-3 text-white border-0">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </span>
+              <div class="form-floating">
+                <input class="form-control border-start-0" placeholder="Número de contacto" type="number"
+                  name="user_celular" formControlName="user_celular" required autocomplete="on">
+                <label>Número de contacto</label>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngFor="let validation of account_validation_messages.user_celular">
+              <div class="error-message fs-12"
+                *ngIf="myForm.get('user_celular')?.hasError(validation.type) && (myForm.get('user_celular')?.dirty || myForm.get('user_celular')?.touched)">
+                {{ validation.message }}
+              </div>
+            </div>
+
+            <!-- Programa -->
+            <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text bg-color-3 text-white border-0">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </span>
+              <div class="form-floating">
+                <select name="fo_programa" id="user_programa" class="form-control border-start-0"
+                  formControlName="user_programa" required>
+                  <option value="" selected disabled>Selecciona el programa de tu interés</option>
+                  <option value="Nivel 1 - Técnico Profesional en Procesos Empresariales">Profesional Administración de
+                    empresas</option>
+                  <option value="Técnica Profesional en Gestión Financiera">Profesional Contaduría pública</option>
+                  <option value="Nivel 1 - Técnico Profesional en Seguridad y Salud en el Trabajo">Profesional Seguridad
+                    y
+                    salud en el trabajo</option>
+                  <option value="Nivel 1 - Técnica profesional en programación de software">Profesional Ingeniería de
+                    software</option>
+                  <option value="Nivel 1 - Técnico Profesional en Logística de Producción">Profesional Ingeniería
+                    Industrial</option>
+                  <option value="Programas técnicos laborales">Profesional Programas técnicos laborales</option>
+                  <option value="Diplomados y educación continua">Diplomados y educación continua</option>
+                  <option value="Homologaciones y nivelaciones">Homologaciones y nivelaciones</option>
+                </select>
+                <label>Selecciona el programa</label>
+              </div>
+            </div>
+
+            <!-- Checks -->
+            <div class="ciaf-card rounded-5 p-4 mb-4">
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="flexCheckDefault" formControlName="acepto"
+                  name="acepto">
+                <label class="form-check-label fs-13 text-color-1" for="flexCheckDefault">
+                  Acepto los
+                  <strong>
+                    <a href="https://www.ciaf.edu.co/tratamiento_datos.php" target="_blank">términos y condiciones</a>
+                  </strong>
+                  para el uso de mi información.
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="flexCheckDefault1" formControlName="politic"
+                  name="politic">
+                <label class="form-check-label fs-13 text-color-1" for="flexCheckDefault1">
+                  Acepto el envío de información a mi correo electrónico. He revisado las
+                  <a routerLink="/tratamientodatos" target="_blank">Políticas de protección de Datos</a>
+                  y
+                  <a href="https://ciaf.edu.co/assets/referidos/terminosycondiciones.pdf" target="_blank">
+                    Términos condiciones
+                  </a>.
+                </label>
+              </div>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit" id="ingresar_inscripcion"
+              class="ciaf-btn ciaf-btn--primary rounded-pill px-5 py-3 fw-bold justify-content-center w-100 gap-3"
+              [disabled]="!myForm.valid">
+              Iniciar proceso
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- Qué sucede después -->
-<section class="ciaf-section-light py-5" id="sucede">
-  <div class="container py-5">
+<section class="row justify-content-center ciaf-section-light py-5 mx-0 px-0" id="sucede">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
 
     <!-- Encabezado -->
-    <div class="row justify-content-center text-center mb-5">
-      <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+    <div class="row justify-content-center text-center mb-5 mx-0 px-0">
+      <div class="col-xl-8 col-lg-9 col-md-10 col-10">
         <h2 class="fs-40 fw-extrablack text-color-2 mb-0">
           ¿Qué sucede después?
         </h2>
@@ -534,10 +541,10 @@
     </div>
 
     <!-- Cards -->
-    <div class="row g-4">
+    <div class="row g-4 mx-0 px-0 justify-content-center">
 
       <!-- Card 1 -->
-      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100">
 
           <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
@@ -556,7 +563,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100">
 
           <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
@@ -575,7 +582,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+      <div class="col-xl-4 col-lg-4 col-md-12 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100">
 
           <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mb-4">
@@ -599,81 +606,86 @@
 </section>
 
 <!-- Testimonio egresado -->
-<section class="container py-5" id="testimonio">
-  <div class="row justify-content-center">
-    <div class="col-xl-9 col-lg-10 col-md-11 col-12">
+<section class="row justify-content-center py-5 mx-0 px-0" id="testimonio">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+    <div class="row justify-content-center mx-0 px-0">
+      <div class="col-xl-9 col-lg-10 col-md-11 col-10">
 
-      <div class="ciaf-card rounded-5 p-4 p-md-5">
-        <div class="row align-items-center g-4">
+        <div class="ciaf-card rounded-5 p-4 p-md-5">
+          <div class="row align-items-center g-4">
 
-          <!-- Imagen -->
-          <div class="col-xl-3 col-lg-3 col-md-4 col-12 text-center">
-            <img src="assets/inscribete/testimonio.webp" alt="Egresada CIAF"
-              class="img-fluid rounded-5 object-fit-cover" style="width: 160px; height: 160px;">
-          </div>
-
-          <!-- Testimonio -->
-          <div class="col-xl-9 col-lg-9 col-md-8 col-12">
-
-            <div class="fs-48 text-color-4 lh-1 mb-2">
-              <i class="fa-solid fa-quote-left"></i>
+            <!-- Imagen -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 text-center">
+              <img src="assets/inscribete/testimonio.webp" alt="Egresada CIAF"
+                class="img-fluid rounded-5 object-fit-cover" style="width: 160px; height: 160px;">
             </div>
 
-            <blockquote class="mb-4">
-              <p class="fs-22 fw-bold text-color-2 mb-0">
-                “En CIAF encontré mucho más que una universidad;
-                encontré personas que me acompañaron a cumplir mis metas.”
-              </p>
-            </blockquote>
+            <!-- Testimonio -->
+            <div class="col-xl-9 col-lg-9 col-md-8 col-12">
 
-            <p class="fs-14 fw-extrablack text-color-2 mb-0">
-              Egresada CIAF
-            </p>
+              <div class="fs-48 text-color-4 lh-1 mb-2">
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+
+              <blockquote class="mb-4">
+                <p class="fs-22 fw-bold text-color-2 mb-0">
+                  “En CIAF encontré mucho más que una universidad;
+                  encontré personas que me acompañaron a cumplir mis metas.”
+                </p>
+              </blockquote>
+
+              <p class="fs-14 fw-extrablack text-color-2 mb-0">
+                Egresada CIAF
+              </p>
+
+            </div>
 
           </div>
-
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA Final -->
-<section class="container py-5" id="cta">
-  <div class="row justify-content-center">
-    <div class="col-xl-10 col-lg-11 col-md-12 col-12">
+<section class="row justify-content-center py-5 mx-0 px-0" id="cta">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+    <div class="row justify-content-center mx-0 px-0">
+      <div class="col-xl-10 col-lg-11 col-md-10 col-10">
 
-      <div class="bg-color-3 rounded-5 p-5 text-white text-center">
+        <div class="bg-color-3 rounded-5 p-5 text-white text-center">
 
-        <h2 class="fs-40 fw-extrablack mb-3">
-          El momento de empezar es hoy.
-        </h2>
+          <h2 class="fs-40 fw-extrablack mb-3">
+            El momento de empezar es hoy.
+          </h2>
 
-        <p class="fs-20 mb-4 text-white-80">
-          Universitarios Sin Límites. Tu futuro comienza con una decisión.
-        </p>
+          <p class="fs-20 mb-4 text-white-80">
+            Universitarios Sin Límites. Tu futuro comienza con una decisión.
+          </p>
 
-        <div class="d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-3 mt-4">
+          <div class="d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-3 mt-4">
 
-          <a href="#inscribirme" role="button" (click)="scrollToSeccion('inscribirme', $event)"
-            class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold justify-content-center gap-3 text-decoration-none">
-            Inscribirme ahora
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+            <a href="#inscribirme" role="button" (click)="scrollToSeccion('inscribirme', $event)"
+              class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold justify-content-center gap-3 text-decoration-none">
+              Inscribirme ahora
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
 
-          <a href="#"
-            class="ciaf-btn ciaf-btn--glass rounded-pill px-5 py-3 fw-bold justify-content-center gap-3 border border-white border-opacity-50">
-            Hablar con un asesor
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
+            <a href="#"
+              class="ciaf-btn ciaf-btn--glass rounded-pill px-5 py-3 fw-bold justify-content-center gap-3 border border-white border-opacity-50">
+              Hablar con un asesor
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+          </div>
 
         </div>
 
       </div>
-
     </div>
   </div>
+
 </section>
 
 <app-footer></app-footer>

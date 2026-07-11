@@ -1,7 +1,7 @@
 <app-header></app-header>
 <!-- Hero Pago Seguro CIAF -->
-<section class="row justify-content-center ciaf-payment-hero position-relative overflow-hidden my-5 py-5">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-12 mt-5 pt-5">
+<section class="row justify-content-center ciaf-payment-hero position-relative overflow-hidden my-5 py-5 mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 mt-5 pt-5">
 
     <div class="row align-items-center g-5">
 
@@ -9,23 +9,18 @@
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-12">
 
         <span
-          class="ciaf-pill ciaf-pill--section d-inline-flex align-items-center px-3 py-2 mb-4 rounded-pill fs-12 fw-bold ls-4 text-uppercase"
-        >
+          class="ciaf-pill ciaf-pill--section d-inline-flex align-items-center px-3 py-2 mb-4 rounded-pill fs-12 fw-bold ls-4 text-uppercase">
           Pago seguro CIAF
         </span>
 
-        <h1
-          class="ciaf-title-display ciaf-payment-hero__title fw-extrablack text-color-2 mb-4"
-        >
+        <h1 class="ciaf-title-display ciaf-payment-hero__title fw-extrablack text-color-2 mb-4">
           Realiza el pago de tu matrícula
           <span class="ciaf-gradient-text ciaf-gradient-text--brand">
             en minutos
           </span>
         </h1>
 
-        <p
-          class="ciaf-text-lead ciaf-text-lead--muted fw-regular mb-4 mb-lg-5"
-        >
+        <p class="ciaf-text-lead ciaf-text-lead--muted fw-regular mb-4 mb-lg-5">
           Paga tu matrícula de forma rápida, segura y desde cualquier lugar.
           <br class="d-none d-xl-block">
           Solo necesitas tu documento de identidad y tu PIN CIAF.
@@ -34,18 +29,14 @@
         <!-- Acciones -->
         <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
 
-          <a
-            onclick="document.getElementById('payment-form-row').scrollIntoView({ behavior: 'smooth' })"
-            class="ciaf-btn ciaf-btn--primary d-inline-flex align-items-center justify-content-center gap-3 rounded-pill px-4 py-3 fw-bold text-decoration-none"
-          >
+          <a onclick="document.getElementById('payment-form-row').scrollIntoView({ behavior: 'smooth' })"
+            class="ciaf-btn ciaf-btn--primary d-inline-flex align-items-center justify-content-center gap-3 rounded-pill px-4 py-3 fw-bold text-decoration-none">
             Continuar al pago seguro
             <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i>
           </a>
 
-          <a
-            onclick="document.getElementById('faq-pagos').scrollIntoView({ behavior: 'smooth' })"
-            class="ciaf-btn ciaf-btn--outline d-inline-flex align-items-center justify-content-center gap-3 rounded-pill px-4 py-3 fw-bold text-decoration-none"
-          >
+          <a onclick="document.getElementById('faq-pagos').scrollIntoView({ behavior: 'smooth' })"
+            class="ciaf-btn ciaf-btn--outline d-inline-flex align-items-center justify-content-center gap-3 rounded-pill px-4 py-3 fw-bold text-decoration-none">
             ¿No conoces tu PIN?
             <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i>
           </a>
@@ -61,16 +52,11 @@
         <div class="ciaf-payment-hero__media position-relative">
 
           <!-- Decoración de fondo -->
-          <div
-            class="ciaf-payment-hero__glow position-absolute top-50 start-50 translate-middle rounded-circle"
-            aria-hidden="true"
-          ></div>
+          <div class="ciaf-payment-hero__glow position-absolute top-50 start-50 translate-middle rounded-circle"
+            aria-hidden="true"></div>
 
-          <img
-            src="assets/pagos/pago-seguro.webp"
-            alt="Estudiante realizando el pago seguro de su matrícula CIAF"
-            class="ciaf-payment-hero__image position-relative w-100 object-fit-cover rounded-5"
-          >
+          <img src="assets/pagos/pago-seguro.webp" alt="Estudiante realizando el pago seguro de su matrícula CIAF"
+            class="ciaf-payment-hero__image position-relative w-100 object-fit-cover rounded-5">
 
         </div>
 
@@ -82,8 +68,8 @@
 </section>
 
 <!-- Beneficios Pago Seguro -->
-<section class="row justify-content-center ciaf-payment-benefits ciaf-section-white my-5 py-5">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-12">
+<section class="row justify-content-center ciaf-payment-benefits ciaf-section-white my-5 py-5 mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
 
     <div class="text-center mb-5">
       <h2 class="fs-36 fw-extrablack text-color-2 mb-0">
@@ -146,19 +132,14 @@
   </div>
 </section>
 
-<div class="row justify-content-center" id="payment-form-row">
-  <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-10 col-12">
-    <form
-      class="ciaf-card rounded-5 p-4 p-md-5 mb-4 text-start"
-      [formGroup]="myForm"
-      (ngSubmit)="registro()"
-    >
+<div class="row justify-content-center mx-0 px-0" id="payment-form-row">
+  <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-10 col-10 px-0 mx-0">
+    <form class="ciaf-card rounded-5 p-4 p-md-5 mb-4 text-start" [formGroup]="myForm" (ngSubmit)="registro()">
 
       <!-- Encabezado -->
       <div class="d-flex align-items-center gap-3 mb-4">
         <div
-          class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle d-flex align-items-center justify-content-center"
-        >
+          class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle d-flex align-items-center justify-content-center">
           <i class="fa-solid fa-lock"></i>
         </div>
 
@@ -179,27 +160,15 @@
           Número de identificación
         </label>
 
-        <input
-          class="form-control form-control-lg rounded-pill px-4 py-3 fs-16"
-          placeholder="Ej. 1088123456"
-          type="text"
-          name="user_identificacion"
-          formControlName="user_identificacion"
-          required
-        />
+        <input class="form-control form-control-lg rounded-pill px-4 py-3 fs-16" placeholder="Ej. 1088123456"
+          type="text" name="user_identificacion" formControlName="user_identificacion" required />
 
-        <div
-          class="pt-2"
-          *ngFor="let validation of account_validation_messages.user_identificacion"
-        >
-          <div
-            class="error-message"
-            *ngIf="
+        <div class="pt-2" *ngFor="let validation of account_validation_messages.user_identificacion">
+          <div class="error-message" *ngIf="
               myForm.get('user_identificacion')?.hasError(validation.type) &&
               (myForm.get('user_identificacion')?.dirty ||
                 myForm.get('user_identificacion')?.touched)
-            "
-          >
+            ">
             {{ validation.message }}
           </div>
         </div>
@@ -212,27 +181,15 @@
           PIN CIAF
         </label>
 
-        <input
-          class="form-control form-control-lg rounded-pill px-4 py-3 fs-16"
-          placeholder="Tu PIN CIAF"
-          type="text"
-          name="user_credencial"
-          formControlName="user_credencial"
-          required
-        />
+        <input class="form-control form-control-lg rounded-pill px-4 py-3 fs-16" placeholder="Tu PIN CIAF" type="text"
+          name="user_credencial" formControlName="user_credencial" required />
 
-        <div
-          class="pt-2"
-          *ngFor="let validation of account_validation_messages.user_credencial"
-        >
-          <div
-            class="error-message"
-            *ngIf="
+        <div class="pt-2" *ngFor="let validation of account_validation_messages.user_credencial">
+          <div class="error-message" *ngIf="
               myForm.get('user_credencial')?.hasError(validation.type) &&
               (myForm.get('user_credencial')?.dirty ||
                 myForm.get('user_credencial')?.touched)
-            "
-          >
+            ">
             {{ validation.message }}
           </div>
         </div>
@@ -240,12 +197,9 @@
 
       <!-- Botón principal -->
       <div class="d-grid mb-3">
-        <button
-          type="submit"
-          id="btn_pagar"
+        <button type="submit" id="btn_pagar"
           class="ciaf-btn ciaf-btn--primary d-flex align-items-center justify-content-center rounded-pill px-4 py-3 fw-bold fs-16 border-0"
-          [disabled]="!myForm.valid"
-        >
+          [disabled]="!myForm.valid">
           Continuar al pago seguro
         </button>
       </div>
@@ -253,10 +207,8 @@
 
       <!-- Ayuda -->
       <div class="d-grid mb-4">
-        <button
-          type="button"
-          class="ciaf-btn ciaf-btn--outline d-flex align-items-center justify-content-center gap-2 rounded-pill px-4 py-3 fw-bold fs-16 bg-white"
-        >
+        <button type="button"
+          class="ciaf-btn ciaf-btn--outline d-flex align-items-center justify-content-center gap-2 rounded-pill px-4 py-3 fw-bold fs-16 bg-white">
           <i class="fa-regular fa-circle-question"></i>
           <span>Necesito ayuda</span>
         </button>
@@ -274,8 +226,8 @@
 </div>
 
 <!-- Preguntas frecuentes -->
-<section class="row justify-content-center ciaf-section-white py-5" id="faq-pagos">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-12">
+<section class="row justify-content-center ciaf-section-white py-5 mx-0 px-0" id="faq-pagos">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
 
     <div class="text-center mb-5">
       <h2 class="fs-48 fw-extrablack text-color-2 mb-0">
@@ -293,21 +245,13 @@
             <h3 class="accordion-header">
               <button
                 class="accordion-button collapsed rounded-5 bg-white fs-16 fw-extrablack text-color-2 px-4 py-4 shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faqPagoUno"
-                aria-expanded="false"
-                aria-controls="faqPagoUno"
-              >
+                type="button" data-bs-toggle="collapse" data-bs-target="#faqPagoUno" aria-expanded="false"
+                aria-controls="faqPagoUno">
                 ¿Dónde encuentro mi PIN?
               </button>
             </h3>
 
-            <div
-              id="faqPagoUno"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionPagos"
-            >
+            <div id="faqPagoUno" class="accordion-collapse collapse" data-bs-parent="#accordionPagos">
               <div class="accordion-body px-4 pt-0 pb-4 fs-16 fw-regular text-color-1">
                 Tu PIN CIAF se genera al momento de tu inscripción y te llega a tu correo institucional.
                 Si no lo recuerdas, contáctanos y te ayudamos a recuperarlo.
@@ -321,21 +265,13 @@
             <h3 class="accordion-header">
               <button
                 class="accordion-button collapsed rounded-5 bg-white fs-16 fw-extrablack text-color-2 px-4 py-4 shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faqPagoDos"
-                aria-expanded="false"
-                aria-controls="faqPagoDos"
-              >
+                type="button" data-bs-toggle="collapse" data-bs-target="#faqPagoDos" aria-expanded="false"
+                aria-controls="faqPagoDos">
                 ¿Qué medios de pago puedo utilizar?
               </button>
             </h3>
 
-            <div
-              id="faqPagoDos"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionPagos"
-            >
+            <div id="faqPagoDos" class="accordion-collapse collapse" data-bs-parent="#accordionPagos">
               <div class="accordion-body px-4 pt-0 pb-4 fs-16 fw-regular text-color-1">
                 Puedes pagar mediante PSE débito desde tu banco, y tarjetas débito y crédito
                 de las principales franquicias.
@@ -349,21 +285,13 @@
             <h3 class="accordion-header">
               <button
                 class="accordion-button collapsed rounded-5 bg-white fs-16 fw-extrablack text-color-2 px-4 py-4 shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faqPagoTres"
-                aria-expanded="false"
-                aria-controls="faqPagoTres"
-              >
+                type="button" data-bs-toggle="collapse" data-bs-target="#faqPagoTres" aria-expanded="false"
+                aria-controls="faqPagoTres">
                 ¿Cuándo se refleja mi pago?
               </button>
             </h3>
 
-            <div
-              id="faqPagoTres"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionPagos"
-            >
+            <div id="faqPagoTres" class="accordion-collapse collapse" data-bs-parent="#accordionPagos">
               <div class="accordion-body px-4 pt-0 pb-4 fs-16 fw-regular text-color-1">
                 Los pagos por PSE y tarjeta se reflejan de forma inmediata.
                 Recibirás un comprobante en tu correo electrónico.
@@ -377,21 +305,13 @@
             <h3 class="accordion-header">
               <button
                 class="accordion-button collapsed rounded-5 bg-white fs-16 fw-extrablack text-color-2 px-4 py-4 shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#faqPagoCuatro"
-                aria-expanded="false"
-                aria-controls="faqPagoCuatro"
-              >
+                type="button" data-bs-toggle="collapse" data-bs-target="#faqPagoCuatro" aria-expanded="false"
+                aria-controls="faqPagoCuatro">
                 ¿Qué hago si tengo inconvenientes?
               </button>
             </h3>
 
-            <div
-              id="faqPagoCuatro"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionPagos"
-            >
+            <div id="faqPagoCuatro" class="accordion-collapse collapse" data-bs-parent="#accordionPagos">
               <div class="accordion-body px-4 pt-0 pb-4 fs-16 fw-regular text-color-1">
                 Escríbenos por WhatsApp o habla con un asesor. Te acompañamos para resolver
                 cualquier inconveniente con tu pago.
@@ -408,8 +328,8 @@
 </section>
 
 <!-- CTA Ayuda -->
-<section class="row justify-content-center ciaf-section-white py-5">
-  <div class="col-xxl-8 col-xl-8 col-lg-10 col-12">
+<section class="row justify-content-center ciaf-section-white py-5 mx-0 px-0">
+  <div class="col-xxl-8 col-xl-8 col-lg-10 col-10 px-0 mx-0">
 
     <div class="bg-color-3 rounded-5 px-4 py-5 p-md-5 text-center shadow-sm">
 
@@ -424,10 +344,8 @@
         </p>
 
         <div class="d-flex justify-content-center pt-2">
-          <a
-            href="https://wa.me/573126814341" target="_blank"
-            class="ciaf-btn ciaf-btn--primary d-inline-flex align-items-center justify-content-center gap-3 rounded-pill px-4 py-3 fw-bold text-white text-decoration-none"
-          >
+          <a href="https://wa.me/573126814341" target="_blank"
+            class="ciaf-btn ciaf-btn--primary d-inline-flex align-items-center justify-content-center gap-3 rounded-pill px-4 py-3 fw-bold text-white text-decoration-none">
             Hablar con un asesor
             <i class="fa-solid fa-arrow-up-right-from-square fs-14"></i>
           </a>

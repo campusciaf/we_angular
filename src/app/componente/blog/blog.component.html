@@ -1,13 +1,13 @@
 <app-header></app-header>
 
 <section
-  class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4 bg-color-3">
+  class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 mx-0 px-0 bg-color-3">
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row justify-content-center z-2 py-5 mt-5 col-12">
-    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0">
-      <div class="row">
+  <div class="row justify-content-center z-2 py-5 mt-5 col-12 mx-0 px-0">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
+      <div class="row mx-0 px-0">
         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 mt-5 py-4 px-0">
           <span
             class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
@@ -62,8 +62,8 @@
 </section>
 
 <!-- miga de pan -->
-<section class="row justify-content-center bg-light">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 pt-3">
+<section class="row justify-content-center bg-light mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 pt-3 mx-0 px-0">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Estamos en:</li>
@@ -77,89 +77,88 @@
 </section>
 
 <!-- articulo destacado -->
-<section class="row justify-content-center pt-4 mt-4 mostrar">
+<section class="row justify-content-center pt-4 mt-4 mostrar mx-0 px-0">
 
 
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
 
-    <div class="row">
+    <div class="row mx-0 px-0">
 
       <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12" *ngIf="blogDestacado as valor">
 
-          <section class="py-5">
+        <section class="py-5">
 
-            <div class="mb-4">
-              <span class="ciaf-pill fs-12 fw-bold text-uppercase ls-4 text-color-1">
-                <i class="fa-solid fa-fire-flame-curved text-color-3 me-2"></i>
-                Artículo destacado
-              </span>
-            </div>
+          <div class="mb-4">
+            <span class="ciaf-pill fs-12 fw-bold text-uppercase ls-4 text-color-1">
+              <i class="fa-solid fa-fire-flame-curved text-color-3 me-2"></i>
+              Artículo destacado
+            </span>
+          </div>
 
-            <article class="ciaf-card rounded-5 overflow-hidden bg-white">
-              <div class="row g-0 align-items-stretch">
+          <article class="ciaf-card rounded-5 overflow-hidden bg-white">
+            <div class="row g-0 align-items-stretch">
 
-                <!-- Imagen -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                  <img src="https://ciaf.digital/public/web_blog/{{ valor.blog_img }}" alt="{{ valor.titulo_blog }}"
-                    class="w-100 h-100 object-fit-cover d-block" />
-                </div>
+              <!-- Imagen -->
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <img src="https://ciaf.digital/public/web_blog/{{ valor.blog_img }}" alt="{{ valor.titulo_blog }}"
+                  class="w-100 h-100 object-fit-cover d-block" />
+              </div>
 
-                <!-- Contenido -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                  <div class="p-5 h-100 d-flex flex-column justify-content-center">
+              <!-- Contenido -->
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div class="p-5 h-100 d-flex flex-column justify-content-center">
 
-                    <span
-                      class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase mb-4 ">
-                      {{ valor.nombre_categoria || 'Blog' }}
+                  <span class="ciaf-pill ciaf-pill--compact fs-10 fw-bold rounded-pill px-3 py-1 text-uppercase mb-4 ">
+                    {{ valor.nombre_categoria || 'Blog' }}
+                  </span>
+
+                  <h2 class="fs-36 fw-black text-color-2 lh-1 mb-3">
+                    {{ valor.titulo_blog }}
+                  </h2>
+
+                  <p class="fs-16 text-color-1 mb-4 blog-excerpt-clamp" *ngIf="getExcerpt(valor)">
+                    {{ getExcerpt(valor) }}
+                  </p>
+
+                  <div class="d-flex flex-wrap align-items-center gap-3 fs-14 mb-4">
+                    <span class="fw-bold text-color-2">
+                      CIAF
                     </span>
 
-                    <h2 class="fs-36 fw-black text-color-2 lh-1 mb-3">
-                      {{ valor.titulo_blog }}
-                    </h2>
+                    <span class="text-color-1">
+                      ·
+                    </span>
 
-                    <p class="fs-16 text-color-1 mb-4 blog-excerpt-clamp" *ngIf="getExcerpt(valor)">
-                      {{ getExcerpt(valor) }}
-                    </p>
+                    <span class="text-color-1">
+                      <i class="fa-regular fa-clock me-1"></i>
+                      7 min
+                    </span>
 
-                    <div class="d-flex flex-wrap align-items-center gap-3 fs-14 mb-4">
-                      <span class="fw-bold text-color-2">
-                        CIAF
-                      </span>
+                    <span class="text-color-1">
+                      ·
+                    </span>
 
-                      <span class="text-color-1">
-                        ·
-                      </span>
-
-                      <span class="text-color-1">
-                        <i class="fa-regular fa-clock me-1"></i>
-                        7 min
-                      </span>
-
-                      <span class="text-color-1">
-                        ·
-                      </span>
-
-                      <span class="text-color-1">
-                        <i class="fa-regular fa-calendar me-1"></i>
-                        {{ valor.fecha_blog || 'Publicado recientemente' }}
-                      </span>
-                    </div>
-
-                    <div>
-                      <a [routerLink]="['/blog', valor.link_blog]" target="_parent" (click)="traerBlog()"
-                        class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2">
-                        Leer artículo
-                        <i class="fa-solid fa-arrow-up-right-from-square fs-12"></i>
-                      </a>
-                    </div>
-
+                    <span class="text-color-1">
+                      <i class="fa-regular fa-calendar me-1"></i>
+                      {{ valor.fecha_blog || 'Publicado recientemente' }}
+                    </span>
                   </div>
+
+                  <div>
+                    <a [routerLink]="['/blog', valor.link_blog]" target="_parent" (click)="traerBlog()"
+                      class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2">
+                      Leer artículo
+                      <i class="fa-solid fa-arrow-up-right-from-square fs-12"></i>
+                    </a>
+                  </div>
+
                 </div>
-
               </div>
-            </article>
 
-          </section>
+            </div>
+          </article>
+
+        </section>
       </div>
 
     </div>
@@ -168,33 +167,33 @@
 </section>
 
 <!-- ver el detalle del blog -->
-<section class="pt-4 mt-4 ">
+<section class="row justify-content-center pt-xl-4 pt-0 mt-4 mx-0 px-0">
   <!-- blog destacado -->
-  <div class="col-12" *ngIf="tipobusquedad!=undefined">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 px-0 mx-0" *ngIf="tipobusquedad!=undefined">
     <!-- <button (click)="prevImg()" class="boton-prev"><img src="{{prev}}" alt ="Anterior"></button> -->
 
-    <div *ngFor="let blogdetalle of detalleBlog index as i" class="slide">
+    <div *ngFor="let blogdetalle of detalleBlog index as i" class="slide mx-0 px-0">
 
-      <div class="row justify-content-center">
+      <div class="row justify-content-center mx-0 px-0">
 
         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12">
 
-          <div class="row g-0">
+          <div class="row g-0 mx-0 px-0">
 
             <div class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4 col-auto">
               <i class="fa-regular fa-user-group me-2"></i> Comunidad CIAF
             </div>
 
-            <div class="col-md-12 p-4">
-              <div class="row">
-                <div class="col-12 timestamp text-3">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 p-xl-4 p-0">
+              <div class="row mx-0 px-0">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10 timestamp text-3"></div>
 
-                </div>
-                <div class="col-12">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10">
                   <h3 class="fs-48 fw-extrablack text-color-2 mt-4">{{blogdetalle.titulo_blog}}</h3>
                   <h4 class="fs-18 fw-semibold ls-2 my-3">{{blogdetalle.subtitulo_blog}}</h4>
                 </div>
-                <div class="col-12 mb-3 mt-2">
+
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12 mb-3 mt-2">
                   <span class="fs-16 fw-semibold text-color-2">Alexander valencia</span>
                   <span class="ms-4"> <i class="fa-regular fa-calendar-days"></i> Pub.
                     {{blogdetalle.fecha_blog | date:"d MMM"}}</span>
@@ -228,27 +227,28 @@
                   </div>
                 </div>
 
-                <div class="row justify-content-center">
-                  <div class="col-12">
-                    <div *ngIf="blogdetalle.material=='2'">
+
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10">
+                  <div *ngIf="blogdetalle.material=='2'">
+                    <img src="https://ciaf.digital/public/web_blog/{{blogdetalle.blog_img}}"
+                      alt="{{blogdetalle.titulo_blog}}" width="100%" height="auto" class="rounded-5">
+                  </div>
+                  <div *ngIf="blogdetalle.material=='1'">
+
+                    <a (click)="open(content);videoYoutube(blogdetalle.url_video,blogdetalle.titulo_blog)"
+                      style="cursor:pointer">
+                      <div class="link-video"><img src="assets/image/video.webp" alt="Video noticia"></div>
                       <img src="https://ciaf.digital/public/web_blog/{{blogdetalle.blog_img}}"
-                        alt="{{blogdetalle.titulo_blog}}" width="100%" height="auto" class="rounded-5">
-                    </div>
-                    <div *ngIf="blogdetalle.material=='1'">
+                        alt="{{blogdetalle.titulo_blog}}" width="100%" height="auto">
+                    </a>
 
-                      <a (click)="open(content);videoYoutube(blogdetalle.url_video,blogdetalle.titulo_blog)"
-                        style="cursor:pointer">
-                        <div class="link-video"><img src="assets/image/video.webp" alt="Video noticia"></div>
-                        <img src="https://ciaf.digital/public/web_blog/{{blogdetalle.blog_img}}"
-                          alt="{{blogdetalle.titulo_blog}}" width="100%" height="auto">
-                      </a>
+                  </div>
 
-                    </div>
-
-                    <div class="category-noti text-center" [ngStyle]="{'background-color': blogdetalle.color}">
-                      {{blogdetalle.nombre_categoria}}</div>
+                  <div class="category-noti text-center" [ngStyle]="{'background-color': blogdetalle.color}">
+                    {{blogdetalle.nombre_categoria}}
                   </div>
                 </div>
+
                 <div class="col-12 blog-toc rounded-4 p-4 my-5"
                   *ngIf="getTablaContenido(blogdetalle.contenido_blog).length">
                   <h5 class="blog-toc__title fs-18 fw-bold text-color-2 mb-3">
@@ -265,10 +265,14 @@
                   </ul>
                 </div>
 
-                <div class="blog-contenido text-justify lh-lg"
-                  [innerHTML]="getContenidoProcesado(blogdetalle.contenido_blog)"></div>
-                <div class="ciaf-card col-12 p-5 rounded-5 blog-firma-autor text-justify lh-1"
-                  *ngIf="blogdetalle.firma_autor" [innerHTML]="getFirmaAutorProcesada(blogdetalle.firma_autor)"></div>
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10 blog-contenido text-justify lh-lg"
+                  [innerHTML]="getContenidoProcesado(blogdetalle.contenido_blog)">
+                </div>
+
+                <div
+                  class="ciaf-card col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10 p-5 rounded-5 blog-firma-autor text-justify lh-1"
+                  *ngIf="blogdetalle.firma_autor" [innerHTML]="getFirmaAutorProcesada(blogdetalle.firma_autor)">
+                </div>
 
 
               </div>
@@ -277,6 +281,7 @@
 
 
           </div>
+
         </div>
 
       </div>
@@ -288,10 +293,10 @@
   </div>
 
   <!-- lista de todos lo blogs activos -->
-  <div class="col-12" *ngIf="entradasBlog.length">
-    <section class="row justify-content-center py-5 blog-oferta" id="blog-entradas">
+  <div class="col-12 " *ngIf="entradasBlog.length">
+    <section class="row justify-content-center py-5 blog-oferta mx-0 px-0" id="blog-entradas">
 
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 mb-4">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mb-4 mx-0 px-0">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Blog CIAF
         </span>
@@ -300,9 +305,9 @@
         </h2>
       </div>
 
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 mb-4">
-        <div class="row g-4">
-          <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let blog of entradasBlog">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mb-4 mx-0 px-0">
+        <div class="row g-4 mx-0 px-0 justify-content-center">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-12" *ngFor="let blog of entradasBlog">
             <article
               class="blog-card ciaf-card rounded-5 overflow-hidden d-flex flex-column bg-white h-100 border shadow-sm">
               <div class="blog-card__media position-relative flex-shrink-0">
@@ -358,8 +363,8 @@
   </div>
 
   <div class="col-12" *ngIf="!entradasBlog.length && hayFiltrosActivos">
-    <section class="row justify-content-center py-5">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12">
+    <section class="row justify-content-center py-5 mx-0 px-0">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 mx-0 px-0">
         <div class="ciaf-card rounded-4 p-4 bg-white text-center">
           <h3 class="fs-24 fw-black text-color-2 mb-2">No encontramos resultados</h3>
           <p class="fs-14 text-color-1 mb-3">

@@ -1,6 +1,7 @@
 <app-header></app-header>
 
-<section class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center p-4">
+<section
+  class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 px-0 mx-0">
 
   <div class=" position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
     <img src="{{bg_pc}}" alt="Conocenos">
@@ -8,9 +9,9 @@
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
-  <div class="row justify-content-center z-2 py-5 mt-5 col-12">
-    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0"> 
-      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 py-4 px-0">
+  <div class="row justify-content-center z-2 py-5 mt-5 col-12 mx-0 px-0">
+    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
+      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-10 mt-5 py-4 px-0">
         <span
           class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
           Comunidad y territorio
@@ -60,8 +61,8 @@
 </section>
 
 <!-- Navegación por secciones (scroll) -->
-<section class="row justify-content-center ciaf-program-nav">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 mx-auto">
+<section class="row justify-content-center ciaf-program-nav mx-0 px-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-12 mx-auto px-0 mx-0">
     <nav class="nav ciaf-program-nav__tabs ciaf-program-nav__tabs--scroll d-flex flex-nowrap overflow-auto"
       aria-label="Secciones del programa">
       <a *ngFor="let seccion of seccionesPrograma" role="button" (click)="scrollToSeccion(seccion.id, seccion.nav)"
@@ -75,210 +76,221 @@
 </section>
 
 <!-- presentacion -->
-<section class="container py-5" id="presentacion">
+<section class="row justify-content-center py-5 mx-0 px-0 " id="presentacion">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
 
-  <div class="row justify-content-center text-center">
+    <div class="row justify-content-center text-center mx-0 px-0">
 
-    <div class="col-xl-10 col-lg-10 col-md-11 col-12">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-10">
 
-      <h1 class="fs-48 fw-extrablack text-color-2 mb-5">
-        Formamos para
-        <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformar</span>
-      </h1>
+        <h1 class="fs-48 fw-extrablack text-color-2 mb-5">
+          Formamos para
+          <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformar</span>
+        </h1>
 
-      <p class="fs-20 mb-0">
-        Conectamos conocimiento con territorio. La Extensión y Proyección Social de CIAF impulsa
-        proyectos educativos, comunitarios y culturales que transforman realidades y construyen
-        un presente extraordinario junto a la comunidad.
-      </p>
+        <p class="fs-20 mb-0">
+          Conectamos conocimiento con territorio. La Extensión y Proyección Social de CIAF impulsa
+          proyectos educativos, comunitarios y culturales que transforman realidades y construyen
+          un presente extraordinario junto a la comunidad.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Convenios -->
+<section class="row justify-content-center  py-5 ciaf-section-light px-0 mx-0" id="convenios">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mb-5">
+    <div class="row mb-5">
+
+      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+
+        <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
+          Alianzas que transforman
+        </span>
+
+        <h2 class="fs-36 fw-extrablack text-color-2 mt-2">
+          Convenios
+        </h2>
+
+      </div>
 
     </div>
 
-  </div>
+    <!-- Convenio 1 -->
+    <div class="row justify-content-center mb-5 mx-0 px-0">
+      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
 
-</section>
+        <div class="card rounded-5 p-5">
 
-<!-- Convenios -->
-<section class="row justify-content-center px-5 py-5 ciaf-section-light" id="convenios">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0 mb-5"> 
-      <div class="row mb-5">
+          <div class="d-flex align-items-center gap-4 mb-4">
+            <div class="ciaf-icon-badge bg-color-6 rounded-circle">
+              <i class="fa-regular fa-handshake text-color-2"></i>
+            </div>
+            <h3 class="fs-24 fw-black text-color-2 mb-0">Convenio Sumando Sueños</h3>
+          </div>
 
-        <div class="col-12">
+          <p class="fs-18 mb-5">
+            Alianza entre CIAF y el Movimiento Sociocultural Transformadores On Going para impulsar proyectos
+            educativos,
+            comunitarios y culturales.
+          </p>
 
-          <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
-            Alianzas que transforman
-          </span>
+          <div class="row g-4">
 
-          <h2 class="fs-36 fw-extrablack text-color-2 mt-2">
-            Convenios
-          </h2>
+            <div class="col-xl-6">
+              <div class="bg-light rounded-5 p-4 h-100">
+                <h4 class="fs-16 fw-black text-color-2 mb-4">¿Qué hacemos juntos?</h4>
 
-        </div>
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Formación para los
+                  miembros
+                  del colectivo (cursos, talleres, diplomados).</p>
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Beneficios educativos y
+                  apoyo a la matrícula.</p>
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Visitas académicas y
+                  participación en corredores culturales de LaFerro.</p>
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Difusión de los proyectos
+                  en
+                  canales institucionales.</p>
+                <p class="mb-0 fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Préstamo de espacios
+                  para actividades culturales y comunitarias.</p>
 
-      </div>
-
-      <!-- Convenio 1 -->
-      <div class="row mb-5">
-        <div class="col-12">
-
-          <div class="card rounded-5 p-5">
-
-            <div class="d-flex align-items-center gap-4 mb-4">
-              <div class="ciaf-icon-badge bg-color-6 rounded-circle">
-                <i class="fa-regular fa-handshake text-color-2"></i>
               </div>
-              <h3 class="fs-24 fw-black text-color-2 mb-0">Convenio Sumando Sueños</h3>
             </div>
 
-            <p class="fs-18 mb-5">
-              Alianza entre CIAF y el Movimiento Sociocultural Transformadores On Going para impulsar proyectos educativos,
-              comunitarios y culturales.
-            </p>
+            <div class="col-xl-6">
+              <div class="bg-light rounded-5 p-4 h-100">
+                <h4 class="fs-16 fw-black text-color-2 mb-4">Acciones destacadas</h4>
 
-            <div class="row g-4">
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Entrega de la
+                  estación
+                  de banderas y compromiso de donación de $5.000 por estudiante matriculado.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Copatrocinio de la
+                  Carrera de los Sueños, aporte de $30.000.000.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Capacitaciones en
+                  emergencias y SST para gestores culturales.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Caracterización en
+                  SST
+                  del recorrido cultural.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Cocreación de La
+                  Velada
+                  de los Sueños.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Donación del sitio
+                  web
+                  oficial de LaFerro.</p>
+                <p class="mb-0 fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Apoyo logístico
+                  para líderes culturales nominados en Titanes Caracol.</p>
 
-              <div class="col-xl-6">
-                <div class="bg-light rounded-5 p-4 h-100">
-                  <h4 class="fs-16 fw-black text-color-2 mb-4">¿Qué hacemos juntos?</h4>
-
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Formación para los miembros
-                    del colectivo (cursos, talleres, diplomados).</p>
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Beneficios educativos y
-                    apoyo a la matrícula.</p>
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Visitas académicas y
-                    participación en corredores culturales de LaFerro.</p>
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Difusión de los proyectos en
-                    canales institucionales.</p>
-                  <p class="mb-0 fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Préstamo de espacios
-                    para actividades culturales y comunitarias.</p>
-
-                </div>
               </div>
-
-              <div class="col-xl-6">
-                <div class="bg-light rounded-5 p-4 h-100">
-                  <h4 class="fs-16 fw-black text-color-2 mb-4">Acciones destacadas</h4>
-
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Entrega de la estación
-                    de banderas y compromiso de donación de $5.000 por estudiante matriculado.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Copatrocinio de la
-                    Carrera de los Sueños, aporte de $30.000.000.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Capacitaciones en
-                    emergencias y SST para gestores culturales.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Caracterización en SST
-                    del recorrido cultural.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Cocreación de La Velada
-                    de los Sueños.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Donación del sitio web
-                    oficial de LaFerro.</p>
-                  <p class="mb-0 fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Apoyo logístico
-                    para líderes culturales nominados en Titanes Caracol.</p>
-
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row g-3 mt-4">
-
-              <div class="col-xl-4 col-md-6">
-                <img src="assets/nosotros/ferro-1.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
-              </div>
-
-              <div class="col-xl-4 col-md-6">
-                <img src="assets/nosotros/ferro-2.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
-              </div>
-
-              <div class="col-xl-4 col-md-12">
-                <img src="assets/nosotros/ferro-3.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
-              </div>
-
-            </div>
-
-            <div class="mt-4">
-              <a href="https://www.instagram.com/laferrotransformadores/" target="_blank"
-                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold fs-14 border-0">
-                <i class="fa-brands fa-instagram me-2"></i> Instagram LaFerro
-              </a>
             </div>
 
           </div>
 
-        </div>
-      </div>
+          <div class="row g-3 mt-4">
 
-      <!-- Convenio 2 -->
-      <div class="row">
-        <div class="col-12">
-
-          <div class="ciaf-card rounded-5 p-5">
-
-            <div class="d-flex align-items-center gap-4 mb-4">
-              <div class="ciaf-icon-badge bg-color-6 rounded-circle">
-                <i class="fa-regular fa-handshake text-color-2"></i>
-              </div>
-              <h3 class="fs-24 fw-black text-color-2 mb-0">Convenio Club Activo 2030</h3>
+            <div class="col-xl-4 col-md-6">
+              <img src="assets/nosotros/ferro-1.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
             </div>
 
-            <p class="fs-16 mb-5">
-              Alianza con organización internacional de jóvenes líderes para impulsar obras sociales con la niñez y
-              comunidades vulnerables.
-            </p>
-
-            <div class="row g-4">
-
-              <div class="col-xl-6">
-                <div class="bg-light rounded-5 p-4 h-100">
-                  <h4 class="fs-16 fw-black text-color-2 mb-4">¿Qué hacemos juntos?</h4>
-
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Proyectos sociales para la
-                    niñez y familias vulnerables.</p>
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Actividades comunitarias con
-                    impacto educativo.</p>
-                  <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Participación conjunta en
-                    iniciativas culturales y formativas.</p>
-                  <p class="mb-0 fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Trabajo
-                    interinstitucional en pro del bienestar social.</p>
-
-                </div>
-              </div>
-
-              <div class="col-xl-6">
-                <div class="bg-light rounded-5 p-4 h-100">
-                  <h4 class="fs-16 fw-black text-color-2 mb-4">Acciones destacadas</h4>
-
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Presencia del Club
-                    Activo 2030 en nueve ciudades.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Más de 146 socios
-                    desarrollando proyectos de impacto.</p>
-                  <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Gestión de hogares
-                    infantiles, ludotecas y comedores comunitarios.</p>
-                  <p class="mb-0 fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Convenio firmado
-                    en abril de 2025 para fortalecer la acción social y educativa.</p>
-
-                </div>
-              </div>
-
+            <div class="col-xl-4 col-md-6">
+              <img src="assets/nosotros/ferro-2.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
             </div>
 
-            <div class="mt-4">
-              <a href="https://www.instagram.com/2030pereira/?hl=es" target="_blank"
-                class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold fs-14 border-0">
-                <i class="fa-brands fa-instagram me-2"></i> Instagram Club Activo 2030
-              </a>
+            <div class="col-xl-4 col-md-12">
+              <img src="assets/nosotros/ferro-3.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
             </div>
 
           </div>
 
+          <div class="mt-4">
+            <a href="https://www.instagram.com/laferrotransformadores/" target="_blank"
+              class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold fs-14 border-0">
+              <i class="fa-brands fa-instagram me-2"></i> Instagram LaFerro
+            </a>
+          </div>
+
         </div>
+
       </div>
+    </div>
+
+    <!-- Convenio 2 -->
+    <div class="row">
+      <div class="col-12">
+
+        <div class="ciaf-card rounded-5 p-5">
+
+          <div class="d-flex align-items-center gap-4 mb-4">
+            <div class="ciaf-icon-badge bg-color-6 rounded-circle">
+              <i class="fa-regular fa-handshake text-color-2"></i>
+            </div>
+            <h3 class="fs-24 fw-black text-color-2 mb-0">Convenio Club Activo 2030</h3>
+          </div>
+
+          <p class="fs-16 mb-5">
+            Alianza con organización internacional de jóvenes líderes para impulsar obras sociales con la niñez y
+            comunidades vulnerables.
+          </p>
+
+          <div class="row g-4">
+
+            <div class="col-xl-6">
+              <div class="bg-light rounded-5 p-4 h-100">
+                <h4 class="fs-16 fw-black text-color-2 mb-4">¿Qué hacemos juntos?</h4>
+
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Proyectos sociales para la
+                  niñez y familias vulnerables.</p>
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Actividades comunitarias
+                  con
+                  impacto educativo.</p>
+                <p class="fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Participación conjunta en
+                  iniciativas culturales y formativas.</p>
+                <p class="mb-0 fs-14"><i class="fa-regular fa-circle-check text-color-5 me-2"></i> Trabajo
+                  interinstitucional en pro del bienestar social.</p>
+
+              </div>
+            </div>
+
+            <div class="col-xl-6">
+              <div class="bg-light rounded-5 p-4 h-100">
+                <h4 class="fs-16 fw-black text-color-2 mb-4">Acciones destacadas</h4>
+
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Presencia del Club
+                  Activo 2030 en nueve ciudades.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Más de 146 socios
+                  desarrollando proyectos de impacto.</p>
+                <p class="fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Gestión de hogares
+                  infantiles, ludotecas y comedores comunitarios.</p>
+                <p class="mb-0 fs-14"><i class="fa-solid fa-wand-magic-sparkles text-color-2 me-2"></i> Convenio firmado
+                  en abril de 2025 para fortalecer la acción social y educativa.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-4">
+            <a href="https://www.instagram.com/2030pereira/?hl=es" target="_blank"
+              class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold fs-14 border-0">
+              <i class="fa-brands fa-instagram me-2"></i> Instagram Club Activo 2030
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
+
 
 <!-- Normatividad -->
-<section class="px-5 py-5" id="normatividad">
+<section class="px-0 px-xl-5 py-5 mx-0 px-0" id="normatividad">
 
-  <div class="row justify-content-center pt-4">
+  <div class="row justify-content-center pt-4 mx-0 px-0">
 
     <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-9 col-10">
 
@@ -335,8 +347,8 @@
 </section>
 
 <!-- Eventos y Actividades -->
-<section class="row justify-content-center p-5" id="eventos-y-actividades">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0"> 
+<section class="row justify-content-center p-5 mx-0 px-0" id="eventos-y-actividades">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
     <div class="row mb-5">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
@@ -415,8 +427,8 @@
 </section>
 
 <!-- galeria -->
-<section class="row justify-content-center p-5" id="galeria">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 px-0"> 
+<section class="row justify-content-center p-5 mx-0 px-0" id="galeria">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0">
     <div class="row mb-5">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
         <h2 class="fs-36 fw-extrablack text-color-2 mb-0">Galería de impacto</h2>
@@ -471,12 +483,13 @@
   </div>
 </section>
 
+
 <!-- Aliados estratégicos -->
-<section class="p-5" id="aliados">
+<section class="p-xl-5 mx-0 px-0" id="aliados">
 
-  <div class="row justify-content-center mb-5">
+  <div class="row justify-content-center mb-5 mx-0 px-0">
 
-    <div class="col-12 text-center">
+    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-10 text-center">
 
       <h2 class="fs-36 fw-black text-color-2 d-flex justify-content-center align-items-center gap-3">
         <i class="fa-solid fa-diagram-project fs-30"></i>
@@ -487,9 +500,9 @@
 
   </div>
 
-  <div class="row justify-content-center g-4">
+  <div class="row justify-content-center g-4 mx-0 px-0">
 
-    <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-10 ">
 
       <div class="ciaf-card rounded-5 h-100 p-3 d-flex justify-content-center align-items-center">
 
@@ -499,7 +512,7 @@
 
     </div>
 
-    <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-10 ">
 
       <div class="ciaf-card rounded-5 h-100 p-3 d-flex justify-content-center align-items-center">
 
@@ -509,7 +522,7 @@
 
     </div>
 
-    <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-10 ">
 
       <div class="ciaf-card rounded-5 h-100 p-3 d-flex justify-content-center align-items-center">
 
@@ -524,11 +537,11 @@
 </section>
 
 <!-- Contacto Proyección Social -->
-<section class="p-5">
+<section class="p-xl-5 px-0 mx-0">
 
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mx-0 px-0">
 
-    <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+    <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-10">
 
       <div class="ciaf-card rounded-5 p-4 text-center">
 
@@ -553,37 +566,33 @@
 </section>
 
 <!-- Eventos -->
-<section class="" id="eventos">
+<section class="mx-0 px-0 " id="eventos">
   <app-eventos></app-eventos>
 </section>
 
 <!-- Contacto -->
-<section class="container-fluid bg-color-3 py-5" id="contacto">
+<section class="container-fluid bg-color-3 py-5 mx-0 px-0" id="contacto">
 
-  <div class="container">
+  <div class="row justify-content-center text-center mx-0 px-0">
 
-    <div class="row justify-content-center text-center">
+    <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-10 col-10 py-5">
 
-      <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-10 col-12 py-5">
+      <h2 class="fs-48 fw-black text-white mb-5">
+        Construimos presente extraordinario junto a la comunidad.
+      </h2>
 
-        <h2 class="fs-48 fw-black text-white mb-5">
-          Construimos presente extraordinario junto a la comunidad.
-        </h2>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
 
-        <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a (click)="scrollToSeccion('convenios', '1')"
+          class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+          Conoce nuestros proyectos
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-          <a (click)="scrollToSeccion('convenios', '1')"
-            class="cursor-pointer ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-            Conoce nuestros proyectos
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
-            class="ciaf-btn border border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
-            Contáctanos
-          </a>
-
-        </div>
+        <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
+          class="ciaf-btn border border-transparente text-white rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+          Contáctanos
+        </a>
 
       </div>
 
