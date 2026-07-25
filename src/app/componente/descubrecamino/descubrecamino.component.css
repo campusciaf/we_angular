@@ -1,0 +1,22 @@
+/* ==========================================
+   Sección 12: SIMULADOR
+========================================== */
+.ciaf-jornada {
+    display: flex;
+    gap: 13px;
+    margin-top: 13px;
+}
+
+.ciaf-jornada button {
+    border: none;
+    height: 46px;
+    padding: 0 24px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.ciaf-jornada .active {
+    background: var(--ciaf-primary);
+    color: white;
+}

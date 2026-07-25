@@ -125,7 +125,7 @@
 }
 
 .ciaf-campo__item--active .ciaf-campo__head i {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 /* ==========================================
@@ -133,62 +133,60 @@
 ========================================== */
 #experiencias-reales .col-xxl-10,
 #experiencias-reales .row.p-4 {
-  min-width: 0;
+    min-width: 0;
 }
 
 .ciaf-experiencias-scroll-wrap {
-  container-type: inline-size;
-  min-width: 0;
+    container-type: inline-size;
+    min-width: 0;
 }
 
 .ciaf-experiencias-scroll {
-  --ciaf-exp-gap: 24px;
-  --ciaf-exp-visible: 3;
+    --ciaf-exp-gap: 24px;
+    --ciaf-exp-visible: 3;
 
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
-  touch-action: pan-x;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 4px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 4px;
 }
 
 .ciaf-experiencias-scroll::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .ciaf-experiencias-scroll__track {
-  display: flex;
-  gap: var(--ciaf-exp-gap);
-  width: max-content;
-  min-width: 100%;
+    display: flex;
+    gap: var(--ciaf-exp-gap);
+    width: max-content;
+    min-width: 100%;
 }
 
 .ciaf-experiencias-scroll__item {
-  flex: 0 0 auto;
-  width: calc(
-    (100cqw - (var(--ciaf-exp-gap) * (var(--ciaf-exp-visible) - 1))) / var(--ciaf-exp-visible)
-  );
-  min-width: 0;
-  scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: calc((100cqw -(var(--ciaf-exp-gap) *(var(--ciaf-exp-visible) - 1))) / var(--ciaf-exp-visible));
+    min-width: 0;
+    scroll-snap-align: start;
 }
 
-@media (max-width: 991.98px) {
-  .ciaf-experiencias-scroll {
-    --ciaf-exp-visible: 2;
-  }
+@media(max-width: 991.98px) {
+    .ciaf-experiencias-scroll {
+        --ciaf-exp-visible: 2;
+    }
 }
 
-@media (max-width: 767.98px) {
-  .ciaf-experiencias-scroll {
-    --ciaf-exp-visible: 1;
-  }
+@media(max-width: 767.98px) {
+    .ciaf-experiencias-scroll {
+        --ciaf-exp-visible: 1;
+    }
 }
 
 /* ==========================================
@@ -539,9 +537,9 @@
     max-width: 1120px;
     margin: 0 auto;
     padding: 24px;
-    border: 1px solid rgba(255, 255, 255, .55);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     border-radius: 32px;
-    background: rgba(255, 255, 255, .78);
+    background: rgba(255, 255, 255, 0.78);
     box-shadow: var(--shadow-elegant);
     backdrop-filter: blur(18px);
 }
@@ -584,27 +582,4 @@
 
 .ciaf-option-card:hover p {
     opacity: 0;
-}
-
-/* ==========================================
- Sección 12: SIMULADOR
-========================================== */
-.ciaf-jornada {
-    display: flex;
-    gap: 13px;
-    margin-top: 13px;
-}
-
-.ciaf-jornada button {
-    border: none;
-    height: 46px;
-    padding: 0 24px;
-    border-radius: 999px;
-    background: #f1f5f9;
-    color: #64748b;
-}
-
-.ciaf-jornada .active {
-    background: var(--ciaf-primary);
-    color: white;
 }

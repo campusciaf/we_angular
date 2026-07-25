@@ -88,6 +88,8 @@ import { AccesosrapidosComponent } from './componente/accesosrapidos/accesosrapi
 import { NewsletterComponent } from './componente/newsletter/newsletter.component';
 import { ConveniosComponent } from './componente/convenios/convenios.component';
 import { CiafStaggerDirective } from './core/directives/ciaf-stagger.directive';
+import { DescubrecaminoComponent } from './componente/descubrecamino/descubrecamino.component';
+import { FuturoComponent } from './componente/futuro/futuro.component';
 
 
 
@@ -155,6 +157,8 @@ import { CiafStaggerDirective } from './core/directives/ciaf-stagger.directive';
     NewsletterComponent,
     ConveniosComponent,
     CiafStaggerDirective,
+    DescubrecaminoComponent,
+    FuturoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <section class="row justify-content-center ciaf-section-white my-5 py-5 mx-0 px-0">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 ">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10 ">
 
     <div class="ciaf-news-header d-flex align-items-end justify-content-between gap-4 mb-5">
       <div>
@@ -16,10 +16,9 @@
     </div>
 
     <!-- 3 en PC, 1 en móvil; solo se desplaza el contenido -->
-    <div #viewport class="ciaf-news-slider" *ngIf="listarNoticias.length && usarCarrusel"
-      ciafStagger=".ciaf-news-card" ciafStaggerMode="up"
-      (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)" (pointerup)="onPointerUp($event)"
-      (pointercancel)="onPointerUp($event)" (pointerleave)="onPointerLeave($event)">
+    <div #viewport class="ciaf-news-slider" *ngIf="listarNoticias.length && usarCarrusel" ciafStagger=".ciaf-news-card"
+      ciafStaggerMode="up" (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp($event)" (pointercancel)="onPointerUp($event)" (pointerleave)="onPointerLeave($event)">
       <div class="ciaf-news-slider__track" [class.ciaf-news-slider__track--anim]="animando"
         [style.transform]="'translate3d(' + desplazamiento + 'px, 0, 0)'"
         [style.--ciaf-news-card-width.px]="anchoTarjeta">
@@ -29,8 +28,8 @@
       </div>
     </div>
 
-    <div class="ciaf-news-grid g-4" *ngIf="listarNoticias.length && !usarCarrusel"
-      ciafStagger=".ciaf-news-card" ciafStaggerMode="up">
+    <div class="ciaf-news-grid g-4" *ngIf="listarNoticias.length && !usarCarrusel" ciafStagger=".ciaf-news-card"
+      ciafStaggerMode="up">
       <article class="ciaf-news-card rounded-5" *ngFor="let noticia of listarNoticias">
         <ng-container *ngTemplateOutlet="tarjetaNoticia; context: { $implicit: noticia }"></ng-container>
       </article>

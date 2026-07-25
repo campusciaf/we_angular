@@ -232,7 +232,7 @@ export class IndustrialComponent implements OnInit {
     { id: 'por-que-estudiarlo', nav: '7', label: '¿Por qué estudiarlo?' },
     { id: 'valores-financiacion', nav: '8', label: 'Valores y financiación' },
     { id: 'proceso-paso-a-paso', nav: '9', label: 'Tu proceso paso a paso' },
-    { id: 'simulador', nav: '10', label: 'Simulador' },
+    { id: 'descubre-tu-camino', nav: '10', label: 'Descubre tu camino' },
     { id: 'tu-futuro', nav: '11', label: 'Tu futuro' },
   ];
 
