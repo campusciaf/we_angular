@@ -1,13 +1,26 @@
 /* Hero programa — solo overlay azul, altura y animación (layout en Bootstrap) */
 .ciaf-program-hero {
-    min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
-  }
-  
-  .ciaf-program-hero__overlay {
-    z-index: 1;
-      pointer-events: none;
-      background: color-mix(in srgb, var(--ciaf-primary-deep) 78%, transparent);
-  }
+  min-height: calc(100dvh - var(--topbar-height) - var(--header-height));
+}
+
+.ciaf-program-hero__media {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ciaf-program-hero__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ciaf-program-hero__overlay {
+  z-index: 1;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--ciaf-primary-deep) 78%, transparent);
+}
   
   .ciaf-program-hero__scroll {
     z-index: 2;
