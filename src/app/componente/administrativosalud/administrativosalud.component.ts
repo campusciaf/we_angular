@@ -1,67 +1,83 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import {
+  DomSanitizer,
+  SafeResourceUrl,
+  SafeUrl,
+} from '@angular/platform-browser';
 
-declare var jQuery:any;
-declare var $:any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-administrativosalud',
   templateUrl: './administrativosalud.component.html',
-  styleUrls: ['./administrativosalud.component.css']
+  styleUrls: ['./administrativosalud.component.css'],
 })
 export class AdministrativosaludComponent {
-  public tres_semestres="assets/image/tres-semestres.webp";
+  public tres_semestres = 'assets/image/tres-semestres.webp';
 
-  public img_li="assets/image/img-li.webp";
-  public next="assets/image/btn-next.webp";
-  public prev="assets/image/btn-prev.webp";
-  public descargar="assets/image/descargar.webp";
-  public desplegar="assets/image/desplegar.webp";
-  public inscribete_en_linea="assets/image/inscribete-en-linea.webp";
-  public te_asesoro="assets/image/te-asesoro.webp";
-  public llamame="assets/image/llamame.webp";
-  public visita_sede="assets/image/visita-sede.webp";
-  
-  public banner_financiacion="assets/image/banner-financiacion.webp";
-  public beneficios="assets/image/beneficios.webp";
-  
-  
-  listarSemestres1 = [
-    {semestre:1},
-    {semestre:2},
-    {semestre:3},
+  public img_li = 'assets/image/img-li.webp';
+  public next = 'assets/image/btn-next.webp';
+  public prev = 'assets/image/btn-prev.webp';
+  public descargar = 'assets/image/descargar.webp';
+  public desplegar = 'assets/image/desplegar.webp';
+  public inscribete_en_linea = 'assets/image/inscribete-en-linea.webp';
+  public te_asesoro = 'assets/image/te-asesoro.webp';
+  public llamame = 'assets/image/llamame.webp';
+  public visita_sede = 'assets/image/visita-sede.webp';
 
+  public banner_financiacion = 'assets/image/banner-financiacion.webp';
+  public beneficios = 'assets/image/beneficios.webp';
+
+  listarSemestres1 = [{ semestre: 1 }, { semestre: 2 }, { semestre: 3 }];
+
+  listarMaterias = [
+    { semestre: 1, materia: 'Modulo básico' },
+    {
+      semestre: 1,
+      materia:
+        'Atender y orientar a las personas en relación con sus necesidades y expectativas de acuerdo con políticas institucionales y normas vigentes',
+    },
+    {
+      semestre: 1,
+      materia:
+        'Afiliar a la población al sistema general de seguridad social de salud según normatividad vigente',
+    },
+
+    {
+      semestre: 2,
+      materia:
+        'Admitir al usuario en la red de servicios de salud según niveles de atención y normativa vigente',
+    },
+    {
+      semestre: 2,
+      materia:
+        'Facturar la prestación de los servicios de salud según normatividad y contratación',
+    },
+
+    {
+      semestre: 3,
+      materia:
+        'Generar actitudes y prácticas seguras y saludables en los ambientes de trabajo',
+    },
+    {
+      semestre: 3,
+      materia:
+        'Manejar valores e ingresos relacionados con las operaciones del establecimiento',
+    },
   ];
 
-  listarMaterias =[
-    {semestre:1,materia:'Modulo básico'},
-    {semestre:1,materia:'Atender y orientar a las personas en relación con sus necesidades y expectativas de acuerdo con políticas institucionales y normas vigentes'},
-    {semestre:1,materia:'Afiliar a la población al sistema general de seguridad social de salud según normatividad vigente'},
-
-
-    {semestre:2,materia:'Admitir al usuario en la red de servicios de salud según niveles de atención y normativa vigente'},
-    {semestre:2,materia:'Facturar la prestación de los servicios de salud según normatividad y contratación'},
-
-
-    {semestre:3,materia:'Generar actitudes y prácticas seguras y saludables en los ambientes de trabajo'},
-    {semestre:3,materia:'Manejar valores e ingresos relacionados con las operaciones del establecimiento'},
-  
-  
-
-
-
-  ];
-  
-  
   get semestresPlan(): { semestre: number }[] {
     return [...this.listarSemestres1];
   }
-  
-  materiasDelSemestre(semestre: number): { semestre: number; materia: string }[] {
-    return this.listarMaterias.filter(m => m.semestre === semestre);
+
+  materiasDelSemestre(
+    semestre: number,
+  ): { semestre: number; materia: string }[] {
+    return this.listarMaterias.filter((m) => m.semestre === semestre);
   }
-  
+
   etiquetaTituloSemestre(semestre: number): string | null {
     if (semestre === 3) {
       return 'Técnico Laboral';
@@ -69,48 +85,53 @@ export class AdministrativosaludComponent {
 
     return null;
   }
-  
+
   esSemestreHito(semestre: number): boolean {
     return semestre === 4 || semestre === 7 || semestre === 10;
   }
-  
+
   planSemestreAbierto: number | null = null;
-  
+
   togglePlanSemestre(semestre: number): void {
-    this.planSemestreAbierto = this.planSemestreAbierto === semestre ? null : semestre;
+    this.planSemestreAbierto =
+      this.planSemestreAbierto === semestre ? null : semestre;
   }
-  
+
   planSemestreEstaAbierto(semestre: number): boolean {
     return this.planSemestreAbierto === semestre;
   }
-  
+
   slideConfig = {
-    "slidesToShow": 4, "slidesToScroll": 1, "infinite": true, "nextArrow":false,"prevArrow":false, "autoplay": true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: true,
+    nextArrow: false,
+    prevArrow: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1048,
         settings: {
-          slidesToShow: 2
-        }
+          slidesToShow: 2,
+        },
       },
       {
         breakpoint: 778,
         settings: {
-          slidesToShow: 2
-        }
+          slidesToShow: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
-  
-  pagina:any;
-  activo:any;
+
+  pagina: any;
+  activo: any;
 
   private scrollSpyIgnorar = false;
   private scrollSpyTick = false;
@@ -121,16 +142,16 @@ export class AdministrativosaludComponent {
   toggleCampoAccion(id: string): void {
     this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
   }
-  
-  isValid1:boolean = true;
-  isValid2:boolean = false;
-  isValid3:boolean = false;
-  isValid4:boolean = false;
-  
+
+  isValid1: boolean = true;
+  isValid2: boolean = false;
+  isValid3: boolean = false;
+  isValid4: boolean = false;
+
   listarPrograma: any;
   listarProgramaVideo: any;
   listarDesempenate: any;
-  
+
   /** IDs de sección del programa (scroll, no páginas ocultas) */
   readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
     { id: 'conoce-el-programa', nav: '1', label: 'Conoce el programa' },
@@ -141,10 +162,10 @@ export class AdministrativosaludComponent {
     { id: 'por-que-estudiarlo', nav: '7', label: '¿Por qué estudiarlo?' },
     { id: 'valores-financiacion', nav: '8', label: 'Valores y financiación' },
     { id: 'proceso-paso-a-paso', nav: '9', label: 'Tu proceso paso a paso' },
-    { id: 'simulador', nav: '10', label: 'Simulador' },
+    { id: 'descubre-tu-camino', nav: '10', label: 'Descubre tu camino' },
     { id: 'tu-futuro', nav: '11', label: 'Tu futuro' },
   ];
-  
+
   scrollToSeccion(sectionId: string, navId?: string): void {
     if (sectionId === 'top') {
       this.scrollSpyIgnorar = true;
@@ -162,7 +183,8 @@ export class AdministrativosaludComponent {
       return;
     }
 
-    const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
+    const top =
+      el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
 
     if (navId) {
       this.activo = navId;
@@ -227,7 +249,7 @@ export class AdministrativosaludComponent {
     document.getElementById('btn-' + navId)?.scrollIntoView({
       behavior: 'smooth',
       inline: 'center',
-      block: 'nearest'
+      block: 'nearest',
     });
   }
 
@@ -241,7 +263,6 @@ export class AdministrativosaludComponent {
       this.actualizarSeccionPorScroll();
     }, delayMs);
   }
-
 
   paginas(pagina: string): void {
     if (pagina === '0') {
@@ -269,56 +290,80 @@ export class AdministrativosaludComponent {
     }
   }
 
-  
-    listarContacto =[
-      {tipo_link:'1',titulo:'¡Inscríbete en línea!', pic:this.inscribete_en_linea, link:'https://ciaf.digital/inscripciones/', detalle:'',boton:'Inscipción'},
-      {tipo_link:'1',titulo:'¡Escríbeme y te asesoro!', pic:this.te_asesoro, link:'https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20adminsalud%20web', detalle:'',boton:'Escribeme'},
-      {tipo_link:'1',titulo:'¿Prefieres llamarme?', pic:this.llamame, link:'tel:+573143400100', detalle:'',boton:'Llamar'},
-      {tipo_link:'2',titulo:'¡Date una pasadita por nuestra sede!', pic:this.visita_sede, link:'#direccion', detalle:'Cra. 6 No. 24-56 • Pereira',boton:'Google Maps'},
-  
-    ];
-  
-    activarLinkMenu(){
-      $("#uno").removeClass("active-link-dropdow");
-      $("#dos").addClass("active-link-dropdow");
-      
-    }
-  
-    total:any;
-   
-    videoYoutube(valor:any){
-      this.total=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + valor); 
-      
-    }
-  
-  
-    constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { }
-  
-    ngOnInit(): void {
-      this.activo="1";
-      this.pagina="1";
-      this.paginas(this.pagina);
-  
-      var id:number = 8;
-  
-      this.conectarApiService.obtenerProgramaId(id).subscribe(respuesta=>{
-        this.listarPrograma=respuesta
-      }); 
-  
-      this.conectarApiService.obtenerProgramaId(id).subscribe(respuesta2=>{
-        this.listarProgramaVideo=respuesta2[0]["video_descripcion"];
-   
-        this.videoYoutube(this.listarProgramaVideo);
-      });
-  
-      this.conectarApiService.obtenerDesempenateId(id).subscribe(respuesta3=>{
-        this.listarDesempenate=respuesta3
-      }); 
-  
-      
-  
-     this.activarLinkMenu();
-     
-    }
-  
+  listarContacto = [
+    {
+      tipo_link: '1',
+      titulo: '¡Inscríbete en línea!',
+      pic: this.inscribete_en_linea,
+      link: 'https://ciaf.digital/inscripciones/',
+      detalle: '',
+      boton: 'Inscipción',
+    },
+    {
+      tipo_link: '1',
+      titulo: '¡Escríbeme y te asesoro!',
+      pic: this.te_asesoro,
+      link: 'https://api.whatsapp.com/send?phone=573143400100&amp;text=Mensaje%20desde%20adminsalud%20web',
+      detalle: '',
+      boton: 'Escribeme',
+    },
+    {
+      tipo_link: '1',
+      titulo: '¿Prefieres llamarme?',
+      pic: this.llamame,
+      link: 'tel:+573143400100',
+      detalle: '',
+      boton: 'Llamar',
+    },
+    {
+      tipo_link: '2',
+      titulo: '¡Date una pasadita por nuestra sede!',
+      pic: this.visita_sede,
+      link: '#direccion',
+      detalle: 'Cra. 6 No. 24-56 • Pereira',
+      boton: 'Google Maps',
+    },
+  ];
+
+  activarLinkMenu() {
+    $('#uno').removeClass('active-link-dropdow');
+    $('#dos').addClass('active-link-dropdow');
   }
+
+  total: any;
+
+  videoYoutube(valor: any) {
+    this.total = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/' + valor,
+    );
+  }
+
+  constructor(
+    private conectarApiService: ConectarApiService,
+    private sanitizer: DomSanitizer,
+  ) {}
+
+  ngOnInit(): void {
+    this.activo = '1';
+    this.pagina = '1';
+    this.paginas(this.pagina);
+
+    var id: number = 8;
+
+    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta) => {
+      this.listarPrograma = respuesta;
+    });
+
+    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta2) => {
+      this.listarProgramaVideo = respuesta2[0]['video_descripcion'];
+
+      this.videoYoutube(this.listarProgramaVideo);
+    });
+
+    this.conectarApiService.obtenerDesempenateId(id).subscribe((respuesta3) => {
+      this.listarDesempenate = respuesta3;
+    });
+
+    this.activarLinkMenu();
+  }
+}
