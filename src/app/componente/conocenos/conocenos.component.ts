@@ -66,14 +66,14 @@ export class ConocenosComponent {
       titulo: 'Seguridad Y Salud en el Trabajo',
       link: 'https://publuu.com/flip-book/96771/265548/page/1',
       modal: '#modalsst',
-      icono: 'fa-solid fa-shield-check',
+      icono: 'fa-solid fa-check',
     },
     {
       estado: '1',
       titulo: 'Protocolo de Violencia Sexual',
       link: 'https://ciaf.digital/public/web_normativa/plan_estrategico_final_preliminar.pdf',
       modal: '',
-      icono: 'fa-solid fa-shield-exclamation',
+      icono: 'fa-solid fa-triangle-exclamation',
     },
   ];
 
@@ -708,7 +708,7 @@ export class ConocenosComponent {
   ngOnInit(): void {
     this.activo = '1';
     this.pagina = '1';
-    this.paginas(this.pagina);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     this.conectarApiService
       .obtenercategoriasReglamentos()

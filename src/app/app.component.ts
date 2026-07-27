@@ -16,11 +16,12 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(public router: Router) {}
 
   ngOnInit(): void {
-    // Red de seguridad: el header se destruye por ruta; si el menú móvil quedó abierto,
-    // Bootstrap deja overflow:hidden en body y en móvil no se puede hacer scroll.
     this.routerSub = this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe(() => this.liberarScrollBody());
+      .subscribe(() => {
+        this.liberarScrollBody();
+        this.irAlInicio();
+      });
   }
 
   ngOnDestroy(): void {
@@ -28,13 +29,14 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onDeactivate() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    document.body.scrollTop = 0;
+    this.irAlInicio();
     this.liberarScrollBody();
+  }
+
+  private irAlInicio(): void {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }
 
   private liberarScrollBody(): void {

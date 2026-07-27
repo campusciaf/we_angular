@@ -4,7 +4,7 @@
   class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 mx-0 px-0">
 
   <div class="ciaf-program-hero__media position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
-    <img [src]="bg_pc" alt="Conocenos" class="w-100 h-100 object-fit-cover">
+    <img [src]="bg_pc" alt="Conocenos" class="hero-media hero-kenburns w-100 h-100 object-fit-cover">
   </div>
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
@@ -12,47 +12,51 @@
   <div class="row justify-content-center z-2 py-5 mt-5 col-12 mx-0 px-0">
     <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10 px-0">
       <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-10 mt-5 py-4 px-0">
-        <span
-          class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
-          Vigilada Mineducación
-        </span>
-        <h1 class="fs-60 fw-extrablack mb-3 lh-1">
-          Conoce CIAF
-        </h1>
+        <div class="hero-content">
+          <span
+            class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
+            Vigilada Mineducación
+          </span>
+          <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+            Conoce CIAF
+          </h1>
 
-        <p class="fs-24 fw-bold mb-3 text-color-3">
-          Ciencia, Creatividad e Innovación
-        </p>
-        <p class="fs-16 fw-semibold mb-3 text-color-5">
-          Te damos la bienvenida a la comunidad CIAF. Una institución con mentalidad digital, innovación y un propósito
-          profundamente humano: crear oportunidades para seres humanos que vibran por un espacio en la sociedad.
-        </p>
+          <div>
+            <p class="fs-24 fw-bold mb-3 text-color-3">
+              Ciencia, Creatividad e Innovación
+            </p>
+            <p class="fs-16 fw-semibold mb-3 text-color-5">
+              Te damos la bienvenida a la comunidad CIAF. Una institución con mentalidad digital, innovación y un
+              propósito
+              profundamente humano: crear oportunidades para seres humanos que vibran por un espacio en la sociedad.
+            </p>
 
-        <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-          <li data-bs-toggle="modal" data-bs-target="#modalreglamento"
-            class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-            <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-            Reglamentos
-          </li>
-          <li role="button" (click)="scrollToSeccion('normatividad', '4')"
-            class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-            <i class="fa-regular fa-book-open text-color-3" aria-hidden="true"></i>
-            Normatividad
-          </li>
+            <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+              <li data-bs-toggle="modal" data-bs-target="#modalreglamento"
+                class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+                Reglamentos
+              </li>
+              <li role="button" (click)="scrollToSeccion('normatividad', '4')"
+                class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                <i class="fa-solid fa-book-open text-color-3" aria-hidden="true"></i>
+                Normatividad
+              </li>
+            </ul>
+          </div>
 
-        </ul>
-
-        <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
-          <a routerLink="/iniciar" target="_blank" rel="noopener noreferrer"
-            class="cursor-pointer ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
-            Inscribete
-            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
-            class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
-            Habla con nosotros
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </a>
+          <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+            <a routerLink="/iniciar" target="_blank" rel="noopener noreferrer"
+              class="cursor-pointer ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+              Inscribete
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
+              class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+              Habla con nosotros
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -100,7 +104,10 @@
     <p class="fs-18 mt-4">
       CIAF para responder a las demandas del mundo 4.0, formando profesionales altamente calificados. Por lo tanto,
       inicia un proceso de implementación de creatividad e innovación en sus procesos a través de los programas
-      institucionales, compilados en nuestras memorias institucionales.
+      institucionales, compilados en nuestras <a class="text-decoration-none text-color-2"
+        href="https://heyzine.com/flip-book/1d8f8e3e05.html" target="_blank" rel="noopener noreferrer"
+        class="text-decoration-none text-color-2 fw-bold">memorias
+        institucionales</a>.
     </p>
 
     <p class="fs-18 mt-4">
@@ -111,7 +118,7 @@
       cumplimiento de la normatividad vigente.
     </p>
 
-    <div class="row g-4 mt-5">
+    <div class="row g-4 mt-5" ciafStagger=".ciaf-card" ciafStaggerMode="up">
 
       <div class="col-xl-4 col-lg-4 col-md-6 col-12">
         <div class="ciaf-card rounded-5 p-4 h-100">
@@ -153,38 +160,58 @@
 <!-- Presentación -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="presentacion">
 
-  <div class="col-xxl-7 col-xl-7 col-lg-9 col-md-10 col-10">
+  <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-11">
 
     <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
       Video Institucional CIAF
     </span>
 
-    <h2 class="fs-48 fw-extrablack text-color-2 mt-3 mb-5">
+    <h2 class="fs-36 fw-extrablack text-color-2 mt-3 mb-5">
       Conoce nuestra esencia en movimiento
     </h2>
 
-    <div class="ratio ratio-16x9 rounded-5 overflow-hidden shadow">
+  </div>
 
-      <iframe src="https://www.youtube.com/embed/BMzWQWkUiIA?rel=0" title="Video Institucional CIAF"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+  <div class="col-12"></div>
+
+  <div class="row justify-content-center g-4 mx-0 px-0 col-12" ciafStagger=".ratio" ciafStaggerMode="up">
+    <div class="col-xxl-5 col-xl-4 col-lg-9 col-md-10 col-11 mb-3">
+
+      <div class="ratio ratio-16x9 rounded-5 overflow-hidden shadow">
+
+        <iframe src="https://www.youtube.com/embed/BMzWQWkUiIA?rel=0" title="Video Institucional CIAF"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
 
     </div>
 
+    <div class="col-xxl-5 col-xl-4 col-lg-9 col-md-10 col-11">
+      <div class="ratio ratio-16x9 rounded-5 overflow-hidden shadow">
+
+        <iframe src="https://www.youtube.com/embed/BjHw-2BUOwg?si=ALchPVDC7PHuQpXg" title="Video Institucional CIAF"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+    </div>
   </div>
 
 </section>
 
 <!-- Documentos institucionales -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="documentos">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-11 px-0 mx-0">
 
     <div class="row justify-content-center mb-5 mx-0 px-0">
 
       <div class="col-12">
 
-        <h2 class="fs-48 fw-extrablack text-color-2">
+        <h2 class="fs-36 fw-extrablack text-color-2">
           Documentos institucionales
         </h2>
 
@@ -192,9 +219,9 @@
 
     </div>
 
-    <div class="row justify-content-center g-4 mx-0 px-0">
+    <div class="row justify-content-center g-4 mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="up">
 
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-12 mb-4 mb-xl-0">
 
         <a href="https://ciaf.digital/public/web_normativa/PEI-CIAF-Educacion-Superior.pdf" target="_blank"
           rel="noopener noreferrer" class="text-decoration-none">
@@ -220,7 +247,7 @@
 
       </div>
 
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-12 mb-4 mb-xl-0">
 
         <a data-bs-toggle="modal" data-bs-target="#modalreglamento" target="_blank" rel="noopener noreferrer"
           class="text-decoration-none cursor-pointer">
@@ -246,7 +273,7 @@
 
       </div>
 
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-12 mb-4 mb-xl-0">
 
         <a data-bs-toggle="modal" data-bs-target="#modalrendicion" target="_blank" rel="noopener noreferrer"
           class="cursor-pointer text-decoration-none">
@@ -272,7 +299,7 @@
 
       </div>
 
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-12 mb-4 mb-xl-0">
 
         <a href="https://heyzine.com/flip-book/1d8f8e3e05.html" target="_blank" rel="noopener noreferrer"
           class="text-decoration-none">
@@ -307,18 +334,18 @@
   <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
 
     <h2 class="fs-36 fw-extrablack text-color-2 mb-0">Normatividad</h2>
-    <p class="fs-16 text-color-1 mt-3 mb-0">
+    <p class="fs-16 text-color-1 mt-3 mb-3">
       Consulta nuestros documentos normativos y de transparencia institucional.
     </p>
 
-    <div class="row justify-content-center g-4 mx-0 px-0">
-      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 mb-4 mb-xl-0" *ngFor="let item of reglamentos">
+    <div class="row justify-content-center g-4 mx-0 px-0" ciafStagger="article" ciafStaggerMode="up">
+      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12 mb-4 mb-xl-0" *ngFor="let item of reglamentos">
         <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
           <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
             <i [class]="item.icono + ' text-white'" aria-hidden="true"></i>
           </div>
 
-          <h3 class="fs-18 fw-extrablack text-color-2 mb-4">{{ item.titulo }}</h3>
+          <h3 class="fs-18 fw-black text-color-2 mb-4">{{ item.titulo }}</h3>
 
           <div class="mt-auto">
             <a *ngIf="item.estado == '1'" [href]="item.link" target="_blank" rel="noopener noreferrer"
@@ -345,13 +372,13 @@
 
 <!-- Direccionamiento estratégico -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="direccionamiento-estrategico">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-11 px-0 mx-0">
 
     <div class="row justify-content-center mb-5 mx-0 px-0">
 
       <div class="col-12">
 
-        <h2 class="fs-48 fw-extrablack text-color-2">
+        <h2 class="fs-36 fw-extrablack text-color-2">
           Direccionamiento estratégico
         </h2>
 
@@ -359,14 +386,14 @@
 
     </div>
 
-    <div class="row justify-content-center g-4 mx-0 px-0">
+    <div class="row justify-content-center g-4 mx-0 px-0" ciafStagger=".card" ciafStaggerMode="up">
 
-      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 mb-4 mb-xl-0">
 
         <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
 
           <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-5">
-            <i class="fa-regular fa-bullseye text-white"></i>
+            <i class="fas fa-bullseye text-white"></i>
           </div>
 
           <h3 class="fs-24 fw-extrablack text-white mb-4">
@@ -385,7 +412,7 @@
 
       </div>
 
-      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-11 col-12 mb-4 mb-xl-0">
 
         <div class="card bg-section2-degradado rounded-5 p-5 h-100 border-0 position-relative overflow-hidden">
 
@@ -418,13 +445,13 @@
 
 <!-- Principios rectores -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="principios-rectores">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-11 px-0 mx-0">
 
     <div class="row justify-content-center mb-5 mx-0 px-0">
 
       <div class="col-12">
 
-        <h2 class="fs-48 fw-extrablack text-color-2">
+        <h2 class="fs-36 fw-extrablack text-color-2">
           Principios <span class="ciaf-gradient-text ciaf-gradient-text--brand">Rectores</span>
         </h2>
 
@@ -437,9 +464,9 @@
 
     </div>
 
-    <div class="row justify-content-center g-4 mx-0 px-0">
+    <div class="row justify-content-center g-4 mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="up">
 
-      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-12 mb-4 mb-xl-0">
 
         <div class="ciaf-card rounded-5 p-4 h-100">
 
@@ -461,7 +488,7 @@
 
       </div>
 
-      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-12 mb-4 mb-xl-0">
 
         <div class="ciaf-card rounded-5 p-4 h-100">
 
@@ -483,7 +510,7 @@
 
       </div>
 
-      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-12 mb-4 mb-xl-0">
 
         <div class="ciaf-card rounded-5 p-4 h-100">
 
@@ -505,7 +532,7 @@
 
       </div>
 
-      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-10 mb-4 mb-xl-0">
+      <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-12 mb-4 mb-xl-0">
 
         <div class="ciaf-card rounded-5 p-4 h-100">
 
@@ -532,7 +559,7 @@
 
 <!-- Organigrama -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="organigrama">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-11 px-0 mx-0">
     <div class="row justify-content-center mb-5 mx-0 px-0">
       <div class="col-xxl-10 col-xl-8 col-lg-9 col-md-10 col-10">
         <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
@@ -543,8 +570,8 @@
         </h2>
       </div>
     </div>
-    <div class="row justify-content-center mx-0 px-0">
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 text-center">
+    <div class="row justify-content-center mx-0 px-0" ciafStagger="img" ciafStaggerMode="up">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12 text-center">
         <img [src]="organigrama" alt="Aqeuipo que inspira" class="img-fluid rounded-5 shadow">
       </div>
     </div>
@@ -553,12 +580,12 @@
 
 <!-- Consejo Superior -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="consejo-superior">
-  <div class="col-xxl-10 col-xl-10 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-10 col-xl-10 col-lg-10 col-11 px-0 mx-0">
     <div class="row justify-content-center mb-5 mx-0 px-0">
 
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-11">
 
-        <h2 class="fs-48 fw-extrablack text-color-2">
+        <h2 class="fs-36 fw-extrablack text-color-2">
           Consejo Superior y Funcionarios
         </h2>
 
@@ -568,14 +595,14 @@
 
     <div class="row justify-content-center mx-0 px-0">
 
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-12">
 
         <div class=" bg-color-3 rounded-5 p-5 text-white">
 
           <div class="d-flex align-items-center gap-4 mb-5">
 
             <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
-              <i class="fa-regular fa-crown text-white"></i>
+              <i class="fa-solid fa-crown text-white"></i>
             </div>
 
             <h3 class="fs-24 fw-extrablack mb-0">
@@ -640,19 +667,19 @@
 
 <!-- Equipo que inspira -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="equipo-inspira">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-11 px-0 mx-0">
 
     <div class="row justify-content-center mb-5 mx-0 px-0">
       <div class="col-12">
-        <h2 class="fs-48 fw-extrablack text-color-2 mb-0">
+        <h2 class="fs-36 fw-extrablack text-color-2 mb-0">
           Equipo que
           <span class="ciaf-gradient-text ciaf-gradient-text--brand">Inspira</span>
         </h2>
       </div>
     </div>
 
-    <div class="row justify-content-center g-4 mx-0 px-0">
-      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-10 mb-4 mb-xl-0" *ngFor="let grupo of equipoInspira">
+    <div class="row justify-content-center g-4 mx-0 px-0" ciafStagger="article" ciafStaggerMode="up">
+      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12 mb-4 mb-xl-0" *ngFor="let grupo of equipoInspira">
         <article class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
           <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mb-4">
             <i class="fa-solid fa-user-group text-white" aria-hidden="true"></i>
@@ -678,25 +705,26 @@
 
 <!-- Trabaja con nosotros -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="trabaja-nosotros">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-11 px-0">
 
-    <div class="row justify-content-center mx-0 px-0">
+    <div class="row justify-content-center mx-0" ciafStagger=".bg-color-3" ciafStaggerMode="soft">
 
-      <div class="col-xxl-10 col-xl-10 col-lg-11 col-md-10 col-10">
+      <div class="col-xxl-10 col-xl-10 col-lg-11 col-md-11 col-12">
 
-        <div class="bg-color-3 rounded-5 p-5">
+        <div class="bg-color-3 rounded-5 p-4 p-md-5">
 
-          <div class="row justify-content-center align-items-center g-4 mx-0 px-0">
+          <div class="row align-items-center g-4 mx-0">
 
-            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-10 mb-4 mb-xl-0">
+            <!-- Ícono y texto -->
+            <div class="col-xl-8 col-lg-8 col-md-12 col-12 px-0">
 
-              <div class="d-flex align-items-center gap-4">
+              <div class="d-flex align-items-start align-items-md-center gap-3 gap-md-4">
 
-                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
-                  <i class="fa-solid fa-diagram-project"></i>
+                <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle flex-shrink-0 mt-4 mt-md-0">
+                  <i class="fa-solid fa-suitcase"></i>
                 </div>
 
-                <div>
+                <div class="text-start">
 
                   <h3 class="fs-24 fw-extrablack text-white mb-2">
                     Trabaja con Nosotros
@@ -713,12 +741,13 @@
 
             </div>
 
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-10 text-xl-end text-lg-end text-center">
+            <!-- Botón -->
+            <div class="col-xl-4 col-lg-4 col-md-12 col-12 px-0 text-start text-lg-end">
 
               <a href="https://ciaf.digital/cv/vistas/login.html" target="_blank"
-                class="ciaf-btn ciaf-btn--lime rounded-pill px-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center gap-3">
+                class="ciaf-btn ciaf-btn--lime rounded-pill px-4 px-md-5 py-3 fw-bold text-decoration-none d-inline-flex align-items-center justify-content-center gap-3">
                 Postúlate
-                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
 
             </div>
@@ -730,17 +759,21 @@
       </div>
 
     </div>
+
   </div>
 </section>
 
 <!-- Contacto -->
 <section class="row justify-content-center bg-color-3 py-5 mx-0 px-0" id="contacto">
 
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0 text-center">
+  <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-7 col-10 px-0 mx-0 text-center">
 
-    <h2 class="fs-48 fw-black text-white mb-5">
-      Aquí no solo estudias. Te <br>transformas.
+    <h2 class="fs-36 fw-black text-white mb-5">
+      Aquí no solo estudias. Te transformas.
     </h2>
+
+  </div>
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0 text-center">
 
     <div class="d-flex flex-wrap justify-content-center gap-3">
 
