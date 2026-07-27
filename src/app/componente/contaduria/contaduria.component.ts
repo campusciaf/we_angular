@@ -41,42 +41,49 @@ export class ContaduriaComponent implements OnInit {
   listarSemestres3 = [{ semestre: 8 }, { semestre: 9 }, { semestre: 10 }];
 
   listarMaterias = [
+    // Semestre 1
+    { semestre: 1, materia: 'Lectoescritura' },
+    { semestre: 1, materia: 'Constitución Política y Cátedra de Paz' },
     { semestre: 1, materia: 'Matemática' },
-    { semestre: 1, materia: 'Fundamentos de NIIF origen y marco legal' },
-    { semestre: 1, materia: 'Constitución política y cátedra de paz' },
-    { semestre: 1, materia: 'Administración' },
     { semestre: 1, materia: 'TIC' },
-    { semestre: 1, materia: 'Lecto escritura' },
-    { semestre: 1, materia: 'Electiva I (Mercadeo, pensamiento empresarial)' },
+    {
+      semestre: 1,
+      materia: 'Fundamentos de las NIIF: origen y marco legal',
+    },
+    { semestre: 1, materia: 'Administración' },
+    { semestre: 1, materia: 'Electiva I (Contabilidad General)' },
 
+    // Semestre 2
     { semestre: 2, materia: 'Estadística descriptiva' },
-    { semestre: 2, materia: 'Contabilidad bajo NIIF I' },
+    { semestre: 2, materia: 'Contabilidad bajo NIF I' },
     {
       semestre: 2,
       materia:
-        'Electiva II  (administración de talento humano, trabajo en equipo)',
+        'Electiva II (Administración de talento humano, trabajo en equipo)',
     },
     { semestre: 2, materia: 'Matemática financiera' },
     { semestre: 2, materia: 'Estructura de las organizaciones' },
-    { semestre: 2, materia: 'Sistemas de información contable I' },
+    { semestre: 2, materia: 'Sistemas de organización contable I' },
     { semestre: 2, materia: 'Teoría del conocimiento' },
 
-    { semestre: 3, materia: 'Fundamentos de economía' },
-    { semestre: 3, materia: 'Legislación comercial' },
-    { semestre: 3, materia: 'Contabilidad bajo NIIF II' },
-    { semestre: 3, materia: 'Costos y presupuestos' },
-    { semestre: 3, materia: 'Sistemas de información contable II' },
-    { semestre: 3, materia: 'Tributaria I' },
+    // Semestre 3
     { semestre: 3, materia: 'Anteproyecto' },
+    { semestre: 3, materia: 'Legislación comercial' },
+    { semestre: 3, materia: 'Sistemas de información contable II' },
+    { semestre: 3, materia: 'Contabilidad bajo NIF II' },
+    { semestre: 3, materia: 'Costos y presupuestos' },
+    { semestre: 3, materia: 'Fundamentos de economía' },
+    { semestre: 3, materia: 'Tributaria I' },
 
+    // Semestre 4
+    { semestre: 4, materia: 'Opción de grado' },
     { semestre: 4, materia: 'Legislación laboral' },
     { semestre: 4, materia: 'Administración financiera' },
     { semestre: 4, materia: 'Estructuras de productos financieros' },
     { semestre: 4, materia: 'Contabilidad industrial' },
-    { semestre: 4, materia: 'Tributaria II' },
-    { semestre: 4, materia: 'Opción de grado' },
     { semestre: 4, materia: 'Auditoría' },
 
+    // Semestre 5
     { semestre: 5, materia: 'Contabilidades especiales' },
     { semestre: 5, materia: 'Inglés 5' },
     { semestre: 5, materia: 'Costos ABC' },
@@ -84,8 +91,9 @@ export class ContaduriaComponent implements OnInit {
     { semestre: 5, materia: 'Creatividad y pensamiento innovador' },
     { semestre: 5, materia: 'Desarrollo empresarial sostenible' },
     { semestre: 5, materia: 'Cálculo diferencial' },
-    { semestre: 5, materia: 'Proyecto integrador tecnológico I' },
+    { semestre: 5, materia: 'Proyecto integrador tecnológico 1' },
 
+    // Semestre 6
     { semestre: 6, materia: 'Administración financiera' },
     { semestre: 6, materia: 'Procedimiento tributario básico' },
     { semestre: 6, materia: 'Contabilidad de economía solidaria' },
@@ -93,41 +101,63 @@ export class ContaduriaComponent implements OnInit {
     { semestre: 6, materia: 'Estadística inferencial' },
     { semestre: 6, materia: 'Metodología de la investigación' },
     { semestre: 6, materia: 'Tecnologías aplicadas' },
-    { semestre: 6, materia: 'Proyecto integrador tecnológico II' },
+    { semestre: 6, materia: 'Proyecto integrador tecnológico 2' },
 
+    // Semestre 7
     { semestre: 7, materia: 'Seminario de profundización' },
     { semestre: 7, materia: 'Microeconomía' },
     { semestre: 7, materia: 'Impuestos complementarios' },
     { semestre: 7, materia: 'Contabilidad y presupuesto público' },
     { semestre: 7, materia: 'Software contable y administrativo' },
     { semestre: 7, materia: 'Proyecto tecnológico' },
-    { semestre: 7, materia: 'Módulo propedéudico' },
+    { semestre: 7, materia: 'Módulo propedéutico' },
 
+    // Semestre 8
     { semestre: 8, materia: 'Macroeconomía' },
     { semestre: 8, materia: 'Procedimiento tributario integral' },
-    { semestre: 8, materia: 'Contabilidad avanzada l' },
+    { semestre: 8, materia: 'Contabilidad Avanzada I' },
     { semestre: 8, materia: 'Inglés 7' },
-    { semestre: 8, materia: 'Normas contables de información financiera' },
-    { semestre: 8, materia: 'Metodología de la investigación aplicada' },
+    {
+      semestre: 8,
+      materia: 'Normas contables de información financiera',
+    },
+    {
+      semestre: 8,
+      materia: 'Metodologías de la investigación aplicada',
+    },
     { semestre: 8, materia: 'Auditoría basada en riesgos' },
     { semestre: 8, materia: 'Proyecto integrador profesional' },
 
-    { semestre: 9, materia: 'Conyuntura económica' },
+    // Semestre 9
+    { semestre: 9, materia: 'Coyuntura económica' },
     { semestre: 9, materia: 'Comercio internacional' },
-    { semestre: 9, materia: 'Contabilidad avanzada II formas societarias' },
+    {
+      semestre: 9,
+      materia: 'Contabilidad Avanzada II: Formas Societarias',
+    },
     { semestre: 9, materia: 'Investigación contable' },
     { semestre: 9, materia: 'Habilidades directivas' },
     { semestre: 9, materia: 'Auditoría tributaria y de sistemas' },
     { semestre: 9, materia: 'Mercado de capitales' },
 
-    { semestre: 10, materia: 'Globalización y negocios internacionales' },
+    // Semestre 10
+    {
+      semestre: 10,
+      materia: 'Globalización y negocios internacionales',
+    },
     { semestre: 10, materia: 'Finanzas corporativas' },
-    { semestre: 10, materia: 'Formulación y evaluación de proyectos' },
+    {
+      semestre: 10,
+      materia: 'Formulación y evaluación de proyectos',
+    },
     { semestre: 10, materia: 'Revisoría fiscal' },
     { semestre: 10, materia: 'Auditoría de gestión' },
     { semestre: 10, materia: 'Legislación aduanera' },
-    { semestre: 10, materia: 'Ética profesional y de responsabilidad social' },
-    { semestre: 10, materia: 'Trabajo de Grado' },
+    {
+      semestre: 10,
+      materia: 'Ética profesional y responsabilidad social',
+    },
+    { semestre: 10, materia: 'Trabajo de grado' },
   ];
 
   get semestresPlan(): { semestre: number }[] {
@@ -418,7 +448,7 @@ export class ContaduriaComponent implements OnInit {
   ngOnInit(): void {
     this.activo = '1';
     this.pagina = '1';
-    this.paginas(this.pagina);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     var id: number = 3;
 

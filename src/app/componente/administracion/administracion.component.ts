@@ -46,14 +46,22 @@ export class AdministracionComponent implements OnInit, OnDestroy {
   listarSemestres3 = [{ semestre: 8 }, { semestre: 9 }, { semestre: 10 }];
 
   listarMaterias = [
+    // Semestre 1
     { semestre: 1, materia: 'Matemática aplicada' },
-    { semestre: 1, materia: 'Constitución y cátedra de paz' },
-    { semestre: 1, materia: 'T.I.C' },
+    {
+      semestre: 1,
+      materia: 'Constitución Política y Cátedra de Paz',
+    },
+    { semestre: 1, materia: 'TIC' },
     { semestre: 1, materia: 'Fundamentos de economía' },
     { semestre: 1, materia: 'Administración' },
-    { semestre: 1, materia: 'Teorías y tendencias mercadeo' },
+    {
+      semestre: 1,
+      materia: 'Teorías y tendencias de mercadeo',
+    },
     { semestre: 1, materia: 'Lectoescritura' },
 
+    // Semestre 2
     { semestre: 2, materia: 'Estadística aplicada' },
     { semestre: 2, materia: 'Legislación comercial' },
     { semestre: 2, materia: 'Microeconomía' },
@@ -62,14 +70,19 @@ export class AdministracionComponent implements OnInit, OnDestroy {
     { semestre: 2, materia: 'Teoría del conocimiento' },
     { semestre: 2, materia: 'Electiva I' },
 
-    { semestre: 3, materia: 'Algebra Lineal' },
+    // Semestre 3
+    { semestre: 3, materia: 'Álgebra lineal' },
     { semestre: 3, materia: 'Macroeconomía' },
     { semestre: 3, materia: 'Matemática financiera' },
-    { semestre: 3, materia: 'Gestión documental en las organizaciones' },
+    {
+      semestre: 3,
+      materia: 'Gestión documental en las organizaciones',
+    },
     { semestre: 3, materia: 'Comportamiento del consumidor' },
-    { semestre: 3, materia: 'Procesos talento humano' },
+    { semestre: 3, materia: 'Procesos de Talento Humano' },
     { semestre: 3, materia: 'Anteproyecto' },
 
+    // Semestre 4
     { semestre: 4, materia: 'Legislación laboral' },
     { semestre: 4, materia: 'Procesos productivos' },
     { semestre: 4, materia: 'Operación de inventarios' },
@@ -78,50 +91,89 @@ export class AdministracionComponent implements OnInit, OnDestroy {
       materia: 'Teorías de la negociación y servicios a clientes',
     },
     { semestre: 4, materia: 'Opción de grado' },
-    { semestre: 4, materia: 'Cultura de la legalidad y la transparencia' },
+    {
+      semestre: 4,
+      materia: 'Cultura de la legalidad y la transparencia',
+    },
     { semestre: 4, materia: 'Electiva II' },
     { semestre: 4, materia: 'Planeación estratégica' },
 
+    // Semestre 5
     { semestre: 5, materia: 'Cálculo' },
     { semestre: 5, materia: 'Estadística inferencial' },
-    { semestre: 5, materia: 'Legislación tributario' },
-    { semestre: 5, materia: 'Hojas de cálculo avanzadas y aplicadas' },
+    { semestre: 5, materia: 'Legislación tributaria' },
+    {
+      semestre: 5,
+      materia: 'Hojas de cálculo avanzadas y aplicadas',
+    },
     { semestre: 5, materia: 'Contabilidad de costos I' },
-    { semestre: 5, materia: 'Estructura y comunicación organizacional' },
+    {
+      semestre: 5,
+      materia: 'Estructura y comunicación organizacional',
+    },
     { semestre: 5, materia: 'Habilidades comunicativas orales' },
 
+    // Semestre 6
     { semestre: 6, materia: 'Contabilidad de costos II' },
     { semestre: 6, materia: 'Análisis financiero' },
-    { semestre: 6, materia: 'S.I.G' },
+    { semestre: 6, materia: 'S.I.G.' },
     { semestre: 6, materia: 'Investigación de mercados' },
     { semestre: 6, materia: 'Métodos de investigación' },
     { semestre: 6, materia: 'Responsabilidad social' },
 
+    // Semestre 7
     { semestre: 7, materia: 'Presupuestos' },
-    { semestre: 7, materia: 'Auditoría administrativa y control interno' },
+    {
+      semestre: 7,
+      materia: 'Auditoría administrativa y control interno',
+    },
     { semestre: 7, materia: 'Distribución de planta' },
-    { semestre: 7, materia: 'Desarrollo y desempeño organizacional' },
+    {
+      semestre: 7,
+      materia: 'Desarrollo y desempeño organizacional',
+    },
     { semestre: 7, materia: 'Opción de grado tecnológico' },
     { semestre: 7, materia: 'Electiva III' },
-    { semestre: 7, materia: 'Gerencia estratégica de marketing' },
-    { semestre: 7, materia: 'Logística y D.F.I' },
+    {
+      semestre: 7,
+      materia: 'Gerencia estratégica de marketing',
+    },
+    { semestre: 7, materia: 'Logística y D.F.I.' },
 
+    // Semestre 8
     { semestre: 8, materia: 'Investigación de operaciones' },
     { semestre: 8, materia: 'Geopolítica' },
     { semestre: 8, materia: 'Cloud computing' },
     { semestre: 8, materia: 'Prospectiva empresarial' },
-    { semestre: 8, materia: 'Negociación internacional y toma decisiones' },
+    {
+      semestre: 8,
+      materia: 'Negociación internacional y toma de decisiones',
+    },
     { semestre: 8, materia: 'Comercio electrónico' },
     { semestre: 8, materia: 'Relaciones públicas' },
 
-    { semestre: 9, materia: 'Modelo de exportación e importación' },
+    // Semestre 9
+    {
+      semestre: 9,
+      materia: 'Modelo de exportación e importación',
+    },
     { semestre: 9, materia: 'Gerencia financiera' },
     { semestre: 9, materia: 'Administración de la producción' },
-    { semestre: 9, materia: 'Formulación y evaluación de proyectos' },
+    {
+      semestre: 9,
+      materia: 'Formulación y evaluación de proyectos',
+    },
     { semestre: 9, materia: 'Proyecto de vida' },
-    { semestre: 9, materia: 'Electiva de profundización profesional' },
+    {
+      semestre: 9,
+      materia: 'Electiva de profundización profesional',
+    },
 
-    { semestre: 10, materia: 'Derecho comercial internacional' },
+    // Semestre 10
+    {
+      semestre: 10,
+      materia: 'Derecho comercial internacional',
+    },
     { semestre: 10, materia: 'Dirección organizacional' },
     { semestre: 10, materia: 'Simulación gerencial' },
     { semestre: 10, materia: 'Negocios internacionales' },
@@ -417,7 +469,7 @@ export class AdministracionComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.activo = '1';
     this.pagina = '1';
-    this.paginas(this.pagina);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     var id: number = 1;
 

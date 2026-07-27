@@ -415,8 +415,8 @@ export class IndustrialComponent implements OnInit {
 
   ngOnInit(): void {
     this.activo = '1';
-    this.pagina = '0';
-    this.paginas(this.pagina);
+    this.pagina = '1';
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     var id: number = 4;
 

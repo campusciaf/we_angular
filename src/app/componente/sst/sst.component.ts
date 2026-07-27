@@ -46,83 +46,165 @@ export class SstComponent implements OnInit {
   ];
 
   listarMaterias = [
+    // Semestre 1
     { semestre: 1, materia: 'Matemáticas generales' },
-    { semestre: 1, materia: 'Introdución a la SST' },
+    { semestre: 1, materia: 'Introducción a la SST' },
     { semestre: 1, materia: 'TIC I' },
-    { semestre: 1, materia: 'Antecedendes de la legislación en la SST' },
+    {
+      semestre: 1,
+      materia: 'Antecedentes de la legislación en la SST',
+    },
     { semestre: 1, materia: 'Fundamentos de administración' },
-    { semestre: 1, materia: 'Constitución y cátedra de paz' },
+    {
+      semestre: 1,
+      materia: 'Constitución Política y Cátedra de Paz',
+    },
     { semestre: 1, materia: 'Habilidades de la comunicación' },
 
+    // Semestre 2
     { semestre: 2, materia: 'Estadística' },
     { semestre: 2, materia: 'TIC II' },
     { semestre: 2, materia: 'Bioquímica' },
-    { semestre: 2, materia: 'Anatomía y fisiología del trabajo' },
+    {
+      semestre: 2,
+      materia: 'Anatomía y fisiología del trabajo',
+    },
     { semestre: 2, materia: 'Seguridad social' },
-    { semestre: 2, materia: 'Sistema de gestión de SST - MIPYME I;II;III' },
+    {
+      semestre: 2,
+      materia: 'Sistema de gestión de SST - MIPYME I; II; III',
+    },
     { semestre: 2, materia: 'Teorías del conocimiento' },
 
-    { semestre: 3, materia: 'Métodos de Inspecciones en SST' },
+    // Semestre 3
+    {
+      semestre: 3,
+      materia: 'Métodos de inspecciones en SST',
+    },
     { semestre: 3, materia: 'Epidemiología ocupacional' },
     {
       semestre: 3,
       materia:
         'Identificación de peligros, evaluación y valoración de los riesgos y medidas de control',
     },
-    { semestre: 3, materia: 'Prevención y respuesta ante emergencias' },
-    { semestre: 3, materia: 'Legislación en Seguridad y Salud en el Trabajo' },
+    {
+      semestre: 3,
+      materia: 'Prevención y respuesta ante emergencias',
+    },
+    {
+      semestre: 3,
+      materia: 'Legislación en seguridad y salud en el trabajo',
+    },
     { semestre: 3, materia: 'Gestión de la calidad' },
-    { semestre: 3, materia: 'Metodológia de la Investigación' },
+    { semestre: 3, materia: 'Metodología de la investigación' },
 
-    { semestre: 4, materia: 'Factores de riesgos Locativos y señalización' },
-    { semestre: 4, materia: 'Introdución a los sistemas gestión integrados' },
+    // Semestre 4
+    {
+      semestre: 4,
+      materia: 'Factores de riesgo locativos y señalización',
+    },
+    {
+      semestre: 4,
+      materia: 'Introducción a los sistemas de gestión integrados',
+    },
     { semestre: 4, materia: 'Modalidad de grado' },
-    { semestre: 4, materia: 'Ética empresarial y profesional' },
+    {
+      semestre: 4,
+      materia: 'Ética empresarial y profesional',
+    },
     { semestre: 4, materia: 'Creatividad empresarial' },
-    { semestre: 4, materia: 'Gestión ambiental y Desarrollo sostenible' },
+    {
+      semestre: 4,
+      materia: 'Gestión ambiental y desarrollo sostenible',
+    },
 
+    // Semestre 5
     { semestre: 5, materia: 'Higiene industrial' },
-    { semestre: 5, materia: 'Factores de riesgos biológicos y químicos' },
+    {
+      semestre: 5,
+      materia: 'Factores de riesgo biológicos y químicos',
+    },
     { semestre: 5, materia: 'Investigación de AT-EL' },
     { semestre: 5, materia: 'Tareas de alto riesgo I' },
-    { semestre: 5, materia: 'Sistema de gestión ambiental' },
+    { semestre: 5, materia: 'Sistemas de gestión ambiental' },
     { semestre: 5, materia: 'Contabilidad aplicada' },
     { semestre: 5, materia: 'Investigación cuantitativa' },
 
+    // Semestre 6
     { semestre: 6, materia: 'Seguridad industrial' },
-    { semestre: 6, materia: 'Medicina preventiva y del trabajo' },
-    { semestre: 6, materia: 'Legislación en riesgos laborales' },
-    { semestre: 6, materia: 'Sistema de gestión de SST (Riesgo IV y V)' },
+    {
+      semestre: 6,
+      materia: 'Medicina preventiva y del trabajo',
+    },
+    {
+      semestre: 6,
+      materia: 'Legislación en riesgos laborales',
+    },
+    {
+      semestre: 6,
+      materia: 'Sistema de gestión de SST (riesgo IV y V)',
+    },
     { semestre: 6, materia: 'Presupuesto' },
     { semestre: 6, materia: 'Anteproyecto' },
     {
       semestre: 6,
       materia:
-        'Tareas de alto riesgo II-(Energías peligrosas, materiales peligrosos) ',
+        'Tareas de alto riesgo II (energías peligrosas, materiales peligrosos)',
     },
 
-    { semestre: 7, materia: 'Factores de riesgos físicos' },
-    { semestre: 7, materia: 'Gestión integral del riesgo de desastres' },
-    { semestre: 7, materia: 'Factores de riesgo biomecánico' },
-    { semestre: 7, materia: 'Plan estratégico de seguridad vial' },
+    // Semestre 7
+    { semestre: 7, materia: 'Factores de riesgo físicos' },
+    {
+      semestre: 7,
+      materia: 'Gestión integral del riesgo de desastres',
+    },
+    {
+      semestre: 7,
+      materia: 'Factores de riesgo biomecánico',
+    },
+    {
+      semestre: 7,
+      materia: 'Plan estratégico de seguridad vial',
+    },
     { semestre: 7, materia: 'Psicología del trabajo' },
     { semestre: 7, materia: 'Control total de pérdidas' },
 
+    // Semestre 8
     { semestre: 8, materia: 'Toxicología laboral' },
     { semestre: 8, materia: 'Derecho laboral aplicado' },
-    { semestre: 8, materia: 'NTC:ISO 45001' },
-    { semestre: 8, materia: 'Auditoría a los sistemas de gestión' },
-    { semestre: 8, materia: 'Técnicas de pedagogía en SST' },
-    { semestre: 8, materia: 'Liderazgo y pensamiento estratégico' },
+    { semestre: 8, materia: 'NTC: ISO 45001' },
+    {
+      semestre: 8,
+      materia: 'Auditoría a los sistemas de gestión',
+    },
+    {
+      semestre: 8,
+      materia: 'Técnicas de pedagogía en SST',
+    },
+    {
+      semestre: 8,
+      materia: 'Liderazgo y pensamiento estratégico',
+    },
 
-    { semestre: 9, materia: 'LABORATORIO Respuesta ante emergencias' },
+    // Semestre 9
+    {
+      semestre: 9,
+      materia: 'Laboratorio de respuesta ante emergencias',
+    },
     { semestre: 9, materia: 'Gestión del talento humano' },
     { semestre: 9, materia: 'Gerencia estratégica' },
-    { semestre: 9, materia: 'Formulación y evaluación de proyectos' },
+    {
+      semestre: 9,
+      materia: 'Formulación y evaluación de proyectos',
+    },
     { semestre: 9, materia: 'Laboratorio de investigación' },
-    { semestre: 9, materia: 'Responsabilidad social - empresarial' },
+    {
+      semestre: 9,
+      materia: 'Responsabilidad social - empresarial',
+    },
 
-    { semestre: 10, materia: 'Práctica Organizacional' },
+    // Semestre 10
+    { semestre: 10, materia: 'Práctica organizacional' },
   ];
 
   get semestresPlan(): { semestre: number }[] {
@@ -413,7 +495,7 @@ export class SstComponent implements OnInit {
   ngOnInit(): void {
     this.activo = '1';
     this.pagina = '1';
-    this.paginas(this.pagina);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     var id: number = 5;
 
