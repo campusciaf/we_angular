@@ -9,53 +9,67 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ConectarApiService } from '@/app/core/services/conectar-api.service';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import {
+  DomSanitizer,
+  SafeResourceUrl,
+  SafeUrl,
+} from '@angular/platform-browser';
 
-declare var jQuery:any;
-declare var $:any;
+declare var jQuery: any;
+declare var $: any;
 @Component({
   selector: 'app-investigaciones',
   templateUrl: './investigaciones.component.html',
-  styleUrls: ['./investigaciones.component.css']
+  styleUrls: ['./investigaciones.component.css'],
 })
 export class InvestigacionesComponent {
+  public banner_pc = 'assets/investigaciones/investigaciones-pc.webp';
+  public logo_m = 'assets/image/investigaciones-pc.webp';
+  public grupo_investigacion = 'assets/image/grupo-investigacion.webp';
+  public investigacion_reconocimiento =
+    'assets/image/investigacion-reconocimiento.webp';
+  public img_li = 'assets/image/img-li.webp';
+  public img_li_ok = 'assets/image/img-li-ok.webp';
+  public inves_innova = 'assets/investigaciones/innovathon.webp';
+  public investigacion_requisitos =
+    'assets/image/investigacion-requisitos.webp';
+  public investigacion_semillero = 'assets/image/investigacion-semillero.webp';
+  public investigacion_actividades =
+    'assets/image/investigacion-actividades.webp';
+  public investigacion_ganador = 'assets/image/investigacion-ganador.webp';
+  public biodiversidad = 'assets/image/biodiversidad.webp';
+  public innovacion = 'assets/image/innovacion-social.webp';
+  public desarrollo = 'assets/image/desarrollo.webp';
+  public gestion = 'assets/image/gestion-sostenible.webp';
+  public seguridad = 'assets/image/seguridad.webp';
+  public investigacion_eventos = 'assets/image/investigacion-eventos.webp';
+  public investigacion_participacion =
+    'assets/image/investigacion-participacion.webp';
+  public investigaciones_convocatorias =
+    'assets/image/investigaciones-convocatorias.webp';
+  public investigaciones_enterate =
+    'assets/image/investigaciones-enterate.webp';
+  public convocatorias_internas = 'assets/image/convocatorias-internas.webp';
+  public convocatorias_externas = 'assets/image/convocatorias-externas.webp';
+  public internacionalizacion_investigacion =
+    'assets/image/internacionalizacion-investigacion.webp';
+  public investigaciones_grupo_investigacion =
+    'assets/image/investigaciones-grupo-investigacion.webp';
 
-  public banner_pc="assets/investigaciones/investigaciones_pc.webp";
-  public logo_m="assets/image/investigaciones-m.webp";
-  public grupo_investigacion="assets/image/grupo-investigacion.webp";
-  public investigacion_reconocimiento="assets/image/investigacion-reconocimiento.webp";
-  public img_li="assets/image/img-li.webp";
-  public img_li_ok="assets/image/img-li-ok.webp";
-  public inves_innova="assets/investigaciones/innovathon.webp";
-  public investigacion_requisitos="assets/image/investigacion-requisitos.webp";
-  public investigacion_semillero="assets/image/investigacion-semillero.webp";
-  public investigacion_actividades="assets/image/investigacion-actividades.webp";
-  public investigacion_ganador="assets/image/investigacion-ganador.webp";
-  public biodiversidad="assets/image/biodiversidad.webp";
-  public innovacion="assets/image/innovacion-social.webp";
-  public desarrollo="assets/image/desarrollo.webp";
-  public gestion="assets/image/gestion-sostenible.webp";
-  public seguridad="assets/image/seguridad.webp";
-  public investigacion_eventos="assets/image/investigacion-eventos.webp";
-  public investigacion_participacion="assets/image/investigacion-participacion.webp";
-  public investigaciones_convocatorias="assets/image/investigaciones-convocatorias.webp";
-  public investigaciones_enterate="assets/image/investigaciones-enterate.webp";
-  public convocatorias_internas="assets/image/convocatorias-internas.webp";
-  public convocatorias_externas="assets/image/convocatorias-externas.webp";
-  public internacionalizacion_investigacion="assets/image/internacionalizacion-investigacion.webp";
-  public investigaciones_grupo_investigacion="assets/image/investigaciones-grupo-investigacion.webp";
-  
+  public ciencia_innovacion = 'assets/image/ciencia-innovacion.webp';
+  public next = 'assets/image/btn-next.webp';
+  public prev = 'assets/image/btn-prev.webp';
+  public icono_doc = 'assets/image/icono-doc.webp';
+  public icono_ok = 'assets/image/icono-ok.webp';
+  public icono_calendario = 'assets/image/icono-calendario.webp';
+  public icono_planta = 'assets/image/icono-planta.webp';
 
-  public ciencia_innovacion="assets/image/ciencia-innovacion.webp";
-  public next="assets/image/btn-next.webp";
-  public prev="assets/image/btn-prev.webp";
-  public icono_doc="assets/image/icono-doc.webp";
-  public icono_ok="assets/image/icono-ok.webp";
-  public icono_calendario="assets/image/icono-calendario.webp";
-  public icono_planta="assets/image/icono-planta.webp";
-
-
-  readonly aliadosConvocatorias = ['MinCiencias', 'RREDSI', 'RUN', 'Alcaldía de Pereira'];
+  readonly aliadosConvocatorias = [
+    'MinCiencias',
+    'RREDSI',
+    'RUN',
+    'Alcaldía de Pereira',
+  ];
 
   readonly convocatorias = [
     {
@@ -92,12 +106,16 @@ export class InvestigacionesComponent {
 
   convocatoriaAnterior(): void {
     this.convocatoriaIndice =
-      this.convocatoriaIndice === 0 ? this.convocatorias.length - 1 : this.convocatoriaIndice - 1;
+      this.convocatoriaIndice === 0
+        ? this.convocatorias.length - 1
+        : this.convocatoriaIndice - 1;
   }
 
   convocatoriaSiguiente(): void {
     this.convocatoriaIndice =
-      this.convocatoriaIndice === this.convocatorias.length - 1 ? 0 : this.convocatoriaIndice + 1;
+      this.convocatoriaIndice === this.convocatorias.length - 1
+        ? 0
+        : this.convocatoriaIndice + 1;
   }
 
   irAConvocatoria(indice: number): void {
@@ -108,19 +126,23 @@ export class InvestigacionesComponent {
     [
       {
         fecha: '17 y 18 de julio · Manizales',
-        titulo: 'XI Encuentro Internacional de Pasantías de Investigación Delfín',
+        titulo:
+          'XI Encuentro Internacional de Pasantías de Investigación Delfín',
         descripcion:
           'Participación con 4 ponencias: 3 internacionales (estudiantes de México) y 1 local (estudiantes CUE).',
       },
       {
         fecha: 'Julio, agosto y septiembre 2025',
         titulo: 'Mesa de Investigaciones RUN y Programa RREDSI',
-        descripcion: 'Participación activa de CIAF congeniando proyectos entre las IES de Risaralda.',
+        descripcion:
+          'Participación activa de CIAF congeniando proyectos entre las IES de Risaralda.',
       },
       {
         fecha: 'Agosto y septiembre 2025',
-        titulo: 'Formación Docentes Investigadores — Curso RUN y Cátedra Itinerante RREDSI',
-        descripcion: 'Participación de 8 docentes investigadores en formación en escritura científica.',
+        titulo:
+          'Formación Docentes Investigadores — Curso RUN y Cátedra Itinerante RREDSI',
+        descripcion:
+          'Participación de 8 docentes investigadores en formación en escritura científica.',
       },
     ],
     [
@@ -132,8 +154,10 @@ export class InvestigacionesComponent {
       },
       {
         fecha: 'Septiembre 2025',
-        titulo: 'Recategorización Grupo Organizaciones e Innovación — Categoría C',
-        descripcion: 'Recategorización del Grupo en C en la Convocatoria 957 de 2024 de MinCiencias.',
+        titulo:
+          'Recategorización Grupo Organizaciones e Innovación — Categoría C',
+        descripcion:
+          'Recategorización del Grupo en C en la Convocatoria 957 de 2024 de MinCiencias.',
       },
       {
         fecha: '29 de agosto - Pereira',
@@ -157,7 +181,8 @@ export class InvestigacionesComponent {
       },
       {
         fecha: '29 de agosto',
-        titulo: 'Lanzamiento Biblioteca CIAF — Leer es mi Parche / Programa Z3TA',
+        titulo:
+          'Lanzamiento Biblioteca CIAF — Leer es mi Parche / Programa Z3TA',
         descripcion:
           'Lanzamiento oficial de la Biblioteca CIAF con más de 100 participantes entre estudiantes, docentes y administrativos.',
       },
@@ -172,30 +197,34 @@ export class InvestigacionesComponent {
 
   boletinAnterior(): void {
     this.boletinIndice =
-      this.boletinIndice === 0 ? this.boletinSlides.length - 1 : this.boletinIndice - 1;
+      this.boletinIndice === 0
+        ? this.boletinSlides.length - 1
+        : this.boletinIndice - 1;
   }
 
   boletinSiguiente(): void {
     this.boletinIndice =
-      this.boletinIndice === this.boletinSlides.length - 1 ? 0 : this.boletinIndice + 1;
+      this.boletinIndice === this.boletinSlides.length - 1
+        ? 0
+        : this.boletinIndice + 1;
   }
 
   irABoletin(indice: number): void {
     this.boletinIndice = indice;
   }
 
-  pagina:any;
-  activo:any;
+  pagina: any;
+  activo: any;
 
-private scrollSpyIgnorar = false;
-private scrollSpyTick = false;
-private scrollSpyTimer?: ReturnType<typeof setTimeout>;
+  private scrollSpyIgnorar = false;
+  private scrollSpyTick = false;
+  private scrollSpyTimer?: ReturnType<typeof setTimeout>;
 
-campoAccionActivo: string | null = null;
+  campoAccionActivo: string | null = null;
 
-toggleCampoAccion(id: string): void {
-  this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
-}
+  toggleCampoAccion(id: string): void {
+    this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
+  }
 
   readonly sistemaInvestigacionFrentes = [
     {
@@ -214,7 +243,11 @@ toggleCampoAccion(id: string): void {
       titulo: 'Investigación en Sentido Estricto',
       variant: 'green' as const,
       productos: [
-        { label: 'Grupos de investigación', seccion: 'grupos-de-investigacion', nav: '2' },
+        {
+          label: 'Grupos de investigación',
+          seccion: 'grupos-de-investigacion',
+          nav: '2',
+        },
         { label: 'Investigadores' },
         { label: 'Proyectos de investigación' },
         { label: 'Convocatorias', seccion: 'convocatorias', nav: '4' },
@@ -238,7 +271,8 @@ toggleCampoAccion(id: string): void {
   sistemaInvestigacionActivo: string | null = null;
 
   toggleSistemaInvestigacion(id: string): void {
-    this.sistemaInvestigacionActivo = this.sistemaInvestigacionActivo === id ? null : id;
+    this.sistemaInvestigacionActivo =
+      this.sistemaInvestigacionActivo === id ? null : id;
   }
 
   isSistemaInvestigacionAbierto(id: string): boolean {
@@ -301,308 +335,300 @@ toggleCampoAccion(id: string): void {
     this.semilleroProgramaIndice = indice;
   }
 
+  isValid0: boolean = false;
+  isValid1: boolean = false;
+  isValid2: boolean = false;
+  isValid3: boolean = false;
+  isValid4: boolean = false;
+  isValid5: boolean = false;
+  isValid6: boolean = false;
 
-  isValid0:boolean = false;
-  isValid1:boolean = false;
-  isValid2:boolean = false;
-  isValid3:boolean = false;
-  isValid4:boolean = false;
-  isValid5:boolean = false;
-  isValid6:boolean = false;
+  /** IDs de sección del programa (scroll, no páginas ocultas) */
+  readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
+    { id: 'investigacion-ciaf', nav: '1', label: 'Investigación CIAF' },
+    {
+      id: 'grupos-de-investigacion',
+      nav: '2',
+      label: 'Grupos de investigación',
+    },
+    { id: 'semilleros', nav: '3', label: 'Semilleros' },
+    { id: 'convocatorias', nav: '4', label: 'Convocatorias' },
+    { id: 'eventos', nav: '5', label: 'Eventos' },
+    { id: 'internacionalizacion', nav: '6', label: 'Internacionalización' },
+    { id: 'normatividad', nav: '7', label: 'Normatividad' },
+    { id: 'contacto', nav: '8', label: 'Contacto' },
+  ];
 
-
-    /** IDs de sección del programa (scroll, no páginas ocultas) */
-    readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
-      { id: 'investigacion-ciaf', nav: '1', label: 'Investigación CIAF' },
-      { id: 'grupos-de-investigacion', nav: '2', label: 'Grupos de investigación' },
-      { id: 'semilleros', nav: '3', label: 'Semilleros' },
-      { id: 'convocatorias', nav: '4', label: 'Convocatorias' },
-      { id: 'eventos', nav: '5', label: 'Eventos' },
-      { id: 'internacionalizacion', nav: '6', label: 'Internacionalización' },
-      { id: 'normatividad', nav: '7', label: 'Normatividad' },
-      { id: 'contacto', nav: '8', label: 'Contacto' },
-    ];
-          
-    scrollToSeccion(sectionId: string, navId?: string): void {
-      if (sectionId === 'top') {
-        this.scrollSpyIgnorar = true;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (navId) {
-          this.activo = navId;
-          this.centrarTabNav(navId);
-        }
-        this.reanudarScrollSpy(900);
-        return;
-      }
-  
-      const el = document.getElementById(sectionId);
-      if (!el) {
-        return;
-      }
-  
-      const top = el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
-  
+  scrollToSeccion(sectionId: string, navId?: string): void {
+    if (sectionId === 'top') {
+      this.scrollSpyIgnorar = true;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       if (navId) {
         this.activo = navId;
         this.centrarTabNav(navId);
       }
-  
-      this.scrollSpyIgnorar = true;
-      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       this.reanudarScrollSpy(900);
-    }
-  
-    @HostListener('window:scroll')
-    onWindowScroll(): void {
-      if (this.scrollSpyIgnorar || this.scrollSpyTick) {
-        return;
-      }
-  
-      this.scrollSpyTick = true;
-      requestAnimationFrame(() => {
-        this.actualizarSeccionPorScroll();
-        this.scrollSpyTick = false;
-      });
-    }
-  
-
-    private actualizarSeccionPorScroll(): void {
-      const offset = this.getNavOffset();
-      let seccionActual = this.seccionesPrograma[0];
-  
-      for (const seccion of this.seccionesPrograma) {
-        const el = document.getElementById(seccion.id);
-  
-        if (!el) {
-          continue;
-        }
-  
-        if (el.getBoundingClientRect().top - offset <= 8) {
-          seccionActual = seccion;
-        } else {
-          break;
-        }
-      }
-  
-      if (this.activo !== seccionActual.nav) {
-        this.activo = seccionActual.nav;
-        this.centrarTabNav(seccionActual.nav);
-      }
+      return;
     }
 
-    private getNavOffset(): number {
-      const stickyNav = document.querySelector('.ciaf-program-nav');
-      const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
-      return 38 + 78 + stickyH + 12;
+    const el = document.getElementById(sectionId);
+    if (!el) {
+      return;
     }
 
-    private centrarTabNav(navId: string): void {
-      document.getElementById('btn-' + navId)?.scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest'
-      });
-    }
-  
-    private reanudarScrollSpy(delayMs: number): void {
-      if (this.scrollSpyTimer) {
-        clearTimeout(this.scrollSpyTimer);
-      }
-  
-      this.scrollSpyTimer = setTimeout(() => {
-        this.scrollSpyIgnorar = false;
-        this.actualizarSeccionPorScroll();
-      }, delayMs);
+    const top =
+      el.getBoundingClientRect().top + window.scrollY - this.getNavOffset();
+
+    if (navId) {
+      this.activo = navId;
+      this.centrarTabNav(navId);
     }
 
-  
-
-  total:any;
- 
-  videoYoutube(valor:any){
-
-    this.total=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + valor); 
-    
+    this.scrollSpyIgnorar = true;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    this.reanudarScrollSpy(900);
   }
-  
-    paginas(pagina:string){
 
-      if(pagina == "0"){
-        this.isValid0= true;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,0);
-
-        
-      }
-  
-      if(pagina == "1"){
-        this.isValid0= false;
-        this.isValid1= true;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").addClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").addClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-
-      }
-      
-      if(pagina == "2"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= true;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        
-        $("#btn-1").removeClass("active");
-        $("#btn-2").addClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").addClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-
-
-      }
-      
-      if(pagina == "3"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= true;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").addClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").addClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-      }
-      
-      if(pagina == "4"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= true;
-        this.isValid5= false;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").addClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").addClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-      }
-      if(pagina == "5"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= true;
-        this.isValid6= false;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").addClass("active");
-        $("#btn-6").removeClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").addClass("active-m");
-        $("#btn-6-1").removeClass("active-m");
-      }
-      if(pagina == "6"){
-        this.isValid0= false;
-        this.isValid1= false;
-        this.isValid2= false;
-        this.isValid3= false;
-        this.isValid4= false;
-        this.isValid5= false;
-        this.isValid6= true;
-        window.scroll(0,280);
-
-        $("#btn-1").removeClass("active");
-        $("#btn-2").removeClass("active");
-        $("#btn-3").removeClass("active");
-        $("#btn-4").removeClass("active");
-        $("#btn-5").removeClass("active");
-        $("#btn-6").addClass("active");
-  
-        $("#btn-1-1").removeClass("active-m");
-        $("#btn-2-1").removeClass("active-m");
-        $("#btn-3-1").removeClass("active-m");
-        $("#btn-4-1").removeClass("active-m");
-        $("#btn-5-1").removeClass("active-m");
-        $("#btn-6-1").addClass("active-m");
-      }
-  
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    if (this.scrollSpyIgnorar || this.scrollSpyTick) {
+      return;
     }
-    constructor(private conectarApiService:ConectarApiService,private sanitizer: DomSanitizer,) { 
 
+    this.scrollSpyTick = true;
+    requestAnimationFrame(() => {
+      this.actualizarSeccionPorScroll();
+      this.scrollSpyTick = false;
+    });
+  }
+
+  private actualizarSeccionPorScroll(): void {
+    const offset = this.getNavOffset();
+    let seccionActual = this.seccionesPrograma[0];
+
+    for (const seccion of this.seccionesPrograma) {
+      const el = document.getElementById(seccion.id);
+
+      if (!el) {
+        continue;
+      }
+
+      if (el.getBoundingClientRect().top - offset <= 8) {
+        seccionActual = seccion;
+      } else {
+        break;
+      }
     }
-  
-    ngOnInit(): void {
-      this.activo="0";
-      this.pagina="1";
-      this.paginas(this.pagina);
-  
-      this.videoYoutube("S9xfJWYE3x8");
+
+    if (this.activo !== seccionActual.nav) {
+      this.activo = seccionActual.nav;
+      this.centrarTabNav(seccionActual.nav);
     }
-  
+  }
+
+  private getNavOffset(): number {
+    const stickyNav = document.querySelector('.ciaf-program-nav');
+    const stickyH = stickyNav?.getBoundingClientRect().height ?? 48;
+    return 38 + 78 + stickyH + 12;
+  }
+
+  private centrarTabNav(navId: string): void {
+    document.getElementById('btn-' + navId)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
+  }
+
+  private reanudarScrollSpy(delayMs: number): void {
+    if (this.scrollSpyTimer) {
+      clearTimeout(this.scrollSpyTimer);
+    }
+
+    this.scrollSpyTimer = setTimeout(() => {
+      this.scrollSpyIgnorar = false;
+      this.actualizarSeccionPorScroll();
+    }, delayMs);
+  }
+
+  total: any;
+
+  videoYoutube(valor: any) {
+    this.total = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/' + valor,
+    );
+  }
+
+  paginas(pagina: string) {
+    if (pagina == '0') {
+      this.isValid0 = true;
+      this.isValid1 = false;
+      this.isValid2 = false;
+      this.isValid3 = false;
+      this.isValid4 = false;
+      this.isValid5 = false;
+      this.isValid6 = false;
+      window.scroll(0, 0);
+    }
+
+    if (pagina == '1') {
+      this.isValid0 = false;
+      this.isValid1 = true;
+      this.isValid2 = false;
+      this.isValid3 = false;
+      this.isValid4 = false;
+      this.isValid5 = false;
+      this.isValid6 = false;
+      window.scroll(0, 280);
+
+      $('#btn-1').addClass('active');
+      $('#btn-2').removeClass('active');
+      $('#btn-3').removeClass('active');
+      $('#btn-4').removeClass('active');
+      $('#btn-5').removeClass('active');
+      $('#btn-6').removeClass('active');
+
+      $('#btn-1-1').addClass('active-m');
+      $('#btn-2-1').removeClass('active-m');
+      $('#btn-3-1').removeClass('active-m');
+      $('#btn-4-1').removeClass('active-m');
+      $('#btn-5-1').removeClass('active-m');
+      $('#btn-6-1').removeClass('active-m');
+    }
+
+    if (pagina == '2') {
+      this.isValid0 = false;
+      this.isValid1 = false;
+      this.isValid2 = true;
+      this.isValid3 = false;
+      this.isValid4 = false;
+      this.isValid5 = false;
+      this.isValid6 = false;
+      window.scroll(0, 280);
+
+      $('#btn-1').removeClass('active');
+      $('#btn-2').addClass('active');
+      $('#btn-3').removeClass('active');
+      $('#btn-4').removeClass('active');
+      $('#btn-5').removeClass('active');
+      $('#btn-6').removeClass('active');
+
+      $('#btn-1-1').removeClass('active-m');
+      $('#btn-2-1').addClass('active-m');
+      $('#btn-3-1').removeClass('active-m');
+      $('#btn-4-1').removeClass('active-m');
+      $('#btn-5-1').removeClass('active-m');
+      $('#btn-6-1').removeClass('active-m');
+    }
+
+    if (pagina == '3') {
+      this.isValid0 = false;
+      this.isValid1 = false;
+      this.isValid2 = false;
+      this.isValid3 = true;
+      this.isValid4 = false;
+      this.isValid5 = false;
+      this.isValid6 = false;
+      window.scroll(0, 280);
+
+      $('#btn-1').removeClass('active');
+      $('#btn-2').removeClass('active');
+      $('#btn-3').addClass('active');
+      $('#btn-4').removeClass('active');
+      $('#btn-5').removeClass('active');
+      $('#btn-6').removeClass('active');
+
+      $('#btn-1-1').removeClass('active-m');
+      $('#btn-2-1').removeClass('active-m');
+      $('#btn-3-1').addClass('active-m');
+      $('#btn-4-1').removeClass('active-m');
+      $('#btn-5-1').removeClass('active-m');
+      $('#btn-6-1').removeClass('active-m');
+    }
+
+    if (pagina == '4') {
+      this.isValid0 = false;
+      this.isValid1 = false;
+      this.isValid2 = false;
+      this.isValid3 = false;
+      this.isValid4 = true;
+      this.isValid5 = false;
+      this.isValid6 = false;
+      window.scroll(0, 280);
+
+      $('#btn-1').removeClass('active');
+      $('#btn-2').removeClass('active');
+      $('#btn-3').removeClass('active');
+      $('#btn-4').addClass('active');
+      $('#btn-5').removeClass('active');
+      $('#btn-6').removeClass('active');
+
+      $('#btn-1-1').removeClass('active-m');
+      $('#btn-2-1').removeClass('active-m');
+      $('#btn-3-1').removeClass('active-m');
+      $('#btn-4-1').addClass('active-m');
+      $('#btn-5-1').removeClass('active-m');
+      $('#btn-6-1').removeClass('active-m');
+    }
+    if (pagina == '5') {
+      this.isValid0 = false;
+      this.isValid1 = false;
+      this.isValid2 = false;
+      this.isValid3 = false;
+      this.isValid4 = false;
+      this.isValid5 = true;
+      this.isValid6 = false;
+      window.scroll(0, 280);
+
+      $('#btn-1').removeClass('active');
+      $('#btn-2').removeClass('active');
+      $('#btn-3').removeClass('active');
+      $('#btn-4').removeClass('active');
+      $('#btn-5').addClass('active');
+      $('#btn-6').removeClass('active');
+
+      $('#btn-1-1').removeClass('active-m');
+      $('#btn-2-1').removeClass('active-m');
+      $('#btn-3-1').removeClass('active-m');
+      $('#btn-4-1').removeClass('active-m');
+      $('#btn-5-1').addClass('active-m');
+      $('#btn-6-1').removeClass('active-m');
+    }
+    if (pagina == '6') {
+      this.isValid0 = false;
+      this.isValid1 = false;
+      this.isValid2 = false;
+      this.isValid3 = false;
+      this.isValid4 = false;
+      this.isValid5 = false;
+      this.isValid6 = true;
+      window.scroll(0, 280);
+
+      $('#btn-1').removeClass('active');
+      $('#btn-2').removeClass('active');
+      $('#btn-3').removeClass('active');
+      $('#btn-4').removeClass('active');
+      $('#btn-5').removeClass('active');
+      $('#btn-6').addClass('active');
+
+      $('#btn-1-1').removeClass('active-m');
+      $('#btn-2-1').removeClass('active-m');
+      $('#btn-3-1').removeClass('active-m');
+      $('#btn-4-1').removeClass('active-m');
+      $('#btn-5-1').removeClass('active-m');
+      $('#btn-6-1').addClass('active-m');
+    }
+  }
+  constructor(
+    private conectarApiService: ConectarApiService,
+    private sanitizer: DomSanitizer,
+  ) {}
+
+  ngOnInit(): void {
+    this.activo = '0';
+    this.pagina = '1';
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+    this.videoYoutube('S9xfJWYE3x8');
+  }
 }

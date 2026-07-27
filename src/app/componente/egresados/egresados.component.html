@@ -2,9 +2,12 @@
 
 <section
   class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 mx-0 px-0">
-  <div class="position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
-    <img src="{{ logo_pc }}" alt="Egresados" />
-  </div>
+  <img [src]="logo_pc" alt="Egresados"
+    class="hero-media hero-kenburns position-absolute top-0 start-0 w-100 h-100 object-fit-cover d-none d-lg-block"
+    aria-hidden="true" />
+  <img [src]="logo_m" alt="Egresados"
+    class="hero-media hero-kenburns position-absolute top-0 start-0 w-100 h-100 object-fit-cover d-lg-none"
+    aria-hidden="true" />
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
 
@@ -12,38 +15,42 @@
     <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
       <div class="row">
         <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-12 mt-5 py-4 px-0">
-          <span
-            class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente text-uppercase">
-            Comunidad de Egresados
-          </span>
-          <h1 class="fs-60 fw-extrablack mb-3 lh-1">Egresados</h1>
+          <div class="hero-content">
+            <span
+              class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente text-uppercase">
+              Comunidad de Egresados
+            </span>
+            <h1 class="fs-60 fw-extrablack mb-3 lh-1">Egresados</h1>
 
-          <p class="fs-24 fw-bold mb-3 text-color-3">
-            Un carnet sin fecha de vencimiento
-          </p>
+            <div>
+              <p class="fs-24 fw-bold mb-3 text-color-3">
+                Un carnet sin fecha de vencimiento
+              </p>
 
-          <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-            <li
-              class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-              <a class="text-decoration-none text-white" target="_blank"
-                href="https://ciaf.digital/public/web_reglamentos/Acuerdo%20No%2009%20de%202022%20Por%20medio%20del%20cual%20se%20expide%20la%20Pol%C3%ADtica%20de%20Egresados%20de%20CIAF%20.pdf">
-                <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-                Politica de egresados
-              </a>
-            </li>
-          </ul>
+              <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+                <li
+                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                  <a class="text-decoration-none text-white" target="_blank"
+                    href="https://ciaf.digital/public/web_reglamentos/Acuerdo%20No%2009%20de%202022%20Por%20medio%20del%20cual%20se%20expide%20la%20Pol%C3%ADtica%20de%20Egresados%20de%20CIAF%20.pdf">
+                    <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+                    Politica de egresados
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
-            <button type="button" class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4"
-              (click)="mostrarModalInfo()">
-              Actualizar mis datos
-              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <button type="button" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4"
-              (click)="scrollToSeccion('beneficios', '2')">
-              Conocer beneficios
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </button>
+            <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+              <button type="button" class="ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4"
+                (click)="mostrarModalInfo()">
+                Actualizar mis datos
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4"
+                (click)="scrollToSeccion('beneficios', '2')">
+                Conocer beneficios
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -74,7 +81,7 @@
 <!-- Comunidad CIAF -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="comunidad">
   <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
-    <div class="row align-items-stretch g-5">
+    <div class="row align-items-stretch g-5" ciafStagger=".col-xl-6" ciafStaggerMode="up">
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           <i class="fa-regular fa-user-group me-2"></i>
@@ -100,7 +107,7 @@
           ¿Qué tenemos para ti?
         </h3>
 
-        <div class="row g-3 mx-0 px-0">
+        <div class="row g-3 mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="up">
           <div class="col-md-6 col-12">
             <button type="button" class="ciaf-card rounded-5 p-4 h-100 w-100 text-start border-transparent"
               (click)="abrirModalClubEgresados()">
@@ -230,7 +237,7 @@
       </div>
     </div>
 
-    <div class="row g-4 mx-0 px-0 justify-content-center">
+    <div class="row g-4 mx-0 px-0 justify-content-center" ciafStagger=".ciaf-card" ciafStaggerMode="up">
       <div class="col-xl-4 col-lg-4 col-md-6 col-10">
         <div class="ciaf-card rounded-5 p-4 h-100 d-flex flex-column">
           <div class="ciaf-icon-badge bg-color-5 rounded-circle mb-4">
@@ -300,7 +307,7 @@
 <!-- Empleabilidad -->
 <section class="row justify-content-center py-5 mx-0 px-0" id="empleabilidad">
   <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
-    <div class="row align-items-stretch g-5 mx-0 px-0">
+    <div class="row align-items-stretch g-5 mx-0 px-0" ciafStagger=".col-xl-6" ciafStaggerMode="up">
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Empleabilidad
@@ -317,7 +324,7 @@
           transformando su realidad.
         </p>
 
-        <div class="d-grid gap-3 mx-0 px-0">
+        <div class="d-grid gap-3 mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="soft">
           <div class="ciaf-card rounded-5 p-4">
             <div class="d-flex align-items-center gap-4">
               <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">
@@ -417,7 +424,7 @@
       </div>
     </div>
 
-    <div class="row justify-content-center mx-0 px-0" *ngIf="listarCursos?.length">
+    <div class="row justify-content-center mx-0 px-0" *ngIf="listarCursos?.length" ciafStagger="article" ciafStaggerMode="up">
       <div class="col-xl-12 col-lg-12 col-md-12 col-10">
         <ngx-slick-carousel class="carousel" #slickModalContinuada="slick-carousel" [config]="slideConfigContinuada">
           <div ngxSlickItem class="slide px-2 continuada-slide" *ngFor="let cursos of listarCursos">
@@ -497,7 +504,7 @@
       </div>
     </div>
 
-    <div class="row g-4 mx-0 px-0 justify-content-center">
+    <div class="row g-4 mx-0 px-0 justify-content-center" ciafStagger=".ciaf-card" ciafStaggerMode="up">
       <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="ciaf-card rounded-5 h-100 p-4 text-center">
           <img [src]="testimonio_egresado_1" alt="Esteban Ganan" class="rounded-circle object-fit-cover mb-4"
@@ -584,7 +591,7 @@
       </div>
     </div>
 
-    <div class="row g-4 mx-0 px-0">
+    <div class="row g-4 mx-0 px-0" ciafStagger=".bienestar-video-card" ciafStaggerMode="up">
       <!-- Video 1 -->
       <div class="col-12 col-md-6 col-lg-4 col-10">
         <button type="button"
@@ -720,7 +727,7 @@
       </div>
     </div>
 
-    <div class="row g-3 align-items-start mx-0 px-0 justify-content-center">
+    <div class="row g-3 align-items-start mx-0 px-0 justify-content-center" ciafStagger=".col-xl-3" ciafStaggerMode="up">
       <div class="col-xl-3 col-lg-3 col-md-6 col-10">
         <div class="d-grid gap-3">
           <img src="assets/egresados/pic-1.webp" alt="Galería egresados CIAF"
@@ -772,7 +779,7 @@
 <!-- Contacto -->
 <section class="row justify-content-center py-5 ciaf-section-light mx-0 px-0" id="contacto">
   <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-10 px-0 mx-0">
-    <div class="row align-items-center g-5 mx-0 px-0">
+    <div class="row align-items-center g-5 mx-0 px-0" ciafStagger=".col-xl-6" ciafStaggerMode="up">
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
         <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 py-2 text-uppercase ls-4">
           Contacto
@@ -820,7 +827,7 @@
       </div>
 
       <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-        <div class="d-grid gap-3">
+        <div class="d-grid gap-3" ciafStagger=".ciaf-card" ciafStaggerMode="soft">
           <div class="ciaf-card rounded-5 p-4">
             <div class="d-flex align-items-center gap-4">
               <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle">

@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   Input,
   NgZone,
   OnDestroy,
@@ -26,9 +27,10 @@ export class ConveniosComponent implements OnInit, AfterViewInit, OnDestroy {
     'https://docs.google.com/forms/d/e/1FAIpQLSf5JC_M705BafMwUk2JrGMdQsycwbu6E7ZO10KuHeqdV3IDPQ/viewform?usp=sf_link';
   @Input() verTodosTexto = 'Ver todos los convenios';
 
-  readonly conveniosVisibles = 3;
+  conveniosVisibles = 3;
   readonly conveniosGapPx = 24;
   readonly conveniosAutoplayMs = 5500;
+  private readonly breakpointMovilConvenios = 768;
 
   @ViewChild('conveniosViewport') conveniosViewport?: ElementRef<HTMLElement>;
 
@@ -51,6 +53,8 @@ export class ConveniosComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.actualizarVisiblesConvenios();
+
     this.conectarApiService.obtenerBienestarConvenios().subscribe((respuesta) => {
       this.listarConvenios = respuesta;
       this.reiniciarConveniosCarrusel();
@@ -58,7 +62,20 @@ export class ConveniosComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    this.actualizarVisiblesConvenios();
     this.observarViewportConvenios();
+  }
+
+  @HostListener('window:resize')
+  onResizeConvenios(): void {
+    const previos = this.conveniosVisibles;
+    this.actualizarVisiblesConvenios();
+
+    if (previos !== this.conveniosVisibles) {
+      this.reiniciarConveniosCarrusel();
+    } else if (this.usarCarruselConvenios) {
+      this.medirAnchoConvenios();
+    }
   }
 
   ngOnDestroy(): void {
@@ -73,6 +90,18 @@ export class ConveniosComponent implements OnInit, AfterViewInit, OnDestroy {
   get maxIndiceConvenios(): number {
     const total = Array.isArray(this.listarConvenios) ? this.listarConvenios.length : 0;
     return Math.max(0, total - this.conveniosVisibles);
+  }
+
+  private actualizarVisiblesConvenios(): void {
+    const ancho = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const siguientes = ancho < this.breakpointMovilConvenios ? 1 : 3;
+
+    if (siguientes === this.conveniosVisibles) {
+      return;
+    }
+
+    this.conveniosVisibles = siguientes;
+    this.conveniosIndice = Math.min(this.conveniosIndice, this.maxIndiceConvenios);
   }
 
   private observarViewportConvenios(): void {
@@ -101,6 +130,8 @@ export class ConveniosComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private medirAnchoConvenios(): void {
+    this.actualizarVisiblesConvenios();
+
     const anchoViewport = this.conveniosViewport?.nativeElement?.clientWidth ?? 0;
 
     if (!anchoViewport) {
@@ -113,7 +144,8 @@ export class ConveniosComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private pasoConvenios(): number {
-    return this.conveniosAnchoTarjeta + this.conveniosGapPx;
+    const gap = this.conveniosVisibles > 1 ? this.conveniosGapPx : 0;
+    return this.conveniosAnchoTarjeta + gap;
   }
 
   private actualizarDesplazamientoConvenios(animar: boolean): void {

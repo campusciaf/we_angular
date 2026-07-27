@@ -35,7 +35,8 @@
                 (pointerleave)="onConveniosPointerLeave($event)"
             >
                 <div
-                    class="d-flex gap-4 align-items-stretch"
+                    class="d-flex align-items-stretch"
+                    [class.gap-4]="conveniosVisibles > 1"
                     [style.transform]="'translate3d(' + conveniosDesplazamiento + 'px, 0, 0)'"
                     [style.transition]="conveniosAnimando ? 'transform 0.65s ease-in-out' : 'none'"
                     [style.will-change]="'transform'"

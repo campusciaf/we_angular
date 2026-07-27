@@ -4,7 +4,8 @@
   class="col-12 ciaf-program-hero position-relative overflow-hidden text-white d-flex align-items-center py-4 px-0 mx-0">
 
   <div class="ciaf-program-hero__media position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
-    <img [src]="bg_pc" alt="Extensión y Proyección Social" class="w-100 h-100 object-fit-cover">
+    <img [src]="bg_pc" alt="Extensión y Proyección Social"
+      class="hero-media hero-kenburns w-100 h-100 object-fit-cover">
   </div>
 
   <div class="ciaf-program-hero__overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
@@ -12,42 +13,45 @@
   <div class="row justify-content-center z-2 py-5 mt-5 col-12 mx-0 px-0">
     <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10 px-0">
       <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-10 mt-5 py-4 px-0">
-        <span
-          class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
-          Comunidad y territorio
-        </span>
-        <h1 class="fs-60 fw-extrablack mb-3 lh-1">
-          Extensión y Proyección Social
-        </h1>
+        <div class="hero-content">
+          <span
+            class="ciaf-pill ciaf-pill--hero text-white fs-12 fw-bold px-3 py-2 my-3 ls-4 rounded-pill border-transparente">
+            Comunidad y territorio
+          </span>
+          <h1 class="fs-60 fw-extrablack mb-3 lh-1">
+            Extensión y Proyección Social
+          </h1>
 
-        <p class="fs-18 fw-semibold mb-3 text-color-4">
-          Formamos para transformar. Conectamos conocimiento con territorio, generando impacto real en las personas,
-          empresas y comunidades de la región.
-        </p>
+          <div>
+            <p class="fs-18 fw-semibold mb-3 text-color-4">
+              Formamos para transformar. Conectamos conocimiento con territorio, generando impacto real en las personas,
+              empresas y comunidades de la región.
+            </p>
 
-        <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
-          <li
-            class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
-            <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
-              class="cursor-pointer text-decoration-none text-white" rel="noopener noreferrer">
-              <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-              Normatividad
+            <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
+              <li
+                class="cursor-pointer d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
+                  class="cursor-pointer text-decoration-none text-white" rel="noopener noreferrer">
+                  <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
+                  Normatividad
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+            <a (click)="scrollToSeccion('convenios', '1')"
+              class="cursor-pointer ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+              Convenios
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
             </a>
-          </li>
-
-        </ul>
-
-        <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
-          <a (click)="scrollToSeccion('convenios', '1')"
-            class="cursor-pointer ciaf-btn ciaf-btn--lime fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
-            Convenios
-            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
-            class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
-            Contáctanos
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </a>
+            <a href="https://api.whatsapp.com/send?phone=573143400100&text=Mensaje%20desde%20la%20web" target="_blank"
+              class="ciaf-btn ciaf-btn--blanco fs-16 fw-bold gap-2 rounded-pill py-3 px-4">
+              Contáctanos
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -78,13 +82,13 @@
 
 <!-- presentacion -->
 <section class="row justify-content-center py-5 mx-0 px-0 " id="presentacion">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-10 px-0 mx-0">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-11 px-0 mx-0">
 
-    <div class="row justify-content-center text-center mx-0 px-0">
+    <div class="row justify-content-center text-center mx-0 px-0" ciafStagger=".col-xxl-10" ciafStaggerMode="up">
 
-      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-10">
+      <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-12">
 
-        <h1 class="fs-48 fw-extrablack text-color-2 mb-5">
+        <h1 class="fs-40 fw-extrablack text-color-2 mb-3">
           Formamos para
           <span class="ciaf-gradient-text ciaf-gradient-text--brand">transformar</span>
         </h1>
@@ -104,10 +108,10 @@
 
 <!-- Convenios -->
 <section class="row justify-content-center  py-5 ciaf-section-light px-0 mx-0" id="convenios">
-  <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10 px-0 mb-5">
-    <div class="row mb-5">
+  <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-11 px-0 mb-5">
+    <div class="row mb-5 justify-content-center">
 
-      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+      <div class="col-xxl-12 col-xl-12 col-lg-10 col-md-10 col-10">
 
         <span class="fs-14 fw-bold text-uppercase ls-4 text-color-2">
           Alianzas que transforman
@@ -122,10 +126,10 @@
     </div>
 
     <!-- Convenio 1 -->
-    <div class="row justify-content-center mb-5 mx-0 px-0">
+    <div class="row justify-content-center mb-5 mx-0 px-0" ciafStagger=".card" ciafStaggerMode="up">
       <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
 
-        <div class="card rounded-5 p-5">
+        <div class="card rounded-5 p-xl-5 p-4">
 
           <div class="d-flex align-items-center gap-4 mb-4">
             <div class="ciaf-icon-badge bg-color-6 rounded-circle">
@@ -190,18 +194,18 @@
 
           </div>
 
-          <div class="row g-3 mt-4">
+          <div class="row g-3 mt-4" ciafStagger="img" ciafStaggerMode="soft">
 
-            <div class="col-xl-4 col-md-6">
-              <img src="assets/nosotros/ferro-1.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
+            <div class="col-xl-4 col-md-4 col-4">
+              <img src="assets/nosotros/ferro-1.webp" class="img-fluid rounded-xl-5 rounded-3 w-100 ef-zoom" alt="">
             </div>
 
-            <div class="col-xl-4 col-md-6">
-              <img src="assets/nosotros/ferro-2.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
+            <div class="col-xl-4 col-md-4 col-4">
+              <img src="assets/nosotros/ferro-2.webp" class="img-fluid rounded-xl-5 rounded-3 w-100 ef-zoom" alt="">
             </div>
 
-            <div class="col-xl-4 col-md-12">
-              <img src="assets/nosotros/ferro-3.webp" class="img-fluid rounded-5 w-100 ef-zoom" alt="">
+            <div class="col-xl-4 col-md-4 col-4">
+              <img src="assets/nosotros/ferro-3.webp" class="img-fluid rounded-xl-5 rounded-3 w-100 ef-zoom" alt="">
             </div>
 
           </div>
@@ -219,10 +223,10 @@
     </div>
 
     <!-- Convenio 2 -->
-    <div class="row">
+    <div class="row" ciafStagger=".ciaf-card" ciafStaggerMode="up">
       <div class="col-12">
 
-        <div class="ciaf-card rounded-5 p-5">
+        <div class="ciaf-card rounded-5 p-xl-5 p-4">
 
           <div class="d-flex align-items-center gap-4 mb-4">
             <div class="ciaf-icon-badge bg-color-6 rounded-circle">
@@ -291,9 +295,9 @@
 <!-- Normatividad -->
 <section class="px-0 px-xl-5 py-5 mx-0 px-0" id="normatividad">
 
-  <div class="row justify-content-center pt-4 mx-0 px-0">
+  <div class="row justify-content-center pt-4 mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="up">
 
-    <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-9 col-10">
+    <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-9 col-11">
 
       <a href="https://ciaf.digital/public/web_reglamentos/politicas_de_extencion.pdf" target="_blank"
         class="text-decoration-none">
@@ -348,7 +352,7 @@
 </section>
 
 <!-- Eventos y Actividades -->
-<section class="row justify-content-center p-5 mx-0 px-0" id="eventos-y-actividades">
+<section class="row justify-content-center p-5 mx-0 px-0 ciaf-section-light" id="eventos-y-actividades">
   <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10 px-0">
     <div class="row mb-5">
       <div class="col-xl-7 col-lg-8 col-md-10 col-12">
@@ -381,7 +385,7 @@
           *ngIf="usarCarruselEventos" (pointerdown)="onEventosPointerDown($event)"
           (pointermove)="onEventosPointerMove($event)" (pointerup)="onEventosPointerUp($event)"
           (pointercancel)="onEventosPointerUp($event)" (pointerleave)="onEventosPointerLeave($event)">
-          <div class="d-flex gap-4 align-items-stretch"
+          <div class="d-flex align-items-stretch" [class.gap-4]="eventosVisibles > 1"
             [style.transform]="'translate3d(' + eventosDesplazamiento + 'px, 0, 0)'"
             [style.transition]="eventosAnimando ? 'transform 0.65s ease-in-out' : 'none'"
             [style.will-change]="'transform'">
@@ -392,7 +396,8 @@
           </div>
         </div>
 
-        <div class="row g-4 align-items-stretch" *ngIf="!usarCarruselEventos">
+        <div class="row g-4 align-items-stretch" *ngIf="!usarCarruselEventos" ciafStagger="article"
+          ciafStaggerMode="up">
           <div class="col-lg-6 col-md-6 d-flex" *ngFor="let evento of eventosActividades">
             <ng-container *ngTemplateOutlet="tarjetaEvento; context: { $implicit: evento, carrusel: false }">
             </ng-container>
@@ -458,7 +463,7 @@
           *ngIf="usarCarruselGaleria" (pointerdown)="onGaleriaPointerDown($event)"
           (pointermove)="onGaleriaPointerMove($event)" (pointerup)="onGaleriaPointerUp($event)"
           (pointercancel)="onGaleriaPointerUp($event)" (pointerleave)="onGaleriaPointerLeave($event)">
-          <div class="d-flex gap-4 align-items-stretch"
+          <div class="d-flex align-items-stretch" [class.gap-4]="galeriaVisibles > 1"
             [style.transform]="'translate3d(' + galeriaDesplazamiento + 'px, 0, 0)'"
             [style.transition]="galeriaAnimando ? 'transform 0.65s ease-in-out' : 'none'"
             [style.will-change]="'transform'">
@@ -470,7 +475,7 @@
           </div>
         </div>
 
-        <div class="row g-4" *ngIf="!usarCarruselGaleria">
+        <div class="row g-4" *ngIf="!usarCarruselGaleria" ciafStagger="figure" ciafStaggerMode="up">
           <div class="col-lg-4 col-md-6 col-12" *ngFor="let foto of galeriaImpacto">
             <figure class="rounded-5 overflow-hidden mb-0">
               <img [src]="foto.src" [alt]="foto.alt" class="w-100 object-fit-cover" style="height: 280px;"
@@ -501,9 +506,9 @@
 
   </div>
 
-  <div class="row justify-content-center g-4 mx-0 px-0">
+  <div class="row justify-content-center g-4 mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="up">
 
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-10 ">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-11 ">
 
       <div class="ciaf-card rounded-5 h-100 p-3 d-flex justify-content-center align-items-center">
 
@@ -513,7 +518,7 @@
 
     </div>
 
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-10 ">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-11 ">
 
       <div class="ciaf-card rounded-5 h-100 p-3 d-flex justify-content-center align-items-center">
 
@@ -523,7 +528,7 @@
 
     </div>
 
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-10 ">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-11 ">
 
       <div class="ciaf-card rounded-5 h-100 p-3 d-flex justify-content-center align-items-center">
 
@@ -538,11 +543,11 @@
 </section>
 
 <!-- Contacto Proyección Social -->
-<section class="p-xl-5 px-0 mx-0">
+<section class="p-xl-5 px-0 mx-0 mt-4">
 
-  <div class="row justify-content-center mx-0 px-0">
+  <div class="row justify-content-center mx-0 px-0" ciafStagger=".ciaf-card" ciafStaggerMode="soft">
 
-    <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-10">
+    <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-10 col-11">
 
       <div class="ciaf-card rounded-5 p-4 text-center">
 
@@ -576,7 +581,7 @@
 
   <div class="row justify-content-center text-center mx-0 px-0">
 
-    <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-10 col-10 py-5">
+    <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-10 col-11 py-5">
 
       <h2 class="fs-48 fw-black text-white mb-5">
         Construimos presente<br> extraordinario junto a la <br>comunidad.

@@ -418,7 +418,7 @@ export class EgresadosComponent {
   ngOnInit(): void {
     this.activo = '0';
     this.pagina = '1';
-    this.paginas(this.pagina);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     this.conectarApiService.obtenerContinuada().subscribe((respuesta) => {
       this.listarCursos = respuesta;

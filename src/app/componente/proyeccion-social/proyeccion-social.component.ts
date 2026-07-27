@@ -151,9 +151,10 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   public aliado_proyeccion_social_2 = 'assets/image/aliado_proyeccion_social_2.webp';
   public aliado_proyeccion_social_3 = 'assets/image/aliado_proyeccion_social_3.webp';
 
-  readonly eventosVisibles = 2;
+  eventosVisibles = 2;
   readonly eventosGapPx = 24;
   readonly eventosAutoplayMs = 5500;
+  private readonly breakpointMovilEventos = 768;
 
   @ViewChild('eventosViewport') eventosViewport?: ElementRef<HTMLElement>;
 
@@ -207,9 +208,10 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   private eventosInicioX = 0;
   private eventosInicioDesplazamiento = 0;
 
-  readonly galeriaVisibles = 3;
+  galeriaVisibles = 3;
   readonly galeriaGapPx = 24;
   readonly galeriaAutoplayMs = 5000;
+  private readonly breakpointMovilGaleria = 768;
 
   @ViewChild('galeriaViewport') galeriaViewport?: ElementRef<HTMLElement>;
 
@@ -533,10 +535,33 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   ) {}
 
   ngAfterViewInit(): void {
+    this.actualizarVisiblesEventos();
+    this.actualizarVisiblesGaleria();
     this.observarViewportEventos();
     this.reiniciarEventosCarrusel();
     this.observarViewportGaleria();
     this.reiniciarGaleriaCarrusel();
+  }
+
+  @HostListener('window:resize')
+  onResizeCarruseles(): void {
+    const previosEventos = this.eventosVisibles;
+    this.actualizarVisiblesEventos();
+
+    if (previosEventos !== this.eventosVisibles) {
+      this.reiniciarEventosCarrusel();
+    } else if (this.usarCarruselEventos) {
+      this.medirAnchoEventos();
+    }
+
+    const previosGaleria = this.galeriaVisibles;
+    this.actualizarVisiblesGaleria();
+
+    if (previosGaleria !== this.galeriaVisibles) {
+      this.reiniciarGaleriaCarrusel();
+    } else if (this.usarCarruselGaleria) {
+      this.medirAnchoGaleria();
+    }
   }
 
   ngOnDestroy(): void {
@@ -552,6 +577,18 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
 
   get maxIndiceEventos(): number {
     return Math.max(0, this.eventosActividades.length - this.eventosVisibles);
+  }
+
+  private actualizarVisiblesEventos(): void {
+    const ancho = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const siguientes = ancho < this.breakpointMovilEventos ? 1 : 2;
+
+    if (siguientes === this.eventosVisibles) {
+      return;
+    }
+
+    this.eventosVisibles = siguientes;
+    this.eventosIndice = Math.min(this.eventosIndice, this.maxIndiceEventos);
   }
 
   private observarViewportEventos(): void {
@@ -580,6 +617,8 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   private medirAnchoEventos(): void {
+    this.actualizarVisiblesEventos();
+
     const anchoViewport = this.eventosViewport?.nativeElement?.clientWidth ?? 0;
 
     if (!anchoViewport) {
@@ -592,7 +631,8 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   private pasoEventos(): number {
-    return this.eventosAnchoTarjeta + this.eventosGapPx;
+    const gap = this.eventosVisibles > 1 ? this.eventosGapPx : 0;
+    return this.eventosAnchoTarjeta + gap;
   }
 
   private actualizarDesplazamientoEventos(animar: boolean): void {
@@ -703,6 +743,18 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
     return Math.max(0, this.galeriaImpacto.length - this.galeriaVisibles);
   }
 
+  private actualizarVisiblesGaleria(): void {
+    const ancho = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const siguientes = ancho < this.breakpointMovilGaleria ? 1 : 3;
+
+    if (siguientes === this.galeriaVisibles) {
+      return;
+    }
+
+    this.galeriaVisibles = siguientes;
+    this.galeriaIndice = Math.min(this.galeriaIndice, this.maxIndiceGaleria);
+  }
+
   private observarViewportGaleria(): void {
     this.galeriaResizeObserver?.disconnect();
 
@@ -729,6 +781,8 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   private medirAnchoGaleria(): void {
+    this.actualizarVisiblesGaleria();
+
     const anchoViewport = this.galeriaViewport?.nativeElement?.clientWidth ?? 0;
 
     if (!anchoViewport) {
@@ -741,7 +795,8 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   private pasoGaleria(): number {
-    return this.galeriaAnchoItem + this.galeriaGapPx;
+    const gap = this.galeriaVisibles > 1 ? this.galeriaGapPx : 0;
+    return this.galeriaAnchoItem + gap;
   }
 
   private actualizarDesplazamientoGaleria(animar: boolean): void {
@@ -847,7 +902,9 @@ export class ProyeccionSocialComponent implements OnInit, AfterViewInit, OnDestr
   ngOnInit(): void {
     this.activo = '0';
     this.pagina = '1';
-    this.paginas(this.pagina);
+    this.actualizarVisiblesEventos();
+    this.actualizarVisiblesGaleria();
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     this.videoYoutube('S9xfJWYE3x8');
   }
