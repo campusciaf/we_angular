@@ -201,7 +201,7 @@
 .fs-80 { font-size: 80px; }
 .fs-96 { font-size: 96px; }
 
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 480px) {
   .fs-80 { font-size: 40px;}
   .fs-60 { font-size: 36px; }
   .fs-56 { font-size: 36px; }

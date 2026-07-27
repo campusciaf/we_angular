@@ -18,6 +18,14 @@ interface CollapseApi {
   getOrCreateInstance: (el: Element, options?: { toggle?: boolean }) => CollapseInstance;
 }
 
+interface OffcanvasInstance {
+  hide: () => void;
+}
+
+interface OffcanvasApi {
+  getInstance: (el: Element) => OffcanvasInstance | null;
+}
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -91,7 +99,10 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.routerSub = this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe(() => this.actualizarSeccionActiva());
+      .subscribe(() => {
+        this.cerrarMenuMobile();
+        this.actualizarSeccionActiva();
+      });
 
     this.inicializarMenuLegacy();
   }
@@ -110,6 +121,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     menu.addEventListener('hidden.bs.offcanvas', () => {
       this.menuMovilAbierto = false;
+      this.restaurarScrollBody();
       this.cdr.markForCheck();
     });
 
@@ -181,6 +193,44 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.cerrarMegaTimer) {
       clearTimeout(this.cerrarMegaTimer);
     }
+
+    // Si se navega con el offcanvas abierto, Bootstrap no llama reset() al destruir el header
+    this.cerrarMenuMobile();
+  }
+
+  /** Cierra el menú móvil y libera el scroll del body (bloqueo típico en SPA + Bootstrap). */
+  cerrarMenuMobile(): void {
+    const menu = document.getElementById('menuMobile');
+    const bootstrap = (window as { bootstrap?: { Offcanvas?: OffcanvasApi } }).bootstrap;
+    const instance = menu && bootstrap?.Offcanvas ? bootstrap.Offcanvas.getInstance(menu) : null;
+
+    if (instance) {
+      instance.hide();
+    }
+
+    this.menuMovilAbierto = false;
+    this.restaurarScrollBody();
+  }
+
+  private restaurarScrollBody(): void {
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('padding-right');
+    document.documentElement.style.removeProperty('overflow');
+
+    document.querySelectorAll('.offcanvas-backdrop').forEach((el) => el.remove());
+  }
+
+  /** Si el clic es un enlace de navegación, cierra el menú antes de cambiar de ruta */
+  onMobileMenuClick(event: Event): void {
+    const target = event.target as HTMLElement;
+    const link = target.closest('a');
+
+    if (!link || link.target === '_blank' || link.getAttribute('href')?.startsWith('http')) {
+      return;
+    }
+
+    this.cerrarMenuMobile();
   }
 
   /** Activo si el mega está abierto o si la ruta actual pertenece a esa sección */

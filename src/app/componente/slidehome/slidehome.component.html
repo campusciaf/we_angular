@@ -1,4 +1,6 @@
-<section class="hero-slider" *ngIf="listarSlider?.length" (mouseenter)="pauseSlider()" (mouseleave)="resumeSlider()">
+<section class="hero-slider" *ngIf="listarSlider?.length" (mouseenter)="pauseSlider()" (mouseleave)="resumeSlider()"
+  (pointerdown)="onSwipeStart($event)" (pointermove)="onSwipeMove($event)" (pointerup)="onSwipeEnd($event)"
+  (pointercancel)="onSwipeEnd($event)">
 
   <ngb-carousel #carousel [interval]="7000" [pauseOnHover]="true" [pauseOnFocus]="true" [showNavigationArrows]="false"
     [showNavigationIndicators]="false" (slide)="onSlide($event)">

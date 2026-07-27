@@ -6,6 +6,9 @@
     min-height: 560px;
     overflow: hidden;
     background: var(--ciaf-ink);
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .hero-slide {

@@ -350,7 +350,8 @@
 </header>
 
 <!-- Menú móvil -->
-<div class="offcanvas mobile-menu" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel">
+<div class="offcanvas mobile-menu" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel"
+  (click)="onMobileMenuClick($event)">
   <div class="offcanvas-body mobile-menu__body">
     <div class="accordion accordion-flush" id="menuAccordion">
       <div class="accordion-item">
