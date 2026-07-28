@@ -448,6 +448,15 @@ export class AdministracionComponent implements OnInit, OnDestroy {
     },
   ];
 
+  formatearJornadas(jornadasStr?: string): string {
+    if (!jornadasStr) return 'Jornada nocturna y fines de semana';
+    const clean = jornadasStr.trim();
+    if (/^jornada/i.test(clean)) {
+      return clean;
+    }
+    return `Jornada: ${clean}`;
+  }
+
   activarLinkMenu() {
     $('#uno').addClass('active-link-dropdow');
     $('#dos').removeClass('active-link-dropdow');
@@ -475,6 +484,7 @@ export class AdministracionComponent implements OnInit, OnDestroy {
 
     this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta) => {
       this.listarPrograma = respuesta;
+      console.log(this.listarPrograma);
     });
 
     this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta2) => {

@@ -281,7 +281,16 @@ export class AdultomayorComponent {
   
     ];
   
-    activarLinkMenu(){
+    formatearJornadas(jornadasStr?: string): string {
+    if (!jornadasStr) return 'Jornada nocturna y fines de semana';
+    const clean = jornadasStr.trim();
+    if (/^jornada/i.test(clean)) {
+      return clean;
+    }
+    return `Jornada: ${clean}`;
+  }
+
+  activarLinkMenu(){
       $("#uno").removeClass("active-link-dropdow");
       $("#dos").addClass("active-link-dropdow");
       
@@ -300,7 +309,7 @@ export class AdultomayorComponent {
     ngOnInit(): void {
       this.activo="1";
       this.pagina="1";
-      this.paginas(this.pagina);
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   
       var id:number = 10;
   

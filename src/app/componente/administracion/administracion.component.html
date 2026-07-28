@@ -5,10 +5,7 @@
   *ngFor="let datos of listarPrograma">
   <div class="ciaf-program-hero__media position-absolute top-0 start-0 w-100 h-100" aria-hidden="true">
     <img class="hero-media hero-kenburns w-100 h-100 object-fit-cover d-none d-lg-block"
-      [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programas"
-      [alt]="datos.nombre_programa || 'Programa CIAF'" />
-    <img class="hero-media hero-kenburns w-100 h-100 object-fit-cover d-lg-none"
-      [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programas_movil"
+      [src]="'https://ciaf.digital/public/web_programas/' + datos.img_programa"
       [alt]="datos.nombre_programa || 'Programa CIAF'" />
   </div>
 
@@ -29,33 +26,36 @@
             </h1>
 
             <div>
-              <p class="fs-24 fw-bold mb-3 text-color-3" *ngIf="datos.frase_programa">
-                {{ datos.frase_programa }}
+              <p class="fs-24 fw-bold mb-3 text-color-3" *ngIf="datos.frase">
+                {{ datos.frase }}
               </p>
 
-              <div class="text-color-5 fs-18  mb-4 lh-base" *ngIf="datos.descripcion_programa"
-                [innerHTML]="datos.descripcion_programa"></div>
+              <div class="text-color-5 fs-18  mb-4 lh-base" *ngIf="datos.descripcion" [innerHTML]="datos.descripcion">
+              </div>
 
               <ul class="list-unstyled d-flex flex-wrap align-items-center gap-2 mb-4 flex-lg-nowrap">
                 <li
-                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap"
+                  *ngIf="datos.titulo">
                   <i class="fa-solid fa-graduation-cap text-color-3" aria-hidden="true"></i>
-                  Programa Profesional Universitario
+                  {{ datos.titulo }}
                 </li>
                 <li
-                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap"
+                  *ngIf="datos.duracion">
                   <i class="fa-solid fa-clock text-color-3" aria-hidden="true"></i>
-                  Duración: 10 semestres
+                  {{ datos.duracion }}
                 </li>
                 <li
                   class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
                   <i class="fa-solid fa-calendar-days text-color-3" aria-hidden="true"></i>
-                  Jornada nocturna y fines de semana
+                  {{ formatearJornadas(datos.jornadas) }}
                 </li>
                 <li
-                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap">
+                  class="d-inline-flex align-items-center gap-2 py-2 px-3 rounded-pill border border-white border-opacity-25 bg-dark bg-opacity-25 fs-12 fw-semibold text-nowrap"
+                  *ngIf="datos.modalidad">
                   <i class="fa-solid fa-location-dot text-color-3" aria-hidden="true"></i>
-                  Modalidad Presencial (PAT)
+                  {{ datos.modalidad }}
                 </li>
               </ul>
             </div>

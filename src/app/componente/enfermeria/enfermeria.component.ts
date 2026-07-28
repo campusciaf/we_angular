@@ -326,6 +326,15 @@ export class EnfermeriaComponent implements OnInit {
     },
   ];
 
+  formatearJornadas(jornadasStr?: string): string {
+    if (!jornadasStr) return 'Jornada nocturna y fines de semana';
+    const clean = jornadasStr.trim();
+    if (/^jornada/i.test(clean)) {
+      return clean;
+    }
+    return `Jornada: ${clean}`;
+  }
+
   activarLinkMenu() {
     $('#uno').removeClass('active-link-dropdow');
     $('#dos').addClass('active-link-dropdow');
@@ -347,9 +356,9 @@ export class EnfermeriaComponent implements OnInit {
   ngOnInit(): void {
     this.activo = '1';
     this.pagina = '0aux';
-    this.paginas(this.pagina);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
-    var id: number = 7;
+    var id: number = 6;
 
     this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta) => {
       this.listarPrograma = respuesta;

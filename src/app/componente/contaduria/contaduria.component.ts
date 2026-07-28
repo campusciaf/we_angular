@@ -427,6 +427,15 @@ export class ContaduriaComponent implements OnInit {
     },
   ];
 
+  formatearJornadas(jornadasStr?: string): string {
+    if (!jornadasStr) return 'Jornada nocturna y fines de semana';
+    const clean = jornadasStr.trim();
+    if (/^jornada/i.test(clean)) {
+      return clean;
+    }
+    return `Jornada: ${clean}`;
+  }
+
   activarLinkMenu() {
     $('#uno').addClass('active-link-dropdow');
     $('#dos').removeClass('active-link-dropdow');
