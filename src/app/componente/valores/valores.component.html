@@ -1,0 +1,64 @@
+      <!-- Sección 8: Valores y financiación -->
+      <section class="pt-5 mx-0 px-0 " id="valores-financiacion">
+        <div class="row justify-content-center bg-img-1 py-5 mx-0 px-0">
+
+          <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 text-center text-white py-5 my-5">
+            <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4 text-white">VALORES Y
+              FINANCIACIÓN</span>
+
+            <h2 class="fs-60 fw-extrablack my-3">
+              Financiación <span class="text-color-3">0% interés</span>
+            </h2>
+
+            <p class="fs-24 fw-bold">
+              Invierte en tu futuro sin que el dinero detenga tus metas.
+            </p>
+
+            <p class="fs-18 text-color-5">
+              En CIAF encuentras financiación directa, descuentos y beneficios pensados
+              para acompañarte durante toda tu carrera.
+            </p>
+
+            <p class="text-color-3 fs-14 text-uppercase fw-bold ls-4">
+              Sí puedes estudiar · Sí puedes financiarlo · Sí puedes lograrlo
+            </p>
+          </div>
+
+        </div>
+
+        <!-- BANDA GLASS -->
+        <div class="ciaf-benefits-wrap">
+          <div class="container">
+            <div class="ciaf-benefits-glass">
+              <div class="row g-3" ciafStagger=".ciaf-card" ciafStaggerMode="soft">
+
+                <div class="col-lg-3 col-md-4 col-6" *ngFor="let item of [
+                          'Jornadas flexibles',
+                          'Financiación directa',
+                          'Sin intermediarios bancarios',
+                          'Descuentos institucionales',
+                          'Ciclos propedéuticos',
+                          'Tres títulos profesionales',
+                          'Modalidad presencial',
+                          'Acompañamiento permanente'
+                        ]">
+                  <div class="ciaf-card p-2 rounded-4 text-color-2 d-flex align-items-center gap-2 h-100">
+
+                    <span class="icono-rounded bg-color-2 fs-14 flex-shrink-0">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <strong class="mb-0 lh-sm fs-14">
+                      {{ item }}
+                    </strong>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </section>

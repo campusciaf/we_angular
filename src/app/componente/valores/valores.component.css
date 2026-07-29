@@ -1,0 +1,62 @@
+/* ==========================================
+   Sección 8: Valores y financiación
+========================================== */
+
+/* Benefits glass */
+.ciaf-benefits-wrap {
+    position: relative;
+    z-index: 5;
+    margin-top: -64px;
+    padding: 0 16px;
+}
+
+.ciaf-benefits-glass {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: var(--shadow-elegant);
+    backdrop-filter: blur(18px);
+}
+
+/* ==========================================
+   Sección 11: OPCIONES
+========================================== */
+.ciaf-option-card ul {
+    display: grid;
+    gap: 8px;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: var(--transition-slow);
+}
+
+.ciaf-option-card:hover ul {
+    max-height: 240px;
+    margin-top: 16px;
+    opacity: 1;
+}
+
+.ciaf-option-card li {
+    color: var(--ciaf-ink-soft);
+}
+
+.ciaf-option-card li i {
+    color: #45913f;
+    margin-right: 6px;
+}
+
+.ciaf-option-card p {
+    margin: 16px 0 0;
+    color: var(--ciaf-primary);
+    transition: var(--transition-base);
+}
+
+.ciaf-option-card:hover p {
+    opacity: 0;
+}

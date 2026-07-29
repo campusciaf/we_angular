@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 /* Idioma del proyecto */
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -13,7 +12,7 @@ registerLocaleData(localeEs, 'es');
 /* ********************* */
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import{HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 /* import para el slick */
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -73,8 +72,8 @@ import { ReferidosComponent } from './componente/referidos/referidos.component';
 import { CifrasComponent } from './componente/cifras/cifras.component';
 import { PayComponent } from '@/app/features/pay/pay.component';
 import { OutstandingPaymentsComponent } from './features/pay/outstanding-payments/outstanding-payments.component';
-import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
-import { DestacarTextoPipe } from "@/app/core/pipes/destacar-texto.pipe";
+import { SafeHtmlPipe } from '@/app/core/pipes/safe-html.pipe';
+import { DestacarTextoPipe } from '@/app/core/pipes/destacar-texto.pipe';
 import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
 import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.component';
@@ -94,8 +93,8 @@ import { FuturoComponent } from './componente/futuro/futuro.component';
 import { ConoceProgramaComponent } from './componente/conoce-programa/conoce-programa.component';
 import { CampoAccionComponent } from './componente/campo-accion/campo-accion.component';
 import { TransformacionComponent } from './componente/transformacion/transformacion.component';
-
-
+import { ValoresComponent } from './componente/valores/valores.component';
+import { OpcionesComponent } from './componente/opciones/opciones.component';
 
 @NgModule({
   declarations: [
@@ -167,6 +166,8 @@ import { TransformacionComponent } from './componente/transformacion/transformac
     ConoceProgramaComponent,
     CampoAccionComponent,
     TransformacionComponent,
+    ValoresComponent,
+    OpcionesComponent,
   ],
   imports: [
     BrowserModule,
@@ -179,9 +180,7 @@ import { TransformacionComponent } from './componente/transformacion/transformac
     NgMultiSelectDropDownModule.forRoot(),
     StoreModule.forRoot({ user: userReducer }),
   ],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'es' } /*idioma del proyecto */
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: LOCALE_ID, useValue: 'es' } /*idioma del proyecto */],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
