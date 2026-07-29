@@ -97,6 +97,7 @@ import { ValoresComponent } from './componente/valores/valores.component';
 import { OpcionesComponent } from './componente/opciones/opciones.component';
 import { ExperienciasComponent } from './componente/experiencias/experiencias.component';
 import { PorqueEstudiarloComponent } from './componente/porque-estudiarlo/porque-estudiarlo.component';
+import { CostosComponent } from './componente/costos/costos.component';
 
 @NgModule({
   declarations: [
@@ -172,6 +173,7 @@ import { PorqueEstudiarloComponent } from './componente/porque-estudiarlo/porque
     OpcionesComponent,
     ExperienciasComponent,
     PorqueEstudiarloComponent,
+    CostosComponent,
   ],
   imports: [
     BrowserModule,
