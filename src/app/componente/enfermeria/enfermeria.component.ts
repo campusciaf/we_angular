@@ -360,18 +360,19 @@ export class EnfermeriaComponent implements OnInit {
 
     var id: number = 6;
 
-    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta) => {
-      this.listarPrograma = respuesta;
-    });
+    this.conectarApiService.obtenerProgramaId(id).subscribe({
+      next: (respuesta: any) => {
+        if (!respuesta?.estado) {
+          this.listarPrograma = [];
+          return;
+        }
 
-    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta2) => {
-      this.listarProgramaVideo = respuesta2[0]['video_descripcion'];
-
-      this.videoYoutube(this.listarProgramaVideo);
-    });
-
-    this.conectarApiService.obtenerDesempenateId(id).subscribe((respuesta3) => {
-      this.listarDesempenate = respuesta3;
+        // Lo dejamos como arreglo para conservar su *ngFor actual
+        this.listarPrograma = respuesta.programa ? [respuesta.programa] : [];
+      },
+      error: (error) => {
+        console.error('Error al cargar el programa:', error);
+      },
     });
 
     this.activarLinkMenu();

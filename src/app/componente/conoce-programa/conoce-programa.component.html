@@ -1,0 +1,280 @@
+<!-- Sección 1: Conoce el programa -->
+<section class="py-5 bg-img-2 mx-0 px-0" id="conoce-el-programa">
+  <div class="row justify-content-center py-1 py-xl-5 px-0 mx-0">
+    <header class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-10 text-center">
+      <span class="ciaf-pill ciaf-pill--section fs-12 fw-bold rounded-pill px-4">Conoce el programa</span>
+
+      <div class="row justify-content-center">
+        <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-12">
+          <!-- Título dinámico con soporte de pipe destacarTexto -->
+          <h2 class="fs-36 fw-extrablack text-color-2 mt-4" *ngIf="customTitle || conocePrograma?.titulo"
+            [innerHTML]="(customTitle || conocePrograma?.titulo) | destacarTexto">
+          </h2>
+        </div>
+      </div>
+
+      <!-- Descripción dinámica -->
+      <p class="fs-16 text-color-1" *ngIf="conocePrograma?.subtitulo">
+        {{conocePrograma?.subtitulo}}
+      </p>
+    </header>
+
+    <div class="col-xxl-9 col-xl-9 col-lg-10 col-md-10 col-11">
+
+      <div class="ciaf-conoce__tabs-wrap">
+        <input type="radio" [name]="'ciaf-perfil-tab-' + programId" [id]="'ciaf-tab-perfil-pro-' + programId"
+          class="ciaf-conoce__tab-input ciaf-conoce__tab-input--pro" checked />
+        <input type="radio" [name]="'ciaf-perfil-tab-' + programId" [id]="'ciaf-tab-perfil-ocu-' + programId"
+          class="ciaf-conoce__tab-input ciaf-conoce__tab-input--ocu" />
+
+        <div class="shadow-sm p-2 rounded-pill" role="tablist" aria-label="Tipo de perfil">
+          <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--pro fs-14 fw-semibold"
+            [attr.for]="'ciaf-tab-perfil-pro-' + programId">
+            {{ isProfessional ? 'Perfil profesional' : 'Perfil ocupacional' }}
+          </label>
+          <label class="ciaf-conoce__tab-label ciaf-conoce__tab-label--ocu fs-14 fw-bold"
+            [attr.for]="'ciaf-tab-perfil-ocu-' + programId">
+            {{ isProfessional ? 'Perfil ocupacional' : 'Campo profesional' }}
+          </label>
+        </div>
+
+        <!-- Panel: Perfil profesional / ocupacional (primera pestaña) -->
+        <div class="col-12 ciaf-conoce__panel ciaf-conoce__panel--pro mb-xl-0 mb-5" role="tabpanel"
+          [attr.aria-labelledby]="'ciaf-tab-perfil-pro-' + programId">
+          <div class="row g-3 mt-3" ciafStagger="article" ciafStaggerMode="up">
+
+            <!-- Perfil profesional dinámico (columna izquierda) -->
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+              <article class="border rounded-4 p-4 bg-white h-100">
+
+                <span class="ciaf-conoce__card-badge fs-12 fw-bold">
+                  <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                  {{ isProfessional ? 'Perfil profesional' : 'Perfil ocupacional' }}
+                </span>
+
+                <div class="fs-16" *ngIf="conocePrograma; else conoceProFallback"
+                  [innerHTML]="(isProfessional ? conocePrograma.contenido_perfil_profesional : conocePrograma.contenido_perfil_ocupacional) | destacarTexto">
+                </div>
+
+                <ng-template #conoceProFallback>
+                  <div class="fs-14">
+                    <p>
+                      Pendiente
+                    </p>
+
+                  </div>
+                </ng-template>
+
+              </article>
+            </div>
+
+            <!-- Tarjetas de características (columna derecha) -->
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-12">
+              <div class="row g-3 h-100" *ngIf="perfilProfesional.length; else fallbackProfesional">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-12" *ngFor="let item of perfilProfesional">
+                  <article class="card h-100 border shadow-sm rounded-4 p-4">
+                    <span
+                      class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                      style="width: 56px; height: 56px">
+                      <i class="text-color-2" [ngClass]="item.icono || 'fa-solid fa-user-group'"></i>
+                    </span>
+
+                    <h3 class="fs-16 fw-bold text-color-2" [innerHTML]="item.titulo | destacarTexto"></h3>
+
+                    <p class="fs-14 text-color-1 mb-0" [innerHTML]="item.descripcion | destacarTexto"></p>
+                  </article>
+                </div>
+              </div>
+
+              <ng-template #fallbackProfesional>
+                <div class="row g-3 h-100">
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-12">
+                    <article class="card h-100 border shadow-sm rounded-4 p-4">
+                      <span
+                        class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                        style="width: 56px; height: 56px">
+                        <i class="fa-solid fa-user-group text-color-2"></i>
+                      </span>
+
+                      <h3 class="fs-16 fw-bold text-color-2">
+                        Titulo
+                      </h3>
+
+                      <p class="fs-14 text-color-1 mb-0">
+                        Pendeinte
+                      </p>
+                    </article>
+                  </div>
+
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-12">
+                    <article class="card h-100 border shadow-sm rounded-4 p-4">
+                      <span
+                        class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                        style="width: 56px; height: 56px">
+                        <i class="fa-solid fa-rocket text-color-2"></i>
+                      </span>
+
+                      <h3 class="fs-16 fw-bold text-color-2">
+                        Titulo
+                      </h3>
+
+                      <p class="fs-14 text-color-1 mb-0">
+                        Pendiente
+                      </p>
+                    </article>
+                  </div>
+
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-12">
+                    <article class="card h-100 border shadow-sm rounded-4 p-4">
+                      <span
+                        class="d-inline-flex align-items-center justify-content-center rounded-circle bg-color-1 text-white mb-3"
+                        style="width: 56px; height: 56px">
+                        <i class="fa-solid fa-laptop-code text-color-2"></i>
+                      </span>
+
+                      <h3 class="fs-16 fw-bold text-color-2">
+                        Titulo
+                      </h3>
+
+                      <p class="fs-14 text-color-1 mb-0">
+                        Pendiente
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Panel: Perfil ocupacional / Campo profesional (segunda pestaña) -->
+        <div class="ciaf-conoce__panel ciaf-conoce__panel--ocu mt-5" role="tabpanel"
+          [attr.aria-labelledby]="'ciaf-tab-perfil-ocu-' + programId">
+          <div class="row ciaf-conoce__ocu-grid" ciafStagger="article" ciafStaggerMode="up">
+            <ng-container *ngIf="perfilOcupacional.length; else ocuFallback">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3" *ngFor="let item of perfilOcupacional; let i = index">
+                <article class="card rounded-4 border p-3 h-100">
+                  <div class="d-flex align-items-center gap-3">
+                    <span
+                      class="bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                      style="width: 52px; height: 52px;">
+                      <i class="text-white fs-5" [ngClass]="item.icono || {
+                            'fa-solid fa-building': i % 6 === 0,
+                            'fa-solid fa-briefcase': i % 6 === 1,
+                            'fa-solid fa-lightbulb': i % 6 === 2,
+                            'fa-solid fa-user-gear': i % 6 === 3,
+                            'fa-solid fa-chart-line': i % 6 === 4,
+                            'fa-solid fa-crown': i % 6 === 5
+                          }"></i>
+                    </span>
+                    <p class="fs-14 fw-bold mb-0 text-color-2" [innerHTML]="item.titulo | destacarTexto">
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </ng-container>
+
+            <ng-template #ocuFallback>
+              <div class="row g-3 px-4" ciafStagger="article" ciafStaggerMode="up">
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <article class="card rounded-4 border p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <span
+                        class="bg-color-3 rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 52px; height: 52px;">
+                        <i class="fa-solid fa-building text-white fs-5"></i>
+                      </span>
+                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                        Item 1
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <article class="card rounded-4 border p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <span
+                        class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 52px; height: 52px;">
+                        <i class="fa-solid fa-briefcase text-white fs-5"></i>
+                      </span>
+                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                        Item 2
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <article class="card rounded-4 border p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <span
+                        class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 52px; height: 52px;">
+                        <i class="fa-solid fa-lightbulb text-white fs-5"></i>
+                      </span>
+                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                        Item 3
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <article class="card rounded-4 border p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <span
+                        class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 52px; height: 52px;">
+                        <i class="fa-solid fa-user-gear text-white fs-5"></i>
+                      </span>
+                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                        Item 4
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <article class="card rounded-4 border p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <span
+                        class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 52px; height: 52px;">
+                        <i class="fa-solid fa-chart-line text-white fs-5"></i>
+                      </span>
+                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                        Item 5
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <article class="card rounded-4 border p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <span
+                        class="bg-color-3 text-white rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 52px; height: 52px;">
+                        <i class="fa-solid fa-crown text-white fs-5"></i>
+                      </span>
+                      <p class="fs-14 fw-bold mb-0 text-color-2">
+                        Item 6
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </ng-template>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

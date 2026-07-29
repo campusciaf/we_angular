@@ -252,6 +252,9 @@ export class ContaduriaComponent implements OnInit {
   listarPrograma: any;
   listarProgramaVideo: any;
   listarDesempenate: any;
+  conocePrograma: any = null;
+  perfilProfesional: any[] = [];
+  perfilOcupacional: any[] = [];
 
   /** IDs de sección del programa (scroll, no páginas ocultas) */
   readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
@@ -461,18 +464,34 @@ export class ContaduriaComponent implements OnInit {
 
     var id: number = 3;
 
-    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta) => {
-      this.listarPrograma = respuesta;
-    });
+    this.conectarApiService.obtenerProgramaId(id).subscribe({
+      next: (respuesta: any) => {
+        if (!respuesta?.estado) {
+          this.listarPrograma = [];
+          this.conocePrograma = null;
+          this.perfilProfesional = [];
+          this.perfilOcupacional = [];
+          return;
+        }
 
-    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta2) => {
-      this.listarProgramaVideo = respuesta2[0]['video_descripcion'];
+        // Lo dejamos como arreglo para conservar su *ngFor actual
+        this.listarPrograma = respuesta.programa ? [respuesta.programa] : [];
 
-      this.videoYoutube(this.listarProgramaVideo);
-    });
+        this.conocePrograma = respuesta.conoce;
+        this.perfilProfesional = respuesta.perfil_profesional || [];
+        this.perfilOcupacional = respuesta.perfil_ocupacional || [];
 
-    this.conectarApiService.obtenerDesempenateId(id).subscribe((respuesta3) => {
-      this.listarDesempenate = respuesta3;
+        if (respuesta.programa?.video_descripcion) {
+          this.listarProgramaVideo = respuesta.programa.video_descripcion;
+
+          this.videoYoutube(this.listarProgramaVideo);
+        }
+
+        console.log(respuesta);
+      },
+      error: (error) => {
+        console.error('Error al cargar el programa:', error);
+      },
     });
 
     this.activarLinkMenu();

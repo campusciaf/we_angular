@@ -1,0 +1,50 @@
+.ciaf-conoce__tab-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ciaf-conoce__tabs-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ciaf-conoce__tab-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 168px;
+  padding: 12px 22px;
+  border-radius: 50rem;
+  background: transparent;
+  color: var(--ciaf-muted-soft);
+  cursor: pointer;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.ciaf-conoce__tabs-wrap:has(.ciaf-conoce__tab-input--pro:checked) .ciaf-conoce__tab-label--pro,
+.ciaf-conoce__tabs-wrap:has(.ciaf-conoce__tab-input--ocu:checked) .ciaf-conoce__tab-label--ocu {
+  background: var(--ciaf-primary);
+  color: var(--ciaf-white);
+  box-shadow: none;
+}
+
+.ciaf-conoce__panel {
+  display: none;
+  width: 100%;
+}
+
+.ciaf-conoce__tabs-wrap:has(.ciaf-conoce__tab-input--pro:checked) .ciaf-conoce__panel--pro {
+  display: block;
+}
+
+.ciaf-conoce__tabs-wrap:has(.ciaf-conoce__tab-input--ocu:checked) .ciaf-conoce__panel--ocu {
+  display: block;
+}

@@ -273,6 +273,9 @@ export class AdministracionComponent implements OnInit, OnDestroy {
   listarPrograma: any;
   listarProgramaVideo: any;
   listarDesempenate: any[] = [];
+  conocePrograma: any = null;
+  perfilProfesional: any[] = [];
+  perfilOcupacional: any[] = [];
 
   /** IDs de sección del programa (scroll, no páginas ocultas) */
   readonly seccionesPrograma: { id: string; nav: string; label: string }[] = [
@@ -482,19 +485,19 @@ export class AdministracionComponent implements OnInit, OnDestroy {
 
     var id: number = 1;
 
-    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta) => {
-      this.listarPrograma = respuesta;
-      console.log(this.listarPrograma);
-    });
+    this.conectarApiService.obtenerProgramaId(id).subscribe({
+      next: (respuesta: any) => {
+        if (!respuesta?.estado) {
+          this.listarPrograma = [];
+          return;
+        }
 
-    this.conectarApiService.obtenerProgramaId(id).subscribe((respuesta2) => {
-      this.listarProgramaVideo = respuesta2[0]['video_descripcion'];
-
-      this.videoYoutube(this.listarProgramaVideo);
-    });
-
-    this.conectarApiService.obtenerDesempenateId(id).subscribe((respuesta3) => {
-      this.listarDesempenate = Array.isArray(respuesta3) ? respuesta3 : [];
+        // Lo dejamos como arreglo para conservar su *ngFor actual
+        this.listarPrograma = respuesta.programa ? [respuesta.programa] : [];
+      },
+      error: (error) => {
+        console.error('Error al cargar el programa:', error);
+      },
     });
 
     this.activarLinkMenu();

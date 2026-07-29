@@ -74,6 +74,7 @@ import { CifrasComponent } from './componente/cifras/cifras.component';
 import { PayComponent } from '@/app/features/pay/pay.component';
 import { OutstandingPaymentsComponent } from './features/pay/outstanding-payments/outstanding-payments.component';
 import { SafeHtmlPipe } from "@/app/core/pipes/safe-html.pipe";
+import { DestacarTextoPipe } from "@/app/core/pipes/destacar-texto.pipe";
 import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
 import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.component';
@@ -90,6 +91,7 @@ import { ConveniosComponent } from './componente/convenios/convenios.component';
 import { CiafStaggerDirective } from './core/directives/ciaf-stagger.directive';
 import { DescubrecaminoComponent } from './componente/descubrecamino/descubrecamino.component';
 import { FuturoComponent } from './componente/futuro/futuro.component';
+import { ConoceProgramaComponent } from './componente/conoce-programa/conoce-programa.component';
 
 
 
@@ -143,6 +145,7 @@ import { FuturoComponent } from './componente/futuro/futuro.component';
     PayComponent,
     OutstandingPaymentsComponent,
     SafeHtmlPipe,
+    DestacarTextoPipe,
     PqrsdfComponent,
     ProyeccionSocialComponent,
     CraiaWidgetComponent,
@@ -159,6 +162,7 @@ import { FuturoComponent } from './componente/futuro/futuro.component';
     CiafStaggerDirective,
     DescubrecaminoComponent,
     FuturoComponent,
+    ConoceProgramaComponent,
   ],
   imports: [
     BrowserModule,
