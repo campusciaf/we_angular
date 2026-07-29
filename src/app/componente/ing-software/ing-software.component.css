@@ -399,66 +399,6 @@
     transform: rotate(180deg);
 }
 
-/* ==========================================
-   Sección 6: Transformación
-========================================== */
-.ciaf-transform-card {
-    position: relative;
-    min-height: 325px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 28px 22px;
-    border: 1px solid #dce3ed;
-    border-radius: 28px;
-    background: var(--ciaf-white);
-    text-align: center;
-    overflow: hidden;
-    transition: transform var(--transition-slow), border-color var(--transition-slow), box-shadow var(--transition-slow);
-}
-
-.ciaf-transform-card:hover {
-    transform: translateY(-8px);
-    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, #dce3ed);
-    box-shadow: var(--shadow-elegant);
-}
-
-.ciaf-transform-glow {
-    position: absolute;
-    top: -48px;
-    right: -48px;
-    width: 128px;
-    height: 128px;
-    border-radius: var(--radius-pill);
-    background: transparent;
-    pointer-events: none;
-    transition: background var(--transition-slow), filter var(--transition-slow);
-}
-
-.ciaf-transform-card:hover .ciaf-transform-glow {
-    background: color-mix(in srgb, var(--ciaf-primary) 10%, transparent);
-    filter: blur(24px);
-}
-
-.ciaf-transform-icon {
-    position: relative;
-    z-index: 2;
-    width: 80px;
-    height: 80px;
-    display: grid;
-    place-items: center;
-    border: 1px solid color-mix(in srgb, var(--ciaf-primary) 18%, transparent);
-    border-radius: 24px;
-    background: color-mix(in srgb, var(--ciaf-primary) 5%, var(--ciaf-white));
-    color: var(--ciaf-primary);
-    transition: transform var(--transition-slow), border-color var(--transition-slow), background var(--transition-slow);
-}
-
-.ciaf-transform-card:hover .ciaf-transform-icon {
-    transform: scale(1.1) rotate(3deg);
-    border-color: color-mix(in srgb, var(--ciaf-primary) 35%, transparent);
-    background: color-mix(in srgb, var(--ciaf-primary) 8%, var(--ciaf-white));
-}
 
 /* ==========================================
    Sección 8: Valores y financiación

@@ -92,6 +92,8 @@ import { CiafStaggerDirective } from './core/directives/ciaf-stagger.directive';
 import { DescubrecaminoComponent } from './componente/descubrecamino/descubrecamino.component';
 import { FuturoComponent } from './componente/futuro/futuro.component';
 import { ConoceProgramaComponent } from './componente/conoce-programa/conoce-programa.component';
+import { CampoAccionComponent } from './componente/campo-accion/campo-accion.component';
+import { TransformacionComponent } from './componente/transformacion/transformacion.component';
 
 
 
@@ -163,6 +165,8 @@ import { ConoceProgramaComponent } from './componente/conoce-programa/conoce-pro
     DescubrecaminoComponent,
     FuturoComponent,
     ConoceProgramaComponent,
+    CampoAccionComponent,
+    TransformacionComponent,
   ],
   imports: [
     BrowserModule,
