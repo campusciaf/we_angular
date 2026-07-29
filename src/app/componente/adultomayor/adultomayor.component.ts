@@ -118,12 +118,6 @@ export class AdultomayorComponent {
   private scrollSpyIgnorar = false;
   private scrollSpyTick = false;
   private scrollSpyTimer?: ReturnType<typeof setTimeout>;
-
-  campoAccionActivo: string | null = null;
-
-  toggleCampoAccion(id: string): void {
-    this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
-  }
   
   
   isValid1:boolean = true;

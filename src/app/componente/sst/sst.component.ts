@@ -285,12 +285,6 @@ export class SstComponent implements OnInit {
   private scrollSpyTick = false;
   private scrollSpyTimer?: ReturnType<typeof setTimeout>;
 
-  campoAccionActivo: string | null = null;
-
-  toggleCampoAccion(id: string): void {
-    this.campoAccionActivo = this.campoAccionActivo === id ? null : id;
-  }
-
   isValid1: boolean = true;
   isValid2: boolean = false;
   isValid3: boolean = false;

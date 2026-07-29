@@ -1,0 +1,27 @@
+/* ==========================================
+   Sección 2: Campo de acción
+========================================== */
+.ciaf-campo__head i {
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+}
+
+.ciaf-campo__body {
+    display: block;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    line-height: 1.55;
+    transition: max-height 0.45s ease, opacity 0.45s ease, margin 0.45s ease;
+}
+
+.ciaf-campo__item--active .ciaf-campo__body {
+    max-height: 96px;
+    margin-top: 12px;
+    opacity: 1;
+}
+
+.ciaf-campo__item--active .ciaf-campo__head i {
+    transform: rotate(90deg);
+}
