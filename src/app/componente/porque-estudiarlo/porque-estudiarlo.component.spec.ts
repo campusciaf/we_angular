@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { CampoAccionComponent } from './campo-accion.component';
+import { PorqueEstudiarloComponent } from './porque-estudiarlo.component';
 import { DestacarTextoPipe } from '@/app/core/pipes/destacar-texto.pipe';
 
-describe('CampoAccionComponent', () => {
-  let component: CampoAccionComponent;
-  let fixture: ComponentFixture<CampoAccionComponent>;
+describe('PorqueEstudiarloComponent', () => {
+  let component: PorqueEstudiarloComponent;
+  let fixture: ComponentFixture<PorqueEstudiarloComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
-      declarations: [ CampoAccionComponent, DestacarTextoPipe ]
+      declarations: [ PorqueEstudiarloComponent, DestacarTextoPipe ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CampoAccionComponent);
+    fixture = TestBed.createComponent(PorqueEstudiarloComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

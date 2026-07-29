@@ -70,10 +70,10 @@ import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondas
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
 import { CifrasComponent } from './componente/cifras/cifras.component';
-import { PayComponent } from '@/app/features/pay/pay.component';
+import { PayComponent } from './features/pay/pay.component';
 import { OutstandingPaymentsComponent } from './features/pay/outstanding-payments/outstanding-payments.component';
-import { SafeHtmlPipe } from '@/app/core/pipes/safe-html.pipe';
-import { DestacarTextoPipe } from '@/app/core/pipes/destacar-texto.pipe';
+import { SafeHtmlPipe } from './core/pipes/safe-html.pipe';
+import { DestacarTextoPipe } from './core/pipes/destacar-texto.pipe';
 import { PqrsdfComponent } from './features/pqrsdf/pqrsdf.component';
 import { ProyeccionSocialComponent } from './componente/proyeccion-social/proyeccion-social.component';
 import { CraiaWidgetComponent } from './componente/craia-widget/craia-widget.component';
@@ -95,6 +95,8 @@ import { CampoAccionComponent } from './componente/campo-accion/campo-accion.com
 import { TransformacionComponent } from './componente/transformacion/transformacion.component';
 import { ValoresComponent } from './componente/valores/valores.component';
 import { OpcionesComponent } from './componente/opciones/opciones.component';
+import { ExperienciasComponent } from './componente/experiencias/experiencias.component';
+import { PorqueEstudiarloComponent } from './componente/porque-estudiarlo/porque-estudiarlo.component';
 
 @NgModule({
   declarations: [
@@ -168,6 +170,8 @@ import { OpcionesComponent } from './componente/opciones/opciones.component';
     TransformacionComponent,
     ValoresComponent,
     OpcionesComponent,
+    ExperienciasComponent,
+    PorqueEstudiarloComponent,
   ],
   imports: [
     BrowserModule,

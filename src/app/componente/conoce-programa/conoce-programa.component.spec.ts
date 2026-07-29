@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ConoceProgramaComponent } from './conoce-programa.component';
+import { DestacarTextoPipe } from '@/app/core/pipes/destacar-texto.pipe';
 
 describe('ConoceProgramaComponent', () => {
   let component: ConoceProgramaComponent;
@@ -8,7 +9,8 @@ describe('ConoceProgramaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConoceProgramaComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ ConoceProgramaComponent, DestacarTextoPipe ]
     })
     .compileComponents();
 
