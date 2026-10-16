@@ -36,6 +36,7 @@ import { BienestarnoticiasComponent } from './componente/bienestarnoticias/biene
 import { CvadministrativoComponent } from './componente/cvadministrativo/cvadministrativo.component';
 import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.component';
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
+import { EntrevistaComponent } from './componente/inscripcion/entrevista/entrevista.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
 import { PayComponent } from '@/app/features/pay/pay.component';
@@ -77,6 +78,7 @@ const routes: Routes = [
  
   {path: 'iniciar', component:IniciarComponent},
   {path: 'onlogin', component:OnloginComponent},
+  {path: 'ondashboard/entrevista', component:EntrevistaComponent, canActivate:[LoginGuard]},
   {path: 'ondashboard', component:OndashboardComponent, canActivate:[LoginGuard]},
   
   

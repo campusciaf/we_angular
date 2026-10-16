@@ -1,0 +1,254 @@
+<section class="entrevista-page">
+  <div *ngIf="vista !== 'preguntas'" class="container py-4 py-md-5">
+
+    <div *ngIf="vista === 'cargando'" class="entrevista-topbar pb-3 mb-4">
+      <button type="button" class="ciaf-btn ciaf-btn--ghost rounded-pill px-4 py-2 fw-bold gap-2 border-0"
+        (click)="volver()">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver
+      </button>
+    </div>
+
+    <div *ngIf="vista === 'cargando'" class="ciaf-card entrevista-panel rounded-5 p-4 p-md-5 text-center" role="status">
+      <div class="ciaf-icon-badge ciaf-icon-badge--primary rounded-circle mx-auto mb-3">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      </div>
+      <h1 class="fs-24 fw-extrablack text-color-2 mb-2">Preparando tu entrevista</h1>
+      <p class="fs-14 text-color-1 mb-0">Estamos consultando tu proceso de inscripción.</p>
+    </div>
+
+    <div *ngIf="vista === 'error'">
+      <div class="entrevista-topbar pb-3 mb-4">
+        <button type="button" class="ciaf-btn ciaf-btn--ghost rounded-pill px-4 py-2 fw-bold gap-2 border-0"
+          (click)="volver()">
+          <i class="fa-solid fa-arrow-left"></i>
+          Volver
+        </button>
+      </div>
+
+      <div class="ciaf-card entrevista-panel rounded-5 p-4 p-md-5 text-center" role="alert">
+        <div class="ciaf-icon-badge ciaf-icon-badge--outline rounded-circle mx-auto mb-3">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h1 class="fs-24 fw-extrablack text-color-2 mb-2">No pudimos consultar tu proceso</h1>
+        <p class="fs-14 text-color-1 mb-4">
+          La entrevista sigue pendiente. Puedes intentar de nuevo o regresar al panel.
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <button type="button" class="ciaf-btn ciaf-btn--primary rounded-pill px-4 py-3 fw-bold gap-2"
+            (click)="cargarAspirante()">
+            <i class="fa-solid fa-rotate-right"></i>
+            Reintentar
+          </button>
+          <button type="button" class="ciaf-btn ciaf-btn--ghost rounded-pill px-4 py-3 fw-bold gap-2"
+            (click)="volver()">
+            Volver
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="vista === 'bienvenida'" class="bienvenida">
+      <header class="bienvenida-header">
+        <div class="bienvenida-marca">
+          <img [src]="logo" alt="CIAF" class="bienvenida-logo">
+          <span class="bienvenida-etiqueta">Bienestar</span>
+        </div>
+        <button type="button" class="bienvenida-volver" (click)="volver()">
+          ← Volver
+        </button>
+      </header>
+
+      <p class="bienvenida-tiempo">Tiempo aproximado: 5 minutos</p>
+      <h1 class="bienvenida-titulo">¡Bienvenido(a) a <span>CIAF</span>!</h1>
+      <p class="bienvenida-texto">
+        Queremos conocerte y acompañarte desde el primer día. Esta conversación nos ayuda a
+        entender cómo llegas, qué necesitas y cómo podemos cuidarte durante tu proceso en CIAF.
+      </p>
+      <p class="bienvenida-texto">
+        No hay respuestas correctas ni incorrectas. Cuéntanos con tranquilidad cómo te encuentras
+        para que el equipo de bienestar pueda estar presente desde el inicio de tu formación.
+      </p>
+
+      <div class="bienvenida-tarjetas">
+        <article class="bienvenida-tarjeta">
+          <span class="bienvenida-icono bienvenida-icono--cercano" aria-hidden="true">
+            <i class="fa-regular fa-comments"></i>
+          </span>
+          <h2>Cercano</h2>
+          <p>Un espacio para contarnos cómo te sientes y qué necesitas al empezar esta nueva etapa.</p>
+        </article>
+        <article class="bienvenida-tarjeta">
+          <span class="bienvenida-icono bienvenida-icono--confidencial" aria-hidden="true">
+            <i class="fa-solid fa-lock"></i>
+          </span>
+          <h2>Confidencial</h2>
+          <p>Tus respuestas se tratan con reserva y solo las usa el equipo que te acompaña.</p>
+        </article>
+        <article class="bienvenida-tarjeta">
+          <span class="bienvenida-icono bienvenida-icono--acompanamiento" aria-hidden="true">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </span>
+          <h2>Acompañamiento</h2>
+          <p>Con lo que nos cuentes, podemos apoyarte desde el primer día de tu experiencia.</p>
+        </article>
+      </div>
+
+      <div class="bienvenida-aviso">
+        <p class="bienvenida-aviso-titulo">Información confidencial</p>
+        <p>
+          Lo que respondas es confidencial y se usa para acompañarte. Antes de comenzar, puedes
+          consultar el texto institucional de tratamiento de datos.
+        </p>
+        <a routerLink="/tratamientodatos" target="_blank" rel="noopener">
+          Ver tratamiento de datos
+        </a>
+      </div>
+
+      <label class="bienvenida-consentimiento" for="autorizaTratamiento">
+        <input id="autorizaTratamiento" type="checkbox" [(ngModel)]="autorizaTratamiento">
+        <span>Autorizo el tratamiento de mis datos personales para realizar esta entrevista.</span>
+      </label>
+
+      <button type="button" class="bienvenida-comenzar" [disabled]="!autorizaTratamiento" (click)="comenzar()">
+        Comenzar
+      </button>
+    </div>
+
+    <div *ngIf="vista === 'agradecimiento'" class="bienvenida">
+      <header class="bienvenida-header">
+        <img [src]="logo" alt="CIAF" class="bienvenida-logo">
+      </header>
+
+      <span class="bienvenida-icono bienvenida-icono--acompanamiento agradecimiento-icono" aria-hidden="true">
+        <i class="fa-solid fa-check"></i>
+      </span>
+      <h1 class="bienvenida-titulo">Gracias por confiar en nosotros</h1>
+      <p class="bienvenida-texto">
+        Hoy comienza una nueva historia y nos sentimos felices de hacer parte de ella.
+      </p>
+      <p class="bienvenida-texto">
+        En CIAF creemos que cada estudiante tiene el potencial de transformar su vida y la de
+        quienes lo rodean. Por eso, desde hoy encontrarás un equipo dispuesto a escucharte,
+        orientarte y acompañarte en cada paso de este camino.
+      </p>
+      <p class="bienvenida-texto agradecimiento-destacado">
+        <strong>¡Bienvenido(a) a una comunidad que inspira, acompaña y transforma vidas!</strong>
+      </p>
+      <p class="agradecimiento-confirmacion">Tu entrevista fue enviada correctamente.</p>
+      <button type="button" class="bienvenida-comenzar" (click)="volver()">
+        Volver al dashboard
+      </button>
+      <p class="agradecimiento-nota">Tus datos se tratan según la Ley 1581 de 2012.</p>
+    </div>
+
+  </div>
+
+  <div *ngIf="vista === 'preguntas'" class="cuestionario">
+    <header class="cuestionario-barra">
+      <div class="cuestionario-medida">
+        <div class="cuestionario-barra-fila">
+          <div class="bienvenida-marca">
+            <img [src]="logo" alt="CIAF" class="cuestionario-logo">
+            <span class="bienvenida-etiqueta">Bienestar</span>
+          </div>
+          <button type="button" class="bienvenida-volver" (click)="volver()">
+            ← Volver al dashboard
+          </button>
+        </div>
+        <div class="cuestionario-progreso">
+          <span>Tu entrevista</span>
+          <div class="cuestionario-pista" aria-hidden="true">
+            <span [style.width.%]="porcentaje"></span>
+          </div>
+          <strong>{{ porcentaje }}%</strong>
+        </div>
+      </div>
+    </header>
+
+    <form class="cuestionario-medida cuestionario-cuerpo" (ngSubmit)="finalizar()" novalidate>
+      <ng-container *ngFor="let seccion of secciones">
+        <p *ngIf="seccion.puente" class="cuestionario-puente">{{ seccion.puente }}</p>
+        <section class="cuestionario-seccion">
+          <p class="cuestionario-badge"><span></span>{{ seccion.badge }}</p>
+          <h2>{{ seccion.titulo }}</h2>
+          <p *ngIf="seccion.lead" class="cuestionario-lead">{{ seccion.lead }}</p>
+          <div *ngIf="seccion.aviso" class="cuestionario-confidencial">
+            <p>{{ seccion.avisoTitulo }}</p>
+            <span>{{ seccion.aviso }}</span>
+          </div>
+
+          <article *ngFor="let pregunta of seccion.preguntas" class="cuestionario-pregunta"
+            [id]="'pregunta-' + pregunta.id" [class.cuestionario-pregunta--error]="mostrarError(pregunta)">
+            <p class="cuestionario-enunciado">{{ pregunta.numero }}. {{ pregunta.texto }}</p>
+            <p *ngIf="pregunta.ayuda" class="cuestionario-ayuda">{{ pregunta.ayuda }}</p>
+
+            <p *ngIf="pregunta.campos" class="cuestionario-leyenda">Relación</p>
+            <div *ngIf="pregunta.opciones" class="cuestionario-opciones"
+              [class.cuestionario-opciones--doble]="pregunta.columnas === 2" role="group"
+              [attr.aria-label]="pregunta.texto">
+              <button type="button" *ngFor="let opcion of pregunta.opciones" class="cuestionario-opcion"
+                [class.cuestionario-opcion--activa]="estaSeleccionada(pregunta.id, opcion, pregunta.tipo)"
+                (click)="elegir(pregunta, opcion)">
+                <span class="cuestionario-marca"
+                  [class.cuestionario-marca--multiple]="pregunta.tipo === 'multiple'"></span>
+                <span>{{ opcion }}</span>
+              </button>
+            </div>
+            <p *ngIf="pregunta.max && avisoTope[pregunta.id]" class="cuestionario-ayuda">
+              Puedes elegir hasta tres opciones.
+            </p>
+
+            <div *ngIf="pregunta.campos" class="cuestionario-campos">
+              <label *ngFor="let campo of pregunta.campos"
+                [class.cuestionario-campo--ancho]="campo.ancho === 'completo'">
+                <span>{{ campo.etiqueta }}</span>
+                <input [type]="campo.tipo" [placeholder]="campo.placeholder" [value]="textos[campo.id]"
+                  (input)="escribir(campo.id, $event)">
+              </label>
+            </div>
+
+            <div *ngIf="pregunta.grupos">
+              <fieldset *ngFor="let grupo of pregunta.grupos" class="cuestionario-grupo">
+                <legend>{{ grupo.leyenda }}</legend>
+                <div class="cuestionario-opciones" role="group" [attr.aria-label]="grupo.leyenda">
+                  <button type="button" *ngFor="let opcion of grupo.opciones" class="cuestionario-opcion"
+                    [class.cuestionario-opcion--activa]="estaSeleccionada(grupo.id, opcion, 'unica')"
+                    (click)="elegirUnica(grupo.id, opcion)">
+                    <span class="cuestionario-marca"></span>
+                    <span>{{ opcion }}</span>
+                  </button>
+                </div>
+              </fieldset>
+            </div>
+
+            <label *ngIf="pregunta.tipo === 'texto'" class="cuestionario-campo cuestionario-campo--ancho">
+              <input type="text" [placeholder]="pregunta.placeholder || ''" [value]="textos[pregunta.id]"
+                (input)="escribir(pregunta.id, $event)">
+            </label>
+
+            <label *ngIf="pregunta.tipo === 'area'" class="cuestionario-campo cuestionario-campo--ancho">
+              <textarea rows="7" [placeholder]="pregunta.placeholder || ''" [value]="textos[pregunta.id]"
+                (input)="escribir(pregunta.id, $event)"></textarea>
+            </label>
+
+            <p *ngIf="mostrarError(pregunta)" class="cuestionario-error">{{ mensajeError(pregunta) }}</p>
+          </article>
+
+          <p *ngIf="seccion.cierre" class="cuestionario-cita">{{ seccion.cierre }}</p>
+        </section>
+      </ng-container>
+
+      <div class="cuestionario-envio">
+        <p *ngIf="intentoEnviar && !formularioValido" class="cuestionario-error">
+          Faltan respuestas. Revisa las preguntas marcadas.
+        </p>
+        <p *ngIf="errorEnvio" class="cuestionario-error">{{ errorEnvio }}</p>
+        <button type="submit" class="bienvenida-comenzar" [disabled]="enviando || guardada">
+          {{ enviando ? 'Enviando…' : 'Finalizar y enviar' }}
+        </button>
+        <p class="cuestionario-ley">CIAF · Bienestar Institucional · Ley 1581 de 2012</p>
+      </div>
+    </form>
+  </div>
+</section>

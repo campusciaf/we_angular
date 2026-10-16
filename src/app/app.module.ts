@@ -67,6 +67,7 @@ import { BienestarnoticiasComponent } from './componente/bienestarnoticias/biene
 import { CvadministrativoComponent } from './componente/cvadministrativo/cvadministrativo.component';
 import { IniciarComponent } from './componente/inscripcion/iniciar/iniciar.component';
 import { OndashboardComponent } from './componente/inscripcion/ondashboard/ondashboard.component';
+import { EntrevistaComponent } from './componente/inscripcion/entrevista/entrevista.component';
 import { OnloginComponent } from './componente/inscripcion/onlogin/onlogin.component';
 import { ReferidosComponent } from './componente/referidos/referidos.component';
 import { CifrasComponent } from './componente/cifras/cifras.component';
@@ -142,6 +143,7 @@ import { CostosComponent } from './componente/costos/costos.component';
     CvadministrativoComponent,
     IniciarComponent,
     OndashboardComponent,
+    EntrevistaComponent,
     OnloginComponent,
     ReferidosComponent,
     EgresadosdataComponent,
