@@ -108,96 +108,108 @@ export class ConocenosComponent {
         },
       ],
     },
-    {
-      cargo: 'Vicerrector Administrativo y Financiero',
-      miembros: [
-        {
-          nombre: 'Adrián Fernando Ríos Quintero',
-          email: 'adrian.rios@ciaf.edu.co',
-        },
-      ],
-    },
-    {
-      cargo: 'Vicerrector de Aprendizaje',
-      miembros: [
-        {
-          nombre: 'Héctor Andrés Bucheli López',
-          email: 'andres.bucheli@ciaf.edu.co',
-        },
-      ],
-    },
-    {
-      cargo: 'Director de Ciencia, Tecnología e Innovación',
-      miembros: [
-        {
-          nombre: 'Alejandro Arango Carrea',
-          email: 'alejandro.arango@ciaf.edu.co',
-        },
-      ],
-    },
-    {
-      cargo: 'Directora SAC (Sistema de aseguramiento de calidad)',
-      miembros: [
-        { nombre: 'Jhenifer Andrea Pulgarín Moreno', email: 'sac@ciaf.edu.co' },
-      ],
-    },
+
     {
       cargo: 'Revisora Fiscal',
       miembros: [
         { nombre: 'Andrea Forero', email: 'andrea.forero@ciaf.edu.co' },
       ],
     },
+
     {
-      cargo: 'Director Sistemas de Información',
+      cargo: 'Coordinadora de Calidad',
       miembros: [
         {
-          nombre: 'Julián Arlig Jiménez López',
-          email: 'sistemasdeinformacion@ciaf.edu.co',
+          nombre: 'Leira Yuvissa Rojas Acevedo',
+          email: 'sac@ciaf.edu.co',
         },
       ],
     },
     {
-      cargo: 'Director de Creatividad y Comunicaciones',
+      cargo: 'Directora de Marca',
       miembros: [
         {
-          nombre: 'Yoiver Andrey Giraldo Quintero',
-          email: 'yoiver.giraldo@ciaf.edu.co',
+          nombre: 'Yeraldin Aguirre Alvarez',
+          email: 'marca@ciaf.edu.co',
         },
       ],
     },
     {
-      cargo: 'Directora de extensión',
+      cargo: 'Directora de Extensión y Mercadeo',
       miembros: [
         {
           nombre: 'Leidy Johana López Márquez',
-          email: 'sistemasdeinformacion@ciaf.edu.co',
+          email: 'mercadeo@ciaf.edu.co',
+        },
+      ],
+    },
+        {
+      cargo: 'Directora Financiera',
+      miembros: [
+        {
+          nombre: 'Denys Yaneth Niño Mahecha',
+          email: 'denys.nino@ciaf.edu.co',
         },
       ],
     },
     {
-      cargo: 'Coordinadoras Académicas',
+      cargo: 'Coordinadores Académicos',
       miembros: [
         {
-          nombre: 'Paula Andrea Rengifo Briñez',
-          email: 'paula.rengifo@ciaf.edu.co',
-        },
-        { nombre: 'Rosalba Loaiza', email: 'rosa.loaiza@ciaf.edu.co' },
-        {
-          nombre: 'Yenny Alejandra Restrepo Uribe',
-          email: 'yenny.restrepo@ciaf.edu.co',
+          nombre: 'JOse Horario Vergara Poveda',
+          email: 'area.academica@ciaf.edu.co',
         },
         {
-          nombre: 'Juan David Machado Mosquera',
-          email: 'juan.machado@ciaf.edu.co',
+          nombre: 'Andrea Arenas Aristizabal',
+          email: 'administracion@ciaf.edu.co',
+        },
+        {
+          nombre: 'Roger Heredia Rodriguez',
+          email: 'ingenieria.industrial@ciaf.edu.co',
+        },
+        {
+          nombre: 'Luis Felipe Londoño',
+          email: 'ingenieria.software@ciaf.edu.co',
+        },
+        {
+          nombre: 'Esiteyn Franklin Osorio Giraldo',
+          email: 'sst@ciaf.edu.co',
+        },
+      ],
+    },
+        {
+      cargo: 'Lider Articulación y Técnicos Laborales',
+      miembros: [
+        {
+          nombre: 'Juan Diego Osorio Peláez ',
+          email: 'articulacion.laborales@ciaf.edu.co',
         },
       ],
     },
     {
-      cargo: 'Asistente Académica',
+      cargo: 'Gestora Académica',
       miembros: [
         {
-          nombre: 'Juliana Arenas Ospina',
-          email: 'juliana.arenas@ciaf.edu.co',
+          nombre: 'Juliana Toro Quiceno',
+          email: 'gestor.academicos@ciaf.edu.co',
+        },
+      ],
+    },
+    {
+      cargo: 'Gestora de Convenios',
+      miembros: [
+        {
+          nombre: 'Laura Vilena Villar',
+          email: 'articulacion@ciaf.edu.co',
+        },
+      ],
+    },
+        {
+      cargo: 'Gestora de Investigación',
+      miembros: [
+        {
+          nombre: 'Danna Sofia Pulgarín Muñoz ',
+          email: 'investigacion@ciaf.edu.co',
         },
       ],
     },
@@ -205,40 +217,24 @@ export class ConocenosComponent {
       cargo: 'Psicólogo',
       miembros: [
         {
-          nombre: 'Jhon Alejandro Arévalo Giraldo',
-          email: 'psicologiabienestar@ciaf.edu.co',
+          nombre: 'Shirley Andrea john Perea',
+          email: 'psicologia@ciaf.edu.co',
         },
       ],
     },
-    {
-      cargo: 'Asistente de Bienestar',
-      miembros: [
-        {
-          nombre: 'Stephany Meza Quiceno',
-          email: 'asistentebienestar@ciaf.edu.co',
-        },
-      ],
-    },
+
     {
       cargo: 'Auxiliar de Bienestar',
       miembros: [
         {
-          nombre: 'Juliana Giraldo Guerra',
+          nombre: 'Juliana Arenas Ospina',
           email: 'aux.bienestar@ciaf.edu.co',
         },
       ],
     },
+
     {
-      cargo: 'Líder de Comunicaciones',
-      miembros: [
-        {
-          nombre: 'Luisa María Ramírez Tangarife',
-          email: 'comunicaciones@ciaf.edu.co',
-        },
-      ],
-    },
-    {
-      cargo: 'Líder Audiovisual',
+      cargo: 'Líder Comunicaciones',
       miembros: [
         {
           nombre: 'Juan Felipe Montoya García',
@@ -246,12 +242,21 @@ export class ConocenosComponent {
         },
       ],
     },
-    {
-      cargo: 'Diseñadora Grafica',
+        {
+      cargo: 'Coordinadora de Comunicaciones',
       miembros: [
         {
-          nombre: 'Isabella Zuluaga Ramírez',
-          email: 'comunicaciones@ciaf.edu.co',
+          nombre: 'Angie Daniela Valencia Correa ',
+          email: 'coordinacion.comunicaciones@ciaf.edu.co',
+        },
+      ],
+    },
+    {
+      cargo: 'Gestora de Apoyo Institucional y CIAF Virtual',
+      miembros: [
+        {
+          nombre: 'Camila Londoño Quintero',
+          email: 'ux.digitals@ciaf.edu.co',
         },
       ],
     },
@@ -264,9 +269,16 @@ export class ConocenosComponent {
     {
       cargo: 'Auxiliar de cartera',
       miembros: [
-        { nombre: 'Cindy Dahyana Pérez Ríos', email: 'cartera2@ciaf.edu.co' },
         { nombre: 'Elena Cabrera Cardona', email: 'pagos@ciaf.edu.co' },
         { nombre: 'Juliana Mejía García', email: 'pagos@ciaf.edu.co' },
+      ],
+    },
+    {
+      cargo: 'Auxiliar Financiera',
+      miembros: [
+        { nombre: 'Jessica Aros Martinez', 
+          email: 'aux.financiera@ciaf.edu.co' 
+        },
       ],
     },
     {
@@ -279,23 +291,15 @@ export class ConocenosComponent {
       ],
     },
     {
-      cargo: 'Auxiliar Contable',
+      cargo: 'Asistente de Contabilidad',
       miembros: [
         {
-          nombre: 'Luz Piedad Colorado Jaramillo',
+          nombre: 'Millerlandy Osorio Salgado',
           email: 'auxiliarcontable2@ciaf.edu.co',
         },
       ],
     },
-    {
-      cargo: 'Líder de Financiera y de Tesorería',
-      miembros: [
-        {
-          nombre: 'Denys Yaneth Niño Mahecha',
-          email: 'denys.nino@ciaf.edu.co',
-        },
-      ],
-    },
+
     {
       cargo: 'Coordinador de Registro y Control',
       miembros: [
@@ -305,69 +309,49 @@ export class ConocenosComponent {
         },
       ],
     },
+        {
+      cargo: 'Gestora de Registro y Control',
+      miembros: [
+        {
+          nombre: 'Monica Alejandra Vera Nieto ',
+          email: 'pacticasregistro@ciaf.edu.co',
+        },
+      ],
+    },
+
     {
       cargo: 'Coordinador Técnico de Sistemas',
       miembros: [{ nombre: 'Ferney Benitez', email: 'sistemas@ciaf.edu.co' }],
     },
+
     {
-      cargo: 'Coordinador Sistemas de Información',
+      cargo: 'Lider Talento Humano',
       miembros: [
         {
-          nombre: 'David González Manrique',
-          email: 'david.gonzalez@ciaf.edu.co',
+          nombre: 'Alvarez Iris Yelena',
+          email: 'area.administrativa@ciaf.edu.co',
         },
       ],
     },
     {
-      cargo: 'Auxiliar Sistemas de Información',
+      cargo: 'Gestora de Talento Humano',
       miembros: [
         {
-          nombre: 'Jaime Andrés Pérez Londoño',
-          email: 'ja.perez30@ciaf.edu.co',
+          nombre: 'Higinio Marín Camila',
+          email: 'gestor.talento@ciaf.edu.co',
         },
       ],
     },
+
     {
-      cargo: 'Asistente de Sistemas de Información',
+      cargo: 'Gestor de Experiencias Universitarias',
       miembros: [
-        { nombre: 'Camila Londoño', email: 'camila.londono@ciaf.edu.co' },
-      ],
-    },
-    {
-      cargo: 'Asistente Talento Humano',
-      miembros: [
-        {
-          nombre: 'Olga Yuliet Restrepo Uribe',
-          email: 'asistente.talento@ciaf.edu.co',
-        },
-      ],
-    },
-    {
-      cargo: 'Analista Jurídica',
-      miembros: [
-        {
-          nombre: 'Manuela Rendon Miranda',
-          email: 'manuela.rendon@ciaf.edu.co',
-        },
-      ],
-    },
-    {
-      cargo: 'Dinamizador',
-      miembros: [
-        { nombre: 'Albeiro Cruz Morales', email: 'albeiro.cruz@ciaf.edu.co' },
+        { nombre: 'Albeiro Cruz Morales', email: 'bienestar@ciaf.edu.co' },
       ],
     },
     {
       cargo: 'Auxiliar Educativo',
       miembros: [
-        {
-          nombre: 'Carolina Ochoa González',
-          email: 'carolina.ochoa@ciaf.edu.co',
-        },
-        {
-          nombre: 'Anyi Dahiana Arias Arenas',
-          email: 'anyi.arias@ciaf.edu.co',
-        },
         {
           nombre: 'Luisa María Correa Tamayo',
           email: 'luisa.correa@ciaf.edu.co',
@@ -382,8 +366,8 @@ export class ConocenosComponent {
       cargo: 'Servicios Generales',
       miembros: [
         {
-          nombre: 'Blanca Doris Jaramillo Ortiz',
-          email: 'serviciosgenerales@ciaf.edu.co',
+          nombre: 'Luz Adriana Prada',
+          email: 'serviciosgenerales3@ciaf.edu.co',
         },
         {
           nombre: 'Dorise Holguín Mejía',
@@ -393,26 +377,19 @@ export class ConocenosComponent {
           nombre: 'Gladys Ramírez Marín',
           email: 'serviciosgenerales@ciaf.edu.co',
         },
-        {
-          nombre: 'María Yulie García Ramírez',
-          email: 'serviciosgenerales@ciaf.edu.co',
-        },
-        {
-          nombre: 'Patricia Isaza Cardona',
-          email: 'serviciosgenerales@ciaf.edu.co',
-        },
+
       ],
     },
     {
       cargo: 'Auxiliar de Mantenimiento',
       miembros: [
         {
-          nombre: 'Fernando Agudelo Velásquez',
-          email: 'serviciosgenerales@ciaf.edu.co',
+          nombre: 'Jose Aldemar Diáz',
+          email: 'mantenimiento2@ciaf.edu.co',
         },
         {
           nombre: 'Edwin García Murillo',
-          email: 'serviciosgenerales@ciaf.edu.co',
+          email: 'mantenimiento@ciaf.edu.co',
         },
       ],
     },
